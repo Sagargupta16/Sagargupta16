@@ -19,3 +19,4 @@
 - 2021-10-15: ci-cd practice session 15
 - 2021-10-15: testing practice session 16
 - 2021-10-15: fastapi practice session 17
+- 2021-10-15: ml practice session 18

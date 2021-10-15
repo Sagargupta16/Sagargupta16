@@ -8,3 +8,4 @@
 - 2021-10-15: data-structures practice session 4
 - 2021-10-15: aws practice session 5
 - 2021-10-15: linux practice session 6
+- 2021-10-15: aws practice session 7

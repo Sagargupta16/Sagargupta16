@@ -17,3 +17,4 @@
 - 2021-10-15: git practice session 13
 - 2021-10-15: algorithms practice session 14
 - 2021-10-15: ci-cd practice session 15
+- 2021-10-15: testing practice session 16

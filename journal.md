@@ -14,3 +14,4 @@
 - 2021-10-15: git practice session 10
 - 2021-10-15: kubernetes practice session 11
 - 2021-10-15: docker practice session 12
+- 2021-10-15: git practice session 13

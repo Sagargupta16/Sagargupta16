@@ -11,3 +11,4 @@
 - 2021-10-15: aws practice session 7
 - 2021-10-15: testing practice session 8
 - 2021-10-15: algorithms practice session 9
+- 2021-10-15: git practice session 10

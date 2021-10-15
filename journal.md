@@ -12,3 +12,4 @@
 - 2021-10-15: testing practice session 8
 - 2021-10-15: algorithms practice session 9
 - 2021-10-15: git practice session 10
+- 2021-10-15: kubernetes practice session 11

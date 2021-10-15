@@ -21,3 +21,4 @@
 - 2021-10-15: fastapi practice session 17
 - 2021-10-15: ml practice session 18
 - 2021-10-15: debugging practice session 19
+- 2021-10-15: javascript practice session 20

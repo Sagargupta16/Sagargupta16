@@ -5,3 +5,4 @@
 - 2021-10-15: security practice session 1
 - 2021-10-15: javascript practice session 2
 - 2021-10-15: javascript practice session 3
+- 2021-10-15: data-structures practice session 4

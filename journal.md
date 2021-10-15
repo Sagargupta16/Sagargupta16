@@ -9,3 +9,4 @@
 - 2021-10-15: aws practice session 5
 - 2021-10-15: linux practice session 6
 - 2021-10-15: aws practice session 7
+- 2021-10-15: testing practice session 8

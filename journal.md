@@ -23,3 +23,4 @@
 - 2021-10-15: debugging practice session 19
 - 2021-10-15: javascript practice session 20
 - 2021-10-15: postgresql practice session 21
+- 2021-10-16: terraform practice session 1

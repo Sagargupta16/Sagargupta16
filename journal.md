@@ -33,3 +33,4 @@
 - 2021-10-17: algorithms practice session 7
 - 2021-10-17: aws practice session 8
 - 2021-10-17: linux practice session 9
+- 2021-10-17: fastapi practice session 10

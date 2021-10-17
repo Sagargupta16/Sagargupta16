@@ -31,3 +31,4 @@
 - 2021-10-17: ci-cd practice session 5
 - 2021-10-17: mongodb practice session 6
 - 2021-10-17: algorithms practice session 7
+- 2021-10-17: aws practice session 8

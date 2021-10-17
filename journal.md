@@ -54,3 +54,4 @@
 - 2021-10-17: git practice session 28
 - 2021-10-17: debugging practice session 29
 - 2021-10-17: terraform practice session 30
+- 2021-10-17: mongodb practice session 31

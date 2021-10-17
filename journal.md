@@ -40,3 +40,4 @@
 - 2021-10-17: ml practice session 14
 - 2021-10-17: debugging practice session 15
 - 2021-10-17: ml practice session 16
+- 2021-10-17: react practice session 17

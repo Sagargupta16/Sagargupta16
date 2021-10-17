@@ -44,3 +44,4 @@
 - 2021-10-17: javascript practice session 18
 - 2021-10-17: api-design practice session 19
 - 2021-10-17: git practice session 20
+- 2021-10-17: mongodb practice session 21

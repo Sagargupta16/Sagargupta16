@@ -43,3 +43,4 @@
 - 2021-10-17: react practice session 17
 - 2021-10-17: javascript practice session 18
 - 2021-10-17: api-design practice session 19
+- 2021-10-17: git practice session 20

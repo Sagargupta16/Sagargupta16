@@ -26,3 +26,4 @@
 - 2021-10-16: terraform practice session 1
 - 2021-10-17: postgresql practice session 1
 - 2021-10-17: testing practice session 2
+- 2021-10-17: algorithms practice session 3

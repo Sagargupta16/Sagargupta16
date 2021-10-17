@@ -42,3 +42,4 @@
 - 2021-10-17: ml practice session 16
 - 2021-10-17: react practice session 17
 - 2021-10-17: javascript practice session 18
+- 2021-10-17: api-design practice session 19

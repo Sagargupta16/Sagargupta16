@@ -51,3 +51,4 @@
 - 2021-10-17: aws practice session 25
 - 2021-10-17: docker practice session 26
 - 2021-10-17: debugging practice session 27
+- 2021-10-17: git practice session 28

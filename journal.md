@@ -46,3 +46,4 @@
 - 2021-10-17: git practice session 20
 - 2021-10-17: mongodb practice session 21
 - 2021-10-17: kubernetes practice session 22
+- 2021-10-17: data-structures practice session 23

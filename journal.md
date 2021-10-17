@@ -36,3 +36,4 @@
 - 2021-10-17: fastapi practice session 10
 - 2021-10-17: linux practice session 11
 - 2021-10-17: aws practice session 12
+- 2021-10-17: testing practice session 13

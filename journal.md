@@ -38,3 +38,4 @@
 - 2021-10-17: aws practice session 12
 - 2021-10-17: testing practice session 13
 - 2021-10-17: ml practice session 14
+- 2021-10-17: debugging practice session 15

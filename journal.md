@@ -29,3 +29,4 @@
 - 2021-10-17: algorithms practice session 3
 - 2021-10-17: ci-cd practice session 4
 - 2021-10-17: ci-cd practice session 5
+- 2021-10-17: mongodb practice session 6

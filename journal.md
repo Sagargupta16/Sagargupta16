@@ -45,3 +45,4 @@
 - 2021-10-17: api-design practice session 19
 - 2021-10-17: git practice session 20
 - 2021-10-17: mongodb practice session 21
+- 2021-10-17: kubernetes practice session 22

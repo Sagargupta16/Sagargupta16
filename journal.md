@@ -28,3 +28,4 @@
 - 2021-10-17: testing practice session 2
 - 2021-10-17: algorithms practice session 3
 - 2021-10-17: ci-cd practice session 4
+- 2021-10-17: ci-cd practice session 5

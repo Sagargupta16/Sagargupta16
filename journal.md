@@ -55,3 +55,4 @@
 - 2021-10-17: debugging practice session 29
 - 2021-10-17: terraform practice session 30
 - 2021-10-17: mongodb practice session 31
+- 2021-10-18: algorithms practice session 1

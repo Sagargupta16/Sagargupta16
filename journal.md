@@ -58,3 +58,4 @@
 - 2021-10-18: algorithms practice session 1
 - 2021-10-18: terraform practice session 2
 - 2021-10-19: api-design practice session 1
+- 2021-10-19: terraform practice session 2

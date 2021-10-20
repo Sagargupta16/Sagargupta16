@@ -5,3 +5,4 @@
 - 2021-10-20: refactor testing section 63
 - 2021-10-20: organize testing section 53
 - 2021-10-20: add testing section 28
+- 2021-10-20: refactor testing section 16

@@ -66,3 +66,4 @@
 - 2021-10-20: api-design practice session 5
 - 2021-10-20: aws practice session 6
 - 2021-10-20: algorithms practice session 7
+- 2021-10-20: kubernetes practice session 8

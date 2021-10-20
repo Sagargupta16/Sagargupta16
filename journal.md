@@ -69,3 +69,4 @@
 - 2021-10-20: kubernetes practice session 8
 - 2021-10-20: postgresql practice session 9
 - 2021-10-20: docker practice session 10
+- 2021-10-20: algorithms practice session 11

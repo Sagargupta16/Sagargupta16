@@ -72,3 +72,4 @@
 - 2021-10-20: algorithms practice session 11
 - 2021-10-20: ci-cd practice session 12
 - 2021-10-20: debugging practice session 13
+- 2021-10-20: testing practice session 14

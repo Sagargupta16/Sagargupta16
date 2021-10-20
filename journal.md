@@ -64,3 +64,4 @@
 - 2021-10-20: git practice session 3
 - 2021-10-20: kubernetes practice session 4
 - 2021-10-20: api-design practice session 5
+- 2021-10-20: aws practice session 6

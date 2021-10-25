@@ -76,3 +76,4 @@
 - 2021-10-20: ci-cd practice session 15
 - 2021-10-21: debugging practice session 1
 - 2021-10-23: ml practice session 1
+- 2021-10-25: testing practice session 1

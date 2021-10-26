@@ -78,3 +78,4 @@
 - 2021-10-23: ml practice session 1
 - 2021-10-25: testing practice session 1
 - 2021-10-25: aws practice session 2
+- 2021-10-26: testing practice session 1

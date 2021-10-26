@@ -4,3 +4,4 @@
 - 2021-10-20: revise data-structures section 61
 - 2021-10-20: add data-structures section 2
 - 2021-10-23: organize data-structures section 63
+- 2021-10-26: add data-structures section 60

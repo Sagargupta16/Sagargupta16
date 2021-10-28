@@ -7,3 +7,4 @@
 - 2021-10-20: add testing section 28
 - 2021-10-20: refactor testing section 16
 - 2021-10-28: update testing section 46
+- 2021-10-28: expand testing section 86

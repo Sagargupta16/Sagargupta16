@@ -80,3 +80,4 @@
 - 2021-10-25: aws practice session 2
 - 2021-10-26: testing practice session 1
 - 2021-10-27: data-structures practice session 1
+- 2021-10-28: docker practice session 1

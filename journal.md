@@ -84,3 +84,4 @@
 - 2021-10-28: terraform practice session 2
 - 2021-10-28: react practice session 3
 - 2021-10-30: react practice session 1
+- 2021-10-30: linux practice session 2

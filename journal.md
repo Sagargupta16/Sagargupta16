@@ -86,3 +86,4 @@
 - 2021-10-30: react practice session 1
 - 2021-10-30: linux practice session 2
 - 2021-10-31: fastapi practice session 1
+- 2021-10-31: testing practice session 2

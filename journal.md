@@ -95,3 +95,4 @@
 - 2021-11-01: react practice session 4
 - 2021-11-01: debugging practice session 5
 - 2021-11-01: mongodb practice session 6
+- 2021-11-01: javascript practice session 7

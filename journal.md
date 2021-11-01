@@ -90,3 +90,4 @@
 - 2021-10-31: algorithms practice session 3
 - 2021-10-31: kubernetes practice session 4
 - 2021-11-01: testing practice session 1
+- 2021-11-01: fastapi practice session 2

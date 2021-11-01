@@ -94,3 +94,4 @@
 - 2021-11-01: fastapi practice session 3
 - 2021-11-01: react practice session 4
 - 2021-11-01: debugging practice session 5
+- 2021-11-01: mongodb practice session 6

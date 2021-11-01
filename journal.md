@@ -92,3 +92,4 @@
 - 2021-11-01: testing practice session 1
 - 2021-11-01: fastapi practice session 2
 - 2021-11-01: fastapi practice session 3
+- 2021-11-01: react practice session 4

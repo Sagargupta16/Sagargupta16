@@ -98,3 +98,4 @@
 - 2021-11-01: javascript practice session 7
 - 2021-11-01: docker practice session 8
 - 2021-11-02: terraform practice session 1
+- 2021-11-02: security practice session 2

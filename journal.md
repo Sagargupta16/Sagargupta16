@@ -100,3 +100,4 @@
 - 2021-11-02: terraform practice session 1
 - 2021-11-02: security practice session 2
 - 2021-11-02: kubernetes practice session 3
+- 2021-11-02: data-structures practice session 4

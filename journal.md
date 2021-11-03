@@ -106,3 +106,4 @@
 - 2021-11-03: terraform practice session 2
 - 2021-11-03: security practice session 3
 - 2021-11-03: data-structures practice session 4
+- 2021-11-03: testing practice session 5

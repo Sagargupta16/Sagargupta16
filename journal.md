@@ -120,3 +120,4 @@
 - 2021-11-03: ci-cd practice session 16
 - 2021-11-03: debugging practice session 17
 - 2021-11-03: kubernetes practice session 18
+- 2021-11-03: mongodb practice session 19

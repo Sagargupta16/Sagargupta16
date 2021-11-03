@@ -110,3 +110,4 @@
 - 2021-11-03: linux practice session 6
 - 2021-11-03: mongodb practice session 7
 - 2021-11-03: mongodb practice session 8
+- 2021-11-03: security practice session 9

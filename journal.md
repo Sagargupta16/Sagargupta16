@@ -108,3 +108,4 @@
 - 2021-11-03: data-structures practice session 4
 - 2021-11-03: testing practice session 5
 - 2021-11-03: linux practice session 6
+- 2021-11-03: mongodb practice session 7

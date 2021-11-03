@@ -112,3 +112,4 @@
 - 2021-11-03: mongodb practice session 8
 - 2021-11-03: security practice session 9
 - 2021-11-03: api-design practice session 10
+- 2021-11-03: kubernetes practice session 11

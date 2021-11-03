@@ -115,3 +115,4 @@
 - 2021-11-03: kubernetes practice session 11
 - 2021-11-03: ci-cd practice session 12
 - 2021-11-03: python practice session 13
+- 2021-11-03: security practice session 14

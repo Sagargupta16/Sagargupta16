@@ -118,3 +118,4 @@
 - 2021-11-03: security practice session 14
 - 2021-11-03: python practice session 15
 - 2021-11-03: ci-cd practice session 16
+- 2021-11-03: debugging practice session 17

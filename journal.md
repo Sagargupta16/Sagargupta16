@@ -102,3 +102,4 @@
 - 2021-11-02: kubernetes practice session 3
 - 2021-11-02: data-structures practice session 4
 - 2021-11-02: ci-cd practice session 5
+- 2021-11-03: aws practice session 1

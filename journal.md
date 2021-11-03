@@ -123,3 +123,4 @@
 - 2021-11-03: mongodb practice session 19
 - 2021-11-03: security practice session 20
 - 2021-11-03: fastapi practice session 21
+- 2021-11-03: terraform practice session 22

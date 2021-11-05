@@ -138,3 +138,4 @@
 - 2021-11-05: debugging practice session 12
 - 2021-11-05: postgresql practice session 13
 - 2021-11-05: kubernetes practice session 14
+- 2021-11-05: terraform practice session 15

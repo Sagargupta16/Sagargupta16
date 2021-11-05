@@ -128,3 +128,4 @@
 - 2021-11-05: ml practice session 2
 - 2021-11-05: aws practice session 3
 - 2021-11-05: postgresql practice session 4
+- 2021-11-05: react practice session 5

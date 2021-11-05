@@ -131,3 +131,4 @@
 - 2021-11-05: react practice session 5
 - 2021-11-05: python practice session 6
 - 2021-11-05: postgresql practice session 7
+- 2021-11-05: kubernetes practice session 8

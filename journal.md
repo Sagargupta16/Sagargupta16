@@ -136,3 +136,4 @@
 - 2021-11-05: data-structures practice session 10
 - 2021-11-05: data-structures practice session 11
 - 2021-11-05: debugging practice session 12
+- 2021-11-05: postgresql practice session 13

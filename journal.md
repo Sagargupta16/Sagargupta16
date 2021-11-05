@@ -126,3 +126,4 @@
 - 2021-11-03: terraform practice session 22
 - 2021-11-05: data-structures practice session 1
 - 2021-11-05: ml practice session 2
+- 2021-11-05: aws practice session 3

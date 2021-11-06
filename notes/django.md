@@ -5,3 +5,4 @@
 - 2021-10-20: expand django section 86
 - 2021-10-23: revise django section 13
 - 2021-10-23: revise django section 93
+- 2021-11-06: revise django section 23

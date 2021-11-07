@@ -5,3 +5,4 @@
 - 2021-10-20: refactor redis section 28
 - 2021-10-23: organize redis section 39
 - 2021-10-28: expand redis section 69
+- 2021-11-07: refactor redis section 37

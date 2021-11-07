@@ -4,3 +4,4 @@
 - 2021-10-20: update networking section 5
 - 2021-10-22: improve networking section 19
 - 2021-11-02: organize networking section 45
+- 2021-11-07: refactor networking section 9

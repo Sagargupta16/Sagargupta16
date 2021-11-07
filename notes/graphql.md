@@ -4,3 +4,4 @@
 - 2021-10-21: refactor graphql section 2
 - 2021-10-26: organize graphql section 31
 - 2021-11-07: expand graphql section 43
+- 2021-11-07: update graphql section 35

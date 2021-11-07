@@ -7,3 +7,4 @@
 - 2021-10-28: revise terraform section 82
 - 2021-11-06: update terraform section 87
 - 2021-11-07: add terraform section 99
+- 2021-11-07: revise terraform section 61

@@ -140,3 +140,4 @@
 - 2021-11-05: kubernetes practice session 14
 - 2021-11-05: terraform practice session 15
 - 2021-11-07: docker practice session 1
+- 2021-11-07: python practice session 2

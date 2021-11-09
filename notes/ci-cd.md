@@ -4,3 +4,4 @@
 - 2021-10-20: refactor ci-cd section 27
 - 2021-11-06: organize ci-cd section 93
 - 2021-11-06: expand ci-cd section 21
+- 2021-11-09: add ci-cd section 39

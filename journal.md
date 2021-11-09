@@ -149,3 +149,4 @@
 - 2021-11-09: docker practice session 2
 - 2021-11-09: postgresql practice session 3
 - 2021-11-09: data-structures practice session 4
+- 2021-11-09: fastapi practice session 5

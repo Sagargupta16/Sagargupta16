@@ -146,3 +146,4 @@
 - 2021-11-08: algorithms practice session 2
 - 2021-11-08: data-structures practice session 3
 - 2021-11-09: debugging practice session 1
+- 2021-11-09: docker practice session 2

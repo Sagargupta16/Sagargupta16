@@ -9,3 +9,4 @@
 - 2021-10-26: add docker section 17
 - 2021-10-27: organize docker section 89
 - 2021-10-28: expand docker section 89
+- 2021-11-09: improve docker section 64

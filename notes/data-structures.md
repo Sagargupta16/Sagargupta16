@@ -8,3 +8,4 @@
 - 2021-10-26: update data-structures section 46
 - 2021-11-02: add data-structures section 50
 - 2021-11-07: revise data-structures section 24
+- 2021-11-09: update data-structures section 18

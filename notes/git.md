@@ -4,3 +4,4 @@
 - 2021-10-22: revise git section 32
 - 2021-10-22: revise git section 49
 - 2021-10-27: improve git section 44
+- 2021-11-09: refactor git section 96

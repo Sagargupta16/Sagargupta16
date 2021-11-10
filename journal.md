@@ -156,3 +156,4 @@
 - 2021-11-10: postgresql practice session 4
 - 2021-11-10: linux practice session 5
 - 2021-11-10: kubernetes practice session 6
+- 2021-11-10: docker practice session 7

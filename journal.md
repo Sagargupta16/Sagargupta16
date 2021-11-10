@@ -153,3 +153,4 @@
 - 2021-11-10: javascript practice session 1
 - 2021-11-10: security practice session 2
 - 2021-11-10: algorithms practice session 3
+- 2021-11-10: postgresql practice session 4

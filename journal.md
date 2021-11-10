@@ -151,3 +151,4 @@
 - 2021-11-09: data-structures practice session 4
 - 2021-11-09: fastapi practice session 5
 - 2021-11-10: javascript practice session 1
+- 2021-11-10: security practice session 2

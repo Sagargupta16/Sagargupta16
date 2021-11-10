@@ -11,3 +11,4 @@
 - 2021-10-28: expand docker section 89
 - 2021-11-09: improve docker section 64
 - 2021-11-09: update docker section 80
+- 2021-11-10: refactor docker section 5

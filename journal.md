@@ -157,3 +157,4 @@
 - 2021-11-10: linux practice session 5
 - 2021-11-10: kubernetes practice session 6
 - 2021-11-10: docker practice session 7
+- 2021-11-12: api-design practice session 1

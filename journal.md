@@ -166,3 +166,4 @@
 - 2021-11-13: linux practice session 6
 - 2021-11-13: testing practice session 7
 - 2021-11-13: python practice session 8
+- 2021-11-13: postgresql practice session 9

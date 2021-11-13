@@ -9,3 +9,4 @@
 - 2021-11-07: add terraform section 99
 - 2021-11-07: revise terraform section 61
 - 2021-11-09: refactor terraform section 15
+- 2021-11-13: revise terraform section 48

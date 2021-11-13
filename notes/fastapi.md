@@ -4,3 +4,4 @@
 - 2021-10-23: add fastapi section 10
 - 2021-11-02: refactor fastapi section 87
 - 2021-11-09: refactor fastapi section 98
+- 2021-11-13: expand fastapi section 57

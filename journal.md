@@ -164,3 +164,4 @@
 - 2021-11-13: kubernetes practice session 4
 - 2021-11-13: aws practice session 5
 - 2021-11-13: linux practice session 6
+- 2021-11-13: testing practice session 7

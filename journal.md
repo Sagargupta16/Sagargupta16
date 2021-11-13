@@ -171,3 +171,4 @@
 - 2021-11-13: ci-cd practice session 11
 - 2021-11-13: linux practice session 12
 - 2021-11-13: postgresql practice session 13
+- 2021-11-13: data-structures practice session 14

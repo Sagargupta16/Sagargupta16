@@ -170,3 +170,4 @@
 - 2021-11-13: kubernetes practice session 10
 - 2021-11-13: ci-cd practice session 11
 - 2021-11-13: linux practice session 12
+- 2021-11-13: postgresql practice session 13

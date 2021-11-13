@@ -160,3 +160,4 @@
 - 2021-11-12: api-design practice session 1
 - 2021-11-13: docker practice session 1
 - 2021-11-13: ci-cd practice session 2
+- 2021-11-13: debugging practice session 3

@@ -162,3 +162,4 @@
 - 2021-11-13: ci-cd practice session 2
 - 2021-11-13: debugging practice session 3
 - 2021-11-13: kubernetes practice session 4
+- 2021-11-13: aws practice session 5

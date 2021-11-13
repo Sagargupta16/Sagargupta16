@@ -167,3 +167,4 @@
 - 2021-11-13: testing practice session 7
 - 2021-11-13: python practice session 8
 - 2021-11-13: postgresql practice session 9
+- 2021-11-13: kubernetes practice session 10

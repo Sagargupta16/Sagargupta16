@@ -173,3 +173,4 @@
 - 2021-11-13: postgresql practice session 13
 - 2021-11-13: data-structures practice session 14
 - 2021-11-13: fastapi practice session 15
+- 2021-11-17: javascript practice session 1

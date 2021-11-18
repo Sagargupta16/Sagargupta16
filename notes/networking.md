@@ -9,3 +9,4 @@
 - 2021-11-09: organize networking section 80
 - 2021-11-09: expand networking section 11
 - 2021-11-18: add networking section 39
+- 2021-11-18: refactor networking section 15

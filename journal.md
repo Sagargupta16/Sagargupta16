@@ -182,3 +182,4 @@
 - 2021-11-19: debugging practice session 5
 - 2021-11-19: data-structures practice session 6
 - 2021-11-19: linux practice session 7
+- 2021-11-19: linux practice session 8

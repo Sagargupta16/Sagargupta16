@@ -179,3 +179,4 @@
 - 2021-11-19: ml practice session 2
 - 2021-11-19: git practice session 3
 - 2021-11-19: ci-cd practice session 4
+- 2021-11-19: debugging practice session 5

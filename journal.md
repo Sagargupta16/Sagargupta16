@@ -176,3 +176,4 @@
 - 2021-11-17: javascript practice session 1
 - 2021-11-17: debugging practice session 2
 - 2021-11-19: ci-cd practice session 1
+- 2021-11-19: ml practice session 2

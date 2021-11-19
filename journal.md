@@ -183,3 +183,4 @@
 - 2021-11-19: data-structures practice session 6
 - 2021-11-19: linux practice session 7
 - 2021-11-19: linux practice session 8
+- 2021-11-19: react practice session 9

@@ -193,3 +193,4 @@
 - 2021-11-21: react practice session 4
 - 2021-11-21: aws practice session 5
 - 2021-11-21: fastapi practice session 6
+- 2021-11-21: terraform practice session 7

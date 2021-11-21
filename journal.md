@@ -190,3 +190,4 @@
 - 2021-11-21: fastapi practice session 1
 - 2021-11-21: postgresql practice session 2
 - 2021-11-21: testing practice session 3
+- 2021-11-21: react practice session 4

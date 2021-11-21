@@ -6,3 +6,4 @@
 - 2021-11-06: update rust section 95
 - 2021-11-07: expand rust section 96
 - 2021-11-09: refactor rust section 95
+- 2021-11-21: revise rust section 71

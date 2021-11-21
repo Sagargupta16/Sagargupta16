@@ -11,3 +11,4 @@
 - 2021-11-09: refactor terraform section 15
 - 2021-11-13: revise terraform section 48
 - 2021-11-19: revise terraform section 75
+- 2021-11-21: organize terraform section 32

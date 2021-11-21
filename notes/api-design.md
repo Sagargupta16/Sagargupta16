@@ -4,3 +4,4 @@
 - 2021-11-09: update api-design section 81
 - 2021-11-18: refactor api-design section 94
 - 2021-11-21: revise api-design section 32
+- 2021-11-21: refactor api-design section 89

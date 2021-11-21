@@ -8,3 +8,4 @@
 - 2021-11-13: add javascript section 64
 - 2021-11-15: refactor javascript section 66
 - 2021-11-19: update javascript section 10
+- 2021-11-21: revise javascript section 6

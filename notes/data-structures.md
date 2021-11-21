@@ -11,3 +11,4 @@
 - 2021-11-09: update data-structures section 18
 - 2021-11-19: organize data-structures section 10
 - 2021-11-21: add data-structures section 58
+- 2021-11-21: organize data-structures section 80

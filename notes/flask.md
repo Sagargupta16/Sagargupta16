@@ -6,3 +6,4 @@
 - 2021-11-09: expand flask section 89
 - 2021-11-09: improve flask section 14
 - 2021-11-14: refactor flask section 37
+- 2021-11-21: organize flask section 18

@@ -192,3 +192,4 @@
 - 2021-11-21: testing practice session 3
 - 2021-11-21: react practice session 4
 - 2021-11-21: aws practice session 5
+- 2021-11-21: fastapi practice session 6

@@ -196,3 +196,4 @@
 - 2021-11-21: terraform practice session 7
 - 2021-11-21: terraform practice session 8
 - 2021-11-21: ml practice session 9
+- 2021-11-22: algorithms practice session 1

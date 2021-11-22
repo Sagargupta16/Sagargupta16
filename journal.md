@@ -198,3 +198,4 @@
 - 2021-11-21: ml practice session 9
 - 2021-11-22: algorithms practice session 1
 - 2021-11-22: api-design practice session 2
+- 2021-11-22: react practice session 3

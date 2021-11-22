@@ -202,3 +202,4 @@
 - 2021-11-22: git practice session 4
 - 2021-11-22: mongodb practice session 5
 - 2021-11-22: debugging practice session 6
+- 2021-11-22: git practice session 7

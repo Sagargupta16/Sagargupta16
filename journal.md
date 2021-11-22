@@ -204,3 +204,4 @@
 - 2021-11-22: debugging practice session 6
 - 2021-11-22: git practice session 7
 - 2021-11-22: ml practice session 8
+- 2021-11-22: postgresql practice session 9

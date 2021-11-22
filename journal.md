@@ -206,3 +206,4 @@
 - 2021-11-22: ml practice session 8
 - 2021-11-22: postgresql practice session 9
 - 2021-11-22: aws practice session 10
+- 2021-11-22: mongodb practice session 11

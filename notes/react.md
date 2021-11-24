@@ -9,3 +9,4 @@
 - 2021-11-21: organize react section 26
 - 2021-11-21: revise react section 8
 - 2021-11-21: add react section 13
+- 2021-11-24: update react section 54

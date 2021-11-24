@@ -209,3 +209,4 @@
 - 2021-11-22: mongodb practice session 11
 - 2021-11-22: mongodb practice session 12
 - 2021-11-22: mongodb practice session 13
+- 2021-11-24: kubernetes practice session 1

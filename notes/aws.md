@@ -7,3 +7,4 @@
 - 2021-11-04: update aws section 94
 - 2021-11-09: organize aws section 66
 - 2021-11-25: expand aws section 1
+- 2021-11-25: improve aws section 7

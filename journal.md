@@ -216,3 +216,4 @@
 - 2021-11-25: terraform practice session 1
 - 2021-11-25: api-design practice session 2
 - 2021-11-25: testing practice session 3
+- 2021-11-25: aws practice session 4

@@ -218,3 +218,4 @@
 - 2021-11-25: testing practice session 3
 - 2021-11-25: aws practice session 4
 - 2021-11-25: api-design practice session 5
+- 2021-11-25: linux practice session 6

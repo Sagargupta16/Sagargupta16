@@ -213,3 +213,4 @@
 - 2021-11-24: mongodb practice session 2
 - 2021-11-24: data-structures practice session 3
 - 2021-11-24: terraform practice session 4
+- 2021-11-25: terraform practice session 1

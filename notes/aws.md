@@ -8,3 +8,4 @@
 - 2021-11-09: organize aws section 66
 - 2021-11-25: expand aws section 1
 - 2021-11-25: improve aws section 7
+- 2021-11-25: refactor aws section 86

@@ -220,3 +220,4 @@
 - 2021-11-25: api-design practice session 5
 - 2021-11-25: linux practice session 6
 - 2021-11-25: postgresql practice session 7
+- 2021-11-25: security practice session 8

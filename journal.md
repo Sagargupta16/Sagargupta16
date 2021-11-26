@@ -225,3 +225,4 @@
 - 2021-11-25: testing practice session 10
 - 2021-11-25: ci-cd practice session 11
 - 2021-11-25: postgresql practice session 12
+- 2021-11-26: data-structures practice session 1

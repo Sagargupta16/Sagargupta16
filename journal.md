@@ -227,3 +227,4 @@
 - 2021-11-25: postgresql practice session 12
 - 2021-11-26: data-structures practice session 1
 - 2021-11-26: aws practice session 2
+- 2021-11-26: algorithms practice session 3

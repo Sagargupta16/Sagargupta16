@@ -10,3 +10,4 @@
 - 2021-11-18: update fastapi section 24
 - 2021-11-21: revise fastapi section 23
 - 2021-11-21: revise fastapi section 76
+- 2021-11-26: expand fastapi section 5

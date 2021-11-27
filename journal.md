@@ -229,3 +229,4 @@
 - 2021-11-26: aws practice session 2
 - 2021-11-26: algorithms practice session 3
 - 2021-11-27: ml practice session 1
+- 2021-11-27: kubernetes practice session 2

@@ -10,3 +10,4 @@
 - 2021-11-19: update javascript section 10
 - 2021-11-21: revise javascript section 6
 - 2021-11-21: refactor javascript section 57
+- 2021-11-27: update javascript section 25

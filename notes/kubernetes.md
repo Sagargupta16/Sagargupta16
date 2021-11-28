@@ -4,3 +4,4 @@
 - 2021-10-20: update kubernetes section 57
 - 2021-11-07: revise kubernetes section 96
 - 2021-11-07: revise kubernetes section 90
+- 2021-11-28: add kubernetes section 93

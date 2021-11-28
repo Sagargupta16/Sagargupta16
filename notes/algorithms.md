@@ -4,3 +4,4 @@
 - 2021-10-26: add algorithms section 13
 - 2021-11-06: add algorithms section 61
 - 2021-11-21: improve algorithms section 51
+- 2021-11-28: refactor algorithms section 60

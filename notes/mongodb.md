@@ -7,3 +7,4 @@
 - 2021-11-17: organize mongodb section 21
 - 2021-11-21: revise mongodb section 38
 - 2021-11-21: expand mongodb section 11
+- 2021-11-28: improve mongodb section 39

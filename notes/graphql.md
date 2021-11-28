@@ -9,3 +9,4 @@
 - 2021-11-18: expand graphql section 95
 - 2021-11-21: revise graphql section 9
 - 2021-11-21: update graphql section 81
+- 2021-11-28: organize graphql section 68

@@ -235,3 +235,4 @@
 - 2021-12-01: kubernetes practice session 1
 - 2021-12-01: mongodb practice session 2
 - 2021-12-01: debugging practice session 3
+- 2021-12-02: git practice session 1

@@ -6,3 +6,4 @@
 - 2021-11-16: expand devops section 61
 - 2021-11-25: organize devops section 22
 - 2021-11-28: organize devops section 33
+- 2021-12-02: organize devops section 12

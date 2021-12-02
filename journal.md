@@ -247,3 +247,4 @@
 - 2021-12-02: algorithms practice session 10
 - 2021-12-02: security practice session 11
 - 2021-12-02: algorithms practice session 12
+- 2021-12-02: react practice session 13

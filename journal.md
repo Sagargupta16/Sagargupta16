@@ -242,3 +242,4 @@
 - 2021-12-02: react practice session 5
 - 2021-12-02: docker practice session 6
 - 2021-12-02: javascript practice session 7
+- 2021-12-02: data-structures practice session 8

@@ -239,3 +239,4 @@
 - 2021-12-02: mongodb practice session 2
 - 2021-12-02: mongodb practice session 3
 - 2021-12-02: api-design practice session 4
+- 2021-12-02: react practice session 5

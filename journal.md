@@ -244,3 +244,4 @@
 - 2021-12-02: javascript practice session 7
 - 2021-12-02: data-structures practice session 8
 - 2021-12-02: mongodb practice session 9
+- 2021-12-02: algorithms practice session 10

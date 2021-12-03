@@ -251,3 +251,4 @@
 - 2021-12-02: postgresql practice session 14
 - 2021-12-03: fastapi practice session 1
 - 2021-12-03: git practice session 2
+- 2021-12-03: ci-cd practice session 3

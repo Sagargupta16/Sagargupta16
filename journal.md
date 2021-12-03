@@ -249,3 +249,4 @@
 - 2021-12-02: algorithms practice session 12
 - 2021-12-02: react practice session 13
 - 2021-12-02: postgresql practice session 14
+- 2021-12-03: fastapi practice session 1

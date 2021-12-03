@@ -254,3 +254,4 @@
 - 2021-12-03: ci-cd practice session 3
 - 2021-12-03: ml practice session 4
 - 2021-12-03: kubernetes practice session 5
+- 2021-12-03: debugging practice session 6

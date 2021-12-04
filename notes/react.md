@@ -11,3 +11,4 @@
 - 2021-11-21: add react section 13
 - 2021-11-24: update react section 54
 - 2021-11-28: expand react section 62
+- 2021-12-04: improve react section 24

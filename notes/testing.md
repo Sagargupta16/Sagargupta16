@@ -12,3 +12,4 @@
 - 2021-11-10: improve testing section 66
 - 2021-11-28: add testing section 78
 - 2021-11-28: expand testing section 15
+- 2021-12-04: update testing section 31

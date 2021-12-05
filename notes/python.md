@@ -3,3 +3,4 @@
 - 2021-10-20: expand python section 73
 - 2021-10-22: add python section 35
 - 2021-11-16: improve python section 15
+- 2021-12-05: update python section 78

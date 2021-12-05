@@ -256,3 +256,4 @@
 - 2021-12-03: kubernetes practice session 5
 - 2021-12-03: debugging practice session 6
 - 2021-12-03: mongodb practice session 7
+- 2021-12-05: docker practice session 1

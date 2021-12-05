@@ -8,3 +8,4 @@
 - 2021-11-06: revise django section 23
 - 2021-11-07: revise django section 57
 - 2021-11-12: update django section 20
+- 2021-12-05: revise django section 53

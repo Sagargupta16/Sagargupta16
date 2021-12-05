@@ -258,3 +258,4 @@
 - 2021-12-03: mongodb practice session 7
 - 2021-12-05: docker practice session 1
 - 2021-12-05: ci-cd practice session 2
+- 2021-12-05: python practice session 3

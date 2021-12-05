@@ -8,3 +8,4 @@
 - 2021-11-09: refactor rust section 95
 - 2021-11-21: revise rust section 71
 - 2021-11-28: update rust section 36
+- 2021-12-05: organize rust section 44

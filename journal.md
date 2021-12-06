@@ -261,3 +261,4 @@
 - 2021-12-05: python practice session 3
 - 2021-12-06: kubernetes practice session 1
 - 2021-12-06: terraform practice session 2
+- 2021-12-06: python practice session 3

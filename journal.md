@@ -264,3 +264,4 @@
 - 2021-12-06: python practice session 3
 - 2021-12-07: fastapi practice session 1
 - 2021-12-07: docker practice session 2
+- 2021-12-07: mongodb practice session 3

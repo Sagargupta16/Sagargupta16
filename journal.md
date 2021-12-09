@@ -279,3 +279,4 @@
 - 2021-12-09: aws practice session 7
 - 2021-12-09: docker practice session 8
 - 2021-12-09: mongodb practice session 9
+- 2021-12-09: git practice session 10

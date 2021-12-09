@@ -276,3 +276,4 @@
 - 2021-12-09: python practice session 4
 - 2021-12-09: python practice session 5
 - 2021-12-09: mongodb practice session 6
+- 2021-12-09: aws practice session 7

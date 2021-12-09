@@ -272,3 +272,4 @@
 - 2021-12-08: api-design practice session 2
 - 2021-12-09: docker practice session 1
 - 2021-12-09: fastapi practice session 2
+- 2021-12-09: docker practice session 3

@@ -270,3 +270,4 @@
 - 2021-12-07: mongodb practice session 6
 - 2021-12-08: kubernetes practice session 1
 - 2021-12-08: api-design practice session 2
+- 2021-12-09: docker practice session 1

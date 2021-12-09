@@ -287,3 +287,4 @@
 - 2021-12-09: aws practice session 15
 - 2021-12-09: mongodb practice session 16
 - 2021-12-09: ml practice session 17
+- 2021-12-09: kubernetes practice session 18

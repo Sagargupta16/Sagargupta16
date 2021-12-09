@@ -7,3 +7,4 @@
 - 2021-11-09: refactor git section 96
 - 2021-11-21: update git section 52
 - 2021-12-04: improve git section 9
+- 2021-12-09: add git section 25

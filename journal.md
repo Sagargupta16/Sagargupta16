@@ -285,3 +285,4 @@
 - 2021-12-09: react practice session 13
 - 2021-12-09: testing practice session 14
 - 2021-12-09: aws practice session 15
+- 2021-12-09: mongodb practice session 16

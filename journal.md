@@ -291,3 +291,4 @@
 - 2021-12-09: aws practice session 19
 - 2021-12-09: terraform practice session 20
 - 2021-12-09: ml practice session 21
+- 2021-12-09: python practice session 22

@@ -15,3 +15,4 @@
 - 2021-11-28: improve data-structures section 8
 - 2021-12-05: refactor data-structures section 11
 - 2021-12-06: organize data-structures section 79
+- 2021-12-10: refactor data-structures section 95

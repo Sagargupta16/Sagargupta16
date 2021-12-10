@@ -294,3 +294,4 @@
 - 2021-12-09: python practice session 22
 - 2021-12-09: mongodb practice session 23
 - 2021-12-09: debugging practice session 24
+- 2021-12-10: mongodb practice session 1

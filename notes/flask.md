@@ -8,3 +8,4 @@
 - 2021-11-14: refactor flask section 37
 - 2021-11-21: organize flask section 18
 - 2021-12-08: organize flask section 48
+- 2021-12-12: add flask section 17

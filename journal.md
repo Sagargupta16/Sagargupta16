@@ -302,3 +302,4 @@
 - 2021-12-10: terraform practice session 6
 - 2021-12-13: postgresql practice session 1
 - 2021-12-13: docker practice session 2
+- 2021-12-13: linux practice session 3

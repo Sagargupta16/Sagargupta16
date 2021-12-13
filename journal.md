@@ -300,3 +300,4 @@
 - 2021-12-10: data-structures practice session 4
 - 2021-12-10: git practice session 5
 - 2021-12-10: terraform practice session 6
+- 2021-12-13: postgresql practice session 1

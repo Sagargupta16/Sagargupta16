@@ -306,3 +306,4 @@
 - 2021-12-13: ml practice session 4
 - 2021-12-13: kubernetes practice session 5
 - 2021-12-13: testing practice session 6
+- 2021-12-13: data-structures practice session 7

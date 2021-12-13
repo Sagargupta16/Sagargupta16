@@ -304,3 +304,4 @@
 - 2021-12-13: docker practice session 2
 - 2021-12-13: linux practice session 3
 - 2021-12-13: ml practice session 4
+- 2021-12-13: kubernetes practice session 5

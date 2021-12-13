@@ -308,3 +308,4 @@
 - 2021-12-13: testing practice session 6
 - 2021-12-13: data-structures practice session 7
 - 2021-12-13: mongodb practice session 8
+- 2021-12-13: algorithms practice session 9

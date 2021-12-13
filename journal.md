@@ -310,3 +310,4 @@
 - 2021-12-13: mongodb practice session 8
 - 2021-12-13: algorithms practice session 9
 - 2021-12-13: fastapi practice session 10
+- 2021-12-13: security practice session 11

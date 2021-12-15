@@ -10,3 +10,4 @@
 - 2021-11-26: refactor linux section 50
 - 2021-12-05: update linux section 4
 - 2021-12-14: expand linux section 97
+- 2021-12-15: update linux section 61

@@ -7,3 +7,4 @@
 - 2021-11-09: add ci-cd section 39
 - 2021-12-08: improve ci-cd section 79
 - 2021-12-13: refactor ci-cd section 19
+- 2021-12-15: improve ci-cd section 58

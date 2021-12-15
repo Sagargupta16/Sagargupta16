@@ -8,3 +8,4 @@
 - 2021-11-21: revise mongodb section 38
 - 2021-11-21: expand mongodb section 11
 - 2021-11-28: improve mongodb section 39
+- 2021-12-15: refactor mongodb section 49

@@ -316,3 +316,4 @@
 - 2021-12-13: api-design practice session 14
 - 2021-12-13: fastapi practice session 15
 - 2021-12-13: ci-cd practice session 16
+- 2021-12-15: testing practice session 1

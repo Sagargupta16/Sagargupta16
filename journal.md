@@ -325,3 +325,4 @@
 - 2021-12-16: data-structures practice session 6
 - 2021-12-16: git practice session 7
 - 2021-12-16: javascript practice session 8
+- 2021-12-16: postgresql practice session 9

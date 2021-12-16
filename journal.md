@@ -322,3 +322,4 @@
 - 2021-12-16: data-structures practice session 3
 - 2021-12-16: ml practice session 4
 - 2021-12-16: debugging practice session 5
+- 2021-12-16: data-structures practice session 6

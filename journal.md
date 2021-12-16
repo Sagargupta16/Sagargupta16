@@ -320,3 +320,4 @@
 - 2021-12-16: terraform practice session 1
 - 2021-12-16: postgresql practice session 2
 - 2021-12-16: data-structures practice session 3
+- 2021-12-16: ml practice session 4

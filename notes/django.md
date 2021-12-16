@@ -10,3 +10,4 @@
 - 2021-11-12: update django section 20
 - 2021-12-05: revise django section 53
 - 2021-12-05: expand django section 82
+- 2021-12-16: organize django section 90

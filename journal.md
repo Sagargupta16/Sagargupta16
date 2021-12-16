@@ -327,3 +327,4 @@
 - 2021-12-16: javascript practice session 8
 - 2021-12-16: postgresql practice session 9
 - 2021-12-16: fastapi practice session 10
+- 2021-12-16: algorithms practice session 11

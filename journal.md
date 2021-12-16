@@ -318,3 +318,4 @@
 - 2021-12-13: ci-cd practice session 16
 - 2021-12-15: testing practice session 1
 - 2021-12-16: terraform practice session 1
+- 2021-12-16: postgresql practice session 2

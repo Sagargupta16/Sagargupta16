@@ -13,3 +13,4 @@
 - 2021-12-06: refactor rust section 21
 - 2021-12-13: revise rust section 98
 - 2021-12-16: refactor rust section 41
+- 2021-12-17: expand rust section 90

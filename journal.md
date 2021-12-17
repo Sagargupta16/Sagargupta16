@@ -330,3 +330,4 @@
 - 2021-12-16: algorithms practice session 11
 - 2021-12-16: docker practice session 12
 - 2021-12-16: fastapi practice session 13
+- 2021-12-17: ci-cd practice session 1

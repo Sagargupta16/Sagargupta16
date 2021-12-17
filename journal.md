@@ -335,3 +335,4 @@
 - 2021-12-17: testing practice session 3
 - 2021-12-17: linux practice session 4
 - 2021-12-17: mongodb practice session 5
+- 2021-12-17: javascript practice session 6

@@ -333,3 +333,4 @@
 - 2021-12-17: ci-cd practice session 1
 - 2021-12-17: linux practice session 2
 - 2021-12-17: testing practice session 3
+- 2021-12-17: linux practice session 4

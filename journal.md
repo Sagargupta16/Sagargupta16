@@ -332,3 +332,4 @@
 - 2021-12-16: fastapi practice session 13
 - 2021-12-17: ci-cd practice session 1
 - 2021-12-17: linux practice session 2
+- 2021-12-17: testing practice session 3

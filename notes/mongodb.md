@@ -9,3 +9,4 @@
 - 2021-11-21: expand mongodb section 11
 - 2021-11-28: improve mongodb section 39
 - 2021-12-15: refactor mongodb section 49
+- 2021-12-18: update mongodb section 95

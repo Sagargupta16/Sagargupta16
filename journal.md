@@ -340,3 +340,4 @@
 - 2021-12-17: ml practice session 8
 - 2021-12-18: linux practice session 1
 - 2021-12-18: python practice session 2
+- 2021-12-18: data-structures practice session 3

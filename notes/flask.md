@@ -11,3 +11,4 @@
 - 2021-12-12: add flask section 17
 - 2021-12-13: organize flask section 55
 - 2021-12-17: revise flask section 2
+- 2021-12-18: revise flask section 9

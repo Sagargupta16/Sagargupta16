@@ -341,3 +341,4 @@
 - 2021-12-18: linux practice session 1
 - 2021-12-18: python practice session 2
 - 2021-12-18: data-structures practice session 3
+- 2021-12-18: docker practice session 4

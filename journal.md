@@ -352,3 +352,4 @@
 - 2021-12-18: api-design practice session 12
 - 2021-12-18: api-design practice session 13
 - 2021-12-18: fastapi practice session 14
+- 2021-12-18: testing practice session 15

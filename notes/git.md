@@ -9,3 +9,4 @@
 - 2021-12-04: improve git section 9
 - 2021-12-09: add git section 25
 - 2021-12-15: add git section 96
+- 2021-12-18: update git section 25

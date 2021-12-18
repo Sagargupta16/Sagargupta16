@@ -351,3 +351,4 @@
 - 2021-12-18: aws practice session 11
 - 2021-12-18: api-design practice session 12
 - 2021-12-18: api-design practice session 13
+- 2021-12-18: fastapi practice session 14

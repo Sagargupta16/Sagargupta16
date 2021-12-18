@@ -349,3 +349,4 @@
 - 2021-12-18: api-design practice session 9
 - 2021-12-18: ci-cd practice session 10
 - 2021-12-18: aws practice session 11
+- 2021-12-18: api-design practice session 12

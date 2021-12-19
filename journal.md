@@ -362,3 +362,4 @@
 - 2021-12-19: mongodb practice session 7
 - 2021-12-19: debugging practice session 8
 - 2021-12-19: git practice session 9
+- 2021-12-19: algorithms practice session 10

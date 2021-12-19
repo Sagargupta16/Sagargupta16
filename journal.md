@@ -367,3 +367,4 @@
 - 2021-12-19: docker practice session 12
 - 2021-12-19: debugging practice session 13
 - 2021-12-19: data-structures practice session 14
+- 2021-12-19: ci-cd practice session 15

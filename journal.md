@@ -356,3 +356,4 @@
 - 2021-12-19: aws practice session 1
 - 2021-12-19: debugging practice session 2
 - 2021-12-19: algorithms practice session 3
+- 2021-12-19: data-structures practice session 4

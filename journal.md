@@ -358,3 +358,4 @@
 - 2021-12-19: algorithms practice session 3
 - 2021-12-19: data-structures practice session 4
 - 2021-12-19: kubernetes practice session 5
+- 2021-12-19: debugging practice session 6

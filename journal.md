@@ -360,3 +360,4 @@
 - 2021-12-19: kubernetes practice session 5
 - 2021-12-19: debugging practice session 6
 - 2021-12-19: mongodb practice session 7
+- 2021-12-19: debugging practice session 8

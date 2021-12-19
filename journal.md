@@ -354,3 +354,4 @@
 - 2021-12-18: fastapi practice session 14
 - 2021-12-18: testing practice session 15
 - 2021-12-19: aws practice session 1
+- 2021-12-19: debugging practice session 2

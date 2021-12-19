@@ -366,3 +366,4 @@
 - 2021-12-19: react practice session 11
 - 2021-12-19: docker practice session 12
 - 2021-12-19: debugging practice session 13
+- 2021-12-19: data-structures practice session 14

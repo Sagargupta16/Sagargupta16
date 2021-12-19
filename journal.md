@@ -364,3 +364,4 @@
 - 2021-12-19: git practice session 9
 - 2021-12-19: algorithms practice session 10
 - 2021-12-19: react practice session 11
+- 2021-12-19: docker practice session 12

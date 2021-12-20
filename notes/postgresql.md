@@ -5,3 +5,4 @@
 - 2021-11-21: add postgresql section 85
 - 2021-12-08: update postgresql section 77
 - 2021-12-12: refactor postgresql section 77
+- 2021-12-20: organize postgresql section 17

@@ -5,3 +5,4 @@
 - 2021-11-28: improve golang section 59
 - 2021-11-29: add golang section 2
 - 2021-12-19: update golang section 39
+- 2021-12-20: organize golang section 50

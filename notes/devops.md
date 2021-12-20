@@ -12,3 +12,4 @@
 - 2021-12-06: improve devops section 21
 - 2021-12-08: refactor devops section 84
 - 2021-12-15: improve devops section 88
+- 2021-12-20: organize devops section 78

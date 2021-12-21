@@ -371,3 +371,4 @@
 - 2021-12-19: debugging practice session 16
 - 2021-12-19: python practice session 17
 - 2021-12-21: mongodb practice session 1
+- 2021-12-21: fastapi practice session 2

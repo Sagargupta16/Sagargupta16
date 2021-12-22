@@ -6,3 +6,4 @@
 - 2021-11-17: revise nginx section 41
 - 2021-11-19: add nginx section 67
 - 2021-12-20: revise nginx section 84
+- 2021-12-22: refactor nginx section 57

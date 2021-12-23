@@ -22,3 +22,4 @@
 - 2021-12-19: revise docker section 90
 - 2021-12-20: expand docker section 81
 - 2021-12-21: improve docker section 82
+- 2021-12-23: expand docker section 17

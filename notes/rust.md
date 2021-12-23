@@ -15,3 +15,4 @@
 - 2021-12-16: refactor rust section 41
 - 2021-12-17: expand rust section 90
 - 2021-12-23: improve rust section 73
+- 2021-12-23: organize rust section 30

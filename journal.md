@@ -376,3 +376,4 @@
 - 2021-12-21: aws practice session 4
 - 2021-12-23: ci-cd practice session 1
 - 2021-12-23: data-structures practice session 2
+- 2021-12-23: debugging practice session 3

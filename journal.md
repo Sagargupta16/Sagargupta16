@@ -379,3 +379,4 @@
 - 2021-12-23: debugging practice session 3
 - 2021-12-23: fastapi practice session 4
 - 2021-12-23: docker practice session 5
+- 2021-12-23: testing practice session 6

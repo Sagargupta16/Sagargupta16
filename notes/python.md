@@ -5,3 +5,4 @@
 - 2021-11-16: improve python section 15
 - 2021-12-05: update python section 78
 - 2021-12-18: organize python section 51
+- 2021-12-24: add python section 75

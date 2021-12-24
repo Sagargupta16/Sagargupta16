@@ -386,3 +386,4 @@
 - 2021-12-24: javascript practice session 4
 - 2021-12-24: mongodb practice session 5
 - 2021-12-24: react practice session 6
+- 2021-12-24: react practice session 7

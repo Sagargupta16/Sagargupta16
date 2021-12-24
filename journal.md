@@ -380,3 +380,4 @@
 - 2021-12-23: fastapi practice session 4
 - 2021-12-23: docker practice session 5
 - 2021-12-23: testing practice session 6
+- 2021-12-24: aws practice session 1

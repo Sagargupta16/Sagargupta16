@@ -389,3 +389,4 @@
 - 2021-12-24: react practice session 7
 - 2021-12-24: linux practice session 8
 - 2021-12-24: ml practice session 9
+- 2021-12-24: mongodb practice session 10

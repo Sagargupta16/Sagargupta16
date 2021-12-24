@@ -9,3 +9,4 @@
 - 2021-11-25: organize typescript section 75
 - 2021-12-04: expand typescript section 38
 - 2021-12-24: revise typescript section 64
+- 2021-12-24: expand typescript section 12

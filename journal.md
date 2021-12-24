@@ -387,3 +387,4 @@
 - 2021-12-24: mongodb practice session 5
 - 2021-12-24: react practice session 6
 - 2021-12-24: react practice session 7
+- 2021-12-24: linux practice session 8

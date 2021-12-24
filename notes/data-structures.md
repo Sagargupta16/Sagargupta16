@@ -18,3 +18,4 @@
 - 2021-12-10: refactor data-structures section 95
 - 2021-12-21: expand data-structures section 81
 - 2021-12-23: revise data-structures section 4
+- 2021-12-24: refactor data-structures section 71

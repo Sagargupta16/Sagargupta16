@@ -10,3 +10,4 @@
 - 2021-12-06: update nextjs section 78
 - 2021-12-17: expand nextjs section 88
 - 2021-12-24: expand nextjs section 25
+- 2021-12-24: organize nextjs section 86

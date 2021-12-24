@@ -383,3 +383,4 @@
 - 2021-12-24: aws practice session 1
 - 2021-12-24: api-design practice session 2
 - 2021-12-24: ml practice session 3
+- 2021-12-24: javascript practice session 4

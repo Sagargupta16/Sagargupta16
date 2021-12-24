@@ -382,3 +382,4 @@
 - 2021-12-23: testing practice session 6
 - 2021-12-24: aws practice session 1
 - 2021-12-24: api-design practice session 2
+- 2021-12-24: ml practice session 3

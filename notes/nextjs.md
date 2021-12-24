@@ -9,3 +9,4 @@
 - 2021-11-29: refactor nextjs section 23
 - 2021-12-06: update nextjs section 78
 - 2021-12-17: expand nextjs section 88
+- 2021-12-24: expand nextjs section 25

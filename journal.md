@@ -404,3 +404,4 @@
 - 2021-12-25: python practice session 12
 - 2021-12-25: aws practice session 13
 - 2021-12-25: react practice session 14
+- 2021-12-25: data-structures practice session 15

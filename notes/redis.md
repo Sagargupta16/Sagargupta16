@@ -11,3 +11,4 @@
 - 2021-11-21: expand redis section 21
 - 2021-11-28: add redis section 68
 - 2021-12-16: improve redis section 52
+- 2021-12-25: update redis section 44

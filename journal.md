@@ -392,3 +392,4 @@
 - 2021-12-24: mongodb practice session 10
 - 2021-12-25: testing practice session 1
 - 2021-12-25: docker practice session 2
+- 2021-12-25: docker practice session 3

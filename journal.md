@@ -400,3 +400,4 @@
 - 2021-12-25: kubernetes practice session 8
 - 2021-12-25: api-design practice session 9
 - 2021-12-25: aws practice session 10
+- 2021-12-25: terraform practice session 11

@@ -394,3 +394,4 @@
 - 2021-12-25: docker practice session 2
 - 2021-12-25: docker practice session 3
 - 2021-12-25: data-structures practice session 4
+- 2021-12-25: postgresql practice session 5

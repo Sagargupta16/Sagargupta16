@@ -12,3 +12,4 @@
 - 2021-12-18: update git section 25
 - 2021-12-22: expand git section 34
 - 2021-12-24: expand git section 19
+- 2021-12-25: organize git section 96

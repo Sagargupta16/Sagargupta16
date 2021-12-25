@@ -17,3 +17,4 @@
 - 2021-12-23: improve rust section 73
 - 2021-12-23: organize rust section 30
 - 2021-12-24: organize rust section 49
+- 2021-12-25: expand rust section 81

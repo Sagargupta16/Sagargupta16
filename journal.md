@@ -397,3 +397,4 @@
 - 2021-12-25: postgresql practice session 5
 - 2021-12-25: git practice session 6
 - 2021-12-25: postgresql practice session 7
+- 2021-12-25: kubernetes practice session 8

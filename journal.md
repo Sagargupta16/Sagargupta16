@@ -402,3 +402,4 @@
 - 2021-12-25: aws practice session 10
 - 2021-12-25: terraform practice session 11
 - 2021-12-25: python practice session 12
+- 2021-12-25: aws practice session 13

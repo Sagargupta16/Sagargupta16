@@ -415,3 +415,4 @@
 - 2021-12-26: kubernetes practice session 8
 - 2021-12-26: aws practice session 9
 - 2021-12-26: react practice session 10
+- 2021-12-26: linux practice session 11

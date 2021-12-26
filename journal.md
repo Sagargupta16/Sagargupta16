@@ -414,3 +414,4 @@
 - 2021-12-26: javascript practice session 7
 - 2021-12-26: kubernetes practice session 8
 - 2021-12-26: aws practice session 9
+- 2021-12-26: react practice session 10

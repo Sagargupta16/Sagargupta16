@@ -406,3 +406,4 @@
 - 2021-12-25: react practice session 14
 - 2021-12-25: data-structures practice session 15
 - 2021-12-26: mongodb practice session 1
+- 2021-12-26: git practice session 2

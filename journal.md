@@ -413,3 +413,4 @@
 - 2021-12-26: data-structures practice session 6
 - 2021-12-26: javascript practice session 7
 - 2021-12-26: kubernetes practice session 8
+- 2021-12-26: aws practice session 9

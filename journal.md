@@ -411,3 +411,4 @@
 - 2021-12-26: data-structures practice session 4
 - 2021-12-26: algorithms practice session 5
 - 2021-12-26: data-structures practice session 6
+- 2021-12-26: javascript practice session 7

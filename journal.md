@@ -419,3 +419,4 @@
 - 2021-12-26: security practice session 12
 - 2021-12-26: ml practice session 13
 - 2021-12-27: postgresql practice session 1
+- 2021-12-27: git practice session 2

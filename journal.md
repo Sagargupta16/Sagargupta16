@@ -420,3 +420,4 @@
 - 2021-12-26: ml practice session 13
 - 2021-12-27: postgresql practice session 1
 - 2021-12-27: git practice session 2
+- 2021-12-27: fastapi practice session 3

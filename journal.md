@@ -422,3 +422,4 @@
 - 2021-12-27: git practice session 2
 - 2021-12-27: fastapi practice session 3
 - 2021-12-27: linux practice session 4
+- 2021-12-27: linux practice session 5

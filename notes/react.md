@@ -14,3 +14,4 @@
 - 2021-12-04: improve react section 24
 - 2021-12-06: update react section 53
 - 2021-12-28: revise react section 3
+- 2021-12-28: refactor react section 75

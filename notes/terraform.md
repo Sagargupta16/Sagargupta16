@@ -15,3 +15,4 @@
 - 2021-12-05: refactor terraform section 98
 - 2021-12-24: revise terraform section 90
 - 2021-12-28: improve terraform section 14
+- 2021-12-28: update terraform section 14

@@ -7,3 +7,4 @@
 - 2021-12-18: organize python section 51
 - 2021-12-24: add python section 75
 - 2021-12-28: improve python section 93
+- 2021-12-28: add python section 22

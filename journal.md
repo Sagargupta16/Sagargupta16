@@ -428,3 +428,4 @@
 - 2021-12-29: fastapi practice session 1
 - 2021-12-29: api-design practice session 2
 - 2021-12-29: security practice session 3
+- 2021-12-29: kubernetes practice session 4

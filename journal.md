@@ -427,3 +427,4 @@
 - 2021-12-27: linux practice session 7
 - 2021-12-29: fastapi practice session 1
 - 2021-12-29: api-design practice session 2
+- 2021-12-29: security practice session 3

@@ -8,3 +8,4 @@
 - 2021-11-21: revise security section 8
 - 2021-12-05: add security section 34
 - 2021-12-28: update security section 77
+- 2021-12-29: refactor security section 2

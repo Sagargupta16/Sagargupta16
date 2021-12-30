@@ -431,3 +431,4 @@
 - 2021-12-29: kubernetes practice session 4
 - 2021-12-29: algorithms practice session 5
 - 2021-12-30: fastapi practice session 1
+- 2021-12-30: debugging practice session 2

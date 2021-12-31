@@ -435,3 +435,4 @@
 - 2021-12-30: aws practice session 3
 - 2021-12-31: security practice session 1
 - 2021-12-31: data-structures practice session 2
+- 2021-12-31: git practice session 3

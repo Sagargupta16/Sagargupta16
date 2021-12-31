@@ -9,3 +9,4 @@
 - 2021-12-13: refactor ci-cd section 19
 - 2021-12-15: improve ci-cd section 58
 - 2021-12-28: improve ci-cd section 9
+- 2021-12-31: update ci-cd section 1

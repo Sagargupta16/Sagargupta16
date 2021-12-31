@@ -11,3 +11,4 @@
 - 2021-12-25: improve kubernetes section 52
 - 2021-12-28: improve kubernetes section 16
 - 2021-12-31: organize kubernetes section 74
+- 2021-12-31: improve kubernetes section 95

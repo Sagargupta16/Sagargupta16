@@ -16,3 +16,4 @@
 - 2021-12-20: update networking section 14
 - 2021-12-20: organize networking section 80
 - 2021-12-22: revise networking section 92
+- 2021-12-31: organize networking section 32

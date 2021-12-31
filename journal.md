@@ -438,3 +438,4 @@
 - 2021-12-31: git practice session 3
 - 2021-12-31: mongodb practice session 4
 - 2021-12-31: react practice session 5
+- 2021-12-31: kubernetes practice session 6

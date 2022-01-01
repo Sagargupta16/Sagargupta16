@@ -439,3 +439,4 @@
 - 2021-12-31: mongodb practice session 4
 - 2021-12-31: react practice session 5
 - 2021-12-31: kubernetes practice session 6
+- 2022-01-01: fastapi practice session 1

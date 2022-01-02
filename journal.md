@@ -447,3 +447,4 @@
 - 2022-01-02: ml practice session 5
 - 2022-01-02: git practice session 6
 - 2022-01-02: docker practice session 7
+- 2022-01-02: fastapi practice session 8

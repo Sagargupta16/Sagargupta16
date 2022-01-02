@@ -467,3 +467,4 @@
 - 2022-01-02: data-structures practice session 25
 - 2022-01-02: testing practice session 26
 - 2022-01-02: algorithms practice session 27
+- 2022-01-02: docker practice session 28

@@ -473,3 +473,4 @@
 - 2022-01-02: git practice session 31
 - 2022-01-02: postgresql practice session 32
 - 2022-01-02: testing practice session 33
+- 2022-01-02: fastapi practice session 34

@@ -451,3 +451,4 @@
 - 2022-01-02: linux practice session 9
 - 2022-01-02: docker practice session 10
 - 2022-01-02: javascript practice session 11
+- 2022-01-02: python practice session 12

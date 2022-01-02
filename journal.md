@@ -458,3 +458,4 @@
 - 2022-01-02: react practice session 16
 - 2022-01-02: react practice session 17
 - 2022-01-02: aws practice session 18
+- 2022-01-02: api-design practice session 19

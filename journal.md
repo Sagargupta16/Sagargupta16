@@ -463,3 +463,4 @@
 - 2022-01-02: linux practice session 21
 - 2022-01-02: javascript practice session 22
 - 2022-01-02: terraform practice session 23
+- 2022-01-02: algorithms practice session 24

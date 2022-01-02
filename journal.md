@@ -464,3 +464,4 @@
 - 2022-01-02: javascript practice session 22
 - 2022-01-02: terraform practice session 23
 - 2022-01-02: algorithms practice session 24
+- 2022-01-02: data-structures practice session 25

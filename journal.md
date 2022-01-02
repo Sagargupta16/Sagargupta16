@@ -482,3 +482,4 @@
 - 2022-01-02: docker practice session 40
 - 2022-01-02: algorithms practice session 41
 - 2022-01-02: ml practice session 42
+- 2022-01-02: testing practice session 43

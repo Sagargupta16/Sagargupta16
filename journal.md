@@ -478,3 +478,4 @@
 - 2022-01-02: react practice session 36
 - 2022-01-02: debugging practice session 37
 - 2022-01-02: kubernetes practice session 38
+- 2022-01-02: data-structures practice session 39

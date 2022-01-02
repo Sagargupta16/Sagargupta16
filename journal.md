@@ -457,3 +457,4 @@
 - 2022-01-02: kubernetes practice session 15
 - 2022-01-02: react practice session 16
 - 2022-01-02: react practice session 17
+- 2022-01-02: aws practice session 18

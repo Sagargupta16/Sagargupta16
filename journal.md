@@ -487,3 +487,4 @@
 - 2022-01-02: docker practice session 45
 - 2022-01-02: docker practice session 46
 - 2022-01-02: ci-cd practice session 47
+- 2022-01-02: data-structures practice session 48

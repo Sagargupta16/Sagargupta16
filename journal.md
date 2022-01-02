@@ -461,3 +461,4 @@
 - 2022-01-02: api-design practice session 19
 - 2022-01-02: fastapi practice session 20
 - 2022-01-02: linux practice session 21
+- 2022-01-02: javascript practice session 22

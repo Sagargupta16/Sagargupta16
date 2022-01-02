@@ -454,3 +454,4 @@
 - 2022-01-02: python practice session 12
 - 2022-01-02: docker practice session 13
 - 2022-01-02: ml practice session 14
+- 2022-01-02: kubernetes practice session 15

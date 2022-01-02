@@ -445,3 +445,4 @@
 - 2022-01-02: testing practice session 3
 - 2022-01-02: mongodb practice session 4
 - 2022-01-02: ml practice session 5
+- 2022-01-02: git practice session 6

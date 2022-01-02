@@ -448,3 +448,4 @@
 - 2022-01-02: git practice session 6
 - 2022-01-02: docker practice session 7
 - 2022-01-02: fastapi practice session 8
+- 2022-01-02: linux practice session 9

@@ -489,3 +489,4 @@
 - 2022-01-02: ci-cd practice session 47
 - 2022-01-02: data-structures practice session 48
 - 2022-01-02: ml practice session 49
+- 2022-01-02: git practice session 50

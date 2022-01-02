@@ -441,3 +441,4 @@
 - 2021-12-31: kubernetes practice session 6
 - 2022-01-01: fastapi practice session 1
 - 2022-01-02: postgresql practice session 1
+- 2022-01-02: api-design practice session 2

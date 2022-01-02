@@ -460,3 +460,4 @@
 - 2022-01-02: aws practice session 18
 - 2022-01-02: api-design practice session 19
 - 2022-01-02: fastapi practice session 20
+- 2022-01-02: linux practice session 21

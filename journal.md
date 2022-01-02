@@ -470,3 +470,4 @@
 - 2022-01-02: docker practice session 28
 - 2022-01-02: kubernetes practice session 29
 - 2022-01-02: aws practice session 30
+- 2022-01-02: git practice session 31

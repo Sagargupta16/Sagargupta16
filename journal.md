@@ -485,3 +485,4 @@
 - 2022-01-02: testing practice session 43
 - 2022-01-02: mongodb practice session 44
 - 2022-01-02: docker practice session 45
+- 2022-01-02: docker practice session 46

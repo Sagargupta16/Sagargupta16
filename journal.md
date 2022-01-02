@@ -476,3 +476,4 @@
 - 2022-01-02: fastapi practice session 34
 - 2022-01-02: data-structures practice session 35
 - 2022-01-02: react practice session 36
+- 2022-01-02: debugging practice session 37

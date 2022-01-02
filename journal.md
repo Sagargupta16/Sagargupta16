@@ -443,3 +443,4 @@
 - 2022-01-02: postgresql practice session 1
 - 2022-01-02: api-design practice session 2
 - 2022-01-02: testing practice session 3
+- 2022-01-02: mongodb practice session 4

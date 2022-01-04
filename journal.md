@@ -490,3 +490,4 @@
 - 2022-01-02: data-structures practice session 48
 - 2022-01-02: ml practice session 49
 - 2022-01-02: git practice session 50
+- 2022-01-04: docker practice session 1

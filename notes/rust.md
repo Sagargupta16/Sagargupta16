@@ -20,3 +20,4 @@
 - 2021-12-25: expand rust section 81
 - 2022-01-04: add rust section 45
 - 2022-01-04: refactor rust section 6
+- 2022-01-04: revise rust section 51

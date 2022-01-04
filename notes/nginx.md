@@ -11,3 +11,4 @@
 - 2021-12-24: organize nginx section 41
 - 2021-12-28: update nginx section 57
 - 2022-01-04: add nginx section 11
+- 2022-01-04: improve nginx section 88

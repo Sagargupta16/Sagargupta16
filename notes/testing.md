@@ -16,3 +16,4 @@
 - 2021-12-05: expand testing section 63
 - 2021-12-18: revise testing section 76
 - 2021-12-20: improve testing section 32
+- 2022-01-04: improve testing section 42

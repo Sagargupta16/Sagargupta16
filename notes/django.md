@@ -16,3 +16,4 @@
 - 2021-12-24: improve django section 23
 - 2021-12-31: organize django section 57
 - 2021-12-31: refactor django section 5
+- 2022-01-04: revise django section 3

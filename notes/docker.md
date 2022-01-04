@@ -27,3 +27,4 @@
 - 2021-12-31: add docker section 19
 - 2021-12-31: expand docker section 98
 - 2021-12-31: revise docker section 26
+- 2022-01-04: refactor docker section 76

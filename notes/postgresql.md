@@ -8,3 +8,4 @@
 - 2021-12-20: organize postgresql section 17
 - 2021-12-20: organize postgresql section 80
 - 2021-12-30: improve postgresql section 71
+- 2022-01-04: expand postgresql section 63

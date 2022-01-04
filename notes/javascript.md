@@ -19,3 +19,4 @@
 - 2021-12-21: update javascript section 26
 - 2021-12-25: organize javascript section 66
 - 2021-12-31: expand javascript section 90
+- 2022-01-04: improve javascript section 50

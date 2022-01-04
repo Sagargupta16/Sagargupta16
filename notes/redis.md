@@ -14,3 +14,4 @@
 - 2021-12-25: update redis section 44
 - 2021-12-28: organize redis section 12
 - 2022-01-04: update redis section 42
+- 2022-01-04: organize redis section 7

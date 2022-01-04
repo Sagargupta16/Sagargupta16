@@ -12,3 +12,4 @@
 - 2021-12-05: organize aws section 7
 - 2021-12-09: organize aws section 35
 - 2021-12-31: organize aws section 85
+- 2022-01-04: improve aws section 55

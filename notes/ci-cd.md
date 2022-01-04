@@ -12,3 +12,4 @@
 - 2021-12-31: update ci-cd section 1
 - 2021-12-31: organize ci-cd section 86
 - 2022-01-04: revise ci-cd section 51
+- 2022-01-04: revise ci-cd section 84

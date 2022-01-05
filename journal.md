@@ -492,3 +492,4 @@
 - 2022-01-02: git practice session 50
 - 2022-01-04: docker practice session 1
 - 2022-01-04: linux practice session 2
+- 2022-01-05: terraform practice session 1

@@ -499,3 +499,4 @@
 - 2022-01-06: git practice session 4
 - 2022-01-06: kubernetes practice session 5
 - 2022-01-06: git practice session 6
+- 2022-01-06: docker practice session 7

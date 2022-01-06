@@ -14,3 +14,4 @@
 - 2021-12-31: organize aws section 85
 - 2022-01-04: improve aws section 55
 - 2022-01-04: add aws section 8
+- 2022-01-06: revise aws section 49

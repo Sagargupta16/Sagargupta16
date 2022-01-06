@@ -493,3 +493,4 @@
 - 2022-01-04: docker practice session 1
 - 2022-01-04: linux practice session 2
 - 2022-01-05: terraform practice session 1
+- 2022-01-06: python practice session 1

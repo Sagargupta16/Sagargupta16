@@ -497,3 +497,4 @@
 - 2022-01-06: python practice session 2
 - 2022-01-06: javascript practice session 3
 - 2022-01-06: git practice session 4
+- 2022-01-06: kubernetes practice session 5

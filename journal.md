@@ -500,3 +500,4 @@
 - 2022-01-06: kubernetes practice session 5
 - 2022-01-06: git practice session 6
 - 2022-01-06: docker practice session 7
+- 2022-01-07: algorithms practice session 1

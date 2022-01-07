@@ -502,3 +502,4 @@
 - 2022-01-06: docker practice session 7
 - 2022-01-07: algorithms practice session 1
 - 2022-01-07: aws practice session 2
+- 2022-01-07: security practice session 3

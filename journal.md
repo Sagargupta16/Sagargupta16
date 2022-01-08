@@ -514,3 +514,4 @@
 - 2022-01-08: fastapi practice session 9
 - 2022-01-08: testing practice session 10
 - 2022-01-08: python practice session 11
+- 2022-01-08: testing practice session 12

@@ -527,3 +527,4 @@
 - 2022-01-08: security practice session 22
 - 2022-01-08: algorithms practice session 23
 - 2022-01-08: linux practice session 24
+- 2022-01-08: linux practice session 25

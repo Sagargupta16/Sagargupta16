@@ -18,3 +18,4 @@
 - 2021-12-22: revise networking section 92
 - 2021-12-31: organize networking section 32
 - 2022-01-04: refactor networking section 3
+- 2022-01-08: refactor networking section 15

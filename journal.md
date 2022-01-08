@@ -533,3 +533,4 @@
 - 2022-01-08: api-design practice session 28
 - 2022-01-08: security practice session 29
 - 2022-01-08: react practice session 30
+- 2022-01-08: terraform practice session 31

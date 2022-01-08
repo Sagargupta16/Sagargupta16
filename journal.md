@@ -520,3 +520,4 @@
 - 2022-01-08: postgresql practice session 15
 - 2022-01-08: data-structures practice session 16
 - 2022-01-08: git practice session 17
+- 2022-01-08: security practice session 18

@@ -535,3 +535,4 @@
 - 2022-01-08: react practice session 30
 - 2022-01-08: terraform practice session 31
 - 2022-01-08: ml practice session 32
+- 2022-01-08: git practice session 33

@@ -537,3 +537,4 @@
 - 2022-01-08: ml practice session 32
 - 2022-01-08: git practice session 33
 - 2022-01-08: security practice session 34
+- 2022-01-08: terraform practice session 35

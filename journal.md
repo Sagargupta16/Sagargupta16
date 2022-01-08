@@ -529,3 +529,4 @@
 - 2022-01-08: linux practice session 24
 - 2022-01-08: linux practice session 25
 - 2022-01-08: aws practice session 26
+- 2022-01-08: testing practice session 27

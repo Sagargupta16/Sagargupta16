@@ -523,3 +523,4 @@
 - 2022-01-08: security practice session 18
 - 2022-01-08: python practice session 19
 - 2022-01-08: testing practice session 20
+- 2022-01-08: javascript practice session 21

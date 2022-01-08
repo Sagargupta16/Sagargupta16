@@ -543,3 +543,4 @@
 - 2022-01-08: testing practice session 38
 - 2022-01-08: linux practice session 39
 - 2022-01-08: testing practice session 40
+- 2022-01-08: data-structures practice session 41

@@ -504,3 +504,4 @@
 - 2022-01-07: aws practice session 2
 - 2022-01-07: security practice session 3
 - 2022-01-08: ci-cd practice session 1
+- 2022-01-08: aws practice session 2

@@ -507,3 +507,4 @@
 - 2022-01-08: aws practice session 2
 - 2022-01-08: postgresql practice session 3
 - 2022-01-08: data-structures practice session 4
+- 2022-01-08: aws practice session 5

@@ -517,3 +517,4 @@
 - 2022-01-08: testing practice session 12
 - 2022-01-08: ml practice session 13
 - 2022-01-08: git practice session 14
+- 2022-01-08: postgresql practice session 15

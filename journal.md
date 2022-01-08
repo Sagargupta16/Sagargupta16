@@ -509,3 +509,4 @@
 - 2022-01-08: data-structures practice session 4
 - 2022-01-08: aws practice session 5
 - 2022-01-08: git practice session 6
+- 2022-01-08: api-design practice session 7

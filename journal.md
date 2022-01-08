@@ -541,3 +541,4 @@
 - 2022-01-08: ml practice session 36
 - 2022-01-08: python practice session 37
 - 2022-01-08: testing practice session 38
+- 2022-01-08: linux practice session 39

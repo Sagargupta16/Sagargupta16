@@ -19,3 +19,4 @@
 - 2021-12-31: organize networking section 32
 - 2022-01-04: refactor networking section 3
 - 2022-01-08: refactor networking section 15
+- 2022-01-08: organize networking section 17

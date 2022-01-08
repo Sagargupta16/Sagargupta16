@@ -511,3 +511,4 @@
 - 2022-01-08: git practice session 6
 - 2022-01-08: api-design practice session 7
 - 2022-01-08: api-design practice session 8
+- 2022-01-08: fastapi practice session 9

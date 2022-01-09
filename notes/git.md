@@ -15,3 +15,4 @@
 - 2021-12-25: organize git section 96
 - 2021-12-31: add git section 82
 - 2022-01-01: expand git section 80
+- 2022-01-09: update git section 68

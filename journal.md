@@ -548,3 +548,4 @@
 - 2022-01-08: react practice session 43
 - 2022-01-09: api-design practice session 1
 - 2022-01-09: linux practice session 2
+- 2022-01-09: ci-cd practice session 3

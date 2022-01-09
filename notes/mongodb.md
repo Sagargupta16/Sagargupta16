@@ -13,3 +13,4 @@
 - 2021-12-22: update mongodb section 56
 - 2021-12-24: improve mongodb section 32
 - 2022-01-04: improve mongodb section 24
+- 2022-01-09: improve mongodb section 29

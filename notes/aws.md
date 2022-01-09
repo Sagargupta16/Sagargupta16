@@ -17,3 +17,4 @@
 - 2022-01-06: revise aws section 49
 - 2022-01-09: revise aws section 83
 - 2022-01-09: update aws section 82
+- 2022-01-09: add aws section 94

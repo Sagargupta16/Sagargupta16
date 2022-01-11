@@ -14,3 +14,4 @@
 - 2021-12-15: improve devops section 88
 - 2021-12-20: organize devops section 78
 - 2021-12-28: expand devops section 32
+- 2022-01-11: update devops section 60

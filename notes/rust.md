@@ -23,3 +23,4 @@
 - 2022-01-04: revise rust section 51
 - 2022-01-07: revise rust section 88
 - 2022-01-09: refactor rust section 76
+- 2022-01-11: revise rust section 22

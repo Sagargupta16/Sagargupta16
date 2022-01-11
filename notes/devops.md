@@ -16,3 +16,4 @@
 - 2021-12-28: expand devops section 32
 - 2022-01-11: update devops section 60
 - 2022-01-11: refactor devops section 29
+- 2022-01-11: improve devops section 28

@@ -19,3 +19,4 @@
 - 2022-01-04: update ml section 29
 - 2022-01-08: revise ml section 89
 - 2022-01-11: improve ml section 66
+- 2022-01-12: update ml section 58

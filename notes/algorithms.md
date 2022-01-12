@@ -9,3 +9,4 @@
 - 2021-12-31: add algorithms section 21
 - 2021-12-31: improve algorithms section 37
 - 2022-01-11: revise algorithms section 24
+- 2022-01-12: update algorithms section 40

@@ -550,3 +550,4 @@
 - 2022-01-09: linux practice session 2
 - 2022-01-09: ci-cd practice session 3
 - 2022-01-11: api-design practice session 1
+- 2022-01-12: data-structures practice session 1

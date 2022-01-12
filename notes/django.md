@@ -18,3 +18,4 @@
 - 2021-12-31: refactor django section 5
 - 2022-01-04: revise django section 3
 - 2022-01-11: update django section 44
+- 2022-01-12: expand django section 88

@@ -12,3 +12,4 @@
 - 2022-01-08: refactor python section 42
 - 2022-01-11: expand python section 41
 - 2022-01-11: revise python section 78
+- 2022-01-13: improve python section 4

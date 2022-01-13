@@ -582,3 +582,4 @@
 - 2022-01-13: algorithms practice session 29
 - 2022-01-13: api-design practice session 30
 - 2022-01-13: git practice session 31
+- 2022-01-13: debugging practice session 32

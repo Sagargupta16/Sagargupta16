@@ -573,3 +573,4 @@
 - 2022-01-13: ml practice session 20
 - 2022-01-13: git practice session 21
 - 2022-01-13: react practice session 22
+- 2022-01-13: javascript practice session 23

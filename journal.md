@@ -593,3 +593,4 @@
 - 2022-01-13: security practice session 40
 - 2022-01-13: aws practice session 41
 - 2022-01-13: testing practice session 42
+- 2022-01-13: ci-cd practice session 43

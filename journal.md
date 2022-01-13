@@ -564,3 +564,4 @@
 - 2022-01-13: mongodb practice session 11
 - 2022-01-13: testing practice session 12
 - 2022-01-13: ci-cd practice session 13
+- 2022-01-13: ci-cd practice session 14

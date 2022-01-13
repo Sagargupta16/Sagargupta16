@@ -556,3 +556,4 @@
 - 2022-01-13: algorithms practice session 3
 - 2022-01-13: ci-cd practice session 4
 - 2022-01-13: aws practice session 5
+- 2022-01-13: testing practice session 6

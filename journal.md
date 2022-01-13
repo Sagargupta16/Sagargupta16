@@ -557,3 +557,4 @@
 - 2022-01-13: ci-cd practice session 4
 - 2022-01-13: aws practice session 5
 - 2022-01-13: testing practice session 6
+- 2022-01-13: ml practice session 7

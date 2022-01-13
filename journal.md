@@ -555,3 +555,4 @@
 - 2022-01-13: mongodb practice session 2
 - 2022-01-13: algorithms practice session 3
 - 2022-01-13: ci-cd practice session 4
+- 2022-01-13: aws practice session 5

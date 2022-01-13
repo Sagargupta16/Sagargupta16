@@ -554,3 +554,4 @@
 - 2022-01-13: docker practice session 1
 - 2022-01-13: mongodb practice session 2
 - 2022-01-13: algorithms practice session 3
+- 2022-01-13: ci-cd practice session 4

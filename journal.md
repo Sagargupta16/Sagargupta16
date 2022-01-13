@@ -575,3 +575,4 @@
 - 2022-01-13: react practice session 22
 - 2022-01-13: javascript practice session 23
 - 2022-01-13: data-structures practice session 24
+- 2022-01-13: debugging practice session 25

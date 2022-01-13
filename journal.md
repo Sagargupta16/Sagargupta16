@@ -565,3 +565,4 @@
 - 2022-01-13: testing practice session 12
 - 2022-01-13: ci-cd practice session 13
 - 2022-01-13: ci-cd practice session 14
+- 2022-01-13: ci-cd practice session 15

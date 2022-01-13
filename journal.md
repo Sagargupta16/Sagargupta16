@@ -585,3 +585,4 @@
 - 2022-01-13: debugging practice session 32
 - 2022-01-13: mongodb practice session 33
 - 2022-01-13: ml practice session 34
+- 2022-01-13: security practice session 35

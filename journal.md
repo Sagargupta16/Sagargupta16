@@ -596,3 +596,4 @@
 - 2022-01-13: ci-cd practice session 43
 - 2022-01-13: testing practice session 44
 - 2022-01-13: api-design practice session 45
+- 2022-01-13: terraform practice session 46

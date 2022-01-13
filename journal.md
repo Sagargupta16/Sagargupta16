@@ -591,3 +591,4 @@
 - 2022-01-13: ci-cd practice session 38
 - 2022-01-13: python practice session 39
 - 2022-01-13: security practice session 40
+- 2022-01-13: aws practice session 41

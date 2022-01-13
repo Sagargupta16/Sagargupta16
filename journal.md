@@ -567,3 +567,4 @@
 - 2022-01-13: ci-cd practice session 14
 - 2022-01-13: ci-cd practice session 15
 - 2022-01-13: data-structures practice session 16
+- 2022-01-13: linux practice session 17

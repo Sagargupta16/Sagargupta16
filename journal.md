@@ -569,3 +569,4 @@
 - 2022-01-13: data-structures practice session 16
 - 2022-01-13: linux practice session 17
 - 2022-01-13: fastapi practice session 18
+- 2022-01-13: api-design practice session 19

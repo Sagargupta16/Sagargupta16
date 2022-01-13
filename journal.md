@@ -595,3 +595,4 @@
 - 2022-01-13: testing practice session 42
 - 2022-01-13: ci-cd practice session 43
 - 2022-01-13: testing practice session 44
+- 2022-01-13: api-design practice session 45

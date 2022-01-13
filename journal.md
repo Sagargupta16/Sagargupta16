@@ -562,3 +562,4 @@
 - 2022-01-13: ml practice session 9
 - 2022-01-13: react practice session 10
 - 2022-01-13: mongodb practice session 11
+- 2022-01-13: testing practice session 12

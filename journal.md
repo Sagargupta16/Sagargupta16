@@ -580,3 +580,4 @@
 - 2022-01-13: data-structures practice session 27
 - 2022-01-13: git practice session 28
 - 2022-01-13: algorithms practice session 29
+- 2022-01-13: api-design practice session 30

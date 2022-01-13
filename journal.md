@@ -552,3 +552,4 @@
 - 2022-01-11: api-design practice session 1
 - 2022-01-12: data-structures practice session 1
 - 2022-01-13: docker practice session 1
+- 2022-01-13: mongodb practice session 2

@@ -578,3 +578,4 @@
 - 2022-01-13: debugging practice session 25
 - 2022-01-13: ci-cd practice session 26
 - 2022-01-13: data-structures practice session 27
+- 2022-01-13: git practice session 28

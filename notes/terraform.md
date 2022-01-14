@@ -19,3 +19,4 @@
 - 2021-12-31: improve terraform section 58
 - 2022-01-04: refactor terraform section 7
 - 2022-01-11: update terraform section 64
+- 2022-01-14: update terraform section 16

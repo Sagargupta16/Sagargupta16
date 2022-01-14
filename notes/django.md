@@ -20,3 +20,4 @@
 - 2022-01-11: update django section 44
 - 2022-01-12: expand django section 88
 - 2022-01-14: organize django section 35
+- 2022-01-14: organize django section 25

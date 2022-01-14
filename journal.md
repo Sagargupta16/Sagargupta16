@@ -598,3 +598,4 @@
 - 2022-01-13: api-design practice session 45
 - 2022-01-13: terraform practice session 46
 - 2022-01-13: docker practice session 47
+- 2022-01-14: git practice session 1

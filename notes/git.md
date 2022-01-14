@@ -17,3 +17,4 @@
 - 2022-01-01: expand git section 80
 - 2022-01-09: update git section 68
 - 2022-01-11: refactor git section 60
+- 2022-01-14: update git section 20

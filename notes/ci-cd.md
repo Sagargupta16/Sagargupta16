@@ -15,3 +15,4 @@
 - 2022-01-04: revise ci-cd section 84
 - 2022-01-07: update ci-cd section 63
 - 2022-01-11: refactor ci-cd section 14
+- 2022-01-14: refactor ci-cd section 59

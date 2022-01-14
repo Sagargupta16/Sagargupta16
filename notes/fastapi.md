@@ -18,3 +18,4 @@
 - 2022-01-04: revise fastapi section 5
 - 2022-01-04: improve fastapi section 54
 - 2022-01-06: add fastapi section 80
+- 2022-01-14: refactor fastapi section 24

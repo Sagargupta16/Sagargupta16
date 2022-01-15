@@ -600,3 +600,4 @@
 - 2022-01-13: docker practice session 47
 - 2022-01-14: git practice session 1
 - 2022-01-15: security practice session 1
+- 2022-01-15: python practice session 2

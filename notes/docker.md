@@ -33,3 +33,4 @@
 - 2022-01-08: expand docker section 60
 - 2022-01-11: improve docker section 20
 - 2022-01-12: add docker section 74
+- 2022-01-19: revise docker section 29

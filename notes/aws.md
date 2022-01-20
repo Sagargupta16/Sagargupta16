@@ -20,3 +20,4 @@
 - 2022-01-09: add aws section 94
 - 2022-01-13: revise aws section 81
 - 2022-01-19: organize aws section 1
+- 2022-01-20: add aws section 38

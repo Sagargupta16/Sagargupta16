@@ -606,3 +606,4 @@
 - 2022-01-21: mongodb practice session 2
 - 2022-01-21: mongodb practice session 3
 - 2022-01-21: api-design practice session 4
+- 2022-01-21: postgresql practice session 5

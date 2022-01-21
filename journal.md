@@ -602,3 +602,4 @@
 - 2022-01-15: security practice session 1
 - 2022-01-15: python practice session 2
 - 2022-01-18: debugging practice session 1
+- 2022-01-21: api-design practice session 1

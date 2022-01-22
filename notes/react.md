@@ -16,3 +16,4 @@
 - 2021-12-28: revise react section 3
 - 2021-12-28: refactor react section 75
 - 2022-01-14: revise react section 5
+- 2022-01-22: refactor react section 43

@@ -11,3 +11,4 @@
 - 2022-01-04: expand postgresql section 63
 - 2022-01-20: organize postgresql section 9
 - 2022-01-22: revise postgresql section 97
+- 2022-01-22: expand postgresql section 87

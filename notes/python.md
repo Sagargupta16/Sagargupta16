@@ -14,3 +14,4 @@
 - 2022-01-11: revise python section 78
 - 2022-01-13: improve python section 4
 - 2022-01-13: revise python section 19
+- 2022-01-22: revise python section 7

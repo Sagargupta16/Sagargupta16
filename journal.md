@@ -608,3 +608,4 @@
 - 2022-01-21: api-design practice session 4
 - 2022-01-21: postgresql practice session 5
 - 2022-01-22: ci-cd practice session 1
+- 2022-01-23: debugging practice session 1

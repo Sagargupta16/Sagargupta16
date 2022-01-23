@@ -14,3 +14,4 @@
 - 2021-12-31: improve kubernetes section 95
 - 2021-12-31: refactor kubernetes section 87
 - 2022-01-14: revise kubernetes section 87
+- 2022-01-23: refactor kubernetes section 89

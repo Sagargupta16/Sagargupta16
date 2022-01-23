@@ -612,3 +612,4 @@
 - 2022-01-23: mongodb practice session 2
 - 2022-01-23: python practice session 3
 - 2022-01-23: debugging practice session 4
+- 2022-01-23: git practice session 5

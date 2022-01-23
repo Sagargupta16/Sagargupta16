@@ -23,3 +23,4 @@
 - 2022-01-11: expand javascript section 93
 - 2022-01-11: update javascript section 29
 - 2022-01-12: expand javascript section 96
+- 2022-01-23: add javascript section 17

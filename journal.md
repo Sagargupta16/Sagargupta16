@@ -615,3 +615,4 @@
 - 2022-01-23: git practice session 5
 - 2022-01-23: python practice session 6
 - 2022-01-23: git practice session 7
+- 2022-01-23: ml practice session 8

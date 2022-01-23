@@ -618,3 +618,4 @@
 - 2022-01-23: ml practice session 8
 - 2022-01-23: terraform practice session 9
 - 2022-01-23: testing practice session 10
+- 2022-01-23: docker practice session 11

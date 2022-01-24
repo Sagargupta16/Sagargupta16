@@ -619,3 +619,4 @@
 - 2022-01-23: terraform practice session 9
 - 2022-01-23: testing practice session 10
 - 2022-01-23: docker practice session 11
+- 2022-01-24: ci-cd practice session 1

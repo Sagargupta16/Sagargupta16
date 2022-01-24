@@ -625,3 +625,4 @@
 - 2022-01-24: react practice session 4
 - 2022-01-24: linux practice session 5
 - 2022-01-24: docker practice session 6
+- 2022-01-24: data-structures practice session 7

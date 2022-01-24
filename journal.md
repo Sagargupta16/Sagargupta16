@@ -623,3 +623,4 @@
 - 2022-01-24: debugging practice session 2
 - 2022-01-24: ci-cd practice session 3
 - 2022-01-24: react practice session 4
+- 2022-01-24: linux practice session 5

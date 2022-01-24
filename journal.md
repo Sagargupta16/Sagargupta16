@@ -621,3 +621,4 @@
 - 2022-01-23: docker practice session 11
 - 2022-01-24: ci-cd practice session 1
 - 2022-01-24: debugging practice session 2
+- 2022-01-24: ci-cd practice session 3

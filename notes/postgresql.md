@@ -14,3 +14,4 @@
 - 2022-01-22: expand postgresql section 87
 - 2022-01-23: improve postgresql section 28
 - 2022-01-23: refactor postgresql section 24
+- 2022-01-25: improve postgresql section 15

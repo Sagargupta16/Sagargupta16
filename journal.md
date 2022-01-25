@@ -627,3 +627,4 @@
 - 2022-01-24: docker practice session 6
 - 2022-01-24: data-structures practice session 7
 - 2022-01-25: terraform practice session 1
+- 2022-01-25: ml practice session 2

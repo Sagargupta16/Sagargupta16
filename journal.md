@@ -628,3 +628,4 @@
 - 2022-01-24: data-structures practice session 7
 - 2022-01-25: terraform practice session 1
 - 2022-01-25: ml practice session 2
+- 2022-01-25: mongodb practice session 3

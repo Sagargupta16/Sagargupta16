@@ -630,3 +630,4 @@
 - 2022-01-25: ml practice session 2
 - 2022-01-25: mongodb practice session 3
 - 2022-01-25: python practice session 4
+- 2022-01-25: terraform practice session 5

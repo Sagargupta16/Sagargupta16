@@ -17,3 +17,4 @@
 - 2022-01-22: revise python section 7
 - 2022-01-22: revise python section 57
 - 2022-01-26: organize python section 24
+- 2022-01-26: organize python section 87

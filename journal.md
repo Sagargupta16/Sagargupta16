@@ -651,3 +651,4 @@
 - 2022-01-26: algorithms practice session 16
 - 2022-01-26: react practice session 17
 - 2022-01-26: fastapi practice session 18
+- 2022-01-26: ml practice session 19

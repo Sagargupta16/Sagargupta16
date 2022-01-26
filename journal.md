@@ -659,3 +659,4 @@
 - 2022-01-26: ci-cd practice session 24
 - 2022-01-26: debugging practice session 25
 - 2022-01-26: aws practice session 26
+- 2022-01-26: react practice session 27

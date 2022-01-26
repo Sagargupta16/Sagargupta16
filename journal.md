@@ -647,3 +647,4 @@
 - 2022-01-26: data-structures practice session 12
 - 2022-01-26: python practice session 13
 - 2022-01-26: ml practice session 14
+- 2022-01-26: python practice session 15

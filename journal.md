@@ -661,3 +661,4 @@
 - 2022-01-26: aws practice session 26
 - 2022-01-26: react practice session 27
 - 2022-01-26: javascript practice session 28
+- 2022-01-26: linux practice session 29

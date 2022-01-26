@@ -17,3 +17,4 @@
 - 2021-12-28: update linux section 74
 - 2021-12-31: expand linux section 8
 - 2022-01-12: revise linux section 93
+- 2022-01-26: add linux section 43

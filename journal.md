@@ -638,3 +638,4 @@
 - 2022-01-26: ml practice session 3
 - 2022-01-26: docker practice session 4
 - 2022-01-26: linux practice session 5
+- 2022-01-26: postgresql practice session 6

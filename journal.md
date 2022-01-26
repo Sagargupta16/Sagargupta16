@@ -670,3 +670,4 @@
 - 2022-01-26: git practice session 35
 - 2022-01-26: fastapi practice session 36
 - 2022-01-26: linux practice session 37
+- 2022-01-26: api-design practice session 38

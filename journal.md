@@ -677,3 +677,4 @@
 - 2022-01-26: data-structures practice session 42
 - 2022-01-26: security practice session 43
 - 2022-01-26: terraform practice session 44
+- 2022-01-26: terraform practice session 45

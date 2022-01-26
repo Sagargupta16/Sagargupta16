@@ -667,3 +667,4 @@
 - 2022-01-26: ml practice session 32
 - 2022-01-26: api-design practice session 33
 - 2022-01-26: api-design practice session 34
+- 2022-01-26: git practice session 35

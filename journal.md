@@ -678,3 +678,4 @@
 - 2022-01-26: security practice session 43
 - 2022-01-26: terraform practice session 44
 - 2022-01-26: terraform practice session 45
+- 2022-01-26: kubernetes practice session 46

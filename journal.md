@@ -640,3 +640,4 @@
 - 2022-01-26: linux practice session 5
 - 2022-01-26: postgresql practice session 6
 - 2022-01-26: git practice session 7
+- 2022-01-26: react practice session 8

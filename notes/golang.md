@@ -13,3 +13,4 @@
 - 2022-01-22: revise golang section 5
 - 2022-01-23: revise golang section 3
 - 2022-01-23: expand golang section 28
+- 2022-01-26: revise golang section 9

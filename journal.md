@@ -665,3 +665,4 @@
 - 2022-01-26: data-structures practice session 30
 - 2022-01-26: data-structures practice session 31
 - 2022-01-26: ml practice session 32
+- 2022-01-26: api-design practice session 33

@@ -648,3 +648,4 @@
 - 2022-01-26: python practice session 13
 - 2022-01-26: ml practice session 14
 - 2022-01-26: python practice session 15
+- 2022-01-26: algorithms practice session 16

@@ -636,3 +636,4 @@
 - 2022-01-26: debugging practice session 1
 - 2022-01-26: git practice session 2
 - 2022-01-26: ml practice session 3
+- 2022-01-26: docker practice session 4

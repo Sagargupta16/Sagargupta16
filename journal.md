@@ -643,3 +643,4 @@
 - 2022-01-26: react practice session 8
 - 2022-01-26: javascript practice session 9
 - 2022-01-26: fastapi practice session 10
+- 2022-01-26: javascript practice session 11

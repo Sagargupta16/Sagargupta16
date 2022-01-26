@@ -21,3 +21,4 @@
 - 2022-01-11: update terraform section 64
 - 2022-01-14: update terraform section 16
 - 2022-01-23: organize terraform section 20
+- 2022-01-26: improve terraform section 42

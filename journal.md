@@ -673,3 +673,4 @@
 - 2022-01-26: api-design practice session 38
 - 2022-01-26: javascript practice session 39
 - 2022-01-26: docker practice session 40
+- 2022-01-26: algorithms practice session 41

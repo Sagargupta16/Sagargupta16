@@ -652,3 +652,4 @@
 - 2022-01-26: react practice session 17
 - 2022-01-26: fastapi practice session 18
 - 2022-01-26: ml practice session 19
+- 2022-01-26: mongodb practice session 20

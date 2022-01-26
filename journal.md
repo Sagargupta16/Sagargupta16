@@ -633,3 +633,4 @@
 - 2022-01-25: terraform practice session 5
 - 2022-01-25: postgresql practice session 6
 - 2022-01-25: debugging practice session 7
+- 2022-01-26: debugging practice session 1

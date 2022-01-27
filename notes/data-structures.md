@@ -26,3 +26,4 @@
 - 2022-01-26: expand data-structures section 72
 - 2022-01-26: expand data-structures section 1
 - 2022-01-26: organize data-structures section 39
+- 2022-01-27: update data-structures section 40

@@ -683,3 +683,4 @@
 - 2022-01-26: ml practice session 48
 - 2022-01-26: git practice session 49
 - 2022-01-26: kubernetes practice session 50
+- 2022-01-28: security practice session 1

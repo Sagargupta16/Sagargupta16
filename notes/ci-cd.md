@@ -17,3 +17,4 @@
 - 2022-01-11: refactor ci-cd section 14
 - 2022-01-14: refactor ci-cd section 59
 - 2022-01-17: revise ci-cd section 9
+- 2022-01-29: organize ci-cd section 20

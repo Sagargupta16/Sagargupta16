@@ -15,3 +15,4 @@
 - 2022-01-04: improve mongodb section 24
 - 2022-01-09: improve mongodb section 29
 - 2022-01-12: add mongodb section 92
+- 2022-01-29: refactor mongodb section 87

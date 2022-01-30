@@ -684,3 +684,4 @@
 - 2022-01-26: git practice session 49
 - 2022-01-26: kubernetes practice session 50
 - 2022-01-28: security practice session 1
+- 2022-01-30: javascript practice session 1

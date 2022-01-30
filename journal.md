@@ -692,3 +692,4 @@
 - 2022-01-30: mongodb practice session 6
 - 2022-01-30: react practice session 7
 - 2022-01-30: postgresql practice session 8
+- 2022-01-30: aws practice session 9

@@ -691,3 +691,4 @@
 - 2022-01-30: data-structures practice session 5
 - 2022-01-30: mongodb practice session 6
 - 2022-01-30: react practice session 7
+- 2022-01-30: postgresql practice session 8

@@ -25,3 +25,4 @@
 - 2022-01-26: refactor django section 90
 - 2022-01-29: revise django section 35
 - 2022-01-29: add django section 26
+- 2022-01-30: revise django section 57

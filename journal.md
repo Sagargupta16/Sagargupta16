@@ -688,3 +688,4 @@
 - 2022-01-30: aws practice session 2
 - 2022-01-30: aws practice session 3
 - 2022-01-30: ci-cd practice session 4
+- 2022-01-30: data-structures practice session 5

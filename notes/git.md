@@ -24,3 +24,4 @@
 - 2022-01-22: improve git section 88
 - 2022-01-23: add git section 95
 - 2022-01-26: expand git section 99
+- 2022-01-31: organize git section 63

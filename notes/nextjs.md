@@ -16,3 +16,4 @@
 - 2021-12-31: organize nextjs section 4
 - 2021-12-31: update nextjs section 23
 - 2022-01-27: revise nextjs section 57
+- 2022-01-31: revise nextjs section 45

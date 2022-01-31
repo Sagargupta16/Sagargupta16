@@ -695,3 +695,4 @@
 - 2022-01-30: aws practice session 9
 - 2022-01-30: mongodb practice session 10
 - 2022-01-30: linux practice session 11
+- 2022-01-31: git practice session 1

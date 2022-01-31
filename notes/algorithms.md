@@ -17,3 +17,4 @@
 - 2022-01-26: add algorithms section 48
 - 2022-01-26: add algorithms section 44
 - 2022-01-26: refactor algorithms section 96
+- 2022-01-31: refactor algorithms section 64

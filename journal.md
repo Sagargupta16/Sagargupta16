@@ -698,3 +698,4 @@
 - 2022-01-31: git practice session 1
 - 2022-01-31: testing practice session 2
 - 2022-02-01: linux practice session 1
+- 2022-02-02: api-design practice session 1

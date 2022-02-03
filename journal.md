@@ -700,3 +700,4 @@
 - 2022-02-01: linux practice session 1
 - 2022-02-02: api-design practice session 1
 - 2022-02-02: ml practice session 2
+- 2022-02-03: aws practice session 1

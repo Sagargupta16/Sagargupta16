@@ -19,3 +19,4 @@
 - 2022-01-26: organize python section 24
 - 2022-01-26: organize python section 87
 - 2022-01-30: update python section 96
+- 2022-02-03: refactor python section 64

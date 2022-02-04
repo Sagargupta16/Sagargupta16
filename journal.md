@@ -703,3 +703,4 @@
 - 2022-02-03: aws practice session 1
 - 2022-02-04: data-structures practice session 1
 - 2022-02-04: security practice session 2
+- 2022-02-04: terraform practice session 3

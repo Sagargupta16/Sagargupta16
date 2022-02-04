@@ -706,3 +706,4 @@
 - 2022-02-04: terraform practice session 3
 - 2022-02-04: python practice session 4
 - 2022-02-04: terraform practice session 5
+- 2022-02-04: python practice session 6

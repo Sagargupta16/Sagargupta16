@@ -709,3 +709,4 @@
 - 2022-02-04: python practice session 6
 - 2022-02-04: aws practice session 7
 - 2022-02-05: data-structures practice session 1
+- 2022-02-05: terraform practice session 2

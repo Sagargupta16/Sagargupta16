@@ -712,3 +712,4 @@
 - 2022-02-05: terraform practice session 2
 - 2022-02-05: git practice session 3
 - 2022-02-06: react practice session 1
+- 2022-02-06: postgresql practice session 2

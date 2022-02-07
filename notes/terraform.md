@@ -23,3 +23,4 @@
 - 2022-01-23: organize terraform section 20
 - 2022-01-26: improve terraform section 42
 - 2022-02-02: add terraform section 74
+- 2022-02-07: refactor terraform section 49

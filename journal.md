@@ -715,3 +715,4 @@
 - 2022-02-06: postgresql practice session 2
 - 2022-02-07: data-structures practice session 1
 - 2022-02-07: security practice session 2
+- 2022-02-07: git practice session 3

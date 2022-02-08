@@ -717,3 +717,4 @@
 - 2022-02-07: security practice session 2
 - 2022-02-07: git practice session 3
 - 2022-02-07: linux practice session 4
+- 2022-02-08: data-structures practice session 1

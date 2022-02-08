@@ -719,3 +719,4 @@
 - 2022-02-07: linux practice session 4
 - 2022-02-08: data-structures practice session 1
 - 2022-02-08: ci-cd practice session 2
+- 2022-02-08: react practice session 3

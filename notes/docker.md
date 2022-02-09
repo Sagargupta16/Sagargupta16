@@ -37,3 +37,4 @@
 - 2022-01-22: improve docker section 68
 - 2022-01-29: improve docker section 79
 - 2022-02-09: update docker section 89
+- 2022-02-09: update docker section 42

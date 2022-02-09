@@ -19,3 +19,4 @@
 - 2022-01-22: refactor react section 43
 - 2022-01-26: improve react section 86
 - 2022-02-02: update react section 15
+- 2022-02-09: improve react section 8

@@ -12,3 +12,4 @@
 - 2021-12-31: refactor security section 66
 - 2022-01-08: update security section 23
 - 2022-01-19: revise security section 1
+- 2022-02-09: revise security section 36

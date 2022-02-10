@@ -721,3 +721,4 @@
 - 2022-02-08: ci-cd practice session 2
 - 2022-02-08: react practice session 3
 - 2022-02-10: testing practice session 1
+- 2022-02-10: postgresql practice session 2

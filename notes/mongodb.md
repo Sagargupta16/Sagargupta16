@@ -16,3 +16,4 @@
 - 2022-01-09: improve mongodb section 29
 - 2022-01-12: add mongodb section 92
 - 2022-01-29: refactor mongodb section 87
+- 2022-02-10: expand mongodb section 36

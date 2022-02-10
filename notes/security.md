@@ -13,3 +13,4 @@
 - 2022-01-08: update security section 23
 - 2022-01-19: revise security section 1
 - 2022-02-09: revise security section 36
+- 2022-02-10: improve security section 94

@@ -725,3 +725,4 @@
 - 2022-02-10: terraform practice session 3
 - 2022-02-11: algorithms practice session 1
 - 2022-02-11: docker practice session 2
+- 2022-02-11: data-structures practice session 3

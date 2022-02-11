@@ -727,3 +727,4 @@
 - 2022-02-11: docker practice session 2
 - 2022-02-11: data-structures practice session 3
 - 2022-02-11: data-structures practice session 4
+- 2022-02-11: aws practice session 5

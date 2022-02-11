@@ -26,3 +26,4 @@
 - 2022-01-26: expand aws section 71
 - 2022-02-09: add aws section 46
 - 2022-02-09: organize aws section 16
+- 2022-02-11: refactor aws section 77

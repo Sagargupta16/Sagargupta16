@@ -26,3 +26,4 @@
 - 2022-01-26: improve graphql section 64
 - 2022-02-02: update graphql section 49
 - 2022-02-06: add graphql section 37
+- 2022-02-11: improve graphql section 28

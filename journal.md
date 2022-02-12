@@ -730,3 +730,4 @@
 - 2022-02-11: aws practice session 5
 - 2022-02-11: api-design practice session 6
 - 2022-02-11: algorithms practice session 7
+- 2022-02-12: ci-cd practice session 1

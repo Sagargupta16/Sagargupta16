@@ -39,3 +39,4 @@
 - 2022-02-09: update docker section 89
 - 2022-02-09: update docker section 42
 - 2022-02-11: refactor docker section 69
+- 2022-02-12: revise docker section 31

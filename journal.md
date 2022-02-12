@@ -738,3 +738,4 @@
 - 2022-02-12: aws practice session 6
 - 2022-02-12: docker practice session 7
 - 2022-02-12: docker practice session 8
+- 2022-02-12: testing practice session 9

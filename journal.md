@@ -736,3 +736,4 @@
 - 2022-02-12: fastapi practice session 4
 - 2022-02-12: fastapi practice session 5
 - 2022-02-12: aws practice session 6
+- 2022-02-12: docker practice session 7

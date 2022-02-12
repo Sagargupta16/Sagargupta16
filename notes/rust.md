@@ -31,3 +31,4 @@
 - 2022-02-09: expand rust section 53
 - 2022-02-09: revise rust section 55
 - 2022-02-10: organize rust section 41
+- 2022-02-12: expand rust section 63

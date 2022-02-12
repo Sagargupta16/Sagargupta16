@@ -740,3 +740,4 @@
 - 2022-02-12: docker practice session 8
 - 2022-02-12: testing practice session 9
 - 2022-02-12: api-design practice session 10
+- 2022-02-12: data-structures practice session 11

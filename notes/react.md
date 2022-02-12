@@ -21,3 +21,4 @@
 - 2022-02-02: update react section 15
 - 2022-02-09: improve react section 8
 - 2022-02-09: update react section 8
+- 2022-02-12: organize react section 18

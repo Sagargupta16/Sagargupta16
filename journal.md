@@ -735,3 +735,4 @@
 - 2022-02-12: fastapi practice session 3
 - 2022-02-12: fastapi practice session 4
 - 2022-02-12: fastapi practice session 5
+- 2022-02-12: aws practice session 6

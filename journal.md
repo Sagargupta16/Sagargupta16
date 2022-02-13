@@ -746,3 +746,4 @@
 - 2022-02-13: security practice session 2
 - 2022-02-13: api-design practice session 3
 - 2022-02-13: debugging practice session 4
+- 2022-02-13: security practice session 5

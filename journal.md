@@ -755,3 +755,4 @@
 - 2022-02-13: ci-cd practice session 11
 - 2022-02-13: postgresql practice session 12
 - 2022-02-13: security practice session 13
+- 2022-02-13: testing practice session 14

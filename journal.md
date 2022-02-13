@@ -767,3 +767,4 @@
 - 2022-02-13: algorithms practice session 23
 - 2022-02-13: data-structures practice session 24
 - 2022-02-13: ci-cd practice session 25
+- 2022-02-13: data-structures practice session 26

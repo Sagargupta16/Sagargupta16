@@ -770,3 +770,4 @@
 - 2022-02-13: data-structures practice session 26
 - 2022-02-13: aws practice session 27
 - 2022-02-13: debugging practice session 28
+- 2022-02-13: debugging practice session 29

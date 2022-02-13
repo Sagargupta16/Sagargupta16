@@ -771,3 +771,4 @@
 - 2022-02-13: aws practice session 27
 - 2022-02-13: debugging practice session 28
 - 2022-02-13: debugging practice session 29
+- 2022-02-13: ml practice session 30

@@ -759,3 +759,4 @@
 - 2022-02-13: api-design practice session 15
 - 2022-02-13: javascript practice session 16
 - 2022-02-13: debugging practice session 17
+- 2022-02-13: testing practice session 18

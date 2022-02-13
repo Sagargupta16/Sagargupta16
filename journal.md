@@ -743,3 +743,4 @@
 - 2022-02-12: data-structures practice session 11
 - 2022-02-12: python practice session 12
 - 2022-02-13: api-design practice session 1
+- 2022-02-13: security practice session 2

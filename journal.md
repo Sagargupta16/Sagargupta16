@@ -747,3 +747,4 @@
 - 2022-02-13: api-design practice session 3
 - 2022-02-13: debugging practice session 4
 - 2022-02-13: security practice session 5
+- 2022-02-13: terraform practice session 6

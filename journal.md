@@ -752,3 +752,4 @@
 - 2022-02-13: python practice session 8
 - 2022-02-13: ci-cd practice session 9
 - 2022-02-13: security practice session 10
+- 2022-02-13: ci-cd practice session 11

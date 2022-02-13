@@ -774,3 +774,4 @@
 - 2022-02-13: ml practice session 30
 - 2022-02-13: mongodb practice session 31
 - 2022-02-13: postgresql practice session 32
+- 2022-02-13: data-structures practice session 33

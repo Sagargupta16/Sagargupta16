@@ -748,3 +748,4 @@
 - 2022-02-13: debugging practice session 4
 - 2022-02-13: security practice session 5
 - 2022-02-13: terraform practice session 6
+- 2022-02-13: mongodb practice session 7

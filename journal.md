@@ -777,3 +777,4 @@
 - 2022-02-13: data-structures practice session 33
 - 2022-02-13: docker practice session 34
 - 2022-02-13: python practice session 35
+- 2022-02-13: react practice session 36

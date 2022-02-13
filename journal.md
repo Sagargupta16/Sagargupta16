@@ -757,3 +757,4 @@
 - 2022-02-13: security practice session 13
 - 2022-02-13: testing practice session 14
 - 2022-02-13: api-design practice session 15
+- 2022-02-13: javascript practice session 16

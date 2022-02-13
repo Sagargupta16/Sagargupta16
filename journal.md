@@ -749,3 +749,4 @@
 - 2022-02-13: security practice session 5
 - 2022-02-13: terraform practice session 6
 - 2022-02-13: mongodb practice session 7
+- 2022-02-13: python practice session 8

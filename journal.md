@@ -761,3 +761,4 @@
 - 2022-02-13: debugging practice session 17
 - 2022-02-13: testing practice session 18
 - 2022-02-13: linux practice session 19
+- 2022-02-13: git practice session 20

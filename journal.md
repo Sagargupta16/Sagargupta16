@@ -750,3 +750,4 @@
 - 2022-02-13: terraform practice session 6
 - 2022-02-13: mongodb practice session 7
 - 2022-02-13: python practice session 8
+- 2022-02-13: ci-cd practice session 9

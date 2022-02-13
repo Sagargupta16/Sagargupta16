@@ -782,3 +782,4 @@
 - 2022-02-13: git practice session 38
 - 2022-02-13: debugging practice session 39
 - 2022-02-13: javascript practice session 40
+- 2022-02-13: kubernetes practice session 41

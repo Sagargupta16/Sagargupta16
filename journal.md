@@ -778,3 +778,4 @@
 - 2022-02-13: docker practice session 34
 - 2022-02-13: python practice session 35
 - 2022-02-13: react practice session 36
+- 2022-02-13: javascript practice session 37

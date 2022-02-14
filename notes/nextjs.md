@@ -22,3 +22,4 @@
 - 2022-02-09: add nextjs section 89
 - 2022-02-09: revise nextjs section 43
 - 2022-02-12: expand nextjs section 5
+- 2022-02-14: add nextjs section 84

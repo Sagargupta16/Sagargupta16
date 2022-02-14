@@ -28,3 +28,4 @@
 - 2022-01-26: update javascript section 26
 - 2022-01-26: update javascript section 97
 - 2022-02-12: refactor javascript section 91
+- 2022-02-14: expand javascript section 84

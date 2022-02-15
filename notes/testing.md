@@ -21,3 +21,4 @@
 - 2022-01-19: improve testing section 96
 - 2022-01-23: improve testing section 51
 - 2022-01-23: update testing section 14
+- 2022-02-15: revise testing section 34

@@ -21,3 +21,4 @@
 - 2022-01-26: update linux section 76
 - 2022-01-26: update linux section 93
 - 2022-02-12: add linux section 23
+- 2022-02-15: add linux section 60

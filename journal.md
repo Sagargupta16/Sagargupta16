@@ -786,3 +786,4 @@
 - 2022-02-13: ci-cd practice session 42
 - 2022-02-13: kubernetes practice session 43
 - 2022-02-16: data-structures practice session 1
+- 2022-02-16: security practice session 2

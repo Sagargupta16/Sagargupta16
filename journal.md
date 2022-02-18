@@ -788,3 +788,4 @@
 - 2022-02-16: data-structures practice session 1
 - 2022-02-16: security practice session 2
 - 2022-02-17: security practice session 1
+- 2022-02-18: javascript practice session 1

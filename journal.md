@@ -802,3 +802,4 @@
 - 2022-02-20: algorithms practice session 9
 - 2022-02-20: git practice session 10
 - 2022-02-20: aws practice session 11
+- 2022-02-20: mongodb practice session 12

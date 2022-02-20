@@ -812,3 +812,4 @@
 - 2022-02-20: terraform practice session 19
 - 2022-02-20: docker practice session 20
 - 2022-02-20: linux practice session 21
+- 2022-02-20: fastapi practice session 22

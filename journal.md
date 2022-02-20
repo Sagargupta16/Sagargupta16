@@ -810,3 +810,4 @@
 - 2022-02-20: api-design practice session 17
 - 2022-02-20: git practice session 18
 - 2022-02-20: terraform practice session 19
+- 2022-02-20: docker practice session 20

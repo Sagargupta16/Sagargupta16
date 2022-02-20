@@ -798,3 +798,4 @@
 - 2022-02-20: fastapi practice session 5
 - 2022-02-20: ci-cd practice session 6
 - 2022-02-20: docker practice session 7
+- 2022-02-20: docker practice session 8

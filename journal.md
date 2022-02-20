@@ -792,3 +792,4 @@
 - 2022-02-18: kubernetes practice session 2
 - 2022-02-18: debugging practice session 3
 - 2022-02-20: mongodb practice session 1
+- 2022-02-20: security practice session 2

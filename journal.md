@@ -800,3 +800,4 @@
 - 2022-02-20: docker practice session 7
 - 2022-02-20: docker practice session 8
 - 2022-02-20: algorithms practice session 9
+- 2022-02-20: git practice session 10

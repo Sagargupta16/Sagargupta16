@@ -811,3 +811,4 @@
 - 2022-02-20: git practice session 18
 - 2022-02-20: terraform practice session 19
 - 2022-02-20: docker practice session 20
+- 2022-02-20: linux practice session 21

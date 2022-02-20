@@ -796,3 +796,4 @@
 - 2022-02-20: terraform practice session 3
 - 2022-02-20: kubernetes practice session 4
 - 2022-02-20: fastapi practice session 5
+- 2022-02-20: ci-cd practice session 6

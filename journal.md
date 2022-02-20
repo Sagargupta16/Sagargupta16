@@ -815,3 +815,4 @@
 - 2022-02-20: fastapi practice session 22
 - 2022-02-20: linux practice session 23
 - 2022-02-20: ml practice session 24
+- 2022-02-20: javascript practice session 25

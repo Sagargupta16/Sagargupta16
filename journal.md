@@ -804,3 +804,4 @@
 - 2022-02-20: aws practice session 11
 - 2022-02-20: mongodb practice session 12
 - 2022-02-20: linux practice session 13
+- 2022-02-20: ml practice session 14

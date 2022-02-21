@@ -817,3 +817,4 @@
 - 2022-02-20: ml practice session 24
 - 2022-02-20: javascript practice session 25
 - 2022-02-20: docker practice session 26
+- 2022-02-21: git practice session 1

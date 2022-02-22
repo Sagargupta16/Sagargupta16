@@ -823,3 +823,4 @@
 - 2022-02-21: debugging practice session 4
 - 2022-02-22: postgresql practice session 1
 - 2022-02-22: mongodb practice session 2
+- 2022-02-22: git practice session 3

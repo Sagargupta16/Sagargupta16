@@ -821,3 +821,4 @@
 - 2022-02-21: linux practice session 2
 - 2022-02-21: api-design practice session 3
 - 2022-02-21: debugging practice session 4
+- 2022-02-22: postgresql practice session 1

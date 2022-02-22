@@ -16,3 +16,4 @@
 - 2022-02-10: improve security section 94
 - 2022-02-12: improve security section 4
 - 2022-02-16: improve security section 33
+- 2022-02-22: add security section 83

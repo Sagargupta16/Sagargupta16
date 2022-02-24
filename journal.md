@@ -834,3 +834,4 @@
 - 2022-02-24: terraform practice session 6
 - 2022-02-24: algorithms practice session 7
 - 2022-02-24: api-design practice session 8
+- 2022-02-24: testing practice session 9

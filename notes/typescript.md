@@ -25,3 +25,4 @@
 - 2022-02-09: expand typescript section 42
 - 2022-02-12: refactor typescript section 24
 - 2022-02-12: revise typescript section 67
+- 2022-02-24: expand typescript section 50

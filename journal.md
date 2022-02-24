@@ -829,3 +829,4 @@
 - 2022-02-24: api-design practice session 1
 - 2022-02-24: javascript practice session 2
 - 2022-02-24: postgresql practice session 3
+- 2022-02-24: testing practice session 4

@@ -827,3 +827,4 @@
 - 2022-02-23: testing practice session 1
 - 2022-02-23: kubernetes practice session 2
 - 2022-02-24: api-design practice session 1
+- 2022-02-24: javascript practice session 2

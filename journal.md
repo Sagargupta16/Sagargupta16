@@ -838,3 +838,4 @@
 - 2022-02-24: linux practice session 10
 - 2022-02-24: algorithms practice session 11
 - 2022-02-24: testing practice session 12
+- 2022-02-24: postgresql practice session 13

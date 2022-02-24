@@ -842,3 +842,4 @@
 - 2022-02-24: react practice session 14
 - 2022-02-24: security practice session 15
 - 2022-02-24: react practice session 16
+- 2022-02-24: fastapi practice session 17

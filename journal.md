@@ -841,3 +841,4 @@
 - 2022-02-24: postgresql practice session 13
 - 2022-02-24: react practice session 14
 - 2022-02-24: security practice session 15
+- 2022-02-24: react practice session 16

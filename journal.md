@@ -833,3 +833,4 @@
 - 2022-02-24: react practice session 5
 - 2022-02-24: terraform practice session 6
 - 2022-02-24: algorithms practice session 7
+- 2022-02-24: api-design practice session 8

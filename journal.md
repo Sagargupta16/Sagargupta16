@@ -831,3 +831,4 @@
 - 2022-02-24: postgresql practice session 3
 - 2022-02-24: testing practice session 4
 - 2022-02-24: react practice session 5
+- 2022-02-24: terraform practice session 6

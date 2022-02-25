@@ -18,3 +18,4 @@
 - 2022-01-26: update kubernetes section 57
 - 2022-02-12: improve kubernetes section 83
 - 2022-02-12: refactor kubernetes section 62
+- 2022-02-25: organize kubernetes section 77

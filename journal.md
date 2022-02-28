@@ -845,3 +845,4 @@
 - 2022-02-24: fastapi practice session 17
 - 2022-02-26: api-design practice session 1
 - 2022-02-26: mongodb practice session 2
+- 2022-02-28: debugging practice session 1

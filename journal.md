@@ -847,3 +847,4 @@
 - 2022-02-26: mongodb practice session 2
 - 2022-02-28: debugging practice session 1
 - 2022-02-28: python practice session 2
+- 2022-03-01: fastapi practice session 1

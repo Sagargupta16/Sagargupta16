@@ -29,3 +29,4 @@
 - 2022-02-11: refactor aws section 77
 - 2022-02-15: expand aws section 30
 - 2022-02-26: update aws section 29
+- 2022-03-02: update aws section 11

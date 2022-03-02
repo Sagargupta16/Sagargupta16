@@ -21,3 +21,4 @@
 - 2022-02-11: expand api-design section 76
 - 2022-02-12: improve api-design section 75
 - 2022-02-16: expand api-design section 67
+- 2022-03-02: expand api-design section 8

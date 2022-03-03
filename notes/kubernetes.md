@@ -20,3 +20,4 @@
 - 2022-02-12: refactor kubernetes section 62
 - 2022-02-25: organize kubernetes section 77
 - 2022-03-03: refactor kubernetes section 64
+- 2022-03-03: organize kubernetes section 8

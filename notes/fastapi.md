@@ -30,3 +30,4 @@
 - 2022-02-25: refactor fastapi section 26
 - 2022-02-28: organize fastapi section 36
 - 2022-03-02: improve fastapi section 59
+- 2022-03-03: update fastapi section 45

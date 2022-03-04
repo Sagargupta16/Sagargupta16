@@ -24,3 +24,4 @@
 - 2022-02-26: organize python section 70
 - 2022-03-02: improve python section 50
 - 2022-03-03: update python section 14
+- 2022-03-04: expand python section 92

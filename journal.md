@@ -850,3 +850,4 @@
 - 2022-03-01: fastapi practice session 1
 - 2022-03-04: ml practice session 1
 - 2022-03-04: react practice session 2
+- 2022-03-04: security practice session 3

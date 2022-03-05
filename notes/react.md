@@ -24,3 +24,4 @@
 - 2022-02-12: organize react section 18
 - 2022-03-02: organize react section 33
 - 2022-03-02: expand react section 70
+- 2022-03-05: add react section 8

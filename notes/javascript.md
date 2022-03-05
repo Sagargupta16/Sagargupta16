@@ -32,3 +32,4 @@
 - 2022-03-02: organize javascript section 14
 - 2022-03-02: refactor javascript section 91
 - 2022-03-03: refactor javascript section 2
+- 2022-03-05: improve javascript section 76

@@ -28,3 +28,4 @@
 - 2022-02-23: improve redis section 55
 - 2022-02-24: revise redis section 16
 - 2022-02-26: add redis section 76
+- 2022-03-06: revise redis section 95

@@ -33,3 +33,4 @@
 - 2022-02-10: organize rust section 41
 - 2022-02-12: expand rust section 63
 - 2022-02-12: organize rust section 49
+- 2022-03-06: add rust section 85

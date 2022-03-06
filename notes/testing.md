@@ -23,3 +23,4 @@
 - 2022-01-23: update testing section 14
 - 2022-02-15: revise testing section 34
 - 2022-02-16: organize testing section 7
+- 2022-03-06: improve testing section 27

@@ -854,3 +854,4 @@
 - 2022-03-05: debugging practice session 1
 - 2022-03-06: ml practice session 1
 - 2022-03-08: react practice session 1
+- 2022-03-08: fastapi practice session 2

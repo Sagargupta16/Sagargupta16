@@ -858,3 +858,4 @@
 - 2022-03-08: security practice session 3
 - 2022-03-08: fastapi practice session 4
 - 2022-03-08: postgresql practice session 5
+- 2022-03-08: python practice session 6

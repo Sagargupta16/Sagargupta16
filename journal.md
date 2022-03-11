@@ -861,3 +861,4 @@
 - 2022-03-08: python practice session 6
 - 2022-03-11: git practice session 1
 - 2022-03-11: aws practice session 2
+- 2022-03-11: debugging practice session 3

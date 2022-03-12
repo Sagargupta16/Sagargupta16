@@ -29,3 +29,4 @@
 - 2022-02-10: organize django section 56
 - 2022-02-16: update django section 78
 - 2022-03-05: organize django section 12
+- 2022-03-12: add django section 2

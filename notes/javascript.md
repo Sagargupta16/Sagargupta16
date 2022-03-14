@@ -33,3 +33,4 @@
 - 2022-03-02: refactor javascript section 91
 - 2022-03-03: refactor javascript section 2
 - 2022-03-05: improve javascript section 76
+- 2022-03-14: add javascript section 47

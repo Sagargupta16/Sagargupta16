@@ -870,3 +870,4 @@
 - 2022-03-14: data-structures practice session 3
 - 2022-03-14: security practice session 4
 - 2022-03-14: javascript practice session 5
+- 2022-03-14: aws practice session 6

@@ -866,3 +866,4 @@
 - 2022-03-12: testing practice session 2
 - 2022-03-13: debugging practice session 1
 - 2022-03-14: ci-cd practice session 1
+- 2022-03-14: data-structures practice session 2

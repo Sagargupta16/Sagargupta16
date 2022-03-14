@@ -868,3 +868,4 @@
 - 2022-03-14: ci-cd practice session 1
 - 2022-03-14: data-structures practice session 2
 - 2022-03-14: data-structures practice session 3
+- 2022-03-14: security practice session 4

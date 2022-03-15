@@ -20,3 +20,4 @@
 - 2022-01-31: refactor algorithms section 64
 - 2022-02-16: add algorithms section 2
 - 2022-03-03: expand algorithms section 6
+- 2022-03-15: organize algorithms section 57

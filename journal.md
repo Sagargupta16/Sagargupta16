@@ -875,3 +875,4 @@
 - 2022-03-15: javascript practice session 2
 - 2022-03-17: postgresql practice session 1
 - 2022-03-17: git practice session 2
+- 2022-03-17: ci-cd practice session 3

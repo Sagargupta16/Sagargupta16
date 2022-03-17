@@ -873,3 +873,4 @@
 - 2022-03-14: aws practice session 6
 - 2022-03-15: algorithms practice session 1
 - 2022-03-15: javascript practice session 2
+- 2022-03-17: postgresql practice session 1

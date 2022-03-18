@@ -878,3 +878,4 @@
 - 2022-03-17: ci-cd practice session 3
 - 2022-03-18: python practice session 1
 - 2022-03-18: postgresql practice session 2
+- 2022-03-18: git practice session 3

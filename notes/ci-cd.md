@@ -19,3 +19,4 @@
 - 2022-01-17: revise ci-cd section 9
 - 2022-01-29: organize ci-cd section 20
 - 2022-01-29: update ci-cd section 85
+- 2022-03-19: expand ci-cd section 69

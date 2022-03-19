@@ -881,3 +881,4 @@
 - 2022-03-18: git practice session 3
 - 2022-03-18: git practice session 4
 - 2022-03-18: data-structures practice session 5
+- 2022-03-19: react practice session 1

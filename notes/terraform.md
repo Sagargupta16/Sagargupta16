@@ -28,3 +28,4 @@
 - 2022-02-26: expand terraform section 25
 - 2022-03-02: revise terraform section 83
 - 2022-03-04: revise terraform section 3
+- 2022-03-19: update terraform section 53

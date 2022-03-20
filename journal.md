@@ -886,3 +886,4 @@
 - 2022-03-20: ci-cd practice session 1
 - 2022-03-20: git practice session 2
 - 2022-03-20: terraform practice session 3
+- 2022-03-20: docker practice session 4

@@ -883,3 +883,4 @@
 - 2022-03-18: data-structures practice session 5
 - 2022-03-19: react practice session 1
 - 2022-03-19: postgresql practice session 2
+- 2022-03-20: ci-cd practice session 1

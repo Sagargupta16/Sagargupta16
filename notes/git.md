@@ -28,3 +28,4 @@
 - 2022-02-09: expand git section 39
 - 2022-03-03: refactor git section 73
 - 2022-03-19: improve git section 4
+- 2022-03-20: organize git section 17

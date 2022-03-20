@@ -889,3 +889,4 @@
 - 2022-03-20: docker practice session 4
 - 2022-03-20: data-structures practice session 5
 - 2022-03-20: debugging practice session 6
+- 2022-03-20: testing practice session 7

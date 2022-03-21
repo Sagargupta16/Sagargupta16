@@ -891,3 +891,4 @@
 - 2022-03-20: debugging practice session 6
 - 2022-03-20: testing practice session 7
 - 2022-03-20: algorithms practice session 8
+- 2022-03-21: ml practice session 1

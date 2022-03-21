@@ -30,3 +30,4 @@
 - 2022-03-19: improve git section 4
 - 2022-03-20: organize git section 17
 - 2022-03-20: organize git section 39
+- 2022-03-21: add git section 3

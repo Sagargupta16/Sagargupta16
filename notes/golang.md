@@ -23,3 +23,4 @@
 - 2022-03-15: improve golang section 91
 - 2022-03-20: refactor golang section 57
 - 2022-03-20: revise golang section 49
+- 2022-03-21: add golang section 49

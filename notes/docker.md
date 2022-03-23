@@ -44,3 +44,4 @@
 - 2022-03-06: refactor docker section 4
 - 2022-03-15: revise docker section 76
 - 2022-03-20: improve docker section 46
+- 2022-03-23: improve docker section 59

@@ -28,3 +28,4 @@
 - 2022-03-03: update nextjs section 29
 - 2022-03-04: revise nextjs section 39
 - 2022-03-04: organize nextjs section 45
+- 2022-03-23: refactor nextjs section 8

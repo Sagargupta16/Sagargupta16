@@ -894,3 +894,4 @@
 - 2022-03-21: ml practice session 1
 - 2022-03-22: data-structures practice session 1
 - 2022-03-23: terraform practice session 1
+- 2022-03-23: linux practice session 2

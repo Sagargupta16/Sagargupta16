@@ -36,3 +36,4 @@
 - 2022-03-15: refactor aws section 59
 - 2022-03-20: expand aws section 25
 - 2022-03-21: organize aws section 3
+- 2022-03-23: improve aws section 6

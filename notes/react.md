@@ -26,3 +26,4 @@
 - 2022-03-02: expand react section 70
 - 2022-03-05: add react section 8
 - 2022-03-15: revise react section 6
+- 2022-03-24: improve react section 49

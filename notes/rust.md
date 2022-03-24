@@ -37,3 +37,4 @@
 - 2022-03-06: revise rust section 6
 - 2022-03-20: revise rust section 85
 - 2022-03-23: update rust section 29
+- 2022-03-24: refactor rust section 32

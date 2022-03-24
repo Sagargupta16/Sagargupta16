@@ -900,3 +900,4 @@
 - 2022-03-23: docker practice session 5
 - 2022-03-24: linux practice session 1
 - 2022-03-24: aws practice session 2
+- 2022-03-24: debugging practice session 3

@@ -906,3 +906,4 @@
 - 2022-03-24: testing practice session 6
 - 2022-03-24: testing practice session 7
 - 2022-03-24: javascript practice session 8
+- 2022-03-24: fastapi practice session 9

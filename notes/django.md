@@ -33,3 +33,4 @@
 - 2022-03-15: expand django section 42
 - 2022-03-23: expand django section 58
 - 2022-03-24: organize django section 27
+- 2022-03-24: organize django section 38

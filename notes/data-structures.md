@@ -37,3 +37,4 @@
 - 2022-03-21: organize data-structures section 30
 - 2022-03-24: update data-structures section 4
 - 2022-03-24: refactor data-structures section 68
+- 2022-03-24: revise data-structures section 96

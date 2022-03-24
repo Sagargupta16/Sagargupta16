@@ -22,3 +22,4 @@
 - 2022-03-23: revise flask section 50
 - 2022-03-24: add flask section 41
 - 2022-03-24: improve flask section 35
+- 2022-03-24: organize flask section 51

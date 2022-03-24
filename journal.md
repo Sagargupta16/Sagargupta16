@@ -917,3 +917,4 @@
 - 2022-03-24: testing practice session 17
 - 2022-03-24: debugging practice session 18
 - 2022-03-24: javascript practice session 19
+- 2022-03-24: docker practice session 20

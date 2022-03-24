@@ -909,3 +909,4 @@
 - 2022-03-24: fastapi practice session 9
 - 2022-03-24: security practice session 10
 - 2022-03-24: api-design practice session 11
+- 2022-03-24: debugging practice session 12

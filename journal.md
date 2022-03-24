@@ -915,3 +915,4 @@
 - 2022-03-24: linux practice session 15
 - 2022-03-24: mongodb practice session 16
 - 2022-03-24: testing practice session 17
+- 2022-03-24: debugging practice session 18

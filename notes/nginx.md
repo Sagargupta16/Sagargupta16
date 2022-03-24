@@ -20,3 +20,4 @@
 - 2022-03-04: update nginx section 2
 - 2022-03-14: refactor nginx section 51
 - 2022-03-20: improve nginx section 57
+- 2022-03-24: revise nginx section 32

@@ -25,3 +25,4 @@
 - 2022-03-17: improve algorithms section 94
 - 2022-03-19: expand algorithms section 62
 - 2022-03-24: improve algorithms section 7
+- 2022-03-24: organize algorithms section 46

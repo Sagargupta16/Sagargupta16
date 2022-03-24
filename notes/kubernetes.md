@@ -26,3 +26,4 @@
 - 2022-03-23: organize kubernetes section 46
 - 2022-03-24: refactor kubernetes section 73
 - 2022-03-24: improve kubernetes section 35
+- 2022-03-24: improve kubernetes section 9

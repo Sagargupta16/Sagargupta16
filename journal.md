@@ -902,3 +902,4 @@
 - 2022-03-24: aws practice session 2
 - 2022-03-24: debugging practice session 3
 - 2022-03-24: fastapi practice session 4
+- 2022-03-24: aws practice session 5

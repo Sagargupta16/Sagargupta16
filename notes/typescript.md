@@ -33,3 +33,4 @@
 - 2022-03-15: organize typescript section 69
 - 2022-03-20: revise typescript section 40
 - 2022-03-24: add typescript section 36
+- 2022-03-25: add typescript section 3

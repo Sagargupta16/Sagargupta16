@@ -939,3 +939,4 @@
 - 2022-03-26: aws practice session 17
 - 2022-03-26: mongodb practice session 18
 - 2022-03-26: terraform practice session 19
+- 2022-03-26: ml practice session 20

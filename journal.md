@@ -926,3 +926,4 @@
 - 2022-03-26: security practice session 4
 - 2022-03-26: kubernetes practice session 5
 - 2022-03-26: data-structures practice session 6
+- 2022-03-26: kubernetes practice session 7

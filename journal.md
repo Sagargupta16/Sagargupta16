@@ -932,3 +932,4 @@
 - 2022-03-26: mongodb practice session 10
 - 2022-03-26: ml practice session 11
 - 2022-03-26: postgresql practice session 12
+- 2022-03-26: python practice session 13

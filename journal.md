@@ -934,3 +934,4 @@
 - 2022-03-26: postgresql practice session 12
 - 2022-03-26: python practice session 13
 - 2022-03-26: debugging practice session 14
+- 2022-03-26: git practice session 15

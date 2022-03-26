@@ -937,3 +937,4 @@
 - 2022-03-26: git practice session 15
 - 2022-03-26: testing practice session 16
 - 2022-03-26: aws practice session 17
+- 2022-03-26: mongodb practice session 18

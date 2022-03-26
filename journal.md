@@ -925,3 +925,4 @@
 - 2022-03-26: javascript practice session 3
 - 2022-03-26: security practice session 4
 - 2022-03-26: kubernetes practice session 5
+- 2022-03-26: data-structures practice session 6

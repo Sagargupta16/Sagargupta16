@@ -929,3 +929,4 @@
 - 2022-03-26: kubernetes practice session 7
 - 2022-03-26: ml practice session 8
 - 2022-03-26: fastapi practice session 9
+- 2022-03-26: mongodb practice session 10

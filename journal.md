@@ -921,3 +921,4 @@
 - 2022-03-24: ml practice session 21
 - 2022-03-24: ci-cd practice session 22
 - 2022-03-26: react practice session 1
+- 2022-03-26: ml practice session 2

@@ -927,3 +927,4 @@
 - 2022-03-26: kubernetes practice session 5
 - 2022-03-26: data-structures practice session 6
 - 2022-03-26: kubernetes practice session 7
+- 2022-03-26: ml practice session 8

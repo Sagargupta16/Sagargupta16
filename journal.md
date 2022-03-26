@@ -923,3 +923,4 @@
 - 2022-03-26: react practice session 1
 - 2022-03-26: ml practice session 2
 - 2022-03-26: javascript practice session 3
+- 2022-03-26: security practice session 4

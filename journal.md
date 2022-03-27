@@ -941,3 +941,4 @@
 - 2022-03-26: terraform practice session 19
 - 2022-03-26: ml practice session 20
 - 2022-03-27: api-design practice session 1
+- 2022-03-27: debugging practice session 2

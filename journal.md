@@ -940,3 +940,4 @@
 - 2022-03-26: mongodb practice session 18
 - 2022-03-26: terraform practice session 19
 - 2022-03-26: ml practice session 20
+- 2022-03-27: api-design practice session 1

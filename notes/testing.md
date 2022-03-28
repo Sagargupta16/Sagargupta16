@@ -30,3 +30,4 @@
 - 2022-03-24: refactor testing section 48
 - 2022-03-24: add testing section 29
 - 2022-03-24: revise testing section 2
+- 2022-03-28: improve testing section 17

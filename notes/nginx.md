@@ -21,3 +21,4 @@
 - 2022-03-14: refactor nginx section 51
 - 2022-03-20: improve nginx section 57
 - 2022-03-24: revise nginx section 32
+- 2022-03-28: organize nginx section 98

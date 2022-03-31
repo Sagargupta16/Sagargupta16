@@ -945,3 +945,4 @@
 - 2022-03-27: debugging practice session 3
 - 2022-03-31: debugging practice session 1
 - 2022-03-31: fastapi practice session 2
+- 2022-03-31: kubernetes practice session 3

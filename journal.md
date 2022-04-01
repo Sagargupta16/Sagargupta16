@@ -949,3 +949,4 @@
 - 2022-04-01: ml practice session 1
 - 2022-04-01: testing practice session 2
 - 2022-04-01: security practice session 3
+- 2022-04-01: python practice session 4

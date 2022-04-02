@@ -975,3 +975,4 @@
 - 2022-04-02: git practice session 21
 - 2022-04-02: kubernetes practice session 22
 - 2022-04-02: ci-cd practice session 23
+- 2022-04-02: postgresql practice session 24

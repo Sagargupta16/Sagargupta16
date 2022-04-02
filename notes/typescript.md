@@ -36,3 +36,4 @@
 - 2022-03-25: add typescript section 3
 - 2022-03-28: add typescript section 1
 - 2022-03-31: add typescript section 88
+- 2022-04-02: refactor typescript section 26

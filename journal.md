@@ -954,3 +954,4 @@
 - 2022-04-01: security practice session 6
 - 2022-04-02: testing practice session 1
 - 2022-04-02: testing practice session 2
+- 2022-04-02: ml practice session 3

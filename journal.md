@@ -967,3 +967,4 @@
 - 2022-04-02: kubernetes practice session 13
 - 2022-04-02: postgresql practice session 14
 - 2022-04-02: ml practice session 15
+- 2022-04-02: git practice session 16

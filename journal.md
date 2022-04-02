@@ -953,3 +953,4 @@
 - 2022-04-01: linux practice session 5
 - 2022-04-01: security practice session 6
 - 2022-04-02: testing practice session 1
+- 2022-04-02: testing practice session 2

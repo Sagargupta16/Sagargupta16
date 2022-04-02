@@ -955,3 +955,4 @@
 - 2022-04-02: testing practice session 1
 - 2022-04-02: testing practice session 2
 - 2022-04-02: ml practice session 3
+- 2022-04-02: ci-cd practice session 4

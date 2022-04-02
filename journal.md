@@ -973,3 +973,4 @@
 - 2022-04-02: kubernetes practice session 19
 - 2022-04-02: linux practice session 20
 - 2022-04-02: git practice session 21
+- 2022-04-02: kubernetes practice session 22

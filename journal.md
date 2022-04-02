@@ -963,3 +963,4 @@
 - 2022-04-02: react practice session 9
 - 2022-04-02: debugging practice session 10
 - 2022-04-02: react practice session 11
+- 2022-04-02: docker practice session 12

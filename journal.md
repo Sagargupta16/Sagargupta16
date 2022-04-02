@@ -978,3 +978,4 @@
 - 2022-04-02: postgresql practice session 24
 - 2022-04-02: terraform practice session 25
 - 2022-04-02: api-design practice session 26
+- 2022-04-02: ci-cd practice session 27

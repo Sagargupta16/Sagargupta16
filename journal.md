@@ -965,3 +965,4 @@
 - 2022-04-02: react practice session 11
 - 2022-04-02: docker practice session 12
 - 2022-04-02: kubernetes practice session 13
+- 2022-04-02: postgresql practice session 14

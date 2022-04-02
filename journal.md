@@ -962,3 +962,4 @@
 - 2022-04-02: ml practice session 8
 - 2022-04-02: react practice session 9
 - 2022-04-02: debugging practice session 10
+- 2022-04-02: react practice session 11

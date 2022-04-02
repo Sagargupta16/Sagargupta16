@@ -36,3 +36,4 @@
 - 2022-03-20: update devops section 77
 - 2022-03-25: update devops section 64
 - 2022-04-02: improve devops section 8
+- 2022-04-02: update devops section 11

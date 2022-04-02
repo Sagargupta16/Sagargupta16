@@ -960,3 +960,4 @@
 - 2022-04-02: api-design practice session 6
 - 2022-04-02: security practice session 7
 - 2022-04-02: ml practice session 8
+- 2022-04-02: react practice session 9

@@ -969,3 +969,4 @@
 - 2022-04-02: ml practice session 15
 - 2022-04-02: git practice session 16
 - 2022-04-02: api-design practice session 17
+- 2022-04-02: react practice session 18

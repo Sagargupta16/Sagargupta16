@@ -958,3 +958,4 @@
 - 2022-04-02: ci-cd practice session 4
 - 2022-04-02: ci-cd practice session 5
 - 2022-04-02: api-design practice session 6
+- 2022-04-02: security practice session 7

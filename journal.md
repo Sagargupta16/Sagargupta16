@@ -987,3 +987,4 @@
 - 2022-04-03: security practice session 5
 - 2022-04-03: git practice session 6
 - 2022-04-03: linux practice session 7
+- 2022-04-03: javascript practice session 8

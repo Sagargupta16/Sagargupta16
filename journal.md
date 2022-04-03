@@ -996,3 +996,4 @@
 - 2022-04-03: data-structures practice session 14
 - 2022-04-03: mongodb practice session 15
 - 2022-04-03: data-structures practice session 16
+- 2022-04-03: testing practice session 17

@@ -990,3 +990,4 @@
 - 2022-04-03: javascript practice session 8
 - 2022-04-03: aws practice session 9
 - 2022-04-03: docker practice session 10
+- 2022-04-03: fastapi practice session 11

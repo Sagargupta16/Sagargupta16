@@ -991,3 +991,4 @@
 - 2022-04-03: aws practice session 9
 - 2022-04-03: docker practice session 10
 - 2022-04-03: fastapi practice session 11
+- 2022-04-03: ml practice session 12

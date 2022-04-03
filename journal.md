@@ -985,3 +985,4 @@
 - 2022-04-03: kubernetes practice session 3
 - 2022-04-03: docker practice session 4
 - 2022-04-03: security practice session 5
+- 2022-04-03: git practice session 6

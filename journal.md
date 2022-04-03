@@ -982,3 +982,4 @@
 - 2022-04-02: terraform practice session 28
 - 2022-04-03: ci-cd practice session 1
 - 2022-04-03: docker practice session 2
+- 2022-04-03: kubernetes practice session 3

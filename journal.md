@@ -998,3 +998,4 @@
 - 2022-04-03: data-structures practice session 16
 - 2022-04-03: testing practice session 17
 - 2022-04-03: ml practice session 18
+- 2022-04-03: mongodb practice session 19

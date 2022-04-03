@@ -1002,3 +1002,4 @@
 - 2022-04-03: terraform practice session 20
 - 2022-04-03: terraform practice session 21
 - 2022-04-03: kubernetes practice session 22
+- 2022-04-03: ci-cd practice session 23

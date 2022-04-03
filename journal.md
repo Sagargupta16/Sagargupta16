@@ -993,3 +993,4 @@
 - 2022-04-03: fastapi practice session 11
 - 2022-04-03: ml practice session 12
 - 2022-04-03: javascript practice session 13
+- 2022-04-03: data-structures practice session 14

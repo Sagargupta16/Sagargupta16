@@ -1000,3 +1000,4 @@
 - 2022-04-03: ml practice session 18
 - 2022-04-03: mongodb practice session 19
 - 2022-04-03: terraform practice session 20
+- 2022-04-03: terraform practice session 21

@@ -1004,3 +1004,4 @@
 - 2022-04-03: kubernetes practice session 22
 - 2022-04-03: ci-cd practice session 23
 - 2022-04-04: ml practice session 1
+- 2022-04-04: security practice session 2

@@ -1006,3 +1006,4 @@
 - 2022-04-04: ml practice session 1
 - 2022-04-04: security practice session 2
 - 2022-04-04: api-design practice session 3
+- 2022-04-04: testing practice session 4

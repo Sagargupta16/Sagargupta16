@@ -1028,3 +1028,4 @@
 - 2022-04-04: testing practice session 23
 - 2022-04-04: ci-cd practice session 24
 - 2022-04-04: ml practice session 25
+- 2022-04-04: git practice session 26

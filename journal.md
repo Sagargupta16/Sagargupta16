@@ -1021,3 +1021,4 @@
 - 2022-04-04: mongodb practice session 16
 - 2022-04-04: debugging practice session 17
 - 2022-04-04: react practice session 18
+- 2022-04-04: debugging practice session 19

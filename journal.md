@@ -1012,3 +1012,4 @@
 - 2022-04-04: kubernetes practice session 7
 - 2022-04-04: git practice session 8
 - 2022-04-04: ml practice session 9
+- 2022-04-04: ml practice session 10

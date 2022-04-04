@@ -1025,3 +1025,4 @@
 - 2022-04-04: algorithms practice session 20
 - 2022-04-04: security practice session 21
 - 2022-04-04: debugging practice session 22
+- 2022-04-04: testing practice session 23

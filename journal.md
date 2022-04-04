@@ -1019,3 +1019,4 @@
 - 2022-04-04: postgresql practice session 14
 - 2022-04-04: fastapi practice session 15
 - 2022-04-04: mongodb practice session 16
+- 2022-04-04: debugging practice session 17

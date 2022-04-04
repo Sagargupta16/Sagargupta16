@@ -1030,3 +1030,4 @@
 - 2022-04-04: ml practice session 25
 - 2022-04-04: git practice session 26
 - 2022-04-04: javascript practice session 27
+- 2022-04-04: security practice session 28

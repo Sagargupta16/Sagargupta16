@@ -1010,3 +1010,4 @@
 - 2022-04-04: kubernetes practice session 5
 - 2022-04-04: docker practice session 6
 - 2022-04-04: kubernetes practice session 7
+- 2022-04-04: git practice session 8

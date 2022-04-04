@@ -1008,3 +1008,4 @@
 - 2022-04-04: api-design practice session 3
 - 2022-04-04: testing practice session 4
 - 2022-04-04: kubernetes practice session 5
+- 2022-04-04: docker practice session 6

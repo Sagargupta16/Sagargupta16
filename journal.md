@@ -1013,3 +1013,4 @@
 - 2022-04-04: git practice session 8
 - 2022-04-04: ml practice session 9
 - 2022-04-04: ml practice session 10
+- 2022-04-04: docker practice session 11

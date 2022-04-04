@@ -1017,3 +1017,4 @@
 - 2022-04-04: linux practice session 12
 - 2022-04-04: api-design practice session 13
 - 2022-04-04: postgresql practice session 14
+- 2022-04-04: fastapi practice session 15

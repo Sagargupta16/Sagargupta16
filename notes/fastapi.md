@@ -44,3 +44,4 @@
 - 2022-04-06: refactor fastapi section 1
 - 2022-04-06: refactor fastapi section 21
 - 2022-04-06: refactor fastapi section 55
+- 2022-04-06: improve fastapi section 31

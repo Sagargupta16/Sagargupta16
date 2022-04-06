@@ -1035,3 +1035,4 @@
 - 2022-04-04: javascript practice session 30
 - 2022-04-04: aws practice session 31
 - 2022-04-06: security practice session 1
+- 2022-04-06: javascript practice session 2

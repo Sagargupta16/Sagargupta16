@@ -22,3 +22,4 @@
 - 2022-03-03: update mongodb section 93
 - 2022-03-07: expand mongodb section 60
 - 2022-03-24: expand mongodb section 3
+- 2022-04-06: revise mongodb section 78

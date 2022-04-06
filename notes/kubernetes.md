@@ -28,3 +28,4 @@
 - 2022-03-24: improve kubernetes section 35
 - 2022-03-24: improve kubernetes section 9
 - 2022-04-06: add kubernetes section 54
+- 2022-04-06: update kubernetes section 45

@@ -38,3 +38,4 @@
 - 2022-04-02: improve devops section 8
 - 2022-04-02: update devops section 11
 - 2022-04-06: organize devops section 55
+- 2022-04-06: expand devops section 27

@@ -40,3 +40,4 @@
 - 2022-04-06: revise typescript section 97
 - 2022-04-06: add typescript section 36
 - 2022-04-06: improve typescript section 17
+- 2022-04-06: refactor typescript section 70

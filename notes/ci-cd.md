@@ -23,3 +23,4 @@
 - 2022-03-28: improve ci-cd section 82
 - 2022-04-02: organize ci-cd section 90
 - 2022-04-06: update ci-cd section 13
+- 2022-04-06: update ci-cd section 74

@@ -26,3 +26,4 @@
 - 2022-03-03: update python section 14
 - 2022-03-04: expand python section 92
 - 2022-03-24: refactor python section 25
+- 2022-04-06: refactor python section 47

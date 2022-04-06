@@ -40,3 +40,4 @@
 - 2022-03-28: refactor aws section 98
 - 2022-03-31: expand aws section 1
 - 2022-04-02: add aws section 69
+- 2022-04-06: organize aws section 2

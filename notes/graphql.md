@@ -37,3 +37,4 @@
 - 2022-03-24: add graphql section 90
 - 2022-03-24: add graphql section 64
 - 2022-04-06: revise graphql section 67
+- 2022-04-07: refactor graphql section 13

@@ -1040,3 +1040,4 @@
 - 2022-04-06: aws practice session 4
 - 2022-04-07: python practice session 1
 - 2022-04-07: testing practice session 2
+- 2022-04-08: mongodb practice session 1

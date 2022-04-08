@@ -41,3 +41,4 @@
 - 2022-04-06: add javascript section 17
 - 2022-04-08: improve javascript section 98
 - 2022-04-08: add javascript section 74
+- 2022-04-08: expand javascript section 38

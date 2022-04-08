@@ -34,3 +34,4 @@
 - 2022-03-28: add terraform section 72
 - 2022-04-02: revise terraform section 91
 - 2022-04-08: organize terraform section 16
+- 2022-04-08: organize terraform section 6

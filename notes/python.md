@@ -28,3 +28,4 @@
 - 2022-03-24: refactor python section 25
 - 2022-04-06: refactor python section 47
 - 2022-04-07: organize python section 75
+- 2022-04-08: improve python section 19

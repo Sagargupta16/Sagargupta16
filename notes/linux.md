@@ -30,3 +30,4 @@
 - 2022-03-27: refactor linux section 31
 - 2022-03-28: revise linux section 12
 - 2022-04-06: expand linux section 4
+- 2022-04-08: update linux section 58

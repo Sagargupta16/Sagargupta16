@@ -39,3 +39,4 @@
 - 2022-04-02: organize javascript section 51
 - 2022-04-06: organize javascript section 69
 - 2022-04-06: add javascript section 17
+- 2022-04-08: improve javascript section 98

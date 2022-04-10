@@ -1049,3 +1049,4 @@
 - 2022-04-10: javascript practice session 4
 - 2022-04-10: javascript practice session 5
 - 2022-04-10: react practice session 6
+- 2022-04-10: linux practice session 7

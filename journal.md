@@ -1045,3 +1045,4 @@
 - 2022-04-09: debugging practice session 2
 - 2022-04-10: react practice session 1
 - 2022-04-10: ml practice session 2
+- 2022-04-10: kubernetes practice session 3

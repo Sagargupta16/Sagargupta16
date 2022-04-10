@@ -1046,3 +1046,4 @@
 - 2022-04-10: react practice session 1
 - 2022-04-10: ml practice session 2
 - 2022-04-10: kubernetes practice session 3
+- 2022-04-10: javascript practice session 4

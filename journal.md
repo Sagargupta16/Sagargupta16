@@ -1053,3 +1053,4 @@
 - 2022-04-12: api-design practice session 1
 - 2022-04-12: docker practice session 2
 - 2022-04-12: debugging practice session 3
+- 2022-04-12: algorithms practice session 4

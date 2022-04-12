@@ -1056,3 +1056,4 @@
 - 2022-04-12: algorithms practice session 4
 - 2022-04-12: data-structures practice session 5
 - 2022-04-12: mongodb practice session 6
+- 2022-04-12: react practice session 7

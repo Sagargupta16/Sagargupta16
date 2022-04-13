@@ -34,3 +34,4 @@
 - 2022-04-06: add api-design section 77
 - 2022-04-08: revise api-design section 98
 - 2022-04-10: improve api-design section 63
+- 2022-04-13: update api-design section 70

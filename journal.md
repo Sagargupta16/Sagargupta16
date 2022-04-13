@@ -1061,3 +1061,4 @@
 - 2022-04-12: mongodb practice session 9
 - 2022-04-13: terraform practice session 1
 - 2022-04-13: api-design practice session 2
+- 2022-04-13: aws practice session 3

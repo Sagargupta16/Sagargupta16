@@ -1062,3 +1062,4 @@
 - 2022-04-13: terraform practice session 1
 - 2022-04-13: api-design practice session 2
 - 2022-04-13: aws practice session 3
+- 2022-04-13: react practice session 4

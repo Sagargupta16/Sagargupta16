@@ -25,3 +25,4 @@
 - 2022-03-24: organize postgresql section 30
 - 2022-03-27: expand postgresql section 68
 - 2022-04-08: revise postgresql section 81
+- 2022-04-13: revise postgresql section 18

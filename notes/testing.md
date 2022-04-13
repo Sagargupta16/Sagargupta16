@@ -38,3 +38,4 @@
 - 2022-03-31: update testing section 98
 - 2022-04-06: add testing section 36
 - 2022-04-06: improve testing section 48
+- 2022-04-13: organize testing section 95

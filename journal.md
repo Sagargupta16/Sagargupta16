@@ -1063,3 +1063,4 @@
 - 2022-04-13: api-design practice session 2
 - 2022-04-13: aws practice session 3
 - 2022-04-13: react practice session 4
+- 2022-04-14: ml practice session 1

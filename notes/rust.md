@@ -40,3 +40,4 @@
 - 2022-03-24: refactor rust section 32
 - 2022-03-24: organize rust section 52
 - 2022-04-06: revise rust section 5
+- 2022-04-16: expand rust section 71

@@ -26,3 +26,4 @@
 - 2022-04-06: refactor mongodb section 70
 - 2022-04-06: revise mongodb section 93
 - 2022-04-08: improve mongodb section 71
+- 2022-04-16: organize mongodb section 67

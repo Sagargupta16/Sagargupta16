@@ -35,3 +35,4 @@
 - 2022-04-13: refactor redis section 20
 - 2022-04-16: expand redis section 4
 - 2022-04-16: expand redis section 91
+- 2022-04-16: refactor redis section 81

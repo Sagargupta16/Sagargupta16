@@ -40,3 +40,4 @@
 - 2022-03-24: revise data-structures section 96
 - 2022-03-31: expand data-structures section 68
 - 2022-04-16: expand data-structures section 88
+- 2022-04-16: refactor data-structures section 55

@@ -1066,3 +1066,4 @@
 - 2022-04-14: ml practice session 1
 - 2022-04-18: ci-cd practice session 1
 - 2022-04-18: api-design practice session 2
+- 2022-04-18: data-structures practice session 3

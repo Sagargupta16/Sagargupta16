@@ -21,3 +21,4 @@
 - 2022-03-15: update security section 35
 - 2022-03-19: expand security section 81
 - 2022-03-27: organize security section 86
+- 2022-04-18: improve security section 14

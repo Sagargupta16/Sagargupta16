@@ -1067,3 +1067,4 @@
 - 2022-04-18: ci-cd practice session 1
 - 2022-04-18: api-design practice session 2
 - 2022-04-18: data-structures practice session 3
+- 2022-04-18: mongodb practice session 4

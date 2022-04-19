@@ -1068,3 +1068,4 @@
 - 2022-04-18: api-design practice session 2
 - 2022-04-18: data-structures practice session 3
 - 2022-04-18: mongodb practice session 4
+- 2022-04-19: debugging practice session 1

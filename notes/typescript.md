@@ -43,3 +43,4 @@
 - 2022-04-06: refactor typescript section 70
 - 2022-04-08: improve typescript section 59
 - 2022-04-13: organize typescript section 83
+- 2022-04-19: update typescript section 65

@@ -37,3 +37,4 @@
 - 2022-04-08: organize terraform section 6
 - 2022-04-13: improve terraform section 98
 - 2022-04-19: revise terraform section 94
+- 2022-04-19: refactor terraform section 81

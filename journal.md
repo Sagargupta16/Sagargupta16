@@ -1072,3 +1072,4 @@
 - 2022-04-19: algorithms practice session 2
 - 2022-04-19: javascript practice session 3
 - 2022-04-19: react practice session 4
+- 2022-04-19: linux practice session 5

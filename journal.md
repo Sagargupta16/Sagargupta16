@@ -1070,3 +1070,4 @@
 - 2022-04-18: mongodb practice session 4
 - 2022-04-19: debugging practice session 1
 - 2022-04-19: algorithms practice session 2
+- 2022-04-19: javascript practice session 3

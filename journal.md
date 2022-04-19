@@ -1074,3 +1074,4 @@
 - 2022-04-19: react practice session 4
 - 2022-04-19: linux practice session 5
 - 2022-04-19: api-design practice session 6
+- 2022-04-19: git practice session 7

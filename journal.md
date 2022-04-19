@@ -1079,3 +1079,4 @@
 - 2022-04-19: ml practice session 9
 - 2022-04-19: aws practice session 10
 - 2022-04-19: javascript practice session 11
+- 2022-04-19: docker practice session 12

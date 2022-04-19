@@ -37,3 +37,4 @@
 - 2022-04-08: organize react section 39
 - 2022-04-16: revise react section 89
 - 2022-04-16: expand react section 94
+- 2022-04-19: improve react section 77

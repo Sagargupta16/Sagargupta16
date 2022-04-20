@@ -1080,3 +1080,4 @@
 - 2022-04-19: aws practice session 10
 - 2022-04-19: javascript practice session 11
 - 2022-04-19: docker practice session 12
+- 2022-04-20: kubernetes practice session 1

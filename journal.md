@@ -1092,3 +1092,4 @@
 - 2022-04-21: ml practice session 7
 - 2022-04-21: testing practice session 8
 - 2022-04-21: react practice session 9
+- 2022-04-21: python practice session 10

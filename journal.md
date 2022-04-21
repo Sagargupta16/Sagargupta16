@@ -1090,3 +1090,4 @@
 - 2022-04-21: security practice session 5
 - 2022-04-21: data-structures practice session 6
 - 2022-04-21: ml practice session 7
+- 2022-04-21: testing practice session 8

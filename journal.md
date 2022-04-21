@@ -1087,3 +1087,4 @@
 - 2022-04-21: react practice session 2
 - 2022-04-21: postgresql practice session 3
 - 2022-04-21: javascript practice session 4
+- 2022-04-21: security practice session 5

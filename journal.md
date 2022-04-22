@@ -1095,3 +1095,4 @@
 - 2022-04-21: python practice session 10
 - 2022-04-21: react practice session 11
 - 2022-04-21: ci-cd practice session 12
+- 2022-04-22: data-structures practice session 1

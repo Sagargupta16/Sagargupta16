@@ -28,3 +28,4 @@
 - 2022-04-13: revise postgresql section 18
 - 2022-04-16: refactor postgresql section 23
 - 2022-04-16: improve postgresql section 22
+- 2022-04-22: refactor postgresql section 34

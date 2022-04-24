@@ -1096,3 +1096,4 @@
 - 2022-04-21: react practice session 11
 - 2022-04-21: ci-cd practice session 12
 - 2022-04-22: data-structures practice session 1
+- 2022-04-24: terraform practice session 1

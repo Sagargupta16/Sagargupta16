@@ -1101,3 +1101,4 @@
 - 2022-04-24: react practice session 3
 - 2022-04-25: git practice session 1
 - 2022-04-25: algorithms practice session 2
+- 2022-04-25: javascript practice session 3

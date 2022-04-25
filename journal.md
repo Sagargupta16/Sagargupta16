@@ -1099,3 +1099,4 @@
 - 2022-04-24: terraform practice session 1
 - 2022-04-24: aws practice session 2
 - 2022-04-24: react practice session 3
+- 2022-04-25: git practice session 1

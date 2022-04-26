@@ -29,3 +29,4 @@
 - 2022-04-13: revise flask section 16
 - 2022-04-19: organize flask section 76
 - 2022-04-19: revise flask section 30
+- 2022-04-26: expand flask section 39

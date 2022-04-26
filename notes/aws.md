@@ -43,3 +43,4 @@
 - 2022-04-06: organize aws section 2
 - 2022-04-06: add aws section 8
 - 2022-04-19: revise aws section 84
+- 2022-04-26: refactor aws section 56

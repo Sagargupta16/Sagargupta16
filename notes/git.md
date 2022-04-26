@@ -33,3 +33,4 @@
 - 2022-03-21: add git section 3
 - 2022-04-06: organize git section 57
 - 2022-04-16: update git section 7
+- 2022-04-26: organize git section 30

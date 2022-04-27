@@ -1119,3 +1119,4 @@
 - 2022-04-27: ci-cd practice session 14
 - 2022-04-27: kubernetes practice session 15
 - 2022-04-27: react practice session 16
+- 2022-04-27: kubernetes practice session 17

@@ -1121,3 +1121,4 @@
 - 2022-04-27: react practice session 16
 - 2022-04-27: kubernetes practice session 17
 - 2022-04-27: docker practice session 18
+- 2022-04-27: python practice session 19

@@ -39,3 +39,4 @@
 - 2022-04-19: revise terraform section 94
 - 2022-04-19: refactor terraform section 81
 - 2022-04-21: expand terraform section 34
+- 2022-04-27: refactor terraform section 82

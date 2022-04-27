@@ -1126,3 +1126,4 @@
 - 2022-04-27: ci-cd practice session 21
 - 2022-04-27: mongodb practice session 22
 - 2022-04-27: ci-cd practice session 23
+- 2022-04-27: aws practice session 24

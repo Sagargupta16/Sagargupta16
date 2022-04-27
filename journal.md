@@ -1116,3 +1116,4 @@
 - 2022-04-27: docker practice session 11
 - 2022-04-27: terraform practice session 12
 - 2022-04-27: python practice session 13
+- 2022-04-27: ci-cd practice session 14

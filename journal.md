@@ -1110,3 +1110,4 @@
 - 2022-04-27: linux practice session 5
 - 2022-04-27: javascript practice session 6
 - 2022-04-27: debugging practice session 7
+- 2022-04-27: fastapi practice session 8

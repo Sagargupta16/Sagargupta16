@@ -1105,3 +1105,4 @@
 - 2022-04-26: javascript practice session 1
 - 2022-04-27: postgresql practice session 1
 - 2022-04-27: react practice session 2
+- 2022-04-27: debugging practice session 3

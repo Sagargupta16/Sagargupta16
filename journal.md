@@ -1124,3 +1124,4 @@
 - 2022-04-27: python practice session 19
 - 2022-04-27: ml practice session 20
 - 2022-04-27: ci-cd practice session 21
+- 2022-04-27: mongodb practice session 22

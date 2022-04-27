@@ -1108,3 +1108,4 @@
 - 2022-04-27: debugging practice session 3
 - 2022-04-27: data-structures practice session 4
 - 2022-04-27: linux practice session 5
+- 2022-04-27: javascript practice session 6

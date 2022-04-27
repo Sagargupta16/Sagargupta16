@@ -48,3 +48,4 @@
 - 2022-03-23: revise docker section 58
 - 2022-04-13: revise docker section 17
 - 2022-04-13: organize docker section 52
+- 2022-04-27: update docker section 82

@@ -1114,3 +1114,4 @@
 - 2022-04-27: data-structures practice session 9
 - 2022-04-27: fastapi practice session 10
 - 2022-04-27: docker practice session 11
+- 2022-04-27: terraform practice session 12

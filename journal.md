@@ -1134,3 +1134,4 @@
 - 2022-04-29: docker practice session 2
 - 2022-04-29: postgresql practice session 3
 - 2022-04-29: data-structures practice session 4
+- 2022-04-29: docker practice session 5

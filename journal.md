@@ -1131,3 +1131,4 @@
 - 2022-04-27: aws practice session 26
 - 2022-04-27: security practice session 27
 - 2022-04-29: security practice session 1
+- 2022-04-29: docker practice session 2

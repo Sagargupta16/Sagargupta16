@@ -1136,3 +1136,4 @@
 - 2022-04-29: data-structures practice session 4
 - 2022-04-29: docker practice session 5
 - 2022-04-30: javascript practice session 1
+- 2022-04-30: ci-cd practice session 2

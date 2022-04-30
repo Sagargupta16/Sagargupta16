@@ -1139,3 +1139,4 @@
 - 2022-04-30: ci-cd practice session 2
 - 2022-04-30: ml practice session 3
 - 2022-04-30: git practice session 4
+- 2022-04-30: terraform practice session 5

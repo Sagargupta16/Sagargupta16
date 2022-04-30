@@ -1137,3 +1137,4 @@
 - 2022-04-29: docker practice session 5
 - 2022-04-30: javascript practice session 1
 - 2022-04-30: ci-cd practice session 2
+- 2022-04-30: ml practice session 3

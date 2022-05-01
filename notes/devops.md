@@ -46,3 +46,4 @@
 - 2022-04-13: update devops section 68
 - 2022-04-16: improve devops section 36
 - 2022-04-17: organize devops section 51
+- 2022-05-01: refactor devops section 14

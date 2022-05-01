@@ -31,3 +31,4 @@
 - 2022-04-06: expand algorithms section 32
 - 2022-04-21: update algorithms section 82
 - 2022-04-27: add algorithms section 75
+- 2022-05-01: update algorithms section 40

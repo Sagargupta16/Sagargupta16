@@ -28,3 +28,4 @@
 - 2022-04-19: improve nginx section 19
 - 2022-04-22: expand nginx section 5
 - 2022-04-27: expand nginx section 51
+- 2022-05-01: revise nginx section 20

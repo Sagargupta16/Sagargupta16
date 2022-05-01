@@ -42,3 +42,4 @@
 - 2022-04-27: refactor terraform section 82
 - 2022-05-01: improve terraform section 88
 - 2022-05-01: improve terraform section 52
+- 2022-05-01: update terraform section 57

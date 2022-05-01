@@ -42,3 +42,4 @@
 - 2022-04-26: refactor react section 29
 - 2022-04-29: add react section 69
 - 2022-05-01: improve react section 19
+- 2022-05-01: improve react section 29

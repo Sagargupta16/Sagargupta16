@@ -1143,3 +1143,4 @@
 - 2022-05-01: data-structures practice session 1
 - 2022-05-03: javascript practice session 1
 - 2022-05-03: docker practice session 2
+- 2022-05-03: javascript practice session 3

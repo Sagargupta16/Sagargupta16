@@ -1146,3 +1146,4 @@
 - 2022-05-03: javascript practice session 3
 - 2022-05-03: ml practice session 4
 - 2022-05-03: algorithms practice session 5
+- 2022-05-03: postgresql practice session 6

@@ -1151,3 +1151,4 @@
 - 2022-05-03: aws practice session 8
 - 2022-05-03: api-design practice session 9
 - 2022-05-03: git practice session 10
+- 2022-05-03: fastapi practice session 11

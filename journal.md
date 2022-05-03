@@ -1149,3 +1149,4 @@
 - 2022-05-03: postgresql practice session 6
 - 2022-05-03: data-structures practice session 7
 - 2022-05-03: aws practice session 8
+- 2022-05-03: api-design practice session 9

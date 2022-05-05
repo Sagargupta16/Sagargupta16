@@ -1153,3 +1153,4 @@
 - 2022-05-03: git practice session 10
 - 2022-05-03: fastapi practice session 11
 - 2022-05-05: postgresql practice session 1
+- 2022-05-05: kubernetes practice session 2

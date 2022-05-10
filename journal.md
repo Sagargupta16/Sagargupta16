@@ -1156,3 +1156,4 @@
 - 2022-05-05: kubernetes practice session 2
 - 2022-05-10: ci-cd practice session 1
 - 2022-05-10: aws practice session 2
+- 2022-05-10: testing practice session 3

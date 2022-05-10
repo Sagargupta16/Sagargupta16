@@ -1158,3 +1158,4 @@
 - 2022-05-10: aws practice session 2
 - 2022-05-10: testing practice session 3
 - 2022-05-10: debugging practice session 4
+- 2022-05-10: security practice session 5

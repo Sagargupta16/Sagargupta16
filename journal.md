@@ -1165,3 +1165,4 @@
 - 2022-05-12: ci-cd practice session 4
 - 2022-05-12: docker practice session 5
 - 2022-05-12: postgresql practice session 6
+- 2022-05-12: security practice session 7

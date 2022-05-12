@@ -1164,3 +1164,4 @@
 - 2022-05-12: mongodb practice session 3
 - 2022-05-12: ci-cd practice session 4
 - 2022-05-12: docker practice session 5
+- 2022-05-12: postgresql practice session 6

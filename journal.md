@@ -1160,3 +1160,4 @@
 - 2022-05-10: debugging practice session 4
 - 2022-05-10: security practice session 5
 - 2022-05-12: terraform practice session 1
+- 2022-05-12: javascript practice session 2

@@ -1162,3 +1162,4 @@
 - 2022-05-12: terraform practice session 1
 - 2022-05-12: javascript practice session 2
 - 2022-05-12: mongodb practice session 3
+- 2022-05-12: ci-cd practice session 4

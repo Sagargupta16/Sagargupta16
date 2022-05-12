@@ -27,3 +27,4 @@
 - 2022-04-08: expand ci-cd section 51
 - 2022-04-21: expand ci-cd section 69
 - 2022-04-26: improve ci-cd section 18
+- 2022-05-12: add ci-cd section 56

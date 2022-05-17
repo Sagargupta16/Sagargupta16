@@ -1176,3 +1176,4 @@
 - 2022-05-17: testing practice session 6
 - 2022-05-17: python practice session 7
 - 2022-05-17: testing practice session 8
+- 2022-05-17: security practice session 9

@@ -34,3 +34,4 @@
 - 2022-04-06: organize git section 57
 - 2022-04-16: update git section 7
 - 2022-04-26: organize git section 30
+- 2022-05-17: update git section 21

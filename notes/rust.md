@@ -44,3 +44,4 @@
 - 2022-04-27: add rust section 55
 - 2022-05-01: add rust section 79
 - 2022-05-10: improve rust section 42
+- 2022-05-17: update rust section 66

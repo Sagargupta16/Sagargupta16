@@ -45,3 +45,4 @@
 - 2022-05-01: improve react section 29
 - 2022-05-01: revise react section 14
 - 2022-05-17: update react section 9
+- 2022-05-17: revise react section 80

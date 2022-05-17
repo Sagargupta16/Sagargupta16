@@ -1178,3 +1178,4 @@
 - 2022-05-17: testing practice session 8
 - 2022-05-17: security practice session 9
 - 2022-05-17: api-design practice session 10
+- 2022-05-17: kubernetes practice session 11

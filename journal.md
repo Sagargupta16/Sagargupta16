@@ -1180,3 +1180,4 @@
 - 2022-05-17: api-design practice session 10
 - 2022-05-17: kubernetes practice session 11
 - 2022-05-17: security practice session 12
+- 2022-05-17: fastapi practice session 13

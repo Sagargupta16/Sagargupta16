@@ -48,3 +48,4 @@
 - 2022-04-27: add javascript section 99
 - 2022-04-27: improve javascript section 30
 - 2022-05-01: add javascript section 28
+- 2022-05-17: organize javascript section 31

@@ -1182,3 +1182,4 @@
 - 2022-05-17: security practice session 12
 - 2022-05-17: fastapi practice session 13
 - 2022-05-17: terraform practice session 14
+- 2022-05-17: docker practice session 15

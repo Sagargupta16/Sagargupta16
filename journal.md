@@ -1174,3 +1174,4 @@
 - 2022-05-17: mongodb practice session 4
 - 2022-05-17: git practice session 5
 - 2022-05-17: testing practice session 6
+- 2022-05-17: python practice session 7

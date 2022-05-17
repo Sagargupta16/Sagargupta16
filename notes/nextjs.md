@@ -37,3 +37,4 @@
 - 2022-04-16: update nextjs section 77
 - 2022-04-21: organize nextjs section 20
 - 2022-04-21: organize nextjs section 78
+- 2022-05-17: update nextjs section 72

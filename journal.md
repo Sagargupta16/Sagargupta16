@@ -1168,3 +1168,4 @@
 - 2022-05-12: security practice session 7
 - 2022-05-12: react practice session 8
 - 2022-05-12: ci-cd practice session 9
+- 2022-05-17: git practice session 1

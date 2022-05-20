@@ -39,3 +39,4 @@
 - 2022-04-23: refactor api-design section 11
 - 2022-05-06: organize api-design section 54
 - 2022-05-20: improve api-design section 32
+- 2022-05-20: update api-design section 8

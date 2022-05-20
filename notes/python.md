@@ -35,3 +35,4 @@
 - 2022-05-01: refactor python section 23
 - 2022-05-01: refactor python section 16
 - 2022-05-17: refactor python section 89
+- 2022-05-20: update python section 30

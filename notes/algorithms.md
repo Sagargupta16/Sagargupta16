@@ -34,3 +34,4 @@
 - 2022-05-01: update algorithms section 40
 - 2022-05-17: revise algorithms section 99
 - 2022-05-17: improve algorithms section 37
+- 2022-05-20: revise algorithms section 58

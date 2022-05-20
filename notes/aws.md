@@ -49,3 +49,4 @@
 - 2022-05-17: revise aws section 98
 - 2022-05-20: expand aws section 81
 - 2022-05-20: improve aws section 35
+- 2022-05-20: organize aws section 67

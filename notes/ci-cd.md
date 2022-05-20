@@ -31,3 +31,4 @@
 - 2022-05-17: improve ci-cd section 12
 - 2022-05-17: revise ci-cd section 53
 - 2022-05-17: revise ci-cd section 76
+- 2022-05-20: expand ci-cd section 88

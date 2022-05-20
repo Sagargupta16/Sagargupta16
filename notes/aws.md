@@ -47,3 +47,4 @@
 - 2022-05-10: organize aws section 86
 - 2022-05-12: organize aws section 49
 - 2022-05-17: revise aws section 98
+- 2022-05-20: expand aws section 81

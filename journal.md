@@ -1194,3 +1194,4 @@
 - 2022-05-22: javascript practice session 7
 - 2022-05-22: debugging practice session 8
 - 2022-05-22: docker practice session 9
+- 2022-05-22: linux practice session 10

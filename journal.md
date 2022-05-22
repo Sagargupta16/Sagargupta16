@@ -1189,3 +1189,4 @@
 - 2022-05-22: testing practice session 2
 - 2022-05-22: docker practice session 3
 - 2022-05-22: testing practice session 4
+- 2022-05-22: git practice session 5

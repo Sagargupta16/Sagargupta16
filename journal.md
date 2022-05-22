@@ -1187,3 +1187,4 @@
 - 2022-05-17: aws practice session 17
 - 2022-05-22: terraform practice session 1
 - 2022-05-22: testing practice session 2
+- 2022-05-22: docker practice session 3

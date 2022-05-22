@@ -1192,3 +1192,4 @@
 - 2022-05-22: git practice session 5
 - 2022-05-22: python practice session 6
 - 2022-05-22: javascript practice session 7
+- 2022-05-22: debugging practice session 8

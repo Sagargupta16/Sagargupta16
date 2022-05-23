@@ -1196,3 +1196,4 @@
 - 2022-05-22: docker practice session 9
 - 2022-05-22: linux practice session 10
 - 2022-05-22: ci-cd practice session 11
+- 2022-05-23: debugging practice session 1

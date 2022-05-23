@@ -1198,3 +1198,4 @@
 - 2022-05-22: ci-cd practice session 11
 - 2022-05-23: debugging practice session 1
 - 2022-05-23: debugging practice session 2
+- 2022-05-23: python practice session 3

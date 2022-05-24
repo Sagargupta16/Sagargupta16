@@ -1204,3 +1204,4 @@
 - 2022-05-24: debugging practice session 1
 - 2022-05-24: api-design practice session 2
 - 2022-05-24: react practice session 3
+- 2022-05-24: testing practice session 4

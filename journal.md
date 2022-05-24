@@ -1201,3 +1201,4 @@
 - 2022-05-23: python practice session 3
 - 2022-05-23: react practice session 4
 - 2022-05-23: kubernetes practice session 5
+- 2022-05-24: debugging practice session 1

@@ -32,3 +32,4 @@
 - 2022-05-17: add nginx section 86
 - 2022-05-17: organize nginx section 56
 - 2022-05-20: refactor nginx section 22
+- 2022-05-29: revise nginx section 83

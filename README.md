@@ -38,4 +38,3 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&locale=en" alt="sagargupta16" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&" alt="sagargupta16" /></p>
-](https://sagargupta16.github.io/PortFolio/#portfolio)

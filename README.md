@@ -4,7 +4,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20views&color=0e75b6&style=flat" alt="sagargupta16" /> </p>
 
-<p align="left"> <a href="https://twitter.com/sagargupta1610" target="blank"><img src="https://img.shields.io/twitter/follow/sagargupta1610?logo=twitter&style=for-the-badge" alt="sagargupta1610" /></a> </p>
+
 
 - 🎓 I'm pursuing Master's in Computer Applications(MCA) From **National Institute of Technology , Warangal**.
 

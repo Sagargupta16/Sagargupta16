@@ -16,8 +16,6 @@
 
 - 📄 Know about my experiences [My Resume](https://drive.google.com/file/d/1rS-iTEhfjA0z98ELuSpZKURXoRQunyo3/view)
 
-<h1><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16" /></h1>
-
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://codepen.io/sagargupta16" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg" alt="sagargupta16" height="30" width="40" /></a>
@@ -42,3 +40,5 @@
 <h1><img align="center" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=dark&locale=en" alt="sagargupta16" /></h1>
 
 <h1><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=dark" alt="sagargupta16" /></h1>
+
+<h1><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16" /></h1>

@@ -18,8 +18,8 @@
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
-<a href="https://codepen.io/sagargupta16" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg" alt="sagargupta16" height="30" width="40" /></a>
-<a href="https://twitter.com/sagargupta1610" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="sagargupta1610" height="30" width="40" /></a>
+<a href="https://codepen.io/sagargupta16" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codepen.svg" alt="sagargupta16" height="30" width="40" />Codepen</a>
+<a href="https://twitter.com/sagargupta1610" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="sagargupta1610" height="30" width="40" />Twitter</a>
 <a href="https://linkedin.com/in/sagar-gupta-16-10/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="sagar-gupta-16-10/" height="30" width="40" /></a>
 <a href="https://stackoverflow.com/users/stackoverflow.com/users/17216490/sagar-gupta" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="stackoverflow.com/users/17216490/sagar-gupta" height="30" width="40" /></a>
 <a href="https://fb.com/sagargupta16102k" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="sagargupta16102k" height="30" width="40" /></a>

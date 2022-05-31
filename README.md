@@ -85,10 +85,10 @@
     <a href="https://unity.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40"/> </a> </p>
 
 
-<h1><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16" /></h1>
-
-
 <h1><img align="center" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=dark&locale=en" alt="sagargupta16" /></h1>
 
 
 <h1><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=dark" alt="sagargupta16" /></h1>
+
+
+<h1><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16" /></h1>

@@ -7,3 +7,5 @@ Learning lot new skills.
 Exploring computer Science.
 
 You can check out my LinkedIn at www.linkedin.com/in/sagar-gupta-16-10/.
+
+[![Sagar's GitHub stats](https://github-readme-stats.vercel.app/api?username=Sagargupta16)](https://github.com/Sagargupta16/github-readme-stats)

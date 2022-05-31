@@ -1,13 +1,16 @@
 [<h1 align="center">Hi 👋, I'm Sagar</h1>
 <h3 align="center">A passionate frontend developer and Programmer from India.</h3>
+<h3 align="center">I Solve Problems in Creative Ways.</h3>
 
-- 🌱 I’m currently learning **MERN Stack**
+- 🎓 I'm pursuing Master's in Computer Applications(MCA) From **National Institute of Technology , Warangal**.
 
-- 👨‍💻 All of my projects are available at [https://sagargupta16.github.io/PortFolio/](https://sagargupta16.github.io/PortFolio/)
+- 🌱 I’m learning Lot New Skills and Exploring Computer Science.
+
+- 👨‍💻 All of my projects are available at [Portfolio](https://sagargupta16.github.io/PortFolio/)
 
 - 📫 How to reach me **sg85207@gmail.com**
 
-- 📄 Know about my experiences [https://drive.google.com/file/d/1rS-iTEhfjA0z98ELuSpZKURXoRQunyo3/view](https://drive.google.com/file/d/1rS-iTEhfjA0z98ELuSpZKURXoRQunyo3/view)
+- 📄 Know about my experiences [My Resume](https://drive.google.com/file/d/1rS-iTEhfjA0z98ELuSpZKURXoRQunyo3/view)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">

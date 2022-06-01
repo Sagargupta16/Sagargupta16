@@ -2,9 +2,13 @@
 <h3 align="center">A passionate frontend developer and Programmer from India.</h3>
 <h3 align="center">I Solve Problems in Creative Ways.</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20views&color=0e75b6&style=flat" alt="sagargupta16" /> </p>
+<p align="right"> <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20views&color=0e75b6&style=flat" alt="sagargupta16" /> </p>
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 
+<!-- ABOUT ME -->
+<h2 id="about-me"> :pencil: About Me</h2>
 
 - 🎓 I'm pursuing Master's in Computer Applications(MCA) From **National Institute of Technology , Warangal**.
 
@@ -16,7 +20,11 @@
 
 - 📄 Know about my experiences [My Resume](https://drive.google.com/file/d/1rS-iTEhfjA0z98ELuSpZKURXoRQunyo3/view)
 
-<h3 align="left">Connect with me:</h3>
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<!-- Connect -->
+<h2 id="about-me"> 📧 Connect With me</h2>
 <h3 align="left">Social Links:</h3>
 <p align="left">
     <a href="https://linkedin.com/in/sagar-gupta-16-10/" target="blank"><img align="center"
@@ -59,7 +67,10 @@
 </p>
 
 
-<h3 align="left">Languages and Tools:</h3>
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<!-- PROJECT FILES DESCRIPTION -->
+<h2 id="language-and-tools"> 💻 Language and Tools</h2>
 <p align="left"> 
     <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/>C</a> 
     <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/>C++</a> 
@@ -73,12 +84,15 @@
     <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/>MySQL</a> 
     <a href="https://www.oracle.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle" width="40" height="40"/>Oracale DB</a> 
     <a href="https://unity.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40"/>Unity Engine</a> </p>
+    
+<img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16"/>
 
 
-<h1><img align="center" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=dark&locale=en" alt="sagargupta16" /></h1>
-
-
-<h1><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=dark" alt="sagargupta16" /></h1>
-
-
-<h1><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16"/></h1>
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+ 
+ <h2 id="stats"> 📊 Stats</h2>
+ 
+ <ul>
+    <li align="center"><img align="center" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=dark&locale=en" alt="sagargupta16" /></li>
+    <li align="center"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=dark" alt="sagargupta16" /></li>
+ </ul>

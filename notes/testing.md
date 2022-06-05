@@ -48,3 +48,4 @@
 - 2022-05-20: add testing section 76
 - 2022-05-21: improve testing section 42
 - 2022-05-23: expand testing section 92
+- 2022-06-05: refactor testing section 33

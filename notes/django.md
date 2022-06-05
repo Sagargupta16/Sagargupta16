@@ -48,3 +48,4 @@
 - 2022-05-23: revise django section 23
 - 2022-05-29: refactor django section 96
 - 2022-06-05: organize django section 68
+- 2022-06-05: refactor django section 28

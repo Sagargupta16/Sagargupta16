@@ -1206,3 +1206,4 @@
 - 2022-05-24: react practice session 3
 - 2022-05-24: testing practice session 4
 - 2022-05-24: fastapi practice session 5
+- 2022-06-05: fastapi practice session 1

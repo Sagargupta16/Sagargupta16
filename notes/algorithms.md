@@ -37,3 +37,4 @@
 - 2022-05-20: revise algorithms section 58
 - 2022-05-20: expand algorithms section 52
 - 2022-05-21: organize algorithms section 26
+- 2022-06-05: add algorithms section 80

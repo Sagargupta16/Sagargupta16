@@ -1209,3 +1209,4 @@
 - 2022-06-05: fastapi practice session 1
 - 2022-06-05: data-structures practice session 2
 - 2022-06-05: mongodb practice session 3
+- 2022-06-05: postgresql practice session 4

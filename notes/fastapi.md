@@ -49,3 +49,4 @@
 - 2022-04-16: add fastapi section 63
 - 2022-05-01: expand fastapi section 63
 - 2022-05-21: expand fastapi section 51
+- 2022-06-05: update fastapi section 79

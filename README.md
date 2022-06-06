@@ -28,20 +28,20 @@
 <h3 align="left">Social Links:</h3>
 <p align="left">
     <a href="https://linkedin.com/in/sagar-gupta-16-10/" target="blank"><img align="center"
-            src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg"
-            alt="sagar-gupta-16-10/" height="30" width="40" />LinkedIn</a>
+            src="https://img.shields.io/badge/LinkedIn-0077b5?style=for-the-badge&logo=linkedin&logoColor=white"
+            alt="sagar-gupta-16-10/" height="30" width="140" /></a>
     <a href="https://instagram.com/s_a_g_a_r__s_e_t_h" target="blank"><img align="center"
-            src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg"
-            alt="s_a_g_a_r__s_e_t_h" height="30" width="40" />Instagram</a>
+            src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"
+            alt="s_a_g_a_r__s_e_t_h" height="30" width="140" /></a>
     <a href="https://fb.com/sagargupta16102k" target="blank"><img align="center"
-            src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg"
-            alt="sagargupta16102k" height="30" width="40" />Facebook</a>
+            src="https://img.shields.io/badge/Facebook-4267B2?style=for-the-badge&logo=facebook&logoColor=white"
+            alt="sagargupta16102k" height="30" width="140" /></a>
     <a href="https://twitter.com/sagargupta1610" target="blank"><img align="center"
-            src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg"
-            alt="sagargupta1610" height="30" width="40" />Twitter</a>
+            src="https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"
+            alt="sagargupta1610" height="30" width="100" /></a>
     <a href="https://discord.gg/Joks#5382" target="blank"><img align="center"
-            src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg"
-            alt="Joks#5382" height="30" width="40" />Discord</a>
+            src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=Discord&logoColor=white"
+            alt="Joks#5382" height="30" width="140" /></a>
 
 </p>
 <h3 align="left">Coding Platform Links:</h3>

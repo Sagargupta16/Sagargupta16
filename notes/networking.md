@@ -39,3 +39,4 @@
 - 2022-05-01: improve networking section 38
 - 2022-05-06: add networking section 31
 - 2022-06-05: add networking section 81
+- 2022-06-08: improve networking section 77

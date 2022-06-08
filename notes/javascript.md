@@ -50,3 +50,4 @@
 - 2022-05-01: add javascript section 28
 - 2022-05-17: organize javascript section 31
 - 2022-05-17: refactor javascript section 44
+- 2022-06-08: improve javascript section 28

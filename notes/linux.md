@@ -39,3 +39,4 @@
 - 2022-05-21: expand linux section 1
 - 2022-05-29: improve linux section 78
 - 2022-06-08: organize linux section 7
+- 2022-06-08: refactor linux section 31

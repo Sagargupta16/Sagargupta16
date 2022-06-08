@@ -46,3 +46,4 @@
 - 2022-05-10: improve rust section 42
 - 2022-05-17: update rust section 66
 - 2022-06-08: expand rust section 92
+- 2022-06-08: refactor rust section 74

@@ -1211,3 +1211,4 @@
 - 2022-06-05: mongodb practice session 3
 - 2022-06-05: postgresql practice session 4
 - 2022-06-08: kubernetes practice session 1
+- 2022-06-08: terraform practice session 2

@@ -51,3 +51,4 @@
 - 2022-04-27: update docker section 82
 - 2022-05-12: organize docker section 18
 - 2022-05-20: update docker section 16
+- 2022-06-10: refactor docker section 3

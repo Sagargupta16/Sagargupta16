@@ -27,38 +27,38 @@
 <h2 id="about-me"> 📧 Connect With me</h2>
 <h3 align="left">Social Links:</h3>
 <p align="left">
-    <a href="https://linkedin.com/in/sagar-gupta-16-10/" target="blank"><img align="center"
+    <a href="https://linkedin.com/in/sagar-gupta-16-10/" target="_blank" rel="noreferrer"><img align="center"
             src="https://img.shields.io/badge/LinkedIn-0077b5?style=for-the-badge&logo=linkedin&logoColor=white"
             alt="sagar-gupta-16-10/" height="30" width="140" /></a>
-    <a href="https://instagram.com/s_a_g_a_r__s_e_t_h" target="blank"><img align="center"
+    <a href="https://instagram.com/s_a_g_a_r__s_e_t_h" target="_blank" rel="noreferrer"><img align="center"
             src="https://img.shields.io/badge/Instagram-bc2a8d?style=for-the-badge&logo=instagram&logoColor=white"
             alt="s_a_g_a_r__s_e_t_h" height="30" width="140" /></a>
-    <a href="https://fb.com/sagargupta16102k" target="blank"><img align="center"
+    <a href="https://fb.com/sagargupta16102k" target="_blank" rel="noreferrer"><img align="center"
             src="https://img.shields.io/badge/Facebook-4267B2?style=for-the-badge&logo=facebook&logoColor=white"
             alt="sagargupta16102k" height="30" width="140" /></a>
-    <a href="https://twitter.com/sagargupta1610" target="blank"><img align="center"
+    <a href="https://twitter.com/sagargupta1610" target="_blank" rel="noreferrer"><img align="center"
             src="https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"
             alt="sagargupta1610" height="30" width="140" /></a>
-    <a href="https://discord.gg/Joks#5382" target="blank"><img align="center"
+    <a href="https://discord.gg/Joks#5382" target="_blank" rel="noreferrer"><img align="center"
             src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=Discord&logoColor=white"
             alt="Joks#5382" height="30" width="130" /></a>
 
 </p>
 <h3 align="left">Coding Platform Links:</h3>
 <p align="left">
-    <a href="https://www.leetcode.com/sagargupta1610/" target="blank"><img align="center"
+    <a href="https://www.leetcode.com/sagargupta1610/" target="_blank" rel="noreferrer"><img align="center"
             src="https://img.shields.io/badge/LeetCode-222222?style=for-the-badge&logo=Leetcode&logoColor=white"
             alt="sagargupta1610/" height="30" width="140" /></a>
-    <a href="https://www.codechef.com/users/sagargupta_16" target="blank"><img align="center"
+    <a href="https://www.codechef.com/users/sagargupta_16" target="_blank" rel="noreferrer"><img align="center"
             src="https://img.shields.io/badge/Codechef-964b00?style=for-the-badge&logo=codechef&logoColor=white" 
             alt="sagargupta_16" height="30"width="140" /></a>
-    <a href="https://www.hackerrank.com/sagargupta1610" target="blank"><img align="center"
+    <a href="https://www.hackerrank.com/sagargupta1610" target="_blank" rel="noreferrer"><img align="center"
             src="https://img.shields.io/badge/HackerRank-6fb107?style=for-the-badge&logo=hackerRank&logoColor=white"
             alt="sagargupta1610" height="30" width="150" /></a>
-    <a href="https://www.hackerearth.com/@sg85207" target="blank"><img align="center"
+    <a href="https://www.hackerearth.com/@sg85207" target="_blank" rel="noreferrer"><img align="center"
             src="https://img.shields.io/badge/HackerEarth-000080?style=for-the-badge&logo=hackerearth&logoColor=white"
             alt="@sg85207" height="30" width="160" /></a>
-    <a href="https://auth.geeksforgeeks.org/user/sagargupta10/profile" target="blank"><img align="center"
+    <a href="https://auth.geeksforgeeks.org/user/sagargupta10/profile" target="_blank" rel="noreferrer"><img align="center"
             src="https://img.shields.io/badge/GFG-green?style=for-the-badge&logo=geeksforgeeks&logoColor=white"
             alt="sagargupta10/profile" height="30" width="100" /></a>
 </p>

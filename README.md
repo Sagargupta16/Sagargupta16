@@ -98,7 +98,7 @@
  <h2 id="stats"> 📊 Stats</h2>
  
  <ul>
-    <li align="center"><img src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16"/></li>
+    <li align="center"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16"/></li>
     <li align="center"><img align="center" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=dark&locale=en" alt="sagargupta16" /></li>
     <li align="center"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=dark" alt="sagargupta16" /></li>
  </ul>

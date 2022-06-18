@@ -18,7 +18,7 @@
 
 - 📫 How to reach me **sg85207@gmail.com**
 
-- 📄 Know about my experiences [My Resume](https://drive.google.com/drive/folders/14X40dro4wenw6HFbWEir9g_YSjc7IYLI/view)
+- 📄 Know about my experiences [My Resume](https://drive.google.com/file/d/1ej8NgK5Lo9dm7fe6Blj-C9xed7JU4PF2/view?usp=sharing)
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)

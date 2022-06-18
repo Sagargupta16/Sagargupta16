@@ -68,6 +68,7 @@
 
 <!-- PROJECT FILES DESCRIPTION -->
 <h2 id="language-and-tools"> 💻 Language and Tools</h2>
+<h3 align="left">Languages :</h3>
 <p align="left"> 
     <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> 
         <img src="https://img.shields.io/badge/-1598B6?style=for-the-badge&logo=c&logoColor=white" alt="c" width="50" height="40"/></a> 
@@ -76,7 +77,10 @@
     <a href="https://www.java.com" target="_blank" rel="noreferrer"> 
         <img src="https://img.shields.io/badge/JAVA-2E5FAB?style=for-the-badge&logo=java&logoColor=darkred" alt="java" width="90" height="40"/></a> 
     <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> 
-        <img src="https://img.shields.io/badge/CSharp-682876?style=for-the-badge&logo=csharp&logoColor=white" alt="csharp" width="120" height="40"/></a> 
+        <img src="https://img.shields.io/badge/CSharp-682876?style=for-the-badge&logo=csharp&logoColor=white" alt="csharp" width="120" height="40"/></a>
+</p>
+<h3 align="left">Web Development :</h3>
+<p align="left"> 
     <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> 
         <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="html5" width="90" height="40"/></a> 
     <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> 
@@ -87,11 +91,21 @@
         <img src="https://img.shields.io/badge/Git-171515?style=for-the-badge&logo=git&logoColor=F7DF1E" alt="git" width="80" height="40"/></a> 
     <a href="https://www.php.net" target="_blank" rel="noreferrer"> 
         <img src="https://img.shields.io/badge/PHP-171515?style=for-the-badge&logo=php&logoColor=white" alt="php" width="80" height="40"/></a> 
+</p>
+<h3 align="left">IDEs:</h3>
+<p align="left"> 
     <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> 
         <img src="https://img.shields.io/badge/Oracle DB-171515?style=for-the-badge&logo=oracle&logoColor=red" alt="oracle" width="120" height="40"/></a> 
     <a href="https://unity.com/" target="_blank" rel="noreferrer"> 
-        <img src="https://img.shields.io/badge/unity%20engine-171515?style=for-the-badge&logo=unity&logoColor=white" alt="unity" width="160" height="40"/></a> </p>
-
+        <img src="https://img.shields.io/badge/unity%20engine-171515?style=for-the-badge&logo=unity&logoColor=white" alt="unity" width="160" height="40"/></a> 
+</p>
+<h3 align="left">Code Editors:</h3>
+<p align="left"> 
+    <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"> 
+        <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VS-Code" width="200" height="40"/></a>
+    <a href="https://www.rstudio.com/" target="_blank" rel="noreferrer"> 
+        <img src="https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=RStudio&logoColor=white" alt="VS-Code" width="140" height="40"/></a>
+</p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
  

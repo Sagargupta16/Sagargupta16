@@ -12,7 +12,7 @@
 
 - 🎓 I'm pursuing Master's in Computer Applications(MCA) From **National Institute of Technology , Warangal**.
 
-- 🌱 I’m learning Lot New Skills and Exploring Computer Science.
+- 🌱 I’m Currently learning MERN Stack.
 
 - 👨‍💻 All of my projects are available at [Portfolio](https://sagargupta16.github.io/PortFolio/)
 

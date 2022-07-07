@@ -91,6 +91,8 @@
         <img src="https://img.shields.io/badge/Git-171515?style=for-the-badge&logo=git&logoColor=F7DF1E" alt="git" width="80" height="40"/></a> 
     <a href="https://www.php.net" target="_blank" rel="noreferrer"> 
         <img src="https://img.shields.io/badge/PHP-171515?style=for-the-badge&logo=php&logoColor=white" alt="php" width="80" height="40"/></a> 
+    <a href="https://www.React.net" target="_blank" rel="noreferrer"> 
+        <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" width="100" height="40"/></a> 
 </p>
 <h3 align="left">IDEs:</h3>
 <p align="left"> 

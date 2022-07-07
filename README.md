@@ -75,7 +75,7 @@
     <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> 
         <img src="https://img.shields.io/badge/C++-1598B6?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="cplusplus" width="90" height="40"/></a> 
     <a href="https://www.java.com" target="_blank" rel="noreferrer"> 
-        <img src="https://img.shields.io/badge/JAVA-2E5FAB?style=for-the-badge&logo=java&logoColor=darkred" alt="java" width="90" height="40"/></a> 
+        <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white" alt="java" width="90" height="40"/></a> 
     <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> 
         <img src="https://img.shields.io/badge/CSharp-682876?style=for-the-badge&logo=csharp&logoColor=white" alt="csharp" width="120" height="40"/></a>
 </p>
@@ -94,19 +94,18 @@
     <a href="https://www.React.net" target="_blank" rel="noreferrer"> 
         <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" width="100" height="40"/></a> 
 </p>
-<h3 align="left">IDEs:</h3>
+<h3 align="left">IDEs/Editors:</h3>
 <p align="left"> 
     <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> 
         <img src="https://img.shields.io/badge/Oracle DB-171515?style=for-the-badge&logo=oracle&logoColor=red" alt="oracle" width="120" height="40"/></a> 
     <a href="https://unity.com/" target="_blank" rel="noreferrer"> 
         <img src="https://img.shields.io/badge/unity%20engine-171515?style=for-the-badge&logo=unity&logoColor=white" alt="unity" width="160" height="40"/></a> 
-</p>
-<h3 align="left">Code Editors:</h3>
-<p align="left"> 
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"> 
-        <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VS-Code" width="200" height="40"/></a>
+    <a href="" target="_blank" rel="noreferrer"> 
+        <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VsCode" width="200" height="40"/></a>
     <a href="https://www.rstudio.com/" target="_blank" rel="noreferrer"> 
-        <img src="https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=RStudio&logoColor=white" alt="VS-Code" width="140" height="40"/></a>
+        <img src="https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=RStudio&logoColor=white" alt="VS-Code" width="120" height="40"/></a>
+    <a href="" target="_blank" rel="noreferrer"> 
+        <img src="https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IntelliJ" width="180" height="40"/></a>
 </p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)

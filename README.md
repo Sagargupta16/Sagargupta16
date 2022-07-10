@@ -11,14 +11,18 @@
 <h2 id="about-me"> :pencil: About Me</h2>
 
 - 🎓 I'm pursuing Master's in Computer Applications(MCA) From **National Institute of Technology , Warangal**.
-
 - 🌱 I’m Currently learning MERN Stack.
-
 - 👨‍💻 All of my projects are available at [Portfolio](https://sagargupta16.github.io/PortFolio/)
-
 - 📫 How to reach me **sg85207@gmail.com**
-
 - 📄 Know about my experiences [My Resume](https://drive.google.com/file/d/1ej8NgK5Lo9dm7fe6Blj-C9xed7JU4PF2/view?usp=sharing)
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<h2>:sparkles: Projects </h2>
+
+- Contact Manager - July 2021 [CSS, React, Redux, Router] -- [Deployed Here!](https://sagargupta16.github.io/contact-manager/) -- [Repo Link](https://github.com/Sagargupta16/contact-manager).
+- Personal Portfolio - May-Jun 2021 [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/PortFolio/) -- [Repo Link](https://github.com/Sagargupta16/PortFolio).
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)

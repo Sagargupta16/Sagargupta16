@@ -21,8 +21,8 @@
 
 <h2>:sparkles: Projects </h2>
 
-- Contact Manager - July 2021 [CSS, React, Redux, Router] -- [Deployed Here!](https://sagargupta16.github.io/contact-manager/) -- [Repo Link](https://github.com/Sagargupta16/contact-manager).
-- Personal Portfolio - May-Jun 2021 [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/PortFolio/) -- [Repo Link](https://github.com/Sagargupta16/PortFolio).
+- Contact Manager - July 2021 [CSS, React, Redux, Router] -- [Deployed Here!](https://sagargupta16.github.io/contact-manager/) -- [Repo Link Here!](https://github.com/Sagargupta16/contact-manager).
+- Personal Portfolio - May-Jun 2021 [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/PortFolio/) -- [Repo Link Here!](https://github.com/Sagargupta16/PortFolio).
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)

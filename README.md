@@ -12,8 +12,8 @@
 
 - 🎓 I'm pursuing Master's in Computer Applications(MCA) From **National Institute of Technology , Warangal**.
 - 🌱 I’m Currently learning MERN Stack.
-- 👨‍💻 All of my projects are available at [Portfolio](https://sagargupta16.github.io/PortFolio/)
-- 📫 How to reach me **sg85207@gmail.com**
+- 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/PortFolio/)
+- 📫 Wanna mail me **sg85207@gmail.com**
 - 📄 Know about my experiences [My Resume](https://drive.google.com/file/d/1ej8NgK5Lo9dm7fe6Blj-C9xed7JU4PF2/view?usp=sharing)
 
 

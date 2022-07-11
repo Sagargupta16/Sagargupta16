@@ -14,7 +14,7 @@
 - 🌱 I’m Currently learning MERN Stack.
 - 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/PortFolio/)
 - 📫 Wanna mail me **sg85207@gmail.com**
-- 📄 Know about my experiences [My Resume](https://drive.google.com/file/d/1ej8NgK5Lo9dm7fe6Blj-C9xed7JU4PF2/view?usp=sharing)
+- 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf)
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)

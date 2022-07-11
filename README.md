@@ -21,12 +21,15 @@
 
 <h2>:sparkles: Projects </h2>
 
-- Contact Manager - July 2022 [CSS, React, Redux, Router] -- [Deployed Here!](https://sagargupta16.github.io/contact-manager/) -- [Repo Link Here!](https://github.com/Sagargupta16/contact-manager)
-- Personal Portfolio - May-Jun 2022 [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/PortFolio/) -- [Repo Link Here!](https://github.com/Sagargupta16/PortFolio)
-- Music Player Web App - May 2022 [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/Music-Web-App/) -- [Repo Link Here!](https://github.com/Sagargupta16/Music-Web-App)
-- Guess the number Game - May 2022 [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/Guess-The-Number-Game/) -- [Repo Link Here!](https://github.com/Sagargupta16/Guess-The-Number-Game)
-- Minesweeper Game - Nov-Dec 2021 [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/Minesweeper-Game__UnityEngine)
-- Snake Game - Nov 2022 [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/Snake-Game__UnityEngine)
+- Contact Manager - July 2022 -- [CSS, React, Redux, Router] -- [Deployed Here!](https://sagargupta16.github.io/contact-manager/) -- [Repo Link Here!](https://github.com/Sagargupta16/contact-manager)
+- Personal Portfolio - May-Jun 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/PortFolio/) -- [Repo Link Here!](https://github.com/Sagargupta16/PortFolio)
+- Music Player Web App - May 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/Music-Web-App/) -- [Repo Link Here!](https://github.com/Sagargupta16/Music-Web-App)
+- Guess the number Game - May 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/Guess-The-Number-Game/) -- [Repo Link Here!](https://github.com/Sagargupta16/Guess-The-Number-Game)
+- Study HUB (1 day Team Hackathon) - Apr 2022 -- [HTML, CSS] -- [Deployed Here!](https://sayani13-glitch.github.io/noobathon_ON-11_1/) -- [Repo Link Here!](https://github.com/sayani13-glitch/noobathon_ON-11_1)
+- Minesweeper Game - Nov-Dec 2021 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/Minesweeper-Game__UnityEngine)
+- Snake Game - Nov 2022 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/Snake-Game__UnityEngine)
+- Flappy Bird Game - Nov 2022 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/FlappyBird-Game__UnityEngine)
+- Pac Man Game - Nov 2022 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/PacMan-Game__UnityEngine)
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)

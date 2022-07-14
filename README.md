@@ -11,10 +11,8 @@
     Apart from web development I love Problem Solving with use of Data Structures and Algorithms in Efficient Way.
 </p>
 <hr/>
-
 <details>
 <summary align="center"><h3 style="display: inline;">More About Me ⬇️ </h3></summary>
-
 <hr/>
 
 <!-- ABOUT ME -->

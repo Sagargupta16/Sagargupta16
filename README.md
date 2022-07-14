@@ -1,11 +1,15 @@
 <h1 align="center">Hi 👋, I'm Sagar Gupta</h1>
-<h3 align="center">A passionate frontend developer and Programmer from India.</h3>
+<h3 align="center">A passionate developer and Programmer from India.</h3>
 <h3 align="center">I Solve Problems in Creative Ways.</h3>
 
 <p align="right"> <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20views&color=0e75b6&style=flat" alt="sagargupta16" /> </p>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
+
+<details>
+<summary align="center"><h3 style="display: inline;">More About Me ⬇️ </h3></summary>
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 <!-- ABOUT ME -->
 <h2 id="about-me"> :pencil: About Me</h2>
@@ -30,6 +34,8 @@
 - Snake Game - Nov 2022 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/Snake-Game__UnityEngine)
 - Flappy Bird Game - Nov 2022 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/FlappyBird-Game__UnityEngine)
 - Pac Man Game - Nov 2022 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/PacMan-Game__UnityEngine)
+
+
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -128,3 +134,6 @@
  <img align="center" width="450" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=dark&locale=en" alt="sagargupta16" />
  
  <img align="center" width="450" src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=dark" alt="sagargupta16" />
+ 
+ 
+ </details>

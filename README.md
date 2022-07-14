@@ -1,15 +1,21 @@
-<h1 align="center">Hi 👋, I'm Sagar Gupta</h1>
-<h3 align="center">A passionate developer and Programmer from India.</h3>
+<h1 align="center"><code>I'm Sagar Gupta</code></h1>
+<p align="right"> <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20views&color=0e75b6&style=flat" alt="sagargupta16" /> </p>
+<h3 align="center">A passionate Web Developer & Programmer.</h3>
 <h3 align="center">I Solve Problems in Creative Ways.</h3>
 
-<p align="right"> <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20views&color=0e75b6&style=flat" alt="sagargupta16" /> </p>
-
-
+<hr/>
+<p align="center">
+    👋 Hi, my name is Sagar Gupta, from Shivpuri, MP, India. <br />
+    I am an Postgraduate 🎓 from <a href="https://www.nitw.ac.in/">NIT Warangal</a>. 
+    I am a Web developer & Programmer who loves to write clean and efficient code. <br/>
+    Apart from web development I love Problem Solving with use of Data Structures and Algorithms in Efficient Way.
+</p>
+<hr/>
 
 <details>
 <summary align="center"><h3 style="display: inline;">More About Me ⬇️ </h3></summary>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<hr/>
 
 <!-- ABOUT ME -->
 <h2 id="about-me"> :pencil: About Me</h2>
@@ -21,7 +27,7 @@
 - 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf)
 
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<hr/>
 
 <h2>:sparkles: Projects </h2>
 
@@ -37,8 +43,7 @@
 
 
 
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<hr/>
 
 <!-- Connect -->
 <h2 id="about-me"> 📧 Connect With me</h2>
@@ -81,7 +86,7 @@
 </p>
 
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<hr/>
 
 <!-- PROJECT FILES DESCRIPTION -->
 <h2 id="language-and-tools"> 💻 Language and Tools</h2>
@@ -125,7 +130,8 @@
         <img src="https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IntelliJ" width="180" height="40"/></a>
 </p>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<hr/>
  
  <h2 id="stats"> 📊 Stats</h2>
  

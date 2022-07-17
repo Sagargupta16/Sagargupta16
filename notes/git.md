@@ -38,3 +38,4 @@
 - 2022-06-05: revise git section 12
 - 2022-06-05: organize git section 47
 - 2022-07-17: refactor git section 14
+- 2022-07-17: refactor git section 43

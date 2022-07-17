@@ -50,3 +50,4 @@
 - 2022-06-05: organize django section 68
 - 2022-06-05: refactor django section 28
 - 2022-06-05: expand django section 22
+- 2022-07-17: organize django section 30

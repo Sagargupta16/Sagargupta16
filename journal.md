@@ -1225,3 +1225,4 @@
 - 2022-07-31: javascript practice session 10
 - 2022-07-31: ci-cd practice session 11
 - 2022-07-31: aws practice session 12
+- 2022-07-31: ci-cd practice session 13

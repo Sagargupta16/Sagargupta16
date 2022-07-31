@@ -1235,3 +1235,4 @@
 - 2022-07-31: security practice session 20
 - 2022-07-31: testing practice session 21
 - 2022-07-31: testing practice session 22
+- 2022-07-31: python practice session 23

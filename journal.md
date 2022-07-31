@@ -1240,3 +1240,4 @@
 - 2022-07-31: security practice session 25
 - 2022-07-31: python practice session 26
 - 2022-07-31: javascript practice session 27
+- 2022-07-31: docker practice session 28

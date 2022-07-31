@@ -1221,3 +1221,4 @@
 - 2022-07-31: postgresql practice session 6
 - 2022-07-31: git practice session 7
 - 2022-07-31: testing practice session 8
+- 2022-07-31: api-design practice session 9

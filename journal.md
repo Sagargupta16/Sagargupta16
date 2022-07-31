@@ -1228,3 +1228,4 @@
 - 2022-07-31: ci-cd practice session 13
 - 2022-07-31: mongodb practice session 14
 - 2022-07-31: fastapi practice session 15
+- 2022-07-31: debugging practice session 16

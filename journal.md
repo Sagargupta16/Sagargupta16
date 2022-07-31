@@ -1216,3 +1216,4 @@
 - 2022-07-31: mongodb practice session 1
 - 2022-07-31: terraform practice session 2
 - 2022-07-31: ci-cd practice session 3
+- 2022-07-31: fastapi practice session 4

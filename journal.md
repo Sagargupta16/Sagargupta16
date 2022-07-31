@@ -1214,3 +1214,4 @@
 - 2022-06-08: terraform practice session 2
 - 2022-07-17: terraform practice session 1
 - 2022-07-31: mongodb practice session 1
+- 2022-07-31: terraform practice session 2

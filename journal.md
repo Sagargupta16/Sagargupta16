@@ -1243,3 +1243,4 @@
 - 2022-07-31: docker practice session 28
 - 2022-07-31: algorithms practice session 29
 - 2022-07-31: ml practice session 30
+- 2022-07-31: data-structures practice session 31

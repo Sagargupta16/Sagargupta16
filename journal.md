@@ -1231,3 +1231,4 @@
 - 2022-07-31: debugging practice session 16
 - 2022-07-31: data-structures practice session 17
 - 2022-07-31: api-design practice session 18
+- 2022-07-31: git practice session 19

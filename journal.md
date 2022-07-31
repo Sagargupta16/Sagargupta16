@@ -1219,3 +1219,4 @@
 - 2022-07-31: fastapi practice session 4
 - 2022-07-31: git practice session 5
 - 2022-07-31: postgresql practice session 6
+- 2022-07-31: git practice session 7

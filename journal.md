@@ -1223,3 +1223,4 @@
 - 2022-07-31: testing practice session 8
 - 2022-07-31: api-design practice session 9
 - 2022-07-31: javascript practice session 10
+- 2022-07-31: ci-cd practice session 11

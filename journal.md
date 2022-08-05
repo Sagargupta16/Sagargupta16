@@ -1248,3 +1248,4 @@
 - 2022-07-31: algorithms practice session 33
 - 2022-07-31: api-design practice session 34
 - 2022-07-31: docker practice session 35
+- 2022-08-05: git practice session 1

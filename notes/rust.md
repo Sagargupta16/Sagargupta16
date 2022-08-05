@@ -48,3 +48,4 @@
 - 2022-06-08: expand rust section 92
 - 2022-06-08: refactor rust section 74
 - 2022-06-08: expand rust section 57
+- 2022-08-05: update rust section 62

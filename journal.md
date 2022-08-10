@@ -1250,3 +1250,4 @@
 - 2022-07-31: docker practice session 35
 - 2022-08-05: git practice session 1
 - 2022-08-06: react practice session 1
+- 2022-08-10: aws practice session 1

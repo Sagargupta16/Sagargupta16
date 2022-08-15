@@ -1257,3 +1257,4 @@
 - 2022-08-15: aws practice session 2
 - 2022-08-15: python practice session 3
 - 2022-08-15: algorithms practice session 4
+- 2022-08-15: mongodb practice session 5

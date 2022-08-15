@@ -1258,3 +1258,4 @@
 - 2022-08-15: python practice session 3
 - 2022-08-15: algorithms practice session 4
 - 2022-08-15: mongodb practice session 5
+- 2022-08-15: ml practice session 6

@@ -1260,3 +1260,4 @@
 - 2022-08-15: mongodb practice session 5
 - 2022-08-15: ml practice session 6
 - 2022-08-15: kubernetes practice session 7
+- 2022-08-16: python practice session 1

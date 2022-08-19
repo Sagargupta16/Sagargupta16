@@ -1268,3 +1268,4 @@
 - 2022-08-19: react practice session 3
 - 2022-08-19: mongodb practice session 4
 - 2022-08-19: python practice session 5
+- 2022-08-19: javascript practice session 6

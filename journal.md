@@ -1266,3 +1266,4 @@
 - 2022-08-19: git practice session 1
 - 2022-08-19: debugging practice session 2
 - 2022-08-19: react practice session 3
+- 2022-08-19: mongodb practice session 4

@@ -1263,3 +1263,4 @@
 - 2022-08-16: python practice session 1
 - 2022-08-16: git practice session 2
 - 2022-08-16: docker practice session 3
+- 2022-08-19: git practice session 1

@@ -32,3 +32,4 @@
 - 2022-04-27: update mongodb section 79
 - 2022-04-27: revise mongodb section 53
 - 2022-06-08: add mongodb section 42
+- 2022-08-19: revise mongodb section 49

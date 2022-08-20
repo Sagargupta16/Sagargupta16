@@ -1281,3 +1281,4 @@
 - 2022-08-20: security practice session 10
 - 2022-08-20: algorithms practice session 11
 - 2022-08-20: python practice session 12
+- 2022-08-20: debugging practice session 13

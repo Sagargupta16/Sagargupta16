@@ -1272,3 +1272,4 @@
 - 2022-08-20: debugging practice session 1
 - 2022-08-20: algorithms practice session 2
 - 2022-08-20: fastapi practice session 3
+- 2022-08-20: mongodb practice session 4

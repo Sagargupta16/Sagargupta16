@@ -1269,3 +1269,4 @@
 - 2022-08-19: mongodb practice session 4
 - 2022-08-19: python practice session 5
 - 2022-08-19: javascript practice session 6
+- 2022-08-20: debugging practice session 1

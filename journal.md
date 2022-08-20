@@ -1300,3 +1300,4 @@
 - 2022-08-20: data-structures practice session 29
 - 2022-08-20: aws practice session 30
 - 2022-08-20: kubernetes practice session 31
+- 2022-08-20: debugging practice session 32

@@ -1275,3 +1275,4 @@
 - 2022-08-20: mongodb practice session 4
 - 2022-08-20: react practice session 5
 - 2022-08-20: terraform practice session 6
+- 2022-08-20: python practice session 7

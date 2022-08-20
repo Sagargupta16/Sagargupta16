@@ -1296,3 +1296,4 @@
 - 2022-08-20: ml practice session 25
 - 2022-08-20: testing practice session 26
 - 2022-08-20: data-structures practice session 27
+- 2022-08-20: aws practice session 28

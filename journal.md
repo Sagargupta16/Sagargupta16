@@ -1287,3 +1287,4 @@
 - 2022-08-20: debugging practice session 16
 - 2022-08-20: ml practice session 17
 - 2022-08-20: kubernetes practice session 18
+- 2022-08-20: aws practice session 19

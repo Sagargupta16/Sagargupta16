@@ -1278,3 +1278,4 @@
 - 2022-08-20: python practice session 7
 - 2022-08-20: security practice session 8
 - 2022-08-20: debugging practice session 9
+- 2022-08-20: security practice session 10

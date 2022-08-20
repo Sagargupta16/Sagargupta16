@@ -1289,3 +1289,4 @@
 - 2022-08-20: kubernetes practice session 18
 - 2022-08-20: aws practice session 19
 - 2022-08-20: aws practice session 20
+- 2022-08-20: api-design practice session 21

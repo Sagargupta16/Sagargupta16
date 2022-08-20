@@ -1293,3 +1293,4 @@
 - 2022-08-20: aws practice session 22
 - 2022-08-20: ml practice session 23
 - 2022-08-20: docker practice session 24
+- 2022-08-20: ml practice session 25

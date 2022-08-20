@@ -1309,3 +1309,4 @@
 - 2022-08-20: testing practice session 38
 - 2022-08-20: testing practice session 39
 - 2022-08-20: postgresql practice session 40
+- 2022-08-20: api-design practice session 41

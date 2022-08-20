@@ -1302,3 +1302,4 @@
 - 2022-08-20: kubernetes practice session 31
 - 2022-08-20: debugging practice session 32
 - 2022-08-20: postgresql practice session 33
+- 2022-08-20: ci-cd practice session 34

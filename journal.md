@@ -1306,3 +1306,4 @@
 - 2022-08-20: ci-cd practice session 35
 - 2022-08-20: security practice session 36
 - 2022-08-20: react practice session 37
+- 2022-08-20: testing practice session 38

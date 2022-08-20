@@ -40,3 +40,4 @@
 - 2022-06-05: refactor python section 86
 - 2022-06-08: revise python section 3
 - 2022-08-05: expand python section 61
+- 2022-08-20: add python section 73

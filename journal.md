@@ -1285,3 +1285,4 @@
 - 2022-08-20: python practice session 14
 - 2022-08-20: terraform practice session 15
 - 2022-08-20: debugging practice session 16
+- 2022-08-20: ml practice session 17

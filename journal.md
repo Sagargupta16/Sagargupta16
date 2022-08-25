@@ -1327,3 +1327,4 @@
 - 2022-08-25: fastapi practice session 15
 - 2022-08-25: linux practice session 16
 - 2022-08-25: security practice session 17
+- 2022-08-25: api-design practice session 18

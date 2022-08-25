@@ -1324,3 +1324,4 @@
 - 2022-08-25: ml practice session 12
 - 2022-08-25: security practice session 13
 - 2022-08-25: docker practice session 14
+- 2022-08-25: fastapi practice session 15

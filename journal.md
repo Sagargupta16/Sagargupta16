@@ -1319,3 +1319,4 @@
 - 2022-08-25: ml practice session 7
 - 2022-08-25: mongodb practice session 8
 - 2022-08-25: javascript practice session 9
+- 2022-08-25: algorithms practice session 10

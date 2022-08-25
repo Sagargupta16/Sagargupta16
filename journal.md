@@ -1332,3 +1332,4 @@
 - 2022-08-25: postgresql practice session 20
 - 2022-08-25: testing practice session 21
 - 2022-08-25: debugging practice session 22
+- 2022-08-25: ci-cd practice session 23

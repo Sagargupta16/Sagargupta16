@@ -1317,3 +1317,4 @@
 - 2022-08-25: mongodb practice session 5
 - 2022-08-25: aws practice session 6
 - 2022-08-25: ml practice session 7
+- 2022-08-25: mongodb practice session 8

@@ -1328,3 +1328,4 @@
 - 2022-08-25: linux practice session 16
 - 2022-08-25: security practice session 17
 - 2022-08-25: api-design practice session 18
+- 2022-08-25: python practice session 19

@@ -1312,3 +1312,4 @@
 - 2022-08-20: api-design practice session 41
 - 2022-08-25: ci-cd practice session 1
 - 2022-08-25: aws practice session 2
+- 2022-08-25: react practice session 3

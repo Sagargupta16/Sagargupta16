@@ -1329,3 +1329,4 @@
 - 2022-08-25: security practice session 17
 - 2022-08-25: api-design practice session 18
 - 2022-08-25: python practice session 19
+- 2022-08-25: postgresql practice session 20

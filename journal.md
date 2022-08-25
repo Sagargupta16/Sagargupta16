@@ -1321,3 +1321,4 @@
 - 2022-08-25: javascript practice session 9
 - 2022-08-25: algorithms practice session 10
 - 2022-08-25: fastapi practice session 11
+- 2022-08-25: ml practice session 12

@@ -1315,3 +1315,4 @@
 - 2022-08-25: react practice session 3
 - 2022-08-25: testing practice session 4
 - 2022-08-25: mongodb practice session 5
+- 2022-08-25: aws practice session 6

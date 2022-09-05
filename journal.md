@@ -1349,3 +1349,4 @@
 - 2022-09-05: react practice session 12
 - 2022-09-05: data-structures practice session 13
 - 2022-09-05: testing practice session 14
+- 2022-09-05: ml practice session 15

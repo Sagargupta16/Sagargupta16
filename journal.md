@@ -1337,3 +1337,4 @@
 - 2022-08-25: git practice session 25
 - 2022-09-05: terraform practice session 1
 - 2022-09-05: kubernetes practice session 2
+- 2022-09-05: python practice session 3

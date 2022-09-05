@@ -1335,3 +1335,4 @@
 - 2022-08-25: ci-cd practice session 23
 - 2022-08-25: testing practice session 24
 - 2022-08-25: git practice session 25
+- 2022-09-05: terraform practice session 1

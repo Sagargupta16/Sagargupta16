@@ -1345,3 +1345,4 @@
 - 2022-09-05: react practice session 8
 - 2022-09-05: react practice session 9
 - 2022-09-05: mongodb practice session 10
+- 2022-09-05: docker practice session 11

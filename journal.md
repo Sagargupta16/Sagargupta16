@@ -1352,3 +1352,4 @@
 - 2022-09-05: ml practice session 15
 - 2022-09-05: docker practice session 16
 - 2022-09-05: fastapi practice session 17
+- 2022-09-05: postgresql practice session 18

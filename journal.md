@@ -1340,3 +1340,4 @@
 - 2022-09-05: python practice session 3
 - 2022-09-05: api-design practice session 4
 - 2022-09-05: algorithms practice session 5
+- 2022-09-05: linux practice session 6

@@ -1354,3 +1354,4 @@
 - 2022-09-05: fastapi practice session 17
 - 2022-09-05: postgresql practice session 18
 - 2022-09-12: testing practice session 1
+- 2022-09-13: testing practice session 1

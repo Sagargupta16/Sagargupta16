@@ -50,3 +50,4 @@
 - 2022-06-08: expand rust section 57
 - 2022-08-05: update rust section 62
 - 2022-09-13: improve rust section 7
+- 2022-09-17: improve rust section 82

@@ -52,3 +52,4 @@
 - 2022-06-08: add graphql section 99
 - 2022-07-17: update graphql section 50
 - 2022-08-25: organize graphql section 25
+- 2022-09-17: add graphql section 29

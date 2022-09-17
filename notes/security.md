@@ -27,3 +27,4 @@
 - 2022-05-21: expand security section 38
 - 2022-07-17: improve security section 17
 - 2022-09-17: revise security section 84
+- 2022-09-17: refactor security section 26

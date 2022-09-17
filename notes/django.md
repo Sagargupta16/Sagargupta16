@@ -52,3 +52,4 @@
 - 2022-06-05: expand django section 22
 - 2022-07-17: organize django section 30
 - 2022-08-10: improve django section 28
+- 2022-09-17: improve django section 52

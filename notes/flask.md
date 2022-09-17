@@ -34,3 +34,4 @@
 - 2022-07-17: refactor flask section 25
 - 2022-07-28: add flask section 84
 - 2022-09-13: update flask section 73
+- 2022-09-17: update flask section 70

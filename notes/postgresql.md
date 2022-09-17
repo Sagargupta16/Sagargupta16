@@ -34,3 +34,4 @@
 - 2022-05-17: revise postgresql section 22
 - 2022-05-17: add postgresql section 3
 - 2022-05-20: update postgresql section 57
+- 2022-09-17: organize postgresql section 95

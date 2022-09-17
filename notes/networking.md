@@ -41,3 +41,4 @@
 - 2022-06-05: add networking section 81
 - 2022-06-08: improve networking section 77
 - 2022-08-19: refactor networking section 34
+- 2022-09-17: improve networking section 84

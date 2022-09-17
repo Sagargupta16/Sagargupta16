@@ -41,3 +41,4 @@
 - 2022-05-01: add redis section 12
 - 2022-05-10: update redis section 72
 - 2022-06-05: organize redis section 62
+- 2022-09-17: expand redis section 34

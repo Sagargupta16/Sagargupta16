@@ -54,3 +54,4 @@
 - 2022-08-15: organize devops section 6
 - 2022-08-19: improve devops section 73
 - 2022-08-19: update devops section 32
+- 2022-09-17: improve devops section 19

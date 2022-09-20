@@ -1357,3 +1357,4 @@
 - 2022-09-13: testing practice session 1
 - 2022-09-17: kubernetes practice session 1
 - 2022-09-17: postgresql practice session 2
+- 2022-09-20: javascript practice session 1

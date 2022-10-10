@@ -53,3 +53,4 @@
 - 2022-07-17: organize django section 30
 - 2022-08-10: improve django section 28
 - 2022-09-17: improve django section 52
+- 2022-10-10: organize django section 3

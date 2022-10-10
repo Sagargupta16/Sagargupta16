@@ -1370,3 +1370,4 @@
 - 2022-10-10: terraform practice session 8
 - 2022-10-10: terraform practice session 9
 - 2022-10-10: api-design practice session 10
+- 2022-10-10: linux practice session 11

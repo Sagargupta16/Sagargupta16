@@ -1374,3 +1374,4 @@
 - 2022-10-10: react practice session 12
 - 2022-10-10: debugging practice session 13
 - 2022-10-10: api-design practice session 14
+- 2022-10-10: linux practice session 15

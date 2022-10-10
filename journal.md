@@ -1376,3 +1376,4 @@
 - 2022-10-10: api-design practice session 14
 - 2022-10-10: linux practice session 15
 - 2022-10-10: data-structures practice session 16
+- 2022-10-10: api-design practice session 17

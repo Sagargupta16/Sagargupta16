@@ -1366,3 +1366,4 @@
 - 2022-10-10: data-structures practice session 4
 - 2022-10-10: api-design practice session 5
 - 2022-10-10: algorithms practice session 6
+- 2022-10-10: fastapi practice session 7

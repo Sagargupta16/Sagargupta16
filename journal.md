@@ -1362,3 +1362,4 @@
 - 2022-09-20: python practice session 3
 - 2022-10-10: git practice session 1
 - 2022-10-10: api-design practice session 2
+- 2022-10-10: postgresql practice session 3

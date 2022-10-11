@@ -1378,3 +1378,4 @@
 - 2022-10-10: data-structures practice session 16
 - 2022-10-10: api-design practice session 17
 - 2022-10-10: react practice session 18
+- 2022-10-11: postgresql practice session 1

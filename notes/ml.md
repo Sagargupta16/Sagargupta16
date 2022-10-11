@@ -44,3 +44,4 @@
 - 2022-08-05: refactor ml section 48
 - 2022-09-13: update ml section 34
 - 2022-09-13: expand ml section 30
+- 2022-10-11: revise ml section 8

@@ -1382,3 +1382,4 @@
 - 2022-10-11: aws practice session 2
 - 2022-10-14: fastapi practice session 1
 - 2022-10-14: linux practice session 2
+- 2022-10-14: git practice session 3

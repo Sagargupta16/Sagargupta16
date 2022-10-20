@@ -36,3 +36,4 @@
 - 2022-09-13: update flask section 73
 - 2022-09-17: update flask section 70
 - 2022-09-17: expand flask section 80
+- 2022-10-20: update flask section 69

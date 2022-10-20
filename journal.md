@@ -1383,3 +1383,4 @@
 - 2022-10-14: fastapi practice session 1
 - 2022-10-14: linux practice session 2
 - 2022-10-14: git practice session 3
+- 2022-10-20: docker practice session 1

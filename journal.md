@@ -1385,3 +1385,4 @@
 - 2022-10-14: git practice session 3
 - 2022-10-20: docker practice session 1
 - 2022-10-20: docker practice session 2
+- 2022-10-20: kubernetes practice session 3

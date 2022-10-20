@@ -36,3 +36,4 @@
 - 2022-07-17: add nginx section 15
 - 2022-09-13: add nginx section 19
 - 2022-10-20: revise nginx section 18
+- 2022-10-20: add nginx section 42

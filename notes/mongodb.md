@@ -37,3 +37,4 @@
 - 2022-09-17: refactor mongodb section 70
 - 2022-10-10: add mongodb section 5
 - 2022-10-20: improve mongodb section 21
+- 2022-10-20: organize mongodb section 14

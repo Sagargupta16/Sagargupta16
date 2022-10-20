@@ -36,3 +36,4 @@
 - 2022-08-20: organize ci-cd section 51
 - 2022-09-17: add ci-cd section 3
 - 2022-10-20: organize ci-cd section 94
+- 2022-10-20: update ci-cd section 30

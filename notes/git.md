@@ -41,3 +41,4 @@
 - 2022-07-17: refactor git section 43
 - 2022-10-20: organize git section 44
 - 2022-10-20: add git section 59
+- 2022-10-20: organize git section 1

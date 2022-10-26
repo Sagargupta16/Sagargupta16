@@ -1388,3 +1388,4 @@
 - 2022-10-20: kubernetes practice session 3
 - 2022-10-20: security practice session 4
 - 2022-10-26: security practice session 1
+- 2022-10-26: javascript practice session 2

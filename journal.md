@@ -1389,3 +1389,4 @@
 - 2022-10-20: security practice session 4
 - 2022-10-26: security practice session 1
 - 2022-10-26: javascript practice session 2
+- 2022-10-26: data-structures practice session 3

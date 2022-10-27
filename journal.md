@@ -1391,3 +1391,4 @@
 - 2022-10-26: javascript practice session 2
 - 2022-10-26: data-structures practice session 3
 - 2022-10-26: kubernetes practice session 4
+- 2022-10-27: ml practice session 1

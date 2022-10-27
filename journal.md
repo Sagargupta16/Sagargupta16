@@ -1399,3 +1399,4 @@
 - 2022-10-27: debugging practice session 6
 - 2022-10-27: algorithms practice session 7
 - 2022-10-27: git practice session 8
+- 2022-10-27: python practice session 9

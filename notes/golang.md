@@ -38,3 +38,4 @@
 - 2022-08-20: expand golang section 86
 - 2022-10-20: revise golang section 73
 - 2022-10-20: refactor golang section 74
+- 2022-10-27: improve golang section 57

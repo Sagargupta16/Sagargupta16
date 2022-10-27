@@ -1393,3 +1393,4 @@
 - 2022-10-26: kubernetes practice session 4
 - 2022-10-27: ml practice session 1
 - 2022-10-27: aws practice session 2
+- 2022-10-27: ml practice session 3

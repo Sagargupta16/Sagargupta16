@@ -1417,3 +1417,4 @@
 - 2022-10-27: api-design practice session 24
 - 2022-10-27: python practice session 25
 - 2022-10-27: data-structures practice session 26
+- 2022-10-27: git practice session 27

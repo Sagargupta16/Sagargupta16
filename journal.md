@@ -1411,3 +1411,4 @@
 - 2022-10-27: react practice session 18
 - 2022-10-27: python practice session 19
 - 2022-10-27: python practice session 20
+- 2022-10-27: react practice session 21

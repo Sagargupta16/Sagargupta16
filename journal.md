@@ -1410,3 +1410,4 @@
 - 2022-10-27: git practice session 17
 - 2022-10-27: react practice session 18
 - 2022-10-27: python practice session 19
+- 2022-10-27: python practice session 20

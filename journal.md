@@ -1408,3 +1408,4 @@
 - 2022-10-27: react practice session 15
 - 2022-10-27: mongodb practice session 16
 - 2022-10-27: git practice session 17
+- 2022-10-27: react practice session 18

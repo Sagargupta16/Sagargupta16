@@ -1404,3 +1404,4 @@
 - 2022-10-27: linux practice session 11
 - 2022-10-27: security practice session 12
 - 2022-10-27: security practice session 13
+- 2022-10-27: aws practice session 14

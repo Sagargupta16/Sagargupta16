@@ -1397,3 +1397,4 @@
 - 2022-10-27: fastapi practice session 4
 - 2022-10-27: git practice session 5
 - 2022-10-27: debugging practice session 6
+- 2022-10-27: algorithms practice session 7

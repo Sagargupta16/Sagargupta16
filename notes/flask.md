@@ -38,3 +38,4 @@
 - 2022-09-17: expand flask section 80
 - 2022-10-20: update flask section 69
 - 2022-10-24: organize flask section 87
+- 2022-10-27: improve flask section 66

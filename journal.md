@@ -1420,3 +1420,4 @@
 - 2022-10-27: git practice session 27
 - 2022-10-27: ci-cd practice session 28
 - 2022-10-27: linux practice session 29
+- 2022-10-27: javascript practice session 30

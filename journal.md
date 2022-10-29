@@ -1439,3 +1439,4 @@
 - 2022-10-29: fastapi practice session 13
 - 2022-10-29: javascript practice session 14
 - 2022-10-29: postgresql practice session 15
+- 2022-10-29: data-structures practice session 16

@@ -1434,3 +1434,4 @@
 - 2022-10-29: docker practice session 8
 - 2022-10-29: api-design practice session 9
 - 2022-10-29: docker practice session 10
+- 2022-10-29: postgresql practice session 11

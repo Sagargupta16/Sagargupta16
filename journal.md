@@ -1426,3 +1426,4 @@
 - 2022-10-27: postgresql practice session 33
 - 2022-10-29: docker practice session 1
 - 2022-10-29: algorithms practice session 2
+- 2022-10-29: data-structures practice session 3

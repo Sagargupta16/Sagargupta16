@@ -1425,3 +1425,4 @@
 - 2022-10-27: kubernetes practice session 32
 - 2022-10-27: postgresql practice session 33
 - 2022-10-29: docker practice session 1
+- 2022-10-29: algorithms practice session 2

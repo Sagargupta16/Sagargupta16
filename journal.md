@@ -1432,3 +1432,4 @@
 - 2022-10-29: linux practice session 6
 - 2022-10-29: api-design practice session 7
 - 2022-10-29: docker practice session 8
+- 2022-10-29: api-design practice session 9

@@ -1442,3 +1442,4 @@
 - 2022-10-29: data-structures practice session 16
 - 2022-10-29: terraform practice session 17
 - 2022-10-29: security practice session 18
+- 2022-10-29: algorithms practice session 19

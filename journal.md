@@ -1445,3 +1445,4 @@
 - 2022-10-29: algorithms practice session 19
 - 2022-10-29: fastapi practice session 20
 - 2022-10-29: git practice session 21
+- 2022-10-29: testing practice session 22

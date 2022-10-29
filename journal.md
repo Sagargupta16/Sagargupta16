@@ -1462,3 +1462,4 @@
 - 2022-10-29: terraform practice session 36
 - 2022-10-29: algorithms practice session 37
 - 2022-10-29: terraform practice session 38
+- 2022-10-29: terraform practice session 39

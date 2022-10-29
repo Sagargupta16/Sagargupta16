@@ -1456,3 +1456,4 @@
 - 2022-10-29: security practice session 30
 - 2022-10-29: git practice session 31
 - 2022-10-29: ml practice session 32
+- 2022-10-29: ml practice session 33

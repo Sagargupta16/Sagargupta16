@@ -1441,3 +1441,4 @@
 - 2022-10-29: postgresql practice session 15
 - 2022-10-29: data-structures practice session 16
 - 2022-10-29: terraform practice session 17
+- 2022-10-29: security practice session 18

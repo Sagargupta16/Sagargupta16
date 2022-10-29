@@ -1436,3 +1436,4 @@
 - 2022-10-29: docker practice session 10
 - 2022-10-29: postgresql practice session 11
 - 2022-10-29: git practice session 12
+- 2022-10-29: fastapi practice session 13

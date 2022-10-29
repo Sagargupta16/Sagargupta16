@@ -1438,3 +1438,4 @@
 - 2022-10-29: git practice session 12
 - 2022-10-29: fastapi practice session 13
 - 2022-10-29: javascript practice session 14
+- 2022-10-29: postgresql practice session 15

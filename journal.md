@@ -1449,3 +1449,4 @@
 - 2022-10-29: ml practice session 23
 - 2022-10-29: aws practice session 24
 - 2022-10-29: kubernetes practice session 25
+- 2022-10-29: api-design practice session 26

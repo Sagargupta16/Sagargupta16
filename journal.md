@@ -1452,3 +1452,4 @@
 - 2022-10-29: api-design practice session 26
 - 2022-10-29: security practice session 27
 - 2022-10-29: git practice session 28
+- 2022-10-29: algorithms practice session 29

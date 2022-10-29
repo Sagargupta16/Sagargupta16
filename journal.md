@@ -1460,3 +1460,4 @@
 - 2022-10-29: debugging practice session 34
 - 2022-10-29: api-design practice session 35
 - 2022-10-29: terraform practice session 36
+- 2022-10-29: algorithms practice session 37

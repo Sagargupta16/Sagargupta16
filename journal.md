@@ -1428,3 +1428,4 @@
 - 2022-10-29: algorithms practice session 2
 - 2022-10-29: data-structures practice session 3
 - 2022-10-29: react practice session 4
+- 2022-10-29: testing practice session 5

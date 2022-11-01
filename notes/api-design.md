@@ -42,3 +42,4 @@
 - 2022-05-20: update api-design section 8
 - 2022-09-13: organize api-design section 64
 - 2022-09-17: expand api-design section 80
+- 2022-11-01: revise api-design section 23

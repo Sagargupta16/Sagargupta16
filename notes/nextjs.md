@@ -46,3 +46,4 @@
 - 2022-09-17: update nextjs section 72
 - 2022-10-20: refactor nextjs section 62
 - 2022-10-24: expand nextjs section 57
+- 2022-11-01: organize nextjs section 7

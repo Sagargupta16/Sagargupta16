@@ -1466,3 +1466,4 @@
 - 2022-10-29: terraform practice session 40
 - 2022-11-01: docker practice session 1
 - 2022-11-01: git practice session 2
+- 2022-11-02: python practice session 1

@@ -48,3 +48,4 @@
 - 2022-10-20: revise terraform section 35
 - 2022-10-26: improve terraform section 49
 - 2022-10-29: expand terraform section 72
+- 2022-11-04: expand terraform section 91

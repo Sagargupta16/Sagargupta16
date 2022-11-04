@@ -1470,3 +1470,4 @@
 - 2022-11-04: ml practice session 1
 - 2022-11-04: ml practice session 2
 - 2022-11-04: testing practice session 3
+- 2022-11-04: linux practice session 4

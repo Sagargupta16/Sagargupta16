@@ -1472,3 +1472,4 @@
 - 2022-11-04: testing practice session 3
 - 2022-11-04: linux practice session 4
 - 2022-11-04: javascript practice session 5
+- 2022-11-04: data-structures practice session 6

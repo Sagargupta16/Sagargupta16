@@ -1481,3 +1481,4 @@
 - 2022-11-05: python practice session 6
 - 2022-11-05: data-structures practice session 7
 - 2022-11-05: git practice session 8
+- 2022-11-05: mongodb practice session 9

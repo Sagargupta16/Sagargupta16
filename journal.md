@@ -1477,3 +1477,4 @@
 - 2022-11-05: javascript practice session 2
 - 2022-11-05: react practice session 3
 - 2022-11-05: algorithms practice session 4
+- 2022-11-05: mongodb practice session 5

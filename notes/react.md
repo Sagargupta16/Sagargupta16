@@ -57,3 +57,4 @@
 - 2022-09-17: update react section 56
 - 2022-10-20: add react section 39
 - 2022-10-26: add react section 21
+- 2022-11-05: add react section 84

@@ -1475,3 +1475,4 @@
 - 2022-11-04: data-structures practice session 6
 - 2022-11-05: terraform practice session 1
 - 2022-11-05: javascript practice session 2
+- 2022-11-05: react practice session 3

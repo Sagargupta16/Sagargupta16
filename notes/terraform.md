@@ -50,3 +50,4 @@
 - 2022-10-29: expand terraform section 72
 - 2022-11-04: expand terraform section 91
 - 2022-11-04: refactor terraform section 6
+- 2022-11-05: improve terraform section 51

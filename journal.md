@@ -1497,3 +1497,4 @@
 - 2022-11-06: linux practice session 12
 - 2022-11-06: aws practice session 13
 - 2022-11-06: algorithms practice session 14
+- 2022-11-06: security practice session 15

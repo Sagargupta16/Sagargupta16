@@ -1489,3 +1489,4 @@
 - 2022-11-06: docker practice session 4
 - 2022-11-06: ci-cd practice session 5
 - 2022-11-06: mongodb practice session 6
+- 2022-11-06: aws practice session 7

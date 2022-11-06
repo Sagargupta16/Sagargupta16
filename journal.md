@@ -1492,3 +1492,4 @@
 - 2022-11-06: aws practice session 7
 - 2022-11-06: postgresql practice session 8
 - 2022-11-06: security practice session 9
+- 2022-11-06: react practice session 10

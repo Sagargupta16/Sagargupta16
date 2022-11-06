@@ -1491,3 +1491,4 @@
 - 2022-11-06: mongodb practice session 6
 - 2022-11-06: aws practice session 7
 - 2022-11-06: postgresql practice session 8
+- 2022-11-06: security practice session 9

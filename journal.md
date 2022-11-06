@@ -1483,3 +1483,4 @@
 - 2022-11-05: git practice session 8
 - 2022-11-05: mongodb practice session 9
 - 2022-11-05: postgresql practice session 10
+- 2022-11-06: debugging practice session 1

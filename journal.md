@@ -1485,3 +1485,4 @@
 - 2022-11-05: postgresql practice session 10
 - 2022-11-06: debugging practice session 1
 - 2022-11-06: ci-cd practice session 2
+- 2022-11-06: git practice session 3

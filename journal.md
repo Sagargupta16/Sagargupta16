@@ -1494,3 +1494,4 @@
 - 2022-11-06: security practice session 9
 - 2022-11-06: react practice session 10
 - 2022-11-06: fastapi practice session 11
+- 2022-11-06: linux practice session 12

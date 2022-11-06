@@ -1499,3 +1499,4 @@
 - 2022-11-06: algorithms practice session 14
 - 2022-11-06: security practice session 15
 - 2022-11-06: ml practice session 16
+- 2022-11-06: docker practice session 17

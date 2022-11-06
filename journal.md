@@ -1488,3 +1488,4 @@
 - 2022-11-06: git practice session 3
 - 2022-11-06: docker practice session 4
 - 2022-11-06: ci-cd practice session 5
+- 2022-11-06: mongodb practice session 6

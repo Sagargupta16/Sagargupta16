@@ -1508,3 +1508,4 @@
 - 2022-11-08: api-design practice session 6
 - 2022-11-08: algorithms practice session 7
 - 2022-11-08: fastapi practice session 8
+- 2022-11-08: git practice session 9

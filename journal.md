@@ -1501,3 +1501,4 @@
 - 2022-11-06: ml practice session 16
 - 2022-11-06: docker practice session 17
 - 2022-11-08: testing practice session 1
+- 2022-11-08: react practice session 2

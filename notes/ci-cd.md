@@ -39,3 +39,4 @@
 - 2022-10-20: update ci-cd section 30
 - 2022-10-26: organize ci-cd section 27
 - 2022-11-04: add ci-cd section 10
+- 2022-11-08: refactor ci-cd section 5

@@ -1514,3 +1514,4 @@
 - 2022-11-08: docker practice session 12
 - 2022-11-08: git practice session 13
 - 2022-11-08: postgresql practice session 14
+- 2022-11-08: testing practice session 15

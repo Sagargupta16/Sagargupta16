@@ -1511,3 +1511,4 @@
 - 2022-11-08: git practice session 9
 - 2022-11-08: ml practice session 10
 - 2022-11-08: debugging practice session 11
+- 2022-11-08: docker practice session 12

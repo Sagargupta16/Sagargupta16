@@ -1509,3 +1509,4 @@
 - 2022-11-08: algorithms practice session 7
 - 2022-11-08: fastapi practice session 8
 - 2022-11-08: git practice session 9
+- 2022-11-08: ml practice session 10

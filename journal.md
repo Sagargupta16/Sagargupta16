@@ -1507,3 +1507,4 @@
 - 2022-11-08: javascript practice session 5
 - 2022-11-08: api-design practice session 6
 - 2022-11-08: algorithms practice session 7
+- 2022-11-08: fastapi practice session 8

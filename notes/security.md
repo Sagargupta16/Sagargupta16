@@ -31,3 +31,4 @@
 - 2022-10-20: expand security section 37
 - 2022-10-20: refactor security section 52
 - 2022-11-01: expand security section 76
+- 2022-11-08: organize security section 86

@@ -52,3 +52,4 @@
 - 2022-05-20: organize aws section 67
 - 2022-08-27: add aws section 53
 - 2022-09-17: organize aws section 97
+- 2022-11-09: update aws section 88

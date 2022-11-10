@@ -39,3 +39,4 @@
 - 2022-10-20: update postgresql section 29
 - 2022-10-26: refactor postgresql section 73
 - 2022-11-04: add postgresql section 74
+- 2022-11-10: expand postgresql section 2

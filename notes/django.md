@@ -58,3 +58,4 @@
 - 2022-11-09: refactor django section 55
 - 2022-11-09: add django section 30
 - 2022-11-09: organize django section 21
+- 2022-11-10: refactor django section 97

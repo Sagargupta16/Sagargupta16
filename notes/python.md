@@ -45,3 +45,4 @@
 - 2022-11-09: refactor python section 32
 - 2022-11-09: improve python section 8
 - 2022-11-12: expand python section 89
+- 2022-11-12: organize python section 22

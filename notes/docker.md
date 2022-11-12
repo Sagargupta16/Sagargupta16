@@ -55,3 +55,4 @@
 - 2022-08-19: add docker section 65
 - 2022-11-07: add docker section 18
 - 2022-11-08: update docker section 64
+- 2022-11-12: improve docker section 10

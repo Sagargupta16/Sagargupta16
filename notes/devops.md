@@ -58,3 +58,4 @@
 - 2022-10-20: organize devops section 15
 - 2022-11-12: expand devops section 15
 - 2022-11-12: refactor devops section 56
+- 2022-11-12: revise devops section 50

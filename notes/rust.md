@@ -53,3 +53,4 @@
 - 2022-09-17: improve rust section 82
 - 2022-11-08: add rust section 27
 - 2022-11-09: organize rust section 79
+- 2022-11-12: update rust section 2

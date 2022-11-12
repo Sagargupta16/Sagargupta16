@@ -59,3 +59,4 @@
 - 2022-11-12: expand devops section 15
 - 2022-11-12: refactor devops section 56
 - 2022-11-12: revise devops section 50
+- 2022-11-12: revise devops section 62

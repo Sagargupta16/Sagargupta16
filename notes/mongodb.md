@@ -38,3 +38,4 @@
 - 2022-10-10: add mongodb section 5
 - 2022-10-20: improve mongodb section 21
 - 2022-10-20: organize mongodb section 14
+- 2022-11-12: add mongodb section 53

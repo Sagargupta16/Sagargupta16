@@ -49,3 +49,4 @@
 - 2022-10-27: update redis section 69
 - 2022-11-12: revise redis section 29
 - 2022-11-12: refactor redis section 21
+- 2022-11-12: organize redis section 11

@@ -56,3 +56,4 @@
 - 2022-10-27: revise testing section 9
 - 2022-11-09: add testing section 9
 - 2022-11-12: update testing section 87
+- 2022-11-12: refactor testing section 92

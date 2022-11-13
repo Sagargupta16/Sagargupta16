@@ -46,3 +46,4 @@
 - 2022-11-09: improve python section 8
 - 2022-11-12: expand python section 89
 - 2022-11-12: organize python section 22
+- 2022-11-13: improve python section 57

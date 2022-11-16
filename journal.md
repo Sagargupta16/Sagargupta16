@@ -1521,3 +1521,4 @@
 - 2022-11-12: python practice session 1
 - 2022-11-12: kubernetes practice session 2
 - 2022-11-13: debugging practice session 1
+- 2022-11-16: data-structures practice session 1

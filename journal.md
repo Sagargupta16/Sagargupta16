@@ -1525,3 +1525,4 @@
 - 2022-11-16: algorithms practice session 2
 - 2022-11-16: linux practice session 3
 - 2022-11-18: fastapi practice session 1
+- 2022-11-18: docker practice session 2

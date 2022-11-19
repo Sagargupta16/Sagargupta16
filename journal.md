@@ -1529,3 +1529,4 @@
 - 2022-11-19: javascript practice session 1
 - 2022-11-19: aws practice session 2
 - 2022-11-19: javascript practice session 3
+- 2022-11-19: fastapi practice session 4

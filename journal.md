@@ -1542,3 +1542,4 @@
 - 2022-11-21: aws practice session 9
 - 2022-11-21: git practice session 10
 - 2022-11-21: git practice session 11
+- 2022-11-21: api-design practice session 12

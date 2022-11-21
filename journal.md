@@ -1535,3 +1535,4 @@
 - 2022-11-21: ci-cd practice session 2
 - 2022-11-21: aws practice session 3
 - 2022-11-21: mongodb practice session 4
+- 2022-11-21: api-design practice session 5

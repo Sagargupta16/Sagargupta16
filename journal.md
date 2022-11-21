@@ -1533,3 +1533,4 @@
 - 2022-11-20: aws practice session 1
 - 2022-11-21: debugging practice session 1
 - 2022-11-21: ci-cd practice session 2
+- 2022-11-21: aws practice session 3

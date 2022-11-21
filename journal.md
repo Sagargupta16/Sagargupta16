@@ -1541,3 +1541,4 @@
 - 2022-11-21: docker practice session 8
 - 2022-11-21: aws practice session 9
 - 2022-11-21: git practice session 10
+- 2022-11-21: git practice session 11

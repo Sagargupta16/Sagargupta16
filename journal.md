@@ -1534,3 +1534,4 @@
 - 2022-11-21: debugging practice session 1
 - 2022-11-21: ci-cd practice session 2
 - 2022-11-21: aws practice session 3
+- 2022-11-21: mongodb practice session 4

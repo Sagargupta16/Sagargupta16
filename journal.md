@@ -1538,3 +1538,4 @@
 - 2022-11-21: api-design practice session 5
 - 2022-11-21: postgresql practice session 6
 - 2022-11-21: terraform practice session 7
+- 2022-11-21: docker practice session 8

@@ -1532,3 +1532,4 @@
 - 2022-11-19: fastapi practice session 4
 - 2022-11-20: aws practice session 1
 - 2022-11-21: debugging practice session 1
+- 2022-11-21: ci-cd practice session 2

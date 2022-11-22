@@ -49,3 +49,4 @@
 - 2022-11-01: organize nextjs section 7
 - 2022-11-10: revise nextjs section 32
 - 2022-11-12: organize nextjs section 55
+- 2022-11-22: expand nextjs section 56

@@ -44,3 +44,4 @@
 - 2022-11-20: organize postgresql section 94
 - 2022-11-20: update postgresql section 3
 - 2022-11-22: refactor postgresql section 29
+- 2022-11-22: refactor postgresql section 1

@@ -54,3 +54,4 @@
 - 2022-09-17: organize aws section 97
 - 2022-11-09: update aws section 88
 - 2022-11-09: refactor aws section 75
+- 2022-11-22: add aws section 43

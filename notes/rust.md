@@ -58,3 +58,4 @@
 - 2022-11-12: add rust section 42
 - 2022-11-12: revise rust section 1
 - 2022-11-14: expand rust section 75
+- 2022-11-22: organize rust section 73

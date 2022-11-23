@@ -41,3 +41,4 @@
 - 2022-11-12: add mongodb section 53
 - 2022-11-14: refactor mongodb section 65
 - 2022-11-14: refactor mongodb section 27
+- 2022-11-23: revise mongodb section 56

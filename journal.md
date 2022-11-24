@@ -1545,3 +1545,4 @@
 - 2022-11-21: api-design practice session 12
 - 2022-11-22: aws practice session 1
 - 2022-11-22: python practice session 2
+- 2022-11-24: ci-cd practice session 1

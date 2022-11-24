@@ -50,3 +50,4 @@
 - 2022-11-12: revise redis section 29
 - 2022-11-12: refactor redis section 21
 - 2022-11-12: organize redis section 11
+- 2022-11-24: expand redis section 99

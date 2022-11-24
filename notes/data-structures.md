@@ -53,3 +53,4 @@
 - 2022-11-12: add data-structures section 42
 - 2022-11-20: organize data-structures section 34
 - 2022-11-22: organize data-structures section 51
+- 2022-11-24: update data-structures section 16

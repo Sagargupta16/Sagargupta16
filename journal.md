@@ -1547,3 +1547,4 @@
 - 2022-11-22: python practice session 2
 - 2022-11-24: ci-cd practice session 1
 - 2022-11-24: docker practice session 2
+- 2022-11-24: linux practice session 3

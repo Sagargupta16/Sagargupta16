@@ -46,3 +46,4 @@
 - 2022-11-12: organize linux section 44
 - 2022-11-12: organize linux section 27
 - 2022-11-20: refactor linux section 4
+- 2022-11-24: improve linux section 34

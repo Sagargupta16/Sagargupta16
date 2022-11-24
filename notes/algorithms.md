@@ -46,3 +46,4 @@
 - 2022-11-10: add algorithms section 89
 - 2022-11-14: refactor algorithms section 28
 - 2022-11-21: revise algorithms section 6
+- 2022-11-24: expand algorithms section 30

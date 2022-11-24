@@ -50,3 +50,4 @@
 - 2022-11-05: improve typescript section 55
 - 2022-11-12: refactor typescript section 21
 - 2022-11-19: add typescript section 71
+- 2022-11-24: add typescript section 35

@@ -1565,3 +1565,4 @@
 - 2022-11-25: git practice session 15
 - 2022-11-25: react practice session 16
 - 2022-11-25: terraform practice session 17
+- 2022-11-25: kubernetes practice session 18

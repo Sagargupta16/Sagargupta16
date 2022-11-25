@@ -1564,3 +1564,4 @@
 - 2022-11-25: mongodb practice session 14
 - 2022-11-25: git practice session 15
 - 2022-11-25: react practice session 16
+- 2022-11-25: terraform practice session 17

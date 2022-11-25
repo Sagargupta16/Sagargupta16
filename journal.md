@@ -1554,3 +1554,4 @@
 - 2022-11-25: linux practice session 4
 - 2022-11-25: python practice session 5
 - 2022-11-25: api-design practice session 6
+- 2022-11-25: ml practice session 7

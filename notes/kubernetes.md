@@ -39,3 +39,4 @@
 - 2022-10-27: organize kubernetes section 19
 - 2022-11-08: improve kubernetes section 62
 - 2022-11-10: update kubernetes section 2
+- 2022-11-25: improve kubernetes section 17

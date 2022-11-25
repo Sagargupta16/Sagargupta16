@@ -1566,3 +1566,4 @@
 - 2022-11-25: react practice session 16
 - 2022-11-25: terraform practice session 17
 - 2022-11-25: kubernetes practice session 18
+- 2022-11-25: aws practice session 19

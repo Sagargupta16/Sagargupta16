@@ -1570,3 +1570,4 @@
 - 2022-11-25: fastapi practice session 20
 - 2022-11-25: python practice session 21
 - 2022-11-25: python practice session 22
+- 2022-11-25: api-design practice session 23

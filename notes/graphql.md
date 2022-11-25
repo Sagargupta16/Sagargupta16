@@ -60,3 +60,4 @@
 - 2022-11-12: expand graphql section 29
 - 2022-11-19: refactor graphql section 99
 - 2022-11-24: expand graphql section 5
+- 2022-11-25: expand graphql section 21

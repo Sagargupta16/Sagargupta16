@@ -53,3 +53,4 @@
 - 2022-06-08: improve javascript section 28
 - 2022-10-20: refactor javascript section 2
 - 2022-11-22: organize javascript section 5
+- 2022-11-25: expand javascript section 92

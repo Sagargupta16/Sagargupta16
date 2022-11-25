@@ -1573,3 +1573,4 @@
 - 2022-11-25: api-design practice session 23
 - 2022-11-25: debugging practice session 24
 - 2022-11-25: javascript practice session 25
+- 2022-11-25: data-structures practice session 26

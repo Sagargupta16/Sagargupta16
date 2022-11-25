@@ -54,3 +54,4 @@
 - 2022-08-20: organize fastapi section 35
 - 2022-11-10: revise fastapi section 94
 - 2022-11-12: revise fastapi section 40
+- 2022-11-25: revise fastapi section 87

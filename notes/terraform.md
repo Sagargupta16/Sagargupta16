@@ -56,3 +56,4 @@
 - 2022-11-12: revise terraform section 91
 - 2022-11-22: organize terraform section 76
 - 2022-11-22: update terraform section 29
+- 2022-11-25: improve terraform section 28

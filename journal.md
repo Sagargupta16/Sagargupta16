@@ -1562,3 +1562,4 @@
 - 2022-11-25: terraform practice session 12
 - 2022-11-25: fastapi practice session 13
 - 2022-11-25: mongodb practice session 14
+- 2022-11-25: git practice session 15

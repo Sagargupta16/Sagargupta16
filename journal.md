@@ -1575,3 +1575,4 @@
 - 2022-11-25: javascript practice session 25
 - 2022-11-25: data-structures practice session 26
 - 2022-11-25: react practice session 27
+- 2022-11-25: linux practice session 28

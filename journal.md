@@ -1577,3 +1577,4 @@
 - 2022-11-25: react practice session 27
 - 2022-11-25: linux practice session 28
 - 2022-11-25: kubernetes practice session 29
+- 2022-11-25: algorithms practice session 30

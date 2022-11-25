@@ -1563,3 +1563,4 @@
 - 2022-11-25: fastapi practice session 13
 - 2022-11-25: mongodb practice session 14
 - 2022-11-25: git practice session 15
+- 2022-11-25: react practice session 16

@@ -50,3 +50,4 @@
 - 2022-11-24: revise algorithms section 65
 - 2022-11-25: improve algorithms section 58
 - 2022-11-25: expand algorithms section 85
+- 2022-11-25: update algorithms section 73

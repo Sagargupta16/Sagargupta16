@@ -1560,3 +1560,4 @@
 - 2022-11-25: aws practice session 10
 - 2022-11-25: git practice session 11
 - 2022-11-25: terraform practice session 12
+- 2022-11-25: fastapi practice session 13

@@ -1558,3 +1558,4 @@
 - 2022-11-25: security practice session 8
 - 2022-11-25: linux practice session 9
 - 2022-11-25: aws practice session 10
+- 2022-11-25: git practice session 11

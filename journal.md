@@ -1549,3 +1549,4 @@
 - 2022-11-24: docker practice session 2
 - 2022-11-24: linux practice session 3
 - 2022-11-25: algorithms practice session 1
+- 2022-11-25: docker practice session 2

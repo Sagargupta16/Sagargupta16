@@ -42,3 +42,4 @@
 - 2022-11-12: improve nginx section 76
 - 2022-11-12: revise nginx section 87
 - 2022-11-20: add nginx section 53
+- 2022-11-27: improve nginx section 56

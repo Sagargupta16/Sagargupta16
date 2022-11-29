@@ -51,3 +51,4 @@
 - 2022-11-21: improve git section 98
 - 2022-11-22: update git section 49
 - 2022-11-22: expand git section 22
+- 2022-11-29: add git section 85

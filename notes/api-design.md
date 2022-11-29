@@ -47,3 +47,4 @@
 - 2022-11-12: organize api-design section 56
 - 2022-11-29: organize api-design section 53
 - 2022-11-29: add api-design section 61
+- 2022-11-29: organize api-design section 70

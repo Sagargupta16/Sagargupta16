@@ -61,3 +61,4 @@
 - 2022-11-10: refactor django section 97
 - 2022-11-21: add django section 45
 - 2022-11-29: expand django section 50
+- 2022-11-29: add django section 46

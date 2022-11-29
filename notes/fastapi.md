@@ -55,3 +55,4 @@
 - 2022-11-10: revise fastapi section 94
 - 2022-11-12: revise fastapi section 40
 - 2022-11-25: revise fastapi section 87
+- 2022-11-29: refactor fastapi section 1

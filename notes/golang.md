@@ -50,3 +50,4 @@
 - 2022-11-25: revise golang section 94
 - 2022-11-27: update golang section 29
 - 2022-11-27: organize golang section 28
+- 2022-11-29: organize golang section 23

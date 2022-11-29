@@ -50,3 +50,4 @@
 - 2022-11-22: improve python section 49
 - 2022-11-24: organize python section 76
 - 2022-11-26: add python section 34
+- 2022-11-29: add python section 99

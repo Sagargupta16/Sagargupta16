@@ -1582,3 +1582,4 @@
 - 2022-12-01: javascript practice session 2
 - 2022-12-01: data-structures practice session 3
 - 2022-12-01: kubernetes practice session 4
+- 2022-12-01: fastapi practice session 5

@@ -1581,3 +1581,4 @@
 - 2022-12-01: postgresql practice session 1
 - 2022-12-01: javascript practice session 2
 - 2022-12-01: data-structures practice session 3
+- 2022-12-01: kubernetes practice session 4

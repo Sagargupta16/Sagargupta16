@@ -1580,3 +1580,4 @@
 - 2022-11-25: algorithms practice session 30
 - 2022-12-01: postgresql practice session 1
 - 2022-12-01: javascript practice session 2
+- 2022-12-01: data-structures practice session 3

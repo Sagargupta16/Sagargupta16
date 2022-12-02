@@ -55,3 +55,4 @@
 - 2022-11-22: organize javascript section 5
 - 2022-11-25: expand javascript section 92
 - 2022-11-29: improve javascript section 53
+- 2022-12-02: organize javascript section 12

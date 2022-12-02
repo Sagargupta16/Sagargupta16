@@ -1586,3 +1586,4 @@
 - 2022-12-01: security practice session 6
 - 2022-12-01: postgresql practice session 7
 - 2022-12-02: linux practice session 1
+- 2022-12-02: linux practice session 2

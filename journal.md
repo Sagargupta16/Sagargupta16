@@ -1587,3 +1587,4 @@
 - 2022-12-01: postgresql practice session 7
 - 2022-12-02: linux practice session 1
 - 2022-12-02: linux practice session 2
+- 2022-12-03: data-structures practice session 1

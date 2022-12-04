@@ -62,3 +62,4 @@
 - 2022-11-29: organize rust section 23
 - 2022-11-29: revise rust section 17
 - 2022-11-29: organize rust section 48
+- 2022-12-04: expand rust section 95

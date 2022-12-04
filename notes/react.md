@@ -65,3 +65,4 @@
 - 2022-11-24: refactor react section 28
 - 2022-11-26: update react section 16
 - 2022-11-26: organize react section 29
+- 2022-12-04: update react section 12

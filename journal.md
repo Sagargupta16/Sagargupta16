@@ -1589,3 +1589,4 @@
 - 2022-12-02: linux practice session 2
 - 2022-12-03: data-structures practice session 1
 - 2022-12-03: security practice session 2
+- 2022-12-04: javascript practice session 1

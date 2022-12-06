@@ -1602,3 +1602,4 @@
 - 2022-12-06: testing practice session 10
 - 2022-12-06: fastapi practice session 11
 - 2022-12-06: security practice session 12
+- 2022-12-06: algorithms practice session 13

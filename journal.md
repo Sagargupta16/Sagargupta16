@@ -1595,3 +1595,4 @@
 - 2022-12-06: docker practice session 3
 - 2022-12-06: mongodb practice session 4
 - 2022-12-06: ml practice session 5
+- 2022-12-06: linux practice session 6

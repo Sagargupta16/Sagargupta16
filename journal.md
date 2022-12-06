@@ -1618,3 +1618,4 @@
 - 2022-12-06: security practice session 26
 - 2022-12-06: ci-cd practice session 27
 - 2022-12-06: algorithms practice session 28
+- 2022-12-06: linux practice session 29

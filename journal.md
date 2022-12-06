@@ -1597,3 +1597,4 @@
 - 2022-12-06: ml practice session 5
 - 2022-12-06: linux practice session 6
 - 2022-12-06: react practice session 7
+- 2022-12-06: api-design practice session 8

@@ -1615,3 +1615,4 @@
 - 2022-12-06: ml practice session 23
 - 2022-12-06: git practice session 24
 - 2022-12-06: aws practice session 25
+- 2022-12-06: security practice session 26

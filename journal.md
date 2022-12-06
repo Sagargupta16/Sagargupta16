@@ -1620,3 +1620,4 @@
 - 2022-12-06: algorithms practice session 28
 - 2022-12-06: linux practice session 29
 - 2022-12-06: ml practice session 30
+- 2022-12-06: kubernetes practice session 31

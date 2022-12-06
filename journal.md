@@ -1617,3 +1617,4 @@
 - 2022-12-06: aws practice session 25
 - 2022-12-06: security practice session 26
 - 2022-12-06: ci-cd practice session 27
+- 2022-12-06: algorithms practice session 28

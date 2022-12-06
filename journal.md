@@ -1611,3 +1611,4 @@
 - 2022-12-06: debugging practice session 19
 - 2022-12-06: docker practice session 20
 - 2022-12-06: mongodb practice session 21
+- 2022-12-06: javascript practice session 22

@@ -1593,3 +1593,4 @@
 - 2022-12-06: data-structures practice session 1
 - 2022-12-06: data-structures practice session 2
 - 2022-12-06: docker practice session 3
+- 2022-12-06: mongodb practice session 4

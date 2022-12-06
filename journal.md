@@ -1625,3 +1625,4 @@
 - 2022-12-06: ml practice session 33
 - 2022-12-06: javascript practice session 34
 - 2022-12-06: javascript practice session 35
+- 2022-12-06: javascript practice session 36

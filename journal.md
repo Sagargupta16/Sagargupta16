@@ -1613,3 +1613,4 @@
 - 2022-12-06: mongodb practice session 21
 - 2022-12-06: javascript practice session 22
 - 2022-12-06: ml practice session 23
+- 2022-12-06: git practice session 24

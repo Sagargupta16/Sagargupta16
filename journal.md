@@ -1612,3 +1612,4 @@
 - 2022-12-06: docker practice session 20
 - 2022-12-06: mongodb practice session 21
 - 2022-12-06: javascript practice session 22
+- 2022-12-06: ml practice session 23

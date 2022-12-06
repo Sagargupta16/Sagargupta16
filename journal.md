@@ -1626,3 +1626,4 @@
 - 2022-12-06: javascript practice session 34
 - 2022-12-06: javascript practice session 35
 - 2022-12-06: javascript practice session 36
+- 2022-12-06: linux practice session 37

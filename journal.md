@@ -1607,3 +1607,4 @@
 - 2022-12-06: kubernetes practice session 15
 - 2022-12-06: react practice session 16
 - 2022-12-06: mongodb practice session 17
+- 2022-12-06: testing practice session 18

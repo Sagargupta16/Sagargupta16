@@ -63,3 +63,4 @@
 - 2022-11-29: expand django section 50
 - 2022-11-29: add django section 46
 - 2022-12-02: improve django section 30
+- 2022-12-06: revise django section 61

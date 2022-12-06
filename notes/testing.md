@@ -62,3 +62,4 @@
 - 2022-11-27: add testing section 10
 - 2022-11-29: refactor testing section 48
 - 2022-12-02: refactor testing section 65
+- 2022-12-06: improve testing section 32

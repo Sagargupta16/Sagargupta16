@@ -1623,3 +1623,4 @@
 - 2022-12-06: kubernetes practice session 31
 - 2022-12-06: javascript practice session 32
 - 2022-12-06: ml practice session 33
+- 2022-12-06: javascript practice session 34

@@ -1601,3 +1601,4 @@
 - 2022-12-06: data-structures practice session 9
 - 2022-12-06: testing practice session 10
 - 2022-12-06: fastapi practice session 11
+- 2022-12-06: security practice session 12

@@ -1604,3 +1604,4 @@
 - 2022-12-06: security practice session 12
 - 2022-12-06: algorithms practice session 13
 - 2022-12-06: postgresql practice session 14
+- 2022-12-06: kubernetes practice session 15

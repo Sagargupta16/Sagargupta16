@@ -1628,3 +1628,4 @@
 - 2022-12-06: javascript practice session 36
 - 2022-12-06: linux practice session 37
 - 2022-12-06: docker practice session 38
+- 2022-12-07: docker practice session 1

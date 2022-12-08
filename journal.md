@@ -1633,3 +1633,4 @@
 - 2022-12-08: aws practice session 2
 - 2022-12-08: api-design practice session 3
 - 2022-12-08: kubernetes practice session 4
+- 2022-12-08: javascript practice session 5

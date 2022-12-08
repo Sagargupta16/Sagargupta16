@@ -1631,3 +1631,4 @@
 - 2022-12-07: docker practice session 1
 - 2022-12-08: docker practice session 1
 - 2022-12-08: aws practice session 2
+- 2022-12-08: api-design practice session 3

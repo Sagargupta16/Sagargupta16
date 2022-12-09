@@ -1639,3 +1639,4 @@
 - 2022-12-08: linux practice session 8
 - 2022-12-08: linux practice session 9
 - 2022-12-09: javascript practice session 1
+- 2022-12-09: ml practice session 2

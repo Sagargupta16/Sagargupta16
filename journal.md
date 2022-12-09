@@ -1644,3 +1644,4 @@
 - 2022-12-09: linux practice session 4
 - 2022-12-09: data-structures practice session 5
 - 2022-12-09: aws practice session 6
+- 2022-12-09: data-structures practice session 7

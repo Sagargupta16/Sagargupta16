@@ -55,3 +55,4 @@
 - 2022-12-02: refactor typescript section 45
 - 2022-12-04: revise typescript section 1
 - 2022-12-06: organize typescript section 99
+- 2022-12-09: refactor typescript section 88

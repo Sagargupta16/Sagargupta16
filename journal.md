@@ -1641,3 +1641,4 @@
 - 2022-12-09: javascript practice session 1
 - 2022-12-09: ml practice session 2
 - 2022-12-09: git practice session 3
+- 2022-12-09: linux practice session 4

@@ -1653,3 +1653,4 @@
 - 2022-12-10: testing practice session 6
 - 2022-12-10: git practice session 7
 - 2022-12-10: algorithms practice session 8
+- 2022-12-10: ml practice session 9

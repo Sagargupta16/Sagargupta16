@@ -1657,3 +1657,4 @@
 - 2022-12-10: api-design practice session 10
 - 2022-12-10: api-design practice session 11
 - 2022-12-10: docker practice session 12
+- 2022-12-10: ci-cd practice session 13

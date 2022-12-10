@@ -1670,3 +1670,4 @@
 - 2022-12-10: python practice session 23
 - 2022-12-10: terraform practice session 24
 - 2022-12-10: testing practice session 25
+- 2022-12-10: data-structures practice session 26

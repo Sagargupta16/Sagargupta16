@@ -1663,3 +1663,4 @@
 - 2022-12-10: linux practice session 16
 - 2022-12-10: api-design practice session 17
 - 2022-12-10: testing practice session 18
+- 2022-12-10: kubernetes practice session 19

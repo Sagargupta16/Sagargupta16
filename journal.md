@@ -1669,3 +1669,4 @@
 - 2022-12-10: react practice session 22
 - 2022-12-10: python practice session 23
 - 2022-12-10: terraform practice session 24
+- 2022-12-10: testing practice session 25

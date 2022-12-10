@@ -1661,3 +1661,4 @@
 - 2022-12-10: data-structures practice session 14
 - 2022-12-10: postgresql practice session 15
 - 2022-12-10: linux practice session 16
+- 2022-12-10: api-design practice session 17

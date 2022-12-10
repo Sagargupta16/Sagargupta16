@@ -1660,3 +1660,4 @@
 - 2022-12-10: ci-cd practice session 13
 - 2022-12-10: data-structures practice session 14
 - 2022-12-10: postgresql practice session 15
+- 2022-12-10: linux practice session 16

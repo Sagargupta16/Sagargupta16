@@ -1648,3 +1648,4 @@
 - 2022-12-10: kubernetes practice session 1
 - 2022-12-10: ci-cd practice session 2
 - 2022-12-10: react practice session 3
+- 2022-12-10: linux practice session 4

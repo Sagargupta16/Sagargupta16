@@ -1662,3 +1662,4 @@
 - 2022-12-10: postgresql practice session 15
 - 2022-12-10: linux practice session 16
 - 2022-12-10: api-design practice session 17
+- 2022-12-10: testing practice session 18

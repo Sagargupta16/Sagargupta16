@@ -1645,3 +1645,4 @@
 - 2022-12-09: data-structures practice session 5
 - 2022-12-09: aws practice session 6
 - 2022-12-09: data-structures practice session 7
+- 2022-12-10: kubernetes practice session 1

@@ -1656,3 +1656,4 @@
 - 2022-12-10: ml practice session 9
 - 2022-12-10: api-design practice session 10
 - 2022-12-10: api-design practice session 11
+- 2022-12-10: docker practice session 12

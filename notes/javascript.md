@@ -57,3 +57,4 @@
 - 2022-11-29: improve javascript section 53
 - 2022-12-02: organize javascript section 12
 - 2022-12-10: revise javascript section 98
+- 2022-12-12: add javascript section 51

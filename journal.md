@@ -1674,3 +1674,4 @@
 - 2022-12-11: security practice session 1
 - 2022-12-11: linux practice session 2
 - 2022-12-12: javascript practice session 1
+- 2022-12-12: security practice session 2

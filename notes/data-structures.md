@@ -60,3 +60,4 @@
 - 2022-11-29: revise data-structures section 25
 - 2022-12-06: expand data-structures section 25
 - 2022-12-11: organize data-structures section 25
+- 2022-12-12: improve data-structures section 7

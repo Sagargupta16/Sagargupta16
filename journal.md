@@ -1676,3 +1676,4 @@
 - 2022-12-12: javascript practice session 1
 - 2022-12-12: security practice session 2
 - 2022-12-12: git practice session 3
+- 2022-12-12: javascript practice session 4

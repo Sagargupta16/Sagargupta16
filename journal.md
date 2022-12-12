@@ -1673,3 +1673,4 @@
 - 2022-12-10: data-structures practice session 26
 - 2022-12-11: security practice session 1
 - 2022-12-11: linux practice session 2
+- 2022-12-12: javascript practice session 1

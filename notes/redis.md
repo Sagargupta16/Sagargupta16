@@ -53,3 +53,4 @@
 - 2022-11-24: expand redis section 99
 - 2022-12-09: organize redis section 74
 - 2022-12-13: expand redis section 16
+- 2022-12-13: add redis section 22

@@ -65,3 +65,4 @@
 - 2022-11-26: refactor docker section 21
 - 2022-12-08: refactor docker section 2
 - 2022-12-09: expand docker section 42
+- 2022-12-13: refactor docker section 6

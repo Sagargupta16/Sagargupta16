@@ -56,3 +56,4 @@
 - 2022-12-10: organize algorithms section 72
 - 2022-12-12: revise algorithms section 37
 - 2022-12-13: update algorithms section 14
+- 2022-12-13: update algorithms section 72

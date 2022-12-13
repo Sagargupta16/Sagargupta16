@@ -1685,3 +1685,4 @@
 - 2022-12-13: security practice session 6
 - 2022-12-13: linux practice session 7
 - 2022-12-13: api-design practice session 8
+- 2022-12-13: linux practice session 9

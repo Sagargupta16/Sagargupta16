@@ -1680,3 +1680,4 @@
 - 2022-12-13: terraform practice session 1
 - 2022-12-13: linux practice session 2
 - 2022-12-13: algorithms practice session 3
+- 2022-12-13: terraform practice session 4

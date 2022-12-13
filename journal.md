@@ -1692,3 +1692,4 @@
 - 2022-12-13: linux practice session 13
 - 2022-12-13: python practice session 14
 - 2022-12-13: linux practice session 15
+- 2022-12-13: kubernetes practice session 16

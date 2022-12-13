@@ -54,3 +54,4 @@
 - 2022-12-05: organize python section 54
 - 2022-12-10: update python section 24
 - 2022-12-13: improve python section 58
+- 2022-12-13: update python section 12

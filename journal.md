@@ -1687,3 +1687,4 @@
 - 2022-12-13: api-design practice session 8
 - 2022-12-13: linux practice session 9
 - 2022-12-13: api-design practice session 10
+- 2022-12-13: data-structures practice session 11

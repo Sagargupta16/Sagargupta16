@@ -1693,3 +1693,4 @@
 - 2022-12-13: python practice session 14
 - 2022-12-13: linux practice session 15
 - 2022-12-13: kubernetes practice session 16
+- 2022-12-13: terraform practice session 17

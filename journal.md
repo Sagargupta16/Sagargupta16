@@ -1696,3 +1696,4 @@
 - 2022-12-13: terraform practice session 17
 - 2022-12-13: api-design practice session 18
 - 2022-12-13: linux practice session 19
+- 2022-12-13: aws practice session 20

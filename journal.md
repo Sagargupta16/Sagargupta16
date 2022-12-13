@@ -1678,3 +1678,4 @@
 - 2022-12-12: git practice session 3
 - 2022-12-12: javascript practice session 4
 - 2022-12-13: terraform practice session 1
+- 2022-12-13: linux practice session 2

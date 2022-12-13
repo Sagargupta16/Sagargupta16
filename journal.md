@@ -1698,3 +1698,4 @@
 - 2022-12-13: linux practice session 19
 - 2022-12-13: aws practice session 20
 - 2022-12-13: docker practice session 21
+- 2022-12-13: react practice session 22

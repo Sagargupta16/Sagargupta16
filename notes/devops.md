@@ -64,3 +64,4 @@
 - 2022-11-22: refactor devops section 25
 - 2022-11-24: improve devops section 69
 - 2022-12-05: revise devops section 32
+- 2022-12-13: revise devops section 1

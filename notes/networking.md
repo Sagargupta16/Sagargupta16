@@ -50,3 +50,4 @@
 - 2022-11-22: refactor networking section 5
 - 2022-11-29: update networking section 68
 - 2022-12-06: refactor networking section 12
+- 2022-12-13: revise networking section 48

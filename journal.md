@@ -1711,3 +1711,4 @@
 - 2022-12-14: fastapi practice session 10
 - 2022-12-14: api-design practice session 11
 - 2022-12-14: data-structures practice session 12
+- 2022-12-14: api-design practice session 13

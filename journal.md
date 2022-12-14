@@ -1726,3 +1726,4 @@
 - 2022-12-14: terraform practice session 25
 - 2022-12-14: ml practice session 26
 - 2022-12-14: react practice session 27
+- 2022-12-14: security practice session 28

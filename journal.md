@@ -1708,3 +1708,4 @@
 - 2022-12-14: linux practice session 7
 - 2022-12-14: aws practice session 8
 - 2022-12-14: mongodb practice session 9
+- 2022-12-14: fastapi practice session 10

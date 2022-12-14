@@ -1703,3 +1703,4 @@
 - 2022-12-14: terraform practice session 2
 - 2022-12-14: aws practice session 3
 - 2022-12-14: terraform practice session 4
+- 2022-12-14: javascript practice session 5

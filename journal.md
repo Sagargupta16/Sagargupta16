@@ -1715,3 +1715,4 @@
 - 2022-12-14: ml practice session 14
 - 2022-12-14: kubernetes practice session 15
 - 2022-12-14: javascript practice session 16
+- 2022-12-14: data-structures practice session 17

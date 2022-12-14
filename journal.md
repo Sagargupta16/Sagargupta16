@@ -1713,3 +1713,4 @@
 - 2022-12-14: data-structures practice session 12
 - 2022-12-14: api-design practice session 13
 - 2022-12-14: ml practice session 14
+- 2022-12-14: kubernetes practice session 15

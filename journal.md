@@ -1705,3 +1705,4 @@
 - 2022-12-14: terraform practice session 4
 - 2022-12-14: javascript practice session 5
 - 2022-12-14: fastapi practice session 6
+- 2022-12-14: linux practice session 7

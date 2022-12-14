@@ -1699,3 +1699,4 @@
 - 2022-12-13: aws practice session 20
 - 2022-12-13: docker practice session 21
 - 2022-12-13: react practice session 22
+- 2022-12-14: algorithms practice session 1

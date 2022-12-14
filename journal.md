@@ -1723,3 +1723,4 @@
 - 2022-12-14: linux practice session 22
 - 2022-12-14: kubernetes practice session 23
 - 2022-12-14: api-design practice session 24
+- 2022-12-14: terraform practice session 25

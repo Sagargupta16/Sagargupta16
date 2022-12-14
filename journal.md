@@ -1701,3 +1701,4 @@
 - 2022-12-13: react practice session 22
 - 2022-12-14: algorithms practice session 1
 - 2022-12-14: terraform practice session 2
+- 2022-12-14: aws practice session 3

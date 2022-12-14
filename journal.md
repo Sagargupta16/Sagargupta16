@@ -1721,3 +1721,4 @@
 - 2022-12-14: debugging practice session 20
 - 2022-12-14: algorithms practice session 21
 - 2022-12-14: linux practice session 22
+- 2022-12-14: kubernetes practice session 23

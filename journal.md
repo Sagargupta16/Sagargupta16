@@ -1718,3 +1718,4 @@
 - 2022-12-14: data-structures practice session 17
 - 2022-12-14: kubernetes practice session 18
 - 2022-12-14: mongodb practice session 19
+- 2022-12-14: debugging practice session 20

@@ -1753,3 +1753,4 @@
 - 2022-12-15: react practice session 24
 - 2022-12-15: fastapi practice session 25
 - 2022-12-15: git practice session 26
+- 2022-12-15: mongodb practice session 27

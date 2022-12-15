@@ -1767,3 +1767,4 @@
 - 2022-12-15: aws practice session 38
 - 2022-12-15: testing practice session 39
 - 2022-12-15: python practice session 40
+- 2022-12-15: security practice session 41

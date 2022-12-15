@@ -1737,3 +1737,4 @@
 - 2022-12-15: ml practice session 8
 - 2022-12-15: api-design practice session 9
 - 2022-12-15: ci-cd practice session 10
+- 2022-12-15: api-design practice session 11

@@ -1762,3 +1762,4 @@
 - 2022-12-15: security practice session 33
 - 2022-12-15: python practice session 34
 - 2022-12-15: docker practice session 35
+- 2022-12-15: linux practice session 36

@@ -1773,3 +1773,4 @@
 - 2022-12-15: docker practice session 44
 - 2022-12-15: data-structures practice session 45
 - 2022-12-15: terraform practice session 46
+- 2022-12-15: ci-cd practice session 47

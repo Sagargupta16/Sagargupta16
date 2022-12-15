@@ -1744,3 +1744,4 @@
 - 2022-12-15: terraform practice session 15
 - 2022-12-15: postgresql practice session 16
 - 2022-12-15: aws practice session 17
+- 2022-12-15: ml practice session 18

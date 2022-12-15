@@ -1771,3 +1771,4 @@
 - 2022-12-15: linux practice session 42
 - 2022-12-15: git practice session 43
 - 2022-12-15: docker practice session 44
+- 2022-12-15: data-structures practice session 45

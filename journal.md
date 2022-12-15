@@ -1749,3 +1749,4 @@
 - 2022-12-15: debugging practice session 20
 - 2022-12-15: mongodb practice session 21
 - 2022-12-15: security practice session 22
+- 2022-12-15: ci-cd practice session 23

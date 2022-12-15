@@ -1743,3 +1743,4 @@
 - 2022-12-15: api-design practice session 14
 - 2022-12-15: terraform practice session 15
 - 2022-12-15: postgresql practice session 16
+- 2022-12-15: aws practice session 17

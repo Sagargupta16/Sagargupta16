@@ -1741,3 +1741,4 @@
 - 2022-12-15: ci-cd practice session 12
 - 2022-12-15: linux practice session 13
 - 2022-12-15: api-design practice session 14
+- 2022-12-15: terraform practice session 15

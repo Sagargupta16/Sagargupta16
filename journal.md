@@ -1759,3 +1759,4 @@
 - 2022-12-15: postgresql practice session 30
 - 2022-12-15: security practice session 31
 - 2022-12-15: terraform practice session 32
+- 2022-12-15: security practice session 33

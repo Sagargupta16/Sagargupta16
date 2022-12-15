@@ -1755,3 +1755,4 @@
 - 2022-12-15: git practice session 26
 - 2022-12-15: mongodb practice session 27
 - 2022-12-15: ci-cd practice session 28
+- 2022-12-15: react practice session 29

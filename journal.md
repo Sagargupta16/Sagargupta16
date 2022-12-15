@@ -1734,3 +1734,4 @@
 - 2022-12-15: debugging practice session 5
 - 2022-12-15: terraform practice session 6
 - 2022-12-15: algorithms practice session 7
+- 2022-12-15: ml practice session 8

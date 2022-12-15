@@ -1728,3 +1728,4 @@
 - 2022-12-14: react practice session 27
 - 2022-12-14: security practice session 28
 - 2022-12-15: testing practice session 1
+- 2022-12-15: security practice session 2

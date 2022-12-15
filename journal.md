@@ -1769,3 +1769,4 @@
 - 2022-12-15: python practice session 40
 - 2022-12-15: security practice session 41
 - 2022-12-15: linux practice session 42
+- 2022-12-15: git practice session 43

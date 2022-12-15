@@ -1732,3 +1732,4 @@
 - 2022-12-15: javascript practice session 3
 - 2022-12-15: ml practice session 4
 - 2022-12-15: debugging practice session 5
+- 2022-12-15: terraform practice session 6

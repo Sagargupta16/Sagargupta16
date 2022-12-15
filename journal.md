@@ -1760,3 +1760,4 @@
 - 2022-12-15: security practice session 31
 - 2022-12-15: terraform practice session 32
 - 2022-12-15: security practice session 33
+- 2022-12-15: python practice session 34

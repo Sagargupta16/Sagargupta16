@@ -47,3 +47,4 @@
 - 2022-12-13: update mongodb section 92
 - 2022-12-13: refactor mongodb section 91
 - 2022-12-13: expand mongodb section 39
+- 2022-12-16: organize mongodb section 81

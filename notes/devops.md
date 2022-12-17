@@ -66,3 +66,4 @@
 - 2022-12-05: revise devops section 32
 - 2022-12-13: revise devops section 1
 - 2022-12-16: expand devops section 59
+- 2022-12-17: add devops section 22

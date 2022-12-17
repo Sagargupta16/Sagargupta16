@@ -1778,3 +1778,4 @@
 - 2022-12-15: data-structures practice session 49
 - 2022-12-16: testing practice session 1
 - 2022-12-16: ml practice session 2
+- 2022-12-17: ml practice session 1

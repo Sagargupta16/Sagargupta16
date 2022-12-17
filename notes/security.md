@@ -35,3 +35,4 @@
 - 2022-11-09: add security section 13
 - 2022-11-12: improve security section 76
 - 2022-11-25: refactor security section 55
+- 2022-12-17: revise security section 78

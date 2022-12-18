@@ -54,3 +54,4 @@
 - 2022-12-04: revise nextjs section 54
 - 2022-12-16: revise nextjs section 97
 - 2022-12-17: expand nextjs section 2
+- 2022-12-18: organize nextjs section 82

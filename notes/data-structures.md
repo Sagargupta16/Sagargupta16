@@ -62,3 +62,4 @@
 - 2022-12-11: organize data-structures section 25
 - 2022-12-12: improve data-structures section 7
 - 2022-12-17: refactor data-structures section 71
+- 2022-12-18: refactor data-structures section 12

@@ -57,3 +57,4 @@
 - 2022-12-14: add api-design section 49
 - 2022-12-16: revise api-design section 14
 - 2022-12-16: refactor api-design section 50
+- 2022-12-19: expand api-design section 73

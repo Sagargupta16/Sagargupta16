@@ -1802,3 +1802,4 @@
 - 2022-12-19: ml practice session 16
 - 2022-12-19: javascript practice session 17
 - 2022-12-19: mongodb practice session 18
+- 2022-12-19: testing practice session 19

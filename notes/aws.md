@@ -58,3 +58,4 @@
 - 2022-11-24: expand aws section 66
 - 2022-12-09: organize aws section 3
 - 2022-12-18: expand aws section 92
+- 2022-12-19: improve aws section 13

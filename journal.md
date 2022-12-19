@@ -1794,3 +1794,4 @@
 - 2022-12-19: algorithms practice session 8
 - 2022-12-19: kubernetes practice session 9
 - 2022-12-19: algorithms practice session 10
+- 2022-12-19: testing practice session 11

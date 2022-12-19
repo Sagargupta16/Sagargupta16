@@ -1791,3 +1791,4 @@
 - 2022-12-19: javascript practice session 5
 - 2022-12-19: python practice session 6
 - 2022-12-19: mongodb practice session 7
+- 2022-12-19: algorithms practice session 8

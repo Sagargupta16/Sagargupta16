@@ -1797,3 +1797,4 @@
 - 2022-12-19: testing practice session 11
 - 2022-12-19: react practice session 12
 - 2022-12-19: docker practice session 13
+- 2022-12-19: kubernetes practice session 14

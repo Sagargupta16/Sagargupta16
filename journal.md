@@ -1784,3 +1784,4 @@
 - 2022-12-18: testing practice session 2
 - 2022-12-18: python practice session 3
 - 2022-12-18: terraform practice session 4
+- 2022-12-19: aws practice session 1

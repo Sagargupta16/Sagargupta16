@@ -1792,3 +1792,4 @@
 - 2022-12-19: python practice session 6
 - 2022-12-19: mongodb practice session 7
 - 2022-12-19: algorithms practice session 8
+- 2022-12-19: kubernetes practice session 9

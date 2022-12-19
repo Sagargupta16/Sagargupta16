@@ -1789,3 +1789,4 @@
 - 2022-12-19: ml practice session 3
 - 2022-12-19: terraform practice session 4
 - 2022-12-19: javascript practice session 5
+- 2022-12-19: python practice session 6

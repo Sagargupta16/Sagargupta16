@@ -1787,3 +1787,4 @@
 - 2022-12-19: aws practice session 1
 - 2022-12-19: api-design practice session 2
 - 2022-12-19: ml practice session 3
+- 2022-12-19: terraform practice session 4

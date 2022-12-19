@@ -1800,3 +1800,4 @@
 - 2022-12-19: kubernetes practice session 14
 - 2022-12-19: react practice session 15
 - 2022-12-19: ml practice session 16
+- 2022-12-19: javascript practice session 17

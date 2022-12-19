@@ -1806,3 +1806,4 @@
 - 2022-12-19: api-design practice session 20
 - 2022-12-19: fastapi practice session 21
 - 2022-12-19: mongodb practice session 22
+- 2022-12-19: python practice session 23

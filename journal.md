@@ -1817,3 +1817,4 @@
 - 2022-12-20: ci-cd practice session 8
 - 2022-12-20: python practice session 9
 - 2022-12-20: git practice session 10
+- 2022-12-20: security practice session 11

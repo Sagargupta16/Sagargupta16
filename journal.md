@@ -1815,3 +1815,4 @@
 - 2022-12-20: mongodb practice session 6
 - 2022-12-20: docker practice session 7
 - 2022-12-20: ci-cd practice session 8
+- 2022-12-20: python practice session 9

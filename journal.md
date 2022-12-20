@@ -1808,3 +1808,4 @@
 - 2022-12-19: mongodb practice session 22
 - 2022-12-19: python practice session 23
 - 2022-12-20: terraform practice session 1
+- 2022-12-20: api-design practice session 2

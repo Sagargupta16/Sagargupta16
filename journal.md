@@ -1813,3 +1813,4 @@
 - 2022-12-20: security practice session 4
 - 2022-12-20: react practice session 5
 - 2022-12-20: mongodb practice session 6
+- 2022-12-20: docker practice session 7

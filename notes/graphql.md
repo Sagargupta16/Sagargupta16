@@ -65,3 +65,4 @@
 - 2022-12-16: refactor graphql section 21
 - 2022-12-17: organize graphql section 6
 - 2022-12-17: organize graphql section 87
+- 2022-12-20: update graphql section 22

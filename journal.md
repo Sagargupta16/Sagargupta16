@@ -1818,3 +1818,4 @@
 - 2022-12-20: python practice session 9
 - 2022-12-20: git practice session 10
 - 2022-12-20: security practice session 11
+- 2022-12-20: aws practice session 12

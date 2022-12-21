@@ -55,3 +55,4 @@
 - 2022-12-13: expand redis section 16
 - 2022-12-13: add redis section 22
 - 2022-12-16: update redis section 3
+- 2022-12-21: expand redis section 6

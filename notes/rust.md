@@ -67,3 +67,4 @@
 - 2022-12-13: add rust section 10
 - 2022-12-16: revise rust section 12
 - 2022-12-18: refactor rust section 54
+- 2022-12-21: revise rust section 32

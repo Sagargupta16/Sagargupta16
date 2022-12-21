@@ -1820,3 +1820,4 @@
 - 2022-12-20: security practice session 11
 - 2022-12-20: aws practice session 12
 - 2022-12-20: algorithms practice session 13
+- 2022-12-21: python practice session 1

@@ -44,3 +44,4 @@
 - 2022-11-21: update ci-cd section 47
 - 2022-11-25: refactor ci-cd section 43
 - 2022-11-27: organize ci-cd section 62
+- 2022-12-21: refactor ci-cd section 7

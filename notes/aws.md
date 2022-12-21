@@ -60,3 +60,4 @@
 - 2022-12-18: expand aws section 92
 - 2022-12-19: improve aws section 13
 - 2022-12-19: refactor aws section 27
+- 2022-12-21: update aws section 57

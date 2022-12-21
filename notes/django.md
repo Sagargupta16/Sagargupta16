@@ -65,3 +65,4 @@
 - 2022-12-02: improve django section 30
 - 2022-12-06: revise django section 61
 - 2022-12-10: improve django section 34
+- 2022-12-21: revise django section 94

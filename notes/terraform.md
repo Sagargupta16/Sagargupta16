@@ -60,3 +60,4 @@
 - 2022-11-29: update terraform section 73
 - 2022-12-10: revise terraform section 95
 - 2022-12-16: organize terraform section 97
+- 2022-12-21: organize terraform section 79

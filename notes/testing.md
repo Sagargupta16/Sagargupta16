@@ -65,3 +65,4 @@
 - 2022-12-06: improve testing section 32
 - 2022-12-13: expand testing section 12
 - 2022-12-16: organize testing section 82
+- 2022-12-21: expand testing section 6

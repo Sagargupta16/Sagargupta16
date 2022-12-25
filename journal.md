@@ -1841,3 +1841,4 @@
 - 2022-12-25: security practice session 17
 - 2022-12-25: python practice session 18
 - 2022-12-25: javascript practice session 19
+- 2022-12-25: debugging practice session 20

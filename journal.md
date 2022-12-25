@@ -1845,3 +1845,4 @@
 - 2022-12-25: python practice session 21
 - 2022-12-25: terraform practice session 22
 - 2022-12-25: javascript practice session 23
+- 2022-12-25: linux practice session 24

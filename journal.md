@@ -1828,3 +1828,4 @@
 - 2022-12-25: algorithms practice session 4
 - 2022-12-25: algorithms practice session 5
 - 2022-12-25: mongodb practice session 6
+- 2022-12-25: python practice session 7

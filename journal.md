@@ -1824,3 +1824,4 @@
 - 2022-12-21: algorithms practice session 2
 - 2022-12-25: mongodb practice session 1
 - 2022-12-25: algorithms practice session 2
+- 2022-12-25: ci-cd practice session 3

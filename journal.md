@@ -1839,3 +1839,4 @@
 - 2022-12-25: mongodb practice session 15
 - 2022-12-25: ml practice session 16
 - 2022-12-25: security practice session 17
+- 2022-12-25: python practice session 18

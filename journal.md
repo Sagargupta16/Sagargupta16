@@ -1832,3 +1832,4 @@
 - 2022-12-25: api-design practice session 8
 - 2022-12-25: aws practice session 9
 - 2022-12-25: algorithms practice session 10
+- 2022-12-25: terraform practice session 11

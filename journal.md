@@ -1826,3 +1826,4 @@
 - 2022-12-25: algorithms practice session 2
 - 2022-12-25: ci-cd practice session 3
 - 2022-12-25: algorithms practice session 4
+- 2022-12-25: algorithms practice session 5

@@ -1858,3 +1858,4 @@
 - 2022-12-28: kubernetes practice session 10
 - 2022-12-28: ci-cd practice session 11
 - 2022-12-28: javascript practice session 12
+- 2022-12-28: fastapi practice session 13

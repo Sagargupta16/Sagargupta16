@@ -1865,3 +1865,4 @@
 - 2022-12-28: postgresql practice session 17
 - 2022-12-28: linux practice session 18
 - 2022-12-28: linux practice session 19
+- 2022-12-28: javascript practice session 20

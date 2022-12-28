@@ -1847,3 +1847,4 @@
 - 2022-12-25: javascript practice session 23
 - 2022-12-25: linux practice session 24
 - 2022-12-28: testing practice session 1
+- 2022-12-28: api-design practice session 2

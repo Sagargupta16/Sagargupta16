@@ -1862,3 +1862,4 @@
 - 2022-12-28: debugging practice session 14
 - 2022-12-28: debugging practice session 15
 - 2022-12-28: git practice session 16
+- 2022-12-28: postgresql practice session 17

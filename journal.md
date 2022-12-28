@@ -1856,3 +1856,4 @@
 - 2022-12-28: ml practice session 8
 - 2022-12-28: linux practice session 9
 - 2022-12-28: kubernetes practice session 10
+- 2022-12-28: ci-cd practice session 11

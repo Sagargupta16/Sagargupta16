@@ -1852,3 +1852,4 @@
 - 2022-12-28: javascript practice session 4
 - 2022-12-28: terraform practice session 5
 - 2022-12-28: security practice session 6
+- 2022-12-28: python practice session 7

@@ -1859,3 +1859,4 @@
 - 2022-12-28: ci-cd practice session 11
 - 2022-12-28: javascript practice session 12
 - 2022-12-28: fastapi practice session 13
+- 2022-12-28: debugging practice session 14

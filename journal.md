@@ -1870,3 +1870,4 @@
 - 2022-12-28: kubernetes practice session 22
 - 2022-12-29: debugging practice session 1
 - 2022-12-29: docker practice session 2
+- 2022-12-29: git practice session 3

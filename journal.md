@@ -1868,3 +1868,4 @@
 - 2022-12-28: javascript practice session 20
 - 2022-12-28: testing practice session 21
 - 2022-12-28: kubernetes practice session 22
+- 2022-12-29: debugging practice session 1

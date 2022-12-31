@@ -38,3 +38,4 @@
 - 2022-12-17: revise security section 78
 - 2022-12-19: update security section 84
 - 2022-12-21: improve security section 24
+- 2022-12-31: organize security section 97

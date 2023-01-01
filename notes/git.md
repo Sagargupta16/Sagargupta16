@@ -54,3 +54,4 @@
 - 2022-11-29: add git section 85
 - 2022-12-04: organize git section 30
 - 2022-12-07: revise git section 20
+- 2023-01-01: update git section 85

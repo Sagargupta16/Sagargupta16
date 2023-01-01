@@ -50,3 +50,4 @@
 - 2022-12-16: organize mongodb section 81
 - 2022-12-18: organize mongodb section 19
 - 2023-01-01: revise mongodb section 51
+- 2023-01-01: refactor mongodb section 33

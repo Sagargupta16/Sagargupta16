@@ -1872,3 +1872,4 @@
 - 2022-12-29: docker practice session 2
 - 2022-12-29: git practice session 3
 - 2022-12-29: ml practice session 4
+- 2023-01-02: api-design practice session 1

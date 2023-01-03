@@ -47,3 +47,4 @@
 - 2022-12-13: update nginx section 71
 - 2022-12-21: expand nginx section 56
 - 2022-12-21: refactor nginx section 4
+- 2023-01-03: expand nginx section 67

@@ -56,3 +56,4 @@
 - 2022-12-13: improve python section 58
 - 2022-12-13: update python section 12
 - 2022-12-21: improve python section 47
+- 2023-01-03: add python section 1

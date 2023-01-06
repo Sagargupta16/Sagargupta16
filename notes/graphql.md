@@ -70,3 +70,4 @@
 - 2023-01-01: improve graphql section 1
 - 2023-01-05: expand graphql section 46
 - 2023-01-06: improve graphql section 55
+- 2023-01-06: revise graphql section 19

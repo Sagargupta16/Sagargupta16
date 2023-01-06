@@ -48,3 +48,4 @@
 - 2022-12-25: revise ci-cd section 27
 - 2022-12-28: refactor ci-cd section 95
 - 2023-01-01: improve ci-cd section 53
+- 2023-01-06: expand ci-cd section 30

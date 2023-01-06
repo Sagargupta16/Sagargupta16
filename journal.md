@@ -1877,3 +1877,4 @@
 - 2023-01-02: postgresql practice session 3
 - 2023-01-06: terraform practice session 1
 - 2023-01-06: fastapi practice session 2
+- 2023-01-06: data-structures practice session 3

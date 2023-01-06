@@ -51,3 +51,4 @@
 - 2022-12-25: add kubernetes section 78
 - 2023-01-06: revise kubernetes section 91
 - 2023-01-06: refactor kubernetes section 65
+- 2023-01-06: expand kubernetes section 47

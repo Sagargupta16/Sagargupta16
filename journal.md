@@ -1882,3 +1882,4 @@
 - 2023-01-06: mongodb practice session 5
 - 2023-01-06: api-design practice session 6
 - 2023-01-06: ci-cd practice session 7
+- 2023-01-08: kubernetes practice session 1

@@ -1885,3 +1885,4 @@
 - 2023-01-08: kubernetes practice session 1
 - 2023-01-08: security practice session 2
 - 2023-01-10: react practice session 1
+- 2023-01-10: ml practice session 2

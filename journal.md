@@ -1903,3 +1903,4 @@
 - 2023-01-10: security practice session 17
 - 2023-01-10: linux practice session 18
 - 2023-01-10: linux practice session 19
+- 2023-01-10: api-design practice session 20

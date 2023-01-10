@@ -1905,3 +1905,4 @@
 - 2023-01-10: linux practice session 19
 - 2023-01-10: api-design practice session 20
 - 2023-01-10: security practice session 21
+- 2023-01-10: debugging practice session 22

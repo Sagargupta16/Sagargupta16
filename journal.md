@@ -1902,3 +1902,4 @@
 - 2023-01-10: mongodb practice session 16
 - 2023-01-10: security practice session 17
 - 2023-01-10: linux practice session 18
+- 2023-01-10: linux practice session 19

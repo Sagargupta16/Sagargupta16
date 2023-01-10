@@ -1891,3 +1891,4 @@
 - 2023-01-10: kubernetes practice session 5
 - 2023-01-10: git practice session 6
 - 2023-01-10: terraform practice session 7
+- 2023-01-10: data-structures practice session 8

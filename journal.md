@@ -1890,3 +1890,4 @@
 - 2023-01-10: react practice session 4
 - 2023-01-10: kubernetes practice session 5
 - 2023-01-10: git practice session 6
+- 2023-01-10: terraform practice session 7

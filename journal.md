@@ -1895,3 +1895,4 @@
 - 2023-01-10: security practice session 9
 - 2023-01-10: fastapi practice session 10
 - 2023-01-10: fastapi practice session 11
+- 2023-01-10: data-structures practice session 12

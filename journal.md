@@ -1899,3 +1899,4 @@
 - 2023-01-10: python practice session 13
 - 2023-01-10: docker practice session 14
 - 2023-01-10: kubernetes practice session 15
+- 2023-01-10: mongodb practice session 16

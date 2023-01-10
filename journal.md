@@ -1893,3 +1893,4 @@
 - 2023-01-10: terraform practice session 7
 - 2023-01-10: data-structures practice session 8
 - 2023-01-10: security practice session 9
+- 2023-01-10: fastapi practice session 10

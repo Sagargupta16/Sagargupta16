@@ -1897,3 +1897,4 @@
 - 2023-01-10: fastapi practice session 11
 - 2023-01-10: data-structures practice session 12
 - 2023-01-10: python practice session 13
+- 2023-01-10: docker practice session 14

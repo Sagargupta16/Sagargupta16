@@ -1900,3 +1900,4 @@
 - 2023-01-10: docker practice session 14
 - 2023-01-10: kubernetes practice session 15
 - 2023-01-10: mongodb practice session 16
+- 2023-01-10: security practice session 17

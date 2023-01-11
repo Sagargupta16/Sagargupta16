@@ -1919,3 +1919,4 @@
 - 2023-01-11: javascript practice session 9
 - 2023-01-11: data-structures practice session 10
 - 2023-01-11: javascript practice session 11
+- 2023-01-11: ml practice session 12

@@ -1910,3 +1910,4 @@
 - 2023-01-10: security practice session 24
 - 2023-01-11: testing practice session 1
 - 2023-01-11: ci-cd practice session 2
+- 2023-01-11: mongodb practice session 3

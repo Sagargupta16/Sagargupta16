@@ -1914,3 +1914,4 @@
 - 2023-01-11: postgresql practice session 4
 - 2023-01-11: python practice session 5
 - 2023-01-11: python practice session 6
+- 2023-01-11: docker practice session 7

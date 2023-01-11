@@ -1913,3 +1913,4 @@
 - 2023-01-11: mongodb practice session 3
 - 2023-01-11: postgresql practice session 4
 - 2023-01-11: python practice session 5
+- 2023-01-11: python practice session 6

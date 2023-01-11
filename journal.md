@@ -1908,3 +1908,4 @@
 - 2023-01-10: debugging practice session 22
 - 2023-01-10: kubernetes practice session 23
 - 2023-01-10: security practice session 24
+- 2023-01-11: testing practice session 1

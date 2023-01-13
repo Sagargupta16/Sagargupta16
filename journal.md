@@ -1922,3 +1922,4 @@
 - 2023-01-11: ml practice session 12
 - 2023-01-13: testing practice session 1
 - 2023-01-13: fastapi practice session 2
+- 2023-01-13: linux practice session 3

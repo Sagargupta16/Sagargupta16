@@ -71,3 +71,4 @@
 - 2022-12-25: update rust section 69
 - 2022-12-31: update rust section 45
 - 2023-01-03: update rust section 24
+- 2023-01-13: revise rust section 31

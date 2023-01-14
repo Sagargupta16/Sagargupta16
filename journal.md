@@ -1930,3 +1930,4 @@
 - 2023-01-14: ci-cd practice session 5
 - 2023-01-14: api-design practice session 6
 - 2023-01-14: postgresql practice session 7
+- 2023-01-14: security practice session 8

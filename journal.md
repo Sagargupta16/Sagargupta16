@@ -1933,3 +1933,4 @@
 - 2023-01-14: security practice session 8
 - 2023-01-14: algorithms practice session 9
 - 2023-01-14: debugging practice session 10
+- 2023-01-14: testing practice session 11

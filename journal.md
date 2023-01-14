@@ -1926,3 +1926,4 @@
 - 2023-01-14: terraform practice session 1
 - 2023-01-14: ml practice session 2
 - 2023-01-14: aws practice session 3
+- 2023-01-14: testing practice session 4

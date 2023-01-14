@@ -1931,3 +1931,4 @@
 - 2023-01-14: api-design practice session 6
 - 2023-01-14: postgresql practice session 7
 - 2023-01-14: security practice session 8
+- 2023-01-14: algorithms practice session 9

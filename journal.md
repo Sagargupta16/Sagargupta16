@@ -1936,3 +1936,4 @@
 - 2023-01-14: testing practice session 11
 - 2023-01-14: api-design practice session 12
 - 2023-01-14: data-structures practice session 13
+- 2023-01-14: security practice session 14

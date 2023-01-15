@@ -1939,3 +1939,4 @@
 - 2023-01-14: security practice session 14
 - 2023-01-15: ci-cd practice session 1
 - 2023-01-15: docker practice session 2
+- 2023-01-15: debugging practice session 3

@@ -63,3 +63,4 @@
 - 2022-12-31: revise javascript section 45
 - 2023-01-03: expand javascript section 47
 - 2023-01-13: expand javascript section 16
+- 2023-01-15: add javascript section 10

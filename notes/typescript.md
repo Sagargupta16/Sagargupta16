@@ -63,3 +63,4 @@
 - 2023-01-06: update typescript section 26
 - 2023-01-13: improve typescript section 93
 - 2023-01-14: revise typescript section 55
+- 2023-01-15: update typescript section 73

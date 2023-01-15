@@ -1942,3 +1942,4 @@
 - 2023-01-15: debugging practice session 3
 - 2023-01-15: algorithms practice session 4
 - 2023-01-15: docker practice session 5
+- 2023-01-15: git practice session 6

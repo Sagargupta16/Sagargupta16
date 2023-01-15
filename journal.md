@@ -1937,3 +1937,4 @@
 - 2023-01-14: api-design practice session 12
 - 2023-01-14: data-structures practice session 13
 - 2023-01-14: security practice session 14
+- 2023-01-15: ci-cd practice session 1

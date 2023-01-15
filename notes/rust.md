@@ -73,3 +73,4 @@
 - 2023-01-03: update rust section 24
 - 2023-01-13: revise rust section 31
 - 2023-01-13: update rust section 51
+- 2023-01-15: refactor rust section 57

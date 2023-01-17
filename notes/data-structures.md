@@ -67,3 +67,4 @@
 - 2022-12-21: add data-structures section 35
 - 2022-12-31: refactor data-structures section 1
 - 2023-01-06: refactor data-structures section 80
+- 2023-01-17: refactor data-structures section 37

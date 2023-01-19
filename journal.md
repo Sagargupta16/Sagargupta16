@@ -1947,3 +1947,4 @@
 - 2023-01-19: api-design practice session 2
 - 2023-01-19: api-design practice session 3
 - 2023-01-19: testing practice session 4
+- 2023-01-19: terraform practice session 5

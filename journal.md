@@ -1948,3 +1948,4 @@
 - 2023-01-19: api-design practice session 3
 - 2023-01-19: testing practice session 4
 - 2023-01-19: terraform practice session 5
+- 2023-01-19: javascript practice session 6

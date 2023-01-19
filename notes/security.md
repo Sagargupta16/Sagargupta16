@@ -41,3 +41,4 @@
 - 2022-12-31: organize security section 97
 - 2023-01-05: refactor security section 10
 - 2023-01-06: update security section 30
+- 2023-01-19: revise security section 77

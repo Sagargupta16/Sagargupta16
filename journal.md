@@ -1952,3 +1952,4 @@
 - 2023-01-19: git practice session 7
 - 2023-01-19: aws practice session 8
 - 2023-01-19: api-design practice session 9
+- 2023-01-19: security practice session 10

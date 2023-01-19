@@ -64,3 +64,4 @@
 - 2022-12-25: revise terraform section 28
 - 2023-01-02: refactor terraform section 27
 - 2023-01-15: refactor terraform section 56
+- 2023-01-19: update terraform section 59

@@ -55,3 +55,4 @@
 - 2022-12-25: update postgresql section 54
 - 2023-01-02: improve postgresql section 20
 - 2023-01-19: improve postgresql section 90
+- 2023-01-19: improve postgresql section 44

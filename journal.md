@@ -1955,3 +1955,4 @@
 - 2023-01-19: security practice session 10
 - 2023-01-19: kubernetes practice session 11
 - 2023-01-19: docker practice session 12
+- 2023-01-19: debugging practice session 13

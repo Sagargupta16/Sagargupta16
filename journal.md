@@ -1944,3 +1944,4 @@
 - 2023-01-15: docker practice session 5
 - 2023-01-15: git practice session 6
 - 2023-01-19: algorithms practice session 1
+- 2023-01-19: api-design practice session 2

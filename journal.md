@@ -2000,3 +2000,4 @@
 - 2023-01-22: kubernetes practice session 41
 - 2023-01-22: fastapi practice session 42
 - 2023-01-22: api-design practice session 43
+- 2023-01-22: terraform practice session 44

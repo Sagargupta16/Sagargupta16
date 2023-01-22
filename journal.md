@@ -1978,3 +1978,4 @@
 - 2023-01-22: data-structures practice session 19
 - 2023-01-22: docker practice session 20
 - 2023-01-22: python practice session 21
+- 2023-01-22: security practice session 22

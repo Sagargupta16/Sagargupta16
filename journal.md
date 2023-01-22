@@ -1999,3 +1999,4 @@
 - 2023-01-22: ci-cd practice session 40
 - 2023-01-22: kubernetes practice session 41
 - 2023-01-22: fastapi practice session 42
+- 2023-01-22: api-design practice session 43

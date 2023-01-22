@@ -1970,3 +1970,4 @@
 - 2023-01-22: debugging practice session 11
 - 2023-01-22: kubernetes practice session 12
 - 2023-01-22: testing practice session 13
+- 2023-01-22: mongodb practice session 14

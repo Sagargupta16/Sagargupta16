@@ -1986,3 +1986,4 @@
 - 2023-01-22: testing practice session 27
 - 2023-01-22: ci-cd practice session 28
 - 2023-01-22: linux practice session 29
+- 2023-01-22: ci-cd practice session 30

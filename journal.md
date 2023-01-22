@@ -1988,3 +1988,4 @@
 - 2023-01-22: linux practice session 29
 - 2023-01-22: ci-cd practice session 30
 - 2023-01-22: ci-cd practice session 31
+- 2023-01-22: postgresql practice session 32

@@ -1979,3 +1979,4 @@
 - 2023-01-22: docker practice session 20
 - 2023-01-22: python practice session 21
 - 2023-01-22: security practice session 22
+- 2023-01-22: testing practice session 23

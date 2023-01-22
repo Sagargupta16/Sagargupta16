@@ -1991,3 +1991,4 @@
 - 2023-01-22: postgresql practice session 32
 - 2023-01-22: docker practice session 33
 - 2023-01-22: python practice session 34
+- 2023-01-22: aws practice session 35

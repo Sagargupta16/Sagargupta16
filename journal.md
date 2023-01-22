@@ -1976,3 +1976,4 @@
 - 2023-01-22: fastapi practice session 17
 - 2023-01-22: linux practice session 18
 - 2023-01-22: data-structures practice session 19
+- 2023-01-22: docker practice session 20

@@ -1968,3 +1968,4 @@
 - 2023-01-22: postgresql practice session 9
 - 2023-01-22: docker practice session 10
 - 2023-01-22: debugging practice session 11
+- 2023-01-22: kubernetes practice session 12

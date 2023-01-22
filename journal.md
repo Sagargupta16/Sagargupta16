@@ -2003,3 +2003,4 @@
 - 2023-01-22: terraform practice session 44
 - 2023-01-22: docker practice session 45
 - 2023-01-22: api-design practice session 46
+- 2023-01-22: python practice session 47

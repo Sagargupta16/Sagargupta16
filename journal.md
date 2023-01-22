@@ -1997,3 +1997,4 @@
 - 2023-01-22: ci-cd practice session 38
 - 2023-01-22: javascript practice session 39
 - 2023-01-22: ci-cd practice session 40
+- 2023-01-22: kubernetes practice session 41

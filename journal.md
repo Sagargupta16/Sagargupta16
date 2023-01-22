@@ -1996,3 +1996,4 @@
 - 2023-01-22: testing practice session 37
 - 2023-01-22: ci-cd practice session 38
 - 2023-01-22: javascript practice session 39
+- 2023-01-22: ci-cd practice session 40

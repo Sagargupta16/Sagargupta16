@@ -1983,3 +1983,4 @@
 - 2023-01-22: debugging practice session 24
 - 2023-01-22: mongodb practice session 25
 - 2023-01-22: debugging practice session 26
+- 2023-01-22: testing practice session 27

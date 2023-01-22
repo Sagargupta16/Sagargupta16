@@ -1961,3 +1961,4 @@
 - 2023-01-22: algorithms practice session 2
 - 2023-01-22: algorithms practice session 3
 - 2023-01-22: mongodb practice session 4
+- 2023-01-22: linux practice session 5

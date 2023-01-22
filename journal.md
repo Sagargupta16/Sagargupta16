@@ -1990,3 +1990,4 @@
 - 2023-01-22: ci-cd practice session 31
 - 2023-01-22: postgresql practice session 32
 - 2023-01-22: docker practice session 33
+- 2023-01-22: python practice session 34

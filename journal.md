@@ -1964,3 +1964,4 @@
 - 2023-01-22: linux practice session 5
 - 2023-01-22: git practice session 6
 - 2023-01-22: terraform practice session 7
+- 2023-01-22: security practice session 8

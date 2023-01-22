@@ -1972,3 +1972,4 @@
 - 2023-01-22: testing practice session 13
 - 2023-01-22: mongodb practice session 14
 - 2023-01-22: ci-cd practice session 15
+- 2023-01-22: api-design practice session 16

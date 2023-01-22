@@ -1963,3 +1963,4 @@
 - 2023-01-22: mongodb practice session 4
 - 2023-01-22: linux practice session 5
 - 2023-01-22: git practice session 6
+- 2023-01-22: terraform practice session 7

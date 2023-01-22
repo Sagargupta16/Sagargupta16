@@ -1959,3 +1959,4 @@
 - 2023-01-19: data-structures practice session 14
 - 2023-01-22: python practice session 1
 - 2023-01-22: algorithms practice session 2
+- 2023-01-22: algorithms practice session 3

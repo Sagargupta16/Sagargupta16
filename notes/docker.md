@@ -73,3 +73,4 @@
 - 2023-01-03: organize docker section 84
 - 2023-01-05: add docker section 30
 - 2023-01-13: organize docker section 16
+- 2023-01-22: revise docker section 50

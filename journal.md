@@ -1994,3 +1994,4 @@
 - 2023-01-22: aws practice session 35
 - 2023-01-22: algorithms practice session 36
 - 2023-01-22: testing practice session 37
+- 2023-01-22: ci-cd practice session 38

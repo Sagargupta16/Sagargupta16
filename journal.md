@@ -1965,3 +1965,4 @@
 - 2023-01-22: git practice session 6
 - 2023-01-22: terraform practice session 7
 - 2023-01-22: security practice session 8
+- 2023-01-22: postgresql practice session 9

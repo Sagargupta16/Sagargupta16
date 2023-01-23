@@ -49,3 +49,4 @@
 - 2022-12-21: refactor nginx section 4
 - 2023-01-03: expand nginx section 67
 - 2023-01-13: organize nginx section 7
+- 2023-01-23: add nginx section 23

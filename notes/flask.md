@@ -56,3 +56,4 @@
 - 2023-01-01: expand flask section 99
 - 2023-01-03: add flask section 73
 - 2023-01-13: expand flask section 10
+- 2023-01-23: add flask section 59

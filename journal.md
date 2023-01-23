@@ -2005,3 +2005,4 @@
 - 2023-01-22: api-design practice session 46
 - 2023-01-22: python practice session 47
 - 2023-01-22: terraform practice session 48
+- 2023-01-23: terraform practice session 1

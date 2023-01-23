@@ -71,3 +71,4 @@
 - 2023-01-03: revise react section 63
 - 2023-01-13: expand react section 96
 - 2023-01-15: improve react section 45
+- 2023-01-23: revise react section 24

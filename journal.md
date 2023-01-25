@@ -2023,3 +2023,4 @@
 - 2023-01-25: postgresql practice session 14
 - 2023-01-25: aws practice session 15
 - 2023-01-25: docker practice session 16
+- 2023-01-25: security practice session 17

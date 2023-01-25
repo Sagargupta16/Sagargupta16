@@ -2020,3 +2020,4 @@
 - 2023-01-25: docker practice session 11
 - 2023-01-25: ci-cd practice session 12
 - 2023-01-25: javascript practice session 13
+- 2023-01-25: postgresql practice session 14

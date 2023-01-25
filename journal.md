@@ -2029,3 +2029,4 @@
 - 2023-01-25: linux practice session 20
 - 2023-01-25: security practice session 21
 - 2023-01-25: testing practice session 22
+- 2023-01-25: react practice session 23

@@ -2011,3 +2011,4 @@
 - 2023-01-25: mongodb practice session 2
 - 2023-01-25: git practice session 3
 - 2023-01-25: linux practice session 4
+- 2023-01-25: debugging practice session 5

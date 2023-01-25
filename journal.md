@@ -2009,3 +2009,4 @@
 - 2023-01-24: testing practice session 1
 - 2023-01-25: security practice session 1
 - 2023-01-25: mongodb practice session 2
+- 2023-01-25: git practice session 3

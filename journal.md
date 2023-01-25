@@ -2022,3 +2022,4 @@
 - 2023-01-25: javascript practice session 13
 - 2023-01-25: postgresql practice session 14
 - 2023-01-25: aws practice session 15
+- 2023-01-25: docker practice session 16

@@ -2035,3 +2035,4 @@
 - 2023-01-25: security practice session 26
 - 2023-01-25: ml practice session 27
 - 2023-01-25: react practice session 28
+- 2023-01-25: git practice session 29

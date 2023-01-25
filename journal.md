@@ -2034,3 +2034,4 @@
 - 2023-01-25: testing practice session 25
 - 2023-01-25: security practice session 26
 - 2023-01-25: ml practice session 27
+- 2023-01-25: react practice session 28

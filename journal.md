@@ -2028,3 +2028,4 @@
 - 2023-01-25: aws practice session 19
 - 2023-01-25: linux practice session 20
 - 2023-01-25: security practice session 21
+- 2023-01-25: testing practice session 22

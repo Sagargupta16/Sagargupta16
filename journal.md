@@ -2008,3 +2008,4 @@
 - 2023-01-23: terraform practice session 1
 - 2023-01-24: testing practice session 1
 - 2023-01-25: security practice session 1
+- 2023-01-25: mongodb practice session 2

@@ -2032,3 +2032,4 @@
 - 2023-01-25: react practice session 23
 - 2023-01-25: ci-cd practice session 24
 - 2023-01-25: testing practice session 25
+- 2023-01-25: security practice session 26

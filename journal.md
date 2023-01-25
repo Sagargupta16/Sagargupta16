@@ -2025,3 +2025,4 @@
 - 2023-01-25: docker practice session 16
 - 2023-01-25: security practice session 17
 - 2023-01-25: algorithms practice session 18
+- 2023-01-25: aws practice session 19

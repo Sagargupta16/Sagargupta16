@@ -2015,3 +2015,4 @@
 - 2023-01-25: terraform practice session 6
 - 2023-01-25: ci-cd practice session 7
 - 2023-01-25: algorithms practice session 8
+- 2023-01-25: debugging practice session 9

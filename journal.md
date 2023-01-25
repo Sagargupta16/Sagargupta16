@@ -2019,3 +2019,4 @@
 - 2023-01-25: fastapi practice session 10
 - 2023-01-25: docker practice session 11
 - 2023-01-25: ci-cd practice session 12
+- 2023-01-25: javascript practice session 13

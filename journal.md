@@ -2013,3 +2013,4 @@
 - 2023-01-25: linux practice session 4
 - 2023-01-25: debugging practice session 5
 - 2023-01-25: terraform practice session 6
+- 2023-01-25: ci-cd practice session 7

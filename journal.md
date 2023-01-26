@@ -2037,3 +2037,4 @@
 - 2023-01-25: react practice session 28
 - 2023-01-25: git practice session 29
 - 2023-01-26: security practice session 1
+- 2023-01-26: data-structures practice session 2

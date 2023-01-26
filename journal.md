@@ -2044,3 +2044,4 @@
 - 2023-01-26: data-structures practice session 6
 - 2023-01-26: fastapi practice session 7
 - 2023-01-26: algorithms practice session 8
+- 2023-01-26: api-design practice session 9

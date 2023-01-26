@@ -2042,3 +2042,4 @@
 - 2023-01-26: data-structures practice session 4
 - 2023-01-26: python practice session 5
 - 2023-01-26: data-structures practice session 6
+- 2023-01-26: fastapi practice session 7

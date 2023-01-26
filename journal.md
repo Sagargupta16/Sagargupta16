@@ -2040,3 +2040,4 @@
 - 2023-01-26: data-structures practice session 2
 - 2023-01-26: git practice session 3
 - 2023-01-26: data-structures practice session 4
+- 2023-01-26: python practice session 5

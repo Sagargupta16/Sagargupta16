@@ -2059,3 +2059,4 @@
 - 2023-01-27: git practice session 10
 - 2023-01-27: react practice session 11
 - 2023-01-27: terraform practice session 12
+- 2023-01-27: security practice session 13

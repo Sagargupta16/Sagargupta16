@@ -2047,3 +2047,4 @@
 - 2023-01-26: api-design practice session 9
 - 2023-01-26: python practice session 10
 - 2023-01-26: react practice session 11
+- 2023-01-27: mongodb practice session 1

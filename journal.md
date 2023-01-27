@@ -2053,3 +2053,4 @@
 - 2023-01-27: linux practice session 4
 - 2023-01-27: mongodb practice session 5
 - 2023-01-27: terraform practice session 6
+- 2023-01-27: security practice session 7

@@ -2066,3 +2066,4 @@
 - 2023-01-27: git practice session 17
 - 2023-01-27: security practice session 18
 - 2023-01-27: algorithms practice session 19
+- 2023-01-27: terraform practice session 20

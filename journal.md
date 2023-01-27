@@ -2068,3 +2068,4 @@
 - 2023-01-27: algorithms practice session 19
 - 2023-01-27: terraform practice session 20
 - 2023-01-27: python practice session 21
+- 2023-01-27: ci-cd practice session 22

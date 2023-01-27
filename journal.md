@@ -2058,3 +2058,4 @@
 - 2023-01-27: fastapi practice session 9
 - 2023-01-27: git practice session 10
 - 2023-01-27: react practice session 11
+- 2023-01-27: terraform practice session 12

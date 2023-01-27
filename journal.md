@@ -2070,3 +2070,4 @@
 - 2023-01-27: python practice session 21
 - 2023-01-27: ci-cd practice session 22
 - 2023-01-27: react practice session 23
+- 2023-01-27: linux practice session 24

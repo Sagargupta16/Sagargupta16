@@ -2061,3 +2061,4 @@
 - 2023-01-27: terraform practice session 12
 - 2023-01-27: security practice session 13
 - 2023-01-27: linux practice session 14
+- 2023-01-27: docker practice session 15

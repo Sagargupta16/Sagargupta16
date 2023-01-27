@@ -2064,3 +2064,4 @@
 - 2023-01-27: docker practice session 15
 - 2023-01-27: mongodb practice session 16
 - 2023-01-27: git practice session 17
+- 2023-01-27: security practice session 18

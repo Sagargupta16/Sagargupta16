@@ -2065,3 +2065,4 @@
 - 2023-01-27: mongodb practice session 16
 - 2023-01-27: git practice session 17
 - 2023-01-27: security practice session 18
+- 2023-01-27: algorithms practice session 19

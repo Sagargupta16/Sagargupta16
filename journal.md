@@ -2049,3 +2049,4 @@
 - 2023-01-26: react practice session 11
 - 2023-01-27: mongodb practice session 1
 - 2023-01-27: api-design practice session 2
+- 2023-01-27: postgresql practice session 3

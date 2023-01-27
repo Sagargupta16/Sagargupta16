@@ -2060,3 +2060,4 @@
 - 2023-01-27: react practice session 11
 - 2023-01-27: terraform practice session 12
 - 2023-01-27: security practice session 13
+- 2023-01-27: linux practice session 14

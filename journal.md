@@ -2056,3 +2056,4 @@
 - 2023-01-27: security practice session 7
 - 2023-01-27: api-design practice session 8
 - 2023-01-27: fastapi practice session 9
+- 2023-01-27: git practice session 10

@@ -71,3 +71,4 @@
 - 2022-12-29: revise devops section 35
 - 2023-01-06: improve devops section 94
 - 2023-01-12: organize devops section 97
+- 2023-01-27: organize devops section 27

@@ -2055,3 +2055,4 @@
 - 2023-01-27: terraform practice session 6
 - 2023-01-27: security practice session 7
 - 2023-01-27: api-design practice session 8
+- 2023-01-27: fastapi practice session 9

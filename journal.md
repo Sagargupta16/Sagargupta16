@@ -2048,3 +2048,4 @@
 - 2023-01-26: python practice session 10
 - 2023-01-26: react practice session 11
 - 2023-01-27: mongodb practice session 1
+- 2023-01-27: api-design practice session 2

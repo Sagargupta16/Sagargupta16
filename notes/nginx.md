@@ -50,3 +50,4 @@
 - 2023-01-03: expand nginx section 67
 - 2023-01-13: organize nginx section 7
 - 2023-01-23: add nginx section 23
+- 2023-01-27: update nginx section 93

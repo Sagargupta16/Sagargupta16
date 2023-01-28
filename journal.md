@@ -2073,3 +2073,4 @@
 - 2023-01-27: linux practice session 24
 - 2023-01-27: javascript practice session 25
 - 2023-01-27: react practice session 26
+- 2023-01-28: security practice session 1

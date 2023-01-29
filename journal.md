@@ -2080,3 +2080,4 @@
 - 2023-01-29: aws practice session 4
 - 2023-01-29: ci-cd practice session 5
 - 2023-01-29: git practice session 6
+- 2023-01-29: security practice session 7

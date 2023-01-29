@@ -71,3 +71,4 @@
 - 2023-01-03: add testing section 31
 - 2023-01-05: organize testing section 42
 - 2023-01-11: refactor testing section 8
+- 2023-01-29: refactor testing section 2

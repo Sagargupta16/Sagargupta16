@@ -2077,3 +2077,4 @@
 - 2023-01-29: react practice session 1
 - 2023-01-29: git practice session 2
 - 2023-01-29: kubernetes practice session 3
+- 2023-01-29: aws practice session 4

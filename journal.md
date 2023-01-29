@@ -2081,3 +2081,4 @@
 - 2023-01-29: ci-cd practice session 5
 - 2023-01-29: git practice session 6
 - 2023-01-29: security practice session 7
+- 2023-01-29: linux practice session 8

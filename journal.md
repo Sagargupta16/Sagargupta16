@@ -2082,3 +2082,4 @@
 - 2023-01-29: git practice session 6
 - 2023-01-29: security practice session 7
 - 2023-01-29: linux practice session 8
+- 2023-01-29: ml practice session 9

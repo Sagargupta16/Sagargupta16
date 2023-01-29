@@ -2083,3 +2083,4 @@
 - 2023-01-29: security practice session 7
 - 2023-01-29: linux practice session 8
 - 2023-01-29: ml practice session 9
+- 2023-01-29: ci-cd practice session 10

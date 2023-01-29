@@ -2075,3 +2075,4 @@
 - 2023-01-27: react practice session 26
 - 2023-01-28: security practice session 1
 - 2023-01-29: react practice session 1
+- 2023-01-29: git practice session 2

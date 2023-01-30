@@ -74,3 +74,4 @@
 - 2023-01-23: revise react section 24
 - 2023-01-27: revise react section 75
 - 2023-01-29: expand react section 49
+- 2023-01-30: organize react section 47

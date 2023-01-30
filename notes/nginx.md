@@ -53,3 +53,4 @@
 - 2023-01-27: update nginx section 93
 - 2023-01-27: add nginx section 75
 - 2023-01-30: improve nginx section 98
+- 2023-01-30: revise nginx section 68

@@ -54,3 +54,4 @@
 - 2023-01-13: revise mongodb section 74
 - 2023-01-27: improve mongodb section 7
 - 2023-01-29: refactor mongodb section 24
+- 2023-01-30: improve mongodb section 5

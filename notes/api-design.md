@@ -61,3 +61,4 @@
 - 2023-01-06: expand api-design section 62
 - 2023-01-09: add api-design section 39
 - 2023-01-27: improve api-design section 70
+- 2023-01-30: revise api-design section 2

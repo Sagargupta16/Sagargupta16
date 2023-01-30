@@ -2088,3 +2088,4 @@
 - 2023-01-29: linux practice session 12
 - 2023-01-30: python practice session 1
 - 2023-01-30: security practice session 2
+- 2023-01-30: docker practice session 3

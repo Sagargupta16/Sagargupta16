@@ -67,3 +67,4 @@
 - 2023-01-19: update terraform section 59
 - 2023-01-27: revise terraform section 96
 - 2023-01-29: add terraform section 93
+- 2023-01-30: refactor terraform section 3

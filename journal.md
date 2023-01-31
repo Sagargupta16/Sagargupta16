@@ -2093,3 +2093,4 @@
 - 2023-01-30: testing practice session 5
 - 2023-01-30: fastapi practice session 6
 - 2023-01-30: fastapi practice session 7
+- 2023-01-31: security practice session 1

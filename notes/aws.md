@@ -65,3 +65,4 @@
 - 2023-01-06: revise aws section 16
 - 2023-01-19: add aws section 17
 - 2023-01-23: improve aws section 95
+- 2023-02-03: expand aws section 53

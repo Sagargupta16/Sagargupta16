@@ -51,3 +51,4 @@
 - 2023-01-06: expand ci-cd section 30
 - 2023-01-17: expand ci-cd section 12
 - 2023-01-23: add ci-cd section 2
+- 2023-02-03: organize ci-cd section 3

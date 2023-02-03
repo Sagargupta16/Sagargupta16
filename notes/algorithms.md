@@ -64,3 +64,4 @@
 - 2023-01-13: improve algorithms section 96
 - 2023-02-03: add algorithms section 77
 - 2023-02-03: add algorithms section 27
+- 2023-02-03: update algorithms section 43

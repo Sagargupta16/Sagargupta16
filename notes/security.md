@@ -43,3 +43,4 @@
 - 2023-01-06: update security section 30
 - 2023-01-19: revise security section 77
 - 2023-02-03: expand security section 1
+- 2023-02-03: expand security section 17

@@ -54,3 +54,4 @@
 - 2023-01-06: expand kubernetes section 47
 - 2023-01-23: update kubernetes section 16
 - 2023-01-27: update kubernetes section 11
+- 2023-02-03: organize kubernetes section 59

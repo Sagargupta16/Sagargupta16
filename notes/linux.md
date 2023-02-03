@@ -63,3 +63,4 @@
 - 2023-01-27: add linux section 31
 - 2023-01-30: refactor linux section 66
 - 2023-01-30: refactor linux section 83
+- 2023-02-03: expand linux section 82

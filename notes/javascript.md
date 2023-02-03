@@ -69,3 +69,4 @@
 - 2023-01-23: update javascript section 21
 - 2023-01-30: refactor javascript section 77
 - 2023-02-03: update javascript section 61
+- 2023-02-03: add javascript section 7

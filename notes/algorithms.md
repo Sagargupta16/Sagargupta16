@@ -63,3 +63,4 @@
 - 2023-01-06: refactor algorithms section 67
 - 2023-01-13: improve algorithms section 96
 - 2023-02-03: add algorithms section 77
+- 2023-02-03: add algorithms section 27

@@ -2096,3 +2096,4 @@
 - 2023-01-31: security practice session 1
 - 2023-02-01: fastapi practice session 1
 - 2023-02-06: aws practice session 1
+- 2023-02-06: data-structures practice session 2

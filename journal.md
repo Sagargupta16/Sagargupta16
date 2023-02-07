@@ -2097,3 +2097,4 @@
 - 2023-02-01: fastapi practice session 1
 - 2023-02-06: aws practice session 1
 - 2023-02-06: data-structures practice session 2
+- 2023-02-07: ml practice session 1

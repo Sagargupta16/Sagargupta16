@@ -58,3 +58,4 @@
 - 2023-01-03: revise nextjs section 7
 - 2023-01-30: improve nextjs section 78
 - 2023-02-09: organize nextjs section 39
+- 2023-02-10: revise nextjs section 58

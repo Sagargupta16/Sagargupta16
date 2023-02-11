@@ -2100,3 +2100,4 @@
 - 2023-02-07: ml practice session 1
 - 2023-02-07: algorithms practice session 2
 - 2023-02-08: data-structures practice session 1
+- 2023-02-11: testing practice session 1

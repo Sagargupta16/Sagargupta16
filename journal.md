@@ -2111,3 +2111,4 @@
 - 2023-02-13: docker practice session 5
 - 2023-02-13: terraform practice session 6
 - 2023-02-13: mongodb practice session 7
+- 2023-02-13: ci-cd practice session 8

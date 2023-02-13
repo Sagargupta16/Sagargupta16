@@ -2115,3 +2115,4 @@
 - 2023-02-13: security practice session 9
 - 2023-02-13: algorithms practice session 10
 - 2023-02-13: data-structures practice session 11
+- 2023-02-13: git practice session 12

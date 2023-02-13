@@ -2109,3 +2109,4 @@
 - 2023-02-13: react practice session 3
 - 2023-02-13: api-design practice session 4
 - 2023-02-13: docker practice session 5
+- 2023-02-13: terraform practice session 6

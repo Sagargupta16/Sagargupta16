@@ -2104,3 +2104,4 @@
 - 2023-02-11: terraform practice session 2
 - 2023-02-11: ml practice session 3
 - 2023-02-11: react practice session 4
+- 2023-02-13: ml practice session 1

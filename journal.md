@@ -2114,3 +2114,4 @@
 - 2023-02-13: ci-cd practice session 8
 - 2023-02-13: security practice session 9
 - 2023-02-13: algorithms practice session 10
+- 2023-02-13: data-structures practice session 11

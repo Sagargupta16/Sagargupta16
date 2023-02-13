@@ -2106,3 +2106,4 @@
 - 2023-02-11: react practice session 4
 - 2023-02-13: ml practice session 1
 - 2023-02-13: git practice session 2
+- 2023-02-13: react practice session 3

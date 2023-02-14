@@ -73,3 +73,4 @@
 - 2023-01-23: revise django section 90
 - 2023-01-23: expand django section 62
 - 2023-02-03: organize django section 38
+- 2023-02-14: refactor django section 67

@@ -75,3 +75,4 @@
 - 2023-01-29: update devops section 38
 - 2023-01-29: improve devops section 19
 - 2023-01-30: refactor devops section 31
+- 2023-02-14: expand devops section 13

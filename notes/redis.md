@@ -64,3 +64,4 @@
 - 2023-01-27: refactor redis section 77
 - 2023-01-30: organize redis section 27
 - 2023-01-30: refactor redis section 45
+- 2023-02-14: update redis section 73

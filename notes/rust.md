@@ -83,3 +83,4 @@
 - 2023-01-30: update rust section 95
 - 2023-02-03: improve rust section 79
 - 2023-02-03: organize rust section 55
+- 2023-02-14: expand rust section 36

@@ -59,3 +59,4 @@
 - 2023-01-27: update git section 26
 - 2023-01-27: expand git section 61
 - 2023-01-30: organize git section 48
+- 2023-02-14: update git section 35

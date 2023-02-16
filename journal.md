@@ -2118,3 +2118,4 @@
 - 2023-02-13: git practice session 12
 - 2023-02-14: python practice session 1
 - 2023-02-16: javascript practice session 1
+- 2023-02-16: kubernetes practice session 2

@@ -2119,3 +2119,4 @@
 - 2023-02-14: python practice session 1
 - 2023-02-16: javascript practice session 1
 - 2023-02-16: kubernetes practice session 2
+- 2023-02-16: data-structures practice session 3

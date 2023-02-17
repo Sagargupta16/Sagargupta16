@@ -2121,3 +2121,4 @@
 - 2023-02-16: kubernetes practice session 2
 - 2023-02-16: data-structures practice session 3
 - 2023-02-16: ci-cd practice session 4
+- 2023-02-17: terraform practice session 1

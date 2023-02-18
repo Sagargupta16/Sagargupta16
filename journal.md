@@ -2126,3 +2126,4 @@
 - 2023-02-18: postgresql practice session 2
 - 2023-02-18: ci-cd practice session 3
 - 2023-02-18: kubernetes practice session 4
+- 2023-02-18: fastapi practice session 5

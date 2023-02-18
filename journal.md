@@ -2125,3 +2125,4 @@
 - 2023-02-18: ml practice session 1
 - 2023-02-18: postgresql practice session 2
 - 2023-02-18: ci-cd practice session 3
+- 2023-02-18: kubernetes practice session 4

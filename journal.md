@@ -2123,3 +2123,4 @@
 - 2023-02-16: ci-cd practice session 4
 - 2023-02-17: terraform practice session 1
 - 2023-02-18: ml practice session 1
+- 2023-02-18: postgresql practice session 2

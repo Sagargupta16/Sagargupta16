@@ -2133,3 +2133,4 @@
 - 2023-02-22: javascript practice session 3
 - 2023-02-22: python practice session 4
 - 2023-02-22: postgresql practice session 5
+- 2023-02-22: aws practice session 6

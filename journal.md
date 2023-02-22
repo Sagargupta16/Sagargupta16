@@ -2128,3 +2128,4 @@
 - 2023-02-18: kubernetes practice session 4
 - 2023-02-18: fastapi practice session 5
 - 2023-02-18: git practice session 6
+- 2023-02-22: docker practice session 1

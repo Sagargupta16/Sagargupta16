@@ -2132,3 +2132,4 @@
 - 2023-02-22: api-design practice session 2
 - 2023-02-22: javascript practice session 3
 - 2023-02-22: python practice session 4
+- 2023-02-22: postgresql practice session 5

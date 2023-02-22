@@ -2131,3 +2131,4 @@
 - 2023-02-22: docker practice session 1
 - 2023-02-22: api-design practice session 2
 - 2023-02-22: javascript practice session 3
+- 2023-02-22: python practice session 4

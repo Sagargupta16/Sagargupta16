@@ -2135,3 +2135,4 @@
 - 2023-02-22: postgresql practice session 5
 - 2023-02-22: aws practice session 6
 - 2023-02-24: postgresql practice session 1
+- 2023-02-24: fastapi practice session 2

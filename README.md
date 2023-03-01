@@ -132,12 +132,15 @@
 <hr/>
  
  <h2 id="stats"> 📊 Stats</h2>
- 
+    
+<img src="https://github-readme-activity-graph.cyclic.app/graph?username=sagargupta16&bg_color=161B22&color=9e9e9e&line=bababa&point=a76c6c&area=true&hide_border=true&hide_title=true" />
+    
+    
  <img align="center" width="450" src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16"/>
- 
+ <br/>
  <img align="center" width="450" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=dark&locale=en" alt="sagargupta16" />
- 
+ <br/>
  <img align="center" width="450" src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=dark" alt="sagargupta16" />
  
- 
+
  </details>

@@ -2137,3 +2137,4 @@
 - 2023-02-24: postgresql practice session 1
 - 2023-02-24: fastapi practice session 2
 - 2023-02-24: react practice session 3
+- 2023-03-08: fastapi practice session 1

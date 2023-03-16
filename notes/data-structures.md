@@ -71,3 +71,4 @@
 - 2023-01-26: expand data-structures section 89
 - 2023-01-29: revise data-structures section 14
 - 2023-01-30: add data-structures section 7
+- 2023-03-16: refactor data-structures section 38

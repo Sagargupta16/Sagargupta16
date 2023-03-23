@@ -68,3 +68,4 @@
 - 2023-02-03: organize algorithms section 24
 - 2023-02-14: expand algorithms section 63
 - 2023-03-19: add algorithms section 93
+- 2023-03-23: revise algorithms section 22

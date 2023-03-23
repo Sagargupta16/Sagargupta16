@@ -2141,3 +2141,4 @@
 - 2023-03-08: algorithms practice session 2
 - 2023-03-08: ci-cd practice session 3
 - 2023-03-21: git practice session 1
+- 2023-03-23: linux practice session 1

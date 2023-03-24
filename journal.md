@@ -2143,3 +2143,4 @@
 - 2023-03-21: git practice session 1
 - 2023-03-23: linux practice session 1
 - 2023-03-23: terraform practice session 2
+- 2023-03-24: postgresql practice session 1

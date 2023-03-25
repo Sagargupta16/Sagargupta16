@@ -2153,3 +2153,4 @@
 - 2023-03-25: mongodb practice session 7
 - 2023-03-25: terraform practice session 8
 - 2023-03-25: postgresql practice session 9
+- 2023-03-25: python practice session 10

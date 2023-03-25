@@ -2156,3 +2156,4 @@
 - 2023-03-25: python practice session 10
 - 2023-03-25: ci-cd practice session 11
 - 2023-03-25: algorithms practice session 12
+- 2023-03-25: fastapi practice session 13

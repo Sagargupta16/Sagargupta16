@@ -2158,3 +2158,4 @@
 - 2023-03-25: algorithms practice session 12
 - 2023-03-25: fastapi practice session 13
 - 2023-03-25: algorithms practice session 14
+- 2023-03-25: terraform practice session 15

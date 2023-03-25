@@ -2147,3 +2147,4 @@
 - 2023-03-25: aws practice session 1
 - 2023-03-25: kubernetes practice session 2
 - 2023-03-25: mongodb practice session 3
+- 2023-03-25: postgresql practice session 4

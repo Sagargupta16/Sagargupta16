@@ -45,3 +45,4 @@
 - 2023-02-03: expand security section 1
 - 2023-02-03: expand security section 17
 - 2023-03-19: add security section 8
+- 2023-03-25: improve security section 5

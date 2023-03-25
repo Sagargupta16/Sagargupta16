@@ -2161,3 +2161,4 @@
 - 2023-03-25: terraform practice session 15
 - 2023-03-25: postgresql practice session 16
 - 2023-03-25: javascript practice session 17
+- 2023-03-25: ci-cd practice session 18

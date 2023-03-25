@@ -2163,3 +2163,4 @@
 - 2023-03-25: javascript practice session 17
 - 2023-03-25: ci-cd practice session 18
 - 2023-03-25: python practice session 19
+- 2023-03-25: fastapi practice session 20

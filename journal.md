@@ -2149,3 +2149,4 @@
 - 2023-03-25: mongodb practice session 3
 - 2023-03-25: postgresql practice session 4
 - 2023-03-25: security practice session 5
+- 2023-03-25: react practice session 6

@@ -2160,3 +2160,4 @@
 - 2023-03-25: algorithms practice session 14
 - 2023-03-25: terraform practice session 15
 - 2023-03-25: postgresql practice session 16
+- 2023-03-25: javascript practice session 17

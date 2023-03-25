@@ -2145,3 +2145,4 @@
 - 2023-03-23: terraform practice session 2
 - 2023-03-24: postgresql practice session 1
 - 2023-03-25: aws practice session 1
+- 2023-03-25: kubernetes practice session 2

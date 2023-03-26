@@ -69,3 +69,4 @@
 - 2023-02-09: improve aws section 47
 - 2023-03-19: expand aws section 60
 - 2023-03-19: revise aws section 28
+- 2023-03-26: revise aws section 94

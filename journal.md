@@ -2183,3 +2183,4 @@
 - 2023-03-27: postgresql practice session 15
 - 2023-03-27: linux practice session 16
 - 2023-03-27: linux practice session 17
+- 2023-03-27: debugging practice session 18

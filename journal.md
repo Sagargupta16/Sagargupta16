@@ -2166,3 +2166,4 @@
 - 2023-03-25: fastapi practice session 20
 - 2023-03-25: react practice session 21
 - 2023-03-25: javascript practice session 22
+- 2023-03-27: data-structures practice session 1

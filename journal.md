@@ -2175,3 +2175,4 @@
 - 2023-03-27: ci-cd practice session 7
 - 2023-03-27: javascript practice session 8
 - 2023-03-27: algorithms practice session 9
+- 2023-03-27: aws practice session 10

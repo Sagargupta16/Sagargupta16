@@ -2169,3 +2169,4 @@
 - 2023-03-27: data-structures practice session 1
 - 2023-03-27: aws practice session 2
 - 2023-03-27: linux practice session 3
+- 2023-03-27: ci-cd practice session 4

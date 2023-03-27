@@ -2178,3 +2178,4 @@
 - 2023-03-27: aws practice session 10
 - 2023-03-27: aws practice session 11
 - 2023-03-27: docker practice session 12
+- 2023-03-27: aws practice session 13

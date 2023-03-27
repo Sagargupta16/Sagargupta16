@@ -2172,3 +2172,4 @@
 - 2023-03-27: ci-cd practice session 4
 - 2023-03-27: git practice session 5
 - 2023-03-27: linux practice session 6
+- 2023-03-27: ci-cd practice session 7

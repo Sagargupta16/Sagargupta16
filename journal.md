@@ -2167,3 +2167,4 @@
 - 2023-03-25: react practice session 21
 - 2023-03-25: javascript practice session 22
 - 2023-03-27: data-structures practice session 1
+- 2023-03-27: aws practice session 2

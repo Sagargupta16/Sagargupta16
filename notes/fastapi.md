@@ -77,3 +77,4 @@
 - 2023-02-14: organize fastapi section 88
 - 2023-03-26: improve fastapi section 50
 - 2023-03-26: update fastapi section 53
+- 2023-03-28: expand fastapi section 31

@@ -2185,3 +2185,4 @@
 - 2023-03-27: linux practice session 17
 - 2023-03-27: debugging practice session 18
 - 2023-03-27: python practice session 19
+- 2023-03-28: debugging practice session 1

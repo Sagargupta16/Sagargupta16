@@ -2187,3 +2187,4 @@
 - 2023-03-27: python practice session 19
 - 2023-03-28: debugging practice session 1
 - 2023-03-28: security practice session 2
+- 2023-03-28: algorithms practice session 3

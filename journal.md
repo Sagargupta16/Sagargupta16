@@ -2189,3 +2189,4 @@
 - 2023-03-28: security practice session 2
 - 2023-03-28: algorithms practice session 3
 - 2023-03-29: security practice session 1
+- 2023-03-29: ci-cd practice session 2

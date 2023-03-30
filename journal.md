@@ -2193,3 +2193,4 @@
 - 2023-03-30: kubernetes practice session 1
 - 2023-03-30: testing practice session 2
 - 2023-03-30: testing practice session 3
+- 2023-03-30: ci-cd practice session 4

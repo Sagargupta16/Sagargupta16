@@ -2213,3 +2213,4 @@
 - 2023-03-30: mongodb practice session 21
 - 2023-03-30: testing practice session 22
 - 2023-03-30: debugging practice session 23
+- 2023-03-30: fastapi practice session 24

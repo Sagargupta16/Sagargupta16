@@ -2215,3 +2215,4 @@
 - 2023-03-30: debugging practice session 23
 - 2023-03-30: fastapi practice session 24
 - 2023-03-30: data-structures practice session 25
+- 2023-03-30: debugging practice session 26

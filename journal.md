@@ -2217,3 +2217,4 @@
 - 2023-03-30: data-structures practice session 25
 - 2023-03-30: debugging practice session 26
 - 2023-03-30: algorithms practice session 27
+- 2023-03-30: ci-cd practice session 28

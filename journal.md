@@ -2206,3 +2206,4 @@
 - 2023-03-30: docker practice session 14
 - 2023-03-30: kubernetes practice session 15
 - 2023-03-30: ci-cd practice session 16
+- 2023-03-30: ci-cd practice session 17

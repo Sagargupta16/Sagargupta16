@@ -2203,3 +2203,4 @@
 - 2023-03-30: fastapi practice session 11
 - 2023-03-30: data-structures practice session 12
 - 2023-03-30: aws practice session 13
+- 2023-03-30: docker practice session 14

@@ -2208,3 +2208,4 @@
 - 2023-03-30: ci-cd practice session 16
 - 2023-03-30: ci-cd practice session 17
 - 2023-03-30: data-structures practice session 18
+- 2023-03-30: testing practice session 19

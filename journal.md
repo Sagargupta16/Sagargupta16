@@ -2200,3 +2200,4 @@
 - 2023-03-30: terraform practice session 8
 - 2023-03-30: docker practice session 9
 - 2023-03-30: kubernetes practice session 10
+- 2023-03-30: fastapi practice session 11

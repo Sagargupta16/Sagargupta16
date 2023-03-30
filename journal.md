@@ -2196,3 +2196,4 @@
 - 2023-03-30: ci-cd practice session 4
 - 2023-03-30: ci-cd practice session 5
 - 2023-03-30: security practice session 6
+- 2023-03-30: linux practice session 7

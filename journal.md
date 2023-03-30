@@ -2202,3 +2202,4 @@
 - 2023-03-30: kubernetes practice session 10
 - 2023-03-30: fastapi practice session 11
 - 2023-03-30: data-structures practice session 12
+- 2023-03-30: aws practice session 13

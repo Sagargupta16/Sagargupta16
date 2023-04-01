@@ -2218,3 +2218,4 @@
 - 2023-03-30: debugging practice session 26
 - 2023-03-30: algorithms practice session 27
 - 2023-03-30: ci-cd practice session 28
+- 2023-04-01: python practice session 1

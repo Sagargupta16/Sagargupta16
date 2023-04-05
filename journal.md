@@ -2221,3 +2221,4 @@
 - 2023-04-01: python practice session 1
 - 2023-04-05: security practice session 1
 - 2023-04-05: docker practice session 2
+- 2023-04-05: testing practice session 3

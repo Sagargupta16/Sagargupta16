@@ -2220,3 +2220,4 @@
 - 2023-03-30: ci-cd practice session 28
 - 2023-04-01: python practice session 1
 - 2023-04-05: security practice session 1
+- 2023-04-05: docker practice session 2

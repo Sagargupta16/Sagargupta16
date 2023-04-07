@@ -2225,3 +2225,4 @@
 - 2023-04-06: ci-cd practice session 1
 - 2023-04-07: aws practice session 1
 - 2023-04-07: ci-cd practice session 2
+- 2023-04-07: docker practice session 3

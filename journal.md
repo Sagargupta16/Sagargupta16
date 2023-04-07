@@ -2227,3 +2227,4 @@
 - 2023-04-07: ci-cd practice session 2
 - 2023-04-07: docker practice session 3
 - 2023-04-07: testing practice session 4
+- 2023-04-07: docker practice session 5

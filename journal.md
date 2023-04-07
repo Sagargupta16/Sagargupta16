@@ -2232,3 +2232,4 @@
 - 2023-04-07: react practice session 7
 - 2023-04-07: postgresql practice session 8
 - 2023-04-07: testing practice session 9
+- 2023-04-07: linux practice session 10

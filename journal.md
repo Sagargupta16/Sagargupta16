@@ -2245,3 +2245,4 @@
 - 2023-04-07: mongodb practice session 20
 - 2023-04-07: api-design practice session 21
 - 2023-04-07: kubernetes practice session 22
+- 2023-04-07: algorithms practice session 23

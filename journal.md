@@ -2234,3 +2234,4 @@
 - 2023-04-07: testing practice session 9
 - 2023-04-07: linux practice session 10
 - 2023-04-07: api-design practice session 11
+- 2023-04-07: algorithms practice session 12

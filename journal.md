@@ -2243,3 +2243,4 @@
 - 2023-04-07: terraform practice session 18
 - 2023-04-07: fastapi practice session 19
 - 2023-04-07: mongodb practice session 20
+- 2023-04-07: api-design practice session 21

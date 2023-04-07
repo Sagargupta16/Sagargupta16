@@ -2224,3 +2224,4 @@
 - 2023-04-05: testing practice session 3
 - 2023-04-06: ci-cd practice session 1
 - 2023-04-07: aws practice session 1
+- 2023-04-07: ci-cd practice session 2

@@ -2236,3 +2236,4 @@
 - 2023-04-07: api-design practice session 11
 - 2023-04-07: algorithms practice session 12
 - 2023-04-07: ci-cd practice session 13
+- 2023-04-07: docker practice session 14

@@ -2229,3 +2229,4 @@
 - 2023-04-07: testing practice session 4
 - 2023-04-07: docker practice session 5
 - 2023-04-07: ci-cd practice session 6
+- 2023-04-07: react practice session 7

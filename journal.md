@@ -2240,3 +2240,4 @@
 - 2023-04-07: debugging practice session 15
 - 2023-04-07: debugging practice session 16
 - 2023-04-07: docker practice session 17
+- 2023-04-07: terraform practice session 18

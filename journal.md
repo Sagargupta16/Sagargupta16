@@ -2230,3 +2230,4 @@
 - 2023-04-07: docker practice session 5
 - 2023-04-07: ci-cd practice session 6
 - 2023-04-07: react practice session 7
+- 2023-04-07: postgresql practice session 8

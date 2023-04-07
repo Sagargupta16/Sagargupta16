@@ -2238,3 +2238,4 @@
 - 2023-04-07: ci-cd practice session 13
 - 2023-04-07: docker practice session 14
 - 2023-04-07: debugging practice session 15
+- 2023-04-07: debugging practice session 16

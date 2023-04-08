@@ -60,3 +60,4 @@
 - 2023-01-30: revise python section 56
 - 2023-03-28: organize python section 39
 - 2023-04-03: revise python section 86
+- 2023-04-08: expand python section 76

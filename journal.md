@@ -2248,3 +2248,4 @@
 - 2023-04-07: algorithms practice session 23
 - 2023-04-07: terraform practice session 24
 - 2023-04-09: python practice session 1
+- 2023-04-09: debugging practice session 2

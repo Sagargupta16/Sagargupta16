@@ -2257,3 +2257,4 @@
 - 2023-04-09: terraform practice session 8
 - 2023-04-09: ml practice session 9
 - 2023-04-09: fastapi practice session 10
+- 2023-04-09: api-design practice session 11

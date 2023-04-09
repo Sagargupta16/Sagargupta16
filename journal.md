@@ -2264,3 +2264,4 @@
 - 2023-04-09: linux practice session 15
 - 2023-04-09: api-design practice session 16
 - 2023-04-09: ml practice session 17
+- 2023-04-09: debugging practice session 18

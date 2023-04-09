@@ -2265,3 +2265,4 @@
 - 2023-04-09: api-design practice session 16
 - 2023-04-09: ml practice session 17
 - 2023-04-09: debugging practice session 18
+- 2023-04-09: data-structures practice session 19

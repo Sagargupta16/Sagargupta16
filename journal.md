@@ -2251,3 +2251,4 @@
 - 2023-04-09: debugging practice session 2
 - 2023-04-09: data-structures practice session 3
 - 2023-04-09: ci-cd practice session 4
+- 2023-04-09: react practice session 5

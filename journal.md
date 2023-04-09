@@ -2260,3 +2260,4 @@
 - 2023-04-09: api-design practice session 11
 - 2023-04-09: react practice session 12
 - 2023-04-09: aws practice session 13
+- 2023-04-09: debugging practice session 14

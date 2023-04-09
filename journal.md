@@ -2252,3 +2252,4 @@
 - 2023-04-09: data-structures practice session 3
 - 2023-04-09: ci-cd practice session 4
 - 2023-04-09: react practice session 5
+- 2023-04-09: docker practice session 6

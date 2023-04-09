@@ -2275,3 +2275,4 @@
 - 2023-04-09: react practice session 26
 - 2023-04-09: linux practice session 27
 - 2023-04-09: security practice session 28
+- 2023-04-09: testing practice session 29

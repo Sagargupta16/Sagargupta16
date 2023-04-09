@@ -2254,3 +2254,4 @@
 - 2023-04-09: react practice session 5
 - 2023-04-09: docker practice session 6
 - 2023-04-09: algorithms practice session 7
+- 2023-04-09: terraform practice session 8

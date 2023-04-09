@@ -2250,3 +2250,4 @@
 - 2023-04-09: python practice session 1
 - 2023-04-09: debugging practice session 2
 - 2023-04-09: data-structures practice session 3
+- 2023-04-09: ci-cd practice session 4

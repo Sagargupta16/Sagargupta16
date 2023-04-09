@@ -2272,3 +2272,4 @@
 - 2023-04-09: api-design practice session 23
 - 2023-04-09: react practice session 24
 - 2023-04-09: security practice session 25
+- 2023-04-09: react practice session 26

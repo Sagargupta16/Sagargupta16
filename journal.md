@@ -2247,3 +2247,4 @@
 - 2023-04-07: kubernetes practice session 22
 - 2023-04-07: algorithms practice session 23
 - 2023-04-07: terraform practice session 24
+- 2023-04-09: python practice session 1

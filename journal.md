@@ -2267,3 +2267,4 @@
 - 2023-04-09: debugging practice session 18
 - 2023-04-09: data-structures practice session 19
 - 2023-04-09: mongodb practice session 20
+- 2023-04-09: data-structures practice session 21

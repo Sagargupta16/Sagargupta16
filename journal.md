@@ -2278,3 +2278,4 @@
 - 2023-04-09: testing practice session 29
 - 2023-04-11: fastapi practice session 1
 - 2023-04-11: api-design practice session 2
+- 2023-04-11: git practice session 3

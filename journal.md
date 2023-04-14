@@ -2280,3 +2280,4 @@
 - 2023-04-11: api-design practice session 2
 - 2023-04-11: git practice session 3
 - 2023-04-14: ml practice session 1
+- 2023-04-14: python practice session 2

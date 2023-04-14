@@ -2283,3 +2283,4 @@
 - 2023-04-14: python practice session 2
 - 2023-04-14: postgresql practice session 3
 - 2023-04-14: git practice session 4
+- 2023-04-14: data-structures practice session 5

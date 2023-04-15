@@ -2288,3 +2288,4 @@
 - 2023-04-15: linux practice session 2
 - 2023-04-15: react practice session 3
 - 2023-04-15: ci-cd practice session 4
+- 2023-04-15: fastapi practice session 5

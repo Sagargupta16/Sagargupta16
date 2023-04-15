@@ -2287,3 +2287,4 @@
 - 2023-04-15: debugging practice session 1
 - 2023-04-15: linux practice session 2
 - 2023-04-15: react practice session 3
+- 2023-04-15: ci-cd practice session 4

@@ -2295,3 +2295,4 @@
 - 2023-04-17: kubernetes practice session 2
 - 2023-04-17: kubernetes practice session 3
 - 2023-04-17: debugging practice session 4
+- 2023-04-17: mongodb practice session 5

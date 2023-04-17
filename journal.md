@@ -2292,3 +2292,4 @@
 - 2023-04-16: mongodb practice session 1
 - 2023-04-16: algorithms practice session 2
 - 2023-04-17: aws practice session 1
+- 2023-04-17: kubernetes practice session 2

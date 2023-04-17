@@ -58,3 +58,4 @@
 - 2023-02-22: update nginx section 67
 - 2023-02-22: update nginx section 56
 - 2023-04-03: revise nginx section 75
+- 2023-04-17: expand nginx section 38

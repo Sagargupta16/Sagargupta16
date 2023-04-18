@@ -63,3 +63,4 @@
 - 2023-04-08: expand python section 76
 - 2023-04-08: update python section 58
 - 2023-04-13: expand python section 95
+- 2023-04-18: update python section 49

@@ -2298,3 +2298,4 @@
 - 2023-04-17: mongodb practice session 5
 - 2023-04-18: ci-cd practice session 1
 - 2023-04-18: terraform practice session 2
+- 2023-04-18: aws practice session 3

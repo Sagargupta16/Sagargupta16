@@ -76,3 +76,4 @@
 - 2023-03-25: organize data-structures section 99
 - 2023-03-28: improve data-structures section 53
 - 2023-04-03: refactor data-structures section 49
+- 2023-04-18: revise data-structures section 42

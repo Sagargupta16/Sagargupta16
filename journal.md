@@ -2300,3 +2300,4 @@
 - 2023-04-18: terraform practice session 2
 - 2023-04-18: aws practice session 3
 - 2023-04-19: docker practice session 1
+- 2023-04-19: ml practice session 2

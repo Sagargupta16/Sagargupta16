@@ -2312,3 +2312,4 @@
 - 2023-04-20: testing practice session 8
 - 2023-04-20: python practice session 9
 - 2023-04-20: kubernetes practice session 10
+- 2023-04-20: aws practice session 11

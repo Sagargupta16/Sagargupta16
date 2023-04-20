@@ -2306,3 +2306,4 @@
 - 2023-04-20: terraform practice session 2
 - 2023-04-20: aws practice session 3
 - 2023-04-20: mongodb practice session 4
+- 2023-04-20: data-structures practice session 5

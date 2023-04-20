@@ -2314,3 +2314,4 @@
 - 2023-04-20: kubernetes practice session 10
 - 2023-04-20: aws practice session 11
 - 2023-04-20: security practice session 12
+- 2023-04-20: fastapi practice session 13

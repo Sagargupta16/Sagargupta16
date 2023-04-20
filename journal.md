@@ -2315,3 +2315,4 @@
 - 2023-04-20: aws practice session 11
 - 2023-04-20: security practice session 12
 - 2023-04-20: fastapi practice session 13
+- 2023-04-20: linux practice session 14

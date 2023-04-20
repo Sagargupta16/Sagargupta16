@@ -2320,3 +2320,4 @@
 - 2023-04-20: javascript practice session 16
 - 2023-04-20: kubernetes practice session 17
 - 2023-04-20: ci-cd practice session 18
+- 2023-04-20: mongodb practice session 19

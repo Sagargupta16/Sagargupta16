@@ -2323,3 +2323,4 @@
 - 2023-04-20: mongodb practice session 19
 - 2023-04-20: python practice session 20
 - 2023-04-20: linux practice session 21
+- 2023-04-20: docker practice session 22

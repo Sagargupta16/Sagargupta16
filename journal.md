@@ -2327,3 +2327,4 @@
 - 2023-04-20: ci-cd practice session 23
 - 2023-04-20: linux practice session 24
 - 2023-04-20: postgresql practice session 25
+- 2023-04-20: ml practice session 26

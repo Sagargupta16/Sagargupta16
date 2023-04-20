@@ -2309,3 +2309,4 @@
 - 2023-04-20: data-structures practice session 5
 - 2023-04-20: terraform practice session 6
 - 2023-04-20: terraform practice session 7
+- 2023-04-20: testing practice session 8

@@ -2318,3 +2318,4 @@
 - 2023-04-20: linux practice session 14
 - 2023-04-20: fastapi practice session 15
 - 2023-04-20: javascript practice session 16
+- 2023-04-20: kubernetes practice session 17

@@ -69,3 +69,4 @@
 - 2023-03-21: revise redis section 88
 - 2023-04-08: expand redis section 23
 - 2023-04-13: organize redis section 25
+- 2023-04-20: expand redis section 64

@@ -2329,3 +2329,4 @@
 - 2023-04-20: postgresql practice session 25
 - 2023-04-20: ml practice session 26
 - 2023-04-21: linux practice session 1
+- 2023-04-22: testing practice session 1

@@ -77,3 +77,4 @@
 - 2023-03-28: revise django section 47
 - 2023-04-07: refactor django section 36
 - 2023-04-21: improve django section 32
+- 2023-04-23: update django section 92

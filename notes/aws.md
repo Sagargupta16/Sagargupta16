@@ -72,3 +72,4 @@
 - 2023-03-26: revise aws section 94
 - 2023-04-08: add aws section 4
 - 2023-04-18: update aws section 91
+- 2023-04-23: add aws section 42

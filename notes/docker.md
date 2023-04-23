@@ -80,3 +80,4 @@
 - 2023-02-14: revise docker section 98
 - 2023-03-25: organize docker section 29
 - 2023-04-03: improve docker section 55
+- 2023-04-23: expand docker section 24

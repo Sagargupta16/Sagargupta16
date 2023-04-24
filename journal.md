@@ -2332,3 +2332,4 @@
 - 2023-04-22: testing practice session 1
 - 2023-04-22: algorithms practice session 2
 - 2023-04-24: react practice session 1
+- 2023-04-24: algorithms practice session 2

@@ -60,3 +60,4 @@
 - 2023-04-03: revise nginx section 75
 - 2023-04-17: expand nginx section 38
 - 2023-04-21: expand nginx section 97
+- 2023-04-25: organize nginx section 63

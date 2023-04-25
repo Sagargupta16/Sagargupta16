@@ -2336,3 +2336,4 @@
 - 2023-04-24: api-design practice session 3
 - 2023-04-25: api-design practice session 1
 - 2023-04-25: terraform practice session 2
+- 2023-04-25: postgresql practice session 3

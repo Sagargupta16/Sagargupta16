@@ -76,3 +76,4 @@
 - 2023-03-26: refactor terraform section 50
 - 2023-03-28: expand terraform section 23
 - 2023-04-19: improve terraform section 72
+- 2023-04-25: organize terraform section 63

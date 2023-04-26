@@ -2339,3 +2339,4 @@
 - 2023-04-25: postgresql practice session 3
 - 2023-04-25: docker practice session 4
 - 2023-04-26: kubernetes practice session 1
+- 2023-04-26: data-structures practice session 2

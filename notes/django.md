@@ -81,3 +81,4 @@
 - 2023-04-26: improve django section 44
 - 2023-04-26: revise django section 37
 - 2023-04-26: expand django section 37
+- 2023-04-26: refactor django section 51

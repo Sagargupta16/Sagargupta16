@@ -47,3 +47,4 @@
 - 2023-03-19: add security section 8
 - 2023-03-25: improve security section 5
 - 2023-04-08: organize security section 50
+- 2023-04-26: refactor security section 35

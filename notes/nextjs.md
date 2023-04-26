@@ -64,3 +64,4 @@
 - 2023-04-03: update nextjs section 58
 - 2023-04-12: revise nextjs section 97
 - 2023-04-26: expand nextjs section 51
+- 2023-04-26: improve nextjs section 78

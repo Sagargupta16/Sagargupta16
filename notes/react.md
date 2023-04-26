@@ -82,3 +82,4 @@
 - 2023-04-08: add react section 37
 - 2023-04-23: add react section 13
 - 2023-04-26: expand react section 9
+- 2023-04-26: improve react section 46

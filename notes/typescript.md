@@ -77,3 +77,4 @@
 - 2023-04-03: organize typescript section 81
 - 2023-04-07: expand typescript section 65
 - 2023-04-15: add typescript section 7
+- 2023-04-26: update typescript section 79

@@ -77,3 +77,4 @@
 - 2023-03-28: improve graphql section 92
 - 2023-04-08: revise graphql section 42
 - 2023-04-25: update graphql section 32
+- 2023-04-26: revise graphql section 63

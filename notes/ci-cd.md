@@ -62,3 +62,4 @@
 - 2023-04-05: update ci-cd section 65
 - 2023-04-07: refactor ci-cd section 37
 - 2023-04-20: revise ci-cd section 73
+- 2023-04-26: update ci-cd section 52

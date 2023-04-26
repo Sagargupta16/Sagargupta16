@@ -78,3 +78,4 @@
 - 2023-04-19: improve terraform section 72
 - 2023-04-25: organize terraform section 63
 - 2023-04-26: revise terraform section 63
+- 2023-04-26: add terraform section 40

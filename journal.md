@@ -2343,3 +2343,4 @@
 - 2023-04-26: git practice session 3
 - 2023-04-26: debugging practice session 4
 - 2023-04-26: docker practice session 5
+- 2023-04-26: api-design practice session 6

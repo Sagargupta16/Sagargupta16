@@ -2340,3 +2340,4 @@
 - 2023-04-25: docker practice session 4
 - 2023-04-26: kubernetes practice session 1
 - 2023-04-26: data-structures practice session 2
+- 2023-04-26: git practice session 3

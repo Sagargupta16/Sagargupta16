@@ -2347,3 +2347,4 @@
 - 2023-04-26: git practice session 7
 - 2023-04-27: python practice session 1
 - 2023-04-27: git practice session 2
+- 2023-04-27: security practice session 3

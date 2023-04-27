@@ -2345,3 +2345,4 @@
 - 2023-04-26: docker practice session 5
 - 2023-04-26: api-design practice session 6
 - 2023-04-26: git practice session 7
+- 2023-04-27: python practice session 1

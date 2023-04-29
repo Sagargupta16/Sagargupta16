@@ -2349,3 +2349,4 @@
 - 2023-04-27: git practice session 2
 - 2023-04-27: security practice session 3
 - 2023-04-27: kubernetes practice session 4
+- 2023-04-29: security practice session 1

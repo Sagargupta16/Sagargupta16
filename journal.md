@@ -2354,3 +2354,4 @@
 - 2023-04-29: linux practice session 3
 - 2023-04-29: debugging practice session 4
 - 2023-04-29: ml practice session 5
+- 2023-04-29: fastapi practice session 6

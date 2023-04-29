@@ -2356,3 +2356,4 @@
 - 2023-04-29: ml practice session 5
 - 2023-04-29: fastapi practice session 6
 - 2023-04-29: docker practice session 7
+- 2023-04-29: ml practice session 8

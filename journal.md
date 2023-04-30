@@ -2358,3 +2358,4 @@
 - 2023-04-29: docker practice session 7
 - 2023-04-29: ml practice session 8
 - 2023-04-29: aws practice session 9
+- 2023-04-30: aws practice session 1

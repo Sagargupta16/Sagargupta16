@@ -2360,3 +2360,4 @@
 - 2023-04-29: aws practice session 9
 - 2023-04-30: aws practice session 1
 - 2023-04-30: postgresql practice session 2
+- 2023-04-30: javascript practice session 3

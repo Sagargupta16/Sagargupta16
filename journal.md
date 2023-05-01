@@ -2372,3 +2372,4 @@
 - 2023-05-01: data-structures practice session 7
 - 2023-05-01: git practice session 8
 - 2023-05-01: postgresql practice session 9
+- 2023-05-01: ci-cd practice session 10

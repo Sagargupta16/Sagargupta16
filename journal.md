@@ -2364,3 +2364,4 @@
 - 2023-04-30: terraform practice session 4
 - 2023-04-30: data-structures practice session 5
 - 2023-05-01: git practice session 1
+- 2023-05-01: javascript practice session 2

@@ -2376,3 +2376,4 @@
 - 2023-05-01: algorithms practice session 11
 - 2023-05-01: kubernetes practice session 12
 - 2023-05-01: javascript practice session 13
+- 2023-05-01: aws practice session 14

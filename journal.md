@@ -2366,3 +2366,4 @@
 - 2023-05-01: git practice session 1
 - 2023-05-01: javascript practice session 2
 - 2023-05-01: security practice session 3
+- 2023-05-01: terraform practice session 4

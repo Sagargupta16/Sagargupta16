@@ -2369,3 +2369,4 @@
 - 2023-05-01: terraform practice session 4
 - 2023-05-01: data-structures practice session 5
 - 2023-05-01: api-design practice session 6
+- 2023-05-01: data-structures practice session 7

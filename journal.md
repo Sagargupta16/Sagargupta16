@@ -2367,3 +2367,4 @@
 - 2023-05-01: javascript practice session 2
 - 2023-05-01: security practice session 3
 - 2023-05-01: terraform practice session 4
+- 2023-05-01: data-structures practice session 5

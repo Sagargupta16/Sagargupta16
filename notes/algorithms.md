@@ -75,3 +75,4 @@
 - 2023-04-05: organize algorithms section 61
 - 2023-04-15: expand algorithms section 86
 - 2023-05-01: revise algorithms section 86
+- 2023-05-02: add algorithms section 40

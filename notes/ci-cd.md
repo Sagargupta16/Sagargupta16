@@ -64,3 +64,4 @@
 - 2023-04-20: revise ci-cd section 73
 - 2023-04-26: update ci-cd section 52
 - 2023-04-26: revise ci-cd section 47
+- 2023-05-02: improve ci-cd section 26

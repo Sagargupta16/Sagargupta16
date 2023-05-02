@@ -2380,3 +2380,4 @@
 - 2023-05-01: mongodb practice session 15
 - 2023-05-02: mongodb practice session 1
 - 2023-05-02: ci-cd practice session 2
+- 2023-05-02: git practice session 3

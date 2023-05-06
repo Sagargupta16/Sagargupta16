@@ -84,3 +84,4 @@
 - 2023-04-21: add testing section 75
 - 2023-04-22: revise testing section 46
 - 2023-04-26: update testing section 22
+- 2023-05-06: organize testing section 40

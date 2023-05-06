@@ -64,3 +64,4 @@
 - 2023-04-26: expand nginx section 54
 - 2023-04-28: add nginx section 91
 - 2023-04-29: refactor nginx section 10
+- 2023-05-06: update nginx section 14

@@ -2384,3 +2384,4 @@
 - 2023-05-03: ml practice session 1
 - 2023-05-03: git practice session 2
 - 2023-05-07: javascript practice session 1
+- 2023-05-07: javascript practice session 2

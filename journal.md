@@ -2390,3 +2390,4 @@
 - 2023-05-07: fastapi practice session 5
 - 2023-05-07: testing practice session 6
 - 2023-05-07: testing practice session 7
+- 2023-05-07: python practice session 8

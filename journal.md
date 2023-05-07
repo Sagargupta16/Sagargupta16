@@ -2393,3 +2393,4 @@
 - 2023-05-07: python practice session 8
 - 2023-05-07: algorithms practice session 9
 - 2023-05-07: linux practice session 10
+- 2023-05-07: react practice session 11

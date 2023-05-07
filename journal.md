@@ -2391,3 +2391,4 @@
 - 2023-05-07: testing practice session 6
 - 2023-05-07: testing practice session 7
 - 2023-05-07: python practice session 8
+- 2023-05-07: algorithms practice session 9

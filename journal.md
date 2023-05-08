@@ -2399,3 +2399,4 @@
 - 2023-05-08: fastapi practice session 1
 - 2023-05-08: git practice session 2
 - 2023-05-08: ci-cd practice session 3
+- 2023-05-08: aws practice session 4

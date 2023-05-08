@@ -2397,3 +2397,4 @@
 - 2023-05-07: mongodb practice session 12
 - 2023-05-07: mongodb practice session 13
 - 2023-05-08: fastapi practice session 1
+- 2023-05-08: git practice session 2

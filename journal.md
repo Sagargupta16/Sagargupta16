@@ -2401,3 +2401,4 @@
 - 2023-05-08: ci-cd practice session 3
 - 2023-05-08: aws practice session 4
 - 2023-05-08: kubernetes practice session 5
+- 2023-05-08: data-structures practice session 6

@@ -2410,3 +2410,4 @@
 - 2023-05-10: testing practice session 2
 - 2023-05-10: kubernetes practice session 3
 - 2023-05-10: api-design practice session 4
+- 2023-05-10: ml practice session 5

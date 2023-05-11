@@ -2411,3 +2411,4 @@
 - 2023-05-10: kubernetes practice session 3
 - 2023-05-10: api-design practice session 4
 - 2023-05-10: ml practice session 5
+- 2023-05-11: api-design practice session 1

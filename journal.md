@@ -2412,3 +2412,4 @@
 - 2023-05-10: api-design practice session 4
 - 2023-05-10: ml practice session 5
 - 2023-05-11: api-design practice session 1
+- 2023-05-12: api-design practice session 1

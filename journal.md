@@ -2416,3 +2416,4 @@
 - 2023-05-12: debugging practice session 2
 - 2023-05-12: mongodb practice session 3
 - 2023-05-12: aws practice session 4
+- 2023-05-12: security practice session 5

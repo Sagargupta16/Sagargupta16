@@ -2418,3 +2418,4 @@
 - 2023-05-12: aws practice session 4
 - 2023-05-12: security practice session 5
 - 2023-05-12: api-design practice session 6
+- 2023-05-13: ml practice session 1

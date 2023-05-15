@@ -2419,3 +2419,4 @@
 - 2023-05-12: security practice session 5
 - 2023-05-12: api-design practice session 6
 - 2023-05-13: ml practice session 1
+- 2023-05-15: terraform practice session 1

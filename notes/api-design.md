@@ -69,3 +69,4 @@
 - 2023-04-26: add api-design section 23
 - 2023-05-06: revise api-design section 84
 - 2023-05-08: refactor api-design section 63
+- 2023-05-17: revise api-design section 44

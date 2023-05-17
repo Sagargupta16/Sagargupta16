@@ -69,3 +69,4 @@
 - 2023-04-11: refactor git section 84
 - 2023-05-06: organize git section 38
 - 2023-05-07: update git section 25
+- 2023-05-17: add git section 7

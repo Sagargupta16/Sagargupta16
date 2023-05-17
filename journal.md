@@ -2430,3 +2430,4 @@
 - 2023-05-17: ml practice session 8
 - 2023-05-17: data-structures practice session 9
 - 2023-05-17: algorithms practice session 10
+- 2023-05-17: testing practice session 11

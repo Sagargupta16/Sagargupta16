@@ -2422,3 +2422,4 @@
 - 2023-05-15: terraform practice session 1
 - 2023-05-17: algorithms practice session 1
 - 2023-05-17: debugging practice session 2
+- 2023-05-17: aws practice session 3

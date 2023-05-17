@@ -2424,3 +2424,4 @@
 - 2023-05-17: debugging practice session 2
 - 2023-05-17: aws practice session 3
 - 2023-05-17: ci-cd practice session 4
+- 2023-05-17: kubernetes practice session 5

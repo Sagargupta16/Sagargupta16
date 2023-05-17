@@ -2428,3 +2428,4 @@
 - 2023-05-17: algorithms practice session 6
 - 2023-05-17: terraform practice session 7
 - 2023-05-17: ml practice session 8
+- 2023-05-17: data-structures practice session 9

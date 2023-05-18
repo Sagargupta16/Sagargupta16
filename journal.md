@@ -2435,3 +2435,4 @@
 - 2023-05-18: javascript practice session 2
 - 2023-05-18: mongodb practice session 3
 - 2023-05-18: algorithms practice session 4
+- 2023-05-18: ml practice session 5

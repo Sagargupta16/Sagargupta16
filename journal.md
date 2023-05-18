@@ -2436,3 +2436,4 @@
 - 2023-05-18: mongodb practice session 3
 - 2023-05-18: algorithms practice session 4
 - 2023-05-18: ml practice session 5
+- 2023-05-18: ci-cd practice session 6

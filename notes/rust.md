@@ -89,3 +89,4 @@
 - 2023-04-20: revise rust section 63
 - 2023-04-21: expand rust section 64
 - 2023-05-15: expand rust section 91
+- 2023-05-18: add rust section 65

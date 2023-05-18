@@ -2438,3 +2438,4 @@
 - 2023-05-18: ml practice session 5
 - 2023-05-18: ci-cd practice session 6
 - 2023-05-18: api-design practice session 7
+- 2023-05-18: fastapi practice session 8

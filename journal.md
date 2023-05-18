@@ -2432,3 +2432,4 @@
 - 2023-05-17: algorithms practice session 10
 - 2023-05-17: testing practice session 11
 - 2023-05-18: ml practice session 1
+- 2023-05-18: javascript practice session 2

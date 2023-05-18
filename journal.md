@@ -2433,3 +2433,4 @@
 - 2023-05-17: testing practice session 11
 - 2023-05-18: ml practice session 1
 - 2023-05-18: javascript practice session 2
+- 2023-05-18: mongodb practice session 3

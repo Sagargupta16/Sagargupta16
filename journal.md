@@ -2441,3 +2441,4 @@
 - 2023-05-18: fastapi practice session 8
 - 2023-05-18: docker practice session 9
 - 2023-05-18: python practice session 10
+- 2023-05-18: aws practice session 11

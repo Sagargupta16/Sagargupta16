@@ -2453,3 +2453,4 @@
 - 2023-05-19: linux practice session 6
 - 2023-05-19: kubernetes practice session 7
 - 2023-05-19: terraform practice session 8
+- 2023-05-19: git practice session 9

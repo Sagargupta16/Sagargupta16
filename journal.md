@@ -2450,3 +2450,4 @@
 - 2023-05-19: aws practice session 3
 - 2023-05-19: kubernetes practice session 4
 - 2023-05-19: api-design practice session 5
+- 2023-05-19: linux practice session 6

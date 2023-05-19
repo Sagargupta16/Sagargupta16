@@ -2456,3 +2456,4 @@
 - 2023-05-19: git practice session 9
 - 2023-05-19: kubernetes practice session 10
 - 2023-05-19: security practice session 11
+- 2023-05-19: linux practice session 12

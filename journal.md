@@ -2445,3 +2445,4 @@
 - 2023-05-18: react practice session 12
 - 2023-05-18: docker practice session 13
 - 2023-05-18: javascript practice session 14
+- 2023-05-19: ci-cd practice session 1

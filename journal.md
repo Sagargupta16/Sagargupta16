@@ -2447,3 +2447,4 @@
 - 2023-05-18: javascript practice session 14
 - 2023-05-19: ci-cd practice session 1
 - 2023-05-19: terraform practice session 2
+- 2023-05-19: aws practice session 3

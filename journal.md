@@ -2452,3 +2452,4 @@
 - 2023-05-19: api-design practice session 5
 - 2023-05-19: linux practice session 6
 - 2023-05-19: kubernetes practice session 7
+- 2023-05-19: terraform practice session 8

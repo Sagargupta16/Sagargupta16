@@ -2461,3 +2461,4 @@
 - 2023-05-19: fastapi practice session 14
 - 2023-05-20: terraform practice session 1
 - 2023-05-20: security practice session 2
+- 2023-05-20: data-structures practice session 3

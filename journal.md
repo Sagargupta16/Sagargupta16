@@ -2465,3 +2465,4 @@
 - 2023-05-20: javascript practice session 4
 - 2023-05-20: linux practice session 5
 - 2023-05-20: postgresql practice session 6
+- 2023-05-20: security practice session 7

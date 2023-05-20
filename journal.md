@@ -2460,3 +2460,4 @@
 - 2023-05-19: api-design practice session 13
 - 2023-05-19: fastapi practice session 14
 - 2023-05-20: terraform practice session 1
+- 2023-05-20: security practice session 2

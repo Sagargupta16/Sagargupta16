@@ -2463,3 +2463,4 @@
 - 2023-05-20: security practice session 2
 - 2023-05-20: data-structures practice session 3
 - 2023-05-20: javascript practice session 4
+- 2023-05-20: linux practice session 5

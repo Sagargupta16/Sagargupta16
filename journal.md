@@ -2467,3 +2467,4 @@
 - 2023-05-20: postgresql practice session 6
 - 2023-05-20: security practice session 7
 - 2023-05-21: git practice session 1
+- 2023-05-21: ml practice session 2

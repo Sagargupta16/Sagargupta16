@@ -2476,3 +2476,4 @@
 - 2023-05-22: ml practice session 5
 - 2023-05-22: python practice session 6
 - 2023-05-22: kubernetes practice session 7
+- 2023-05-22: linux practice session 8

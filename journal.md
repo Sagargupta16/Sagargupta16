@@ -2474,3 +2474,4 @@
 - 2023-05-22: python practice session 3
 - 2023-05-22: fastapi practice session 4
 - 2023-05-22: ml practice session 5
+- 2023-05-22: python practice session 6

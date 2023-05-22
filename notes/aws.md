@@ -77,3 +77,4 @@
 - 2023-04-26: improve aws section 67
 - 2023-05-15: improve aws section 97
 - 2023-05-18: update aws section 2
+- 2023-05-22: revise aws section 12

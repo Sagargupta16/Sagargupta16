@@ -2469,3 +2469,4 @@
 - 2023-05-21: git practice session 1
 - 2023-05-21: ml practice session 2
 - 2023-05-21: api-design practice session 3
+- 2023-05-22: api-design practice session 1

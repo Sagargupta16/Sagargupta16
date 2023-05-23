@@ -2483,3 +2483,4 @@
 - 2023-05-23: react practice session 2
 - 2023-05-23: testing practice session 3
 - 2023-05-23: git practice session 4
+- 2023-05-23: git practice session 5

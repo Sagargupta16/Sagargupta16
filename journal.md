@@ -2485,3 +2485,4 @@
 - 2023-05-23: git practice session 4
 - 2023-05-23: git practice session 5
 - 2023-05-23: security practice session 6
+- 2023-05-23: testing practice session 7

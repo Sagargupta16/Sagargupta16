@@ -2480,3 +2480,4 @@
 - 2023-05-22: docker practice session 9
 - 2023-05-22: debugging practice session 10
 - 2023-05-23: debugging practice session 1
+- 2023-05-23: react practice session 2

@@ -2479,3 +2479,4 @@
 - 2023-05-22: linux practice session 8
 - 2023-05-22: docker practice session 9
 - 2023-05-22: debugging practice session 10
+- 2023-05-23: debugging practice session 1

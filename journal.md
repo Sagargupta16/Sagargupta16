@@ -2498,3 +2498,4 @@
 - 2023-05-24: postgresql practice session 10
 - 2023-05-24: kubernetes practice session 11
 - 2023-05-24: security practice session 12
+- 2023-05-24: ml practice session 13

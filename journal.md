@@ -2495,3 +2495,4 @@
 - 2023-05-24: python practice session 7
 - 2023-05-24: debugging practice session 8
 - 2023-05-24: data-structures practice session 9
+- 2023-05-24: postgresql practice session 10

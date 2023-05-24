@@ -2486,3 +2486,4 @@
 - 2023-05-23: git practice session 5
 - 2023-05-23: security practice session 6
 - 2023-05-23: testing practice session 7
+- 2023-05-24: fastapi practice session 1

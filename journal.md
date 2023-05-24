@@ -2489,3 +2489,4 @@
 - 2023-05-24: fastapi practice session 1
 - 2023-05-24: fastapi practice session 2
 - 2023-05-24: debugging practice session 3
+- 2023-05-24: kubernetes practice session 4

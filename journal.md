@@ -2497,3 +2497,4 @@
 - 2023-05-24: data-structures practice session 9
 - 2023-05-24: postgresql practice session 10
 - 2023-05-24: kubernetes practice session 11
+- 2023-05-24: security practice session 12

@@ -2493,3 +2493,4 @@
 - 2023-05-24: python practice session 5
 - 2023-05-24: data-structures practice session 6
 - 2023-05-24: python practice session 7
+- 2023-05-24: debugging practice session 8

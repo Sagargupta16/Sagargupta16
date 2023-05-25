@@ -2499,3 +2499,4 @@
 - 2023-05-24: kubernetes practice session 11
 - 2023-05-24: security practice session 12
 - 2023-05-24: ml practice session 13
+- 2023-05-25: data-structures practice session 1

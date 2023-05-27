@@ -2517,3 +2517,4 @@
 - 2023-05-27: fastapi practice session 15
 - 2023-05-27: debugging practice session 16
 - 2023-05-27: postgresql practice session 17
+- 2023-05-27: docker practice session 18

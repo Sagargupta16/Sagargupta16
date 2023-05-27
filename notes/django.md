@@ -85,3 +85,4 @@
 - 2023-05-12: add django section 39
 - 2023-05-12: update django section 58
 - 2023-05-15: expand django section 67
+- 2023-05-27: organize django section 42

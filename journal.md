@@ -2501,3 +2501,4 @@
 - 2023-05-24: ml practice session 13
 - 2023-05-25: data-structures practice session 1
 - 2023-05-27: aws practice session 1
+- 2023-05-27: git practice session 2

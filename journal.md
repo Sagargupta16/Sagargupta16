@@ -2512,3 +2512,4 @@
 - 2023-05-27: ci-cd practice session 10
 - 2023-05-27: api-design practice session 11
 - 2023-05-27: python practice session 12
+- 2023-05-27: security practice session 13

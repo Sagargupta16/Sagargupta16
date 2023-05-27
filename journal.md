@@ -2505,3 +2505,4 @@
 - 2023-05-27: linux practice session 3
 - 2023-05-27: kubernetes practice session 4
 - 2023-05-27: linux practice session 5
+- 2023-05-27: aws practice session 6

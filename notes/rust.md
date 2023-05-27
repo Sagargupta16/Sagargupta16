@@ -91,3 +91,4 @@
 - 2023-05-15: expand rust section 91
 - 2023-05-18: add rust section 65
 - 2023-05-22: update rust section 99
+- 2023-05-27: organize rust section 51

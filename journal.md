@@ -2502,3 +2502,4 @@
 - 2023-05-25: data-structures practice session 1
 - 2023-05-27: aws practice session 1
 - 2023-05-27: git practice session 2
+- 2023-05-27: linux practice session 3

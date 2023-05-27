@@ -2514,3 +2514,4 @@
 - 2023-05-27: python practice session 12
 - 2023-05-27: security practice session 13
 - 2023-05-27: javascript practice session 14
+- 2023-05-27: fastapi practice session 15

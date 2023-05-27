@@ -2519,3 +2519,4 @@
 - 2023-05-27: postgresql practice session 17
 - 2023-05-27: docker practice session 18
 - 2023-05-27: debugging practice session 19
+- 2023-05-27: javascript practice session 20

@@ -2510,3 +2510,4 @@
 - 2023-05-27: postgresql practice session 8
 - 2023-05-27: mongodb practice session 9
 - 2023-05-27: ci-cd practice session 10
+- 2023-05-27: api-design practice session 11

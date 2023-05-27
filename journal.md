@@ -2507,3 +2507,4 @@
 - 2023-05-27: linux practice session 5
 - 2023-05-27: aws practice session 6
 - 2023-05-27: ml practice session 7
+- 2023-05-27: postgresql practice session 8

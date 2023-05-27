@@ -2523,3 +2523,4 @@
 - 2023-05-27: react practice session 21
 - 2023-05-27: react practice session 22
 - 2023-05-27: javascript practice session 23
+- 2023-05-27: api-design practice session 24

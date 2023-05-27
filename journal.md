@@ -2511,3 +2511,4 @@
 - 2023-05-27: mongodb practice session 9
 - 2023-05-27: ci-cd practice session 10
 - 2023-05-27: api-design practice session 11
+- 2023-05-27: python practice session 12

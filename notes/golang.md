@@ -75,3 +75,4 @@
 - 2023-05-06: update golang section 53
 - 2023-05-09: improve golang section 60
 - 2023-05-24: expand golang section 57
+- 2023-05-28: expand golang section 66

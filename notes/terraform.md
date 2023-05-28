@@ -83,3 +83,4 @@
 - 2023-05-18: organize terraform section 93
 - 2023-05-22: revise terraform section 43
 - 2023-05-28: update terraform section 60
+- 2023-05-28: expand terraform section 36

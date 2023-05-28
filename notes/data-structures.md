@@ -79,3 +79,4 @@
 - 2023-04-18: revise data-structures section 42
 - 2023-05-06: add data-structures section 70
 - 2023-05-15: organize data-structures section 27
+- 2023-05-28: refactor data-structures section 79

@@ -75,3 +75,4 @@
 - 2023-05-06: revise redis section 71
 - 2023-05-10: improve redis section 93
 - 2023-05-24: expand redis section 28
+- 2023-05-28: organize redis section 94

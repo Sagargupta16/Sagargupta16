@@ -79,3 +79,4 @@
 - 2023-05-03: update javascript section 4
 - 2023-05-15: improve javascript section 78
 - 2023-05-18: update javascript section 79
+- 2023-05-28: add javascript section 62

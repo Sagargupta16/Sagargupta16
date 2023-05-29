@@ -2530,3 +2530,4 @@
 - 2023-05-27: testing practice session 28
 - 2023-05-29: data-structures practice session 1
 - 2023-05-29: postgresql practice session 2
+- 2023-05-29: python practice session 3

@@ -2529,3 +2529,4 @@
 - 2023-05-27: security practice session 27
 - 2023-05-27: testing practice session 28
 - 2023-05-29: data-structures practice session 1
+- 2023-05-29: postgresql practice session 2

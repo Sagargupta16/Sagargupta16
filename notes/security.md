@@ -49,3 +49,4 @@
 - 2023-04-08: organize security section 50
 - 2023-04-26: refactor security section 35
 - 2023-05-24: expand security section 27
+- 2023-05-29: update security section 96

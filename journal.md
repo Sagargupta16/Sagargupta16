@@ -2534,3 +2534,4 @@
 - 2023-05-30: python practice session 1
 - 2023-05-30: debugging practice session 2
 - 2023-05-30: fastapi practice session 3
+- 2023-05-30: fastapi practice session 4

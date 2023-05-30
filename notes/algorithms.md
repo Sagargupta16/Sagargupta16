@@ -82,3 +82,4 @@
 - 2023-05-22: expand algorithms section 56
 - 2023-05-22: expand algorithms section 24
 - 2023-05-22: update algorithms section 62
+- 2023-05-30: improve algorithms section 8

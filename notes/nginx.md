@@ -66,3 +66,4 @@
 - 2023-04-29: refactor nginx section 10
 - 2023-05-06: update nginx section 14
 - 2023-05-15: refactor nginx section 33
+- 2023-05-30: revise nginx section 15

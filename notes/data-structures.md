@@ -80,3 +80,4 @@
 - 2023-05-06: add data-structures section 70
 - 2023-05-15: organize data-structures section 27
 - 2023-05-28: refactor data-structures section 79
+- 2023-06-01: revise data-structures section 21

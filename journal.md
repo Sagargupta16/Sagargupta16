@@ -2536,3 +2536,4 @@
 - 2023-05-30: fastapi practice session 3
 - 2023-05-30: fastapi practice session 4
 - 2023-05-30: ml practice session 5
+- 2023-06-01: aws practice session 1

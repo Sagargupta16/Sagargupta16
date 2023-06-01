@@ -2538,3 +2538,4 @@
 - 2023-05-30: ml practice session 5
 - 2023-06-01: aws practice session 1
 - 2023-06-01: ml practice session 2
+- 2023-06-01: ml practice session 3

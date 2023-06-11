@@ -130,7 +130,7 @@
 
 
 <hr/>
- 
+ <div align="center">
  <h2 id="stats"> 📊 Stats</h2>
     
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sagargupta16&theme=2077)
@@ -147,5 +147,5 @@
  <img align="center" width="450" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=dark&locale=en" alt="sagargupta16" /> -->
  
  
-
+</div>
  </details>

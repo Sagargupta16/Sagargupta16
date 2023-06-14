@@ -139,6 +139,7 @@
 
 ![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=sagargupta16&theme=2077)![](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=sagargupta16&theme=2077&utcOffset=8)
     
+![LeetCode Stats](https://leetcode.card.workers.dev/sagargupta1610?theme=dark&font=patrick_hand&extension=null)
     
 <!--  <img align="center" width="450" src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16"/>
  <br/>

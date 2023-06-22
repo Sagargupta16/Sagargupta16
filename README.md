@@ -58,7 +58,7 @@ src="https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitte
 alt="sagargupta1610" height="30" width="140" /></a>
 <a href="https://discord.gg/Joks#5382" target="_blank" rel="noreferrer"><img align="center"
 src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=Discord&logoColor=white"
-alt="Joks#5382" height="30" width="130" /><-->
+alt="Joks#5382" height="30" width="130" />
 
 </p>
 <h3 align="left">Coding Platform Links:</h3>
@@ -122,7 +122,6 @@ alt="Joks#5382" height="30" width="130" /><-->
 <img src="https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=RStudio&logoColor=white" alt="VS-Code" width="120" height="40"/></a>
 <a href="" target="_blank" rel="noreferrer"> 
 <img src="https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IntelliJ" width="180" height="40"/></a>
-<-->
 
 <hr/>
  <div align="center">

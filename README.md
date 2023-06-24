@@ -11,6 +11,12 @@
     Apart from web development I love Problem Solving with use of Data Structures and Algorithms in Efficient Way.
 </p>
 <hr/>
+
+
+
+## 🎧 What's Vibin?
+[![Spotify](https://github.com/edorado93/edorado93/blob/main/spotify.svg)](https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4)
+
 <details>
 <summary align="center"><h3 style="display: inline;">More About Me ⬇️ </h3></summary>
 <hr/>

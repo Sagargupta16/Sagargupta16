@@ -2540,3 +2540,4 @@
 - 2023-06-01: ml practice session 2
 - 2023-06-01: ml practice session 3
 - 2023-07-15: mongodb practice session 1
+- 2023-07-15: aws practice session 2

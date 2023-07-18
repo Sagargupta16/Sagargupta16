@@ -16,13 +16,12 @@
 <hr/>
 
 <!-- ABOUT ME -->
-<h2 id="about-me"> :pencil: About Me</h2>
-
+<h2 id="about-me"> :pencil: About Me</-->
 - 🎓 I'm pursuing Master's in Computer Applications(MCA) From **National Institute of Technology , Warangal**.
 - 🌱 I’m Currently Exploring MERN Stack , FARM Stack , DevOps , Cloud Computing .....
 - 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/PortFolio/)
 - 📫 Wanna mail me **sg85207@gmail.com**
-- 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf)
+- 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.p-->
 
 <hr/>
 
@@ -58,7 +57,7 @@ src="https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitte
 alt="sagargupta1610" height="30" width="140" /></a>
 <a href="https://discord.gg/Joks#5382" target="_blank" rel="noreferrer"><img align="center"
 src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=Discord&logoColor=white"
-alt="Joks#5382" height="30" width="130" />
+alt="Joks#5382" height="30" width="130"-->
 
 </p>
 <h3 align="left">Coding Platform Links:</h3>
@@ -121,7 +120,7 @@ alt="Joks#5382" height="30" width="130" />
 <a href="https://www.rstudio.com/" target="_blank" rel="noreferrer"> 
 <img src="https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=RStudio&logoColor=white" alt="VS-Code" width="120" height="40"/></a>
 <a href="" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IntelliJ" width="180" height="40"/></a>
+<img src="https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IntelliJ" width="180" height="40"/><-->
 
 <hr/>
  <div align="center">
@@ -143,3 +142,4 @@ alt="Joks#5382" height="30" width="130" />
 
 </div>
  </details>
+

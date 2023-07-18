@@ -19,7 +19,7 @@
 <h2 id="about-me"> :pencil: About Me</h2>
 
 - 🎓 I'm pursuing Master's in Computer Applications(MCA) From **National Institute of Technology , Warangal**.
-- 🌱 I’m Currently learning MERN Stack.
+- 🌱 I’m Currently Exploring MERN Stack , FARM Stack , DevOps , Cloud Computing .....
 - 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/PortFolio/)
 - 📫 Wanna mail me **sg85207@gmail.com**
 - 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf)

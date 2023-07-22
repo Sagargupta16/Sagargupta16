@@ -2544,3 +2544,4 @@
 - 2023-07-22: postgresql practice session 1
 - 2023-07-22: mongodb practice session 2
 - 2023-07-22: algorithms practice session 3
+- 2023-07-22: postgresql practice session 4

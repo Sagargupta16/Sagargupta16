@@ -2549,3 +2549,4 @@
 - 2023-07-22: debugging practice session 6
 - 2023-07-23: aws practice session 1
 - 2023-07-23: linux practice session 2
+- 2023-07-23: python practice session 3

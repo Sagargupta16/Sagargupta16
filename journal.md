@@ -2550,3 +2550,4 @@
 - 2023-07-23: aws practice session 1
 - 2023-07-23: linux practice session 2
 - 2023-07-23: python practice session 3
+- 2023-07-23: testing practice session 4

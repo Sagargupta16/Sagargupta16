@@ -2553,3 +2553,4 @@
 - 2023-07-23: testing practice session 4
 - 2023-07-23: api-design practice session 5
 - 2023-07-23: debugging practice session 6
+- 2023-07-23: debugging practice session 7

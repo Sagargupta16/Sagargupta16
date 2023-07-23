@@ -2547,3 +2547,4 @@
 - 2023-07-22: postgresql practice session 4
 - 2023-07-22: react practice session 5
 - 2023-07-22: debugging practice session 6
+- 2023-07-23: aws practice session 1

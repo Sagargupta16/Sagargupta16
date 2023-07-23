@@ -2548,3 +2548,4 @@
 - 2023-07-22: react practice session 5
 - 2023-07-22: debugging practice session 6
 - 2023-07-23: aws practice session 1
+- 2023-07-23: linux practice session 2

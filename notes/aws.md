@@ -81,3 +81,4 @@
 - 2023-05-27: improve aws section 23
 - 2023-05-30: organize aws section 72
 - 2023-07-15: improve aws section 87
+- 2023-07-27: expand aws section 30

@@ -84,3 +84,4 @@
 - 2023-05-22: revise terraform section 43
 - 2023-05-28: update terraform section 60
 - 2023-05-28: expand terraform section 36
+- 2023-07-27: improve terraform section 51

@@ -2555,3 +2555,4 @@
 - 2023-07-23: debugging practice session 6
 - 2023-07-23: debugging practice session 7
 - 2023-07-27: terraform practice session 1
+- 2023-07-27: postgresql practice session 2

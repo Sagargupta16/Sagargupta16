@@ -2560,3 +2560,4 @@
 - 2023-07-27: javascript practice session 4
 - 2023-07-27: debugging practice session 5
 - 2023-07-27: python practice session 6
+- 2023-07-27: ml practice session 7

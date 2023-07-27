@@ -61,3 +61,4 @@
 - 2023-05-28: add postgresql section 34
 - 2023-05-30: update postgresql section 45
 - 2023-07-15: improve postgresql section 64
+- 2023-07-27: add postgresql section 84

@@ -2557,3 +2557,4 @@
 - 2023-07-27: terraform practice session 1
 - 2023-07-27: postgresql practice session 2
 - 2023-07-27: mongodb practice session 3
+- 2023-07-27: javascript practice session 4

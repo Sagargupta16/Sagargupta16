@@ -73,3 +73,4 @@
 - 2023-05-30: organize git section 48
 - 2023-07-15: improve git section 51
 - 2023-07-27: expand git section 58
+- 2023-07-28: revise git section 23

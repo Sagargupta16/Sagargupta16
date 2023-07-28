@@ -92,3 +92,4 @@
 - 2023-05-28: add testing section 45
 - 2023-05-28: organize testing section 99
 - 2023-05-30: organize testing section 93
+- 2023-07-28: refactor testing section 60

@@ -2565,3 +2565,4 @@
 - 2023-07-28: fastapi practice session 2
 - 2023-07-28: api-design practice session 3
 - 2023-07-28: security practice session 4
+- 2023-07-28: testing practice session 5

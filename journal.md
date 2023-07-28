@@ -2562,3 +2562,4 @@
 - 2023-07-27: python practice session 6
 - 2023-07-27: ml practice session 7
 - 2023-07-28: terraform practice session 1
+- 2023-07-28: fastapi practice session 2

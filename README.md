@@ -8,7 +8,7 @@
     👋 Hi, my name is Sagar Gupta, from Shivpuri, MP, India. <br />
     I am an Postgraduate 🎓 from <a href="https://www.nitw.ac.in/">NIT Warangal</a>. 
     I am a Web developer & Programmer who loves to write clean and efficient code. <br/>
-    Apart from web development I love Problem Solving with use of Data Structures and Algorithms in Efficient Way.
+    Apart from web development, I love Problem-Solving with the use of Data Structures and Algorithms in an Efficient Way.
 </p>
 <hr/>
 <details>
@@ -19,8 +19,8 @@
 <h2 id="about-me"> :pencil: About Me</h2>
 
 - 🎓 I'm pursuing Master's in Computer Applications(MCA) From **National Institute of Technology , Warangal**.
-- 🌱 I’m Currently Exploring MERN Stack , FARM Stack , DevOps , Cloud Computing .....
-- 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/PortFolio/)
+- 🌱 I’m Currently Exploring MERN Stack, FARM Stack, DevOps, Cloud Computing .....
+- 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/portfolio-react/)
 - 📫 Wanna mail me **sg85207@gmail.com**
 - 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf)
 
@@ -28,11 +28,12 @@
 
 <h2>:sparkles: Projects </h2>
 
-- Contact Manager - July 2022 -- [CSS , React , Redux , Router , MongoDB , Nodejs ,ExpressJS] -- [Deployed Here!](https://contact-manager-mern-stack.herokuapp.com/) -- [Repo Link Here!](https://github.com/Sagargupta16/Contact-Manager-Mern)
-- Personal Portfolio - May-Jun 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/PortFolio/) -- [Repo Link Here!](https://github.com/Sagargupta16/PortFolio)
+- Portfolio-react - Jul-Aug 2023 -- [React, React Router, HTML, CSS, JS, EmailJS] -- [Deployed Here!](https://sagargupta16.github.io/portfolio-react/) -- [Repo Link Here!](https://github.com/Sagargupta16/portfolio-react)
+- Contact Manager - July 2022 -- [CSS, React, Redux, Router, MongoDB, Nodejs, ExpressJS] -- [Deployed Here!](https://contact-manager-mern-stack.herokuapp.com/) -- [Repo Link Here!](https://github.com/Sagargupta16/Contact-Manager-Mern)
+- Portfolio - May-Jun 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/PortFolio/) -- [Repo Link Here!](https://github.com/Sagargupta16/PortFolio)
 - Music Player Web App - May 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/Music-Web-App/) -- [Repo Link Here!](https://github.com/Sagargupta16/Music-Web-App)
 - Guess the number Game - May 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/Guess-The-Number-Game/) -- [Repo Link Here!](https://github.com/Sagargupta16/Guess-The-Number-Game)
-- Study HUB (1 day Team Hackathon) - Apr 2022 -- [HTML, CSS] -- [Deployed Here!](https://sayani13-glitch.github.io/noobathon_ON-11_1/) -- [Repo Link Here!](https://github.com/sayani13-glitch/noobathon_ON-11_1)
+- Study HUB (1-day Team Hackathon) - Apr 2022 -- [HTML, CSS] -- [Deployed Here!](https://sayani13-glitch.github.io/noobathon_ON-11_1/) -- [Repo Link Here!](https://github.com/sayani13-glitch/noobathon_ON-11_1)
 - Minesweeper Game - Nov-Dec 2021 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/Minesweeper-Game__UnityEngine)
 - Snake Game - Nov 2022 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/Snake-Game__UnityEngine)
 - Flappy Bird Game - Nov 2022 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/FlappyBird-Game__UnityEngine)

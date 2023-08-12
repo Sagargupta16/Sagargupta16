@@ -2567,3 +2567,4 @@
 - 2023-07-28: security practice session 4
 - 2023-07-28: testing practice session 5
 - 2023-07-28: api-design practice session 6
+- 2023-08-12: javascript practice session 1

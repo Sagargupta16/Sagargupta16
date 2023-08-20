@@ -2569,3 +2569,4 @@
 - 2023-07-28: api-design practice session 6
 - 2023-08-12: javascript practice session 1
 - 2023-08-20: mongodb practice session 1
+- 2023-08-20: fastapi practice session 2

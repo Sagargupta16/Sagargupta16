@@ -2573,3 +2573,4 @@
 - 2023-08-20: debugging practice session 3
 - 2023-08-20: linux practice session 4
 - 2023-08-20: testing practice session 5
+- 2023-08-20: git practice session 6

@@ -70,3 +70,4 @@
 - 2023-05-30: refactor flask section 59
 - 2023-06-01: improve flask section 37
 - 2023-08-12: improve flask section 51
+- 2023-08-20: refactor flask section 70

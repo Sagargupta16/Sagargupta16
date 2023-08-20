@@ -2576,3 +2576,4 @@
 - 2023-08-20: git practice session 6
 - 2023-08-20: postgresql practice session 7
 - 2023-08-20: linux practice session 8
+- 2023-08-20: python practice session 9

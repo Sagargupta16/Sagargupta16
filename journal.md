@@ -2570,3 +2570,4 @@
 - 2023-08-12: javascript practice session 1
 - 2023-08-20: mongodb practice session 1
 - 2023-08-20: fastapi practice session 2
+- 2023-08-20: debugging practice session 3

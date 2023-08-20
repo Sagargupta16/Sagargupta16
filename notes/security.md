@@ -51,3 +51,4 @@
 - 2023-05-24: expand security section 27
 - 2023-05-29: update security section 96
 - 2023-07-15: expand security section 92
+- 2023-08-20: improve security section 28

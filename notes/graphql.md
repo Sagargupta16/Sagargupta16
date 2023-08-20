@@ -79,3 +79,4 @@
 - 2023-04-25: update graphql section 32
 - 2023-04-26: revise graphql section 63
 - 2023-05-18: improve graphql section 35
+- 2023-08-20: refactor graphql section 31

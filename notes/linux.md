@@ -76,3 +76,4 @@
 - 2023-08-20: organize linux section 75
 - 2023-08-20: expand linux section 63
 - 2023-08-20: add linux section 56
+- 2023-08-20: improve linux section 1

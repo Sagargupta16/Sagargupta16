@@ -141,6 +141,6 @@ alt="Joks#5382" height="30" width="130" />
 <img align="center" width="450" src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=dark" alt="sagargupta16" />
 <br/>
 <img align="center" width="450" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=dark&locale=en" alt="sagargupta16" /> -->
-
+[![An image of @sagargupta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/sagargupta)](https://holopin.io/@sagargupta)
 </div>
  </details>

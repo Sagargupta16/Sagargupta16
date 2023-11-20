@@ -2579,3 +2579,4 @@
 - 2023-08-20: python practice session 9
 - 2023-09-12: fastapi practice session 1
 - 2023-11-20: git practice session 1
+- 2023-11-20: python practice session 2

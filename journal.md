@@ -2580,3 +2580,4 @@
 - 2023-09-12: fastapi practice session 1
 - 2023-11-20: git practice session 1
 - 2023-11-20: python practice session 2
+- 2023-11-20: docker practice session 3

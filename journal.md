@@ -2584,3 +2584,4 @@
 - 2023-11-20: algorithms practice session 4
 - 2023-11-20: javascript practice session 5
 - 2023-11-20: fastapi practice session 6
+- 2023-11-20: terraform practice session 7

@@ -2589,3 +2589,4 @@
 - 2023-11-20: fastapi practice session 9
 - 2023-11-20: terraform practice session 10
 - 2023-11-20: docker practice session 11
+- 2023-11-20: ml practice session 12

@@ -96,3 +96,4 @@
 - 2023-07-27: expand rust section 5
 - 2023-08-12: improve rust section 53
 - 2023-08-20: improve rust section 55
+- 2023-11-24: improve rust section 74

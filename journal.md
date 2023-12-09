@@ -2590,3 +2590,4 @@
 - 2023-11-20: terraform practice session 10
 - 2023-11-20: docker practice session 11
 - 2023-11-20: ml practice session 12
+- 2023-12-09: data-structures practice session 1

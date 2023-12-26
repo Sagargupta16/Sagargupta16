@@ -28,7 +28,7 @@
 
 <h2>:sparkles: Projects </h2>
 
-- LeetCode-Rating-Predictor - Nov-Dec 2023 -- [React, FastAPI, numpy, pandas, tensorflow] -- [Deployed Here!](https://leetcode-rating-predictor.onrender.com/) -- [Repo Link Here!](https://github.com/Sagargupta16/LeetCode_Rating_Predictor)
+- LeetCode-Rating-Predictor - Nov-Dec 2023 -- [React, FastAPI, Numpy, Pandas, Tensorflow, GraphQL] -- [Deployed Here!](https://leetcode-rating-predictor.onrender.com/) -- [Repo Link Here!](https://github.com/Sagargupta16/LeetCode_Rating_Predictor)
 - Portfolio-react - Jul-Aug 2023 -- [React, React Router, HTML, CSS, JS, EmailJS] -- [Deployed Here!](https://sagargupta16.github.io/portfolio-react/) -- [Repo Link Here!](https://github.com/Sagargupta16/portfolio-react)
 - Contact Manager - July 2022 -- [CSS, React, Redux, Router, MongoDB, Nodejs, ExpressJS] -- [Deployed Here!](https://contact-manager-mern-stack.herokuapp.com/) -- [Repo Link Here!](https://github.com/Sagargupta16/Contact-Manager-Mern)
 - Portfolio - May-Jun 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/PortFolio/) -- [Repo Link Here!](https://github.com/Sagargupta16/PortFolio)

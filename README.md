@@ -28,18 +28,21 @@
 
 <h2>:sparkles: Projects </h2>
 
-- LeetCode-Rating-Predictor - Nov-Dec 2023 -- [React, FastAPI, Numpy, Pandas, Tensorflow, GraphQL] -- [Deployed Here!](https://leetcode-rating-predictor.onrender.com/) -- [Repo Link Here!](https://github.com/Sagargupta16/LeetCode_Rating_Predictor)
-- Portfolio-react - Jul-Aug 2023 -- [React, React Router, HTML, CSS, JS, EmailJS] -- [Deployed Here!](https://sagargupta16.github.io/portfolio-react/) -- [Repo Link Here!](https://github.com/Sagargupta16/portfolio-react)
-- Contact Manager Mern - July 2022 -- [CSS, React, Redux, Router, MongoDB, Nodejs, ExpressJS] -- [Deployed Here!](https://contact-manager-mern-cg19.onrender.com/) -- [Repo Link Here!](https://github.com/Sagargupta16/Contact-Manager-Mern)
-- Contact Manager React - July 2022 -- [HTML, CSS, React, Redux, Router] -- [Deployed Here!](https://sagargupta.me/Contact-Manager-React/) -- [Repo Link Here!](https://github.com/Sagargupta16/Contact-Manager-React)
-- Portfolio - May-Jun 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/PortFolio/) -- [Repo Link Here!](https://github.com/Sagargupta16/PortFolio)
-- Music Player Web App - May 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/Music-Web-App/) -- [Repo Link Here!](https://github.com/Sagargupta16/Music-Web-App)
-- Guess the number Game - May 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/Guess-The-Number-Game/) -- [Repo Link Here!](https://github.com/Sagargupta16/Guess-The-Number-Game)
-- Study HUB (1-day Team Hackathon) - Apr 2022 -- [HTML, CSS] -- [Deployed Here!](https://sayani13-glitch.github.io/noobathon_ON-11_1/) -- [Repo Link Here!](https://github.com/sayani13-glitch/noobathon_ON-11_1)
-- Minesweeper Game - Nov-Dec 2021 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/Minesweeper-Game__UnityEngine)
-- Snake Game - Nov 2022 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/Snake-Game__UnityEngine)
-- Flappy Bird Game - Nov 2022 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/FlappyBird-Game__UnityEngine)
-- Pac Man Game - Nov 2022 -- [C#, Unity Engine] -- [Repo Link Here!](https://github.com/Sagargupta16/PacMan-Game__UnityEngine)
+| Project Name                       | Time Period           | Technologies Used                                       | Deployment Link                                         | Repository Link                                       |
+|------------------------------------|-----------------------|---------------------------------------------------------|----------------------------------------------------------|-------------------------------------------------------|
+| LeetCode-Rating-Predictor           | Nov-Dec 2023          | React, FastAPI, Numpy, Pandas, Tensorflow, GraphQL        | [Deployed Here!](https://leetcode-rating-predictor.onrender.com/) | [Repo Link Here!](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) |
+| Portfolio-react                    | Jul-Aug 2023          | React, React Router, HTML, CSS, JS, EmailJS               | [Deployed Here!](https://sagargupta16.github.io/portfolio-react/) | [Repo Link Here!](https://github.com/Sagargupta16/portfolio-react) |
+| Contact Manager Mern               | July 2022             | CSS, React, Redux, Router, MongoDB, Nodejs, ExpressJS     | [Deployed Here!](https://contact-manager-mern-cg19.onrender.com/) | [Repo Link Here!](https://github.com/Sagargupta16/Contact-Manager-Mern) |
+| Contact Manager React              | July 2022             | HTML, CSS, React, Redux, Router                           | [Deployed Here!](https://sagargupta.me/Contact-Manager-React/) | [Repo Link Here!](https://github.com/Sagargupta16/Contact-Manager-React) |
+| Portfolio                          | May-Jun 2022          | HTML, CSS, JS                                            | [Deployed Here!](https://sagargupta16.github.io/PortFolio/) | [Repo Link Here!](https://github.com/Sagargupta16/PortFolio) |
+| Music Player Web App               | May 2022              | HTML, CSS, JS                                            | [Deployed Here!](https://sagargupta16.github.io/Music-Web-App/) | [Repo Link Here!](https://github.com/Sagargupta16/Music-Web-App) |
+| Guess the number Game              | May 2022              | HTML, CSS, JS                                            | [Deployed Here!](https://sagargupta16.github.io/Guess-The-Number-Game/) | [Repo Link Here!](https://github.com/Sagargupta16/Guess-The-Number-Game) |
+| Study HUB (1-day Team Hackathon)   | Apr 2022              | HTML, CSS                                               | [Deployed Here!](https://sayani13-glitch.github.io/noobathon_ON-11_1/) | [Repo Link Here!](https://github.com/sayani13-glitch/noobathon_ON-11_1) |
+| Minesweeper Game                   | Nov-Dec 2021          | C#, Unity Engine                                         |                                                          | [Repo Link Here!](https://github.com/Sagargupta16/Minesweeper-Game__UnityEngine) |
+| Snake Game                         | Nov 2022              | C#, Unity Engine                                         |                                                          | [Repo Link Here!](https://github.com/Sagargupta16/Snake-Game__UnityEngine) |
+| Flappy Bird Game                   | Nov 2022              | C#, Unity Engine                                         |                                                          | [Repo Link Here!](https://github.com/Sagargupta16/FlappyBird-Game__UnityEngine) |
+| Pac Man Game                       | Nov 2022              | C#, Unity Engine                                         |                                                          | [Repo Link Here!](https://github.com/Sagargupta16/PacMan-Game__UnityEngine) |
+
 
 <hr/>
 

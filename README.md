@@ -30,7 +30,8 @@
 
 - LeetCode-Rating-Predictor - Nov-Dec 2023 -- [React, FastAPI, Numpy, Pandas, Tensorflow, GraphQL] -- [Deployed Here!](https://leetcode-rating-predictor.onrender.com/) -- [Repo Link Here!](https://github.com/Sagargupta16/LeetCode_Rating_Predictor)
 - Portfolio-react - Jul-Aug 2023 -- [React, React Router, HTML, CSS, JS, EmailJS] -- [Deployed Here!](https://sagargupta16.github.io/portfolio-react/) -- [Repo Link Here!](https://github.com/Sagargupta16/portfolio-react)
-- Contact Manager - July 2022 -- [CSS, React, Redux, Router, MongoDB, Nodejs, ExpressJS] -- [Deployed Here!](https://contact-manager-mern-stack.herokuapp.com/) -- [Repo Link Here!](https://github.com/Sagargupta16/Contact-Manager-Mern)
+- Contact Manager Mern - July 2022 -- [CSS, React, Redux, Router, MongoDB, Nodejs, ExpressJS] -- [Deployed Here!](https://contact-manager-mern-cg19.onrender.com/) -- [Repo Link Here!](https://github.com/Sagargupta16/Contact-Manager-Mern)
+- Contact Manager React - July 2022 -- [HTML, CSS, React, Redux, Router] -- [Deployed Here!](https://sagargupta.me/Contact-Manager-React/) -- [Repo Link Here!](https://github.com/Sagargupta16/Contact-Manager-React)
 - Portfolio - May-Jun 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/PortFolio/) -- [Repo Link Here!](https://github.com/Sagargupta16/PortFolio)
 - Music Player Web App - May 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/Music-Web-App/) -- [Repo Link Here!](https://github.com/Sagargupta16/Music-Web-App)
 - Guess the number Game - May 2022 -- [HTML, CSS, JS] -- [Deployed Here!](https://sagargupta16.github.io/Guess-The-Number-Game/) -- [Repo Link Here!](https://github.com/Sagargupta16/Guess-The-Number-Game)

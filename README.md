@@ -135,23 +135,23 @@ alt="Joks#5382" height="30" width="130" />
  <div align="center">
  <h2 id="stats"> 📊 Stats</h2>
 
+## GitHub Stats
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sagargupta16&theme=2077)
 
 ![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=sagargupta16&theme=2077)![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=sagargupta16&theme=2077)
 
 ![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=sagargupta16&theme=2077)![](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=sagargupta16&theme=2077&utcOffset=8)
 
+## LeetCode Stats
 ![LeetCode Stats](https://leetcode.card.workers.dev/sagargupta1610?theme=dark&font=patrick_hand&extension=null)
 
+## MonkeyType Stats
  <a href="https://monkeytype.com/profile/Sagargupta16">
    <img src="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/monkeytype-readme/monkeytype-readme-pb.svg" alt="My Monkeytype profile" />
  </a>
 
-<!--  <img align="center" width="450" src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16"/>
-<br/>
-<img align="center" width="450" src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=dark" alt="sagargupta16" />
-<br/>
-<img align="center" width="450" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=dark&locale=en" alt="sagargupta16" /> -->
+## Holopin Badges
 [![An image of @sagargupta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/sagargupta)](https://holopin.io/@sagargupta)
+
 </div>
  </details>

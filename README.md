@@ -10,6 +10,10 @@
     I am a Web developer & Programmer who loves to write clean and efficient code. <br/>
     Apart from web development, I love Problem-Solving with the use of Data Structures and Algorithms in an Efficient Way.
 </p>
+
+## 🎧 What's Vibin?
+[![Spotify](https://github.com/edorado93/edorado93/blob/main/spotify.svg)](https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4)
+
 <hr/>
 <details>
 <summary align="center"><h3 style="display: inline;">More About Me ⬇️ </h3></summary>

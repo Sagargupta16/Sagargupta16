@@ -11,9 +11,6 @@
     Apart from web development, I love Problem-Solving with the use of Data Structures and Algorithms in an Efficient Way.
 </p>
 
-## 🎧 What's Vibin?
-[![Spotify](https://github.com/edorado93/edorado93/blob/main/spotify.svg)](https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4)
-
 <hr/>
 <details>
 <summary align="center"><h3 style="display: inline;">More About Me ⬇️ </h3></summary>
@@ -156,6 +153,9 @@ alt="Joks#5382" height="30" width="130" />
 
 ## Holopin Badges
 [![An image of @sagargupta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/sagargupta)](https://holopin.io/@sagargupta)
+
+## 🎧 What's Vibin?
+[![Spotify](https://github.com/edorado93/edorado93/blob/main/spotify.svg)](https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4)
 
 </div>
  </details>

@@ -144,7 +144,7 @@ alt="Joks#5382" height="30" width="130" />
 ![LeetCode Stats](https://leetcode.card.workers.dev/sagargupta1610?theme=dark&font=patrick_hand&extension=null)
 
  <a href="https://monkeytype.com/profile/Sagargupta16">
-   <img src="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/monkeytype-readme/SVG_NAME" alt="My Monkeytype profile" />
+   <img src="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/monkeytype-readme/monkeytype-readme.svg" alt="My Monkeytype profile" />
  </a>
 
 <!--  <img align="center" width="450" src="https://github-readme-stats.vercel.app/api/top-langs?username=sagargupta16&show_icons=true&theme=dark&locale=en&layout=compact" alt="sagargupta16"/>

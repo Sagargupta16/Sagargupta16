@@ -2596,3 +2596,4 @@
 - 2024-03-20: aws practice session 3
 - 2024-03-20: terraform practice session 4
 - 2024-03-20: fastapi practice session 5
+- 2024-03-20: terraform practice session 6

@@ -2598,3 +2598,4 @@
 - 2024-03-20: fastapi practice session 5
 - 2024-03-20: terraform practice session 6
 - 2024-03-20: ci-cd practice session 7
+- 2024-03-20: algorithms practice session 8

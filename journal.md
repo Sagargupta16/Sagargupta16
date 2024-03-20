@@ -2593,3 +2593,4 @@
 - 2023-12-09: data-structures practice session 1
 - 2024-03-20: debugging practice session 1
 - 2024-03-20: testing practice session 2
+- 2024-03-20: aws practice session 3

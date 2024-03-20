@@ -2613,3 +2613,4 @@
 - 2024-03-20: linux practice session 20
 - 2024-03-20: git practice session 21
 - 2024-03-20: algorithms practice session 22
+- 2024-03-20: debugging practice session 23

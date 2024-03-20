@@ -2601,3 +2601,4 @@
 - 2024-03-20: algorithms practice session 8
 - 2024-03-20: aws practice session 9
 - 2024-03-20: docker practice session 10
+- 2024-03-20: terraform practice session 11

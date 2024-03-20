@@ -74,3 +74,4 @@
 - 2023-05-28: add mongodb section 21
 - 2023-05-28: update mongodb section 19
 - 2024-03-20: organize mongodb section 81
+- 2024-03-20: expand mongodb section 36

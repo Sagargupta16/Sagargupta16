@@ -2592,3 +2592,4 @@
 - 2023-11-20: ml practice session 12
 - 2023-12-09: data-structures practice session 1
 - 2024-03-20: debugging practice session 1
+- 2024-03-20: testing practice session 2

@@ -2615,3 +2615,4 @@
 - 2024-03-20: algorithms practice session 22
 - 2024-03-20: debugging practice session 23
 - 2024-03-20: postgresql practice session 24
+- 2024-03-20: security practice session 25

@@ -2610,3 +2610,4 @@
 - 2024-03-20: ci-cd practice session 17
 - 2024-03-20: debugging practice session 18
 - 2024-03-20: data-structures practice session 19
+- 2024-03-20: linux practice session 20

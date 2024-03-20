@@ -2606,3 +2606,4 @@
 - 2024-03-20: mongodb practice session 13
 - 2024-03-20: kubernetes practice session 14
 - 2024-03-20: git practice session 15
+- 2024-03-20: git practice session 16

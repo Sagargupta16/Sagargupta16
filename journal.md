@@ -2604,3 +2604,4 @@
 - 2024-03-20: terraform practice session 11
 - 2024-03-20: algorithms practice session 12
 - 2024-03-20: mongodb practice session 13
+- 2024-03-20: kubernetes practice session 14

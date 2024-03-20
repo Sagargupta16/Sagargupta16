@@ -2608,3 +2608,4 @@
 - 2024-03-20: git practice session 15
 - 2024-03-20: git practice session 16
 - 2024-03-20: ci-cd practice session 17
+- 2024-03-20: debugging practice session 18

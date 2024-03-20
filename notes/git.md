@@ -74,3 +74,4 @@
 - 2023-07-15: improve git section 51
 - 2023-07-27: expand git section 58
 - 2023-07-28: revise git section 23
+- 2024-03-20: refactor git section 84

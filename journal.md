@@ -2594,3 +2594,4 @@
 - 2024-03-20: debugging practice session 1
 - 2024-03-20: testing practice session 2
 - 2024-03-20: aws practice session 3
+- 2024-03-20: terraform practice session 4

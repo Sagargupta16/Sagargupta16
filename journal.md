@@ -2622,3 +2622,4 @@
 - 2024-03-22: aws practice session 3
 - 2024-03-22: linux practice session 4
 - 2024-03-22: docker practice session 5
+- 2024-03-22: kubernetes practice session 6

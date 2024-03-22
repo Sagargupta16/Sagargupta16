@@ -2619,3 +2619,4 @@
 - 2024-03-20: mongodb practice session 26
 - 2024-03-22: git practice session 1
 - 2024-03-22: ci-cd practice session 2
+- 2024-03-22: aws practice session 3

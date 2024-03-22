@@ -89,3 +89,4 @@
 - 2023-06-01: add django section 11
 - 2023-08-12: update django section 84
 - 2023-08-12: revise django section 51
+- 2024-03-22: revise django section 78

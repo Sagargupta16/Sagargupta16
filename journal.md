@@ -2628,3 +2628,4 @@
 - 2024-03-24: terraform practice session 3
 - 2024-03-24: security practice session 4
 - 2024-03-24: ml practice session 5
+- 2024-03-24: aws practice session 6

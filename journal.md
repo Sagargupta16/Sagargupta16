@@ -2647,3 +2647,4 @@
 - 2024-03-24: fastapi practice session 22
 - 2024-03-24: api-design practice session 23
 - 2024-03-24: javascript practice session 24
+- 2024-03-24: data-structures practice session 25

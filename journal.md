@@ -2659,3 +2659,4 @@
 - 2024-03-24: postgresql practice session 34
 - 2024-03-24: ci-cd practice session 35
 - 2024-03-24: testing practice session 36
+- 2024-03-24: mongodb practice session 37

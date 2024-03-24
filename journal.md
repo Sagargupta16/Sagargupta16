@@ -2653,3 +2653,4 @@
 - 2024-03-24: aws practice session 28
 - 2024-03-24: docker practice session 29
 - 2024-03-24: mongodb practice session 30
+- 2024-03-24: algorithms practice session 31

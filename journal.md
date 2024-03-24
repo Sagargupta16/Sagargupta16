@@ -2642,3 +2642,4 @@
 - 2024-03-24: testing practice session 17
 - 2024-03-24: mongodb practice session 18
 - 2024-03-24: ml practice session 19
+- 2024-03-24: fastapi practice session 20

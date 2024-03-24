@@ -2639,3 +2639,4 @@
 - 2024-03-24: git practice session 14
 - 2024-03-24: docker practice session 15
 - 2024-03-24: fastapi practice session 16
+- 2024-03-24: testing practice session 17

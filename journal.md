@@ -2667,3 +2667,4 @@
 - 2024-03-24: javascript practice session 42
 - 2024-03-24: ml practice session 43
 - 2024-03-24: linux practice session 44
+- 2024-03-24: debugging practice session 45

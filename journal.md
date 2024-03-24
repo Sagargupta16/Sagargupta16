@@ -2661,3 +2661,4 @@
 - 2024-03-24: testing practice session 36
 - 2024-03-24: mongodb practice session 37
 - 2024-03-24: data-structures practice session 38
+- 2024-03-24: terraform practice session 39

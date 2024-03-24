@@ -2649,3 +2649,4 @@
 - 2024-03-24: javascript practice session 24
 - 2024-03-24: data-structures practice session 25
 - 2024-03-24: debugging practice session 26
+- 2024-03-24: terraform practice session 27

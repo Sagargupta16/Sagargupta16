@@ -2625,3 +2625,4 @@
 - 2024-03-22: kubernetes practice session 6
 - 2024-03-24: ci-cd practice session 1
 - 2024-03-24: docker practice session 2
+- 2024-03-24: terraform practice session 3

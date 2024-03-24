@@ -2631,3 +2631,4 @@
 - 2024-03-24: aws practice session 6
 - 2024-03-24: testing practice session 7
 - 2024-03-24: debugging practice session 8
+- 2024-03-24: testing practice session 9

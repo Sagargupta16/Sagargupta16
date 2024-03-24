@@ -2655,3 +2655,4 @@
 - 2024-03-24: mongodb practice session 30
 - 2024-03-24: algorithms practice session 31
 - 2024-03-24: git practice session 32
+- 2024-03-24: ml practice session 33

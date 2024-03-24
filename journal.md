@@ -2665,3 +2665,4 @@
 - 2024-03-24: fastapi practice session 40
 - 2024-03-24: algorithms practice session 41
 - 2024-03-24: javascript practice session 42
+- 2024-03-24: ml practice session 43

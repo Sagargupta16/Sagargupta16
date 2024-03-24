@@ -2623,3 +2623,4 @@
 - 2024-03-22: linux practice session 4
 - 2024-03-22: docker practice session 5
 - 2024-03-22: kubernetes practice session 6
+- 2024-03-24: ci-cd practice session 1

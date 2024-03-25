@@ -2669,3 +2669,4 @@
 - 2024-03-24: linux practice session 44
 - 2024-03-24: debugging practice session 45
 - 2024-03-24: mongodb practice session 46
+- 2024-03-25: mongodb practice session 1

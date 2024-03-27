@@ -2672,3 +2672,4 @@
 - 2024-03-25: mongodb practice session 1
 - 2024-03-26: postgresql practice session 1
 - 2024-03-27: javascript practice session 1
+- 2024-03-27: git practice session 2

@@ -2679,3 +2679,4 @@
 - 2024-03-30: api-design practice session 3
 - 2024-03-30: linux practice session 4
 - 2024-03-30: linux practice session 5
+- 2024-03-30: postgresql practice session 6

@@ -2676,3 +2676,4 @@
 - 2024-03-27: testing practice session 3
 - 2024-03-30: kubernetes practice session 1
 - 2024-03-30: ml practice session 2
+- 2024-03-30: api-design practice session 3

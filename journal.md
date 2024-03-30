@@ -2674,3 +2674,4 @@
 - 2024-03-27: javascript practice session 1
 - 2024-03-27: git practice session 2
 - 2024-03-27: testing practice session 3
+- 2024-03-30: kubernetes practice session 1

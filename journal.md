@@ -2684,3 +2684,4 @@
 - 2024-03-30: git practice session 8
 - 2024-03-30: postgresql practice session 9
 - 2024-03-30: ci-cd practice session 10
+- 2024-03-30: mongodb practice session 11

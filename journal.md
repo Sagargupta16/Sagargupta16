@@ -2680,3 +2680,4 @@
 - 2024-03-30: linux practice session 4
 - 2024-03-30: linux practice session 5
 - 2024-03-30: postgresql practice session 6
+- 2024-03-30: security practice session 7

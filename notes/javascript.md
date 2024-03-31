@@ -85,3 +85,4 @@
 - 2023-08-20: add javascript section 89
 - 2023-11-24: organize javascript section 71
 - 2023-12-09: expand javascript section 65
+- 2024-03-31: improve javascript section 62

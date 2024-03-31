@@ -2689,3 +2689,4 @@
 - 2024-03-30: terraform practice session 13
 - 2024-03-30: api-design practice session 14
 - 2024-03-30: fastapi practice session 15
+- 2024-03-31: algorithms practice session 1

@@ -70,3 +70,4 @@
 - 2023-08-20: refactor kubernetes section 89
 - 2024-03-22: improve kubernetes section 81
 - 2024-03-25: organize kubernetes section 82
+- 2024-03-31: revise kubernetes section 59

@@ -86,3 +86,4 @@
 - 2023-07-28: organize aws section 47
 - 2023-08-20: improve aws section 99
 - 2023-08-20: refactor aws section 74
+- 2024-03-31: expand aws section 49

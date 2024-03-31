@@ -98,3 +98,4 @@
 - 2023-08-20: improve rust section 55
 - 2023-11-24: improve rust section 74
 - 2024-03-20: add rust section 53
+- 2024-03-31: update rust section 35

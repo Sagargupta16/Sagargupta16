@@ -77,3 +77,4 @@
 - 2024-03-20: expand mongodb section 36
 - 2024-03-22: refactor mongodb section 98
 - 2024-03-22: revise mongodb section 13
+- 2024-03-31: improve mongodb section 56

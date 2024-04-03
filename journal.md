@@ -2706,3 +2706,4 @@
 - 2024-04-03: api-design practice session 14
 - 2024-04-03: ml practice session 15
 - 2024-04-03: algorithms practice session 16
+- 2024-04-03: postgresql practice session 17

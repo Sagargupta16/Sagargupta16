@@ -2717,3 +2717,4 @@
 - 2024-04-03: security practice session 25
 - 2024-04-03: mongodb practice session 26
 - 2024-04-03: aws practice session 27
+- 2024-04-03: security practice session 28

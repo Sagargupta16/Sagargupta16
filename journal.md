@@ -2698,3 +2698,4 @@
 - 2024-04-03: debugging practice session 6
 - 2024-04-03: docker practice session 7
 - 2024-04-03: ci-cd practice session 8
+- 2024-04-03: ml practice session 9

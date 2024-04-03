@@ -2721,3 +2721,4 @@
 - 2024-04-03: api-design practice session 29
 - 2024-04-03: javascript practice session 30
 - 2024-04-03: algorithms practice session 31
+- 2024-04-03: debugging practice session 32

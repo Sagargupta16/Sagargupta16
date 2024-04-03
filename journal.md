@@ -2701,3 +2701,4 @@
 - 2024-04-03: ml practice session 9
 - 2024-04-03: ml practice session 10
 - 2024-04-03: testing practice session 11
+- 2024-04-03: terraform practice session 12

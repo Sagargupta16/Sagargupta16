@@ -2715,3 +2715,4 @@
 - 2024-04-03: kubernetes practice session 23
 - 2024-04-03: postgresql practice session 24
 - 2024-04-03: security practice session 25
+- 2024-04-03: mongodb practice session 26

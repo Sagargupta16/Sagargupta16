@@ -2705,3 +2705,4 @@
 - 2024-04-03: mongodb practice session 13
 - 2024-04-03: api-design practice session 14
 - 2024-04-03: ml practice session 15
+- 2024-04-03: algorithms practice session 16

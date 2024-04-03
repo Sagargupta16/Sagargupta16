@@ -2696,3 +2696,4 @@
 - 2024-04-03: ci-cd practice session 4
 - 2024-04-03: api-design practice session 5
 - 2024-04-03: debugging practice session 6
+- 2024-04-03: docker practice session 7

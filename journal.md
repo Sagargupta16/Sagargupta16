@@ -2691,3 +2691,4 @@
 - 2024-03-30: fastapi practice session 15
 - 2024-03-31: algorithms practice session 1
 - 2024-04-03: testing practice session 1
+- 2024-04-03: testing practice session 2

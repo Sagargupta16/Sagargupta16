@@ -2707,3 +2707,4 @@
 - 2024-04-03: ml practice session 15
 - 2024-04-03: algorithms practice session 16
 - 2024-04-03: postgresql practice session 17
+- 2024-04-03: kubernetes practice session 18

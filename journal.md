@@ -2693,3 +2693,4 @@
 - 2024-04-03: testing practice session 1
 - 2024-04-03: testing practice session 2
 - 2024-04-03: ci-cd practice session 3
+- 2024-04-03: ci-cd practice session 4

@@ -2711,3 +2711,4 @@
 - 2024-04-03: ci-cd practice session 19
 - 2024-04-03: data-structures practice session 20
 - 2024-04-03: ml practice session 21
+- 2024-04-03: data-structures practice session 22

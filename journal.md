@@ -2725,3 +2725,4 @@
 - 2024-04-04: algorithms practice session 1
 - 2024-04-04: ml practice session 2
 - 2024-04-04: terraform practice session 3
+- 2024-04-04: linux practice session 4

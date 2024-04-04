@@ -2722,3 +2722,4 @@
 - 2024-04-03: javascript practice session 30
 - 2024-04-03: algorithms practice session 31
 - 2024-04-03: debugging practice session 32
+- 2024-04-04: algorithms practice session 1

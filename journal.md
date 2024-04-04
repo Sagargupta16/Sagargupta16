@@ -2724,3 +2724,4 @@
 - 2024-04-03: debugging practice session 32
 - 2024-04-04: algorithms practice session 1
 - 2024-04-04: ml practice session 2
+- 2024-04-04: terraform practice session 3

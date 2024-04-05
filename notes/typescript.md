@@ -85,3 +85,4 @@
 - 2023-07-27: refactor typescript section 3
 - 2023-12-09: refactor typescript section 42
 - 2024-03-31: improve typescript section 63
+- 2024-04-05: add typescript section 69

@@ -2731,3 +2731,4 @@
 - 2024-04-05: fastapi practice session 1
 - 2024-04-07: ci-cd practice session 1
 - 2024-04-07: python practice session 2
+- 2024-04-07: algorithms practice session 3

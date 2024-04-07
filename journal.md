@@ -2748,3 +2748,4 @@
 - 2024-04-07: react practice session 17
 - 2024-04-07: javascript practice session 18
 - 2024-04-07: git practice session 19
+- 2024-04-07: ci-cd practice session 20

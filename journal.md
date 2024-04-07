@@ -2753,3 +2753,4 @@
 - 2024-04-07: git practice session 22
 - 2024-04-07: kubernetes practice session 23
 - 2024-04-07: security practice session 24
+- 2024-04-07: react practice session 25

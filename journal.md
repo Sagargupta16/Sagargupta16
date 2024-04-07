@@ -2734,3 +2734,4 @@
 - 2024-04-07: algorithms practice session 3
 - 2024-04-07: ci-cd practice session 4
 - 2024-04-07: testing practice session 5
+- 2024-04-07: algorithms practice session 6

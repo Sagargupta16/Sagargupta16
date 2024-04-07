@@ -2736,3 +2736,4 @@
 - 2024-04-07: testing practice session 5
 - 2024-04-07: algorithms practice session 6
 - 2024-04-07: fastapi practice session 7
+- 2024-04-07: aws practice session 8

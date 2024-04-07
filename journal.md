@@ -2741,3 +2741,4 @@
 - 2024-04-07: ci-cd practice session 10
 - 2024-04-07: terraform practice session 11
 - 2024-04-07: fastapi practice session 12
+- 2024-04-07: security practice session 13

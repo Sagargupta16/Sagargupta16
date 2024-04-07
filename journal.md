@@ -2746,3 +2746,4 @@
 - 2024-04-07: security practice session 15
 - 2024-04-07: docker practice session 16
 - 2024-04-07: react practice session 17
+- 2024-04-07: javascript practice session 18

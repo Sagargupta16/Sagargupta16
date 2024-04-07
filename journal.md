@@ -2729,3 +2729,4 @@
 - 2024-04-04: git practice session 5
 - 2024-04-04: ci-cd practice session 6
 - 2024-04-05: fastapi practice session 1
+- 2024-04-07: ci-cd practice session 1

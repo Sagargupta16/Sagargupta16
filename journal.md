@@ -2750,3 +2750,4 @@
 - 2024-04-07: git practice session 19
 - 2024-04-07: ci-cd practice session 20
 - 2024-04-07: python practice session 21
+- 2024-04-07: git practice session 22

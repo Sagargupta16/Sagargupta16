@@ -78,3 +78,4 @@
 - 2024-04-01: organize flask section 45
 - 2024-04-05: refactor flask section 49
 - 2024-04-08: organize flask section 7
+- 2024-04-08: update flask section 95

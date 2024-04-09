@@ -2757,3 +2757,4 @@
 - 2024-04-07: ci-cd practice session 26
 - 2024-04-08: terraform practice session 1
 - 2024-04-09: testing practice session 1
+- 2024-04-09: ci-cd practice session 2

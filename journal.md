@@ -2759,3 +2759,4 @@
 - 2024-04-09: testing practice session 1
 - 2024-04-09: ci-cd practice session 2
 - 2024-04-10: data-structures practice session 1
+- 2024-04-10: testing practice session 2

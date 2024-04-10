@@ -73,3 +73,4 @@
 - 2023-05-27: expand api-design section 7
 - 2023-08-20: revise api-design section 7
 - 2023-12-09: update api-design section 81
+- 2024-04-10: revise api-design section 1

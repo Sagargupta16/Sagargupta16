@@ -2768,3 +2768,4 @@
 - 2024-04-11: data-structures practice session 5
 - 2024-04-11: ci-cd practice session 6
 - 2024-04-11: data-structures practice session 7
+- 2024-04-11: python practice session 8

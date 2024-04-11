@@ -88,3 +88,4 @@
 - 2023-08-20: refactor aws section 74
 - 2024-03-31: expand aws section 49
 - 2024-04-11: revise aws section 20
+- 2024-04-11: add aws section 48

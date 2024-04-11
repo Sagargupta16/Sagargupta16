@@ -2766,3 +2766,4 @@
 - 2024-04-11: docker practice session 3
 - 2024-04-11: data-structures practice session 4
 - 2024-04-11: data-structures practice session 5
+- 2024-04-11: ci-cd practice session 6

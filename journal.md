@@ -2764,3 +2764,4 @@
 - 2024-04-11: kubernetes practice session 1
 - 2024-04-11: aws practice session 2
 - 2024-04-11: docker practice session 3
+- 2024-04-11: data-structures practice session 4

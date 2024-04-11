@@ -2772,3 +2772,4 @@
 - 2024-04-11: kubernetes practice session 9
 - 2024-04-11: javascript practice session 10
 - 2024-04-11: ml practice session 11
+- 2024-04-11: linux practice session 12

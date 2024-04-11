@@ -2778,3 +2778,4 @@
 - 2024-04-11: python practice session 15
 - 2024-04-11: react practice session 16
 - 2024-04-11: python practice session 17
+- 2024-04-11: security practice session 18

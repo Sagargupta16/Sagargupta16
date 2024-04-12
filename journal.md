@@ -2788,3 +2788,4 @@
 - 2024-04-12: docker practice session 5
 - 2024-04-12: algorithms practice session 6
 - 2024-04-12: fastapi practice session 7
+- 2024-04-12: terraform practice session 8

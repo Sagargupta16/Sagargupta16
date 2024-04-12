@@ -2787,3 +2787,4 @@
 - 2024-04-12: security practice session 4
 - 2024-04-12: docker practice session 5
 - 2024-04-12: algorithms practice session 6
+- 2024-04-12: fastapi practice session 7

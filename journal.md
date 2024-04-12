@@ -2781,3 +2781,4 @@
 - 2024-04-11: security practice session 18
 - 2024-04-11: ml practice session 19
 - 2024-04-11: ci-cd practice session 20
+- 2024-04-12: mongodb practice session 1

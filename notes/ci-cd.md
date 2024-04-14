@@ -73,3 +73,4 @@
 - 2023-08-20: expand ci-cd section 68
 - 2024-03-22: improve ci-cd section 61
 - 2024-04-11: revise ci-cd section 79
+- 2024-04-14: refactor ci-cd section 10

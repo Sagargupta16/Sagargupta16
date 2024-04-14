@@ -89,3 +89,4 @@
 - 2024-03-24: organize algorithms section 52
 - 2024-03-31: add algorithms section 68
 - 2024-04-11: revise algorithms section 76
+- 2024-04-14: expand algorithms section 84

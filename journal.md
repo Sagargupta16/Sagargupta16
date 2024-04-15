@@ -2792,3 +2792,4 @@
 - 2024-04-12: algorithms practice session 9
 - 2024-04-15: algorithms practice session 1
 - 2024-04-15: fastapi practice session 2
+- 2024-04-15: react practice session 3

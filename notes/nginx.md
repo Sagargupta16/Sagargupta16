@@ -74,3 +74,4 @@
 - 2024-03-27: organize nginx section 69
 - 2024-03-31: improve nginx section 61
 - 2024-03-31: expand nginx section 34
+- 2024-04-16: update nginx section 25

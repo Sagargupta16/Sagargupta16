@@ -57,3 +57,4 @@
 - 2024-04-07: refactor security section 69
 - 2024-04-14: add security section 81
 - 2024-04-18: add security section 53
+- 2024-04-18: organize security section 6

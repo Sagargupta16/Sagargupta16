@@ -2800,3 +2800,4 @@
 - 2024-04-18: testing practice session 2
 - 2024-04-18: ci-cd practice session 3
 - 2024-04-18: api-design practice session 4
+- 2024-04-18: git practice session 5

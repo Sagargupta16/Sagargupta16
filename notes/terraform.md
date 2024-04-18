@@ -88,3 +88,4 @@
 - 2023-08-12: organize terraform section 10
 - 2023-11-24: update terraform section 80
 - 2024-03-31: organize terraform section 20
+- 2024-04-18: revise terraform section 42

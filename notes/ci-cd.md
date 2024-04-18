@@ -75,3 +75,4 @@
 - 2024-04-11: revise ci-cd section 79
 - 2024-04-14: refactor ci-cd section 10
 - 2024-04-18: revise ci-cd section 2
+- 2024-04-18: improve ci-cd section 87

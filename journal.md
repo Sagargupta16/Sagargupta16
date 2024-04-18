@@ -2798,3 +2798,4 @@
 - 2024-04-15: linux practice session 6
 - 2024-04-18: ci-cd practice session 1
 - 2024-04-18: testing practice session 2
+- 2024-04-18: ci-cd practice session 3

@@ -77,3 +77,4 @@
 - 2024-03-20: refactor git section 84
 - 2024-03-22: revise git section 22
 - 2024-03-25: improve git section 93
+- 2024-04-19: update git section 93

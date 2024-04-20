@@ -2806,3 +2806,4 @@
 - 2024-04-20: algorithms practice session 1
 - 2024-04-20: git practice session 2
 - 2024-04-20: react practice session 3
+- 2024-04-20: algorithms practice session 4

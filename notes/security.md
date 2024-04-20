@@ -58,3 +58,4 @@
 - 2024-04-14: add security section 81
 - 2024-04-18: add security section 53
 - 2024-04-18: organize security section 6
+- 2024-04-20: revise security section 47

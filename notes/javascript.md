@@ -88,3 +88,4 @@
 - 2024-03-31: improve javascript section 62
 - 2024-04-11: add javascript section 86
 - 2024-04-15: add javascript section 38
+- 2024-04-20: revise javascript section 26

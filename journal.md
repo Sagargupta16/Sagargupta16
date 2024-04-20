@@ -2810,3 +2810,4 @@
 - 2024-04-20: kubernetes practice session 5
 - 2024-04-20: data-structures practice session 6
 - 2024-04-20: api-design practice session 7
+- 2024-04-20: mongodb practice session 8

@@ -75,3 +75,4 @@
 - 2024-03-31: improve nginx section 61
 - 2024-03-31: expand nginx section 34
 - 2024-04-16: update nginx section 25
+- 2024-04-20: add nginx section 98

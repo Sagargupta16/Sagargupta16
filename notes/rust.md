@@ -100,3 +100,4 @@
 - 2024-03-20: add rust section 53
 - 2024-03-31: update rust section 35
 - 2024-04-18: add rust section 49
+- 2024-04-20: expand rust section 10

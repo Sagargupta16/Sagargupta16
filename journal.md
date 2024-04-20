@@ -2809,3 +2809,4 @@
 - 2024-04-20: algorithms practice session 4
 - 2024-04-20: kubernetes practice session 5
 - 2024-04-20: data-structures practice session 6
+- 2024-04-20: api-design practice session 7

@@ -89,3 +89,4 @@
 - 2024-03-31: expand aws section 49
 - 2024-04-11: revise aws section 20
 - 2024-04-11: add aws section 48
+- 2024-04-20: revise aws section 1

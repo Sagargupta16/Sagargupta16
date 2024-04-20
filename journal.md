@@ -2808,3 +2808,4 @@
 - 2024-04-20: react practice session 3
 - 2024-04-20: algorithms practice session 4
 - 2024-04-20: kubernetes practice session 5
+- 2024-04-20: data-structures practice session 6

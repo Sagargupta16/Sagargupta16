@@ -2804,3 +2804,4 @@
 - 2024-04-18: fastapi practice session 6
 - 2024-04-19: git practice session 1
 - 2024-04-20: algorithms practice session 1
+- 2024-04-20: git practice session 2

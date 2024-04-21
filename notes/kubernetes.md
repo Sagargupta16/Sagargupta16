@@ -72,3 +72,4 @@
 - 2024-03-25: organize kubernetes section 82
 - 2024-03-31: revise kubernetes section 59
 - 2024-04-02: organize kubernetes section 5
+- 2024-04-21: refactor kubernetes section 82

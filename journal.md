@@ -2828,3 +2828,4 @@
 - 2024-04-22: git practice session 15
 - 2024-04-22: data-structures practice session 16
 - 2024-04-22: security practice session 17
+- 2024-04-22: kubernetes practice session 18

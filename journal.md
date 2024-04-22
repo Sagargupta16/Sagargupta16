@@ -2832,3 +2832,4 @@
 - 2024-04-22: security practice session 19
 - 2024-04-22: ci-cd practice session 20
 - 2024-04-22: debugging practice session 21
+- 2024-04-22: terraform practice session 22

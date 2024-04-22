@@ -2818,3 +2818,4 @@
 - 2024-04-22: linux practice session 5
 - 2024-04-22: python practice session 6
 - 2024-04-22: terraform practice session 7
+- 2024-04-22: data-structures practice session 8

@@ -90,3 +90,4 @@
 - 2024-03-31: organize terraform section 20
 - 2024-04-18: revise terraform section 42
 - 2024-04-21: improve terraform section 20
+- 2024-04-22: refactor terraform section 14

@@ -2825,3 +2825,4 @@
 - 2024-04-22: ci-cd practice session 12
 - 2024-04-22: ci-cd practice session 13
 - 2024-04-22: python practice session 14
+- 2024-04-22: git practice session 15

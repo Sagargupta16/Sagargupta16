@@ -2844,3 +2844,4 @@
 - 2024-04-22: kubernetes practice session 31
 - 2024-04-22: git practice session 32
 - 2024-04-22: javascript practice session 33
+- 2024-04-22: security practice session 34

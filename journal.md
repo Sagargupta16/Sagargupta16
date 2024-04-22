@@ -2839,3 +2839,4 @@
 - 2024-04-22: git practice session 26
 - 2024-04-22: fastapi practice session 27
 - 2024-04-22: aws practice session 28
+- 2024-04-22: algorithms practice session 29

@@ -2811,3 +2811,4 @@
 - 2024-04-20: data-structures practice session 6
 - 2024-04-20: api-design practice session 7
 - 2024-04-20: mongodb practice session 8
+- 2024-04-22: algorithms practice session 1

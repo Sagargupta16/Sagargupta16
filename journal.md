@@ -2835,3 +2835,4 @@
 - 2024-04-22: terraform practice session 22
 - 2024-04-22: testing practice session 23
 - 2024-04-22: ml practice session 24
+- 2024-04-22: linux practice session 25

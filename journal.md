@@ -2826,3 +2826,4 @@
 - 2024-04-22: ci-cd practice session 13
 - 2024-04-22: python practice session 14
 - 2024-04-22: git practice session 15
+- 2024-04-22: data-structures practice session 16

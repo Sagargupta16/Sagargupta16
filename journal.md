@@ -2814,3 +2814,4 @@
 - 2024-04-22: algorithms practice session 1
 - 2024-04-22: terraform practice session 2
 - 2024-04-22: docker practice session 3
+- 2024-04-22: api-design practice session 4

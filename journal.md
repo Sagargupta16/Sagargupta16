@@ -2820,3 +2820,4 @@
 - 2024-04-22: terraform practice session 7
 - 2024-04-22: data-structures practice session 8
 - 2024-04-22: kubernetes practice session 9
+- 2024-04-22: data-structures practice session 10

@@ -2842,3 +2842,4 @@
 - 2024-04-22: algorithms practice session 29
 - 2024-04-22: fastapi practice session 30
 - 2024-04-22: kubernetes practice session 31
+- 2024-04-22: git practice session 32

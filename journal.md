@@ -2841,3 +2841,4 @@
 - 2024-04-22: aws practice session 28
 - 2024-04-22: algorithms practice session 29
 - 2024-04-22: fastapi practice session 30
+- 2024-04-22: kubernetes practice session 31

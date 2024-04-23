@@ -91,3 +91,4 @@
 - 2024-04-18: revise data-structures section 94
 - 2024-04-18: expand data-structures section 98
 - 2024-04-18: improve data-structures section 4
+- 2024-04-23: expand data-structures section 18

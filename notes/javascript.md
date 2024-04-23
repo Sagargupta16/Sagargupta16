@@ -89,3 +89,4 @@
 - 2024-04-11: add javascript section 86
 - 2024-04-15: add javascript section 38
 - 2024-04-20: revise javascript section 26
+- 2024-04-23: refactor javascript section 83

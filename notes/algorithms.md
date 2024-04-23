@@ -92,3 +92,4 @@
 - 2024-04-14: expand algorithms section 84
 - 2024-04-23: update algorithms section 44
 - 2024-04-23: expand algorithms section 97
+- 2024-04-23: update algorithms section 20

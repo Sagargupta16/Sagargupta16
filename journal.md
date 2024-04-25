@@ -2858,3 +2858,4 @@
 - 2024-04-25: javascript practice session 9
 - 2024-04-25: linux practice session 10
 - 2024-04-25: api-design practice session 11
+- 2024-04-25: ci-cd practice session 12

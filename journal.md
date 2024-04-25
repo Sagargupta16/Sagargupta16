@@ -2864,3 +2864,4 @@
 - 2024-04-25: postgresql practice session 15
 - 2024-04-25: git practice session 16
 - 2024-04-25: aws practice session 17
+- 2024-04-25: mongodb practice session 18

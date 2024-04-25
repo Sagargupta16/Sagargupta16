@@ -2855,3 +2855,4 @@
 - 2024-04-25: fastapi practice session 6
 - 2024-04-25: javascript practice session 7
 - 2024-04-25: kubernetes practice session 8
+- 2024-04-25: javascript practice session 9

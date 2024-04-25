@@ -76,3 +76,4 @@
 - 2024-04-14: refactor ci-cd section 10
 - 2024-04-18: revise ci-cd section 2
 - 2024-04-18: improve ci-cd section 87
+- 2024-04-25: revise ci-cd section 57

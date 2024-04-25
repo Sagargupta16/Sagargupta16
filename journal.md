@@ -2847,3 +2847,4 @@
 - 2024-04-22: security practice session 34
 - 2024-04-22: aws practice session 35
 - 2024-04-24: debugging practice session 1
+- 2024-04-25: terraform practice session 1

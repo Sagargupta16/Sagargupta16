@@ -94,3 +94,4 @@
 - 2024-04-23: expand algorithms section 97
 - 2024-04-23: update algorithms section 20
 - 2024-04-23: expand algorithms section 97
+- 2024-04-25: refactor algorithms section 39

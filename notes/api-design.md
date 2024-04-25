@@ -76,3 +76,4 @@
 - 2024-04-10: revise api-design section 1
 - 2024-04-18: update api-design section 55
 - 2024-04-25: expand api-design section 90
+- 2024-04-25: expand api-design section 9

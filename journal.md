@@ -2851,3 +2851,4 @@
 - 2024-04-25: linux practice session 2
 - 2024-04-25: data-structures practice session 3
 - 2024-04-25: docker practice session 4
+- 2024-04-25: algorithms practice session 5

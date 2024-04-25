@@ -87,3 +87,4 @@
 - 2024-04-05: update redis section 6
 - 2024-04-15: expand redis section 34
 - 2024-04-16: improve redis section 28
+- 2024-04-25: improve redis section 71

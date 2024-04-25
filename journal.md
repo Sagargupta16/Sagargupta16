@@ -2865,3 +2865,4 @@
 - 2024-04-25: git practice session 16
 - 2024-04-25: aws practice session 17
 - 2024-04-25: mongodb practice session 18
+- 2024-04-25: debugging practice session 19

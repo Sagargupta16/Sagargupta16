@@ -2853,3 +2853,4 @@
 - 2024-04-25: docker practice session 4
 - 2024-04-25: algorithms practice session 5
 - 2024-04-25: fastapi practice session 6
+- 2024-04-25: javascript practice session 7

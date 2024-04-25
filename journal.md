@@ -2861,3 +2861,4 @@
 - 2024-04-25: ci-cd practice session 12
 - 2024-04-25: postgresql practice session 13
 - 2024-04-25: debugging practice session 14
+- 2024-04-25: postgresql practice session 15

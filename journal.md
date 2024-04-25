@@ -2857,3 +2857,4 @@
 - 2024-04-25: kubernetes practice session 8
 - 2024-04-25: javascript practice session 9
 - 2024-04-25: linux practice session 10
+- 2024-04-25: api-design practice session 11

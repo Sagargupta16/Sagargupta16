@@ -2867,3 +2867,4 @@
 - 2024-04-25: mongodb practice session 18
 - 2024-04-25: debugging practice session 19
 - 2024-04-25: ci-cd practice session 20
+- 2024-04-26: testing practice session 1

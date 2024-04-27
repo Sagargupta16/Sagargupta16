@@ -2873,3 +2873,4 @@
 - 2024-04-27: aws practice session 3
 - 2024-04-27: ml practice session 4
 - 2024-04-27: linux practice session 5
+- 2024-04-27: kubernetes practice session 6

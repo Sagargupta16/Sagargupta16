@@ -2869,3 +2869,4 @@
 - 2024-04-25: ci-cd practice session 20
 - 2024-04-26: testing practice session 1
 - 2024-04-27: ml practice session 1
+- 2024-04-27: javascript practice session 2

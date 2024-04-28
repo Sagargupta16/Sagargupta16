@@ -71,3 +71,4 @@
 - 2024-03-31: refactor python section 73
 - 2024-04-18: expand python section 77
 - 2024-04-20: expand python section 58
+- 2024-04-28: refactor python section 81

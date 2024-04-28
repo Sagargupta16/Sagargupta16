@@ -82,3 +82,4 @@
 - 2024-04-21: improve nextjs section 88
 - 2024-04-25: refactor nextjs section 9
 - 2024-04-25: add nextjs section 98
+- 2024-04-28: add nextjs section 45

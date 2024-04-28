@@ -103,3 +103,4 @@
 - 2024-04-20: expand rust section 10
 - 2024-04-21: expand rust section 6
 - 2024-04-23: organize rust section 77
+- 2024-04-28: refactor rust section 36

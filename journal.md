@@ -2903,3 +2903,4 @@
 - 2024-04-29: kubernetes practice session 24
 - 2024-04-29: aws practice session 25
 - 2024-04-29: debugging practice session 26
+- 2024-04-29: terraform practice session 27

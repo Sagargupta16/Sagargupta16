@@ -2877,3 +2877,4 @@
 - 2024-04-27: javascript practice session 7
 - 2024-04-28: fastapi practice session 1
 - 2024-04-28: mongodb practice session 2
+- 2024-04-29: data-structures practice session 1

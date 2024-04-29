@@ -2886,3 +2886,4 @@
 - 2024-04-29: javascript practice session 7
 - 2024-04-29: data-structures practice session 8
 - 2024-04-29: kubernetes practice session 9
+- 2024-04-29: terraform practice session 10

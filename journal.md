@@ -2893,3 +2893,4 @@
 - 2024-04-29: mongodb practice session 14
 - 2024-04-29: linux practice session 15
 - 2024-04-29: mongodb practice session 16
+- 2024-04-29: react practice session 17

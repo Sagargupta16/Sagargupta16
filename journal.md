@@ -2882,3 +2882,4 @@
 - 2024-04-29: postgresql practice session 3
 - 2024-04-29: javascript practice session 4
 - 2024-04-29: terraform practice session 5
+- 2024-04-29: security practice session 6

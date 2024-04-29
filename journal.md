@@ -2901,3 +2901,4 @@
 - 2024-04-29: fastapi practice session 22
 - 2024-04-29: javascript practice session 23
 - 2024-04-29: kubernetes practice session 24
+- 2024-04-29: aws practice session 25

@@ -2881,3 +2881,4 @@
 - 2024-04-29: fastapi practice session 2
 - 2024-04-29: postgresql practice session 3
 - 2024-04-29: javascript practice session 4
+- 2024-04-29: terraform practice session 5

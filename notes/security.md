@@ -60,3 +60,4 @@
 - 2024-04-18: organize security section 6
 - 2024-04-20: revise security section 47
 - 2024-04-23: revise security section 42
+- 2024-04-29: revise security section 59

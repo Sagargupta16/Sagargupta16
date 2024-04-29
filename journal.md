@@ -2897,3 +2897,4 @@
 - 2024-04-29: postgresql practice session 18
 - 2024-04-29: fastapi practice session 19
 - 2024-04-29: react practice session 20
+- 2024-04-29: postgresql practice session 21

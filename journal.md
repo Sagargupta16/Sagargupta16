@@ -2884,3 +2884,4 @@
 - 2024-04-29: terraform practice session 5
 - 2024-04-29: security practice session 6
 - 2024-04-29: javascript practice session 7
+- 2024-04-29: data-structures practice session 8

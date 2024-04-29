@@ -73,3 +73,4 @@
 - 2024-04-20: expand python section 58
 - 2024-04-28: refactor python section 81
 - 2024-04-28: revise python section 23
+- 2024-04-29: update python section 64

@@ -2889,3 +2889,4 @@
 - 2024-04-29: terraform practice session 10
 - 2024-04-29: mongodb practice session 11
 - 2024-04-29: terraform practice session 12
+- 2024-04-29: security practice session 13

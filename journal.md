@@ -2907,3 +2907,4 @@
 - 2024-04-29: aws practice session 28
 - 2024-04-29: fastapi practice session 29
 - 2024-04-29: docker practice session 30
+- 2024-04-30: terraform practice session 1

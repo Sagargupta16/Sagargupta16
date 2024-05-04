@@ -2909,3 +2909,4 @@
 - 2024-04-29: docker practice session 30
 - 2024-04-30: terraform practice session 1
 - 2024-04-30: ci-cd practice session 2
+- 2024-05-04: testing practice session 1

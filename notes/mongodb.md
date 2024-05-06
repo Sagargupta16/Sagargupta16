@@ -84,3 +84,4 @@
 - 2024-04-20: revise mongodb section 21
 - 2024-04-22: organize mongodb section 81
 - 2024-04-23: improve mongodb section 67
+- 2024-05-06: refactor mongodb section 35

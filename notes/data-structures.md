@@ -96,3 +96,4 @@
 - 2024-04-25: revise data-structures section 31
 - 2024-04-28: revise data-structures section 33
 - 2024-05-06: revise data-structures section 99
+- 2024-05-06: refactor data-structures section 97

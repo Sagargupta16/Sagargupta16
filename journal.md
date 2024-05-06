@@ -2912,3 +2912,4 @@
 - 2024-05-04: testing practice session 1
 - 2024-05-06: fastapi practice session 1
 - 2024-05-06: mongodb practice session 2
+- 2024-05-06: fastapi practice session 3

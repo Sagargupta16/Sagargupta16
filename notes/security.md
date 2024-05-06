@@ -62,3 +62,4 @@
 - 2024-04-23: revise security section 42
 - 2024-04-29: revise security section 59
 - 2024-05-06: revise security section 4
+- 2024-05-06: update security section 44

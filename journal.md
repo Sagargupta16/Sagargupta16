@@ -2914,3 +2914,4 @@
 - 2024-05-06: mongodb practice session 2
 - 2024-05-06: fastapi practice session 3
 - 2024-05-06: python practice session 4
+- 2024-05-06: fastapi practice session 5

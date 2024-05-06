@@ -94,3 +94,4 @@
 - 2024-04-08: refactor django section 72
 - 2024-04-11: expand django section 31
 - 2024-05-06: organize django section 13
+- 2024-05-06: revise django section 20

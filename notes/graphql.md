@@ -90,3 +90,4 @@
 - 2024-04-23: update graphql section 80
 - 2024-04-25: update graphql section 8
 - 2024-05-06: revise graphql section 49
+- 2024-05-10: organize graphql section 79

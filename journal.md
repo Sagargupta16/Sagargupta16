@@ -2918,3 +2918,4 @@
 - 2024-05-09: git practice session 1
 - 2024-05-11: algorithms practice session 1
 - 2024-05-11: python practice session 2
+- 2024-05-11: mongodb practice session 3

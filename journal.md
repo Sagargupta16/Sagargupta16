@@ -2920,3 +2920,4 @@
 - 2024-05-11: python practice session 2
 - 2024-05-11: mongodb practice session 3
 - 2024-05-11: aws practice session 4
+- 2024-05-11: python practice session 5

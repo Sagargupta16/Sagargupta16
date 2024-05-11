@@ -2916,3 +2916,4 @@
 - 2024-05-06: python practice session 4
 - 2024-05-06: fastapi practice session 5
 - 2024-05-09: git practice session 1
+- 2024-05-11: algorithms practice session 1

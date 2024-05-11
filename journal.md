@@ -2935,3 +2935,4 @@
 - 2024-05-11: mongodb practice session 17
 - 2024-05-11: docker practice session 18
 - 2024-05-11: linux practice session 19
+- 2024-05-11: ci-cd practice session 20

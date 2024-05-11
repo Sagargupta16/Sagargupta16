@@ -2941,3 +2941,4 @@
 - 2024-05-11: ci-cd practice session 23
 - 2024-05-11: debugging practice session 24
 - 2024-05-11: data-structures practice session 25
+- 2024-05-11: linux practice session 26

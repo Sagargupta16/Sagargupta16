@@ -2943,3 +2943,4 @@
 - 2024-05-11: data-structures practice session 25
 - 2024-05-11: linux practice session 26
 - 2024-05-11: ml practice session 27
+- 2024-05-11: javascript practice session 28

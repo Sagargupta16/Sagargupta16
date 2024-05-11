@@ -99,3 +99,4 @@
 - 2024-05-06: refactor data-structures section 97
 - 2024-05-10: expand data-structures section 91
 - 2024-05-10: improve data-structures section 27
+- 2024-05-11: improve data-structures section 36

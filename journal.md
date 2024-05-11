@@ -2939,3 +2939,4 @@
 - 2024-05-11: linux practice session 21
 - 2024-05-11: docker practice session 22
 - 2024-05-11: ci-cd practice session 23
+- 2024-05-11: debugging practice session 24

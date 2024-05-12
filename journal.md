@@ -2944,3 +2944,4 @@
 - 2024-05-11: linux practice session 26
 - 2024-05-11: ml practice session 27
 - 2024-05-11: javascript practice session 28
+- 2024-05-12: react practice session 1

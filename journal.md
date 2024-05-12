@@ -2959,3 +2959,4 @@
 - 2024-05-12: git practice session 13
 - 2024-05-12: mongodb practice session 14
 - 2024-05-12: algorithms practice session 15
+- 2024-05-12: aws practice session 16

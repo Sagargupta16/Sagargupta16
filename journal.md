@@ -2961,3 +2961,4 @@
 - 2024-05-12: algorithms practice session 15
 - 2024-05-12: aws practice session 16
 - 2024-05-12: linux practice session 17
+- 2024-05-12: docker practice session 18

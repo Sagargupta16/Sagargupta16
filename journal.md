@@ -2954,3 +2954,4 @@
 - 2024-05-12: ml practice session 8
 - 2024-05-12: fastapi practice session 9
 - 2024-05-12: debugging practice session 10
+- 2024-05-12: python practice session 11

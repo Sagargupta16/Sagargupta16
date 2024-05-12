@@ -2951,3 +2951,4 @@
 - 2024-05-12: debugging practice session 5
 - 2024-05-12: ml practice session 6
 - 2024-05-12: linux practice session 7
+- 2024-05-12: ml practice session 8

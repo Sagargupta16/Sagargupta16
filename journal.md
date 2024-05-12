@@ -2958,3 +2958,4 @@
 - 2024-05-12: api-design practice session 12
 - 2024-05-12: git practice session 13
 - 2024-05-12: mongodb practice session 14
+- 2024-05-12: algorithms practice session 15

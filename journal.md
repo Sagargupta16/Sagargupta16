@@ -2947,3 +2947,4 @@
 - 2024-05-12: react practice session 1
 - 2024-05-12: fastapi practice session 2
 - 2024-05-12: data-structures practice session 3
+- 2024-05-12: debugging practice session 4

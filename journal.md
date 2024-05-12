@@ -2949,3 +2949,4 @@
 - 2024-05-12: data-structures practice session 3
 - 2024-05-12: debugging practice session 4
 - 2024-05-12: debugging practice session 5
+- 2024-05-12: ml practice session 6

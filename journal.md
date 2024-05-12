@@ -2952,3 +2952,4 @@
 - 2024-05-12: ml practice session 6
 - 2024-05-12: linux practice session 7
 - 2024-05-12: ml practice session 8
+- 2024-05-12: fastapi practice session 9

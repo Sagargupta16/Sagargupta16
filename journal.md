@@ -2956,3 +2956,4 @@
 - 2024-05-12: debugging practice session 10
 - 2024-05-12: python practice session 11
 - 2024-05-12: api-design practice session 12
+- 2024-05-12: git practice session 13

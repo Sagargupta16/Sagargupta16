@@ -2962,3 +2962,4 @@
 - 2024-05-12: aws practice session 16
 - 2024-05-12: linux practice session 17
 - 2024-05-12: docker practice session 18
+- 2024-05-12: api-design practice session 19

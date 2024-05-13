@@ -2971,3 +2971,4 @@
 - 2024-05-13: data-structures practice session 4
 - 2024-05-13: postgresql practice session 5
 - 2024-05-13: ml practice session 6
+- 2024-05-13: javascript practice session 7

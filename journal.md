@@ -2970,3 +2970,4 @@
 - 2024-05-13: mongodb practice session 3
 - 2024-05-13: data-structures practice session 4
 - 2024-05-13: postgresql practice session 5
+- 2024-05-13: ml practice session 6

@@ -2980,3 +2980,4 @@
 - 2024-05-13: git practice session 13
 - 2024-05-13: api-design practice session 14
 - 2024-05-13: javascript practice session 15
+- 2024-05-13: ml practice session 16

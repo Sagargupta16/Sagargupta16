@@ -2975,3 +2975,4 @@
 - 2024-05-13: terraform practice session 8
 - 2024-05-13: react practice session 9
 - 2024-05-13: algorithms practice session 10
+- 2024-05-13: postgresql practice session 11

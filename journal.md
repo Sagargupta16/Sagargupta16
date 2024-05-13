@@ -2966,3 +2966,4 @@
 - 2024-05-12: fastapi practice session 20
 - 2024-05-12: terraform practice session 21
 - 2024-05-13: python practice session 1
+- 2024-05-13: security practice session 2

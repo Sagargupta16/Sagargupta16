@@ -94,3 +94,4 @@
 - 2024-05-04: expand aws section 65
 - 2024-05-06: add aws section 68
 - 2024-05-13: update aws section 78
+- 2024-05-13: improve aws section 6

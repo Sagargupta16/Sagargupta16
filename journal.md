@@ -2969,3 +2969,4 @@
 - 2024-05-13: security practice session 2
 - 2024-05-13: mongodb practice session 3
 - 2024-05-13: data-structures practice session 4
+- 2024-05-13: postgresql practice session 5

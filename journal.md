@@ -2989,3 +2989,4 @@
 - 2024-05-13: testing practice session 22
 - 2024-05-13: security practice session 23
 - 2024-05-13: postgresql practice session 24
+- 2024-05-13: algorithms practice session 25

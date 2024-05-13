@@ -2984,3 +2984,4 @@
 - 2024-05-13: terraform practice session 17
 - 2024-05-13: linux practice session 18
 - 2024-05-13: api-design practice session 19
+- 2024-05-13: ml practice session 20

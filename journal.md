@@ -2974,3 +2974,4 @@
 - 2024-05-13: javascript practice session 7
 - 2024-05-13: terraform practice session 8
 - 2024-05-13: react practice session 9
+- 2024-05-13: algorithms practice session 10

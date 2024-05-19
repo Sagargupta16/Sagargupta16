@@ -3004,3 +3004,4 @@
 - 2024-05-19: git practice session 12
 - 2024-05-19: algorithms practice session 13
 - 2024-05-19: mongodb practice session 14
+- 2024-05-19: linux practice session 15

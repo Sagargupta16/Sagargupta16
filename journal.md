@@ -2997,3 +2997,4 @@
 - 2024-05-19: debugging practice session 5
 - 2024-05-19: fastapi practice session 6
 - 2024-05-19: python practice session 7
+- 2024-05-19: testing practice session 8

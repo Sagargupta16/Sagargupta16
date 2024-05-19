@@ -2992,3 +2992,4 @@
 - 2024-05-13: algorithms practice session 25
 - 2024-05-19: testing practice session 1
 - 2024-05-19: fastapi practice session 2
+- 2024-05-19: data-structures practice session 3

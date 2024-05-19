@@ -78,3 +78,4 @@
 - 2024-04-18: improve ci-cd section 87
 - 2024-04-25: revise ci-cd section 57
 - 2024-05-06: improve ci-cd section 16
+- 2024-05-19: organize ci-cd section 45

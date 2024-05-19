@@ -2994,3 +2994,4 @@
 - 2024-05-19: fastapi practice session 2
 - 2024-05-19: data-structures practice session 3
 - 2024-05-19: debugging practice session 4
+- 2024-05-19: debugging practice session 5

@@ -3002,3 +3002,4 @@
 - 2024-05-19: data-structures practice session 10
 - 2024-05-19: fastapi practice session 11
 - 2024-05-19: git practice session 12
+- 2024-05-19: algorithms practice session 13

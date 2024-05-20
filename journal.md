@@ -3007,3 +3007,4 @@
 - 2024-05-19: linux practice session 15
 - 2024-05-19: algorithms practice session 16
 - 2024-05-19: kubernetes practice session 17
+- 2024-05-20: ci-cd practice session 1

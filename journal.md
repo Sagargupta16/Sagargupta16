@@ -3036,3 +3036,4 @@
 - 2024-05-21: react practice session 26
 - 2024-05-21: api-design practice session 27
 - 2024-05-21: react practice session 28
+- 2024-05-21: testing practice session 29

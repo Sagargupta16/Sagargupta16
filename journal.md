@@ -3034,3 +3034,4 @@
 - 2024-05-21: linux practice session 24
 - 2024-05-21: api-design practice session 25
 - 2024-05-21: react practice session 26
+- 2024-05-21: api-design practice session 27

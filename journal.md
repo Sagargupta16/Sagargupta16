@@ -3027,3 +3027,4 @@
 - 2024-05-21: postgresql practice session 17
 - 2024-05-21: linux practice session 18
 - 2024-05-21: ml practice session 19
+- 2024-05-21: algorithms practice session 20

@@ -3028,3 +3028,4 @@
 - 2024-05-21: linux practice session 18
 - 2024-05-21: ml practice session 19
 - 2024-05-21: algorithms practice session 20
+- 2024-05-21: javascript practice session 21

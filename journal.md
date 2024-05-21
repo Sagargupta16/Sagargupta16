@@ -3030,3 +3030,4 @@
 - 2024-05-21: algorithms practice session 20
 - 2024-05-21: javascript practice session 21
 - 2024-05-21: ml practice session 22
+- 2024-05-21: kubernetes practice session 23

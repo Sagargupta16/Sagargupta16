@@ -3038,3 +3038,4 @@
 - 2024-05-21: react practice session 28
 - 2024-05-21: testing practice session 29
 - 2024-05-21: docker practice session 30
+- 2024-05-21: aws practice session 31

@@ -3015,3 +3015,4 @@
 - 2024-05-21: debugging practice session 5
 - 2024-05-21: postgresql practice session 6
 - 2024-05-21: javascript practice session 7
+- 2024-05-21: python practice session 8

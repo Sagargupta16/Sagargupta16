@@ -3032,3 +3032,4 @@
 - 2024-05-21: ml practice session 22
 - 2024-05-21: kubernetes practice session 23
 - 2024-05-21: linux practice session 24
+- 2024-05-21: api-design practice session 25

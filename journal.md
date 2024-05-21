@@ -3020,3 +3020,4 @@
 - 2024-05-21: javascript practice session 10
 - 2024-05-21: git practice session 11
 - 2024-05-21: react practice session 12
+- 2024-05-21: ci-cd practice session 13

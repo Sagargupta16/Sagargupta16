@@ -3018,3 +3018,4 @@
 - 2024-05-21: python practice session 8
 - 2024-05-21: fastapi practice session 9
 - 2024-05-21: javascript practice session 10
+- 2024-05-21: git practice session 11

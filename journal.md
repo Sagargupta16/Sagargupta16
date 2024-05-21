@@ -3011,3 +3011,4 @@
 - 2024-05-21: data-structures practice session 1
 - 2024-05-21: kubernetes practice session 2
 - 2024-05-21: data-structures practice session 3
+- 2024-05-21: mongodb practice session 4

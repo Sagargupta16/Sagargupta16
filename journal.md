@@ -3055,3 +3055,4 @@
 - 2024-05-22: testing practice session 14
 - 2024-05-22: react practice session 15
 - 2024-05-22: mongodb practice session 16
+- 2024-05-22: react practice session 17

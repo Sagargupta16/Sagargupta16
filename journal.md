@@ -3040,3 +3040,4 @@
 - 2024-05-21: docker practice session 30
 - 2024-05-21: aws practice session 31
 - 2024-05-22: postgresql practice session 1
+- 2024-05-22: mongodb practice session 2

@@ -3053,3 +3053,4 @@
 - 2024-05-22: python practice session 12
 - 2024-05-22: fastapi practice session 13
 - 2024-05-22: testing practice session 14
+- 2024-05-22: react practice session 15

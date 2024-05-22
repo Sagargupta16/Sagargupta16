@@ -3049,3 +3049,4 @@
 - 2024-05-22: testing practice session 8
 - 2024-05-22: aws practice session 9
 - 2024-05-22: mongodb practice session 10
+- 2024-05-22: debugging practice session 11

@@ -3042,3 +3042,4 @@
 - 2024-05-22: postgresql practice session 1
 - 2024-05-22: mongodb practice session 2
 - 2024-05-22: testing practice session 3
+- 2024-05-22: kubernetes practice session 4

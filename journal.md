@@ -3056,3 +3056,4 @@
 - 2024-05-22: react practice session 15
 - 2024-05-22: mongodb practice session 16
 - 2024-05-22: react practice session 17
+- 2024-05-22: ci-cd practice session 18

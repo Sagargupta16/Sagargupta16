@@ -3043,3 +3043,4 @@
 - 2024-05-22: mongodb practice session 2
 - 2024-05-22: testing practice session 3
 - 2024-05-22: kubernetes practice session 4
+- 2024-05-22: git practice session 5

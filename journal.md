@@ -3047,3 +3047,4 @@
 - 2024-05-22: kubernetes practice session 6
 - 2024-05-22: python practice session 7
 - 2024-05-22: testing practice session 8
+- 2024-05-22: aws practice session 9

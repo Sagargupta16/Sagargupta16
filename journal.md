@@ -3063,3 +3063,4 @@
 - 2024-06-08: testing practice session 3
 - 2024-06-08: testing practice session 4
 - 2024-06-08: mongodb practice session 5
+- 2024-06-08: api-design practice session 6

@@ -3068,3 +3068,4 @@
 - 2024-06-08: docker practice session 8
 - 2024-06-08: kubernetes practice session 9
 - 2024-06-08: terraform practice session 10
+- 2024-06-08: terraform practice session 11

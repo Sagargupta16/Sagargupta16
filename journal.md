@@ -3070,3 +3070,4 @@
 - 2024-06-08: terraform practice session 10
 - 2024-06-08: terraform practice session 11
 - 2024-06-08: aws practice session 12
+- 2024-06-08: docker practice session 13

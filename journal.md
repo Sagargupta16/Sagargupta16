@@ -3059,3 +3059,4 @@
 - 2024-05-22: ci-cd practice session 18
 - 2024-05-30: javascript practice session 1
 - 2024-06-08: terraform practice session 1
+- 2024-06-08: debugging practice session 2

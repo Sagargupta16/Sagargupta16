@@ -3061,3 +3061,4 @@
 - 2024-06-08: terraform practice session 1
 - 2024-06-08: debugging practice session 2
 - 2024-06-08: testing practice session 3
+- 2024-06-08: testing practice session 4

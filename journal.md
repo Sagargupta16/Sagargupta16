@@ -3064,3 +3064,4 @@
 - 2024-06-08: testing practice session 4
 - 2024-06-08: mongodb practice session 5
 - 2024-06-08: api-design practice session 6
+- 2024-06-08: kubernetes practice session 7

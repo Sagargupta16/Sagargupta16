@@ -3072,3 +3072,4 @@
 - 2024-06-08: aws practice session 12
 - 2024-06-08: docker practice session 13
 - 2024-06-08: linux practice session 14
+- 2024-06-08: testing practice session 15

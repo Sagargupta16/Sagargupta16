@@ -81,3 +81,4 @@
 - 2024-05-06: organize api-design section 33
 - 2024-05-06: refactor api-design section 12
 - 2024-05-11: expand api-design section 28
+- 2024-06-20: expand api-design section 75

@@ -3076,3 +3076,4 @@
 - 2024-06-08: git practice session 16
 - 2024-06-08: python practice session 17
 - 2024-06-25: data-structures practice session 1
+- 2024-06-25: algorithms practice session 2

@@ -3082,3 +3082,4 @@
 - 2024-06-26: api-design practice session 2
 - 2024-06-26: postgresql practice session 3
 - 2024-06-26: kubernetes practice session 4
+- 2024-06-26: ml practice session 5

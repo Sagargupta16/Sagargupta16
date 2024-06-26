@@ -3079,3 +3079,4 @@
 - 2024-06-25: algorithms practice session 2
 - 2024-06-25: ci-cd practice session 3
 - 2024-06-26: python practice session 1
+- 2024-06-26: api-design practice session 2

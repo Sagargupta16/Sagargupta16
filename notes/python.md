@@ -77,3 +77,4 @@
 - 2024-05-06: improve python section 76
 - 2024-05-06: refactor python section 88
 - 2024-05-19: organize python section 95
+- 2024-06-28: expand python section 27

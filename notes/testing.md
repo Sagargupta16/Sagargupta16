@@ -102,3 +102,4 @@
 - 2024-04-23: update testing section 13
 - 2024-04-28: revise testing section 1
 - 2024-06-20: improve testing section 2
+- 2024-06-28: add testing section 24

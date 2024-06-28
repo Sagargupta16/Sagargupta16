@@ -97,3 +97,4 @@
 - 2024-05-13: revise javascript section 58
 - 2024-06-20: expand javascript section 3
 - 2024-06-28: organize javascript section 17
+- 2024-06-28: expand javascript section 32

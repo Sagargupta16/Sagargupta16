@@ -3084,3 +3084,4 @@
 - 2024-06-26: kubernetes practice session 4
 - 2024-06-26: ml practice session 5
 - 2024-06-26: postgresql practice session 6
+- 2024-06-28: git practice session 1

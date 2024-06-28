@@ -102,3 +102,4 @@
 - 2024-05-11: improve data-structures section 36
 - 2024-05-11: revise data-structures section 93
 - 2024-06-08: improve data-structures section 64
+- 2024-06-28: add data-structures section 39

@@ -99,3 +99,4 @@
 - 2024-05-19: organize aws section 17
 - 2024-05-19: revise aws section 88
 - 2024-06-08: organize aws section 36
+- 2024-06-28: expand aws section 22

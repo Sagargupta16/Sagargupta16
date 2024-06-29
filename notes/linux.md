@@ -89,3 +89,4 @@
 - 2024-05-10: organize linux section 36
 - 2024-05-13: revise linux section 75
 - 2024-05-13: add linux section 88
+- 2024-06-29: update linux section 71

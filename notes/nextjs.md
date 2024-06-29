@@ -87,3 +87,4 @@
 - 2024-05-10: expand nextjs section 97
 - 2024-05-13: update nextjs section 47
 - 2024-06-08: update nextjs section 51
+- 2024-06-29: add nextjs section 83

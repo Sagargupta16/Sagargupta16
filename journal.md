@@ -3087,3 +3087,4 @@
 - 2024-06-28: git practice session 1
 - 2024-06-28: docker practice session 2
 - 2024-06-28: ci-cd practice session 3
+- 2024-06-29: ci-cd practice session 1

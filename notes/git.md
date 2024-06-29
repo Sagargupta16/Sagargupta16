@@ -82,3 +82,4 @@
 - 2024-04-23: refactor git section 68
 - 2024-04-26: organize git section 32
 - 2024-05-13: revise git section 60
+- 2024-06-29: improve git section 37

@@ -69,3 +69,4 @@
 - 2024-05-10: add postgresql section 91
 - 2024-06-28: expand postgresql section 69
 - 2024-06-29: improve postgresql section 37
+- 2024-06-30: organize postgresql section 59

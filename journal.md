@@ -3090,3 +3090,4 @@
 - 2024-06-29: ci-cd practice session 1
 - 2024-06-30: javascript practice session 1
 - 2024-06-30: aws practice session 2
+- 2024-06-30: aws practice session 3

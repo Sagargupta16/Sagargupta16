@@ -84,3 +84,4 @@
 - 2024-05-13: revise git section 60
 - 2024-06-29: improve git section 37
 - 2024-06-30: revise git section 88
+- 2024-06-30: improve git section 92

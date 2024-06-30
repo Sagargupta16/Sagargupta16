@@ -3093,3 +3093,4 @@
 - 2024-06-30: aws practice session 3
 - 2024-06-30: debugging practice session 4
 - 2024-06-30: postgresql practice session 5
+- 2024-06-30: kubernetes practice session 6

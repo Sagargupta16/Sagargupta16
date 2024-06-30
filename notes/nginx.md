@@ -89,3 +89,4 @@
 - 2024-06-28: organize nginx section 36
 - 2024-06-30: revise nginx section 2
 - 2024-06-30: refactor nginx section 69
+- 2024-06-30: revise nginx section 88

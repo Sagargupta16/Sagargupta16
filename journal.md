@@ -3096,3 +3096,4 @@
 - 2024-06-30: kubernetes practice session 6
 - 2024-07-02: react practice session 1
 - 2024-07-05: postgresql practice session 1
+- 2024-07-05: debugging practice session 2

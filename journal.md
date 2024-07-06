@@ -3103,3 +3103,4 @@
 - 2024-07-06: docker practice session 4
 - 2024-07-06: aws practice session 5
 - 2024-07-06: debugging practice session 6
+- 2024-07-06: postgresql practice session 7

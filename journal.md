@@ -3098,3 +3098,4 @@
 - 2024-07-05: postgresql practice session 1
 - 2024-07-05: debugging practice session 2
 - 2024-07-06: python practice session 1
+- 2024-07-06: react practice session 2

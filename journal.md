@@ -3100,3 +3100,4 @@
 - 2024-07-06: python practice session 1
 - 2024-07-06: react practice session 2
 - 2024-07-06: react practice session 3
+- 2024-07-06: docker practice session 4

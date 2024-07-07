@@ -3110,3 +3110,4 @@
 - 2024-07-07: kubernetes practice session 4
 - 2024-07-07: git practice session 5
 - 2024-07-07: algorithms practice session 6
+- 2024-07-07: react practice session 7

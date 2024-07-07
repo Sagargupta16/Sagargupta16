@@ -3112,3 +3112,4 @@
 - 2024-07-07: algorithms practice session 6
 - 2024-07-07: react practice session 7
 - 2024-07-07: debugging practice session 8
+- 2024-07-07: git practice session 9

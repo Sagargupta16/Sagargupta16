@@ -100,3 +100,4 @@
 - 2024-06-29: revise ml section 98
 - 2024-06-30: refactor ml section 96
 - 2024-06-30: expand ml section 61
+- 2024-07-07: add ml section 77

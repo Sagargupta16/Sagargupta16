@@ -3105,3 +3105,4 @@
 - 2024-07-06: debugging practice session 6
 - 2024-07-06: postgresql practice session 7
 - 2024-07-07: python practice session 1
+- 2024-07-07: linux practice session 2

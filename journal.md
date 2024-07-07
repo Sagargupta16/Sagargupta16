@@ -3109,3 +3109,4 @@
 - 2024-07-07: javascript practice session 3
 - 2024-07-07: kubernetes practice session 4
 - 2024-07-07: git practice session 5
+- 2024-07-07: algorithms practice session 6

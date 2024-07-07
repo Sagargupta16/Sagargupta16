@@ -3107,3 +3107,4 @@
 - 2024-07-07: python practice session 1
 - 2024-07-07: linux practice session 2
 - 2024-07-07: javascript practice session 3
+- 2024-07-07: kubernetes practice session 4

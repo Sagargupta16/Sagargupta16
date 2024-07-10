@@ -3116,3 +3116,4 @@
 - 2024-07-07: react practice session 10
 - 2024-07-08: testing practice session 1
 - 2024-07-08: git practice session 2
+- 2024-07-10: aws practice session 1

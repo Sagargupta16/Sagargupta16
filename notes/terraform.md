@@ -98,3 +98,4 @@
 - 2024-06-20: revise terraform section 81
 - 2024-06-29: refactor terraform section 1
 - 2024-06-30: expand terraform section 76
+- 2024-07-10: add terraform section 89

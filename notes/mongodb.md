@@ -89,3 +89,4 @@
 - 2024-06-28: add mongodb section 74
 - 2024-06-29: improve mongodb section 45
 - 2024-07-10: organize mongodb section 7
+- 2024-07-10: update mongodb section 80

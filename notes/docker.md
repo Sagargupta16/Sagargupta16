@@ -95,3 +95,4 @@
 - 2024-06-20: add docker section 17
 - 2024-06-28: organize docker section 26
 - 2024-06-28: revise docker section 51
+- 2024-07-10: refactor docker section 69

@@ -81,3 +81,4 @@
 - 2024-06-30: improve python section 24
 - 2024-06-30: improve python section 83
 - 2024-07-08: refactor python section 14
+- 2024-07-10: refactor python section 41

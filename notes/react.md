@@ -104,3 +104,4 @@
 - 2024-06-28: revise react section 27
 - 2024-06-30: refactor react section 33
 - 2024-07-10: refactor react section 55
+- 2024-07-10: improve react section 86

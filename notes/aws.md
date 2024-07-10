@@ -101,3 +101,4 @@
 - 2024-06-08: organize aws section 36
 - 2024-06-28: expand aws section 22
 - 2024-06-29: organize aws section 34
+- 2024-07-10: organize aws section 51

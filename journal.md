@@ -3119,3 +3119,4 @@
 - 2024-07-10: aws practice session 1
 - 2024-07-11: kubernetes practice session 1
 - 2024-07-11: algorithms practice session 2
+- 2024-07-11: docker practice session 3

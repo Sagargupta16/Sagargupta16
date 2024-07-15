@@ -3128,3 +3128,4 @@
 - 2024-07-15: git practice session 4
 - 2024-07-15: python practice session 5
 - 2024-07-15: api-design practice session 6
+- 2024-07-15: data-structures practice session 7

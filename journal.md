@@ -3124,3 +3124,4 @@
 - 2024-07-13: debugging practice session 1
 - 2024-07-15: aws practice session 1
 - 2024-07-15: ml practice session 2
+- 2024-07-15: aws practice session 3

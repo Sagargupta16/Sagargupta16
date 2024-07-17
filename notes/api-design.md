@@ -85,3 +85,4 @@
 - 2024-06-30: refactor api-design section 63
 - 2024-07-10: revise api-design section 27
 - 2024-07-10: improve api-design section 38
+- 2024-07-17: organize api-design section 73

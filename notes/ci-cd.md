@@ -82,3 +82,4 @@
 - 2024-06-29: add ci-cd section 43
 - 2024-06-30: update ci-cd section 95
 - 2024-07-17: organize ci-cd section 96
+- 2024-07-17: update ci-cd section 84

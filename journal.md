@@ -3129,3 +3129,4 @@
 - 2024-07-15: python practice session 5
 - 2024-07-15: api-design practice session 6
 - 2024-07-15: data-structures practice session 7
+- 2024-07-19: javascript practice session 1

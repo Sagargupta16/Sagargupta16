@@ -3131,3 +3131,4 @@
 - 2024-07-15: data-structures practice session 7
 - 2024-07-19: javascript practice session 1
 - 2024-07-20: docker practice session 1
+- 2024-07-20: docker practice session 2

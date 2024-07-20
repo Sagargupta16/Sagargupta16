@@ -3141,3 +3141,4 @@
 - 2024-07-20: ci-cd practice session 9
 - 2024-07-20: mongodb practice session 10
 - 2024-07-20: react practice session 11
+- 2024-07-20: aws practice session 12

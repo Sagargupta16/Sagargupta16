@@ -3145,3 +3145,4 @@
 - 2024-07-20: kubernetes practice session 13
 - 2024-07-20: testing practice session 14
 - 2024-07-20: docker practice session 15
+- 2024-07-20: react practice session 16

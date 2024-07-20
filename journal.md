@@ -3153,3 +3153,4 @@
 - 2024-07-20: testing practice session 21
 - 2024-07-20: api-design practice session 22
 - 2024-07-20: ci-cd practice session 23
+- 2024-07-20: docker practice session 24

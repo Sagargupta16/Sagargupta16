@@ -3152,3 +3152,4 @@
 - 2024-07-20: security practice session 20
 - 2024-07-20: testing practice session 21
 - 2024-07-20: api-design practice session 22
+- 2024-07-20: ci-cd practice session 23

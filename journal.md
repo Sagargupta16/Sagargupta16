@@ -3144,3 +3144,4 @@
 - 2024-07-20: aws practice session 12
 - 2024-07-20: kubernetes practice session 13
 - 2024-07-20: testing practice session 14
+- 2024-07-20: docker practice session 15

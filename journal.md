@@ -3151,3 +3151,4 @@
 - 2024-07-20: git practice session 19
 - 2024-07-20: security practice session 20
 - 2024-07-20: testing practice session 21
+- 2024-07-20: api-design practice session 22

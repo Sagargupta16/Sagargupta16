@@ -3139,3 +3139,4 @@
 - 2024-07-20: postgresql practice session 7
 - 2024-07-20: docker practice session 8
 - 2024-07-20: ci-cd practice session 9
+- 2024-07-20: mongodb practice session 10

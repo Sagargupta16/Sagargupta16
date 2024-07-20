@@ -3137,3 +3137,4 @@
 - 2024-07-20: kubernetes practice session 5
 - 2024-07-20: api-design practice session 6
 - 2024-07-20: postgresql practice session 7
+- 2024-07-20: docker practice session 8

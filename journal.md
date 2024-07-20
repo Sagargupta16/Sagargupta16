@@ -3135,3 +3135,4 @@
 - 2024-07-20: testing practice session 3
 - 2024-07-20: testing practice session 4
 - 2024-07-20: kubernetes practice session 5
+- 2024-07-20: api-design practice session 6

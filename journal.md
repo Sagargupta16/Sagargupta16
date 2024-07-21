@@ -3155,3 +3155,4 @@
 - 2024-07-20: ci-cd practice session 23
 - 2024-07-20: docker practice session 24
 - 2024-07-20: ml practice session 25
+- 2024-07-21: git practice session 1

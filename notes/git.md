@@ -88,3 +88,4 @@
 - 2024-06-30: organize git section 79
 - 2024-07-10: organize git section 6
 - 2024-07-10: add git section 64
+- 2024-07-22: revise git section 79

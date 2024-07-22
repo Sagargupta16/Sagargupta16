@@ -103,3 +103,4 @@
 - 2024-05-13: revise fastapi section 31
 - 2024-06-20: refactor fastapi section 12
 - 2024-07-22: organize fastapi section 40
+- 2024-07-22: update fastapi section 45

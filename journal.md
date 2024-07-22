@@ -3157,3 +3157,4 @@
 - 2024-07-20: ml practice session 25
 - 2024-07-21: git practice session 1
 - 2024-07-22: mongodb practice session 1
+- 2024-07-22: git practice session 2

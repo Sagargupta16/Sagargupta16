@@ -100,3 +100,4 @@
 - 2024-07-10: update typescript section 59
 - 2024-07-10: improve typescript section 91
 - 2024-07-17: update typescript section 6
+- 2024-07-22: expand typescript section 33

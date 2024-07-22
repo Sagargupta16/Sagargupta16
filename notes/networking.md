@@ -83,3 +83,4 @@
 - 2024-07-08: add networking section 93
 - 2024-07-10: expand networking section 31
 - 2024-07-10: expand networking section 27
+- 2024-07-22: improve networking section 87

@@ -3161,3 +3161,4 @@
 - 2024-07-24: docker practice session 1
 - 2024-07-24: terraform practice session 2
 - 2024-07-24: security practice session 3
+- 2024-07-24: git practice session 4

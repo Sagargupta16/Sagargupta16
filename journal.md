@@ -3190,3 +3190,4 @@
 - 2024-07-24: javascript practice session 30
 - 2024-07-24: git practice session 31
 - 2024-07-24: ci-cd practice session 32
+- 2024-07-24: python practice session 33

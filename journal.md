@@ -3168,3 +3168,4 @@
 - 2024-07-24: security practice session 8
 - 2024-07-24: algorithms practice session 9
 - 2024-07-24: postgresql practice session 10
+- 2024-07-24: git practice session 11

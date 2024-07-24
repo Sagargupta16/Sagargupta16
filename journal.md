@@ -3164,3 +3164,4 @@
 - 2024-07-24: git practice session 4
 - 2024-07-24: ci-cd practice session 5
 - 2024-07-24: ml practice session 6
+- 2024-07-24: ml practice session 7

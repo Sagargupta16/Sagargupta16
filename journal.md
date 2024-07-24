@@ -3180,3 +3180,4 @@
 - 2024-07-24: mongodb practice session 20
 - 2024-07-24: postgresql practice session 21
 - 2024-07-24: algorithms practice session 22
+- 2024-07-24: api-design practice session 23

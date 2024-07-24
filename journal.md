@@ -3174,3 +3174,4 @@
 - 2024-07-24: python practice session 14
 - 2024-07-24: mongodb practice session 15
 - 2024-07-24: security practice session 16
+- 2024-07-24: testing practice session 17

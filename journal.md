@@ -3192,3 +3192,4 @@
 - 2024-07-24: ci-cd practice session 32
 - 2024-07-24: python practice session 33
 - 2024-07-24: docker practice session 34
+- 2024-07-24: linux practice session 35

@@ -3171,3 +3171,4 @@
 - 2024-07-24: git practice session 11
 - 2024-07-24: terraform practice session 12
 - 2024-07-24: debugging practice session 13
+- 2024-07-24: python practice session 14

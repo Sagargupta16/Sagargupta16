@@ -3172,3 +3172,4 @@
 - 2024-07-24: terraform practice session 12
 - 2024-07-24: debugging practice session 13
 - 2024-07-24: python practice session 14
+- 2024-07-24: mongodb practice session 15

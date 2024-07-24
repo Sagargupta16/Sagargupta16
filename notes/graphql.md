@@ -96,3 +96,4 @@
 - 2024-07-21: improve graphql section 19
 - 2024-07-22: refactor graphql section 19
 - 2024-07-22: update graphql section 60
+- 2024-07-24: revise graphql section 72

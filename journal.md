@@ -3169,3 +3169,4 @@
 - 2024-07-24: algorithms practice session 9
 - 2024-07-24: postgresql practice session 10
 - 2024-07-24: git practice session 11
+- 2024-07-24: terraform practice session 12

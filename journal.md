@@ -3159,3 +3159,4 @@
 - 2024-07-22: mongodb practice session 1
 - 2024-07-22: git practice session 2
 - 2024-07-24: docker practice session 1
+- 2024-07-24: terraform practice session 2

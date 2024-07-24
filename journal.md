@@ -3176,3 +3176,4 @@
 - 2024-07-24: security practice session 16
 - 2024-07-24: testing practice session 17
 - 2024-07-24: python practice session 18
+- 2024-07-24: terraform practice session 19

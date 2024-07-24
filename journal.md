@@ -3178,3 +3178,4 @@
 - 2024-07-24: python practice session 18
 - 2024-07-24: terraform practice session 19
 - 2024-07-24: mongodb practice session 20
+- 2024-07-24: postgresql practice session 21

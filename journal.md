@@ -3165,3 +3165,4 @@
 - 2024-07-24: ci-cd practice session 5
 - 2024-07-24: ml practice session 6
 - 2024-07-24: ml practice session 7
+- 2024-07-24: security practice session 8

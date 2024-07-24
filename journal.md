@@ -3182,3 +3182,4 @@
 - 2024-07-24: algorithms practice session 22
 - 2024-07-24: api-design practice session 23
 - 2024-07-24: postgresql practice session 24
+- 2024-07-24: aws practice session 25

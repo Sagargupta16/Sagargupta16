@@ -3196,3 +3196,4 @@
 - 2024-07-24: terraform practice session 36
 - 2024-07-28: react practice session 1
 - 2024-07-28: api-design practice session 2
+- 2024-07-28: kubernetes practice session 3

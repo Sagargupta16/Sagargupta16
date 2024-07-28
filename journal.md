@@ -3194,3 +3194,4 @@
 - 2024-07-24: docker practice session 34
 - 2024-07-24: linux practice session 35
 - 2024-07-24: terraform practice session 36
+- 2024-07-28: react practice session 1

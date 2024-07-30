@@ -3198,3 +3198,4 @@
 - 2024-07-28: api-design practice session 2
 - 2024-07-28: kubernetes practice session 3
 - 2024-07-30: kubernetes practice session 1
+- 2024-07-30: git practice session 2

@@ -3210,3 +3210,4 @@
 - 2024-07-31: terraform practice session 7
 - 2024-07-31: aws practice session 8
 - 2024-07-31: api-design practice session 9
+- 2024-07-31: ci-cd practice session 10

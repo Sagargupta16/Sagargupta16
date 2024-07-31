@@ -3201,3 +3201,4 @@
 - 2024-07-30: git practice session 2
 - 2024-07-30: security practice session 3
 - 2024-07-30: postgresql practice session 4
+- 2024-07-31: mongodb practice session 1

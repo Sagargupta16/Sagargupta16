@@ -3207,3 +3207,4 @@
 - 2024-07-31: data-structures practice session 4
 - 2024-07-31: algorithms practice session 5
 - 2024-07-31: javascript practice session 6
+- 2024-07-31: terraform practice session 7

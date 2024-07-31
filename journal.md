@@ -3203,3 +3203,4 @@
 - 2024-07-30: postgresql practice session 4
 - 2024-07-31: mongodb practice session 1
 - 2024-07-31: javascript practice session 2
+- 2024-07-31: kubernetes practice session 3

@@ -3213,3 +3213,4 @@
 - 2024-07-31: ci-cd practice session 10
 - 2024-07-31: ci-cd practice session 11
 - 2024-07-31: api-design practice session 12
+- 2024-08-01: mongodb practice session 1

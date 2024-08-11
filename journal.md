@@ -3220,3 +3220,4 @@
 - 2024-08-11: git practice session 4
 - 2024-08-11: react practice session 5
 - 2024-08-11: python practice session 6
+- 2024-08-11: javascript practice session 7

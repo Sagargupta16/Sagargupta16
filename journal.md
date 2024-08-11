@@ -3216,3 +3216,4 @@
 - 2024-08-01: mongodb practice session 1
 - 2024-08-11: postgresql practice session 1
 - 2024-08-11: terraform practice session 2
+- 2024-08-11: kubernetes practice session 3

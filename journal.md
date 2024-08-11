@@ -3218,3 +3218,4 @@
 - 2024-08-11: terraform practice session 2
 - 2024-08-11: kubernetes practice session 3
 - 2024-08-11: git practice session 4
+- 2024-08-11: react practice session 5

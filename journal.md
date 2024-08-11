@@ -3215,3 +3215,4 @@
 - 2024-07-31: api-design practice session 12
 - 2024-08-01: mongodb practice session 1
 - 2024-08-11: postgresql practice session 1
+- 2024-08-11: terraform practice session 2

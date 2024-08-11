@@ -3223,3 +3223,4 @@
 - 2024-08-11: javascript practice session 7
 - 2024-08-11: mongodb practice session 8
 - 2024-08-11: algorithms practice session 9
+- 2024-08-11: docker practice session 10

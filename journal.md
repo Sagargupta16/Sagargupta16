@@ -3258,3 +3258,4 @@
 - 2024-08-13: ci-cd practice session 30
 - 2024-08-13: algorithms practice session 31
 - 2024-08-13: kubernetes practice session 32
+- 2024-08-13: python practice session 33

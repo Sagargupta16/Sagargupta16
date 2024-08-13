@@ -3268,3 +3268,4 @@
 - 2024-08-13: testing practice session 40
 - 2024-08-13: postgresql practice session 41
 - 2024-08-13: testing practice session 42
+- 2024-08-13: aws practice session 43

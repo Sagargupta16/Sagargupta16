@@ -3252,3 +3252,4 @@
 - 2024-08-13: mongodb practice session 24
 - 2024-08-13: fastapi practice session 25
 - 2024-08-13: ci-cd practice session 26
+- 2024-08-13: kubernetes practice session 27

@@ -3256,3 +3256,4 @@
 - 2024-08-13: javascript practice session 28
 - 2024-08-13: data-structures practice session 29
 - 2024-08-13: ci-cd practice session 30
+- 2024-08-13: algorithms practice session 31

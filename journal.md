@@ -3235,3 +3235,4 @@
 - 2024-08-13: debugging practice session 7
 - 2024-08-13: docker practice session 8
 - 2024-08-13: fastapi practice session 9
+- 2024-08-13: api-design practice session 10

@@ -3231,3 +3231,4 @@
 - 2024-08-13: react practice session 3
 - 2024-08-13: terraform practice session 4
 - 2024-08-13: debugging practice session 5
+- 2024-08-13: python practice session 6

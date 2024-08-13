@@ -3257,3 +3257,4 @@
 - 2024-08-13: data-structures practice session 29
 - 2024-08-13: ci-cd practice session 30
 - 2024-08-13: algorithms practice session 31
+- 2024-08-13: kubernetes practice session 32

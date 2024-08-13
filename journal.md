@@ -3233,3 +3233,4 @@
 - 2024-08-13: debugging practice session 5
 - 2024-08-13: python practice session 6
 - 2024-08-13: debugging practice session 7
+- 2024-08-13: docker practice session 8

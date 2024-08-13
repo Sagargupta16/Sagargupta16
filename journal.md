@@ -3259,3 +3259,4 @@
 - 2024-08-13: algorithms practice session 31
 - 2024-08-13: kubernetes practice session 32
 - 2024-08-13: python practice session 33
+- 2024-08-13: api-design practice session 34

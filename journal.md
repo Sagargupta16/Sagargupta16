@@ -3228,3 +3228,4 @@
 - 2024-08-11: javascript practice session 12
 - 2024-08-13: testing practice session 1
 - 2024-08-13: react practice session 2
+- 2024-08-13: react practice session 3

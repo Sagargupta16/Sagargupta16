@@ -3239,3 +3239,4 @@
 - 2024-08-13: react practice session 11
 - 2024-08-13: fastapi practice session 12
 - 2024-08-13: security practice session 13
+- 2024-08-13: algorithms practice session 14

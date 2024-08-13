@@ -3242,3 +3242,4 @@
 - 2024-08-13: algorithms practice session 14
 - 2024-08-13: ci-cd practice session 15
 - 2024-08-13: ci-cd practice session 16
+- 2024-08-13: linux practice session 17

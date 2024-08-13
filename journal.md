@@ -3241,3 +3241,4 @@
 - 2024-08-13: security practice session 13
 - 2024-08-13: algorithms practice session 14
 - 2024-08-13: ci-cd practice session 15
+- 2024-08-13: ci-cd practice session 16

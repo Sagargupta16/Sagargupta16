@@ -3248,3 +3248,4 @@
 - 2024-08-13: security practice session 20
 - 2024-08-13: aws practice session 21
 - 2024-08-13: security practice session 22
+- 2024-08-13: algorithms practice session 23

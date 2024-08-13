@@ -3230,3 +3230,4 @@
 - 2024-08-13: react practice session 2
 - 2024-08-13: react practice session 3
 - 2024-08-13: terraform practice session 4
+- 2024-08-13: debugging practice session 5

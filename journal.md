@@ -3246,3 +3246,4 @@
 - 2024-08-13: kubernetes practice session 18
 - 2024-08-13: data-structures practice session 19
 - 2024-08-13: security practice session 20
+- 2024-08-13: aws practice session 21

@@ -3263,3 +3263,4 @@
 - 2024-08-13: react practice session 35
 - 2024-08-13: algorithms practice session 36
 - 2024-08-13: data-structures practice session 37
+- 2024-08-13: terraform practice session 38

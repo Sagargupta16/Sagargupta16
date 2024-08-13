@@ -3232,3 +3232,4 @@
 - 2024-08-13: terraform practice session 4
 - 2024-08-13: debugging practice session 5
 - 2024-08-13: python practice session 6
+- 2024-08-13: debugging practice session 7

@@ -96,3 +96,4 @@
 - 2024-07-22: improve linux section 75
 - 2024-07-31: update linux section 47
 - 2024-08-13: improve linux section 95
+- 2024-08-13: refactor linux section 66

@@ -3245,3 +3245,4 @@
 - 2024-08-13: linux practice session 17
 - 2024-08-13: kubernetes practice session 18
 - 2024-08-13: data-structures practice session 19
+- 2024-08-13: security practice session 20

@@ -104,3 +104,4 @@
 - 2024-08-12: update javascript section 23
 - 2024-08-16: expand javascript section 20
 - 2024-08-16: refactor javascript section 76
+- 2024-08-16: revise javascript section 97

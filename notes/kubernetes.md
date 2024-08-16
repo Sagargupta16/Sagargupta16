@@ -77,3 +77,4 @@
 - 2024-06-30: add kubernetes section 31
 - 2024-06-30: add kubernetes section 39
 - 2024-07-22: revise kubernetes section 40
+- 2024-08-16: update kubernetes section 79

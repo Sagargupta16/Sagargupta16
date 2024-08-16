@@ -107,3 +107,4 @@
 - 2024-07-06: refactor data-structures section 11
 - 2024-08-16: improve data-structures section 9
 - 2024-08-16: organize data-structures section 66
+- 2024-08-16: update data-structures section 20

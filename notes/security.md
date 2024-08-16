@@ -68,3 +68,4 @@
 - 2024-06-30: refactor security section 64
 - 2024-07-06: update security section 24
 - 2024-07-17: refactor security section 66
+- 2024-08-16: update security section 50

@@ -3271,3 +3271,4 @@
 - 2024-08-13: aws practice session 43
 - 2024-08-13: linux practice session 44
 - 2024-08-16: data-structures practice session 1
+- 2024-08-16: python practice session 2

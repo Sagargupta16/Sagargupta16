@@ -3275,3 +3275,4 @@
 - 2024-08-16: linux practice session 3
 - 2024-08-16: aws practice session 4
 - 2024-08-16: fastapi practice session 5
+- 2024-08-16: linux practice session 6

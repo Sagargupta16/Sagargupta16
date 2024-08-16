@@ -3278,3 +3278,4 @@
 - 2024-08-16: linux practice session 6
 - 2024-08-16: aws practice session 7
 - 2024-08-16: javascript practice session 8
+- 2024-08-16: security practice session 9

@@ -102,3 +102,4 @@
 - 2024-07-22: revise javascript section 35
 - 2024-07-22: organize javascript section 8
 - 2024-08-12: update javascript section 23
+- 2024-08-16: expand javascript section 20

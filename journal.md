@@ -3270,3 +3270,4 @@
 - 2024-08-13: testing practice session 42
 - 2024-08-13: aws practice session 43
 - 2024-08-13: linux practice session 44
+- 2024-08-16: data-structures practice session 1

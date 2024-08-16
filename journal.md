@@ -3273,3 +3273,4 @@
 - 2024-08-16: data-structures practice session 1
 - 2024-08-16: python practice session 2
 - 2024-08-16: linux practice session 3
+- 2024-08-16: aws practice session 4

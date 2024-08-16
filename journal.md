@@ -3277,3 +3277,4 @@
 - 2024-08-16: fastapi practice session 5
 - 2024-08-16: linux practice session 6
 - 2024-08-16: aws practice session 7
+- 2024-08-16: javascript practice session 8

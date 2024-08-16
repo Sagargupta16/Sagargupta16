@@ -94,3 +94,4 @@
 - 2024-08-11: refactor nginx section 53
 - 2024-08-15: organize nginx section 74
 - 2024-08-16: improve nginx section 93
+- 2024-08-16: add nginx section 22

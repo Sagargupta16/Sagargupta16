@@ -3282,3 +3282,4 @@
 - 2024-08-16: debugging practice session 10
 - 2024-08-17: security practice session 1
 - 2024-08-17: linux practice session 2
+- 2024-08-17: algorithms practice session 3

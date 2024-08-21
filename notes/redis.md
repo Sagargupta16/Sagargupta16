@@ -102,3 +102,4 @@
 - 2024-07-13: refactor redis section 47
 - 2024-07-17: organize redis section 11
 - 2024-07-22: refactor redis section 17
+- 2024-08-21: revise redis section 13

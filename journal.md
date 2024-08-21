@@ -3285,3 +3285,4 @@
 - 2024-08-17: algorithms practice session 3
 - 2024-08-19: debugging practice session 1
 - 2024-08-20: ci-cd practice session 1
+- 2024-08-21: aws practice session 1

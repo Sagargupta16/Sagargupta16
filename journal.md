@@ -3289,3 +3289,4 @@
 - 2024-08-21: fastapi practice session 2
 - 2024-08-21: linux practice session 3
 - 2024-08-21: algorithms practice session 4
+- 2024-08-21: algorithms practice session 5

@@ -3292,3 +3292,4 @@
 - 2024-08-21: algorithms practice session 5
 - 2024-08-21: postgresql practice session 6
 - 2024-08-21: data-structures practice session 7
+- 2024-08-22: fastapi practice session 1

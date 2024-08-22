@@ -3294,3 +3294,4 @@
 - 2024-08-21: data-structures practice session 7
 - 2024-08-22: fastapi practice session 1
 - 2024-08-22: mongodb practice session 2
+- 2024-08-22: ci-cd practice session 3

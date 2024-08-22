@@ -3295,3 +3295,4 @@
 - 2024-08-22: fastapi practice session 1
 - 2024-08-22: mongodb practice session 2
 - 2024-08-22: ci-cd practice session 3
+- 2024-08-22: react practice session 4

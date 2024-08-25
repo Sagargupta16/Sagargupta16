@@ -3324,3 +3324,4 @@
 - 2024-08-25: data-structures practice session 26
 - 2024-08-25: react practice session 27
 - 2024-08-25: javascript practice session 28
+- 2024-08-25: docker practice session 29

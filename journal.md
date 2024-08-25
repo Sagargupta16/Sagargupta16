@@ -3327,3 +3327,4 @@
 - 2024-08-25: docker practice session 29
 - 2024-08-25: debugging practice session 30
 - 2024-08-25: linux practice session 31
+- 2024-08-25: fastapi practice session 32

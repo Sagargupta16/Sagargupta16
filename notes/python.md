@@ -85,3 +85,4 @@
 - 2024-07-24: revise python section 80
 - 2024-08-16: add python section 37
 - 2024-08-16: add python section 93
+- 2024-08-25: improve python section 58

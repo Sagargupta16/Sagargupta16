@@ -3318,3 +3318,4 @@
 - 2024-08-25: ci-cd practice session 20
 - 2024-08-25: ml practice session 21
 - 2024-08-25: react practice session 22
+- 2024-08-25: security practice session 23

@@ -3334,3 +3334,4 @@
 - 2024-08-25: debugging practice session 36
 - 2024-08-25: mongodb practice session 37
 - 2024-08-25: react practice session 38
+- 2024-08-25: mongodb practice session 39

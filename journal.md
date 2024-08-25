@@ -3312,3 +3312,4 @@
 - 2024-08-25: javascript practice session 14
 - 2024-08-25: python practice session 15
 - 2024-08-25: mongodb practice session 16
+- 2024-08-25: kubernetes practice session 17

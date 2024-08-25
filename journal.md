@@ -3332,3 +3332,4 @@
 - 2024-08-25: git practice session 34
 - 2024-08-25: api-design practice session 35
 - 2024-08-25: debugging practice session 36
+- 2024-08-25: mongodb practice session 37

@@ -108,3 +108,4 @@
 - 2024-08-11: add django section 2
 - 2024-08-16: expand django section 12
 - 2024-08-22: refactor django section 67
+- 2024-08-25: expand django section 70

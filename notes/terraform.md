@@ -105,3 +105,4 @@
 - 2024-07-22: revise terraform section 23
 - 2024-08-22: organize terraform section 19
 - 2024-08-22: improve terraform section 95
+- 2024-08-25: add terraform section 74

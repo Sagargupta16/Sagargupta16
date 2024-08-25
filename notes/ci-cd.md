@@ -85,3 +85,4 @@
 - 2024-07-17: update ci-cd section 84
 - 2024-08-12: add ci-cd section 96
 - 2024-08-16: refactor ci-cd section 77
+- 2024-08-25: expand ci-cd section 83

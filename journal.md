@@ -3315,3 +3315,4 @@
 - 2024-08-25: kubernetes practice session 17
 - 2024-08-25: docker practice session 18
 - 2024-08-25: git practice session 19
+- 2024-08-25: ci-cd practice session 20

@@ -3329,3 +3329,4 @@
 - 2024-08-25: linux practice session 31
 - 2024-08-25: fastapi practice session 32
 - 2024-08-25: fastapi practice session 33
+- 2024-08-25: git practice session 34

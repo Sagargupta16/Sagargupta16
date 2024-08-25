@@ -3299,3 +3299,4 @@
 - 2024-08-25: ci-cd practice session 1
 - 2024-08-25: javascript practice session 2
 - 2024-08-25: docker practice session 3
+- 2024-08-25: docker practice session 4

@@ -3335,3 +3335,4 @@
 - 2024-08-25: mongodb practice session 37
 - 2024-08-25: react practice session 38
 - 2024-08-25: mongodb practice session 39
+- 2024-08-25: kubernetes practice session 40

@@ -92,3 +92,4 @@
 - 2024-07-10: update mongodb section 80
 - 2024-08-16: refactor mongodb section 47
 - 2024-08-21: update mongodb section 89
+- 2024-08-25: update mongodb section 75

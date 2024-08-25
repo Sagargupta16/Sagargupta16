@@ -3326,3 +3326,4 @@
 - 2024-08-25: javascript practice session 28
 - 2024-08-25: docker practice session 29
 - 2024-08-25: debugging practice session 30
+- 2024-08-25: linux practice session 31

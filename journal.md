@@ -3321,3 +3321,4 @@
 - 2024-08-25: security practice session 23
 - 2024-08-25: testing practice session 24
 - 2024-08-25: ml practice session 25
+- 2024-08-25: data-structures practice session 26

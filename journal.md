@@ -3309,3 +3309,4 @@
 - 2024-08-25: data-structures practice session 11
 - 2024-08-25: python practice session 12
 - 2024-08-25: mongodb practice session 13
+- 2024-08-25: javascript practice session 14

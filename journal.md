@@ -3313,3 +3313,4 @@
 - 2024-08-25: python practice session 15
 - 2024-08-25: mongodb practice session 16
 - 2024-08-25: kubernetes practice session 17
+- 2024-08-25: docker practice session 18

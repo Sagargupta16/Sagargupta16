@@ -3301,3 +3301,4 @@
 - 2024-08-25: docker practice session 3
 - 2024-08-25: docker practice session 4
 - 2024-08-25: git practice session 5
+- 2024-08-25: testing practice session 6

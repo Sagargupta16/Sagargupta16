@@ -3305,3 +3305,4 @@
 - 2024-08-25: postgresql practice session 7
 - 2024-08-25: postgresql practice session 8
 - 2024-08-25: ml practice session 9
+- 2024-08-25: ml practice session 10

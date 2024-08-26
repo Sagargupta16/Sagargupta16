@@ -3337,3 +3337,4 @@
 - 2024-08-25: mongodb practice session 39
 - 2024-08-25: kubernetes practice session 40
 - 2024-08-25: linux practice session 41
+- 2024-08-26: git practice session 1

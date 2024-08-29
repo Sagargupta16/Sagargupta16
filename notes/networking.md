@@ -86,3 +86,4 @@
 - 2024-07-22: improve networking section 87
 - 2024-08-21: refactor networking section 42
 - 2024-08-22: update networking section 35
+- 2024-08-29: organize networking section 32

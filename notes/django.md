@@ -111,3 +111,4 @@
 - 2024-08-25: expand django section 70
 - 2024-08-25: organize django section 99
 - 2024-08-25: expand django section 46
+- 2024-08-29: improve django section 83

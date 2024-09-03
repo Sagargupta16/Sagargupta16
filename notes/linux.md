@@ -100,3 +100,4 @@
 - 2024-08-21: expand linux section 4
 - 2024-08-21: revise linux section 42
 - 2024-08-25: organize linux section 65
+- 2024-09-03: revise linux section 47

@@ -3339,3 +3339,4 @@
 - 2024-08-25: linux practice session 41
 - 2024-08-26: git practice session 1
 - 2024-08-27: debugging practice session 1
+- 2024-09-03: linux practice session 1

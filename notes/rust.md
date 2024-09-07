@@ -111,3 +111,4 @@
 - 2024-07-21: refactor rust section 85
 - 2024-08-25: improve rust section 54
 - 2024-08-29: refactor rust section 43
+- 2024-09-07: refactor rust section 36

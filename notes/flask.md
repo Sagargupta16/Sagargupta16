@@ -90,3 +90,4 @@
 - 2024-08-21: add flask section 74
 - 2024-08-22: expand flask section 90
 - 2024-08-25: add flask section 86
+- 2024-09-07: revise flask section 20

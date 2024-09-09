@@ -3341,3 +3341,4 @@
 - 2024-08-27: debugging practice session 1
 - 2024-09-03: linux practice session 1
 - 2024-09-03: mongodb practice session 2
+- 2024-09-09: terraform practice session 1

@@ -106,3 +106,4 @@
 - 2024-08-16: update aws section 32
 - 2024-08-22: revise aws section 58
 - 2024-08-29: add aws section 83
+- 2024-09-10: improve aws section 98

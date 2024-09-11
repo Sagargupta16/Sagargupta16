@@ -114,3 +114,4 @@
 - 2024-09-07: refactor devops section 96
 - 2024-09-11: revise devops section 27
 - 2024-09-11: expand devops section 85
+- 2024-09-11: refactor devops section 40

@@ -3355,3 +3355,4 @@
 - 2024-09-11: security practice session 9
 - 2024-09-11: git practice session 10
 - 2024-09-11: react practice session 11
+- 2024-09-11: ml practice session 12

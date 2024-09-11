@@ -3349,3 +3349,4 @@
 - 2024-09-11: api-design practice session 3
 - 2024-09-11: git practice session 4
 - 2024-09-11: aws practice session 5
+- 2024-09-11: algorithms practice session 6

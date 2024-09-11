@@ -88,3 +88,4 @@
 - 2024-07-17: organize api-design section 73
 - 2024-07-22: update api-design section 36
 - 2024-07-22: update api-design section 49
+- 2024-09-11: revise api-design section 28

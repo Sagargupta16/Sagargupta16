@@ -3354,3 +3354,4 @@
 - 2024-09-11: linux practice session 8
 - 2024-09-11: security practice session 9
 - 2024-09-11: git practice session 10
+- 2024-09-11: react practice session 11

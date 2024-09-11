@@ -3360,3 +3360,4 @@
 - 2024-09-11: security practice session 14
 - 2024-09-11: testing practice session 15
 - 2024-09-11: docker practice session 16
+- 2024-09-11: api-design practice session 17

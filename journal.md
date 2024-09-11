@@ -3362,3 +3362,4 @@
 - 2024-09-11: docker practice session 16
 - 2024-09-11: api-design practice session 17
 - 2024-09-11: react practice session 18
+- 2024-09-11: mongodb practice session 19

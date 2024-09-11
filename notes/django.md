@@ -114,3 +114,4 @@
 - 2024-08-29: improve django section 83
 - 2024-09-03: update django section 64
 - 2024-09-07: revise django section 77
+- 2024-09-11: update django section 37

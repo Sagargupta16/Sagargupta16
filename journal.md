@@ -3357,3 +3357,4 @@
 - 2024-09-11: react practice session 11
 - 2024-09-11: ml practice session 12
 - 2024-09-11: security practice session 13
+- 2024-09-11: security practice session 14

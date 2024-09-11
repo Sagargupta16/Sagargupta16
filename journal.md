@@ -3353,3 +3353,4 @@
 - 2024-09-11: postgresql practice session 7
 - 2024-09-11: linux practice session 8
 - 2024-09-11: security practice session 9
+- 2024-09-11: git practice session 10

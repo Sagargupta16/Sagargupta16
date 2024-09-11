@@ -3346,3 +3346,4 @@
 - 2024-09-10: terraform practice session 2
 - 2024-09-11: python practice session 1
 - 2024-09-11: mongodb practice session 2
+- 2024-09-11: api-design practice session 3

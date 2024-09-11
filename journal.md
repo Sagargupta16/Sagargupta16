@@ -3364,3 +3364,4 @@
 - 2024-09-11: react practice session 18
 - 2024-09-11: mongodb practice session 19
 - 2024-09-11: postgresql practice session 20
+- 2024-09-11: kubernetes practice session 21

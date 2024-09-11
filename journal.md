@@ -3348,3 +3348,4 @@
 - 2024-09-11: mongodb practice session 2
 - 2024-09-11: api-design practice session 3
 - 2024-09-11: git practice session 4
+- 2024-09-11: aws practice session 5

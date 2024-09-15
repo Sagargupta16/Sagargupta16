@@ -3370,3 +3370,4 @@
 - 2024-09-15: debugging practice session 2
 - 2024-09-15: docker practice session 3
 - 2024-09-15: ci-cd practice session 4
+- 2024-09-15: docker practice session 5

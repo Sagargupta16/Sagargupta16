@@ -3371,3 +3371,4 @@
 - 2024-09-15: docker practice session 3
 - 2024-09-15: ci-cd practice session 4
 - 2024-09-15: docker practice session 5
+- 2024-09-15: kubernetes practice session 6

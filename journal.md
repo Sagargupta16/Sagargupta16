@@ -3372,3 +3372,4 @@
 - 2024-09-15: ci-cd practice session 4
 - 2024-09-15: docker practice session 5
 - 2024-09-15: kubernetes practice session 6
+- 2024-09-15: fastapi practice session 7

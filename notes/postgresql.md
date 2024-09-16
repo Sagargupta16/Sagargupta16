@@ -80,3 +80,4 @@
 - 2024-09-11: revise postgresql section 70
 - 2024-09-11: refactor postgresql section 73
 - 2024-09-16: organize postgresql section 85
+- 2024-09-16: revise postgresql section 11

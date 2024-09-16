@@ -102,3 +102,4 @@
 - 2024-08-22: add algorithms section 17
 - 2024-08-25: revise algorithms section 60
 - 2024-09-16: revise algorithms section 50
+- 2024-09-16: expand algorithms section 86

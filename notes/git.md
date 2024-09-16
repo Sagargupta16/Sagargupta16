@@ -96,3 +96,4 @@
 - 2024-08-25: revise git section 45
 - 2024-09-10: improve git section 56
 - 2024-09-11: update git section 2
+- 2024-09-16: add git section 8

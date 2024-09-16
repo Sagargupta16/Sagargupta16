@@ -3375,3 +3375,4 @@
 - 2024-09-15: fastapi practice session 7
 - 2024-09-15: security practice session 8
 - 2024-09-15: react practice session 9
+- 2024-09-16: ml practice session 1

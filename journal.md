@@ -3404,3 +3404,4 @@
 - 2024-09-24: git practice session 20
 - 2024-09-24: security practice session 21
 - 2024-09-24: linux practice session 22
+- 2024-09-24: javascript practice session 23

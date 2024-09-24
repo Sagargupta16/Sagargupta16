@@ -94,3 +94,4 @@
 - 2024-07-22: refactor nextjs section 61
 - 2024-09-16: add nextjs section 33
 - 2024-09-24: revise nextjs section 52
+- 2024-09-24: add nextjs section 8

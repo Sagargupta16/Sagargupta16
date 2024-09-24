@@ -3385,3 +3385,4 @@
 - 2024-09-24: docker practice session 1
 - 2024-09-24: python practice session 2
 - 2024-09-24: mongodb practice session 3
+- 2024-09-24: react practice session 4

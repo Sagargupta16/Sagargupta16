@@ -3398,3 +3398,4 @@
 - 2024-09-24: algorithms practice session 14
 - 2024-09-24: testing practice session 15
 - 2024-09-24: git practice session 16
+- 2024-09-24: python practice session 17

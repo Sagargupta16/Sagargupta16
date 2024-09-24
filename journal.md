@@ -3391,3 +3391,4 @@
 - 2024-09-24: algorithms practice session 7
 - 2024-09-24: debugging practice session 8
 - 2024-09-24: docker practice session 9
+- 2024-09-24: algorithms practice session 10

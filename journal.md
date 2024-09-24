@@ -3386,3 +3386,4 @@
 - 2024-09-24: python practice session 2
 - 2024-09-24: mongodb practice session 3
 - 2024-09-24: react practice session 4
+- 2024-09-24: algorithms practice session 5

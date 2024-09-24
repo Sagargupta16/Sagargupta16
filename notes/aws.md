@@ -111,3 +111,4 @@
 - 2024-09-16: refactor aws section 15
 - 2024-09-16: refactor aws section 11
 - 2024-09-16: revise aws section 35
+- 2024-09-24: revise aws section 32

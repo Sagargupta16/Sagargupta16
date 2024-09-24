@@ -3401,3 +3401,4 @@
 - 2024-09-24: python practice session 17
 - 2024-09-24: testing practice session 18
 - 2024-09-24: mongodb practice session 19
+- 2024-09-24: git practice session 20

@@ -3408,3 +3408,4 @@
 - 2024-09-24: security practice session 24
 - 2024-09-24: react practice session 25
 - 2024-09-24: kubernetes practice session 26
+- 2024-09-24: git practice session 27

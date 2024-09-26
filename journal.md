@@ -3416,3 +3416,4 @@
 - 2024-09-26: docker practice session 3
 - 2024-09-26: linux practice session 4
 - 2024-09-26: ml practice session 5
+- 2024-09-26: fastapi practice session 6

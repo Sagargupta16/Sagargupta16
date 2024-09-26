@@ -3411,3 +3411,4 @@
 - 2024-09-24: git practice session 27
 - 2024-09-24: testing practice session 28
 - 2024-09-24: aws practice session 29
+- 2024-09-26: mongodb practice session 1

@@ -3418,3 +3418,4 @@
 - 2024-09-26: ml practice session 5
 - 2024-09-26: fastapi practice session 6
 - 2024-09-26: debugging practice session 7
+- 2024-09-26: algorithms practice session 8

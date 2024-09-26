@@ -3420,3 +3420,4 @@
 - 2024-09-26: debugging practice session 7
 - 2024-09-26: algorithms practice session 8
 - 2024-09-26: kubernetes practice session 9
+- 2024-09-26: debugging practice session 10

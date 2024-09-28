@@ -3431,3 +3431,4 @@
 - 2024-09-28: mongodb practice session 7
 - 2024-09-28: javascript practice session 8
 - 2024-09-28: api-design practice session 9
+- 2024-09-28: terraform practice session 10

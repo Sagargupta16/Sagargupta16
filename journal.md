@@ -3427,3 +3427,4 @@
 - 2024-09-28: linux practice session 3
 - 2024-09-28: git practice session 4
 - 2024-09-28: testing practice session 5
+- 2024-09-28: testing practice session 6

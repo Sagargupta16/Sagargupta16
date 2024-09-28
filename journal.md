@@ -3424,3 +3424,4 @@
 - 2024-09-27: testing practice session 1
 - 2024-09-28: mongodb practice session 1
 - 2024-09-28: ci-cd practice session 2
+- 2024-09-28: linux practice session 3

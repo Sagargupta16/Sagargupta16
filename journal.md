@@ -3433,3 +3433,4 @@
 - 2024-09-28: api-design practice session 9
 - 2024-09-28: terraform practice session 10
 - 2024-09-29: react practice session 1
+- 2024-09-30: aws practice session 1

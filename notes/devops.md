@@ -118,3 +118,4 @@
 - 2024-09-11: refactor devops section 55
 - 2024-09-26: add devops section 4
 - 2024-09-29: organize devops section 13
+- 2024-09-30: organize devops section 73

@@ -3434,3 +3434,4 @@
 - 2024-09-28: terraform practice session 10
 - 2024-09-29: react practice session 1
 - 2024-09-30: aws practice session 1
+- 2024-10-02: fastapi practice session 1

@@ -3436,3 +3436,4 @@
 - 2024-09-30: aws practice session 1
 - 2024-10-02: fastapi practice session 1
 - 2024-10-02: algorithms practice session 2
+- 2024-10-02: debugging practice session 3

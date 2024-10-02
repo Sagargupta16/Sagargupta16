@@ -3438,3 +3438,4 @@
 - 2024-10-02: algorithms practice session 2
 - 2024-10-02: debugging practice session 3
 - 2024-10-02: git practice session 4
+- 2024-10-02: kubernetes practice session 5

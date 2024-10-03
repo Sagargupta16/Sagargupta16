@@ -3444,3 +3444,4 @@
 - 2024-10-03: kubernetes practice session 2
 - 2024-10-03: react practice session 3
 - 2024-10-03: python practice session 4
+- 2024-10-03: fastapi practice session 5

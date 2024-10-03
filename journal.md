@@ -3445,3 +3445,4 @@
 - 2024-10-03: react practice session 3
 - 2024-10-03: python practice session 4
 - 2024-10-03: fastapi practice session 5
+- 2024-10-03: aws practice session 6

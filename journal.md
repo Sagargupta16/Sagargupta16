@@ -3446,3 +3446,4 @@
 - 2024-10-03: python practice session 4
 - 2024-10-03: fastapi practice session 5
 - 2024-10-03: aws practice session 6
+- 2024-10-03: git practice session 7

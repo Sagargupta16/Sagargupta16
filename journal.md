@@ -3442,3 +3442,4 @@
 - 2024-10-02: docker practice session 6
 - 2024-10-03: fastapi practice session 1
 - 2024-10-03: kubernetes practice session 2
+- 2024-10-03: react practice session 3

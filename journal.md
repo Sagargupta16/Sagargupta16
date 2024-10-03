@@ -3450,3 +3450,4 @@
 - 2024-10-03: testing practice session 8
 - 2024-10-03: react practice session 9
 - 2024-10-03: postgresql practice session 10
+- 2024-10-03: react practice session 11

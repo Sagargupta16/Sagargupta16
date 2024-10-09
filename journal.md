@@ -3459,3 +3459,4 @@
 - 2024-10-09: kubernetes practice session 3
 - 2024-10-09: git practice session 4
 - 2024-10-09: api-design practice session 5
+- 2024-10-09: api-design practice session 6

@@ -3454,3 +3454,4 @@
 - 2024-10-06: data-structures practice session 1
 - 2024-10-06: git practice session 2
 - 2024-10-07: postgresql practice session 1
+- 2024-10-09: javascript practice session 1

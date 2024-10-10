@@ -3462,3 +3462,4 @@
 - 2024-10-09: api-design practice session 6
 - 2024-10-10: postgresql practice session 1
 - 2024-10-10: debugging practice session 2
+- 2024-10-10: postgresql practice session 3

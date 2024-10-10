@@ -3460,3 +3460,4 @@
 - 2024-10-09: git practice session 4
 - 2024-10-09: api-design practice session 5
 - 2024-10-09: api-design practice session 6
+- 2024-10-10: postgresql practice session 1

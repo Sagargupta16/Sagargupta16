@@ -97,3 +97,4 @@
 - 2024-09-11: update golang section 53
 - 2024-09-15: add golang section 67
 - 2024-09-16: refactor golang section 11
+- 2024-10-12: revise golang section 17

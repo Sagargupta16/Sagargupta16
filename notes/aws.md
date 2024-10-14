@@ -114,3 +114,4 @@
 - 2024-09-24: revise aws section 32
 - 2024-09-24: expand aws section 53
 - 2024-10-12: add aws section 93
+- 2024-10-14: add aws section 38

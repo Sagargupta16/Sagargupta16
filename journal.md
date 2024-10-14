@@ -3467,3 +3467,4 @@
 - 2024-10-14: linux practice session 2
 - 2024-10-14: ci-cd practice session 3
 - 2024-10-14: terraform practice session 4
+- 2024-10-14: kubernetes practice session 5

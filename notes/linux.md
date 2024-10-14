@@ -105,3 +105,4 @@
 - 2024-09-16: add linux section 70
 - 2024-09-16: improve linux section 6
 - 2024-09-16: organize linux section 51
+- 2024-10-14: improve linux section 47

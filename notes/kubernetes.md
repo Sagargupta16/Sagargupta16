@@ -88,3 +88,4 @@
 - 2024-09-16: update kubernetes section 79
 - 2024-09-26: organize kubernetes section 88
 - 2024-09-26: improve kubernetes section 28
+- 2024-10-14: revise kubernetes section 92

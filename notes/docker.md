@@ -101,3 +101,4 @@
 - 2024-08-25: add docker section 45
 - 2024-09-11: organize docker section 34
 - 2024-10-14: expand docker section 73
+- 2024-10-14: improve docker section 96

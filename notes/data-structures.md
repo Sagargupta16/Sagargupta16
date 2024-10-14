@@ -116,3 +116,4 @@
 - 2024-09-15: organize data-structures section 59
 - 2024-09-24: organize data-structures section 39
 - 2024-09-30: organize data-structures section 44
+- 2024-10-14: expand data-structures section 13

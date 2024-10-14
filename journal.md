@@ -3464,3 +3464,4 @@
 - 2024-10-10: debugging practice session 2
 - 2024-10-10: postgresql practice session 3
 - 2024-10-14: aws practice session 1
+- 2024-10-14: linux practice session 2

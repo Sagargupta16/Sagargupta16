@@ -90,3 +90,4 @@
 - 2024-08-31: expand ci-cd section 89
 - 2024-09-16: improve ci-cd section 48
 - 2024-09-29: refactor ci-cd section 72
+- 2024-10-14: improve ci-cd section 1

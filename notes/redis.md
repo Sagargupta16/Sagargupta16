@@ -111,3 +111,4 @@
 - 2024-09-11: add redis section 17
 - 2024-10-09: revise redis section 83
 - 2024-10-14: improve redis section 53
+- 2024-10-14: improve redis section 47

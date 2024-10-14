@@ -90,3 +90,4 @@
 - 2024-09-26: improve kubernetes section 28
 - 2024-10-14: revise kubernetes section 92
 - 2024-10-14: revise kubernetes section 92
+- 2024-10-14: improve kubernetes section 34

@@ -91,3 +91,4 @@
 - 2024-09-11: revise api-design section 28
 - 2024-09-18: update api-design section 51
 - 2024-09-29: expand api-design section 77
+- 2024-10-16: add api-design section 95

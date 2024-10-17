@@ -3471,3 +3471,4 @@
 - 2024-10-14: terraform practice session 6
 - 2024-10-14: testing practice session 7
 - 2024-10-17: terraform practice session 1
+- 2024-10-17: algorithms practice session 2

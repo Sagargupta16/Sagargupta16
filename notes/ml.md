@@ -112,3 +112,4 @@
 - 2024-09-16: improve ml section 75
 - 2024-09-16: revise ml section 48
 - 2024-09-16: refactor ml section 92
+- 2024-10-17: add ml section 3

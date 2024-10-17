@@ -3472,3 +3472,4 @@
 - 2024-10-14: testing practice session 7
 - 2024-10-17: terraform practice session 1
 - 2024-10-17: algorithms practice session 2
+- 2024-10-17: data-structures practice session 3

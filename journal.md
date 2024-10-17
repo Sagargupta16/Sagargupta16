@@ -3470,3 +3470,4 @@
 - 2024-10-14: kubernetes practice session 5
 - 2024-10-14: terraform practice session 6
 - 2024-10-14: testing practice session 7
+- 2024-10-17: terraform practice session 1

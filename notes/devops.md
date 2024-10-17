@@ -120,3 +120,4 @@
 - 2024-09-29: organize devops section 13
 - 2024-09-30: organize devops section 73
 - 2024-10-04: update devops section 64
+- 2024-10-17: expand devops section 2

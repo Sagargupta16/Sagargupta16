@@ -3480,3 +3480,4 @@
 - 2024-10-18: docker practice session 4
 - 2024-10-18: python practice session 5
 - 2024-10-18: debugging practice session 6
+- 2024-10-18: terraform practice session 7

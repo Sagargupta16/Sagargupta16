@@ -3479,3 +3479,4 @@
 - 2024-10-18: ml practice session 3
 - 2024-10-18: docker practice session 4
 - 2024-10-18: python practice session 5
+- 2024-10-18: debugging practice session 6

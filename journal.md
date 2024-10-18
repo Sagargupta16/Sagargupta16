@@ -3477,3 +3477,4 @@
 - 2024-10-18: fastapi practice session 1
 - 2024-10-18: postgresql practice session 2
 - 2024-10-18: ml practice session 3
+- 2024-10-18: docker practice session 4

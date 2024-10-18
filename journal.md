@@ -3474,3 +3474,4 @@
 - 2024-10-17: algorithms practice session 2
 - 2024-10-17: data-structures practice session 3
 - 2024-10-17: terraform practice session 4
+- 2024-10-18: fastapi practice session 1

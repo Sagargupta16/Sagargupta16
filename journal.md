@@ -3483,3 +3483,4 @@
 - 2024-10-18: terraform practice session 7
 - 2024-10-19: python practice session 1
 - 2024-10-19: postgresql practice session 2
+- 2024-10-19: git practice session 3

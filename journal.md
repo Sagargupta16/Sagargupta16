@@ -3481,3 +3481,4 @@
 - 2024-10-18: python practice session 5
 - 2024-10-18: debugging practice session 6
 - 2024-10-18: terraform practice session 7
+- 2024-10-19: python practice session 1

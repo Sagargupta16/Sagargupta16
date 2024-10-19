@@ -100,3 +100,4 @@
 - 2024-09-16: add git section 87
 - 2024-10-10: add git section 6
 - 2024-10-14: organize git section 60
+- 2024-10-19: add git section 9

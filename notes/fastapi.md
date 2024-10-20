@@ -115,3 +115,4 @@
 - 2024-10-09: expand fastapi section 35
 - 2024-10-14: add fastapi section 21
 - 2024-10-17: improve fastapi section 20
+- 2024-10-20: update fastapi section 20

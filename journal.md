@@ -3500,3 +3500,4 @@
 - 2024-10-20: ci-cd practice session 14
 - 2024-10-20: debugging practice session 15
 - 2024-10-20: ml practice session 16
+- 2024-10-20: debugging practice session 17

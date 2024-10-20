@@ -114,3 +114,4 @@
 - 2024-08-21: update react section 57
 - 2024-09-09: improve react section 19
 - 2024-10-10: expand react section 1
+- 2024-10-20: revise react section 73

@@ -3513,3 +3513,4 @@
 - 2024-10-20: linux practice session 27
 - 2024-10-20: api-design practice session 28
 - 2024-10-20: linux practice session 29
+- 2024-10-20: react practice session 30

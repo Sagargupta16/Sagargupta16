@@ -3490,3 +3490,4 @@
 - 2024-10-20: docker practice session 4
 - 2024-10-20: data-structures practice session 5
 - 2024-10-20: testing practice session 6
+- 2024-10-20: algorithms practice session 7

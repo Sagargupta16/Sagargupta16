@@ -115,3 +115,4 @@
 - 2024-10-14: add terraform section 94
 - 2024-10-14: add terraform section 53
 - 2024-10-17: refactor terraform section 54
+- 2024-10-20: expand terraform section 5

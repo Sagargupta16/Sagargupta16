@@ -3502,3 +3502,4 @@
 - 2024-10-20: ml practice session 16
 - 2024-10-20: debugging practice session 17
 - 2024-10-20: api-design practice session 18
+- 2024-10-20: security practice session 19

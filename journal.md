@@ -3493,3 +3493,4 @@
 - 2024-10-20: algorithms practice session 7
 - 2024-10-20: git practice session 8
 - 2024-10-20: python practice session 9
+- 2024-10-20: ml practice session 10

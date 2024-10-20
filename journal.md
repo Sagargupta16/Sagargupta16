@@ -3506,3 +3506,4 @@
 - 2024-10-20: api-design practice session 20
 - 2024-10-20: fastapi practice session 21
 - 2024-10-20: kubernetes practice session 22
+- 2024-10-20: ci-cd practice session 23

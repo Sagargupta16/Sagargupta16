@@ -3497,3 +3497,4 @@
 - 2024-10-20: ml practice session 11
 - 2024-10-20: fastapi practice session 12
 - 2024-10-20: data-structures practice session 13
+- 2024-10-20: ci-cd practice session 14

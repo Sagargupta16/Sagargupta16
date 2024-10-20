@@ -3504,3 +3504,4 @@
 - 2024-10-20: api-design practice session 18
 - 2024-10-20: security practice session 19
 - 2024-10-20: api-design practice session 20
+- 2024-10-20: fastapi practice session 21

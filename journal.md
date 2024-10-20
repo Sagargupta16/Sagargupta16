@@ -3509,3 +3509,4 @@
 - 2024-10-20: ci-cd practice session 23
 - 2024-10-20: linux practice session 24
 - 2024-10-20: terraform practice session 25
+- 2024-10-20: security practice session 26

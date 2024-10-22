@@ -3521,3 +3521,4 @@
 - 2024-10-22: algorithms practice session 2
 - 2024-10-22: terraform practice session 3
 - 2024-10-22: fastapi practice session 4
+- 2024-10-22: ml practice session 5

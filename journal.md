@@ -3527,3 +3527,4 @@
 - 2024-10-22: aws practice session 8
 - 2024-10-22: terraform practice session 9
 - 2024-10-22: react practice session 10
+- 2024-10-22: algorithms practice session 11

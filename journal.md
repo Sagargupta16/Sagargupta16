@@ -3525,3 +3525,4 @@
 - 2024-10-22: aws practice session 6
 - 2024-10-22: security practice session 7
 - 2024-10-22: aws practice session 8
+- 2024-10-22: terraform practice session 9

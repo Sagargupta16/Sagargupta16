@@ -3523,3 +3523,4 @@
 - 2024-10-22: fastapi practice session 4
 - 2024-10-22: ml practice session 5
 - 2024-10-22: aws practice session 6
+- 2024-10-22: security practice session 7

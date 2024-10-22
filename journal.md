@@ -3538,3 +3538,4 @@
 - 2024-10-22: kubernetes practice session 19
 - 2024-10-22: docker practice session 20
 - 2024-10-22: postgresql practice session 21
+- 2024-10-22: security practice session 22

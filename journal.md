@@ -3532,3 +3532,4 @@
 - 2024-10-22: data-structures practice session 13
 - 2024-10-22: api-design practice session 14
 - 2024-10-22: ci-cd practice session 15
+- 2024-10-22: api-design practice session 16

@@ -3517,3 +3517,4 @@
 - 2024-10-21: aws practice session 1
 - 2024-10-21: testing practice session 2
 - 2024-10-21: fastapi practice session 3
+- 2024-10-22: ci-cd practice session 1

@@ -3536,3 +3536,4 @@
 - 2024-10-22: kubernetes practice session 17
 - 2024-10-22: algorithms practice session 18
 - 2024-10-22: kubernetes practice session 19
+- 2024-10-22: docker practice session 20

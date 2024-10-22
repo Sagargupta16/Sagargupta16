@@ -95,3 +95,4 @@
 - 2024-09-16: add nextjs section 33
 - 2024-09-24: revise nextjs section 52
 - 2024-09-24: add nextjs section 8
+- 2024-10-22: improve nextjs section 70

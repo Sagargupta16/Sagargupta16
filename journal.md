@@ -3541,3 +3541,4 @@
 - 2024-10-22: security practice session 22
 - 2024-10-22: postgresql practice session 23
 - 2024-10-22: security practice session 24
+- 2024-10-23: postgresql practice session 1

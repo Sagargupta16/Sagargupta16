@@ -113,3 +113,4 @@
 - 2024-10-14: improve redis section 53
 - 2024-10-14: improve redis section 47
 - 2024-10-18: organize redis section 32
+- 2024-10-23: revise redis section 78

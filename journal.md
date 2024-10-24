@@ -3561,3 +3561,4 @@
 - 2024-10-24: debugging practice session 14
 - 2024-10-24: api-design practice session 15
 - 2024-10-24: python practice session 16
+- 2024-10-24: mongodb practice session 17

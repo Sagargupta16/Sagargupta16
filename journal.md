@@ -3548,3 +3548,4 @@
 - 2024-10-24: mongodb practice session 1
 - 2024-10-24: git practice session 2
 - 2024-10-24: fastapi practice session 3
+- 2024-10-24: fastapi practice session 4

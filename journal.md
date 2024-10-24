@@ -3562,3 +3562,4 @@
 - 2024-10-24: api-design practice session 15
 - 2024-10-24: python practice session 16
 - 2024-10-24: mongodb practice session 17
+- 2024-10-24: linux practice session 18

@@ -3550,3 +3550,4 @@
 - 2024-10-24: fastapi practice session 3
 - 2024-10-24: fastapi practice session 4
 - 2024-10-24: docker practice session 5
+- 2024-10-24: docker practice session 6

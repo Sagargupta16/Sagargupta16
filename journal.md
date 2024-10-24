@@ -3563,3 +3563,4 @@
 - 2024-10-24: python practice session 16
 - 2024-10-24: mongodb practice session 17
 - 2024-10-24: linux practice session 18
+- 2024-10-24: debugging practice session 19

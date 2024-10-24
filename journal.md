@@ -3564,3 +3564,4 @@
 - 2024-10-24: mongodb practice session 17
 - 2024-10-24: linux practice session 18
 - 2024-10-24: debugging practice session 19
+- 2024-10-24: ci-cd practice session 20

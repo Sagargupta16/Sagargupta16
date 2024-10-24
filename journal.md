@@ -3546,3 +3546,4 @@
 - 2024-10-23: ci-cd practice session 3
 - 2024-10-23: docker practice session 4
 - 2024-10-24: mongodb practice session 1
+- 2024-10-24: git practice session 2

@@ -3554,3 +3554,4 @@
 - 2024-10-24: python practice session 7
 - 2024-10-24: aws practice session 8
 - 2024-10-24: debugging practice session 9
+- 2024-10-24: algorithms practice session 10

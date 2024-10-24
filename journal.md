@@ -3567,3 +3567,4 @@
 - 2024-10-24: ci-cd practice session 20
 - 2024-10-24: docker practice session 21
 - 2024-10-24: postgresql practice session 22
+- 2024-10-24: react practice session 23

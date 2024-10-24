@@ -3558,3 +3558,4 @@
 - 2024-10-24: kubernetes practice session 11
 - 2024-10-24: aws practice session 12
 - 2024-10-24: kubernetes practice session 13
+- 2024-10-24: debugging practice session 14

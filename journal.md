@@ -3552,3 +3552,4 @@
 - 2024-10-24: docker practice session 5
 - 2024-10-24: docker practice session 6
 - 2024-10-24: python practice session 7
+- 2024-10-24: aws practice session 8

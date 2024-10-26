@@ -3574,3 +3574,4 @@
 - 2024-10-26: postgresql practice session 3
 - 2024-10-26: testing practice session 4
 - 2024-10-26: docker practice session 5
+- 2024-10-26: javascript practice session 6

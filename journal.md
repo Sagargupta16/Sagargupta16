@@ -3576,3 +3576,4 @@
 - 2024-10-26: docker practice session 5
 - 2024-10-26: javascript practice session 6
 - 2024-10-26: debugging practice session 7
+- 2024-10-26: data-structures practice session 8

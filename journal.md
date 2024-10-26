@@ -3580,3 +3580,4 @@
 - 2024-10-26: api-design practice session 9
 - 2024-10-26: git practice session 10
 - 2024-10-26: python practice session 11
+- 2024-10-26: kubernetes practice session 12

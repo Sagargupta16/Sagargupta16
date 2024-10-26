@@ -3578,3 +3578,4 @@
 - 2024-10-26: debugging practice session 7
 - 2024-10-26: data-structures practice session 8
 - 2024-10-26: api-design practice session 9
+- 2024-10-26: git practice session 10

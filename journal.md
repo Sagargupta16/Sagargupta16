@@ -3571,3 +3571,4 @@
 - 2024-10-25: react practice session 1
 - 2024-10-26: postgresql practice session 1
 - 2024-10-26: linux practice session 2
+- 2024-10-26: postgresql practice session 3

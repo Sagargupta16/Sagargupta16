@@ -103,3 +103,4 @@
 - 2024-10-14: expand docker section 73
 - 2024-10-14: improve docker section 96
 - 2024-10-17: add docker section 61
+- 2024-10-28: expand docker section 83

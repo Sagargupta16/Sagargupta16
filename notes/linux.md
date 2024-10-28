@@ -107,3 +107,4 @@
 - 2024-09-16: organize linux section 51
 - 2024-10-14: improve linux section 47
 - 2024-10-23: refactor linux section 55
+- 2024-10-28: expand linux section 27

@@ -95,3 +95,4 @@
 - 2024-08-25: update mongodb section 75
 - 2024-08-31: update mongodb section 54
 - 2024-10-10: organize mongodb section 20
+- 2024-10-28: improve mongodb section 10

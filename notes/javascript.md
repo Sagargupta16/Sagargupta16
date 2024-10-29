@@ -110,3 +110,4 @@
 - 2024-08-29: revise javascript section 4
 - 2024-09-16: update javascript section 97
 - 2024-09-16: revise javascript section 13
+- 2024-10-29: improve javascript section 48

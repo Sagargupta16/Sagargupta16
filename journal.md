@@ -3582,3 +3582,4 @@
 - 2024-10-26: python practice session 11
 - 2024-10-26: kubernetes practice session 12
 - 2024-10-29: kubernetes practice session 1
+- 2024-10-30: algorithms practice session 1

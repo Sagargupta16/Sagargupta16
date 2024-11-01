@@ -3586,3 +3586,4 @@
 - 2024-10-30: git practice session 2
 - 2024-11-01: ml practice session 1
 - 2024-11-01: ml practice session 2
+- 2024-11-01: testing practice session 3

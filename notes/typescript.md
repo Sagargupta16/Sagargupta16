@@ -108,3 +108,4 @@
 - 2024-09-07: update typescript section 83
 - 2024-09-11: update typescript section 14
 - 2024-11-01: refactor typescript section 82
+- 2024-11-02: add typescript section 81

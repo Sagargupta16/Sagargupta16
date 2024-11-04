@@ -3588,3 +3588,4 @@
 - 2024-11-01: ml practice session 2
 - 2024-11-01: testing practice session 3
 - 2024-11-01: algorithms practice session 4
+- 2024-11-04: algorithms practice session 1

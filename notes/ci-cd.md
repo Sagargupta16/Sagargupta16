@@ -93,3 +93,4 @@
 - 2024-10-14: improve ci-cd section 1
 - 2024-10-31: add ci-cd section 83
 - 2024-11-03: add ci-cd section 53
+- 2024-11-04: expand ci-cd section 87

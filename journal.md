@@ -3591,3 +3591,4 @@
 - 2024-11-04: algorithms practice session 1
 - 2024-11-04: python practice session 2
 - 2024-11-06: docker practice session 1
+- 2024-11-06: postgresql practice session 2

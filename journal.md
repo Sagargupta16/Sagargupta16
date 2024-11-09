@@ -3596,3 +3596,4 @@
 - 2024-11-08: kubernetes practice session 1
 - 2024-11-08: python practice session 2
 - 2024-11-08: python practice session 3
+- 2024-11-09: ml practice session 1

@@ -3602,3 +3602,4 @@
 - 2024-11-10: terraform practice session 3
 - 2024-11-10: data-structures practice session 4
 - 2024-11-10: kubernetes practice session 5
+- 2024-11-10: kubernetes practice session 6

@@ -86,3 +86,4 @@
 - 2024-10-22: add postgresql section 37
 - 2024-11-01: add postgresql section 68
 - 2024-11-03: update postgresql section 40
+- 2024-11-10: revise postgresql section 38

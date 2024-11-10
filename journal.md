@@ -3600,3 +3600,4 @@
 - 2024-11-10: git practice session 1
 - 2024-11-10: docker practice session 2
 - 2024-11-10: terraform practice session 3
+- 2024-11-10: data-structures practice session 4

@@ -3604,3 +3604,4 @@
 - 2024-11-10: kubernetes practice session 5
 - 2024-11-10: kubernetes practice session 6
 - 2024-11-10: data-structures practice session 7
+- 2024-11-11: debugging practice session 1

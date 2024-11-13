@@ -3613,3 +3613,4 @@
 - 2024-11-13: javascript practice session 5
 - 2024-11-13: kubernetes practice session 6
 - 2024-11-13: testing practice session 7
+- 2024-11-13: ci-cd practice session 8

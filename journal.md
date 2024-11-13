@@ -3615,3 +3615,4 @@
 - 2024-11-13: testing practice session 7
 - 2024-11-13: ci-cd practice session 8
 - 2024-11-13: ci-cd practice session 9
+- 2024-11-13: testing practice session 10

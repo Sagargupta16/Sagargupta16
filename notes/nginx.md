@@ -103,3 +103,4 @@
 - 2024-11-01: update nginx section 41
 - 2024-11-02: add nginx section 76
 - 2024-11-04: organize nginx section 39
+- 2024-11-13: update nginx section 96

@@ -122,3 +122,4 @@
 - 2024-10-31: add django section 42
 - 2024-11-01: update django section 76
 - 2024-11-13: revise django section 76
+- 2024-11-13: revise django section 15

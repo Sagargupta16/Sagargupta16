@@ -117,3 +117,4 @@
 - 2024-10-28: expand testing section 42
 - 2024-11-01: improve testing section 7
 - 2024-11-13: organize testing section 89
+- 2024-11-13: update testing section 84

@@ -3617,3 +3617,4 @@
 - 2024-11-13: ci-cd practice session 9
 - 2024-11-13: testing practice session 10
 - 2024-11-13: react practice session 11
+- 2024-11-13: linux practice session 12

@@ -3606,3 +3606,4 @@
 - 2024-11-10: data-structures practice session 7
 - 2024-11-11: debugging practice session 1
 - 2024-11-11: testing practice session 2
+- 2024-11-13: javascript practice session 1

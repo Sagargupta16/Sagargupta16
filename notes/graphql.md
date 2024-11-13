@@ -105,3 +105,4 @@
 - 2024-09-07: improve graphql section 66
 - 2024-09-09: expand graphql section 40
 - 2024-09-11: add graphql section 50
+- 2024-11-13: revise graphql section 54

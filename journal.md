@@ -3610,3 +3610,4 @@
 - 2024-11-13: python practice session 2
 - 2024-11-13: postgresql practice session 3
 - 2024-11-13: security practice session 4
+- 2024-11-13: javascript practice session 5

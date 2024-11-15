@@ -3619,3 +3619,4 @@
 - 2024-11-13: react practice session 11
 - 2024-11-13: linux practice session 12
 - 2024-11-15: kubernetes practice session 1
+- 2024-11-15: ml practice session 2

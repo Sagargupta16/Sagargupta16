@@ -3620,3 +3620,4 @@
 - 2024-11-13: linux practice session 12
 - 2024-11-15: kubernetes practice session 1
 - 2024-11-15: ml practice session 2
+- 2024-11-15: security practice session 3

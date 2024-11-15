@@ -3628,3 +3628,4 @@
 - 2024-11-15: security practice session 8
 - 2024-11-15: algorithms practice session 9
 - 2024-11-15: postgresql practice session 10
+- 2024-11-15: aws practice session 11

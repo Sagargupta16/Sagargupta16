@@ -3626,3 +3626,4 @@
 - 2024-11-15: data-structures practice session 6
 - 2024-11-15: api-design practice session 7
 - 2024-11-15: security practice session 8
+- 2024-11-15: algorithms practice session 9

@@ -3622,3 +3622,4 @@
 - 2024-11-15: ml practice session 2
 - 2024-11-15: security practice session 3
 - 2024-11-15: docker practice session 4
+- 2024-11-15: python practice session 5

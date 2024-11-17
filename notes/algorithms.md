@@ -108,3 +108,4 @@
 - 2024-09-29: update algorithms section 59
 - 2024-10-18: revise algorithms section 74
 - 2024-11-01: organize algorithms section 16
+- 2024-11-17: revise algorithms section 99

@@ -92,3 +92,4 @@
 - 2024-10-19: organize networking section 63
 - 2024-10-22: update networking section 73
 - 2024-11-02: update networking section 16
+- 2024-11-17: improve networking section 40

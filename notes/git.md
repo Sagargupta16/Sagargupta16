@@ -102,3 +102,4 @@
 - 2024-10-14: organize git section 60
 - 2024-10-19: add git section 9
 - 2024-11-04: refactor git section 32
+- 2024-11-18: revise git section 47

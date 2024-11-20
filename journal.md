@@ -3640,3 +3640,4 @@
 - 2024-11-20: ml practice session 5
 - 2024-11-20: postgresql practice session 6
 - 2024-11-20: ml practice session 7
+- 2024-11-20: security practice session 8

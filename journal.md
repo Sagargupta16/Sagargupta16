@@ -3635,3 +3635,4 @@
 - 2024-11-19: algorithms practice session 1
 - 2024-11-20: terraform practice session 1
 - 2024-11-20: mongodb practice session 2
+- 2024-11-20: security practice session 3

@@ -3642,3 +3642,4 @@
 - 2024-11-20: ml practice session 7
 - 2024-11-20: security practice session 8
 - 2024-11-20: terraform practice session 9
+- 2024-11-20: javascript practice session 10

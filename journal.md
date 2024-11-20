@@ -3644,3 +3644,4 @@
 - 2024-11-20: terraform practice session 9
 - 2024-11-20: javascript practice session 10
 - 2024-11-20: testing practice session 11
+- 2024-11-20: postgresql practice session 12

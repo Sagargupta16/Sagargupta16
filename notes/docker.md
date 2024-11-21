@@ -108,3 +108,4 @@
 - 2024-11-18: organize docker section 42
 - 2024-11-21: add docker section 1
 - 2024-11-21: update docker section 24
+- 2024-11-21: add docker section 60

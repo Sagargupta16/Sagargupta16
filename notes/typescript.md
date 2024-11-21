@@ -111,3 +111,4 @@
 - 2024-11-02: add typescript section 81
 - 2024-11-13: refactor typescript section 77
 - 2024-11-13: expand typescript section 70
+- 2024-11-21: add typescript section 28

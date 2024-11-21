@@ -119,3 +119,4 @@
 - 2024-10-31: expand aws section 17
 - 2024-11-06: update aws section 39
 - 2024-11-10: update aws section 14
+- 2024-11-21: refactor aws section 11

@@ -93,3 +93,4 @@
 - 2024-10-14: improve python section 20
 - 2024-11-01: refactor python section 93
 - 2024-11-01: update python section 7
+- 2024-11-21: add python section 16

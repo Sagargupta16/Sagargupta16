@@ -82,3 +82,4 @@
 - 2024-11-13: organize security section 89
 - 2024-11-15: refactor security section 73
 - 2024-11-18: add security section 91
+- 2024-11-21: organize security section 1

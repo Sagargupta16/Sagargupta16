@@ -112,3 +112,4 @@
 - 2024-11-13: update linux section 90
 - 2024-11-18: refactor linux section 46
 - 2024-11-18: update linux section 48
+- 2024-11-23: update linux section 77

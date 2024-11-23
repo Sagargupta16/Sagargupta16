@@ -98,3 +98,4 @@
 - 2024-10-22: improve nextjs section 70
 - 2024-11-22: expand nextjs section 97
 - 2024-11-22: revise nextjs section 21
+- 2024-11-23: revise nextjs section 51

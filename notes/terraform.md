@@ -119,3 +119,4 @@
 - 2024-10-22: revise terraform section 94
 - 2024-10-23: revise terraform section 10
 - 2024-11-13: refactor terraform section 19
+- 2024-11-23: organize terraform section 6

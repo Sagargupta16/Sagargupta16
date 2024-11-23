@@ -101,3 +101,4 @@
 - 2024-10-18: refactor flask section 56
 - 2024-11-18: expand flask section 90
 - 2024-11-18: improve flask section 81
+- 2024-11-23: add flask section 12

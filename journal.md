@@ -3645,3 +3645,4 @@
 - 2024-11-20: javascript practice session 10
 - 2024-11-20: testing practice session 11
 - 2024-11-20: postgresql practice session 12
+- 2024-11-24: testing practice session 1

@@ -127,3 +127,4 @@
 - 2024-11-21: organize devops section 49
 - 2024-11-21: improve devops section 67
 - 2024-11-21: revise devops section 38
+- 2024-11-25: refactor devops section 61

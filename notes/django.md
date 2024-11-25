@@ -127,3 +127,4 @@
 - 2024-11-21: organize django section 46
 - 2024-11-23: organize django section 6
 - 2024-11-25: improve django section 99
+- 2024-11-25: improve django section 66

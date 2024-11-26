@@ -103,3 +103,4 @@
 - 2024-10-19: add git section 9
 - 2024-11-04: refactor git section 32
 - 2024-11-18: revise git section 47
+- 2024-11-26: expand git section 77

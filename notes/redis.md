@@ -119,3 +119,4 @@
 - 2024-11-21: organize redis section 39
 - 2024-11-21: add redis section 17
 - 2024-11-22: revise redis section 88
+- 2024-11-26: update redis section 87

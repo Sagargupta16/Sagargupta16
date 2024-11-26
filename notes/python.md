@@ -96,3 +96,4 @@
 - 2024-11-21: add python section 16
 - 2024-11-21: update python section 55
 - 2024-11-25: add python section 4
+- 2024-11-26: improve python section 2

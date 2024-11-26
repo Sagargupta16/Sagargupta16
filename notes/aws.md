@@ -122,3 +122,4 @@
 - 2024-11-21: refactor aws section 11
 - 2024-11-21: improve aws section 83
 - 2024-11-23: organize aws section 2
+- 2024-11-26: organize aws section 62

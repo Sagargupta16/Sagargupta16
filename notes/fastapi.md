@@ -123,3 +123,4 @@
 - 2024-11-23: add fastapi section 44
 - 2024-11-23: add fastapi section 66
 - 2024-11-26: refactor fastapi section 30
+- 2024-11-28: improve fastapi section 22

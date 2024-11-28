@@ -3647,3 +3647,4 @@
 - 2024-11-20: postgresql practice session 12
 - 2024-11-24: testing practice session 1
 - 2024-11-28: data-structures practice session 1
+- 2024-11-28: algorithms practice session 2

@@ -98,3 +98,4 @@
 - 2024-11-17: update ci-cd section 24
 - 2024-11-21: expand ci-cd section 69
 - 2024-11-28: expand ci-cd section 14
+- 2024-11-29: organize ci-cd section 5

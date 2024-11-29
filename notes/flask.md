@@ -105,3 +105,4 @@
 - 2024-11-24: update flask section 31
 - 2024-11-28: update flask section 33
 - 2024-11-28: revise flask section 36
+- 2024-11-29: add flask section 34

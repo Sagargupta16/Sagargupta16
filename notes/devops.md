@@ -129,3 +129,4 @@
 - 2024-11-21: revise devops section 38
 - 2024-11-25: refactor devops section 61
 - 2024-11-26: add devops section 42
+- 2024-11-29: update devops section 85

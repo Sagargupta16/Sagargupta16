@@ -130,3 +130,4 @@
 - 2024-11-25: improve django section 66
 - 2024-11-26: expand django section 6
 - 2024-11-29: expand django section 87
+- 2024-11-30: update django section 34

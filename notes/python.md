@@ -99,3 +99,4 @@
 - 2024-11-26: improve python section 2
 - 2024-11-30: improve python section 72
 - 2024-11-30: improve python section 91
+- 2024-11-30: expand python section 66

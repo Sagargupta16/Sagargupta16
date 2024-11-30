@@ -115,3 +115,4 @@
 - 2024-11-28: update typescript section 18
 - 2024-11-30: update typescript section 75
 - 2024-11-30: add typescript section 11
+- 2024-11-30: revise typescript section 19

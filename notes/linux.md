@@ -121,3 +121,4 @@
 - 2024-11-26: add linux section 73
 - 2024-11-29: update linux section 85
 - 2024-11-29: organize linux section 22
+- 2024-11-30: revise linux section 82

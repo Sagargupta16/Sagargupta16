@@ -110,3 +110,4 @@
 - 2024-11-01: organize algorithms section 16
 - 2024-11-17: revise algorithms section 99
 - 2024-11-28: expand algorithms section 96
+- 2024-11-30: organize algorithms section 67

@@ -123,3 +123,4 @@
 - 2024-11-26: refactor testing section 84
 - 2024-11-28: improve testing section 78
 - 2024-11-30: organize testing section 88
+- 2024-11-30: expand testing section 73

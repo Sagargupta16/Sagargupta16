@@ -3650,3 +3650,4 @@
 - 2024-11-28: algorithms practice session 2
 - 2024-11-30: ci-cd practice session 1
 - 2024-11-30: react practice session 2
+- 2024-11-30: javascript practice session 3

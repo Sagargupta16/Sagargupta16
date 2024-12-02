@@ -3654,3 +3654,4 @@
 - 2024-12-01: postgresql practice session 1
 - 2024-12-02: terraform practice session 1
 - 2024-12-02: security practice session 2
+- 2024-12-02: terraform practice session 3

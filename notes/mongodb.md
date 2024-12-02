@@ -100,3 +100,4 @@
 - 2024-11-26: add mongodb section 20
 - 2024-11-28: improve mongodb section 66
 - 2024-12-01: update mongodb section 29
+- 2024-12-02: expand mongodb section 47

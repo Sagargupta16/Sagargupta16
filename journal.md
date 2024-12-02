@@ -3655,3 +3655,4 @@
 - 2024-12-02: terraform practice session 1
 - 2024-12-02: security practice session 2
 - 2024-12-02: terraform practice session 3
+- 2024-12-02: terraform practice session 4

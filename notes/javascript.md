@@ -123,3 +123,4 @@
 - 2024-11-29: improve javascript section 12
 - 2024-11-29: add javascript section 54
 - 2024-11-30: add javascript section 13
+- 2024-12-04: add javascript section 41

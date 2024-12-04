@@ -122,3 +122,4 @@
 - 2024-11-14: update data-structures section 69
 - 2024-11-26: expand data-structures section 75
 - 2024-11-30: revise data-structures section 39
+- 2024-12-04: refactor data-structures section 25

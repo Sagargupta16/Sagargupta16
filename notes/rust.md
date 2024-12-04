@@ -122,3 +122,4 @@
 - 2024-11-23: update rust section 88
 - 2024-11-23: revise rust section 40
 - 2024-12-02: expand rust section 49
+- 2024-12-04: improve rust section 1

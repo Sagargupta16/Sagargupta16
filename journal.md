@@ -3657,3 +3657,4 @@
 - 2024-12-02: terraform practice session 3
 - 2024-12-02: terraform practice session 4
 - 2024-12-04: git practice session 1
+- 2024-12-06: fastapi practice session 1

@@ -3662,3 +3662,4 @@
 - 2024-12-06: data-structures practice session 3
 - 2024-12-06: security practice session 4
 - 2024-12-06: api-design practice session 5
+- 2024-12-06: javascript practice session 6

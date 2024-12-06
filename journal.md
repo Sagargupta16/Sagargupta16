@@ -3660,3 +3660,4 @@
 - 2024-12-06: fastapi practice session 1
 - 2024-12-06: postgresql practice session 2
 - 2024-12-06: data-structures practice session 3
+- 2024-12-06: security practice session 4

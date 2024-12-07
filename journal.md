@@ -3666,3 +3666,4 @@
 - 2024-12-06: algorithms practice session 7
 - 2024-12-07: aws practice session 1
 - 2024-12-07: javascript practice session 2
+- 2024-12-07: security practice session 3

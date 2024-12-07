@@ -3667,3 +3667,4 @@
 - 2024-12-07: aws practice session 1
 - 2024-12-07: javascript practice session 2
 - 2024-12-07: security practice session 3
+- 2024-12-07: ci-cd practice session 4

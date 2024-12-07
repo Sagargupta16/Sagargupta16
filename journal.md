@@ -3664,3 +3664,4 @@
 - 2024-12-06: api-design practice session 5
 - 2024-12-06: javascript practice session 6
 - 2024-12-06: algorithms practice session 7
+- 2024-12-07: aws practice session 1

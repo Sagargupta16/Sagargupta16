@@ -3669,3 +3669,4 @@
 - 2024-12-07: security practice session 3
 - 2024-12-07: ci-cd practice session 4
 - 2024-12-09: aws practice session 1
+- 2024-12-09: docker practice session 2

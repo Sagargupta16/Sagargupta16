@@ -3675,3 +3675,4 @@
 - 2024-12-10: ml practice session 2
 - 2024-12-10: api-design practice session 3
 - 2024-12-10: postgresql practice session 4
+- 2024-12-10: testing practice session 5

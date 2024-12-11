@@ -3677,3 +3677,4 @@
 - 2024-12-10: postgresql practice session 4
 - 2024-12-10: testing practice session 5
 - 2024-12-11: terraform practice session 1
+- 2024-12-11: react practice session 2

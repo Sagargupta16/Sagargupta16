@@ -3695,3 +3695,4 @@
 - 2024-12-11: api-design practice session 17
 - 2024-12-11: docker practice session 18
 - 2024-12-11: ci-cd practice session 19
+- 2024-12-11: javascript practice session 20

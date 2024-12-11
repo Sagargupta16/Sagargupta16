@@ -3681,3 +3681,4 @@
 - 2024-12-11: security practice session 3
 - 2024-12-11: data-structures practice session 4
 - 2024-12-11: debugging practice session 5
+- 2024-12-11: linux practice session 6

@@ -3689,3 +3689,4 @@
 - 2024-12-11: security practice session 11
 - 2024-12-11: aws practice session 12
 - 2024-12-11: aws practice session 13
+- 2024-12-11: debugging practice session 14

@@ -3694,3 +3694,4 @@
 - 2024-12-11: linux practice session 16
 - 2024-12-11: api-design practice session 17
 - 2024-12-11: docker practice session 18
+- 2024-12-11: ci-cd practice session 19

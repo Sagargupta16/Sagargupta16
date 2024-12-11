@@ -3683,3 +3683,4 @@
 - 2024-12-11: debugging practice session 5
 - 2024-12-11: linux practice session 6
 - 2024-12-11: docker practice session 7
+- 2024-12-11: mongodb practice session 8

@@ -3692,3 +3692,4 @@
 - 2024-12-11: debugging practice session 14
 - 2024-12-11: security practice session 15
 - 2024-12-11: linux practice session 16
+- 2024-12-11: api-design practice session 17

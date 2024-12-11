@@ -3678,3 +3678,4 @@
 - 2024-12-10: testing practice session 5
 - 2024-12-11: terraform practice session 1
 - 2024-12-11: react practice session 2
+- 2024-12-11: security practice session 3

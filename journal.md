@@ -3679,3 +3679,4 @@
 - 2024-12-11: terraform practice session 1
 - 2024-12-11: react practice session 2
 - 2024-12-11: security practice session 3
+- 2024-12-11: data-structures practice session 4

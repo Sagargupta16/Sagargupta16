@@ -3697,3 +3697,4 @@
 - 2024-12-11: ci-cd practice session 19
 - 2024-12-11: javascript practice session 20
 - 2024-12-11: security practice session 21
+- 2024-12-11: javascript practice session 22

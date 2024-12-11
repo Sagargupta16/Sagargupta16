@@ -3687,3 +3687,4 @@
 - 2024-12-11: linux practice session 9
 - 2024-12-11: python practice session 10
 - 2024-12-11: security practice session 11
+- 2024-12-11: aws practice session 12

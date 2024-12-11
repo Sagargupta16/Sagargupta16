@@ -3680,3 +3680,4 @@
 - 2024-12-11: react practice session 2
 - 2024-12-11: security practice session 3
 - 2024-12-11: data-structures practice session 4
+- 2024-12-11: debugging practice session 5

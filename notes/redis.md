@@ -123,3 +123,4 @@
 - 2024-11-26: update redis section 52
 - 2024-12-02: improve redis section 87
 - 2024-12-10: update redis section 25
+- 2024-12-12: refactor redis section 70

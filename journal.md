@@ -3698,3 +3698,4 @@
 - 2024-12-11: javascript practice session 20
 - 2024-12-11: security practice session 21
 - 2024-12-11: javascript practice session 22
+- 2024-12-13: api-design practice session 1

@@ -100,3 +100,4 @@
 - 2024-11-18: expand api-design section 81
 - 2024-11-26: improve api-design section 65
 - 2024-11-26: update api-design section 35
+- 2024-12-14: improve api-design section 14

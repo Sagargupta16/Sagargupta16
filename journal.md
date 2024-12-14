@@ -3700,3 +3700,4 @@
 - 2024-12-11: javascript practice session 22
 - 2024-12-13: api-design practice session 1
 - 2024-12-13: linux practice session 2
+- 2024-12-14: debugging practice session 1

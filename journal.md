@@ -3715,3 +3715,4 @@
 - 2024-12-15: react practice session 12
 - 2024-12-15: ci-cd practice session 13
 - 2024-12-15: terraform practice session 14
+- 2024-12-15: fastapi practice session 15

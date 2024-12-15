@@ -3728,3 +3728,4 @@
 - 2024-12-15: terraform practice session 25
 - 2024-12-15: docker practice session 26
 - 2024-12-15: javascript practice session 27
+- 2024-12-15: react practice session 28

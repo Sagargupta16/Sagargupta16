@@ -3711,3 +3711,4 @@
 - 2024-12-15: python practice session 8
 - 2024-12-15: javascript practice session 9
 - 2024-12-15: aws practice session 10
+- 2024-12-15: postgresql practice session 11

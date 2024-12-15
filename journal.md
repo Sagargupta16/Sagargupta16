@@ -3706,3 +3706,4 @@
 - 2024-12-15: algorithms practice session 3
 - 2024-12-15: security practice session 4
 - 2024-12-15: algorithms practice session 5
+- 2024-12-15: testing practice session 6

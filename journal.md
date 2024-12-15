@@ -3725,3 +3725,4 @@
 - 2024-12-15: data-structures practice session 22
 - 2024-12-15: python practice session 23
 - 2024-12-15: ml practice session 24
+- 2024-12-15: terraform practice session 25

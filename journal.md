@@ -3702,3 +3702,4 @@
 - 2024-12-13: linux practice session 2
 - 2024-12-14: debugging practice session 1
 - 2024-12-15: data-structures practice session 1
+- 2024-12-15: postgresql practice session 2

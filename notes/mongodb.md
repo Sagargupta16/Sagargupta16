@@ -101,3 +101,4 @@
 - 2024-11-28: improve mongodb section 66
 - 2024-12-01: update mongodb section 29
 - 2024-12-02: expand mongodb section 47
+- 2024-12-15: improve mongodb section 18

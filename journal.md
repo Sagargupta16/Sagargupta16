@@ -3721,3 +3721,4 @@
 - 2024-12-15: javascript practice session 18
 - 2024-12-15: data-structures practice session 19
 - 2024-12-15: fastapi practice session 20
+- 2024-12-15: fastapi practice session 21

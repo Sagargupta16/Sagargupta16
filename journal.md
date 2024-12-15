@@ -3723,3 +3723,4 @@
 - 2024-12-15: fastapi practice session 20
 - 2024-12-15: fastapi practice session 21
 - 2024-12-15: data-structures practice session 22
+- 2024-12-15: python practice session 23

@@ -3710,3 +3710,4 @@
 - 2024-12-15: ml practice session 7
 - 2024-12-15: python practice session 8
 - 2024-12-15: javascript practice session 9
+- 2024-12-15: aws practice session 10

@@ -3718,3 +3718,4 @@
 - 2024-12-15: fastapi practice session 15
 - 2024-12-15: algorithms practice session 16
 - 2024-12-15: ml practice session 17
+- 2024-12-15: javascript practice session 18

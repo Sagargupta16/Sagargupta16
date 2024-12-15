@@ -3719,3 +3719,4 @@
 - 2024-12-15: algorithms practice session 16
 - 2024-12-15: ml practice session 17
 - 2024-12-15: javascript practice session 18
+- 2024-12-15: data-structures practice session 19

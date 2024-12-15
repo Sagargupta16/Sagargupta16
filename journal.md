@@ -3709,3 +3709,4 @@
 - 2024-12-15: testing practice session 6
 - 2024-12-15: ml practice session 7
 - 2024-12-15: python practice session 8
+- 2024-12-15: javascript practice session 9

@@ -3729,3 +3729,4 @@
 - 2024-12-15: docker practice session 26
 - 2024-12-15: javascript practice session 27
 - 2024-12-15: react practice session 28
+- 2024-12-15: linux practice session 29

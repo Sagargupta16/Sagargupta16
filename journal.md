@@ -3713,3 +3713,4 @@
 - 2024-12-15: aws practice session 10
 - 2024-12-15: postgresql practice session 11
 - 2024-12-15: react practice session 12
+- 2024-12-15: ci-cd practice session 13

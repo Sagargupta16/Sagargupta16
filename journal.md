@@ -3732,3 +3732,4 @@
 - 2024-12-15: linux practice session 29
 - 2024-12-16: algorithms practice session 1
 - 2024-12-16: mongodb practice session 2
+- 2024-12-16: data-structures practice session 3

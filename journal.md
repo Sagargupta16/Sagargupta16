@@ -3734,3 +3734,4 @@
 - 2024-12-16: mongodb practice session 2
 - 2024-12-16: data-structures practice session 3
 - 2024-12-16: ml practice session 4
+- 2024-12-16: security practice session 5

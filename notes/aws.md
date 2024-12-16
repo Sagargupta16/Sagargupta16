@@ -127,3 +127,4 @@
 - 2024-11-29: update aws section 85
 - 2024-11-30: improve aws section 67
 - 2024-12-13: organize aws section 57
+- 2024-12-16: expand aws section 84

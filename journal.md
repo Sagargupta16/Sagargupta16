@@ -3739,3 +3739,4 @@
 - 2024-12-16: postgresql practice session 7
 - 2024-12-16: data-structures practice session 8
 - 2024-12-16: ml practice session 9
+- 2024-12-16: kubernetes practice session 10

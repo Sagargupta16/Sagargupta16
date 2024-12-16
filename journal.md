@@ -3737,3 +3737,4 @@
 - 2024-12-16: security practice session 5
 - 2024-12-16: git practice session 6
 - 2024-12-16: postgresql practice session 7
+- 2024-12-16: data-structures practice session 8

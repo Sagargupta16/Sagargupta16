@@ -3731,3 +3731,4 @@
 - 2024-12-15: react practice session 28
 - 2024-12-15: linux practice session 29
 - 2024-12-16: algorithms practice session 1
+- 2024-12-16: mongodb practice session 2

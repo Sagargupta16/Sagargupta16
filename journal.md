@@ -3736,3 +3736,4 @@
 - 2024-12-16: ml practice session 4
 - 2024-12-16: security practice session 5
 - 2024-12-16: git practice session 6
+- 2024-12-16: postgresql practice session 7

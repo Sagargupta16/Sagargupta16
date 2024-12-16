@@ -3741,3 +3741,4 @@
 - 2024-12-16: ml practice session 9
 - 2024-12-16: kubernetes practice session 10
 - 2024-12-16: python practice session 11
+- 2024-12-16: terraform practice session 12

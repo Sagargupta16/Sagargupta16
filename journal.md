@@ -3745,3 +3745,4 @@
 - 2024-12-17: fastapi practice session 1
 - 2024-12-17: testing practice session 2
 - 2024-12-17: python practice session 3
+- 2024-12-17: ci-cd practice session 4

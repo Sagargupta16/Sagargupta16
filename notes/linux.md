@@ -124,3 +124,4 @@
 - 2024-11-30: revise linux section 82
 - 2024-12-10: update linux section 58
 - 2024-12-13: improve linux section 32
+- 2024-12-17: refactor linux section 8

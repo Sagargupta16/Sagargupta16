@@ -103,3 +103,4 @@
 - 2024-12-02: improve nextjs section 97
 - 2024-12-17: refactor nextjs section 65
 - 2024-12-17: refactor nextjs section 72
+- 2024-12-17: expand nextjs section 60

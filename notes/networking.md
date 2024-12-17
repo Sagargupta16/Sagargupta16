@@ -101,3 +101,4 @@
 - 2024-11-29: improve networking section 64
 - 2024-11-30: expand networking section 33
 - 2024-11-30: improve networking section 27
+- 2024-12-17: revise networking section 66

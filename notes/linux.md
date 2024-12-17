@@ -127,3 +127,4 @@
 - 2024-12-17: refactor linux section 8
 - 2024-12-17: add linux section 73
 - 2024-12-17: improve linux section 68
+- 2024-12-17: revise linux section 43

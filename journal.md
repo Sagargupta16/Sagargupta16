@@ -3743,3 +3743,4 @@
 - 2024-12-16: python practice session 11
 - 2024-12-16: terraform practice session 12
 - 2024-12-17: fastapi practice session 1
+- 2024-12-17: testing practice session 2

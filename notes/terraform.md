@@ -122,3 +122,4 @@
 - 2024-11-23: organize terraform section 6
 - 2024-11-29: organize terraform section 2
 - 2024-12-09: add terraform section 55
+- 2024-12-17: expand terraform section 90

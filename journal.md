@@ -3759,3 +3759,4 @@
 - 2024-12-18: fastapi practice session 11
 - 2024-12-18: fastapi practice session 12
 - 2024-12-18: aws practice session 13
+- 2024-12-18: python practice session 14

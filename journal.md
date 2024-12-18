@@ -3752,3 +3752,4 @@
 - 2024-12-18: terraform practice session 4
 - 2024-12-18: linux practice session 5
 - 2024-12-18: kubernetes practice session 6
+- 2024-12-18: fastapi practice session 7

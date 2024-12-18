@@ -3754,3 +3754,4 @@
 - 2024-12-18: kubernetes practice session 6
 - 2024-12-18: fastapi practice session 7
 - 2024-12-18: javascript practice session 8
+- 2024-12-18: fastapi practice session 9

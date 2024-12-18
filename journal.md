@@ -3758,3 +3758,4 @@
 - 2024-12-18: data-structures practice session 10
 - 2024-12-18: fastapi practice session 11
 - 2024-12-18: fastapi practice session 12
+- 2024-12-18: aws practice session 13

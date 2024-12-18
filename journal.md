@@ -3761,3 +3761,4 @@
 - 2024-12-18: aws practice session 13
 - 2024-12-18: python practice session 14
 - 2024-12-18: python practice session 15
+- 2024-12-18: react practice session 16

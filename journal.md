@@ -3749,3 +3749,4 @@
 - 2024-12-18: aws practice session 1
 - 2024-12-18: kubernetes practice session 2
 - 2024-12-18: javascript practice session 3
+- 2024-12-18: terraform practice session 4

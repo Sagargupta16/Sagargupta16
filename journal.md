@@ -3762,3 +3762,4 @@
 - 2024-12-18: python practice session 14
 - 2024-12-18: python practice session 15
 - 2024-12-18: react practice session 16
+- 2024-12-20: data-structures practice session 1

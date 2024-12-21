@@ -128,3 +128,4 @@
 - 2024-12-12: improve redis section 10
 - 2024-12-17: refactor redis section 81
 - 2024-12-19: revise redis section 26
+- 2024-12-21: expand redis section 23

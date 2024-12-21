@@ -125,3 +125,4 @@
 - 2024-12-17: update react section 87
 - 2024-12-17: organize react section 4
 - 2024-12-20: update react section 42
+- 2024-12-21: revise react section 88

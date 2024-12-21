@@ -3765,3 +3765,4 @@
 - 2024-12-20: data-structures practice session 1
 - 2024-12-21: algorithms practice session 1
 - 2024-12-21: mongodb practice session 2
+- 2024-12-21: ci-cd practice session 3

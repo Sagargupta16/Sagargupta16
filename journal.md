@@ -3768,3 +3768,4 @@
 - 2024-12-21: ci-cd practice session 3
 - 2024-12-22: javascript practice session 1
 - 2024-12-22: kubernetes practice session 2
+- 2024-12-22: postgresql practice session 3

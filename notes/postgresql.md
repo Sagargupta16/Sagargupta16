@@ -97,3 +97,4 @@
 - 2024-11-29: update postgresql section 17
 - 2024-12-17: improve postgresql section 94
 - 2024-12-17: update postgresql section 37
+- 2024-12-22: refactor postgresql section 3

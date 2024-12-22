@@ -127,3 +127,4 @@
 - 2024-12-04: revise javascript section 20
 - 2024-12-17: update javascript section 25
 - 2024-12-21: refactor javascript section 70
+- 2024-12-22: update javascript section 30

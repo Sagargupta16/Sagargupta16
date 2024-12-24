@@ -85,3 +85,4 @@
 - 2024-11-21: organize security section 1
 - 2024-11-29: update security section 79
 - 2024-11-29: revise security section 98
+- 2024-12-24: update security section 58

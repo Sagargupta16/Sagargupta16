@@ -117,3 +117,4 @@
 - 2024-11-30: add typescript section 11
 - 2024-11-30: revise typescript section 19
 - 2024-12-02: expand typescript section 60
+- 2024-12-24: improve typescript section 4

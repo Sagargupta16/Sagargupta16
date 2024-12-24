@@ -3772,3 +3772,4 @@
 - 2024-12-22: postgresql practice session 4
 - 2024-12-24: ci-cd practice session 1
 - 2024-12-24: python practice session 2
+- 2024-12-24: linux practice session 3

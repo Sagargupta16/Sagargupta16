@@ -3779,3 +3779,4 @@
 - 2024-12-26: react practice session 4
 - 2024-12-26: kubernetes practice session 5
 - 2024-12-26: debugging practice session 6
+- 2024-12-26: postgresql practice session 7

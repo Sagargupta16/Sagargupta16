@@ -102,3 +102,4 @@
 - 2024-12-07: organize ci-cd section 54
 - 2024-12-13: improve ci-cd section 94
 - 2024-12-17: add ci-cd section 97
+- 2024-12-26: organize ci-cd section 60

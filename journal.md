@@ -3774,3 +3774,4 @@
 - 2024-12-24: python practice session 2
 - 2024-12-24: linux practice session 3
 - 2024-12-26: terraform practice session 1
+- 2024-12-26: api-design practice session 2

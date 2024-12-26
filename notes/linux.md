@@ -130,3 +130,4 @@
 - 2024-12-17: revise linux section 43
 - 2024-12-24: expand linux section 35
 - 2024-12-24: expand linux section 14
+- 2024-12-26: revise linux section 72

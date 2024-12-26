@@ -86,3 +86,4 @@
 - 2024-11-29: update security section 79
 - 2024-11-29: revise security section 98
 - 2024-12-24: update security section 58
+- 2024-12-26: update security section 88

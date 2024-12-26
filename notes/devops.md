@@ -134,3 +134,4 @@
 - 2024-12-08: revise devops section 64
 - 2024-12-16: organize devops section 42
 - 2024-12-19: improve devops section 70
+- 2024-12-26: improve devops section 70

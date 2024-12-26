@@ -105,3 +105,4 @@
 - 2024-12-21: add api-design section 72
 - 2024-12-24: refactor api-design section 43
 - 2024-12-24: improve api-design section 27
+- 2024-12-26: organize api-design section 82

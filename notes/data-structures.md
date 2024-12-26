@@ -126,3 +126,4 @@
 - 2024-12-09: improve data-structures section 76
 - 2024-12-15: refactor data-structures section 39
 - 2024-12-17: revise data-structures section 35
+- 2024-12-26: add data-structures section 17

@@ -3777,3 +3777,4 @@
 - 2024-12-26: api-design practice session 2
 - 2024-12-26: postgresql practice session 3
 - 2024-12-26: react practice session 4
+- 2024-12-26: kubernetes practice session 5

@@ -3789,3 +3789,4 @@
 - 2024-12-27: debugging practice session 6
 - 2024-12-27: mongodb practice session 7
 - 2024-12-27: git practice session 8
+- 2024-12-27: debugging practice session 9

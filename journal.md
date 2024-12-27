@@ -3781,3 +3781,4 @@
 - 2024-12-26: debugging practice session 6
 - 2024-12-26: postgresql practice session 7
 - 2024-12-26: ml practice session 8
+- 2024-12-27: data-structures practice session 1

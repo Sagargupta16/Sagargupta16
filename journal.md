@@ -3786,3 +3786,4 @@
 - 2024-12-27: postgresql practice session 3
 - 2024-12-27: docker practice session 4
 - 2024-12-27: mongodb practice session 5
+- 2024-12-27: debugging practice session 6

@@ -3784,3 +3784,4 @@
 - 2024-12-27: data-structures practice session 1
 - 2024-12-27: git practice session 2
 - 2024-12-27: postgresql practice session 3
+- 2024-12-27: docker practice session 4

@@ -3796,3 +3796,4 @@
 - 2024-12-27: debugging practice session 13
 - 2024-12-28: git practice session 1
 - 2024-12-29: postgresql practice session 1
+- 2024-12-29: data-structures practice session 2

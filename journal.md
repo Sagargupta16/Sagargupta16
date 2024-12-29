@@ -3798,3 +3798,4 @@
 - 2024-12-29: postgresql practice session 1
 - 2024-12-29: data-structures practice session 2
 - 2024-12-29: postgresql practice session 3
+- 2024-12-29: git practice session 4

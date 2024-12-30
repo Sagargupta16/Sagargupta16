@@ -3803,3 +3803,4 @@
 - 2024-12-29: kubernetes practice session 6
 - 2024-12-30: testing practice session 1
 - 2024-12-30: ml practice session 2
+- 2024-12-30: api-design practice session 3

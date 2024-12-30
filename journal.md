@@ -3819,3 +3819,4 @@
 - 2024-12-30: python practice session 16
 - 2024-12-30: api-design practice session 17
 - 2024-12-30: testing practice session 18
+- 2024-12-30: ml practice session 19

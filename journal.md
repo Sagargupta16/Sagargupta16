@@ -3842,3 +3842,4 @@
 - 2024-12-30: debugging practice session 39
 - 2024-12-30: terraform practice session 40
 - 2024-12-30: data-structures practice session 41
+- 2024-12-30: linux practice session 42

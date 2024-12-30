@@ -3811,3 +3811,4 @@
 - 2024-12-30: kubernetes practice session 8
 - 2024-12-30: fastapi practice session 9
 - 2024-12-30: testing practice session 10
+- 2024-12-30: testing practice session 11

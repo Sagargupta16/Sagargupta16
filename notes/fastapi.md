@@ -132,3 +132,4 @@
 - 2024-12-21: revise fastapi section 4
 - 2024-12-26: update fastapi section 98
 - 2024-12-30: add fastapi section 24
+- 2024-12-30: revise fastapi section 6

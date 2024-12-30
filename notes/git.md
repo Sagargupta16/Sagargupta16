@@ -112,3 +112,4 @@
 - 2024-12-12: add git section 20
 - 2024-12-17: update git section 34
 - 2024-12-24: organize git section 78
+- 2024-12-30: expand git section 32

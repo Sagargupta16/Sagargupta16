@@ -3815,3 +3815,4 @@
 - 2024-12-30: ml practice session 12
 - 2024-12-30: react practice session 13
 - 2024-12-30: postgresql practice session 14
+- 2024-12-30: docker practice session 15

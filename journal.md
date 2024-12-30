@@ -3816,3 +3816,4 @@
 - 2024-12-30: react practice session 13
 - 2024-12-30: postgresql practice session 14
 - 2024-12-30: docker practice session 15
+- 2024-12-30: python practice session 16

@@ -3808,3 +3808,4 @@
 - 2024-12-30: linux practice session 5
 - 2024-12-30: ml practice session 6
 - 2024-12-30: mongodb practice session 7
+- 2024-12-30: kubernetes practice session 8

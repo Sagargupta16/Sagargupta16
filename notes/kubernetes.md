@@ -101,3 +101,4 @@
 - 2024-11-26: revise kubernetes section 56
 - 2024-11-26: organize kubernetes section 4
 - 2024-11-28: improve kubernetes section 54
+- 2024-12-30: expand kubernetes section 1

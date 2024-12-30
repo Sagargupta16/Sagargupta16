@@ -3831,3 +3831,4 @@
 - 2024-12-30: postgresql practice session 28
 - 2024-12-30: javascript practice session 29
 - 2024-12-30: api-design practice session 30
+- 2024-12-30: fastapi practice session 31

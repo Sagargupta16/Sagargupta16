@@ -3839,3 +3839,4 @@
 - 2024-12-30: kubernetes practice session 36
 - 2024-12-30: api-design practice session 37
 - 2024-12-30: kubernetes practice session 38
+- 2024-12-30: debugging practice session 39

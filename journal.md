@@ -3835,3 +3835,4 @@
 - 2024-12-30: mongodb practice session 32
 - 2024-12-30: api-design practice session 33
 - 2024-12-30: fastapi practice session 34
+- 2024-12-30: fastapi practice session 35

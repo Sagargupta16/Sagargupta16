@@ -3841,3 +3841,4 @@
 - 2024-12-30: kubernetes practice session 38
 - 2024-12-30: debugging practice session 39
 - 2024-12-30: terraform practice session 40
+- 2024-12-30: data-structures practice session 41

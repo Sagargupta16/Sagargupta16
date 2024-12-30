@@ -3814,3 +3814,4 @@
 - 2024-12-30: testing practice session 11
 - 2024-12-30: ml practice session 12
 - 2024-12-30: react practice session 13
+- 2024-12-30: postgresql practice session 14

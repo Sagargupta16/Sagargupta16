@@ -3824,3 +3824,4 @@
 - 2024-12-30: kubernetes practice session 21
 - 2024-12-30: debugging practice session 22
 - 2024-12-30: api-design practice session 23
+- 2024-12-30: aws practice session 24

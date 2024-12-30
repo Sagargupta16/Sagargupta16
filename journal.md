@@ -3829,3 +3829,4 @@
 - 2024-12-30: react practice session 26
 - 2024-12-30: data-structures practice session 27
 - 2024-12-30: postgresql practice session 28
+- 2024-12-30: javascript practice session 29

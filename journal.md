@@ -3809,3 +3809,4 @@
 - 2024-12-30: ml practice session 6
 - 2024-12-30: mongodb practice session 7
 - 2024-12-30: kubernetes practice session 8
+- 2024-12-30: fastapi practice session 9

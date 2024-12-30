@@ -3818,3 +3818,4 @@
 - 2024-12-30: docker practice session 15
 - 2024-12-30: python practice session 16
 - 2024-12-30: api-design practice session 17
+- 2024-12-30: testing practice session 18

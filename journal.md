@@ -3832,3 +3832,4 @@
 - 2024-12-30: javascript practice session 29
 - 2024-12-30: api-design practice session 30
 - 2024-12-30: fastapi practice session 31
+- 2024-12-30: mongodb practice session 32

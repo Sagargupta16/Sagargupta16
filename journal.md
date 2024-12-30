@@ -3806,3 +3806,4 @@
 - 2024-12-30: api-design practice session 3
 - 2024-12-30: algorithms practice session 4
 - 2024-12-30: linux practice session 5
+- 2024-12-30: ml practice session 6

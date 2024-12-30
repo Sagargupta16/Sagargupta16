@@ -130,3 +130,4 @@
 - 2024-12-19: revise redis section 26
 - 2024-12-21: expand redis section 23
 - 2024-12-21: improve redis section 59
+- 2024-12-30: improve redis section 74

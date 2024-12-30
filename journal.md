@@ -3821,3 +3821,4 @@
 - 2024-12-30: testing practice session 18
 - 2024-12-30: ml practice session 19
 - 2024-12-30: aws practice session 20
+- 2024-12-30: kubernetes practice session 21

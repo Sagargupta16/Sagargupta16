@@ -3801,3 +3801,4 @@
 - 2024-12-29: git practice session 4
 - 2024-12-29: aws practice session 5
 - 2024-12-29: kubernetes practice session 6
+- 2024-12-30: testing practice session 1

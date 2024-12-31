@@ -108,3 +108,4 @@
 - 2024-12-30: refactor nextjs section 31
 - 2024-12-30: refactor nextjs section 28
 - 2024-12-30: organize nextjs section 7
+- 2024-12-31: revise nextjs section 32

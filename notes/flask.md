@@ -109,3 +109,4 @@
 - 2024-11-30: organize flask section 30
 - 2024-12-21: update flask section 89
 - 2024-12-22: improve flask section 22
+- 2024-12-31: improve flask section 96

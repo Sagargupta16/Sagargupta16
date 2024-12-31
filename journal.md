@@ -3845,3 +3845,4 @@
 - 2024-12-30: linux practice session 42
 - 2024-12-31: linux practice session 1
 - 2024-12-31: ml practice session 2
+- 2024-12-31: kubernetes practice session 3

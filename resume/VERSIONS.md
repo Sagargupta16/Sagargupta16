@@ -6,7 +6,7 @@
 - **Last Updated**: 2025-07-25
 
 ## Naming Convention
-**Format**: `Sagar_Resume_vX.Y.Z.pdf`
+**Format**: `sagar-resume-vX.Y.Z.pdf`
 
 - **Major (X)**: Career milestones (graduation, new job, major role change)
 - **Minor (Y)**: New projects, skills, certifications, experience updates
@@ -16,7 +16,7 @@
 
 | Version | Date | File Name | Changes |
 |---------|------|-----------|---------|
-| v1.0.0 | 2025-07-25 | `Sagar_Resume_v1.0.0.pdf` | Initial version with current projects and NIT Warangal experience |
+| v1.0.0 | 2025-07-25 | `sagar-resume-v1.0.0.pdf` | Initial version with current projects and NIT Warangal experience |
 
 ---
 
@@ -30,7 +30,7 @@
 ### Steps:
 1. **Edit your resume** and save as `sagar_resume.pdf`
 2. **Determine version number** based on changes made
-3. **Copy to versions folder**: `Copy-Item "sagar_resume.pdf" "resume\versions\Sagar_Resume_vX.Y.Z.pdf"`
+3. **Copy to versions folder**: `Copy-Item "sagar_resume.pdf" "resume\versions\sagar-resume-vX.Y.Z.pdf"`
 4. **Update this log** with version details
 5. **Commit to git** with message: "📄 Release resume vX.Y.Z - [description]"
 
@@ -38,7 +38,7 @@
 
 ```powershell
 # Example: Creating version 1.1.0 after adding a new project
-Copy-Item "sagar_resume.pdf" "resume\versions\Sagar_Resume_v1.1.0.pdf"
+Copy-Item "sagar_resume.pdf" "resume\versions\sagar-resume-v1.1.0.pdf"
 
 # Using the script (run from root directory)
 .\resume\new-version.ps1 "1.1.0" "Added AI project and React skills"

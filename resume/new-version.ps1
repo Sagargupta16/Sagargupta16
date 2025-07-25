@@ -11,7 +11,7 @@ if ($Version -notmatch "^\d+\.\d+\.\d+$") {
     exit 1
 }
 
-$fileName = "Sagar_Resume_v$Version.pdf"
+$fileName = "sagar-resume-v$Version.pdf"
 $filePath = "resume\versions\$fileName"
 
 # Check if version already exists

@@ -17,7 +17,7 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 <h2 id="about-me"> :pencil: About Me</h2>
 
 - 🎓 I completed my Master's in Computer Applications (MCA) from **National Institute of Technology, Warangal**.
-- 💼 Currently working as **ProServe (Cloud Consultant) - DevOps** at **Amazon Web Services (AWS)** in Hyderabad, India.
+- 💼 Currently working as **ProServe (Cloud Consultant) - DevOps** at **Amazon Web Services (AWS)**.
 - 🚀 Specializing in **DevOps Infrastructure Automation**, **Terraform**, **AWS Cloud Solutions**, and **CI/CD Pipelines**.
 - 🏆 Competitive Programming: **1950+ LeetCode rating**, **1100+ problems solved**, **80+ contests participated**.
 - 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/portfolio-react/)

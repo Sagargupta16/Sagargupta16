@@ -21,7 +21,7 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 - 🚀 Specializing in **DevOps Infrastructure Automation**, **Terraform**, **AWS Cloud Solutions**, and **CI/CD Pipelines**.
 - 🏆 Competitive Programming: **1950+ LeetCode rating**, **1100+ problems solved**, **80+ contests participated**.
 - 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/portfolio-react/)
-- 📫 Reach me at **<sg85207@gmail.com>** | **+91-8770532413**
+- 📫 Reach me at **<sg85207@gmail.com>** 
 - 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf)
 
 <hr/>

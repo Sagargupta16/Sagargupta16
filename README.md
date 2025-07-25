@@ -151,9 +151,7 @@ alt="Joks#5382" height="30" width="130" />
    <img src="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/monkeytype-readme/monkeytype-readme-pb.svg" alt="My Monkeytype profile" />
  </a>
 
-## Holopin Badges
-[![An image of @sagargupta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/sagargupta)](https://holopin.io/@sagargupta)
-
+## 🏆 Credly Badges
 <!--START_SECTION:badges-->
 <a href="https://www.credly.com/badges/e18d2154-e153-40b3-8f39-6684e561396e" title="AWS Certified AI Practitioner"><img src="https://images.credly.com/size/80x80/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS Certified AI Practitioner" width="80" height="80"></a>
 <a href="https://www.credly.com/badges/315fe8a5-1e0b-418b-b139-e27018da152b" title="AWS Certified Cloud Practitioner"><img src="https://images.credly.com/size/80x80/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner" width="80" height="80"></a>
@@ -167,8 +165,12 @@ alt="Joks#5382" height="30" width="130" />
 <a href="https://www.credly.com/badges/af8b4f3b-0327-451e-ad85-a436f6bfca9a" title="AWS Educate Introduction to Cloud 101"><img src="https://images.credly.com/size/80x80/images/8d67bbf4-128b-4141-b5f1-1bc61bbfbaa6/image.png" alt="AWS Educate Introduction to Cloud 101" width="80" height="80"></a>
 <!--END_SECTION:badges-->
 
-## 🎧 What's Vibin?
-[![spotify-github-profile](https://spotify-github-profile.vercel.app/api/view?uid=31viv6sijcyqscehz45zz2wdlvy4&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false&bar_color_cover=true)](https://spotify-github-profile.vercel.app/api/view?uid=31viv6sijcyqscehz45zz2wdlvy4&redirect=true)
+## Holopin Badges
+[![An image of @sagargupta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/sagargupta)](https://holopin.io/@sagargupta)
+
+
+<!-- ## 🎧 What's Vibin?
+[![spotify-github-profile](https://spotify-github-profile.vercel.app/api/view?uid=31viv6sijcyqscehz45zz2wdlvy4&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false&bar_color_cover=true)](https://spotify-github-profile.vercel.app/api/view?uid=31viv6sijcyqscehz45zz2wdlvy4&redirect=true) -->
 
 </div>
  </details>

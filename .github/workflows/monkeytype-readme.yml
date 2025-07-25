@@ -1,9 +1,12 @@
-name: generate monkeytype readme svg
+name: Generate MonkeyType README SVG
 
 on:
     schedule:
         - cron: "0 */6 * * *" # every 6 hours
     workflow_dispatch:
+
+permissions:
+    contents: write
 
 jobs:
     download-svg:
@@ -17,18 +20,22 @@ jobs:
               with:
                   node-version: "22.x"
 
-            - name: Download SVG
+            - name: Download SVG files
               run: |
-                  mkdir public
-                  curl -o public/monkeytype-readme.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES
-                  curl -o public/monkeytype-readme-lb.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES?lb=true
-                  curl -o public/monkeytype-readme-pb.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES?pb=true
-                  curl -o public/monkeytype-readme-lb-pb.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES?lbpb=true
+                  mkdir -p public
+                  echo "Downloading MonkeyType SVG files..."
+                  curl -o public/monkeytype-readme.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES || echo "Failed to download main SVG"
+                  curl -o public/monkeytype-readme-lb.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES?lb=true || echo "Failed to download lb SVG"
+                  curl -o public/monkeytype-readme-pb.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES?pb=true || echo "Failed to download pb SVG"
+                  curl -o public/monkeytype-readme-lb-pb.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES?lbpb=true || echo "Failed to download lbpb SVG"
+                  echo "Downloaded files:"
+                  ls -la public/
 
-            - name: push monkeytype-readme.svg to the monkeytype-readme branch
+            - name: Push MonkeyType README SVG to branch
               uses: crazy-max/ghaction-github-pages@v4.2.0
               with:
                   target_branch: monkeytype-readme
                   build_dir: public
+                  commit_message: "🚀 Update MonkeyType stats"
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

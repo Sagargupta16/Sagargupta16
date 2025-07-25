@@ -12,7 +12,7 @@ if ($Version -notmatch "^\d+\.\d+\.\d+$") {
 }
 
 $fileName = "Sagar_Resume_v$Version.pdf"
-$filePath = "resume-versions\$fileName"
+$filePath = "resume\versions\$fileName"
 
 # Check if version already exists
 if (Test-Path $filePath) {
@@ -25,9 +25,9 @@ Copy-Item "sagar_resume.pdf" $filePath
 
 Write-Host "✅ Created $fileName"
 Write-Host "📝 Don't forget to:"
-Write-Host "   1. Update RESUME_VERSIONS.md with version details"
+Write-Host "   1. Update resume\VERSIONS.md with version details"
 Write-Host "   2. Run: git add . && git commit -m '📄 Release resume v$Version - $Description'"
 
 # Open the versions file for editing
-Write-Host "Opening RESUME_VERSIONS.md for editing..."
-notepad "RESUME_VERSIONS.md"
+Write-Host "Opening resume\VERSIONS.md for editing..."
+notepad "resume\VERSIONS.md"

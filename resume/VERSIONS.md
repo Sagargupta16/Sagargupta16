@@ -30,7 +30,7 @@
 ### Steps:
 1. **Edit your resume** and save as `sagar_resume.pdf`
 2. **Determine version number** based on changes made
-3. **Copy to versions folder**: `Copy-Item "sagar_resume.pdf" "resume-versions\Sagar_Resume_vX.Y.Z.pdf"`
+3. **Copy to versions folder**: `Copy-Item "sagar_resume.pdf" "resume\versions\Sagar_Resume_vX.Y.Z.pdf"`
 4. **Update this log** with version details
 5. **Commit to git** with message: "📄 Release resume vX.Y.Z - [description]"
 
@@ -38,7 +38,10 @@
 
 ```powershell
 # Example: Creating version 1.1.0 after adding a new project
-Copy-Item "sagar_resume.pdf" "resume-versions\Sagar_Resume_v1.1.0.pdf"
+Copy-Item "sagar_resume.pdf" "resume\versions\Sagar_Resume_v1.1.0.pdf"
+
+# Using the script (run from root directory)
+.\resume\new-version.ps1 "1.1.0" "Added AI project and React skills"
 
 # Commit changes
 git add .

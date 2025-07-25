@@ -154,6 +154,9 @@ alt="Joks#5382" height="30" width="130" />
 ## Holopin Badges
 [![An image of @sagargupta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/sagargupta)](https://holopin.io/@sagargupta)
 
+<!--START_SECTION:badges-->
+<!--END_SECTION:badges-->
+
 ## 🎧 What's Vibin?
 [![spotify-github-profile](https://spotify-github-profile.vercel.app/api/view?uid=31viv6sijcyqscehz45zz2wdlvy4&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false&bar_color_cover=true)](https://spotify-github-profile.vercel.app/api/view?uid=31viv6sijcyqscehz45zz2wdlvy4&redirect=true)
 

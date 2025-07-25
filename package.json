@@ -1,0 +1,24 @@
+{
+  "name": "credly-badges-fetcher",
+  "version": "1.0.0",
+  "description": "Fetch and display Credly badges in README",
+  "main": "scripts/fetch-credly-badges.js",
+  "scripts": {
+    "fetch-badges": "node scripts/fetch-credly-badges.js",
+    "test-badges": "node scripts/test-credly-fetch.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "credly",
+    "badges",
+    "certificates",
+    "github",
+    "readme"
+  ],
+  "author": "Sagar Gupta",
+  "license": "MIT",
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

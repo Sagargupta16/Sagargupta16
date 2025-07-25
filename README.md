@@ -23,7 +23,7 @@
 - 🌱 I’m Currently Exploring MERN Stack, FARM Stack, DevOps, Cloud Computing .....
 - 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/portfolio-react/)
 - 📫 Wanna mail me **sg85207@gmail.com**
-- 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/resume/current/sagar_resume.pdf) | [All Versions](https://github.com/Sagargupta16/Sagargupta16/tree/main/resume/versions)
+- 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf)
 
 <hr/>
 

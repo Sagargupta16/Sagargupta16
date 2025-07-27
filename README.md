@@ -164,3 +164,7 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 [![An image of @sagargupta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/sagargupta)](https://holopin.io/@sagargupta)
 
 </div>
+
+
+## 🎧 What's Vibin?
+[![Spotify](https://github.com/edorado93/edorado93/blob/main/spotify.svg)](https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4)

@@ -1,17 +1,23 @@
-# PowerShell script to merge all open PRs automatically
-# Repository: MCA-NITW/mca_nitw
+# PowerShell script to merge all open PRs automatically across multiple repositories
+# Supports processing multiple repositories in batch
+#
+# Usage Examples:
+#   .\merge-all-prs-clean.ps1 -Owner "Sagargupta16" -Repos @("My_Journey")
+#   .\merge-all-prs-clean.ps1 -Owner "Sagargupta16" -Repos @("Repo1", "Repo2", "Repo3") -MergeMethod "squash"
+#   .\merge-all-prs-clean.ps1 -Owner "MyOrg" -Repos @("project-a", "project-b") -CloseUnmergeable:$false
 
 param(
     [string]$Owner = "Sagargupta16",
-    [string]$Repo = "ai-code-translator",
+    [string[]]$Repos = @("My_Journey", "MERN-TEMPLATE", "TRINIT_BugBiters_Dev", "brainstorm-verse", "ai-code-translator"),  # Array of repository names
     [string]$MergeMethod = "merge",  # Options: merge, squash, rebase
     [switch]$CloseUnmergeable = $true  # Close PRs that can't be merged and delete branches
 )
 
-Write-Host "Starting automatic PR merge process for $Owner/$Repo" -ForegroundColor Green
+Write-Host "Starting automatic PR merge process for $Owner repositories: $($Repos -join ', ')" -ForegroundColor Green
 Write-Host "Merge method: $MergeMethod" -ForegroundColor Yellow
 Write-Host "Close unmergeable PRs: $CloseUnmergeable" -ForegroundColor Yellow
-Write-Host "=" * 60
+Write-Host "Total repositories to process: $($Repos.Count)" -ForegroundColor Cyan
+Write-Host "=" * 80
 
 # Function to get all open PRs
 function Get-OpenPRs {
@@ -134,66 +140,168 @@ function Merge-PR {
 
 # Main execution
 try {
-    # Get all open PRs
-    $openPRs = Get-OpenPRs -Owner $Owner -Repo $Repo
-    
-    if ($openPRs.Count -eq 0) {
-        Write-Host "`nNo open PRs found! All done." -ForegroundColor Green
-        exit 0
+    # Overall statistics tracking across all repositories
+    $overallStats = @{
+        TotalRepos = $Repos.Count
+        ProcessedRepos = 0
+        TotalPRs = 0
+        MergedPRs = 0
+        ClosedPRs = 0
+        SkippedPRs = 0
+        ErrorPRs = 0
+        RepoResults = @()
     }
     
-    # Statistics tracking
-    $totalPRs = $openPRs.Count
-    $mergedCount = 0
-    $closedCount = 0
-    $skippedCount = 0
-    $errorCount = 0
+    Write-Host "`nProcessing $($Repos.Count) repositories..." -ForegroundColor Blue
     
-    Write-Host "`nStarting merge process for $totalPRs PR(s) - processing from oldest to newest..." -ForegroundColor Blue
-    
-    # Display PR order for user confirmation
-    Write-Host "`nPR Processing Order (oldest to newest):" -ForegroundColor Yellow
-    $i = 1
-    foreach ($pr in $openPRs) {
-        $createdDate = [DateTime]$pr.createdAt
-        Write-Host "  $i. PR #$($pr.number): $($pr.title) (Created: $($createdDate.ToString('yyyy-MM-dd')))" -ForegroundColor Gray
-        $i++
-    }
-    Write-Host ""
-    
-    # Process each PR
-    foreach ($pr in $openPRs) {
-        $result = Merge-PR -Owner $Owner -Repo $Repo -PRNumber $pr.number -Title $pr.title -MergeMethod $MergeMethod -CloseUnmergeable $CloseUnmergeable
+    # Process each repository
+    foreach ($repo in $Repos) {
+        Write-Host "`n" + "=" * 80
+        Write-Host "PROCESSING REPOSITORY: $Owner/$repo" -ForegroundColor Magenta
+        Write-Host "=" * 80
         
-        switch ($result) {
-            "merged" { $mergedCount++ }
-            "closed" { $closedCount++ }
-            "skipped" { $skippedCount++ }
-            "error" { $errorCount++ }
+        # Repository-specific statistics
+        $repoStats = @{
+            Repository = "$Owner/$repo"
+            TotalPRs = 0
+            MergedCount = 0
+            ClosedCount = 0
+            SkippedCount = 0
+            ErrorCount = 0
+            Status = "Processing"
         }
         
-        # Longer delay between operations to allow GitHub to update PR statuses
-        Start-Sleep -Seconds 5
+        try {
+            # Get all open PRs for this repository
+            $openPRs = Get-OpenPRs -Owner $Owner -Repo $repo
+            
+            if ($openPRs.Count -eq 0) {
+                Write-Host "`nNo open PRs found in $Owner/$repo!" -ForegroundColor Green
+                $repoStats.Status = "No PRs"
+                $overallStats.RepoResults += $repoStats
+                $overallStats.ProcessedRepos++
+                continue
+            }
+            
+            $repoStats.TotalPRs = $openPRs.Count
+            $overallStats.TotalPRs += $openPRs.Count
+            
+            Write-Host "`nStarting merge process for $($openPRs.Count) PR(s) in $Owner/$repo - processing from oldest to newest..." -ForegroundColor Blue
+            
+            # Display PR order for user confirmation
+            Write-Host "`nPR Processing Order (oldest to newest):" -ForegroundColor Yellow
+            $i = 1
+            foreach ($pr in $openPRs) {
+                $createdDate = [DateTime]$pr.createdAt
+                Write-Host "  $i. PR #$($pr.number): $($pr.title) (Created: $($createdDate.ToString('yyyy-MM-dd')))" -ForegroundColor Gray
+                $i++
+            }
+            Write-Host ""
+            
+            # Process each PR in this repository
+            foreach ($pr in $openPRs) {
+                $result = Merge-PR -Owner $Owner -Repo $repo -PRNumber $pr.number -Title $pr.title -MergeMethod $MergeMethod -CloseUnmergeable $CloseUnmergeable
+                
+                switch ($result) {
+                    "merged" { 
+                        $repoStats.MergedCount++
+                        $overallStats.MergedPRs++
+                    }
+                    "closed" { 
+                        $repoStats.ClosedCount++
+                        $overallStats.ClosedPRs++
+                    }
+                    "skipped" { 
+                        $repoStats.SkippedCount++
+                        $overallStats.SkippedPRs++
+                    }
+                    "error" { 
+                        $repoStats.ErrorCount++
+                        $overallStats.ErrorPRs++
+                    }
+                }
+                
+                # Longer delay between operations to allow GitHub to update PR statuses
+                Start-Sleep -Seconds 5
+            }
+            
+            # Repository summary
+            Write-Host "`n--- REPOSITORY SUMMARY: $Owner/$repo ---" -ForegroundColor Cyan
+            Write-Host "Total PRs processed: $($repoStats.TotalPRs)" -ForegroundColor White
+            Write-Host "Successfully merged: $($repoStats.MergedCount)" -ForegroundColor Green
+            Write-Host "Closed (unmergeable): $($repoStats.ClosedCount)" -ForegroundColor Red
+            Write-Host "Skipped: $($repoStats.SkippedCount)" -ForegroundColor Yellow
+            Write-Host "Errors: $($repoStats.ErrorCount)" -ForegroundColor DarkRed
+            
+            if ($repoStats.MergedCount -eq $repoStats.TotalPRs) {
+                $repoStats.Status = "All Merged"
+                Write-Host "✅ ALL PRs in $Owner/$repo MERGED SUCCESSFULLY!" -ForegroundColor Green
+            } elseif (($repoStats.MergedCount + $repoStats.ClosedCount) -eq $repoStats.TotalPRs) {
+                $repoStats.Status = "Completed"
+                Write-Host "✅ All PRs in $Owner/$repo processed!" -ForegroundColor Green
+            } elseif ($repoStats.MergedCount -gt 0 -or $repoStats.ClosedCount -gt 0) {
+                $repoStats.Status = "Partial Success"
+                Write-Host "⚠️ Partial success for $Owner/$repo" -ForegroundColor Yellow
+            } else {
+                $repoStats.Status = "Failed"
+                Write-Host "❌ No PRs were successfully processed in $Owner/$repo" -ForegroundColor Red
+            }
+            
+        }
+        catch {
+            Write-Host "`nError processing repository ${Owner}/${repo}: $($_.Exception.Message)" -ForegroundColor Red
+            $repoStats.Status = "Error"
+            $repoStats.ErrorCount = 1
+            $overallStats.ErrorPRs++
+        }
+        
+        $overallStats.RepoResults += $repoStats
+        $overallStats.ProcessedRepos++
+        
+        # Delay between repositories
+        if ($repo -ne $Repos[-1]) {  # Don't delay after the last repository
+            Write-Host "`nWaiting before processing next repository..." -ForegroundColor Gray
+            Start-Sleep -Seconds 3
+        }
     }
     
-    # Final summary
-    Write-Host "`n" + "=" * 60
-    Write-Host "MERGE SUMMARY" -ForegroundColor Magenta
-    Write-Host "=" * 60
-    Write-Host "Total PRs processed: $totalPRs" -ForegroundColor White
-    Write-Host "Successfully merged: $mergedCount" -ForegroundColor Green
-    Write-Host "Closed (unmergeable): $closedCount" -ForegroundColor Red
-    Write-Host "Skipped: $skippedCount" -ForegroundColor Yellow
-    Write-Host "Errors: $errorCount" -ForegroundColor DarkRed
+    # Final overall summary
+    Write-Host "`n" + "=" * 80
+    Write-Host "OVERALL SUMMARY - ALL REPOSITORIES" -ForegroundColor Magenta
+    Write-Host "=" * 80
+    Write-Host "Total repositories processed: $($overallStats.ProcessedRepos)/$($overallStats.TotalRepos)" -ForegroundColor White
+    Write-Host "Total PRs across all repos: $($overallStats.TotalPRs)" -ForegroundColor White
+    Write-Host "Successfully merged: $($overallStats.MergedPRs)" -ForegroundColor Green
+    Write-Host "Closed (unmergeable): $($overallStats.ClosedPRs)" -ForegroundColor Red
+    Write-Host "Skipped: $($overallStats.SkippedPRs)" -ForegroundColor Yellow
+    Write-Host "Errors: $($overallStats.ErrorPRs)" -ForegroundColor DarkRed
     
-    if ($mergedCount -eq $totalPRs) {
-        Write-Host "`nALL PRs MERGED SUCCESSFULLY!" -ForegroundColor Green
-    } elseif (($mergedCount + $closedCount) -eq $totalPRs) {
-        Write-Host "`nAll PRs processed! $mergedCount merged, $closedCount closed." -ForegroundColor Green
-    } elseif ($mergedCount -gt 0 -or $closedCount -gt 0) {
-        Write-Host "`nPartial success. Some PRs were processed." -ForegroundColor Yellow
+    # Per-repository breakdown
+    Write-Host "`n--- PER-REPOSITORY BREAKDOWN ---" -ForegroundColor Cyan
+    foreach ($repoResult in $overallStats.RepoResults) {
+        $statusColor = switch ($repoResult.Status) {
+            "All Merged" { "Green" }
+            "Completed" { "Green" }
+            "No PRs" { "Gray" }
+            "Partial Success" { "Yellow" }
+            "Failed" { "Red" }
+            "Error" { "DarkRed" }
+            default { "White" }
+        }
+        Write-Host "$($repoResult.Repository): $($repoResult.Status) ($($repoResult.MergedCount)M/$($repoResult.ClosedCount)C/$($repoResult.SkippedCount)S/$($repoResult.ErrorCount)E)" -ForegroundColor $statusColor
+    }
+    
+    # Overall result
+    if ($overallStats.MergedPRs -eq $overallStats.TotalPRs -and $overallStats.TotalPRs -gt 0) {
+        Write-Host "`n🎉 ALL PRs ACROSS ALL REPOSITORIES MERGED SUCCESSFULLY!" -ForegroundColor Green
+    } elseif (($overallStats.MergedPRs + $overallStats.ClosedPRs) -eq $overallStats.TotalPRs -and $overallStats.TotalPRs -gt 0) {
+        Write-Host "`n✅ All PRs across all repositories processed!" -ForegroundColor Green
+    } elseif ($overallStats.TotalPRs -eq 0) {
+        Write-Host "`n✨ No open PRs found in any repository. All repositories are clean!" -ForegroundColor Green
+    } elseif ($overallStats.MergedPRs -gt 0 -or $overallStats.ClosedPRs -gt 0) {
+        Write-Host "`n⚠️ Partial success across repositories." -ForegroundColor Yellow
     } else {
-        Write-Host "`nNo PRs were successfully processed." -ForegroundColor Red
+        Write-Host "`n❌ No PRs were successfully processed in any repository." -ForegroundColor Red
     }
     
 }

@@ -3,36 +3,83 @@
 <div align="right">
   <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=brightgreen&style=flat-square" alt="Profile Views" />
   <img src="https://img.shields.io/github/followers/sagargupta16?label=Followers&style=flat-square&color=blue" alt="GitHub Followers" />
+  <img src="https://img.shields.io/github/stars/sagargupta16?label=Total%20Stars&style=flat-square&color=yellow" alt="GitHub Stars" />
 </div>
 
-
 <p align="center">
-    👋 Hi, my name is Sagar Gupta. <br />
+     Hi, my name is Sagar Gupta. <br />
 I am a ProServe (Cloud Consultant) - DevOps at <a href="https://aws.amazon.com/">Amazon Web Services (AWS)</a> and hold a postgraduate degree (MCA) from <a href="https://www.nitw.ac.in/">NIT Warangal</a>. <br/>
 I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infrastructure with a strong focus on automation and scalable cloud solutions.
-
 </p>
 
-<hr/>
+---
 <details>
 <summary align="center"><h3 style="display: inline;">More About Me ⬇️ </h3></summary>
 <hr/>
 
-<!-- ABOUT ME -->
-<h2 id="about-me"> :pencil: About Me</h2>
+## 👨‍💻 About Me
 
-- 🎓 I completed my Master's in Computer Applications (MCA) from **National Institute of Technology, Warangal**.
 - 💼 Currently working as **ProServe (Cloud Consultant) - DevOps** at **Amazon Web Services (AWS)**.
+- 🎓 I completed my Master's in Computer Applications (MCA) from **National Institute of Technology, Warangal**.
 - 🚀 Specializing in **DevOps Infrastructure Automation**, **Terraform**, **AWS Cloud Solutions**, and **CI/CD Pipelines**.
 - 🏆 Competitive Programming: **1950+ LeetCode rating**, **1100+ problems solved**, **80+ contests participated**.
 - 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/portfolio-react/)
 - 📫 Reach me at **<sg85207@gmail.com>** 
 - 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf)
 
-<hr/>
+## 🏆 Key Achievements
+
+<div align="center">
+
+| 🎓 **Education** | 💼 **Professional** | 🏅 **Competitive** | 🎖️ **Certifications** |
+|:---:|:---:|:---:|:---:|
+| **MCA from NIT Warangal** | **ProServe at AWS** | **1950+ LeetCode Rating** | **4 AWS Certifications** |
+| First Class with Distinction | DevOps & Cloud Specialist | 1100+ Problems Solved | HashiCorp Terraform Certified |
+| Academic Excellence | Infrastructure Automation Expert | 80+ Contests Participated | Multiple Holopin Badges |
+
+</div>
+
+## 🎯 My Focus Areas & Continuous Learning
+
+<div align="center">
+
+| 🎯 **Core Expertise & Focus** | 📚 **Currently Learning & Expanding** |
+|:---:|:---:|
+| **DevOps Infrastructure Automation** | **Advanced AWS Services & Architectures** |
+| Terraform & Infrastructure as Code | Kubernetes Deep Dive & Container Orchestration |
+| **CI/CD Pipeline Optimization** | **Multi-Cloud Solutions & Best Practices** |
+| AWS Cloud Solutions & Migration | AI/ML Integration with Cloud Services |
+| **Container Technologies & Docker** | **Advanced Security & Compliance** |
+| Monitoring & Observability Solutions | Serverless Architecture & Microservices |
+
+</div>
+
+---
 
 ## 🗂️ Project Overview
+
 <div align="center">
+
+### 🌟 Featured Repository of the Month
+<table>
+<tr>
+<td align="center" width="500px">
+
+**[🚀 DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM)**
+
+*A comprehensive DevOps automation framework for AWS infrastructure using Terraform, Docker, and CI/CD pipelines.*
+
+![Stars](https://img.shields.io/github/stars/Sagargupta16/DevOps-AWS-FARM?style=for-the-badge&color=yellow)
+![Forks](https://img.shields.io/github/forks/Sagargupta16/DevOps-AWS-FARM?style=for-the-badge&color=blue)
+![Last Commit](https://img.shields.io/github/last-commit/Sagargupta16/DevOps-AWS-FARM?style=for-the-badge&color=green)
+
+**Tech Stack:** AWS • Terraform • Docker • GitHub Actions • Python
+
+</td>
+</tr>
+</table>
+
+### 📊 Project Categories Overview
 
 | **🤖 AI/ML** | **☁️ DevOps/Cloud** | **🌐 Full-Stack Web Apps** | **🎮 Unity Games** | **📱 Frontend Projects** |
 |----------|----------------|------------------------|-----------------|---------------------|
@@ -45,6 +92,8 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 | | | [Authentication System](https://github.com/Sagargupta16/Authentication-System) | | |
 | | | [MCA NITW Website](https://github.com/MCA-NITW/mca_nitw) | | |
 | | | [LeetCode Among Us](https://github.com/MCA-NITW/leetcode_among_us) | | |
+| **🛠️ Key Technologies Used** | **🛠️ Key Technologies Used** | **🛠️ Key Technologies Used** | **🛠️ Key Technologies Used** | **🛠️ Key Technologies Used** |
+| `Python` `TensorFlow` `PyTorch`<br/>`FastAPI` `NumPy` `Pandas`<br/>`Scikit-Learn` `Matplotlib` | `AWS` `Terraform` `Docker`<br/>`GitHub Actions` `Python` `HCL`<br/>`CI/CD` `Infrastructure as Code` | `MERN Stack` `Next.js` `TypeScript`<br/>`MongoDB` `React` `Node.js`<br/>`Express.js` `REST APIs` | `Unity Engine` `C# Scripting`<br/>`Game Development` `2D/3D Graphics`<br/>`Physics Engine` `Animation` | `React` `HTML5` `CSS3`<br/>`JavaScript` `Redux` `Responsive Design`<br/>`Material-UI` `Tailwind CSS` |
 
 </div>
 
@@ -59,11 +108,10 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 | **Cloud & DevOps** | ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Terraform](https://img.shields.io/badge/Terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) ![Ansible](https://img.shields.io/badge/Ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white) |
 | **Machine Learning & AI** | ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black) ![Jupyter](https://img.shields.io/badge/Jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white) |
 | **Tools & Technologies** | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![Unity](https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white) ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens) ![Nodemailer](https://img.shields.io/badge/Nodemailer-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white) ![EmailJS](https://img.shields.io/badge/EmailJS-013243?style=for-the-badge&logo=gmail&logoColor=white) |
-| **UI/UX & Styling** | ![AG Grid](https://img.shields.io/badge/AG_Grid-FF4444?style=for-the-badge&logo=ag-grid&logoColor=white) ![AG Charts](https://img.shields.io/badge/AG_Charts-FF4444?style=for-the-badge&logo=ag-grid&logoColor=white) ![Material UI](https://img.shields.io/badge/Material_UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white) ![Flexbox](https://img.shields.io/badge/Flexbox-1572B6?style=for-the-badge&logo=css3&logoColor=white) |
-| **Authentication & APIs** | ![Clerk](https://img.shields.io/badge/Clerk-000000?style=for-the-badge&logo=clerk&logoColor=white) ![CORS](https://img.shields.io/badge/CORS-000000?style=for-the-badge&logo=cors&logoColor=white) ![Facebook API](https://img.shields.io/badge/Facebook_API-1877F2?style=for-the-badge&logo=facebook&logoColor=white) |
 | **Data Science & Analytics** | ![LSTM](https://img.shields.io/badge/LSTM-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white) ![Neural Networks](https://img.shields.io/badge/Neural_Networks-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white) ![Deep Learning](https://img.shields.io/badge/Deep_Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white) ![Image Processing](https://img.shields.io/badge/Image_Processing-FF6F00?style=for-the-badge&logo=opencv&logoColor=white) |
 | **Quality & Testing** | ![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white) |
-| **Development Environment** | ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Jinja](https://img.shields.io/badge/Jinja-B41717?style=for-the-badge&logo=jinja&logoColor=white) ![HCL](https://img.shields.io/badge/HCL-5835CC?style=for-the-badge&logo=terraform&logoColor=white) |
+| **AI Tools & Assistants** | ![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=github&logoColor=white) ![ChatGPT](https://img.shields.io/badge/ChatGPT-74AA9C?style=for-the-badge&logo=openai&logoColor=white) ![Claude](https://img.shields.io/badge/Claude-191919?style=for-the-badge&logo=anthropic&logoColor=white) ![Cursor AI](https://img.shields.io/badge/Cursor_AI-000000?style=for-the-badge&logo=cursor&logoColor=white) |
+| **Development Environment** | ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Kiro IDE](https://img.shields.io/badge/Kiro_IDE-FF6B35?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Jinja](https://img.shields.io/badge/Jinja-B41717?style=for-the-badge&logo=jinja&logoColor=white) ![HCL](https://img.shields.io/badge/HCL-5835CC?style=for-the-badge&logo=terraform&logoColor=white) |
 
 <hr/>
 
@@ -83,32 +131,56 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 <img align="center" src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" height="40"/></a>
 </p>
 
-<hr/>
+---
+
+## 📊 GitHub Stats
+
 <div align="center">
- <h2 id="stats"> 📊 Stats</h2>
+ 
+### 🔥 GitHub Streaks & Activity
 
-## GitHub Stats
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=tokyonight"/>
+</div>
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sagargupta16&theme=2077)
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=tokyonight" alt="GitHub Streak Stats" />
+</div>
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=sagargupta16&theme=2077)![](http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=sagargupta16&theme=2077)
+### 📈 Contribution Activity
 
-![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=sagargupta16&theme=2077)![](http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=sagargupta16&theme=2077&utcOffset=8)
+![GitHub Profile Summary](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sagargupta16&theme=2077)
 
-## LeetCode Stats
+<div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=sagargupta16&theme=2077" alt="Repos per Language" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=sagargupta16&theme=2077" alt="Most Commit Language" />
+</div>
 
-![LeetCode Stats](https://leetcode.card.workers.dev/sagargupta1610?theme=dark&font=patrick_hand&extension=null)
+<div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=sagargupta16&theme=2077" alt="GitHub Stats" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=sagargupta16&theme=2077&utcOffset=8" alt="Productive Time" />
+</div>
 
-## MonkeyType Stats
+### 🎮 LeetCode Stats
+
+<div align="center">
+  <img src="https://leetcard.jacoblin.cool/sagargupta1610?theme=dark&font=Patrick%20Hand&ext=heatmap" alt="LeetCode Stats" />
+</div>
+
+### ⚡ MonkeyType Stats
 
  <a href="https://monkeytype.com/profile/Sagargupta16">
    <img src="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/monkeytype-readme/monkeytype-readme-pb.svg" alt="My Monkeytype profile" />
  </a>
 
+</div>
 
+---
 
-<!-- CREDLY BADGES -->
-<h3>🏆 Credly Badges</h3>
+## 🏆 Certifications & Badges
+
+### �️ AWS & Cloud Certifications
 <div align="center">
 
 <!--START_SECTION:badges-->
@@ -126,14 +198,44 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 
 </div>
 
-<!-- HOLOPIN BADGES -->
-<h3>🎯 Holopin Badges</h3>
+### 🎯 Developer Achievements
 <div align="center">
 
 [![An image of @sagargupta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/sagargupta)](https://holopin.io/@sagargupta)
 
 </div>
 
+---
+
+## 🌐 Connect With Me
+
+<p align="center">
+<a href="https://www.linkedin.com/in/sagar16gupta" target="_blank" rel="noreferrer"> 
+<img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" height="40"/></a>
+<a href="https://leetcode.com/SAGARGUPTA16/" target="_blank" rel="noreferrer"> 
+<img align="center" src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" alt="LeetCode" height="40"/></a>
+<a href="https://github.com/Sagargupta16" target="_blank" rel="noreferrer"> 
+<img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" height="40"/></a>
+<a href="mailto:sg85207@gmail.com" target="_blank" rel="noreferrer"> 
+<img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" height="40"/></a>
+<a href="https://sagargupta16.github.io/portfolio-react/" target="_blank" rel="noreferrer"> 
+<img align="center" src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" height="40"/></a>
+</p>
+
 
 ## 🎧 What's Vibin?
 [![Spotify](https://github.com/edorado93/edorado93/blob/main/spotify.svg)](https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4)
+
+---
+
+<div align="center">
+
+### 🌟 Thanks for visiting! Let's connect and build something amazing together! 🚀
+
+<p>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer"/>
+</p>
+
+**[⬆ Back to Top](#table-of-contents)**
+
+</div>

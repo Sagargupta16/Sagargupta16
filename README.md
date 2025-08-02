@@ -34,7 +34,7 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 ## 🗂️ Project Overview
 <div align="center">
 
-| **🤖 AI/ML**<br/>*Techs: Python, TensorFlow, PyTorch, FastAPI* | **☁️ DevOps/Cloud**<br/>*Techs: AWS, Terraform, Docker, GitHub Actions* | **🌐 Full-Stack Web Apps**<br/>*Techs: MERN Stack, Next.js, TypeScript, MongoDB* | **🎮 Unity Games**<br/>*Techs: Unity Engine, C#, Game Development* | **📱 Frontend Projects**<br/>*Techs: React, HTML/CSS, JavaScript, Redux* |
+| **🤖 AI/ML** | **☁️ DevOps/Cloud** | **🌐 Full-Stack Web Apps** | **🎮 Unity Games** | **📱 Frontend Projects** |
 |----------|----------------|------------------------|-----------------|---------------------|
 | **3 Projects** | **2 Projects** | **8 Projects** | **4 Projects** | **4 Projects** |
 | [AI Code Translator](https://github.com/Sagargupta16/ai-code-translator) | [DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | [Placemento Portal](https://github.com/MCA-NITW/placemento) | [Snake Game](https://github.com/Sagargupta16/Snake-Game__UnityEngine) | [Portfolio React](https://github.com/Sagargupta16/portfolio-react) |

@@ -30,71 +30,51 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 
 | Projects                           | Timeline              | Tech Stack                                              | Deploy                                                    | Repo                                                     |
 |------------------------------------|-----------------------|---------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------|
-| **Placemento: MCA Placement Portal** | Dec '23 - Feb '24   | MERN (MongoDB, Express.js, React.js, Node.js), AG Grid, AG Charts, JWT, Nodemailer |                                           | [**Repo**](https://github.com/Sagargupta16/Placemento) |
+| **AI Code Translator**             | Aug '25               | TypeScript, Next.js, AI/ML                             |                                                           | [**Repo**](https://github.com/Sagargupta16/ai-code-translator) |
+| **DevOps AWS FARM**                | 2024                  | Python, AWS, GitHub Actions, CI/CD Pipeline, Tests     |                                                           | [**Repo**](https://github.com/Sagargupta16/DevOps-AWS-FARM) |
+| **LeetCode Among Us**              | 2024                  | JavaScript, MERN Stack                                  |                                                           | [**Repo**](https://github.com/MCA-NITW/leetcode_among_us) |
+| **MCA NITW Course Website**        | 2024                  | JavaScript, React, MERN Stack                           |                                                           | [**Repo**](https://github.com/MCA-NITW/mca_nitw) |
+| **Tour Vibes**                     | 2024                  | JavaScript, MERN Stack, Travel Journal                  |                                                           | [**Repo**](https://github.com/Sagargupta16/tour-vibes) |
+| **TRINIT BugBiters Dev**           | 2024                  | JavaScript, MERN Stack, Lingua Connect Platform        |                                                           | [**Repo**](https://github.com/Sagargupta16/TRINIT_BugBiters_Dev) |
+| **Blue Green AWS Terraform**       | 2024                  | Terraform (HCL), AWS, Docker, CI/CD, GitHub Actions    |                                                           | [**Repo**](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) |
+| **Brainstorm Verse**               | 2024                  | TypeScript, Next.js, MongoDB, Tailwind CSS, Clerk      |                                                           | [**Repo**](https://github.com/Sagargupta16/brainstorm-verse) |
+| **Placemento: MCA Placement Portal** | Dec '23 - Feb '24   | MERN (MongoDB, Express.js, React.js, Node.js), AG Grid, AG Charts, JWT, Nodemailer |                                           | [**Repo**](https://github.com/MCA-NITW/placemento) |
+| **Stock Market Prediction**        | Dec '23               | Pandas, PyTorch, Matplotlib                            |                                                           | [**Repo**](https://github.com/Sagargupta16/Stock-market-prediction) |
 | **LeetCode Rating Predictor**       | Nov '23 - Dec '23     | React, FastAPI, Numpy, Pandas, TensorFlow, GraphQL, LSTM | [**Deploy**](https://leetcode-rating-predictor.onrender.com/) | [**Repo**](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) |
-| **Stock Market Prediction**        | Nov '23 - Dec '23     | Pandas, PyTorch, Matplotlib                            |                                                           | [**Repo**](https://github.com/Sagargupta16/Stock-market-prediction) |
+| **BMS**                            | Oct '23               | Python                                                   |                                                           | [**Repo**](https://github.com/Sagargupta16/BMS) |
 | **Portfolio-react**                | Jul '23 - Aug '23     | React, React Router, HTML, CSS, JS, EmailJS               | [**Deploy**](https://sagargupta16.github.io/portfolio-react/) | [**Repo**](https://github.com/Sagargupta16/portfolio-react) |
+| **My Journey**                     | 2023                  | JavaScript, Personal Learning Journey                   |                                                           | [**Repo**](https://github.com/Sagargupta16/My_Journey) |
+| **Snake Game**                     | Dec '23               | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/Snake-Game__UnityEngine) |
+| **Pac Man Game**                   | Dec '23               | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/PacMan-Game__UnityEngine) |
+| **Minesweeper Game**               | Dec '23               | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/Minesweeper-Game__UnityEngine) |
+| **Flappy Bird Game**               | Jun '23               | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/FlappyBird-Game__UnityEngine) |
+| **Contact Manager React**          | Jul '22               | HTML, CSS, React, Redux, Router                           | [**Deploy**](https://sagargupta16.github.io/Contact-Manager-React/)    | [**Repo**](https://github.com/Sagargupta16/Contact-Manager-React) |
 | **Contact Manager Mern**           | Jul '22               | CSS, React, Redux, Router, MongoDB, Nodejs, ExpressJS     | [**Deploy**](https://contact-manager-mern-cg19.onrender.com/) | [**Repo**](https://github.com/Sagargupta16/Contact-Manager-Mern) |
 | **Authentication System**          | Jun '22               | CSS, React, Redux, Router, MongoDB, Nodejs, ExpressJS     | [**Deploy**](https://authentication-system-wmta.onrender.com/)    | [**Repo**](https://github.com/Sagargupta16/Authentication-System) |
-| **Contact Manager React**          | Jul '22               | HTML, CSS, React, Redux, Router                           | [**Deploy**](https://sagargupta16.github.io/Contact-Manager-React/)    | [**Repo**](https://github.com/Sagargupta16/Contact-Manager-React) |
 | **Portfolio**                      | May '22 - Jun '22     | HTML, CSS, JS                                            | [**Deploy**](https://sagargupta16.github.io/PortFolio/)      | [**Repo**](https://github.com/Sagargupta16/PortFolio) |
 | **Music Player Web App**           | May '22               | HTML, CSS, JS                                            | [**Deploy**](https://sagargupta16.github.io/Music-Web-App/)  | [**Repo**](https://github.com/Sagargupta16/Music-Web-App) |
 | **Guess the number Game**          | May '22               | HTML, CSS, JS                                            | [**Deploy**](https://sagargupta16.github.io/Guess-The-Number-Game/) | [**Repo**](https://github.com/Sagargupta16/Guess-The-Number-Game) |
-| **Study HUB**| Apr '22               | HTML, CSS                                               | [**Deploy**](https://sayani13-glitch.github.io/noobathon_ON-11_1/) | [**Repo**](https://github.com/sayani13-glitch/noobathon_ON-11_1) |
-| **Minesweeper Game**               | Nov '21 - Dec '21     | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/Minesweeper-Game__UnityEngine) |
-| **Snake Game**                     | Nov '22               | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/Snake-Game__UnityEngine) |
-| **Flappy Bird Game**               | Nov '22               | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/FlappyBird-Game__UnityEngine) |
-| **Pac Man Game**                   | Nov '22               | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/PacMan-Game__UnityEngine) |
+| **Study HUB**                      | Apr '22               | HTML, CSS                                               | [**Deploy**](https://sayani13-glitch.github.io/noobathon_ON-11_1/) | [**Repo**](https://github.com/sayani13-glitch/noobathon_ON-11_1) |
 
 <hr/>
 
 <!-- PROJECT FILES DESCRIPTION -->
-<h2 id="language-and-tools"> 💻 Language and Tools</h2>
-<h3 align="left">Languages & Frameworks :</h3>
-<p align="left">
-<a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
-<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="cplusplus" width="90" height="40"/></a>
-<a href="https://www.python.org" target="_blank" rel="noreferrer">
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="python" width="100" height="40"/></a>
-<a href="https://www.java.com" target="_blank" rel="noreferrer">
-<img src="https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white" alt="java" width="90" height="40"/></a> 
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="javascript" width="140" height="40"/></a> 
-<a href="https://reactjs.org/" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" width="100" height="40"/></a> 
-<a href="https://expressjs.com" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white" alt="express" width="130" height="40"/></a>
-<a href="https://fastapi.tiangolo.com/" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi&logoColor=white" alt="fastapi" width="110" height="40"/></a>
-</p>
-<h3 align="left">Cloud & DevOps :</h3>
-<p align="left"> 
-<a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="aws" width="80" height="40"/></a> 
-<a href="https://www.terraform.io/" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/Terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white" alt="terraform" width="130" height="40"/></a>
-<a href="https://www.docker.com/" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="docker" width="100" height="40"/></a> 
-<a href="https://www.ansible.com/" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/Ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white" alt="ansible" width="110" height="40"/></a>
-<a href="https://github.com/features/actions" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="github-actions" width="160" height="40"/></a>
-</p>
-<h3 align="left">Database & Tools :</h3>
-<p align="left"> 
-<a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongodb" width="120" height="40"/></a> 
-<a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" alt="mysql" width="100" height="40"/></a> 
-<a href="https://git-scm.com/" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="git" width="80" height="40"/></a> 
-<a href="https://www.sonarqube.org/" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white" alt="sonarqube" width="130" height="40"/></a>
-<a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white" alt="tensorflow" width="140" height="40"/></a>
-<a href="https://unity.com/" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white" alt="unity" width="100" height="40"/></a>
-</p>
+## 💻 Language and Tools
+
+| Category | Technologies |
+|----------|-------------|
+| **Programming Languages** | ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white) |
+| **Frontend Frameworks** | ![React](https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) |
+| **Backend Frameworks** | ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi&logoColor=white) |
+| **Databases** | ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white) |
+| **Cloud & DevOps** | ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Terraform](https://img.shields.io/badge/Terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white) ![Ansible](https://img.shields.io/badge/Ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white) |
+| **Machine Learning & AI** | ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black) ![Jupyter](https://img.shields.io/badge/Jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white) |
+| **Tools & Technologies** | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![Unity](https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white) ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens) ![Nodemailer](https://img.shields.io/badge/Nodemailer-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white) ![EmailJS](https://img.shields.io/badge/EmailJS-013243?style=for-the-badge&logo=gmail&logoColor=white) |
+| **UI/UX & Styling** | ![AG Grid](https://img.shields.io/badge/AG_Grid-FF4444?style=for-the-badge&logo=ag-grid&logoColor=white) ![AG Charts](https://img.shields.io/badge/AG_Charts-FF4444?style=for-the-badge&logo=ag-grid&logoColor=white) ![Material UI](https://img.shields.io/badge/Material_UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white) ![Flexbox](https://img.shields.io/badge/Flexbox-1572B6?style=for-the-badge&logo=css3&logoColor=white) |
+| **Authentication & APIs** | ![Clerk](https://img.shields.io/badge/Clerk-000000?style=for-the-badge&logo=clerk&logoColor=white) ![CORS](https://img.shields.io/badge/CORS-000000?style=for-the-badge&logo=cors&logoColor=white) ![Facebook API](https://img.shields.io/badge/Facebook_API-1877F2?style=for-the-badge&logo=facebook&logoColor=white) |
+| **Data Science & Analytics** | ![LSTM](https://img.shields.io/badge/LSTM-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white) ![Neural Networks](https://img.shields.io/badge/Neural_Networks-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white) ![Deep Learning](https://img.shields.io/badge/Deep_Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white) ![Image Processing](https://img.shields.io/badge/Image_Processing-FF6F00?style=for-the-badge&logo=opencv&logoColor=white) |
+| **Quality & Testing** | ![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white) |
+| **Development Environment** | ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Jinja](https://img.shields.io/badge/Jinja-B41717?style=for-the-badge&logo=jinja&logoColor=white) ![HCL](https://img.shields.io/badge/HCL-5835CC?style=for-the-badge&logo=terraform&logoColor=white) |
 
 <hr/>
 

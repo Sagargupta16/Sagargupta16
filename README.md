@@ -1,5 +1,10 @@
 # <h1 align="center"><code>Hey There👋 I'm Sagar Gupta</code></h1>
-<p align="right"> <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20views&color=0e75b6&style=flat" alt="sagargupta16" /> </p>
+
+<div align="right">
+  <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=brightgreen&style=flat-square" alt="Profile Views" />
+  <img src="https://img.shields.io/github/followers/sagargupta16?label=Followers&style=flat-square&color=blue" alt="GitHub Followers" />
+</div>
+
 
 <p align="center">
     👋 Hi, my name is Sagar Gupta. <br />
@@ -26,39 +31,23 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 
 <hr/>
 
-<h2>:sparkles: Projects </h2>
+## 🗂️ Project Overview
+<div align="center">
 
-| Projects                           | Timeline              | Tech Stack                                              | Deploy                                                    | Repo                                                     |
-|------------------------------------|-----------------------|---------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------|
-| **AI Code Translator**             | Aug '25               | TypeScript, Next.js, AI/ML                             |                                                           | [**Repo**](https://github.com/Sagargupta16/ai-code-translator) |
-| **DevOps AWS FARM**                | 2024                  | Python, AWS, GitHub Actions, CI/CD Pipeline, Tests     |                                                           | [**Repo**](https://github.com/Sagargupta16/DevOps-AWS-FARM) |
-| **LeetCode Among Us**              | 2024                  | JavaScript, MERN Stack                                  |                                                           | [**Repo**](https://github.com/MCA-NITW/leetcode_among_us) |
-| **MCA NITW Course Website**        | 2024                  | JavaScript, React, MERN Stack                           |                                                           | [**Repo**](https://github.com/MCA-NITW/mca_nitw) |
-| **Tour Vibes**                     | 2024                  | JavaScript, MERN Stack, Travel Journal                  |                                                           | [**Repo**](https://github.com/Sagargupta16/tour-vibes) |
-| **TRINIT BugBiters Dev**           | 2024                  | JavaScript, MERN Stack, Lingua Connect Platform        |                                                           | [**Repo**](https://github.com/Sagargupta16/TRINIT_BugBiters_Dev) |
-| **Blue Green AWS Terraform**       | 2024                  | Terraform (HCL), AWS, Docker, CI/CD, GitHub Actions    |                                                           | [**Repo**](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) |
-| **Brainstorm Verse**               | 2024                  | TypeScript, Next.js, MongoDB, Tailwind CSS, Clerk      |                                                           | [**Repo**](https://github.com/Sagargupta16/brainstorm-verse) |
-| **Placemento: MCA Placement Portal** | Dec '23 - Feb '24   | MERN (MongoDB, Express.js, React.js, Node.js), AG Grid, AG Charts, JWT, Nodemailer |                                           | [**Repo**](https://github.com/MCA-NITW/placemento) |
-| **Stock Market Prediction**        | Dec '23               | Pandas, PyTorch, Matplotlib                            |                                                           | [**Repo**](https://github.com/Sagargupta16/Stock-market-prediction) |
-| **LeetCode Rating Predictor**       | Nov '23 - Dec '23     | React, FastAPI, Numpy, Pandas, TensorFlow, GraphQL, LSTM | [**Deploy**](https://leetcode-rating-predictor.onrender.com/) | [**Repo**](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) |
-| **BMS**                            | Oct '23               | Python                                                   |                                                           | [**Repo**](https://github.com/Sagargupta16/BMS) |
-| **Portfolio-react**                | Jul '23 - Aug '23     | React, React Router, HTML, CSS, JS, EmailJS               | [**Deploy**](https://sagargupta16.github.io/portfolio-react/) | [**Repo**](https://github.com/Sagargupta16/portfolio-react) |
-| **My Journey**                     | 2023                  | JavaScript, Personal Learning Journey                   |                                                           | [**Repo**](https://github.com/Sagargupta16/My_Journey) |
-| **Snake Game**                     | Dec '23               | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/Snake-Game__UnityEngine) |
-| **Pac Man Game**                   | Dec '23               | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/PacMan-Game__UnityEngine) |
-| **Minesweeper Game**               | Dec '23               | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/Minesweeper-Game__UnityEngine) |
-| **Flappy Bird Game**               | Jun '23               | C#, Unity Engine                                         |                                                           | [**Repo**](https://github.com/Sagargupta16/FlappyBird-Game__UnityEngine) |
-| **Contact Manager React**          | Jul '22               | HTML, CSS, React, Redux, Router                           | [**Deploy**](https://sagargupta16.github.io/Contact-Manager-React/)    | [**Repo**](https://github.com/Sagargupta16/Contact-Manager-React) |
-| **Contact Manager Mern**           | Jul '22               | CSS, React, Redux, Router, MongoDB, Nodejs, ExpressJS     | [**Deploy**](https://contact-manager-mern-cg19.onrender.com/) | [**Repo**](https://github.com/Sagargupta16/Contact-Manager-Mern) |
-| **Authentication System**          | Jun '22               | CSS, React, Redux, Router, MongoDB, Nodejs, ExpressJS     | [**Deploy**](https://authentication-system-wmta.onrender.com/)    | [**Repo**](https://github.com/Sagargupta16/Authentication-System) |
-| **Portfolio**                      | May '22 - Jun '22     | HTML, CSS, JS                                            | [**Deploy**](https://sagargupta16.github.io/PortFolio/)      | [**Repo**](https://github.com/Sagargupta16/PortFolio) |
-| **Music Player Web App**           | May '22               | HTML, CSS, JS                                            | [**Deploy**](https://sagargupta16.github.io/Music-Web-App/)  | [**Repo**](https://github.com/Sagargupta16/Music-Web-App) |
-| **Guess the number Game**          | May '22               | HTML, CSS, JS                                            | [**Deploy**](https://sagargupta16.github.io/Guess-The-Number-Game/) | [**Repo**](https://github.com/Sagargupta16/Guess-The-Number-Game) |
-| **Study HUB**                      | Apr '22               | HTML, CSS                                               | [**Deploy**](https://sayani13-glitch.github.io/noobathon_ON-11_1/) | [**Repo**](https://github.com/sayani13-glitch/noobathon_ON-11_1) |
+| **🤖 AI/ML**<br/>*Techs: Python, TensorFlow, PyTorch, FastAPI* | **☁️ DevOps/Cloud**<br/>*Techs: AWS, Terraform, Docker, GitHub Actions* | **🌐 Full-Stack Web Apps**<br/>*Techs: MERN Stack, Next.js, TypeScript, MongoDB* | **🎮 Unity Games**<br/>*Techs: Unity Engine, C#, Game Development* | **📱 Frontend Projects**<br/>*Techs: React, HTML/CSS, JavaScript, Redux* |
+|----------|----------------|------------------------|-----------------|---------------------|
+| **3 Projects** | **2 Projects** | **8 Projects** | **4 Projects** | **4 Projects** |
+| [AI Code Translator](https://github.com/Sagargupta16/ai-code-translator) | [DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | [Placemento Portal](https://github.com/MCA-NITW/placemento) | [Snake Game](https://github.com/Sagargupta16/Snake-Game__UnityEngine) | [Portfolio React](https://github.com/Sagargupta16/portfolio-react) |
+| [LeetCode Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) | [Blue Green Terraform](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) | [Tour Vibes](https://github.com/Sagargupta16/tour-vibes) | [Pac Man Game](https://github.com/Sagargupta16/PacMan-Game__UnityEngine) | [Music Player](https://github.com/Sagargupta16/Music-Web-App) |
+| [Stock Prediction](https://github.com/Sagargupta16/Stock-market-prediction) | | [Brainstorm Verse](https://github.com/Sagargupta16/brainstorm-verse) | [Minesweeper](https://github.com/Sagargupta16/Minesweeper-Game__UnityEngine) | [Guess Number Game](https://github.com/Sagargupta16/Guess-The-Number-Game) |
+| | | [TRINIT BugBiters](https://github.com/Sagargupta16/TRINIT_BugBiters_Dev) | [Flappy Bird](https://github.com/Sagargupta16/FlappyBird-Game__UnityEngine) | [Study HUB](https://github.com/sayani13-glitch/noobathon_ON-11_1) |
+| | | [Contact Managers](https://github.com/Sagargupta16/Contact-Manager-Mern) | | |
+| | | [Authentication System](https://github.com/Sagargupta16/Authentication-System) | | |
+| | | [MCA NITW Website](https://github.com/MCA-NITW/mca_nitw) | | |
+| | | [LeetCode Among Us](https://github.com/MCA-NITW/leetcode_among_us) | | |
 
-<hr/>
+</div>
 
-<!-- PROJECT FILES DESCRIPTION -->
 ## 💻 Language and Tools
 
 | Category | Technologies |

@@ -2,7 +2,7 @@
 <p align="right"> <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20views&color=0e75b6&style=flat" alt="sagargupta16" /> </p>
 
 <p align="center">
-    👋 Hi, my name is Sagar Gupta, from Shivpuri, MP, India. <br />
+    👋 Hi, my name is Sagar Gupta. <br />
 I am a ProServe (Cloud Consultant) - DevOps at <a href="https://aws.amazon.com/">Amazon Web Services (AWS)</a> and hold a postgraduate degree (MCA) from <a href="https://www.nitw.ac.in/">NIT Warangal</a>. <br/>
 I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infrastructure with a strong focus on automation and scalable cloud solutions.
 

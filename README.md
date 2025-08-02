@@ -51,12 +51,12 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 <!-- PROJECT FILES DESCRIPTION -->
 <h2 id="language-and-tools"> 💻 Language and Tools</h2>
 <h3 align="left">Languages & Frameworks :</h3>
-<p align="left"> 
-<a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> 
-<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="cplusplus" width="90" height="40"/></a> 
-<a href="https://www.python.org" target="_blank" rel="noreferrer"> 
+<p align="left">
+<a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
+<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="cplusplus" width="90" height="40"/></a>
+<a href="https://www.python.org" target="_blank" rel="noreferrer">
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="python" width="100" height="40"/></a>
-<a href="https://www.java.com" target="_blank" rel="noreferrer"> 
+<a href="https://www.java.com" target="_blank" rel="noreferrer">
 <img src="https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white" alt="java" width="90" height="40"/></a> 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="javascript" width="140" height="40"/></a> 

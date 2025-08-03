@@ -207,6 +207,38 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 
 ---
 
+## 🗂️ Star Organization System
+
+I've implemented an automated system to organize my starred repositories into categorized lists for better discoverability and management. The system automatically analyzes repositories based on their topics, languages, descriptions, and README content.
+
+### 📊 Repository Categories
+
+| Category | Description | Auto-Organized |
+|----------|-------------|----------------|
+| **🤖 ML & AI** | Machine Learning, AI, and Data Science projects | ✅ |
+| **☁️ DevOps & Cloud** | DevOps tools, cloud infrastructure, deployment | ✅ |
+| **🛠️ Tools & Utilities** | Development tools, utilities, productivity software | ✅ |
+| **🎓 Learning & Education** | Tutorials, educational resources, guides | ✅ |
+| **🎮 Games & Entertainment** | Game development, entertainment projects | ✅ |
+| **🌐 Design & Frontend** | UI/UX design, frontend frameworks, web design | ✅ |
+| **📱 Mobile & Cross-Platform** | Mobile development, cross-platform apps | ✅ |
+| **⚙️ System Administration** | Sysadmin tools, configurations, scripts | ✅ |
+| **🏆 Portfolio & Showcase** | Portfolio projects, personal websites | ✅ |
+| **🌟 Open Source Projects** | Notable OSS projects, community initiatives | ✅ |
+| **💻 Development & Programming** | General programming tools and frameworks | ✅ |
+
+### 🤖 Automation Features
+
+- **Intelligent Categorization**: Uses ML-like scoring based on topics, keywords, and languages
+- **Automated Scheduling**: Runs weekly via GitHub Actions to keep lists updated
+- **Confidence Scoring**: Each categorization includes confidence metrics
+- **Comprehensive Reporting**: Generates detailed markdown reports
+- **Error Handling**: Robust processing with detailed logging
+
+📄 **[View Full Documentation](./docs/star-organizer.md)** | 🗂️ **[Browse Organized Lists](./lists/)**
+
+---
+
 ## 🌐 Connect With Me
 
 <p align="center">

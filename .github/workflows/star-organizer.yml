@@ -1,0 +1,153 @@
+name: Organize Starred Repositories
+
+on:
+  schedule:
+    # Run every Sunday at 2 AM UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force update all categories'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  organize-stars:
+    runs-on: ubuntu-latest
+    name: Organize Starred Repositories
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Create necessary directories
+        run: |
+          mkdir -p lists
+          mkdir -p docs
+
+      - name: Run Star Organizer
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd scripts
+          python star_organizer.py
+
+      - name: Move report to docs
+        run: |
+          if [ -f star_organization_report.md ]; then
+            mv star_organization_report.md docs/
+          fi
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected:"
+            git status --porcelain
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git add lists/ docs/ star_organizer.log || true
+          git commit -m "🗂️ Update starred repository organization
+          
+          - Automated categorization of starred repositories
+          - Updated repository lists in lists/ directory
+          - Generated organization report
+          - Run timestamp: $(date -u)"
+          
+          git push
+
+      - name: Create organization summary
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          echo "## 🗂️ Repository Organization Summary" > $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Starred repositories have been automatically organized into categories." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f docs/star_organization_report.md ]; then
+            echo "### 📊 Categories:" >> $GITHUB_STEP_SUMMARY
+            grep "^## " docs/star_organization_report.md | sed 's/^## /- /' >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "📄 [View Full Report](./docs/star_organization_report.md)" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ -d lists ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 📁 Generated Lists:" >> $GITHUB_STEP_SUMMARY
+            for list_file in lists/*.json; do
+              if [ -f "$list_file" ]; then
+                filename=$(basename "$list_file" .json)
+                count=$(jq '.repositories | length' "$list_file" 2>/dev/null || echo "0")
+                echo "- $filename: $count repositories" >> $GITHUB_STEP_SUMMARY
+              fi
+            done
+          fi
+
+      - name: Upload artifacts
+        if: steps.check_changes.outputs.changes == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: star-organization-results
+          path: |
+            lists/
+            docs/star_organization_report.md
+            star_organizer.log
+          retention-days: 30
+
+  # Optional: Deploy to GitHub Pages if needed
+  deploy-docs:
+    needs: organize-stars
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && needs.organize-stars.outputs.changes == 'true'
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

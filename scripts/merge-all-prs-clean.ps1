@@ -8,7 +8,7 @@
 
 param(
     [string]$Owner = "Sagargupta16",
-    [string[]]$Repos = @("My_Journey", "MERN-TEMPLATE", "TRINIT_BugBiters_Dev", "brainstorm-verse", "ai-code-translator"),  # Array of repository names
+    [string[]]$Repos = @("My_Journey", "MERN-TEMPLATE", "TRINIT_BugBiters_Dev", "brainstorm-verse", "ai-code-translator", "Contact-Manager-Mern", "Contact-Manager-React"),  # Array of repository names
     [string]$MergeMethod = "merge",  # Options: merge, squash, rebase
     [switch]$CloseUnmergeable = $true  # Close PRs that can't be merged and delete branches
 )

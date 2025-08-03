@@ -64,6 +64,10 @@ categories:
       - "nlp"
       - "computer-vision"
       - "data-analysis"
+      - "machine"
+      - "learning"
+      - "neural"
+      - "networks"
     topics:
       - "machine-learning"
       - "artificial-intelligence"
@@ -81,6 +85,10 @@ categories:
       - "jupyter-notebook"
       - "pandas"
       - "numpy"
+    languages:
+      - "Python"
+      - "R"
+      - "Julia"
 
   "Tools & Utilities":
     description: "Development tools, utilities, and productivity software"
@@ -153,6 +161,10 @@ categories:
       - "documentation"
       - "book"
       - "cheatsheet"
+      - "awesome"
+      - "curated"
+      - "list"
+      - "resources"
     topics:
       - "tutorial"
       - "learning"
@@ -164,7 +176,10 @@ categories:
       - "documentation"
       - "cheatsheet"
       - "awesome-list"
+      - "awesome"
       - "resources"
+      - "curated"
+      - "list"
 
   "Games & Entertainment":
     description: "Game development, entertainment projects, and fun applications"
@@ -288,6 +303,10 @@ categories:
       - "angular"
       - "web-design"
       - "responsive"
+      - "interface"
+      - "user"
+      - "web"
+      - "frontend"
     topics:
       - "design"
       - "ui"
@@ -302,12 +321,19 @@ categories:
       - "responsive-design"
       - "tailwindcss"
       - "bootstrap"
+      - "javascript"
+      - "web"
+    languages:
+      - "JavaScript"
+      - "TypeScript"
+      - "CSS"
+      - "HTML"
 
 # Default category for repositories that don't match any specific criteria
 default_category: "Development & Programming"
 
 # Minimum confidence score for categorization (0.0 to 1.0)
-min_confidence: 0.3
+min_confidence: 0.2
 
 # Priority order for categories (higher priority wins in case of ties)
 category_priority:

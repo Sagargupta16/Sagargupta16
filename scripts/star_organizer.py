@@ -159,7 +159,6 @@ class StarOrganizer:
             Confidence score between 0.0 and 1.0
         """
         score = 0.0
-        total_weight = 0.0
         
         # Weight for different matching criteria
         weights = {
@@ -173,11 +172,11 @@ class StarOrganizer:
         repo_topics = [topic.lower() for topic in repo_analysis.get('topics', [])]
         category_topics = [topic.lower() for topic in category_config.get('topics', [])]
         
-        if category_topics:
+        if category_topics and repo_topics:
             topic_matches = len(set(repo_topics) & set(category_topics))
-            topic_score = min(topic_matches / len(category_topics), 1.0)
+            # Give higher score for multiple matches, but cap at 1.0
+            topic_score = min(topic_matches / max(len(category_topics) * 0.3, 1), 1.0)
             score += topic_score * weights['topics']
-            total_weight += weights['topics']
         
         # Check keyword matches in description and README
         keywords = [kw.lower() for kw in category_config.get('keywords', [])]
@@ -188,9 +187,10 @@ class StarOrganizer:
             )
             
             keyword_matches = sum(1 for kw in keywords if kw in text_to_search)
-            keyword_score = min(keyword_matches / len(keywords), 1.0)
-            score += keyword_score * weights['keywords']
-            total_weight += weights['keywords']
+            if keyword_matches > 0:
+                # Give higher score for multiple keyword matches
+                keyword_score = min(keyword_matches / max(len(keywords) * 0.3, 1), 1.0)
+                score += keyword_score * weights['keywords']
         
         # Check language matches
         category_languages = [lang.lower() for lang in category_config.get('languages', [])]
@@ -205,13 +205,14 @@ class StarOrganizer:
             
             if language_match:
                 score += weights['languages']
-            total_weight += weights['languages']
         
-        # Normalize score
-        if total_weight > 0:
-            score = score / total_weight
+        # Additional bonus for strong topic matches
+        if repo_topics and category_topics:
+            strong_matches = len(set(repo_topics) & set(category_topics))
+            if strong_matches >= 2:
+                score += 0.1  # Bonus for multiple topic matches
         
-        return score
+        return min(score, 1.0)  # Cap at 1.0
     
     def categorize_repository(self, repo_analysis: Dict[str, any]) -> Tuple[str, float]:
         """

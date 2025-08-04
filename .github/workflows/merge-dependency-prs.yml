@@ -23,6 +23,11 @@ on:
         required: true
         default: false
         type: boolean
+      target_repos:
+        description: 'Comma-separated list of repos to process (leave empty for all)'
+        required: false
+        default: ''
+        type: string
 
 jobs:
   merge-dependency-prs:
@@ -73,17 +78,38 @@ jobs:
           $MergeMethod = "${{ github.event.inputs.merge_method }}"
           $CloseUnmergeable = [System.Convert]::ToBoolean("${{ github.event.inputs.close_unmergeable }}")
           $DryRun = [System.Convert]::ToBoolean("${{ github.event.inputs.dry_run }}")
+          $TargetRepos = "${{ github.event.inputs.target_repos }}"
           
           Write-Host "=== GitHub Action: Merge Dependency PRs ===" -ForegroundColor Magenta
           Write-Host "Triggered by: ${{ github.actor }}" -ForegroundColor Yellow
           Write-Host "Merge method: $MergeMethod" -ForegroundColor Yellow
           Write-Host "Close unmergeable: $CloseUnmergeable" -ForegroundColor Yellow
           Write-Host "Dry run mode: $DryRun" -ForegroundColor Yellow
+          if ($TargetRepos) {
+            Write-Host "Target repositories: $TargetRepos" -ForegroundColor Yellow
+          }
           Write-Host "=" * 60
           
           if ($DryRun) {
             Write-Host "🔍 DRY RUN MODE - No actual changes will be made" -ForegroundColor Cyan
             Write-Host "=" * 60
+          }
+          
+          # Test GitHub CLI access with a simple repository check
+          Write-Host "Testing GitHub CLI access..." -ForegroundColor Blue
+          try {
+            $testRepo = "Sagargupta16/portfolio-react"
+            Write-Host "Testing access to: $testRepo" -ForegroundColor Gray
+            $testResult = gh repo view $testRepo --json name,owner 2>$null
+            if ($testResult) {
+              Write-Host "✅ GitHub CLI access confirmed" -ForegroundColor Green
+            } else {
+              Write-Host "❌ GitHub CLI access test failed" -ForegroundColor Red
+              exit 1
+            }
+          } catch {
+            Write-Host "❌ Error testing GitHub CLI: $($_.Exception.Message)" -ForegroundColor Red
+            exit 1
           }
           
           # Navigate to scripts directory and run the script
@@ -97,9 +123,18 @@ jobs:
             $scriptContent = Get-Content "merge-dependency-prs.ps1" -Raw
             
             # Replace merge and close operations with dry run logging
-            $dryRunScript = $scriptContent -replace 'gh pr merge.*--delete-branch', 'Write-Host "DRY RUN: Would merge PR #$PRNumber" -ForegroundColor Green'
+            $dryRunScript = $scriptContent -replace 'gh pr merge.*--delete-branch', 'Write-Host "DRY RUN: Would merge PR #$PRNumber" -ForegroundColor Green; return "merged"'
             $dryRunScript = $dryRunScript -replace 'gh pr close.*--comment.*', 'Write-Host "DRY RUN: Would close PR #$PRNumber" -ForegroundColor Yellow'
             $dryRunScript = $dryRunScript -replace 'gh api --method DELETE.*', 'Write-Host "DRY RUN: Would delete branch $branchName" -ForegroundColor Yellow'
+            
+            # Add target repos filtering if specified
+            if ($TargetRepos) {
+              $targetRepoList = $TargetRepos -split ',' | ForEach-Object { $_.Trim() }
+              $repoFilter = '$targetRepoList = @("' + ($targetRepoList -join '","') + '");'
+              $repoFilter += '$sagarRepos = $sagarRepos | Where-Object { $targetRepoList -contains $_ };'
+              $repoFilter += '$mcaRepos = $mcaRepos | Where-Object { $targetRepoList -contains $_ };'
+              $dryRunScript = $dryRunScript -replace '(\$sagarRepos = @\([^)]+\))', "$1`n$repoFilter"
+            }
             
             # Write dry run script
             $dryRunScript | Out-File "merge-dependency-prs-dryrun.ps1" -Encoding UTF8
@@ -107,8 +142,24 @@ jobs:
             # Run dry run version
             & ".\merge-dependency-prs-dryrun.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
           } else {
-            # Run actual script
-            & ".\merge-dependency-prs.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
+            # Modify actual script if target repos specified
+            if ($TargetRepos) {
+              Write-Host "Filtering to specified repositories: $TargetRepos" -ForegroundColor Yellow
+              $targetRepoList = $TargetRepos -split ',' | ForEach-Object { $_.Trim() }
+              
+              # Create a modified script with filtered repos
+              $scriptContent = Get-Content "merge-dependency-prs.ps1" -Raw
+              $repoFilter = '$targetRepoList = @("' + ($targetRepoList -join '","') + '");'
+              $repoFilter += '$sagarRepos = $sagarRepos | Where-Object { $targetRepoList -contains $_ };'
+              $repoFilter += '$mcaRepos = $mcaRepos | Where-Object { $targetRepoList -contains $_ };'
+              $modifiedScript = $scriptContent -replace '(\$sagarRepos = @\([^)]+\))', "$1`n$repoFilter"
+              
+              $modifiedScript | Out-File "merge-dependency-prs-filtered.ps1" -Encoding UTF8
+              & ".\merge-dependency-prs-filtered.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
+            } else {
+              # Run actual script
+              & ".\merge-dependency-prs.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
+            }
           }
           
       - name: Upload run summary

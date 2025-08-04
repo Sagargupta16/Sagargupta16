@@ -229,7 +229,7 @@ try {
     Write-Host "`nProcessing repositories..." -ForegroundColor Blue
     
     # Define repositories for each owner using simple arrays
-    $sagarRepos = @("My_Journey", "MERN-TEMPLATE", "TRINIT_BugBiters_Dev", "brainstorm-verse", "ai-code-translator", "Contact-Manager-Mern", "Contact-Manager-React", "tour-vibes", "Authentication-System")
+    $sagarRepos = @("My_Journey", "MERN-TEMPLATE", "TRINIT_BugBiters_Dev", "brainstorm-verse", "ai-code-translator", "Contact-Manager-Mern", "Contact-Manager-React", "tour-vibes", "Authentication-System", "portfolio-react", "leetcode_Rating_Predictor", "FARM-APP-TEMPLATE")
     $mcaRepos = @("placemento", "mca_nitw")
     
     $allResults = @()

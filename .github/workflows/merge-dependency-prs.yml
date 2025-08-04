@@ -37,9 +37,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         
-      - name: Setup GitHub CLI
-        uses: cli/gh-extension-action@v2
-        
       - name: Install PowerShell
         shell: bash
         run: |
@@ -59,6 +56,7 @@ jobs:
           pwsh --version
           echo "GitHub CLI version:"
           gh --version
+          echo "GitHub CLI is pre-installed on GitHub runners"
           
       - name: Authenticate GitHub CLI
         shell: bash

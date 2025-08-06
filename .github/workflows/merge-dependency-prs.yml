@@ -66,13 +66,13 @@ jobs:
       - name: Authenticate GitHub CLI
         shell: bash
         run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+          echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" | gh auth login --with-token
           gh auth status
           
       - name: Run merge dependency PRs script
         shell: pwsh
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           # Set parameters based on workflow inputs

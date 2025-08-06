@@ -73,24 +73,21 @@ jobs:
             exit 1
           fi
           
-          # Authenticate with GitHub CLI
+          # Authenticate with Personal Access Token
+          echo "🔐 Authenticating with Personal Access Token..."
           echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" | gh auth login --with-token
           
-          # Verify authentication and check scopes
+          # Verify authentication
           echo "✅ GitHub CLI authentication successful"
           gh auth status
           
           # Test basic API access
           echo "Testing API access..."
           gh api user --jq '.login'
-        env:
-          # Ensure the token has the required scopes: repo, read:org
-          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           
       - name: Run merge dependency PRs script
         shell: pwsh
         env:
-          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           # Set parameters based on workflow inputs

@@ -73,6 +73,7 @@ jobs:
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           # Set parameters based on workflow inputs
           $MergeMethod = "${{ github.event.inputs.merge_method }}"

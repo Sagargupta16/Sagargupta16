@@ -46,104 +46,48 @@ jobs:
       - name: Install PowerShell
         shell: bash
         run: |
-          # Update package list
           sudo apt-get update
-          
-          # Install PowerShell
           wget -q https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
           sudo dpkg -i packages-microsoft-prod.deb
           sudo apt-get update
           sudo apt-get install -y powershell
           
-      - name: Verify installations
-        shell: bash
-        run: |
-          echo "PowerShell version:"
-          pwsh --version
-          echo "GitHub CLI version:"
-          gh --version
-          echo "GitHub CLI is pre-installed on GitHub runners"
-          
       - name: Authenticate GitHub CLI
         shell: bash
         run: |
-          # Check if token is provided
           if [ -z "${{ secrets.PERSONAL_ACCESS_TOKEN }}" ]; then
             echo "❌ PERSONAL_ACCESS_TOKEN secret is not set"
             exit 1
           fi
           
-          # Authenticate with Personal Access Token
-          echo "🔐 Authenticating with Personal Access Token..."
           echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" | gh auth login --with-token
-          
-          # Verify authentication
-          echo "✅ GitHub CLI authentication successful"
           gh auth status
-          
-          # Test basic API access
-          echo "Testing API access..."
-          gh api user --jq '.login'
           
       - name: Run merge dependency PRs script
         shell: pwsh
-        env:
-          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
-          # Set parameters based on workflow inputs
           $MergeMethod = "${{ github.event.inputs.merge_method }}"
           $CloseUnmergeable = [System.Convert]::ToBoolean("${{ github.event.inputs.close_unmergeable }}")
           $DryRun = [System.Convert]::ToBoolean("${{ github.event.inputs.dry_run }}")
           $TargetRepos = "${{ github.event.inputs.target_repos }}"
           
-          Write-Host "=== GitHub Action: Merge Dependency PRs ===" -ForegroundColor Magenta
-          Write-Host "Triggered by: ${{ github.actor }}" -ForegroundColor Yellow
+          Write-Host "=== Merge Dependency PRs ===" -ForegroundColor Magenta
           Write-Host "Merge method: $MergeMethod" -ForegroundColor Yellow
-          Write-Host "Close unmergeable: $CloseUnmergeable" -ForegroundColor Yellow
-          Write-Host "Dry run mode: $DryRun" -ForegroundColor Yellow
-          if ($TargetRepos) {
-            Write-Host "Target repositories: $TargetRepos" -ForegroundColor Yellow
-          }
-          Write-Host "=" * 60
+          Write-Host "Dry run: $DryRun" -ForegroundColor Yellow
+          if ($TargetRepos) { Write-Host "Target repos: $TargetRepos" -ForegroundColor Yellow }
           
           if ($DryRun) {
-            Write-Host "🔍 DRY RUN MODE - No actual changes will be made" -ForegroundColor Cyan
-            Write-Host "=" * 60
+            Write-Host "🔍 DRY RUN MODE" -ForegroundColor Cyan
           }
           
-          # Test GitHub CLI access with a simple repository check
-          Write-Host "Testing GitHub CLI access..." -ForegroundColor Blue
-          try {
-            $testRepo = "Sagargupta16/portfolio-react"
-            Write-Host "Testing access to: $testRepo" -ForegroundColor Gray
-            $testResult = gh repo view $testRepo --json name,owner 2>$null
-            if ($testResult) {
-              Write-Host "✅ GitHub CLI access confirmed" -ForegroundColor Green
-            } else {
-              Write-Host "❌ GitHub CLI access test failed" -ForegroundColor Red
-              exit 1
-            }
-          } catch {
-            Write-Host "❌ Error testing GitHub CLI: $($_.Exception.Message)" -ForegroundColor Red
-            exit 1
-          }
-          
-          # Navigate to scripts directory and run the script
           Set-Location "scripts"
           
           if ($DryRun) {
-            # In dry run mode, we'll modify the script behavior
-            Write-Host "Dry run mode: Analyzing repositories and PRs without making changes..." -ForegroundColor Cyan
-            
-            # Create a modified version for dry run
             $scriptContent = Get-Content "merge-dependency-prs.ps1" -Raw
-            
-            # Replace merge and close operations with dry run logging
             $dryRunScript = $scriptContent -replace 'gh pr merge.*--delete-branch', 'Write-Host "DRY RUN: Would merge PR #$PRNumber" -ForegroundColor Green; return "merged"'
             $dryRunScript = $dryRunScript -replace 'gh pr close.*--comment.*', 'Write-Host "DRY RUN: Would close PR #$PRNumber" -ForegroundColor Yellow'
             $dryRunScript = $dryRunScript -replace 'gh api --method DELETE.*', 'Write-Host "DRY RUN: Would delete branch $branchName" -ForegroundColor Yellow'
             
-            # Add target repos filtering if specified
             if ($TargetRepos) {
               $targetRepoList = $TargetRepos -split ',' | ForEach-Object { $_.Trim() }
               $repoFilter = '$targetRepoList = @("' + ($targetRepoList -join '","') + '");'
@@ -152,28 +96,19 @@ jobs:
               $dryRunScript = $dryRunScript -replace '(\$sagarRepos = @\([^)]+\))', "$1`n$repoFilter"
             }
             
-            # Write dry run script
             $dryRunScript | Out-File "merge-dependency-prs-dryrun.ps1" -Encoding UTF8
-            
-            # Run dry run version
             & ".\merge-dependency-prs-dryrun.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
           } else {
-            # Modify actual script if target repos specified
             if ($TargetRepos) {
-              Write-Host "Filtering to specified repositories: $TargetRepos" -ForegroundColor Yellow
               $targetRepoList = $TargetRepos -split ',' | ForEach-Object { $_.Trim() }
-              
-              # Create a modified script with filtered repos
               $scriptContent = Get-Content "merge-dependency-prs.ps1" -Raw
               $repoFilter = '$targetRepoList = @("' + ($targetRepoList -join '","') + '");'
               $repoFilter += '$sagarRepos = $sagarRepos | Where-Object { $targetRepoList -contains $_ };'
               $repoFilter += '$mcaRepos = $mcaRepos | Where-Object { $targetRepoList -contains $_ };'
               $modifiedScript = $scriptContent -replace '(\$sagarRepos = @\([^)]+\))', "$1`n$repoFilter"
-              
               $modifiedScript | Out-File "merge-dependency-prs-filtered.ps1" -Encoding UTF8
               & ".\merge-dependency-prs-filtered.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
             } else {
-              # Run actual script
               & ".\merge-dependency-prs.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
             }
           }
@@ -183,29 +118,11 @@ jobs:
         shell: pwsh
         run: |
           $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss UTC"
-          $runUrl = "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          
-          Write-Host "`n=== Action Summary ===" -ForegroundColor Magenta
-          Write-Host "Workflow: Merge Dependency PRs" -ForegroundColor White
-          Write-Host "Triggered by: ${{ github.actor }}" -ForegroundColor White
-          Write-Host "Run time: $timestamp" -ForegroundColor White
-          Write-Host "Run URL: $runUrl" -ForegroundColor White
-          Write-Host "Merge method: ${{ github.event.inputs.merge_method }}" -ForegroundColor White
-          Write-Host "Close unmergeable: ${{ github.event.inputs.close_unmergeable }}" -ForegroundColor White
-          Write-Host "Dry run: ${{ github.event.inputs.dry_run }}" -ForegroundColor White
-          
-          # Create job summary for GitHub Actions UI
           @"
-          ## 🔄 Merge Dependency PRs Action Summary
+          ## 🔄 Merge Dependency PRs Summary
           
           **Triggered by:** ${{ github.actor }}  
           **Run time:** $timestamp  
           **Merge method:** ${{ github.event.inputs.merge_method }}  
-          **Close unmergeable PRs:** ${{ github.event.inputs.close_unmergeable }}  
-          **Dry run mode:** ${{ github.event.inputs.dry_run }}  
-          
-          **Run details:** [View full log]($runUrl)
-          
-          ---
-          *This action processes dependency update PRs (renovate/dependabot) across multiple repositories.*
+          **Dry run:** ${{ github.event.inputs.dry_run }}  
           "@ | Out-File $env:GITHUB_STEP_SUMMARY -Encoding UTF8

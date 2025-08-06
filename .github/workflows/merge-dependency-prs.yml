@@ -89,23 +89,65 @@ jobs:
             $dryRunScript = $dryRunScript -replace 'gh api --method DELETE.*', 'Write-Host "DRY RUN: Would delete branch $branchName" -ForegroundColor Yellow'
             
             if ($TargetRepos) {
-              $targetRepoList = $TargetRepos -split ',' | ForEach-Object { $_.Trim() }
-              $repoFilter = '$targetRepoList = @("' + ($targetRepoList -join '","') + '");'
-              $repoFilter += '$sagarRepos = $sagarRepos | Where-Object { $targetRepoList -contains $_ };'
-              $repoFilter += '$mcaRepos = $mcaRepos | Where-Object { $targetRepoList -contains $_ };'
-              $dryRunScript = $dryRunScript -replace '(\$sagarRepos = @\([^)]+\))', "$1`n$repoFilter"
+              $targetRepoList = $TargetRepos -split ',' | ForEach-Object { 
+                $repo = $_.Trim()
+                # Handle both "owner/repo" and "repo" formats
+                if ($repo -like "*/*") {
+                  $repo = $repo.Split('/')[-1]  # Get just the repo name
+                }
+                return $repo
+              }
+              
+              # Create a more precise filter
+              $repoFilterLines = @()
+              $repoFilterLines += '$targetRepoList = @("' + ($targetRepoList -join '","') + '")'
+              $repoFilterLines += '$sagarRepos = $sagarRepos | Where-Object { $targetRepoList -contains $_ }'
+              $repoFilterLines += '$mcaRepos = $mcaRepos | Where-Object { $targetRepoList -contains $_ }'
+              $repoFilter = $repoFilterLines -join "`n"
+              
+              # Find the exact line with repository definitions and add filter after it
+              $lines = $dryRunScript -split "`n"
+              $newLines = @()
+              foreach ($line in $lines) {
+                $newLines += $line
+                if ($line -match '^\s*\$sagarRepos = @\(.*\)') {
+                  $newLines += $repoFilter
+                }
+              }
+              $dryRunScript = $newLines -join "`n"
             }
             
             $dryRunScript | Out-File "merge-dependency-prs-dryrun.ps1" -Encoding UTF8
             & ".\merge-dependency-prs-dryrun.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
           } else {
             if ($TargetRepos) {
-              $targetRepoList = $TargetRepos -split ',' | ForEach-Object { $_.Trim() }
+              $targetRepoList = $TargetRepos -split ',' | ForEach-Object { 
+                $repo = $_.Trim()
+                # Handle both "owner/repo" and "repo" formats
+                if ($repo -like "*/*") {
+                  $repo = $repo.Split('/')[-1]  # Get just the repo name
+                }
+                return $repo
+              }
+              
+              # Create a more precise filter
               $scriptContent = Get-Content "merge-dependency-prs.ps1" -Raw
-              $repoFilter = '$targetRepoList = @("' + ($targetRepoList -join '","') + '");'
-              $repoFilter += '$sagarRepos = $sagarRepos | Where-Object { $targetRepoList -contains $_ };'
-              $repoFilter += '$mcaRepos = $mcaRepos | Where-Object { $targetRepoList -contains $_ };'
-              $modifiedScript = $scriptContent -replace '(\$sagarRepos = @\([^)]+\))', "$1`n$repoFilter"
+              $repoFilterLines = @()
+              $repoFilterLines += '$targetRepoList = @("' + ($targetRepoList -join '","') + '")'
+              $repoFilterLines += '$sagarRepos = $sagarRepos | Where-Object { $targetRepoList -contains $_ }'
+              $repoFilterLines += '$mcaRepos = $mcaRepos | Where-Object { $targetRepoList -contains $_ }'
+              $repoFilter = $repoFilterLines -join "`n"
+              
+              # Find the exact line with repository definitions and add filter after it
+              $lines = $scriptContent -split "`n"
+              $newLines = @()
+              foreach ($line in $lines) {
+                $newLines += $line
+                if ($line -match '^\s*\$sagarRepos = @\(.*\)') {
+                  $newLines += $repoFilter
+                }
+              }
+              $modifiedScript = $newLines -join "`n"
               $modifiedScript | Out-File "merge-dependency-prs-filtered.ps1" -Encoding UTF8
               & ".\merge-dependency-prs-filtered.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
             } else {

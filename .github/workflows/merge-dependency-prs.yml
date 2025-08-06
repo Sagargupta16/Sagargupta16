@@ -1,6 +1,7 @@
 name: Merge Dependency PRs
 
 # This workflow can only be triggered manually
+# REQUIRED: PERSONAL_ACCESS_TOKEN secret with scopes: repo, read:org
 on:
   workflow_dispatch:
     inputs:
@@ -66,8 +67,25 @@ jobs:
       - name: Authenticate GitHub CLI
         shell: bash
         run: |
+          # Check if token is provided
+          if [ -z "${{ secrets.PERSONAL_ACCESS_TOKEN }}" ]; then
+            echo "❌ PERSONAL_ACCESS_TOKEN secret is not set"
+            exit 1
+          fi
+          
+          # Authenticate with GitHub CLI
           echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" | gh auth login --with-token
+          
+          # Verify authentication and check scopes
+          echo "✅ GitHub CLI authentication successful"
           gh auth status
+          
+          # Test basic API access
+          echo "Testing API access..."
+          gh api user --jq '.login'
+        env:
+          # Ensure the token has the required scopes: repo, read:org
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           
       - name: Run merge dependency PRs script
         shell: pwsh

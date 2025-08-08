@@ -63,6 +63,38 @@ jobs:
           echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" | gh auth login --with-token
           gh auth status
           
+      - name: Fetch all repositories
+        shell: pwsh
+        run: |
+          Write-Host "🔍 Fetching all repositories from Sagargupta16 and MCA-NITW..." -ForegroundColor Blue
+          
+          # Fetch Sagargupta16 repos
+          $sagarRepos = @()
+          $page = 1
+          do {
+            $response = gh api "users/Sagargupta16/repos?per_page=100&page=$page" | ConvertFrom-Json
+            $sagarRepos += $response | Where-Object { -not $_.fork -and -not $_.archived } | ForEach-Object { $_.name }
+            $page++
+          } while ($response.Count -eq 100)
+          
+          # Fetch MCA-NITW repos  
+          $mcaRepos = @()
+          $page = 1
+          do {
+            $response = gh api "orgs/MCA-NITW/repos?per_page=100&page=$page" | ConvertFrom-Json
+            $mcaRepos += $response | Where-Object { -not $_.fork -and -not $_.archived } | ForEach-Object { $_.name }
+            $page++
+          } while ($response.Count -eq 100)
+          
+          Write-Host "Found $($sagarRepos.Count) Sagargupta16 repos and $($mcaRepos.Count) MCA-NITW repos" -ForegroundColor Green
+          
+          # Save to environment for next step
+          $allRepos = @{
+            "Sagargupta16" = $sagarRepos
+            "MCA-NITW" = $mcaRepos
+          }
+          $allRepos | ConvertTo-Json -Compress | Out-File "all-repos.json" -Encoding UTF8
+          
       - name: Run merge dependency PRs script
         shell: pwsh
         run: |
@@ -80,10 +112,20 @@ jobs:
             Write-Host "🔍 DRY RUN MODE" -ForegroundColor Cyan
           }
           
+          # Load fetched repositories
+          $allRepos = Get-Content "all-repos.json" | ConvertFrom-Json
+          $sagarRepos = $allRepos.Sagargupta16
+          $mcaRepos = $allRepos."MCA-NITW"
+          
           Set-Location "scripts"
           
           if ($DryRun) {
             $scriptContent = Get-Content "merge-dependency-prs.ps1" -Raw
+            
+            # Replace hardcoded repo arrays with dynamic ones
+            $scriptContent = $scriptContent -replace '\$sagarRepos = @\([^)]*\)', "`$sagarRepos = @('$($sagarRepos -join "','")')"
+            $scriptContent = $scriptContent -replace '\$mcaRepos = @\([^)]*\)', "`$mcaRepos = @('$($mcaRepos -join "','")')"
+            
             $dryRunScript = $scriptContent -replace 'gh pr merge.*--delete-branch', 'Write-Host "DRY RUN: Would merge PR #$PRNumber" -ForegroundColor Green; return "merged"'
             $dryRunScript = $dryRunScript -replace 'gh pr close.*--comment.*', 'Write-Host "DRY RUN: Would close PR #$PRNumber" -ForegroundColor Yellow'
             $dryRunScript = $dryRunScript -replace 'gh api --method DELETE.*', 'Write-Host "DRY RUN: Would delete branch $branchName" -ForegroundColor Yellow'
@@ -91,21 +133,18 @@ jobs:
             if ($TargetRepos) {
               $targetRepoList = $TargetRepos -split ',' | ForEach-Object { 
                 $repo = $_.Trim()
-                # Handle both "owner/repo" and "repo" formats
                 if ($repo -like "*/*") {
-                  $repo = $repo.Split('/')[-1]  # Get just the repo name
+                  $repo = $repo.Split('/')[-1]
                 }
                 return $repo
               }
               
-              # Create a more precise filter
               $repoFilterLines = @()
               $repoFilterLines += '$targetRepoList = @("' + ($targetRepoList -join '","') + '")'
               $repoFilterLines += '$sagarRepos = $sagarRepos | Where-Object { $targetRepoList -contains $_ }'
               $repoFilterLines += '$mcaRepos = $mcaRepos | Where-Object { $targetRepoList -contains $_ }'
               $repoFilter = $repoFilterLines -join "`n"
               
-              # Find the exact line with repository definitions and add filter after it
               $lines = $dryRunScript -split "`n"
               $newLines = @()
               foreach ($line in $lines) {
@@ -120,25 +159,27 @@ jobs:
             $dryRunScript | Out-File "merge-dependency-prs-dryrun.ps1" -Encoding UTF8
             & ".\merge-dependency-prs-dryrun.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
           } else {
+            $scriptContent = Get-Content "merge-dependency-prs.ps1" -Raw
+            
+            # Replace hardcoded repo arrays with dynamic ones
+            $scriptContent = $scriptContent -replace '\$sagarRepos = @\([^)]*\)', "`$sagarRepos = @('$($sagarRepos -join "','")')"
+            $scriptContent = $scriptContent -replace '\$mcaRepos = @\([^)]*\)', "`$mcaRepos = @('$($mcaRepos -join "','")')"
+            
             if ($TargetRepos) {
               $targetRepoList = $TargetRepos -split ',' | ForEach-Object { 
                 $repo = $_.Trim()
-                # Handle both "owner/repo" and "repo" formats
                 if ($repo -like "*/*") {
-                  $repo = $repo.Split('/')[-1]  # Get just the repo name
+                  $repo = $repo.Split('/')[-1]
                 }
                 return $repo
               }
               
-              # Create a more precise filter
-              $scriptContent = Get-Content "merge-dependency-prs.ps1" -Raw
               $repoFilterLines = @()
               $repoFilterLines += '$targetRepoList = @("' + ($targetRepoList -join '","') + '")'
               $repoFilterLines += '$sagarRepos = $sagarRepos | Where-Object { $targetRepoList -contains $_ }'
               $repoFilterLines += '$mcaRepos = $mcaRepos | Where-Object { $targetRepoList -contains $_ }'
               $repoFilter = $repoFilterLines -join "`n"
               
-              # Find the exact line with repository definitions and add filter after it
               $lines = $scriptContent -split "`n"
               $newLines = @()
               foreach ($line in $lines) {
@@ -147,12 +188,11 @@ jobs:
                   $newLines += $repoFilter
                 }
               }
-              $modifiedScript = $newLines -join "`n"
-              $modifiedScript | Out-File "merge-dependency-prs-filtered.ps1" -Encoding UTF8
-              & ".\merge-dependency-prs-filtered.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
-            } else {
-              & ".\merge-dependency-prs.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
+              $scriptContent = $newLines -join "`n"
             }
+            
+            $scriptContent | Out-File "merge-dependency-prs-dynamic.ps1" -Encoding UTF8
+            & ".\merge-dependency-prs-dynamic.ps1" -MergeMethod $MergeMethod -CloseUnmergeable:$CloseUnmergeable
           }
           
       - name: Upload run summary
@@ -160,6 +200,16 @@ jobs:
         shell: pwsh
         run: |
           $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss UTC"
+          
+          # Get repo counts if available
+          $repoSummary = ""
+          if (Test-Path "all-repos.json") {
+            $allRepos = Get-Content "all-repos.json" | ConvertFrom-Json
+            $sagarCount = $allRepos.Sagargupta16.Count
+            $mcaCount = $allRepos."MCA-NITW".Count
+            $repoSummary = "**Repositories processed:** $sagarCount Sagargupta16 repos + $mcaCount MCA-NITW repos = $($sagarCount + $mcaCount) total  `n"
+          }
+          
           @"
           ## 🔄 Merge Dependency PRs Summary
           
@@ -167,4 +217,9 @@ jobs:
           **Run time:** $timestamp  
           **Merge method:** ${{ github.event.inputs.merge_method }}  
           **Dry run:** ${{ github.event.inputs.dry_run }}  
+          $repoSummary**Target repos filter:** ${{ github.event.inputs.target_repos || 'All repositories' }}
+          
+          ### 📊 Repository Sources
+          - **Sagargupta16**: All non-fork, non-archived repositories
+          - **MCA-NITW**: All non-fork, non-archived repositories
           "@ | Out-File $env:GITHUB_STEP_SUMMARY -Encoding UTF8

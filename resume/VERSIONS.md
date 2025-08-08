@@ -22,33 +22,24 @@
 
 ## How to Update Resume
 
-### When to Increment Versions:
-- **Major (2.0.0)**: Got a new job, graduated, major career change
-- **Minor (1.1.0)**: Added new project, learned new technology, updated experience
-- **Patch (1.0.1)**: Fixed typos, improved formatting, small corrections
+### Version bump rules
 
-### Steps:
-1. **Edit your resume** and save as `sagar_resume.pdf`
-2. **Determine version number** based on changes made
-3. **Copy to versions folder**: `Copy-Item "sagar_resume.pdf" "resume\versions\sagar-resume-vX.Y.Z.pdf"`
-4. **Update this log** with version details
-5. **Commit to git** with message: "📄 Release resume vX.Y.Z - [description]"
+- **Major (2.0.0)**: Got a new job, graduated, major career change — include [major] in commit message
+- **Minor (1.1.0)**: Added new project, new skills, certifications, experience updates — include [minor]
+- **Patch (1.0.1)**: Small fixes, typos, formatting — default when no tag present
 
-## Quick Commands
+### Steps (automated)
 
-```powershell
-# Example: Creating version 1.1.0 after adding a new project
-Copy-Item "sagar_resume.pdf" "resume\versions\sagar-resume-v1.1.0.pdf"
-
-# Using the script (run from root directory)
-.\resume\new-version.ps1 "1.1.0" "Added AI project and React skills"
-
-# Commit changes
-git add .
-git commit -m "📄 Release resume v1.1.0 - Added AI project and React skills"
-```
+1. Export your resume as a PDF and place it in `resume/upload/` (any filename, .pdf extension)
+2. Commit and push to `main` (use [major]/[minor] as needed in your commit message)
+3. The workflow will:
+	- Calculate next version based on your commit message
+	- Copy the uploaded PDF to `resume/versions/sagar-resume-vX.Y.Z.pdf`
+	- Update root `sagar_resume.pdf` to the uploaded file
+	- Update this log with the new version and date
 
 ## Version Examples
+
 - `v1.0.0` → `v1.0.1`: Fixed spelling errors
 - `v1.0.1` → `v1.1.0`: Added new internship experience  
 - `v1.1.0` → `v2.0.0`: Graduated and got first job

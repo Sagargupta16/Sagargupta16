@@ -1,0 +1,123 @@
+name: Resume Versioning
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'resume/upload/**'
+      - 'sagar_resume.pdf'
+  workflow_dispatch:
+
+concurrency:
+  group: resume-versioning
+  cancel-in-progress: false
+
+jobs:
+  bump-version:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Get current version
+        id: get_version
+        run: |
+          CURRENT=$(grep -oE '\*\*Version\*\*:\s*v[0-9]+\.[0-9]+\.[0-9]+' resume/VERSIONS.md | head -n1 | grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+') || true
+          if [ -z "$CURRENT" ]; then
+            CURRENT=v0.0.0
+          fi
+          echo "current=$CURRENT" >> $GITHUB_OUTPUT
+      - name: Determine bump type
+        id: bump_type
+        run: |
+          # Default bump to patch unless commit message contains [minor] or [major]
+          MSG=$(git log -1 --pretty=%B)
+          TYPE=patch
+          if echo "$MSG" | grep -qi '\[minor\]'; then TYPE=minor; fi
+          if echo "$MSG" | grep -qi '\[major\]'; then TYPE=major; fi
+          echo "type=$TYPE" >> $GITHUB_OUTPUT
+      - name: Calculate next version
+        id: next
+        run: |
+          CUR=${{ steps.get_version.outputs.current }}
+          IFS='.' read -r MA MI PA <<< "${CUR#v}"
+          case "${{ steps.bump_type.outputs.type }}" in
+            major)
+              MA=$((MA+1)); MI=0; PA=0;;
+            minor)
+              MI=$((MI+1)); PA=0;;
+            *)
+              PA=$((PA+1));;
+          esac
+          NEXT="v${MA}.${MI}.${PA}"
+          echo "next=$NEXT" >> $GITHUB_OUTPUT
+      - name: Detect uploaded resume PDF
+        id: detect
+        run: |
+          # Get list of PDFs changed in this push within resume/upload
+          CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- 'resume/upload/*.pdf' || true)
+          if [ -z "$CHANGED" ]; then
+            # Fallback: use files changed in the last commit
+            CHANGED=$(git log -1 --name-only --pretty="" -- 'resume/upload/*.pdf' || true)
+          fi
+          SELECTED=$(echo "$CHANGED" | head -n1)
+          if [ -z "$SELECTED" ]; then
+            echo "No uploaded PDF detected; skipping copy to root."
+          fi
+          echo "selected=$SELECTED" >> $GITHUB_OUTPUT
+      - name: Create versioned PDF if missing
+        run: |
+          NEXT=${{ steps.next.outputs.next }}
+          FILE="resume/versions/sagar-resume-${NEXT}.pdf"
+          mkdir -p resume/versions
+          SEL=${{ steps.detect.outputs.selected }}
+          # Prefer the newly uploaded PDF if present, else fall back to existing root file
+          SRC="sagar_resume.pdf"
+          if [ -n "$SEL" ] && [ -f "$SEL" ]; then SRC="$SEL"; fi
+          if [ -f "$SRC" ] && [ ! -f "$FILE" ]; then
+            cp "$SRC" "$FILE"
+          fi
+      - name: Update root latest file
+        run: |
+          SEL=${{ steps.detect.outputs.selected }}
+          # If a new upload exists, set it as the latest at repo root
+          if [ -n "$SEL" ] && [ -f "$SEL" ]; then
+            cp "$SEL" sagar_resume.pdf
+          fi
+      - name: Update VERSIONS.md
+        run: |
+          NEXT=${{ steps.next.outputs.next }}
+          DATE=$(date +%Y-%m-%d)
+          MSG=$(git log -1 --pretty=%s)
+          MSG_SAFE=${MSG//|/-}
+          # Update Latest Version section
+          awk -v nextv="$NEXT" -v date="$DATE" '
+            BEGIN{ updated=0 }
+            {
+              if ($0 ~ /^- \*\*Version\*\*:/ && updated==0) { print "- **Version**: " nextv; updated=1; next }
+              else if ($0 ~ /^- \*\*Last Updated\*\*:/ && updated==1) { print "- **Last Updated**: " date; updated=2; next }
+              print $0
+            }
+          ' resume/VERSIONS.md > resume/VERSIONS.md.tmp && mv resume/VERSIONS.md.tmp resume/VERSIONS.md
+          # Prepend new history row if not already present
+          if ! grep -q "| ${NEXT} |" resume/VERSIONS.md; then
+            sed -i "/^\| Version \| Date \| File Name \| Changes \|$/a | ${NEXT} | ${DATE} | \`sagar-resume-${NEXT}.pdf\` | ${MSG_SAFE} |" resume/VERSIONS.md
+          fi
+      - name: Commit changes
+        run: |
+          NEXT=${{ steps.next.outputs.next }}
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "📄 Release resume ${NEXT}"
+            git push
+          else
+            echo "No changes to commit"
+          fi

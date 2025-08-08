@@ -1,0 +1,14 @@
+# VS Code settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+*.bak
+*.old
+
+# Resume upload processing
+resume/upload/*
+!resume/upload/.gitkeep

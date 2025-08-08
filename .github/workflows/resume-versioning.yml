@@ -62,13 +62,8 @@ jobs:
       - name: Detect uploaded resume PDF
         id: detect
         run: |
-          # Get list of PDFs changed in this push within resume/upload
-          CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- 'resume/upload/*.pdf' || true)
-          if [ -z "$CHANGED" ]; then
-            # Fallback: use files changed in the last commit
-            CHANGED=$(git log -1 --name-only --pretty="" -- 'resume/upload/*.pdf' || true)
-          fi
-          SELECTED=$(echo "$CHANGED" | head -n1)
+          # Get the most recent PDF from resume/upload
+          SELECTED=$(find resume/upload -name "*.pdf" -type f | head -n1)
           if [ -z "$SELECTED" ]; then
             echo "No uploaded PDF detected; skipping copy to root."
           fi

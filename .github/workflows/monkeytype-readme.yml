@@ -2,7 +2,7 @@ name: Generate MonkeyType README SVG
 
 on:
     schedule:
-        - cron: "0 */6 * * *" # every 6 hours
+        - cron: "0 0 * * *" # every day at midnight UTC
     workflow_dispatch:
 
 permissions:

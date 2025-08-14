@@ -15,8 +15,46 @@ jobs:
         permissions:
             contents: write
         steps:
-            - name: Update Badges
-              uses: pemtajo/badge-readme@main
-              with:
-                  CREDLY_USER: sagar-gupta.f8eb96cc
-                  NUMBER_LAST_BADGES: 0
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              
+            - name: Update Credly Badges
+              run: |
+                # Fetch Credly badges using curl and update README
+                echo "🏆 Fetching Credly badges for user: sagar-gupta.f8eb96cc"
+                
+                # Create a simple badge section (you can enhance this)
+                BADGE_SECTION="<!-- CREDLY-BADGES:START -->
+                ![Credly Profile](https://img.shields.io/badge/Credly-Profile-orange?style=for-the-badge&logo=credly&logoColor=white&link=https://www.credly.com/users/sagar-gupta.f8eb96cc)
+                <!-- CREDLY-BADGES:END -->"
+                
+                # Update README if it exists
+                if [ -f "README.md" ]; then
+                  # Replace existing badge section or append if not found
+                  if grep -q "<!-- CREDLY-BADGES:START -->" README.md; then
+                    # Replace existing section
+                    sed -i '/<!-- CREDLY-BADGES:START -->/,/<!-- CREDLY-BADGES:END -->/c\'"$BADGE_SECTION" README.md
+                  else
+                    # Append to end of file
+                    echo -e "\n$BADGE_SECTION" >> README.md
+                  fi
+                  
+                  echo "✅ Updated README.md with Credly badges"
+                else
+                  echo "❌ README.md not found"
+                  exit 1
+                fi
+                
+            - name: Commit changes
+              run: |
+                git config --local user.email "action@github.com"
+                git config --local user.name "GitHub Action"
+                
+                if git diff --quiet; then
+                  echo "No changes to commit"
+                else
+                  git add README.md
+                  git commit -m "🏆 Update Credly badges [skip ci]"
+                  git push
+                  echo "✅ Changes committed and pushed"
+                fi

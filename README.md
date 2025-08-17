@@ -6,6 +6,12 @@
   <img src="https://img.shields.io/github/stars/sagargupta16?label=Total%20Stars&style=flat-square&color=yellow" alt="GitHub Stars" />
 </div>
 
+<!-- <div align="center">
+  <a href="https://github.com/Sagargupta16">
+    <img src="https://img.shields.io/github/followers/Sagargupta16?label=Follow&style=social" alt="Follow on GitHub" />
+  </a>
+</div> -->
+
 <p align="center">
      Hi, my name is Sagar Gupta. <br />
 I am a ProServe (Cloud Consultant) - DevOps at <a href="https://aws.amazon.com/">Amazon Web Services (AWS)</a> and hold a postgraduate degree (MCA) from <a href="https://www.nitw.ac.in/">NIT Warangal</a>. <br/>
@@ -205,6 +211,11 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 
 </div>
 
+### 🏆 GitHub Trophies
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Sagargupta16&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies">
+</div>
+
 ---
 
 ## 🌐 Connect With Me
@@ -239,7 +250,3 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 **[⬆ Back to Top](#table-of-contents)**
 
 </div>
-
-<!-- CREDLY-BADGES:START -->
-![Credly Profile](https://img.shields.io/badge/Credly-Profile-orange?style=for-the-badge&logo=credly&logoColor=white&link=https://www.credly.com/users/sagar-gupta.f8eb96cc)
-<!-- CREDLY-BADGES:END -->

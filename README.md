@@ -258,9 +258,9 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 <details>
 <summary align="center"><h3 style="display: inline;">📈 Detailed GitHub Metrics</h3></summary>
 
-<br/>
-
+<div align="center">
 ![Metrics](https://github.com/Sagargupta16/Sagargupta16/blob/main/github-metrics.svg)
+</div>
 
 </details>
 
@@ -273,7 +273,5 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 <p>
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer"/>
 </p>
-
-**[⬆ Back to Top](#table-of-contents)**
 
 </div>

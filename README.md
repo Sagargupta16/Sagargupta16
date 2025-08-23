@@ -259,7 +259,9 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 <summary align="center"><h3 style="display: inline;">📈 Detailed GitHub Metrics</h3></summary>
 
 <div align="center">
+
 ![Metrics](https://github.com/Sagargupta16/Sagargupta16/blob/main/github-metrics.svg)
+
 </div>
 
 </details>

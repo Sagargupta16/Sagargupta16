@@ -173,16 +173,9 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://leetcard.jacoblin.cool/SAGARGUPTA16?theme=dark&font=Patrick%20Hand&ext=heatmap">
-    <source media="(prefers-color-scheme: light)" srcset="https://leetcard.jacoblin.cool/SAGARGUPTA16?theme=light&font=Patrick%20Hand&ext=heatmap">
+    <source media="(prefers-color-scheme: light)" srcset="https://leetcard.jacoblin.cool/SAGARGUPTA1610?theme=light&font=Patrick%20Hand&ext=heatmap">
     <img src="https://leetcard.jacoblin.cool/SAGARGUPTA16?theme=dark&font=Patrick%20Hand&ext=heatmap" alt="LeetCode Stats" />
   </picture>
-</div>
-
-<!-- Backup LeetCode Stats -->
-<div align="center">
-  <a href="https://leetcode.com/SAGARGUPTA16/" target="_blank">
-    <img src="https://leetcode-stats-api.herokuapp.com/SAGARGUPTA16?theme=dark" alt="LeetCode Stats Alternative" />
-  </a>
 </div>
 
 ### ⚡ MonkeyType Stats

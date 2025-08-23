@@ -251,6 +251,12 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 
 </div>
 
-<!-- CREDLY-BADGES:START -->
-![Credly Profile](https://img.shields.io/badge/Credly-Profile-orange?style=for-the-badge&logo=credly&logoColor=white&link=https://www.credly.com/users/sagar-gupta.f8eb96cc)
-<!-- CREDLY-BADGES:END -->
+---
+
+## 📈 Detailed GitHub Metrics
+
+<div align="center">
+
+![Metrics](https://github.com/Sagargupta16/Sagargupta16/blob/main/github-metrics.svg)
+
+</div>

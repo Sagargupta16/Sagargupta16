@@ -36,7 +36,7 @@ jobs:
           plugin_achievements_display: detailed  # detailed description of achievement badges
 
           plugin_calendar: yes  # shows activity by years from current and onwards
-          plugin_calendar_limit: 11 # shows activity for this many years
+          plugin_calendar_limit: 5 # shows activity for this many years
 
           plugin_habits: yes  # activity per day and week
           plugin_habits_facts: yes  # shows analysis of your weekly activity
@@ -46,12 +46,9 @@ jobs:
           plugin_licenses_setup: npm ci  # detailed information about used licenses
 
           plugin_skyline: yes  # 3D activity skyline plugin
-          plugin_skyline_year: 2022 # for which year
+          plugin_skyline_year: 2025 # for which year
           plugin_skyline_frames: 120  # number of frames
           plugin_skyline_quality: 1  # quality 1 - best
-
-          plugin_stargazers: yes  # activity for the month
-          plugin_stargazers_charts_type: chartist  # activity type - smooth lines
 
           plugin_support: yes  # support plugin
 

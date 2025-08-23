@@ -1,6 +1,9 @@
 # VS Code settings
 .vscode/
 
+# Markdown linting configuration (keep local)
+.markdownlint.json
+
 # Temporary files
 *.tmp
 *.temp

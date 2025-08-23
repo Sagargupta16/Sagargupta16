@@ -143,7 +143,7 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 
 <div align="center">
  
-### 🔥 GitHub Streaks & Activity
+### 🔥 GitHub Activity & Contribution Analytics
 
 <div align="center">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
@@ -154,7 +154,7 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=tokyonight" alt="GitHub Streak Stats" />
 </div>
 
-### 📈 Contribution Activity
+#### � Detailed Contribution Breakdown
 
 ![GitHub Profile Summary](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sagargupta16&theme=2077)
 
@@ -171,7 +171,18 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 ### 🎮 LeetCode Stats
 
 <div align="center">
-  <img src="https://leetcard.jacoblin.cool/sagargupta1610?theme=dark&font=Patrick%20Hand&ext=heatmap" alt="LeetCode Stats" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://leetcard.jacoblin.cool/SAGARGUPTA16?theme=dark&font=Patrick%20Hand&ext=heatmap">
+    <source media="(prefers-color-scheme: light)" srcset="https://leetcard.jacoblin.cool/SAGARGUPTA16?theme=light&font=Patrick%20Hand&ext=heatmap">
+    <img src="https://leetcard.jacoblin.cool/SAGARGUPTA16?theme=dark&font=Patrick%20Hand&ext=heatmap" alt="LeetCode Stats" />
+  </picture>
+</div>
+
+<!-- Backup LeetCode Stats -->
+<div align="center">
+  <a href="https://leetcode.com/SAGARGUPTA16/" target="_blank">
+    <img src="https://leetcode-stats-api.herokuapp.com/SAGARGUPTA16?theme=dark" alt="LeetCode Stats Alternative" />
+  </a>
 </div>
 
 ### ⚡ MonkeyType Stats
@@ -239,6 +250,22 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 
 ---
 
+</div>
+</details>
+
+---
+
+<details>
+<summary align="center"><h3 style="display: inline;">📈 Detailed GitHub Metrics</h3></summary>
+
+<br/>
+
+![Metrics](https://github.com/Sagargupta16/Sagargupta16/blob/main/github-metrics.svg)
+
+</details>
+
+---
+
 <div align="center">
 
 ### 🌟 Thanks for visiting! Let's connect and build something amazing together! 🚀
@@ -248,15 +275,5 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 </p>
 
 **[⬆ Back to Top](#table-of-contents)**
-
-</div>
-
----
-
-## 📈 Detailed GitHub Metrics
-
-<div align="center">
-
-![Metrics](https://github.com/Sagargupta16/Sagargupta16/blob/main/github-metrics.svg)
 
 </div>

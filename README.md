@@ -1,10 +1,11 @@
-# <h1 align="center"><code>Hey There👋 I'm Sagar Gupta</code></h1>
+<h1 align="center"><code>Hey There👋 I'm Sagar Gupta</code></h1>
 
-<div align="right">
-  <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=brightgreen&style=flat-square" alt="Profile Views" />
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=2E9EF7&style=flat-square" alt="Profile Views" />
   <img src="https://img.shields.io/github/followers/sagargupta16?label=Followers&style=flat-square&color=blue" alt="GitHub Followers" />
   <img src="https://img.shields.io/github/stars/sagargupta16?label=Total%20Stars&style=flat-square&color=yellow" alt="GitHub Stars" />
 </div>
+<br/>
 
 <!-- <div align="center">
   <a href="https://github.com/Sagargupta16">
@@ -243,7 +244,6 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 
 ---
 
-</div>
 </details>
 
 ---

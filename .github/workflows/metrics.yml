@@ -13,7 +13,7 @@ jobs:
       - name: 🗃️ Base metrics - Profile overview
         uses: lowlighter/metrics@latest
         with:
-          filename: github-metrics.svg
+          filename: metrics/github-metrics.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           config_timezone: Asia/Kolkata
@@ -29,7 +29,7 @@ jobs:
       - name: 📅 Isometric commit calendar - Full year
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.isocalendar.svg
+          filename: metrics/metrics.plugin.isocalendar.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           config_timezone: Asia/Kolkata
@@ -44,7 +44,7 @@ jobs:
       - name: 🈷️ Languages activity - Most used with details
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.languages.svg
+          filename: metrics/metrics.plugin.languages.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -60,10 +60,10 @@ jobs:
           delay: 120
           plugins_errors_fatal: no
 
-      - name: �️ Languages activity - Recently used
+      - name: 🈷️ Languages activity - Recently used
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.languages.recent.svg
+          filename: metrics/metrics.plugin.languages.recent.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -79,10 +79,10 @@ jobs:
           delay: 120
           plugins_errors_fatal: no
 
-      - name: �🏆 Achievements - Detailed display
+      - name: 🏆 Achievements - Detailed display
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.achievements.svg
+          filename: metrics/metrics.plugin.achievements.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -97,7 +97,7 @@ jobs:
       - name: 🏆 Achievements - Compact display
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.achievements.compact.svg
+          filename: metrics/metrics.plugin.achievements.compact.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -112,7 +112,7 @@ jobs:
       - name: 💡 Coding habits - Activity patterns
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.habits.svg
+          filename: metrics/metrics.plugin.habits.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           config_timezone: Asia/Kolkata
@@ -128,7 +128,7 @@ jobs:
       - name: 📌 Starred topics - Icons mode
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.topics.svg
+          filename: metrics/metrics.plugin.topics.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -143,7 +143,7 @@ jobs:
       - name: 🌟 Recently starred repositories
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.stars.svg
+          filename: metrics/metrics.plugin.stars.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -157,7 +157,7 @@ jobs:
       - name: 📰 Recent activity
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.activity.svg
+          filename: metrics/metrics.plugin.activity.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -173,7 +173,7 @@ jobs:
       - name: 📆 Commit calendar - Full history
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.calendar.svg
+          filename: metrics/metrics.plugin.calendar.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -187,7 +187,7 @@ jobs:
       - name: 👨‍💻 Lines of code changed
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.lines.svg
+          filename: metrics/metrics.plugin.lines.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: repositories
@@ -201,7 +201,7 @@ jobs:
       - name: ✨ Stargazers - Classic charts
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.stargazers.svg
+          filename: metrics/metrics.plugin.stargazers.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -214,7 +214,7 @@ jobs:
       - name: 🎟️ Follow-up of issues and pull requests
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.followup.svg
+          filename: metrics/metrics.plugin.followup.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -227,7 +227,7 @@ jobs:
       - name: 🎭 Comment reactions
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.reactions.svg
+          filename: metrics/metrics.plugin.reactions.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -242,7 +242,7 @@ jobs:
       - name: 🧑‍🤝‍🧑 People - Followers
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.people.followers.svg
+          filename: metrics/metrics.plugin.people.followers.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -256,7 +256,7 @@ jobs:
       - name: 📓 Featured repositories - Pinned repositories
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.repositories.pinned.svg
+          filename: metrics/metrics.plugin.repositories.pinned.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -270,7 +270,7 @@ jobs:
       - name: 💬 Discussions - GitHub Discussions
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.discussions.svg
+          filename: metrics/metrics.plugin.discussions.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -284,7 +284,7 @@ jobs:
       - name: 🎩 Notable contributions
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.notable.svg
+          filename: metrics/metrics.plugin.notable.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -297,7 +297,7 @@ jobs:
       - name: 🎫 Gists
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.gists.svg
+          filename: metrics/metrics.plugin.gists.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""
@@ -310,7 +310,7 @@ jobs:
       - name: 🙋 Introduction - Profile introduction
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.introduction.svg
+          filename: metrics/metrics.plugin.introduction.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: header
@@ -323,7 +323,7 @@ jobs:
       - name: 🗳️ Leetcode stats
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.leetcode.svg
+          filename: metrics/metrics.plugin.leetcode.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           base: ""

@@ -10,6 +10,14 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Ensure metrics directory exists
+        run: mkdir -p metrics
+        
       - name: 🗃️ Base metrics - Profile overview
         uses: lowlighter/metrics@latest
         with:
@@ -328,7 +336,7 @@ jobs:
           user: Sagargupta16
           base: ""
           plugin_leetcode: yes
-          plugin_leetcode_user: SAGARGUPTA16
+          plugin_leetcode_user: sagargupta1610
           plugin_leetcode_sections: solved, skills, recent
           output_action: commit
           committer_branch: main

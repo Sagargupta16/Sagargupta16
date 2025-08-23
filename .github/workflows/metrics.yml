@@ -1,53 +1,336 @@
-name: Metrics
+# THIS WORKFLOW IS AUTO-GENERATED
+name: GitHub Metrics
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 8 1/2 * *"  # Every 2 days at 8 AM
   workflow_dispatch:
 
 jobs:
+  # Base metrics with essential information
   github-metrics:
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: 🗃️ Base metrics - Profile overview
+        uses: lowlighter/metrics@latest
         with:
+          filename: github-metrics.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           user: Sagargupta16
           config_timezone: Asia/Kolkata
-          # config_display: columns  # display information in columns
+          config_display: large
           committer_message: "chore: update metrics"
           template: classic
-          base: header, activity, community, repositories, metadata  # basic content (user information)
-          plugin_introduction: yes  # general account information
-          # plugin_sponsors: yes
+          base: header, activity, community, repositories, metadata
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
 
-          plugin_isocalendar: yes  # 3D isocalendar
-          plugin_isocalendar_duration: full-year  # shows activity for the full year
+      - name: 📅 Isometric commit calendar - Full year
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.isocalendar.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          config_timezone: Asia/Kolkata
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
 
-          plugin_languages: yes  # display used programming languages
-          plugin_languages_details: bytes-size, percentage  # additional code info: size and percentage
+      - name: 🈷️ Languages activity - Most used with details
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.languages.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: >-
+            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
+            gnuplot, batchfile
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 8
+          plugin_languages_sections: most-used
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
 
+      - name: �️ Languages activity - Recently used
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.languages.recent.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: >-
+            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
+            gnuplot, batchfile
+          plugin_languages_sections: recently-used
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 6
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
+
+      - name: �🏆 Achievements - Detailed display
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.achievements.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
           plugin_achievements: yes
+          plugin_achievements_display: detailed
+          plugin_achievements_threshold: X
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
 
-          plugin_achievements_threshold: X  # (shows achievement badges not yet unlocked)
-          plugin_achievements_display: detailed  # detailed description of achievement badges
+      - name: 🏆 Achievements - Compact display
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.achievements.compact.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: C
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
 
-          plugin_calendar: yes  # shows activity by years from current and onwards
-          plugin_calendar_limit: 5 # shows activity for this many years
+      - name: 💡 Coding habits - Activity patterns
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.habits.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          config_timezone: Asia/Kolkata
+          base: ""
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
 
-          plugin_habits: yes  # activity per day and week
-          plugin_habits_facts: yes  # shows analysis of your weekly activity
-          plugin_habits_charts: yes  # shows characteristics
+      - name: 📌 Starred topics - Icons mode
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.topics.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_topics: yes
+          plugin_topics_limit: 20
+          plugin_topics_mode: icons
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
 
-          plugin_licenses: yes  # license information
-          plugin_licenses_setup: npm ci  # detailed information about used licenses
+      - name: 🌟 Recently starred repositories
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.stars.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_stars: yes
+          plugin_stars_limit: 4
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
 
-          plugin_skyline: yes  # 3D activity skyline plugin
-          plugin_skyline_year: 2025 # for which year
-          plugin_skyline_frames: 120  # number of frames
-          plugin_skyline_quality: 1  # quality 1 - best
+      - name: 📰 Recent activity
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.activity.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_activity: yes
+          plugin_activity_limit: 8
+          plugin_activity_days: 30
+          plugin_activity_filter: issue, pr, release, fork, review, ref/create
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
 
-          plugin_support: yes  # support plugin
+      - name: 📆 Commit calendar - Full history
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.calendar.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_calendar: yes
+          plugin_calendar_limit: 0
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
 
-          plugin_topics: yes  # used topics plugin
-          plugin_topics_limit: 0
-          plugin_topics_mode: iconsEE
+      - name: 👨‍💻 Lines of code changed
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.lines.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: repositories
+          plugin_lines: yes
+          plugin_lines_delay: 30
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
+
+      - name: ✨ Stargazers - Classic charts
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.stargazers.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_stargazers: yes
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
+
+      - name: 🎟️ Follow-up of issues and pull requests
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.followup.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_followup: yes
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
+
+      - name: 🎭 Comment reactions
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.reactions.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_reactions: yes
+          plugin_reactions_limit: 100
+          plugin_reactions_details: percentage
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
+
+      - name: 🧑‍🤝‍🧑 People - Followers
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.people.followers.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_people: yes
+          plugin_people_types: followers
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
+
+      - name: 📓 Featured repositories - Pinned repositories
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.repositories.pinned.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_repositories: yes
+          plugin_repositories_pinned: 6
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
+
+      - name: 💬 Discussions - GitHub Discussions
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.discussions.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_discussions: yes
+          plugin_discussions_categories_limit: 8
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
+
+      - name: 🎩 Notable contributions
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.notable.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_notable: yes
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
+
+      - name: 🎫 Gists
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.gists.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_gists: yes
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
+
+      - name: 🙋 Introduction - Profile introduction
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.introduction.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: header
+          plugin_introduction: yes
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no
+
+      - name: 🗳️ Leetcode stats
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.leetcode.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: Sagargupta16
+          base: ""
+          plugin_leetcode: yes
+          plugin_leetcode_user: SAGARGUPTA16
+          plugin_leetcode_sections: solved, skills, recent
+          output_action: commit
+          committer_branch: main
+          delay: 120
+          plugins_errors_fatal: no

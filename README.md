@@ -227,24 +227,6 @@ _A comprehensive DevOps automation framework for AWS infrastructure using Terraf
 <div align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=Sagargupta16&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies">
 </div>
-
----
-
-## 🌐 Connect With Me
-
-<p align="center">
-<a href="https://www.linkedin.com/in/sagar16gupta" target="_blank" rel="noreferrer"> 
-<img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" height="40"/></a>
-<a href="https://leetcode.com/SAGARGUPTA16/" target="_blank" rel="noreferrer"> 
-<img align="center" src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" alt="LeetCode" height="40"/></a>
-<a href="https://github.com/Sagargupta16" target="_blank" rel="noreferrer"> 
-<img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" height="40"/></a>
-<a href="mailto:sg85207@gmail.com" target="_blank" rel="noreferrer"> 
-<img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" height="40"/></a>
-<a href="https://sagargupta16.github.io/portfolio-react/" target="_blank" rel="noreferrer"> 
-<img align="center" src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" height="40"/></a>
-</p>
-
 ## 🎧 What's Vibin?
 
 [![Spotify](https://github.com/edorado93/edorado93/blob/main/spotify.svg)](https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4)
@@ -260,91 +242,125 @@ _A comprehensive DevOps automation framework for AWS infrastructure using Terraf
 
 <div align="center">
 
-## 🗃️ Profile Overview
+## � Complete Profile Overview
 
 ![Metrics](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/github-metrics.svg)
 
-## 📅 Isometric Commit Calendar
+---
 
-![Isometric Calendar](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.isocalendar.svg)
-
-## 🈷️ Most Used Languages with Details
-
-![Languages](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.languages.svg)
-
-## 🈷️ Recently Used Languages
-
-![Recent Languages](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.languages.recent.svg)
-
-## 🏆 Achievements - Detailed
-
-![Achievements Detailed](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.achievements.svg)
-
-## 🏆 Achievements - Compact
-
-![Achievements Compact](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.achievements.compact.svg)
-
-## 💡 Coding Habits & Activity Patterns
-
-![Coding Habits](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.habits.svg)
-
-## 📌 Starred Topics
-
-![Topics](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.topics.svg)
-
-## 🌟 Recently Starred Repositories
-
-![Stars](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.stars.svg)
-
-## 📰 Recent Activity
-
-![Activity](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.activity.svg)
-
-## 📆 Commit Calendar - Full History
-
-![Calendar](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.calendar.svg)
-
-## 👨‍💻 Lines of Code Changed
-
-![Lines](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.lines.svg)
-
-## ✨ Stargazers
-
-![Stargazers](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.stargazers.svg)
-
-## 🎟️ Follow-up Issues & Pull Requests
-
-![Followup](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.followup.svg)
-
-## 🎭 Comment Reactions
-
-![Reactions](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.reactions.svg)
-
-## 🧑‍🤝‍🧑 Followers
-
-![People](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.people.followers.svg)
-
-## 📓 Pinned Repositories
-
-![Repositories](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.repositories.pinned.svg)
-
-## 💬 GitHub Discussions
-
-![Discussions](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.discussions.svg)
-
-## 🎩 Notable Contributions
-
-![Notable](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.notable.svg)
-
-## 🎫 Gists
-
-![Gists](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.gists.svg)
-
-## 🙋 Profile Introduction
+## � Profile Introduction
 
 ![Introduction](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.introduction.svg)
 
-## 🗳️ LeetCode Stats
+---
+
+## 📅 Calendar & Commit Activity
+
+### 📅 Isometric Commit Calendar
+
+![Isometric Calendar](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.isocalendar.svg)
+
+### 📆 Commit Calendar - Full History
+
+![Calendar](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.calendar.svg)
+
+### 💡 Coding Habits & Activity Patterns
+
+![Coding Habits](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.habits.svg)
+
+### 📰 Recent Activity
+
+![Activity](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.activity.svg)
+
+---
+
+## 🈷️ Language Statistics
+
+### 🈷️ Most Used Languages - Detailed
+
+![Languages](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.languages.svg)
+
+### 🈷️ Recently Used Languages
+
+![Recent Languages](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.languages.recent.svg)
+
+---
+
+## � Achievements
+
+### 🏆 GitHub Achievements - Detailed View
+
+![Achievements Detailed](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.achievements.svg)
+
+### 🏆 GitHub Achievements - Compact View
+
+![Achievements Compact](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.achievements.compact.svg)
+
+---
+
+## �‍💻 Code Contributions
+
+### 👨‍💻 Lines of Code Changed
+
+![Lines](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.lines.svg)
+
+### 🎩 Notable Contributions
+
+![Notable](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.notable.svg)
+
+---
+
+## 🌟 Repository & Stars
+
+### 📓 Pinned Repositories
+
+![Repositories](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.repositories.pinned.svg)
+
+### � Recently Starred Repositories
+
+![Stars](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.stars.svg)
+
+### ✨ Stargazers Growth
+
+![Stargazers](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.stargazers.svg)
+
+### 📌 Starred Topics
+
+![Topics](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.topics.svg)
+
+---
+
+## 🤝 Community Engagement
+
+### 🧑‍🤝‍🧑 Followers
+
+![People](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.people.followers.svg)
+
+### 🎟️ Follow-up Issues & Pull Requests
+
+![Followup](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.followup.svg)
+
+### � Comment Reactions
+
+![Reactions](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.reactions.svg)
+
+### 💬 GitHub Discussions
+
+![Discussions](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.discussions.svg)
+
+---
+
+## � Additional Content
+
+### 🎫 Gists
+
+![Gists](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.gists.svg)
+
+---
+
+## 🎮 Competitive Programming
+
+### 🗳️ LeetCode Performance Metrics
 
 ![LeetCode](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.leetcode.svg)
 

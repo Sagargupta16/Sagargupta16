@@ -5,7 +5,7 @@
 ---
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+👋+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps;Full+Stack+Developer+%7C+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+%7C+4+AWS+Certifications;Building+Scalable+Cloud+Solutions+☁️" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+|+4+AWS+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
 </div>
 
 ---
@@ -264,7 +264,7 @@ Fast fingers for fast coding! 🚀
 <a href="https://www.credly.com/badges/d6dc337a-0af5-48f8-b64f-eb2a5925f07b" title="AWS Certified Machine Learning Engineer – Associate"><img src="https://images.credly.com/size/80x80/images/1a634b4e-3d6b-4a74-b118-c0dcb429e8d2/image.png" alt="AWS Certified Machine Learning Engineer – Associate" width="80" height="80"></a>
 <a href="https://www.credly.com/badges/e18d2154-e153-40b3-8f39-6684e561396e" title="AWS Certified AI Practitioner"><img src="https://images.credly.com/size/80x80/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS Certified AI Practitioner" width="80" height="80"></a>
 <a href="https://www.credly.com/badges/315fe8a5-1e0b-418b-b139-e27018da152b" title="AWS Certified Cloud Practitioner"><img src="https://images.credly.com/size/80x80/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner" width="80" height="80"></a>
-<a href="https://www.credly.com/badges/8b0723a5-bac7-4262-b5b6-20337b2979a1" title="HashiCorp Certified: Terraform Associate (003)"><img src="https://images.credly.com/size/80x80/images/ed4be915-68f8-428a-b332-40ded9084ee5/blob" alt="HashiCorp Certified: Terraform Associate (003)" width="80" height="80"></a>
+<a href="https://www.credly.com/badges/8b0723a5-bac7-4262-b5b6-20337b2979a1" title="HashiCorp Certified: Terraform Associate (003)"><img src="https://images.credly.com/size/80x80/images/ed4be915-68f8-428a-b332-40ded9084ee5/image.png" alt="HashiCorp Certified: Terraform Associate (003)" width="80" height="80"></a>
 
 </div>
 
@@ -433,7 +433,7 @@ Fast fingers for fast coding! 🚀
 
 ### 🌟 Thanks for visiting! Let's connect and build something amazing together! 🚀
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=A9FEF7&center=true&vCenter=true&width=600&lines=Happy+Coding!+💻;Open+to+Collaboration+🤝;Let's+Build+the+Future!+🚀" alt="Footer Animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=A9FEF7&center=true&vCenter=true&width=600&lines=Happy+Coding!+%F0%9F%92%BB;Open+to+Collaboration+%F0%9F%A4%9D;Let's+Build+the+Future!+%F0%9F%9A%80" alt="Footer Animation" />
 
 </div>
 

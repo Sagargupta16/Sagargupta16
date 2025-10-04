@@ -22,7 +22,7 @@ I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infras
 ---
 
 <details>
-<summary align="center"><h3 style="display: inline;">More About Me ⬇️ </h3></summary>
+<summary align="center"><h3 style="display: inline;">👋 More About Me (Click to Expand)</h3></summary>
 <hr/>
 
 ## 👨‍💻 About Me
@@ -128,15 +128,15 @@ _A comprehensive DevOps automation framework for AWS infrastructure using Terraf
 <h2 id="connect-with-me">🌐 Connect With Me</h2>
 
 <p align="center">
-<a href="https://www.linkedin.com/in/sagar16gupta" target="_blank" rel="noreferrer"> 
+<a href="https://www.linkedin.com/in/sagar-gupta-16-10" target="_blank" rel="noreferrer">
 <img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" height="40"/></a>
-<a href="https://leetcode.com/SAGARGUPTA16/" target="_blank" rel="noreferrer"> 
+<a href="https://leetcode.com/sagargupta1610/" target="_blank" rel="noreferrer">
 <img align="center" src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" alt="LeetCode" height="40"/></a>
-<a href="https://github.com/Sagargupta16" target="_blank" rel="noreferrer"> 
+<a href="https://github.com/Sagargupta16" target="_blank" rel="noreferrer">
 <img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" height="40"/></a>
-<a href="mailto:sg85207@gmail.com" target="_blank" rel="noreferrer"> 
+<a href="mailto:sg85207@gmail.com" target="_blank" rel="noreferrer">
 <img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" height="40"/></a>
-<a href="https://sagargupta16.github.io/portfolio-react/" target="_blank" rel="noreferrer"> 
+<a href="https://sagargupta16.github.io/portfolio-react/" target="_blank" rel="noreferrer">
 <img align="center" src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" height="40"/></a>
 </p>
 
@@ -145,7 +145,7 @@ _A comprehensive DevOps automation framework for AWS infrastructure using Terraf
 ## 📊 GitHub Stats
 
 <div align="center">
- 
+
 ### 🔥 GitHub Activity & Contribution Analytics
 
 <div align="center">
@@ -175,9 +175,9 @@ _A comprehensive DevOps automation framework for AWS infrastructure using Terraf
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://leetcard.jacoblin.cool/SAGARGUPTA1610?theme=dark&font=Patrick%20Hand&ext=heatmap">
-    <source media="(prefers-color-scheme: light)" srcset="https://leetcard.jacoblin.cool/SAGARGUPTA1610?theme=light&font=Patrick%20Hand&ext=heatmap">
-    <img src="https://leetcard.jacoblin.cool/SAGARGUPTA1610?theme=dark&font=Patrick%20Hand&ext=heatmap" alt="LeetCode Stats" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://leetcard.jacoblin.cool/sagargupta1610?theme=dark&font=Patrick%20Hand&ext=heatmap">
+    <source media="(prefers-color-scheme: light)" srcset="https://leetcard.jacoblin.cool/sagargupta1610?theme=light&font=Patrick%20Hand&ext=heatmap">
+    <img src="https://leetcard.jacoblin.cool/sagargupta1610?theme=dark&font=Patrick%20Hand&ext=heatmap" alt="LeetCode Stats" />
   </picture>
 </div>
 

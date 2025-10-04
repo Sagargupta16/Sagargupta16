@@ -266,8 +266,6 @@ Fast fingers for fast coding! 🚀
 <a href="https://www.credly.com/badges/315fe8a5-1e0b-418b-b139-e27018da152b" title="AWS Certified Cloud Practitioner"><img src="https://images.credly.com/size/80x80/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner" width="80" height="80"></a>
 <a href="https://www.credly.com/badges/8b0723a5-bac7-4262-b5b6-20337b2979a1" title="HashiCorp Certified: Terraform Associate (003)"><img src="https://images.credly.com/size/80x80/images/ed4be915-68f8-428a-b332-40ded9084ee5/blob" alt="HashiCorp Certified: Terraform Associate (003)" width="80" height="80"></a>
 
-**AWS Solutions Architect** • **ML Engineer** • **AI Practitioner** • **Cloud Practitioner** • **Terraform Associate**
-
 </div>
 
 #### 📚 Knowledge Badges & Specializations

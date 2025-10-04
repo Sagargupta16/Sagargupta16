@@ -1,0 +1,63 @@
+# Profile Configuration
+# Single source of truth for all social media and platform usernames
+# Update here and all workflows/README references will stay consistent
+
+personal:
+  name: "Sagar Gupta"
+  email: "sg85207@gmail.com"
+  location: "India"
+  timezone: "Asia/Kolkata"
+
+github:
+  username: "Sagargupta16"
+  profile_url: "https://github.com/Sagargupta16"
+  repo_url: "https://github.com/Sagargupta16/Sagargupta16"
+
+linkedin:
+  username: "sagar16gupta"
+  profile_url: "https://www.linkedin.com/in/sagar16gupta"
+
+leetcode:
+  username: "sagargupta1610"  # IMPORTANT: Use this consistently everywhere!
+  profile_url: "https://leetcode.com/sagargupta1610/"
+  card_theme: "dark"
+  font: "Patrick Hand"
+
+credly:
+  username: "sagar-gupta.f8eb96cc"
+  profile_url: "https://www.credly.com/users/sagar-gupta.f8eb96cc"
+
+portfolio:
+  url: "https://sagargupta16.github.io/portfolio-react/"
+  repo: "https://github.com/Sagargupta16/portfolio-react"
+
+monkeytype:
+  username: "Sagargupta16"
+  profile_url: "https://monkeytype.com/profile/Sagargupta16"
+
+spotify:
+  user_id: "31viv6sijcyqscehz45zz2wdlvy4"
+  profile_url: "https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4"
+
+holopin:
+  username: "sagargupta"
+  profile_url: "https://holopin.io/@sagargupta"
+  badge_url: "https://holopin.me/sagargupta"
+
+# Badge and theme preferences
+preferences:
+  badge_style: "for-the-badge"  # Options: for-the-badge, flat-square, flat, plastic
+  github_stats_theme: "tokyonight"
+  profile_view_color: "2E9EF7"
+  
+# Resume
+resume:
+  filename: "sagar_resume.pdf"
+  path: "https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf"
+
+# Metrics
+metrics:
+  update_schedule: "0 8 1/2 * *"  # Every 2 days at 8 AM
+  delay_seconds: 15
+  branch: "main"
+  output_folder: "metrics"

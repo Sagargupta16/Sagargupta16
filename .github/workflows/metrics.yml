@@ -1,4 +1,5 @@
 # ULTIMATE FAST GITHUB METRICS WORKFLOW
+# Uses centralized profile config from .github/config/profiles.yml
 name: GitHub Metrics (Ultimate Fast)
 on:
   schedule:
@@ -13,6 +14,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      
+      - name: Install yq (YAML parser)
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+      
+      - name: Read profile configuration
+        id: config
+        run: |
+          echo "github_user=$(yq '.github.username' .github/config/profiles.yml)" >> $GITHUB_OUTPUT
+          echo "leetcode_user=$(yq '.leetcode.username' .github/config/profiles.yml)" >> $GITHUB_OUTPUT
+          echo "timezone=$(yq '.personal.timezone' .github/config/profiles.yml)" >> $GITHUB_OUTPUT
+          echo "✅ Loaded config - LeetCode user: $(yq '.leetcode.username' .github/config/profiles.yml)"
           
       - name: Ensure metrics directory exists
         run: mkdir -p metrics
@@ -23,8 +37,8 @@ jobs:
         with:
           filename: metrics/github-metrics.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          user: Sagargupta16
-          config_timezone: Asia/Kolkata
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
           config_display: large
           committer_message: "chore: update metrics"
           template: classic
@@ -70,7 +84,7 @@ jobs:
           plugin_introduction: yes
           plugin_stargazers: yes
           plugin_leetcode: yes
-          plugin_leetcode_user: sagargupta1610
+          plugin_leetcode_user: ${{ steps.config.outputs.leetcode_user }}
           plugin_leetcode_sections: solved, skills, recent
           
           output_action: commit

@@ -1,29 +1,31 @@
-<h1 align="center"><code>Hey There👋 I'm Sagar Gupta</code></h1>
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=200&section=header&text=Sagar%20Gupta&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient&fontFamily=Pacifico" />
+</div>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=2E9EF7&style=flat-square" alt="Profile Views" />
-  <img src="https://img.shields.io/github/followers/sagargupta16?label=Followers&style=flat-square&color=blue" alt="GitHub Followers" />
-  <img src="https://img.shields.io/github/stars/sagargupta16?label=Total%20Stars&style=flat-square&color=yellow" alt="GitHub Stars" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+👋+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps;Full+Stack+Developer+%7C+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+%7C+4+AWS+Certifications;Building+Scalable+Cloud+Solutions+☁️" alt="Typing Animation" />
 </div>
+
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
+  <img src="https://img.shields.io/github/followers/sagargupta16?label=Followers&style=for-the-badge&color=FE428E" alt="GitHub Followers" />
+  <img src="https://img.shields.io/github/stars/sagargupta16?label=Total%20Stars&style=for-the-badge&color=F8D847" alt="GitHub Stars" />
+</div>
+
 <br/>
-
-<!-- <div align="center">
-  <a href="https://github.com/Sagargupta16">
-    <img src="https://img.shields.io/github/followers/Sagargupta16?label=Follow&style=social" alt="Follow on GitHub" />
-  </a>
-</div> -->
-
-<p align="center">
-     Hi, my name is Sagar Gupta. <br />
-I am a ProServe (Cloud Consultant) - DevOps at <a href="https://aws.amazon.com/">Amazon Web Services (AWS)</a> and hold a postgraduate degree (MCA) from <a href="https://www.nitw.ac.in/">NIT Warangal</a>. <br/>
-I specialize in Full Stack Development, DevOps Engineering, and AWS Cloud Infrastructure with a strong focus on automation and scalable cloud solutions.
-</p>
 
 ---
 
+<p align="center">
+     <strong>Hi, I'm Sagar Gupta</strong> 👨‍💻<br />
+I am a <strong>ProServe (Cloud Consultant) - DevOps</strong> at <a href="https://aws.amazon.com/">Amazon Web Services (AWS)</a> and hold a postgraduate degree (MCA) from <a href="https://www.nitw.ac.in/">NIT Warangal</a>. <br/>
+I specialize in <strong>Full Stack Development</strong>, <strong>DevOps Engineering</strong>, and <strong>AWS Cloud Infrastructure</strong> with a strong focus on automation and scalable cloud solutions.
+</p>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+
 <details>
 <summary align="center"><h3 style="display: inline;">👋 More About Me (Click to Expand)</h3></summary>
-<hr/>
 
 ## 👨‍💻 About Me
 
@@ -122,10 +124,22 @@ _A comprehensive DevOps automation framework for AWS infrastructure using Terraf
 | **AI Tools & Assistants**    | ![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=github&logoColor=white) ![ChatGPT](https://img.shields.io/badge/ChatGPT-74AA9C?style=for-the-badge&logo=openai&logoColor=white) ![Claude](https://img.shields.io/badge/Claude-191919?style=for-the-badge&logo=anthropic&logoColor=white) ![Cursor AI](https://img.shields.io/badge/Cursor_AI-000000?style=for-the-badge&logo=cursor&logoColor=white)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | **Development Environment**  | ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Kiro IDE](https://img.shields.io/badge/Kiro_IDE-FF6B35?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Jinja](https://img.shields.io/badge/Jinja-B41717?style=for-the-badge&logo=jinja&logoColor=white) ![HCL](https://img.shields.io/badge/HCL-5835CC?style=for-the-badge&logo=terraform&logoColor=white)                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
-<hr/>
+---
+
+<div align="center">
+
+### 🎨 Tech Stack Visualized
+
+<img src="https://skillicons.dev/icons?i=aws,terraform,docker,kubernetes,python,typescript,javascript,react,nextjs,nodejs,express,fastapi,mongodb,mysql,git,github,githubactions,html,css,tailwind,redux,cpp,java,cs,r,unity,tensorflow,pytorch,vscode,figma&perline=10" alt="Tech Stack Icons" />
+
+</div>
 
 <!-- CONNECT WITH ME -->
+<div align="center">
+
 <h2 id="connect-with-me">🌐 Connect With Me</h2>
+
+</div>
 
 <p align="center">
 <a href="https://www.linkedin.com/in/sagar-gupta-16-10" target="_blank" rel="noreferrer">
@@ -231,11 +245,9 @@ _A comprehensive DevOps automation framework for AWS infrastructure using Terraf
 
 [![Spotify](https://github.com/edorado93/edorado93/blob/main/spotify.svg)](https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4)
 
----
-
 </details>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
 
 <details>
 <summary align="center"><h3 style="display: inline;">📈 Detailed GitHub Metrics</h3></summary>
@@ -368,14 +380,16 @@ _A comprehensive DevOps automation framework for AWS infrastructure using Terraf
 
 </details>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
 
 <div align="center">
 
 ### 🌟 Thanks for visiting! Let's connect and build something amazing together! 🚀
 
-<p>
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer"/>
-</p>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=A9FEF7&center=true&vCenter=true&width=600&lines=Happy+Coding!+💻;Open+to+Collaboration+🤝;Let's+Build+the+Future!+🚀" alt="Footer Animation" />
 
 </div>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=120&section=footer"/>
+</p>

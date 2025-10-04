@@ -67,7 +67,8 @@ if ($uniqueUsernames.Count -gt 1) {
 # Display results
 if ($issues.Count -eq 0) {
     Write-Host "✅ All usernames are consistent!" -ForegroundColor Green
-} else {
+}
+else {
     Write-Host "`n⚠️  Found $($issues.Count) issue(s):" -ForegroundColor Yellow
     $issues | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
     
@@ -80,7 +81,8 @@ if ($issues.Count -eq 0) {
         
         Set-Content $readmeFile -Value $readme -NoNewline
         Write-Host "✅ Fixed README.md - please review changes!" -ForegroundColor Green
-    } else {
+    }
+    else {
         Write-Host "`nℹ️  Run with -Fix flag to automatically fix these issues" -ForegroundColor Cyan
     }
 }

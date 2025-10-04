@@ -12,7 +12,19 @@
   <img src="https://img.shields.io/github/stars/sagargupta16?label=Total%20Stars&style=for-the-badge&color=F8D847" alt="GitHub Stars" />
 </div>
 
+<div align="center">
+  <img src="https://img.shields.io/badge/LeetCode-Contest%20Rating%201950+-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Rating" />
+  <img src="https://img.shields.io/badge/AWS-4%20Certifications-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Certifications" />
+  <img src="https://img.shields.io/badge/Experience-1%2B%20Years-2E9EF7?style=for-the-badge" alt="Experience" />
+</div>
+
 <br/>
+
+<div align="center">
+
+**[💼 About](#-about-me) • [🚀 Projects](#️-project-overview) • [💻 Tech Stack](#-tech-stack-visualized) • [📊 Stats](#-github-stats) • [🏆 Certifications](#-certifications--badges) • [📫 Connect](#-connect-with-me)**
+
+</div>
 
 ---
 
@@ -36,6 +48,22 @@ I specialize in <strong>Full Stack Development</strong>, <strong>DevOps Engineer
 - 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/portfolio-react/)
 - 📫 Reach me at **<sg85207@gmail.com>**
 - 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf)
+
+## 🔭 Currently Working On
+
+- 🌱 Learning **MLOps & Machine Learning Pipeline Automation**
+- 🔨 Building **Multi-Cloud Infrastructure Solutions** with Terraform
+- 📝 Contributing to **Open Source DevOps Tools**
+- 💡 Exploring **AI/ML Integration with AWS Services**
+- 🎯 Optimizing **CI/CD Pipelines** for enterprise-scale deployments
+
+## ⚡ Fun Facts
+
+- 🎯 Solved **1100+ coding problems** on LeetCode (and counting!)
+- ☕ Coffee enthusiast - Code runs on caffeine ☕→💻
+- Passionate about **Cloud Architecture** and **Infrastructure Automation**
+- 📚 Continuous learner - Always exploring cutting-edge technologies
+- 🏆 Participated in **80+ competitive programming contests**
 
 ## 🏆 Key Achievements
 
@@ -141,18 +169,15 @@ _A comprehensive DevOps automation framework for AWS infrastructure using Terraf
 
 </div>
 
-<p align="center">
-<a href="https://www.linkedin.com/in/sagar-gupta-16-10" target="_blank" rel="noreferrer">
-<img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" height="40"/></a>
-<a href="https://leetcode.com/sagargupta1610/" target="_blank" rel="noreferrer">
-<img align="center" src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" alt="LeetCode" height="40"/></a>
-<a href="https://github.com/Sagargupta16" target="_blank" rel="noreferrer">
-<img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" height="40"/></a>
-<a href="mailto:sg85207@gmail.com" target="_blank" rel="noreferrer">
-<img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" height="40"/></a>
-<a href="https://sagargupta16.github.io/portfolio-react/" target="_blank" rel="noreferrer">
-<img align="center" src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" height="40"/></a>
-</p>
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/Let's%20Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sagar-gupta-16-10)
+[![LeetCode](https://img.shields.io/badge/Solve%20With%20Me-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/sagargupta1610/)
+[![Portfolio](https://img.shields.io/badge/View%20My%20Work-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://sagargupta16.github.io/portfolio-react/)
+[![Email](https://img.shields.io/badge/Email%20Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sg85207@gmail.com)
+[![GitHub](https://img.shields.io/badge/Follow%20Me-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sagargupta16)
+
+</div>
 
 ---
 
@@ -171,7 +196,15 @@ _A comprehensive DevOps automation framework for AWS infrastructure using Terraf
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=tokyonight" alt="GitHub Streak Stats" />
 </div>
 
-#### � Detailed Contribution Breakdown
+<br/>
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=sagargupta16&custom_title=Sagar's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=A9FEF7&line=626069&point=F8D847&area_color=FE428E&title_color=FE428E&area=true&theme=react-dark" width="100%" alt="GitHub Activity Graph">
+</div>
+
+<br/>
+
+#### 📊 Detailed Contribution Breakdown
 
 ![GitHub Profile Summary](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sagargupta16&theme=2077)
 

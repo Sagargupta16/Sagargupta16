@@ -5,7 +5,7 @@
 ---
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+|+4+AWS+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+|+5+AWS+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
 </div>
 
 ---
@@ -70,7 +70,7 @@
 
 |       🎓 **Education**       |       💼 **Professional**        |    🏅 **Competitive**     |     🎖️ **Certifications**     |
 | :--------------------------: | :------------------------------: | :-----------------------: | :---------------------------: |
-|  **MCA from NIT Warangal**   |       **ProServe at AWS**        | **1950+ LeetCode Rating** |   **4 AWS Certifications**    |
+|  **MCA from NIT Warangal**   |       **ProServe at AWS**        | **1950+ LeetCode Rating** |   **5 AWS Certifications**    |
 | First Class with Distinction |    DevOps & Cloud Specialist     |   1100+ Problems Solved   | HashiCorp Terraform Certified |
 |     Academic Excellence      | Infrastructure Automation Expert | 80+ Contests Participated |    Multiple Holopin Badges    |
 

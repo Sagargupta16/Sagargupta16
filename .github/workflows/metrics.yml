@@ -37,6 +37,7 @@ jobs:
 
       # Combined overview (all plugins in one SVG)
       - name: Generate combined overview
+        continue-on-error: true
         uses: lowlighter/metrics@latest
         with:
           filename: metrics/github-metrics.svg
@@ -77,6 +78,7 @@ jobs:
           plugin_repositories: yes
           plugin_repositories_pinned: 6
           plugin_lines: yes
+          plugin_lines_sections: base
           plugin_lines_delay: 30
           plugin_followup: yes
           plugin_discussions: yes
@@ -242,6 +244,7 @@ jobs:
           config_timezone: ${{ steps.config.outputs.timezone }}
           base: ""
           plugin_lines: yes
+          plugin_lines_sections: base
           plugin_lines_delay: 30
           output_action: none
           plugins_errors_fatal: no

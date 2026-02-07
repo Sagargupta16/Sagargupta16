@@ -1,10 +1,14 @@
-# ULTIMATE FAST GITHUB METRICS WORKFLOW
+# GitHub Metrics Workflow
+# Generates combined overview + individual plugin SVGs for the README
 # Uses centralized profile config from .github/config/profiles.yml
-name: GitHub Metrics (Ultimate Fast)
+name: GitHub Metrics
 on:
   schedule:
-    - cron: "0 8 1/2 * *" # Every 2 days at 8 AM
+    - cron: "0 8 1/2 * *" # Every 2 days at 8 AM UTC
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   github-metrics:
@@ -31,8 +35,8 @@ jobs:
       - name: Ensure metrics directory exists
         run: mkdir -p metrics
 
-      # SINGLE STEP - ALL METRICS GENERATED AT ONCE
-      - name: ⚡ Generate ALL metrics (fastest possible)
+      # Combined overview (all plugins in one SVG)
+      - name: Generate combined overview
         uses: lowlighter/metrics@latest
         with:
           filename: metrics/github-metrics.svg
@@ -40,11 +44,9 @@ jobs:
           user: ${{ steps.config.outputs.github_user }}
           config_timezone: ${{ steps.config.outputs.timezone }}
           config_display: large
-          committer_message: "chore: update metrics"
           template: classic
           base: header, activity, community, repositories, metadata
 
-          # All plugins combined for maximum speed
           plugin_languages: yes
           plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell, gnuplot, batchfile
           plugin_languages_details: bytes-size, percentage
@@ -87,7 +89,327 @@ jobs:
           plugin_leetcode_user: ${{ steps.config.outputs.leetcode_user }}
           plugin_leetcode_sections: solved, skills, recent
 
-          output_action: commit
-          committer_branch: main
+          output_action: none
           delay: 15
           plugins_errors_fatal: no
+
+      # ============================================================
+      # Individual plugin SVGs (for Detailed GitHub Metrics section)
+      # ============================================================
+
+      - name: Generate introduction
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.introduction.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_introduction: yes
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate isometric calendar
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.isocalendar.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate calendar
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.calendar.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_calendar: yes
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate coding habits
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.habits.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate activity
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.activity.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_activity: yes
+          plugin_activity_limit: 8
+          plugin_activity_days: 30
+          plugin_activity_filter: issue, pr, release, fork, review, ref/create
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate languages (most used)
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.languages.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell, gnuplot, batchfile
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 8
+          plugin_languages_sections: most-used
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate languages (recently used)
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.languages.recent.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell, gnuplot, batchfile
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 8
+          plugin_languages_sections: recently-used
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate achievements (detailed)
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.achievements.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_achievements: yes
+          plugin_achievements_display: detailed
+          plugin_achievements_threshold: C
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate achievements (compact)
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.achievements.compact.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: C
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate lines of code
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.lines.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_lines: yes
+          plugin_lines_delay: 30
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate notable contributions
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.notable.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_notable: yes
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate pinned repositories
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.repositories.pinned.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_repositories: yes
+          plugin_repositories_pinned: 6
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate recently starred
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.stars.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_stars: yes
+          plugin_stars_limit: 4
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate stargazers
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.stargazers.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_stargazers: yes
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate starred topics
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.topics.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_topics: yes
+          plugin_topics_limit: 20
+          plugin_topics_mode: icons
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate followers
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.people.followers.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_people: yes
+          plugin_people_types: followers
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate follow-up issues and PRs
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.followup.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_followup: yes
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate reactions
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.reactions.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_reactions: yes
+          plugin_reactions_limit: 100
+          plugin_reactions_details: percentage
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate discussions
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.discussions.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_discussions: yes
+          plugin_discussions_categories_limit: 8
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate gists
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.gists.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_gists: yes
+          output_action: none
+          plugins_errors_fatal: no
+
+      - name: Generate LeetCode stats
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/metrics.plugin.leetcode.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          user: ${{ steps.config.outputs.github_user }}
+          config_timezone: ${{ steps.config.outputs.timezone }}
+          base: ""
+          plugin_leetcode: yes
+          plugin_leetcode_user: ${{ steps.config.outputs.leetcode_user }}
+          plugin_leetcode_sections: solved, skills, recent
+          output_action: none
+          plugins_errors_fatal: no
+
+      # ============================================================
+      # Commit all generated SVGs in a single commit
+      # ============================================================
+      - name: Commit updated metrics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add metrics/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update metrics"
+            git push
+          else
+            echo "No metrics changes to commit"
+          fi

@@ -44,36 +44,6 @@ holopin:
   profile_url: "https://holopin.io/@sagargupta"
   badge_url: "https://holopin.me/sagargupta"
 
-# Social Media Platforms
-twitter:
-  username: "YOUR_TWITTER_USERNAME"  # Add your Twitter/X username
-  profile_url: "https://twitter.com/YOUR_TWITTER_USERNAME"
-
-instagram:
-  username: "YOUR_INSTAGRAM_USERNAME"  # Add your Instagram username
-  profile_url: "https://www.instagram.com/YOUR_INSTAGRAM_USERNAME"
-
-discord:
-  username: "YOUR_USERNAME#0000"  # Add your Discord username with discriminator
-  server_invite: ""  # Add if you have a Discord server
-
-# Competitive Programming Platforms
-hackerrank:
-  username: "YOUR_HACKERRANK_USERNAME"  # Add your HackerRank username
-  profile_url: "https://www.hackerrank.com/YOUR_HACKERRANK_USERNAME"
-
-codechef:
-  username: "YOUR_CODECHEF_USERNAME"  # Add your CodeChef username
-  profile_url: "https://www.codechef.com/users/YOUR_CODECHEF_USERNAME"
-
-codeforces:
-  username: "YOUR_CODEFORCES_USERNAME"  # Add your Codeforces username
-  profile_url: "https://codeforces.com/profile/YOUR_CODEFORCES_USERNAME"
-
-geeksforgeeks:
-  username: "YOUR_GFG_USERNAME"  # Add your GeeksforGeeks username
-  profile_url: "https://auth.geeksforgeeks.org/user/YOUR_GFG_USERNAME"
-
 # Contact Information
 contact:
   email_primary: "sg85207@gmail.com"

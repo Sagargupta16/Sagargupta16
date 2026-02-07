@@ -18,7 +18,7 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/LeetCode-Contest%20Rating%201950+-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Rating" />
-  <img src="https://img.shields.io/badge/AWS-4%20Certifications-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Certifications" />
+  <img src="https://img.shields.io/badge/AWS-5%20Certifications-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Certifications" />
   <img src="https://img.shields.io/badge/Experience-1%2B%20Years-2E9EF7?style=for-the-badge" alt="Experience" />
 </div>
 
@@ -248,7 +248,6 @@ Fast fingers for fast coding! 🚀
    <img src="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/monkeytype-readme/monkeytype-readme-pb.svg" alt="My Monkeytype profile" />
  </a>
 </div>
- </a>
 
 </div>
 

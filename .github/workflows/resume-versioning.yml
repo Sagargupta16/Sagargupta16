@@ -102,9 +102,9 @@ jobs:
               print $0
             }
           ' resume/VERSIONS.md > resume/VERSIONS.md.tmp && mv resume/VERSIONS.md.tmp resume/VERSIONS.md
-          # Prepend new history row if not already present
+          # Prepend new history row after the table separator line if not already present
           if ! grep -q "| ${NEXT} |" resume/VERSIONS.md; then
-            sed -i "/^\| Version \| Date \| File Name \| Changes \|$/a | ${NEXT} | ${DATE} | \`sagar-resume-${NEXT}.pdf\` | ${MSG_SAFE} |" resume/VERSIONS.md
+            sed -i "/^|[-\|]*$/a | ${NEXT} | ${DATE} | \`sagar-resume-${NEXT}.pdf\` | ${MSG_SAFE} |" resume/VERSIONS.md
           fi
       - name: Commit changes
         run: |

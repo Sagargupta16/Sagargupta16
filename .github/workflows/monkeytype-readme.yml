@@ -15,6 +15,16 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
 
+            - name: Install yq (YAML parser)
+              run: |
+                  sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+                  sudo chmod +x /usr/local/bin/yq
+
+            - name: Read profile configuration
+              id: config
+              run: |
+                  echo "monkeytype_user=$(yq '.monkeytype.username' .github/config/profiles.yml)" >> $GITHUB_OUTPUT
+
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
@@ -22,12 +32,13 @@ jobs:
 
             - name: Download SVG files
               run: |
+                  MT_USER="${{ steps.config.outputs.monkeytype_user }}"
                   mkdir -p public
-                  echo "Downloading MonkeyType SVG files..."
-                  curl -o public/monkeytype-readme.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES || echo "Failed to download main SVG"
-                  curl -o public/monkeytype-readme-lb.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES?lb=true || echo "Failed to download lb SVG"
-                  curl -o public/monkeytype-readme-pb.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES?pb=true || echo "Failed to download pb SVG"
-                  curl -o public/monkeytype-readme-lb-pb.svg https://monkeytype-readme.zeabur.app/generate-svg/Sagargupta16/THEMES?lbpb=true || echo "Failed to download lbpb SVG"
+                  echo "Downloading MonkeyType SVG files for user: $MT_USER..."
+                  curl -o public/monkeytype-readme.svg "https://monkeytype-readme.zeabur.app/generate-svg/${MT_USER}/THEMES" || echo "Failed to download main SVG"
+                  curl -o public/monkeytype-readme-lb.svg "https://monkeytype-readme.zeabur.app/generate-svg/${MT_USER}/THEMES?lb=true" || echo "Failed to download lb SVG"
+                  curl -o public/monkeytype-readme-pb.svg "https://monkeytype-readme.zeabur.app/generate-svg/${MT_USER}/THEMES?pb=true" || echo "Failed to download pb SVG"
+                  curl -o public/monkeytype-readme-lb-pb.svg "https://monkeytype-readme.zeabur.app/generate-svg/${MT_USER}/THEMES?lbpb=true" || echo "Failed to download lbpb SVG"
                   echo "Downloaded files:"
                   ls -la public/
 

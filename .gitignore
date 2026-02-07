@@ -14,7 +14,7 @@
 *.old
 *~
 .DS_Store  # macOS
-Thumbsdb  # Windows
+Thumbs.db  # Windows
 
 # Resume upload processing
 resume/upload/*

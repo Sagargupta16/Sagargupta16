@@ -33,13 +33,21 @@ if (-not (Test-Path $readmeFile)) {
 # Read config values
 Write-Host "`n📋 Reading configuration from $configFile..." -ForegroundColor Cyan
 
-$leetcodeUser = & yq '.leetcode.username' $configFile
 $githubUser = & yq '.github.username' $configFile
+$leetcodeUser = & yq '.leetcode.username' $configFile
 $linkedinUser = & yq '.linkedin.username' $configFile
+$monkeytypeUser = & yq '.monkeytype.username' $configFile
+$holopinUser = & yq '.holopin.username' $configFile
+$portfolioUrl = & yq '.portfolio.url' $configFile
+$credlyUser = & yq '.credly.username' $configFile
 
 Write-Host "  GitHub: $githubUser" -ForegroundColor White
 Write-Host "  LinkedIn: $linkedinUser" -ForegroundColor White
 Write-Host "  LeetCode: $leetcodeUser" -ForegroundColor White
+Write-Host "  MonkeyType: $monkeytypeUser" -ForegroundColor White
+Write-Host "  Holopin: $holopinUser" -ForegroundColor White
+Write-Host "  Credly: $credlyUser" -ForegroundColor White
+Write-Host "  Portfolio: $portfolioUrl" -ForegroundColor White
 
 # Check README for inconsistencies
 Write-Host "`n🔎 Checking README for username consistency..." -ForegroundColor Cyan
@@ -47,7 +55,7 @@ Write-Host "`n🔎 Checking README for username consistency..." -ForegroundColor
 $readme = Get-Content $readmeFile -Raw
 $issues = @()
 
-# Check for wrong LeetCode username
+# --- LeetCode checks ---
 if ($readme -match "leetcode\.com/SAGARGUPTA16") {
     $issues += "❌ Found 'SAGARGUPTA16' in LeetCode URL (should be '$leetcodeUser')"
 }
@@ -64,6 +72,57 @@ if ($uniqueUsernames.Count -gt 1) {
     $issues += "⚠️  Multiple LeetCode usernames found: $($uniqueUsernames -join ', ')"
 }
 
+# --- LinkedIn checks ---
+$linkedinMatches = [regex]::Matches($readme, "linkedin\.com/in/([a-zA-Z0-9-]+)")
+$uniqueLinkedin = $linkedinMatches | ForEach-Object { $_.Groups[1].Value } | Select-Object -Unique
+
+if ($uniqueLinkedin.Count -gt 0) {
+    foreach ($found in $uniqueLinkedin) {
+        if ($found -ne $linkedinUser) {
+            $issues += "❌ Found LinkedIn username '$found' in README (should be '$linkedinUser')"
+        }
+    }
+}
+
+# --- GitHub username checks (case-insensitive compare for shields.io) ---
+$githubShieldsMatches = [regex]::Matches($readme, "github\.com/followers/(\w+)")
+foreach ($match in $githubShieldsMatches) {
+    $found = $match.Groups[1].Value
+    if ($found -cne $githubUser -and $found -ine $githubUser) {
+        $issues += "❌ Found GitHub username '$found' in shields URL (should be '$githubUser')"
+    }
+}
+
+# --- MonkeyType checks ---
+if ($readme -match "monkeytype\.com/profile/(\w+)") {
+    $found = $Matches[1]
+    if ($found -cne $monkeytypeUser) {
+        $issues += "❌ Found MonkeyType username '$found' in README (should be '$monkeytypeUser')"
+    }
+}
+
+# --- Holopin checks ---
+if ($readme -match "holopin\.me/(\w+)") {
+    $found = $Matches[1]
+    if ($found -cne $holopinUser) {
+        $issues += "❌ Found Holopin username '$found' in README (should be '$holopinUser')"
+    }
+}
+
+# --- Portfolio URL check ---
+if ($portfolioUrl -and $readme -notmatch [regex]::Escape($portfolioUrl)) {
+    $issues += "⚠️  Portfolio URL '$portfolioUrl' not found in README"
+}
+
+# --- Credly checks ---
+$credlyMatches = [regex]::Matches($readme, "credly\.com/users/([a-zA-Z0-9.\-]+)")
+foreach ($match in $credlyMatches) {
+    $found = $match.Groups[1].Value
+    if ($found -ne $credlyUser) {
+        $issues += "❌ Found Credly username '$found' in README (should be '$credlyUser')"
+    }
+}
+
 # Display results
 if ($issues.Count -eq 0) {
     Write-Host "✅ All usernames are consistent!" -ForegroundColor Green
@@ -71,14 +130,14 @@ if ($issues.Count -eq 0) {
 else {
     Write-Host "`n⚠️  Found $($issues.Count) issue(s):" -ForegroundColor Yellow
     $issues | ForEach-Object { Write-Host "  $_" -ForegroundColor Yellow }
-    
+
     if ($Fix) {
         Write-Host "`n🔧 Attempting to fix issues..." -ForegroundColor Cyan
-        
+
         # Fix LeetCode username
         $readme = $readme -replace "leetcode\.com/SAGARGUPTA16", "leetcode.com/$leetcodeUser"
         $readme = $readme -replace "SAGARGUPTA16\?theme=", "$leetcodeUser?theme="
-        
+
         Set-Content $readmeFile -Value $readme -NoNewline
         Write-Host "✅ Fixed README.md - please review changes!" -ForegroundColor Green
     }

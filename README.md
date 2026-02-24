@@ -5,7 +5,7 @@
 ---
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+|+6+AWS+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
 </div>
 
 ---
@@ -18,7 +18,7 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/LeetCode-Contest%20Rating%201950+-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Rating" />
-  <img src="https://img.shields.io/badge/AWS-6%20Certifications-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Certifications" />
+  <img src="https://img.shields.io/badge/AWS-6%20Industry%20Certs-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Certifications" />
   <img src="https://img.shields.io/badge/Experience-1%2B%20Years-2E9EF7?style=for-the-badge" alt="Experience" />
 </div>
 
@@ -47,7 +47,7 @@
 - 🏆 Competitive Programming: **1950+ LeetCode rating**, **1100+ problems solved**, **80+ contests participated**.
 - 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/portfolio-react/)
 - 📫 Reach me at **<sg85207@gmail.com>**
-- 📄 Know about my experiences [My Resume](https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf)
+- 📄 Know about my experiences [My Resume](https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/main/sagar_resume.pdf)
 
 ## 🔭 Currently Working On
 
@@ -91,7 +91,7 @@
 
 </div>
 
-## 🗂️ Project Portfolio — 35+ Repositories
+## 🗂️ Project Portfolio — 34+ Repositories
 
 <div align="center">
 
@@ -377,7 +377,7 @@ Fast fingers for fast coding! 🚀
 
 ## 🎧 What's Vibin?
 
-[![Spotify](https://github.com/edorado93/edorado93/blob/main/spotify.svg)](https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4)
+[![Spotify](https://img.shields.io/badge/Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4)
 
 </details>
 

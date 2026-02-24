@@ -47,13 +47,9 @@ holopin:
 # Contact Information
 contact:
   email_primary: "sg85207@gmail.com"
-  email_secondary: ""  # Add backup email if you have
-  phone: ""  # Optional - be careful with privacy
-  preferred_contact: "email"  # email, linkedin, discord, etc.
-  response_time: "24-48 hours"
+  preferred_contact: "email"
   available_for_hire: true
   open_to_collaborations: true
-  open_to_mentoring: false
 
 # Badge and theme preferences
 preferences:
@@ -64,7 +60,7 @@ preferences:
 # Resume
 resume:
   filename: "sagar_resume.pdf"
-  path: "https://github.com/Sagargupta16/Sagargupta16/blob/main/sagar_resume.pdf"
+  path: "https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/main/sagar_resume.pdf"
 
 # Metrics
 metrics:

@@ -27,10 +27,23 @@ jobs:
       - name: Read profile configuration
         id: config
         run: |
-          echo "github_user=$(yq '.github.username' .github/config/profiles.yml)" >> $GITHUB_OUTPUT
-          echo "leetcode_user=$(yq '.leetcode.username' .github/config/profiles.yml)" >> $GITHUB_OUTPUT
-          echo "timezone=$(yq '.personal.timezone' .github/config/profiles.yml)" >> $GITHUB_OUTPUT
-          echo "✅ Loaded config - LeetCode user: $(yq '.leetcode.username' .github/config/profiles.yml)"
+          GITHUB_USER=$(yq '.github.username' .github/config/profiles.yml)
+          LEETCODE_USER=$(yq '.leetcode.username' .github/config/profiles.yml)
+          TIMEZONE=$(yq '.personal.timezone' .github/config/profiles.yml)
+
+          if [ -z "$GITHUB_USER" ] || [ "$GITHUB_USER" = "null" ]; then
+            echo "::error::Failed to read github.username from profiles.yml"
+            exit 1
+          fi
+          if [ -z "$LEETCODE_USER" ] || [ "$LEETCODE_USER" = "null" ]; then
+            echo "::error::Failed to read leetcode.username from profiles.yml"
+            exit 1
+          fi
+
+          echo "github_user=$GITHUB_USER" >> $GITHUB_OUTPUT
+          echo "leetcode_user=$LEETCODE_USER" >> $GITHUB_OUTPUT
+          echo "timezone=$TIMEZONE" >> $GITHUB_OUTPUT
+          echo "✅ Loaded config - GitHub: $GITHUB_USER, LeetCode: $LEETCODE_USER"
 
       - name: Ensure metrics directory exists
         run: mkdir -p metrics
@@ -401,6 +414,24 @@ jobs:
           plugin_leetcode_sections: solved, skills, recent
           output_action: none
           plugins_errors_fatal: no
+
+      # ============================================================
+      # Validate generated SVGs
+      # ============================================================
+      - name: Validate metrics files
+        run: |
+          FAILED=0
+          for file in metrics/metrics.plugin.*.svg metrics/github-metrics.svg; do
+            if [ ! -s "$file" ]; then
+              echo "::warning::Empty or missing: $file"
+              FAILED=$((FAILED+1))
+            fi
+          done
+          if [ $FAILED -gt 0 ]; then
+            echo "::warning::$FAILED metrics file(s) are empty or missing"
+          else
+            echo "All metrics files validated successfully."
+          fi
 
       # ============================================================
       # Commit all generated SVGs in a single commit

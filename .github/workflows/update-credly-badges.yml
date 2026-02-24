@@ -7,6 +7,12 @@ on:
   schedule:
     - cron: "0 9 * * 1" # Every Monday at 9 AM UTC
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (show changes without committing)"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -27,6 +33,10 @@ jobs:
         id: config
         run: |
           CREDLY_USER=$(yq '.credly.username' .github/config/profiles.yml)
+          if [ -z "$CREDLY_USER" ] || [ "$CREDLY_USER" = "null" ]; then
+            echo "::error::Failed to read credly.username from profiles.yml"
+            exit 1
+          fi
           echo "credly_user=$CREDLY_USER" >> $GITHUB_OUTPUT
           echo "Credly username: $CREDLY_USER"
 
@@ -41,7 +51,17 @@ jobs:
           README_PATH: README.md
         run: python scripts/update-credly-badges.py
 
+      - name: Show diff (dry run or normal)
+        run: |
+          if git diff --quiet README.md; then
+            echo "No badge changes detected."
+          else
+            echo "Changes detected:"
+            git diff README.md
+          fi
+
       - name: Commit changes
+        if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -52,3 +72,7 @@ jobs:
           else
             echo "No badge changes to commit"
           fi
+
+      - name: Dry run notice
+        if: ${{ github.event.inputs.dry_run == 'true' }}
+        run: echo "::notice::Dry run mode - changes were NOT committed"

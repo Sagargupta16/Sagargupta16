@@ -5,11 +5,14 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.request
+import urllib.error
 
 CREDLY_USERNAME = os.environ.get("CREDLY_USERNAME", "sagar-gupta.f8eb96cc")
 README_PATH = os.environ.get("README_PATH", "README.md")
-BADGE_SIZE = 100
+BADGE_SIZE = int(os.environ.get("BADGE_SIZE", "100"))
+MAX_RETRIES = 3
 
 CERT_KEYWORDS = ["Certified"]
 PROFESSIONAL_KEYWORDS = [
@@ -22,7 +25,7 @@ PROFESSIONAL_KEYWORDS = [
 
 
 def fetch_badges(username):
-    """Fetch all badges from Credly public JSON API."""
+    """Fetch all badges from Credly public JSON API with retry logic."""
     url = f"https://www.credly.com/users/{username}/badges.json"
     req = urllib.request.Request(
         url,
@@ -31,8 +34,18 @@ def fetch_badges(username):
             "User-Agent": "GitHub-Actions-Credly-Badge-Updater",
         },
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    for attempt in range(MAX_RETRIES):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except (urllib.error.URLError, TimeoutError) as e:
+            if attempt < MAX_RETRIES - 1:
+                wait = 5 * (attempt + 1)
+                print(f"Attempt {attempt + 1} failed: {e}. Retrying in {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"ERROR: All {MAX_RETRIES} attempts failed for {url}")
+                raise
 
 
 def categorize_badges(badges):

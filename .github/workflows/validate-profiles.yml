@@ -1,0 +1,26 @@
+# Profile Validation Workflow
+# Runs the validate-profiles script on push to ensure consistency
+name: Validate Profiles
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - ".github/config/profiles.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install yq (YAML parser)
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+
+      - name: Run profile validation
+        run: pwsh scripts/validate-profiles.ps1

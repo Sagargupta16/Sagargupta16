@@ -16,9 +16,10 @@
 .DS_Store  # macOS
 Thumbs.db  # Windows
 
-# Resume upload processing
+# Resume upload staging (allow PDFs so the versioning workflow can trigger)
 resume/upload/*
 !resume/upload/.gitkeep
+!resume/upload/*.pdf
 
 # Backup files (from validate script)
 *.backup-*

@@ -2,8 +2,8 @@
 
 ## Latest Version
 
-- **Version**: v1.0.2
-- **Last Updated**: 2025-09-27
+- **Version**: v1.0.3
+- **Last Updated**: 2026-02-24
 - **File**: `sagar_resume.pdf` (always the current version)
 
 ## Naming Convention
@@ -18,6 +18,7 @@
 
 | Version | Date | File Name | Changes |
 |---------|------|-----------|---------|
+| v1.0.3 | 2026-02-24 | `sagar-resume-v1.0.3.pdf` | feat: Add GitHub Actions workflow to automate resume versioning, PDF creation, and `VERSIONS.md` updates. |
 | v1.0.2 | 2025-09-27 | `sagar-resume-v1.0.2.pdf` | Add files via upload |
 | v1.0.1 | 2025-08-08 | `sagar-resume-v1.0.1.pdf` | Refactor resume versioning workflow: simplify PDF detection logic and remove deprecated PowerShell script; update .gitignore to include VS Code settings and ensure proper resume upload processing. |
 | v1.0.0 | 2025-07-25 | `sagar-resume-v1.0.0.pdf` | Initial version with current projects and NIT Warangal experience |

@@ -47,9 +47,10 @@ jobs:
       - name: Calculate next version
         id: next
         run: |
-          CUR=${{ steps.get_version.outputs.current }}
+          CUR="${{ steps.get_version.outputs.current }}"
           IFS='.' read -r MA MI PA <<< "${CUR#v}"
-          case "${{ steps.bump_type.outputs.type }}" in
+          BUMP="${{ steps.bump_type.outputs.type }}"
+          case "${BUMP}" in
             major)
               MA=$((MA+1)); MI=0; PA=0;;
             minor)
@@ -70,10 +71,10 @@ jobs:
           echo "selected=$SELECTED" >> $GITHUB_OUTPUT
       - name: Create versioned PDF if missing
         run: |
-          NEXT=${{ steps.next.outputs.next }}
+          NEXT="${{ steps.next.outputs.next }}"
           FILE="resume/versions/sagar-resume-${NEXT}.pdf"
           mkdir -p resume/versions
-          SEL=${{ steps.detect.outputs.selected }}
+          SEL="${{ steps.detect.outputs.selected }}"
           # Prefer the newly uploaded PDF if present, else fall back to existing root file
           SRC="sagar_resume.pdf"
           if [ -n "$SEL" ] && [ -f "$SEL" ]; then SRC="$SEL"; fi
@@ -82,14 +83,14 @@ jobs:
           fi
       - name: Update root latest file
         run: |
-          SEL=${{ steps.detect.outputs.selected }}
+          SEL="${{ steps.detect.outputs.selected }}"
           # If a new upload exists, set it as the latest at repo root
           if [ -n "$SEL" ] && [ -f "$SEL" ]; then
             cp "$SEL" sagar_resume.pdf
           fi
       - name: Update VERSIONS.md
         run: |
-          NEXT=${{ steps.next.outputs.next }}
+          NEXT="${{ steps.next.outputs.next }}"
           DATE=$(date +%Y-%m-%d)
           MSG=$(git log -1 --pretty=%s)
           MSG_SAFE=${MSG//|/-}
@@ -108,7 +109,7 @@ jobs:
           fi
       - name: Commit changes
         run: |
-          NEXT=${{ steps.next.outputs.next }}
+          NEXT="${{ steps.next.outputs.next }}"
           git add -A
           if ! git diff --cached --quiet; then
             git commit -m "📄 Release resume ${NEXT}"

@@ -5,7 +5,7 @@
 ---
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+|+5+AWS+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+|+6+AWS+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
 </div>
 
 ---
@@ -18,7 +18,7 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/LeetCode-Contest%20Rating%201950+-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Rating" />
-  <img src="https://img.shields.io/badge/AWS-5%20Certifications-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Certifications" />
+  <img src="https://img.shields.io/badge/AWS-6%20Certifications-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Certifications" />
   <img src="https://img.shields.io/badge/Experience-1%2B%20Years-2E9EF7?style=for-the-badge" alt="Experience" />
 </div>
 
@@ -70,7 +70,7 @@
 
 |       🎓 **Education**       |       💼 **Professional**        |    🏅 **Competitive**     |     🎖️ **Certifications**     |
 | :--------------------------: | :------------------------------: | :-----------------------: | :---------------------------: |
-|  **MCA from NIT Warangal**   |       **ProServe at AWS**        | **1950+ LeetCode Rating** |   **5 AWS Certifications**    |
+|  **MCA from NIT Warangal**   |       **ProServe at AWS**        | **1950+ LeetCode Rating** |   **6 AWS Certifications**    |
 | First Class with Distinction |    DevOps & Cloud Specialist     |   1100+ Problems Solved   | HashiCorp Terraform Certified |
 |     Academic Excellence      | Infrastructure Automation Expert | 80+ Contests Participated |    Multiple Holopin Badges    |
 
@@ -91,45 +91,116 @@
 
 </div>
 
-## 🗂️ Project Overview
+## 🗂️ Project Portfolio — 35+ Repositories
 
 <div align="center">
 
-### 🌟 Featured Repository of the Month
+### 🌟 Featured Projects
 
 <table>
 <tr>
-<td align="center" width="500px">
+<td align="center" width="33%">
+
+**[💰 Financial Dashboard](https://github.com/Sagargupta16/Financial-Dashboard)**
+
+20+ page personal finance analytics with investment tracking, tax planning, and Sankey cash flow diagrams
+
+![React](https://img.shields.io/badge/React_19-blue?style=flat&logo=react&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) ![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat&logo=chartdotjs&logoColor=white)
+
+[Live Demo](https://sagargupta16.github.io/Financial-Dashboard)
+
+</td>
+<td align="center" width="33%">
+
+**[🧠 GroundZeroNN](https://github.com/Sagargupta16/GroundZeroNN)**
+
+Neural network library from scratch — backpropagation, gradient descent, 79.8% MNIST accuracy — no ML frameworks
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white)
+
+</td>
+<td align="center" width="33%">
 
 **[🚀 DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM)**
 
-_A comprehensive DevOps automation framework for AWS infrastructure using Terraform, Docker, and CI/CD pipelines._
+Full-stack app with CI/CD, Docker, GitHub Actions, and AWS deployment pipeline
 
-![Stars](https://img.shields.io/github/stars/Sagargupta16/DevOps-AWS-FARM?style=for-the-badge&color=yellow)
-![Forks](https://img.shields.io/github/forks/Sagargupta16/DevOps-AWS-FARM?style=for-the-badge&color=blue)
-![Last Commit](https://img.shields.io/github/last-commit/Sagargupta16/DevOps-AWS-FARM?style=for-the-badge&color=green)
-
-**Tech Stack:** AWS • Terraform • Docker • GitHub Actions • Python
+![AWS](https://img.shields.io/badge/AWS-FF9900?style=flat&logo=amazonaws&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white) ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat&logo=terraform&logoColor=white)
 
 </td>
 </tr>
 </table>
 
-### 📊 Project Categories Overview
+### 📊 Complete Project Categories
 
-| **🤖 AI/ML**                                                                                          | **☁️ DevOps/Cloud**                                                                                     | **🌐 Full-Stack Web Apps**                                                                                              | **🎮 Unity Games**                                                                 | **📱 Frontend Projects**                                                                                        |
-| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **3 Projects**                                                                                        | **2 Projects**                                                                                          | **8 Projects**                                                                                                          | **4 Projects**                                                                     | **4 Projects**                                                                                                  |
-| [AI Code Translator](https://github.com/Sagargupta16/ai-code-translator)                              | [DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM)                                      | [Placemento Portal](https://github.com/MCA-NITW/placemento)                                                             | [Snake Game](https://github.com/Sagargupta16/Snake-Game__UnityEngine)              | [Portfolio React](https://github.com/Sagargupta16/portfolio-react)                                              |
-| [LeetCode Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor)                       | [Blue Green Terraform](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform)                        | [Tour Vibes](https://github.com/Sagargupta16/tour-vibes)                                                                | [Pac Man Game](https://github.com/Sagargupta16/PacMan-Game__UnityEngine)           | [Music Player](https://github.com/Sagargupta16/Music-Web-App)                                                   |
-| [Stock Prediction](https://github.com/Sagargupta16/Stock-market-prediction)                           |                                                                                                         | [Brainstorm Verse](https://github.com/Sagargupta16/brainstorm-verse)                                                    | [Minesweeper](https://github.com/Sagargupta16/Minesweeper-Game__UnityEngine)       | [Guess Number Game](https://github.com/Sagargupta16/Guess-The-Number-Game)                                      |
-|                                                                                                       |                                                                                                         | [TRINIT BugBiters](https://github.com/Sagargupta16/TRINIT_BugBiters_Dev)                                                | [Flappy Bird](https://github.com/Sagargupta16/FlappyBird-Game__UnityEngine)        | [Study HUB](https://github.com/sayani13-glitch/noobathon_ON-11_1)                                               |
-|                                                                                                       |                                                                                                         | [Contact Managers](https://github.com/Sagargupta16/Contact-Manager-Mern)                                                |                                                                                    |                                                                                                                 |
-|                                                                                                       |                                                                                                         | [Authentication System](https://github.com/Sagargupta16/Authentication-System)                                          |                                                                                    |                                                                                                                 |
-|                                                                                                       |                                                                                                         | [MCA NITW Website](https://github.com/MCA-NITW/mca_nitw)                                                                |                                                                                    |                                                                                                                 |
-|                                                                                                       |                                                                                                         | [LeetCode Among Us](https://github.com/MCA-NITW/leetcode_among_us)                                                      |                                                                                    |                                                                                                                 |
-| **🛠️ Tech Stack**                                                                                     | **🛠️ Tech Stack**                                                                                       | **🛠️ Tech Stack**                                                                                                       | **🛠️ Tech Stack**                                                                  | **🛠️ Tech Stack**                                                                                               |
-| <img src="https://skillicons.dev/icons?i=python,tensorflow,pytorch,fastapi" alt="AI/ML Tech Stack" /> | <img src="https://skillicons.dev/icons?i=aws,terraform,docker,githubactions" alt="DevOps Tech Stack" /> | <img src="https://skillicons.dev/icons?i=mongodb,react,nodejs,express,nextjs,typescript" alt="Full-Stack Tech Stack" /> | <img src="https://skillicons.dev/icons?i=unity,cs" alt="Unity Games Tech Stack" /> | <img src="https://skillicons.dev/icons?i=react,html,css,javascript,redux,tailwind" alt="Frontend Tech Stack" /> |
+#### 🤖 AI / Machine Learning (6 Projects)
+
+| Project | Description | Tech |
+|---------|-------------|------|
+| [GroundZeroNN](https://github.com/Sagargupta16/GroundZeroNN) | Neural network library from scratch — 79.8% MNIST accuracy | Python, NumPy |
+| [LeetCode Rating Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) | LSTM-based contest rating predictor — 85%+ accuracy, MAE < 15 | FastAPI, TensorFlow, React |
+| [SelfHub](https://github.com/Sagargupta16/SelfHub) | MCP server — personal AI memory hub for Claude & VS Code Copilot | TypeScript, MCP Protocol |
+| [Stock Market Prediction](https://github.com/Sagargupta16/Stock-market-prediction) | LSTM neural network for stock price forecasting | Python, TensorFlow, Pandas |
+| [AI Code Translator](https://github.com/Sagargupta16/ai-code-translator) | Translate code between languages using GPT with streaming output | Next.js, TypeScript, OpenAI |
+| [StockSage AI](https://github.com/Sagargupta16/StockSage-AI) | AI-powered Indian stock prediction & paper trading platform | Python, ML (In Development) |
+
+#### ☁️ DevOps / Cloud Infrastructure (3 Projects)
+
+| Project | Description | Tech |
+|---------|-------------|------|
+| [DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | Full-stack app with CI/CD pipeline, Docker, and AWS deployment | FastAPI, React, Docker, AWS |
+| [Blue Green AWS Terraform](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) | Blue-Green deployment with ECS, ALB, CodePipeline — 18 Terraform modules | Terraform, AWS, Docker |
+| [AWS Amplify CI/CD](https://github.com/Sagargupta16/aws-amplify-cicd) | Serverless app with preview environments and automated PR deployments | AWS Amplify Gen2, GraphQL |
+
+#### 💰 Finance & Data (3 Projects)
+
+| Project | Description | Tech |
+|---------|-------------|------|
+| [Financial Dashboard](https://github.com/Sagargupta16/Financial-Dashboard) | 20+ page finance dashboard — 50/30/20 budgeting, tax planning, investments | React 19, TypeScript, Chart.js |
+| [Ledger Sync](https://github.com/Sagargupta16/ledger-sync) | Excel-to-dashboard finance app — Sankey diagrams, anomaly detection, 20+ pages | React 19, FastAPI, SQLAlchemy |
+| [Data Vault](https://github.com/Sagargupta16/data-vault) | Private data vault — 526+ contacts, finance tracking, AI chat interface | React, Express, MongoDB, AI |
+
+#### 🌐 Full-Stack Web Applications (9 Projects)
+
+| Project | Description | Tech |
+|---------|-------------|------|
+| [Placemento](https://github.com/MCA-NITW/placemento) | Placement management system — OTP auth, AG Grid/Charts, monorepo | React 19, Express 5, TypeScript |
+| [LeetCode Among Us](https://github.com/MCA-NITW/leetcode_among_us) | Competitive programming tracker with leaderboards and analytics | React, Express, LeetCode API |
+| [Brainstorm Verse](https://github.com/Sagargupta16/brainstorm-verse) | Idea-sharing platform with Clerk auth and file uploads | Next.js 14, MongoDB, Clerk |
+| [Lingua Connect](https://github.com/Sagargupta16/TRINIT_BugBiters_Dev) | Language tutoring marketplace with video calls and Stripe payments | MERN, Redux, Stripe, WebRTC |
+| [Tour Vibes](https://github.com/Sagargupta16/tour-vibes) | Travel journal with image uploads, feeds, and pagination | React, Express, MongoDB, Multer |
+| [Contact Manager (MERN)](https://github.com/Sagargupta16/Contact-Manager-Mern) | Full-stack contact app with MongoDB persistence and dark mode | MERN Stack |
+| [MCA NITW Portal](https://github.com/MCA-NITW/mca_nitw) | Alumni network, placement cell, and student management portal | React, MUI, Express, MongoDB |
+| [BMS](https://github.com/Sagargupta16/BMS) | Student management system with coding platform integration | FastAPI, MongoDB, Pydantic |
+| [Authentication System](https://github.com/Sagargupta16/Authentication-System) | JWT auth system with Joi password validation and bcrypt hashing | Express, React, MongoDB, JWT |
+
+#### 📐 Templates & Starter Kits (3 Projects)
+
+| Project | Description | Tech |
+|---------|-------------|------|
+| [MERN Template](https://github.com/Sagargupta16/MERN-TEMPLATE) | Production-ready MERN template — JWT, OTP, rate limiting, logging | React, Vite, Express, MongoDB |
+| [FARM Template](https://github.com/Sagargupta16/FARM-APP-TEMPLATE) | FastAPI + React + MongoDB template with Docker Compose | FastAPI, React, Docker |
+| [AI Project Template](https://github.com/Sagargupta16/AI_Project_Template) | ML/AI project scaffold with data pipelines and best practices | Python, Jupyter, scikit-learn |
+
+#### 📱 Frontend & Games (7 Projects)
+
+| Project | Description | Tech |
+|---------|-------------|------|
+| [Portfolio React](https://github.com/Sagargupta16/portfolio-react) | Data-driven portfolio with particles, animations, and CI/CD | React 19, Framer Motion, Vite |
+| [Music Web Player](https://github.com/Sagargupta16/Music-Web-App) | Glassmorphism music player with shuffle, repeat, and rotating art | HTML5, CSS3, JavaScript |
+| [Contact Manager (React)](https://github.com/Sagargupta16/Contact-Manager-React) | Client-side contact app with localStorage persistence | React, Redux, React Router |
+| [Pac-Man Game](https://github.com/Sagargupta16/PacMan-Game__UnityEngine) | Classic Pac-Man with AI ghost pathfinding in Unity | C#, Unity Engine |
+| [Tic-Tac-Toe](https://github.com/Sagargupta16/Tic-Tac-Toe) | CSS-only game logic — AI opponent via checkbox states | HTML, CSS |
+| [Portfolio (Vanilla)](https://github.com/Sagargupta16/PortFolio) | Portfolio with 5 color themes and dark/light mode | HTML, CSS, JavaScript |
+| [DS Implementations](https://github.com/Sagargupta16/DS-Implementations) | 17 topics — sorting, graphs, trees, hashing in C++ | C++ |
+
+#### 📚 Academic & Research
+
+| Project | Description | Tech |
+|---------|-------------|------|
+| [Academic Codes](https://github.com/Sagargupta16/Academic-Codes) | 5 semesters of MCA coursework — C++, Python, ML, DL | C++, Python, R |
+| [LDPC Codes](https://github.com/Sagargupta16/LDPC-Codes) | Error-correcting code simulation with BER analysis | Python, NumPy |
+| [MCA Academic](https://github.com/MCA-NITW/Academic) | Exam papers and study materials for NIT Warangal MCA | Documents |
 
 </div>
 
@@ -227,7 +298,7 @@ _A comprehensive DevOps automation framework for AWS infrastructure using Terraf
 
 <br/>
 
-### � Competitive Programming Journey
+### 🏅 Competitive Programming Journey
 
 **🏆 Contest Rating:** 1950+ | **✅ Problems Solved:** 1100+ | **🎮 Contests:** 80+
 
@@ -253,31 +324,47 @@ Fast fingers for fast coding! 🚀
 
 ## 🏆 Certifications & Badges
 
-### �️ AWS & Cloud Certifications
+### 🛡️ AWS & Cloud Certifications
 
-#### 🎓 Major Certifications (2024-2025)
-
-<div align="center">
-
-<a href="https://www.credly.com/badges/591e74ef-f6a8-4b77-82dc-07e06fb8060e" title="AWS Certified Solutions Architect – Associate"><img src="https://images.credly.com/size/80x80/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect – Associate" width="80" height="80"></a>
-<a href="https://www.credly.com/badges/d6dc337a-0af5-48f8-b64f-eb2a5925f07b" title="AWS Certified Machine Learning Engineer – Associate"><img src="https://images.credly.com/size/80x80/images/1a634b4e-3d6b-4a74-b118-c0dcb429e8d2/image.png" alt="AWS Certified Machine Learning Engineer – Associate" width="80" height="80"></a>
-<a href="https://www.credly.com/badges/e18d2154-e153-40b3-8f39-6684e561396e" title="AWS Certified AI Practitioner"><img src="https://images.credly.com/size/80x80/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS Certified AI Practitioner" width="80" height="80"></a>
-<a href="https://www.credly.com/badges/315fe8a5-1e0b-418b-b139-e27018da152b" title="AWS Certified Cloud Practitioner"><img src="https://images.credly.com/size/80x80/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner" width="80" height="80"></a>
-<a href="https://www.credly.com/badges/8b0723a5-bac7-4262-b5b6-20337b2979a1" title="HashiCorp Certified: Terraform Associate (003)"><img src="https://images.credly.com/size/80x80/images/ed4be915-68f8-428a-b332-40ded9084ee5/image.png" alt="HashiCorp Certified: Terraform Associate (003)" width="80" height="80"></a>
-
-</div>
-
-#### 📚 Knowledge Badges & Specializations
+<!-- CREDLY-BADGES:START -->
+#### 🏅 Industry Certifications
 
 <div align="center">
 
-<a href="https://www.credly.com/badges/d03e1d39-4e40-483d-9845-f11da0d01170" title="AWS Knowledge: Cloud Essentials"><img src="https://images.credly.com/size/80x80/images/ec621e2a-c8f0-4459-806c-ae11829d372a/image.png" alt="AWS Knowledge: Cloud Essentials" width="80" height="80"></a>
-<a href="https://www.credly.com/badges/ca2a1336-e6e0-4e76-aa97-a919759d26d3" title="AWS Knowledge: Architecting (Retired)"><img src="https://images.credly.com/size/80x80/images/519a6dba-f145-4c1a-85a2-1d173d6898d9/image.png" alt="AWS Knowledge: Architecting (Retired)" width="80" height="80"></a>
-<a href="https://www.credly.com/badges/f9785728-0e06-4c8b-9d62-08d85f00085e" title="AWS Partner: Generative AI Essentials"><img src="https://images.credly.com/size/80x80/images/145a5de8-7390-4d57-b4cb-a10e2f9394e2/image.png" alt="AWS Partner: Generative AI Essentials" width="80" height="80"></a>
-<a href="https://www.credly.com/badges/0ffd3248-5444-4b5f-88ef-6ecf120d17eb" title="AWS Educate Getting Started with Storage"><img src="https://images.credly.com/size/80x80/images/5bf37709-4b69-4cdc-9edc-af7b3370d427/image.png" alt="AWS Educate Getting Started with Storage" width="80" height="80"></a>
-<a href="https://www.credly.com/badges/af8b4f3b-0327-451e-ad85-a436f6bfca9a" title="AWS Educate Introduction to Cloud 101"><img src="https://images.credly.com/size/80x80/images/8d67bbf4-128b-4141-b5f1-1bc61bbfbaa6/image.png" alt="AWS Educate Introduction to Cloud 101" width="80" height="80"></a>
+<a href="https://www.credly.com/badges/591e74ef-f6a8-4b77-82dc-07e06fb8060e" title="AWS Certified Solutions Architect – Associate"><img src="https://images.credly.com/size/100x100/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect – Associate" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/be7f9e0a-593a-4544-8dfd-f69f669ec57d" title="AWS Certified Developer – Associate"><img src="https://images.credly.com/size/100x100/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" alt="AWS Certified Developer – Associate" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/d6dc337a-0af5-48f8-b64f-eb2a5925f07b" title="AWS Certified Machine Learning Engineer – Associate"><img src="https://images.credly.com/size/100x100/images/1a634b4e-3d6b-4a74-b118-c0dcb429e8d2/image.png" alt="AWS Certified Machine Learning Engineer – Associate" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/e18d2154-e153-40b3-8f39-6684e561396e" title="AWS Certified AI Practitioner"><img src="https://images.credly.com/size/100x100/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS Certified AI Practitioner" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/bf8ffb47-284c-4c45-adb8-3df4f807e404" title="AWS Certified Cloud Practitioner"><img src="https://images.credly.com/size/100x100/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/8b0723a5-bac7-4262-b5b6-20337b2979a1" title="HashiCorp Certified: Terraform Associate (003)"><img src="https://images.credly.com/size/100x100/images/0dc62494-dc94-469a-83af-e35309f27356/blob" alt="HashiCorp Certified: Terraform Associate (003)" width="100" height="100"></a>
 
 </div>
+
+#### 🎖️ Professional & Partner Badges
+
+<div align="center">
+
+<a href="https://www.credly.com/badges/8b9674fa-8ff7-4ada-909d-f5102e7d1121" title="AWS Generative AI Technical Intermediate (L200)"><img src="https://images.credly.com/size/100x100/images/a5e0f58e-77c2-452d-b81d-79981315f238/blob" alt="AWS Generative AI Technical Intermediate (L200)" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/e6f41590-40d9-4ad6-bc80-c8476208a2b3" title="AWS AI Foundational (L100)"><img src="https://images.credly.com/size/100x100/images/97c269f6-c8d0-40bd-8cbc-5c7834dbbc91/blob" alt="AWS AI Foundational (L100)" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/9c9dd9fd-42a5-4110-8ff7-e7fd185544f6" title="AWS Partner: Technical Accredited"><img src="https://images.credly.com/size/100x100/images/8f006312-3154-45bf-a845-4a043641e83c/blob" alt="AWS Partner: Technical Accredited" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/ea4a5540-aa93-4f8b-96d2-9bf31de86f72" title="Well-Architected Proficient"><img src="https://images.credly.com/size/100x100/images/b870667f-00a3-48d7-b988-9c02b441b883/image.png" alt="Well-Architected Proficient" width="100" height="100"></a>
+
+</div>
+
+#### 📚 Knowledge & Learning Badges
+
+<div align="center">
+
+<a href="https://www.credly.com/badges/d03e1d39-4e40-483d-9845-f11da0d01170" title="AWS Knowledge: Cloud Essentials"><img src="https://images.credly.com/size/100x100/images/7cf036b0-c609-4378-a7be-9969e1dea7ab/blob" alt="AWS Knowledge: Cloud Essentials" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/ca2a1336-e6e0-4e76-aa97-a919759d26d3" title="AWS Knowledge: Architecting (Retired)"><img src="https://images.credly.com/size/100x100/images/519a6dba-f145-4c1a-85a2-1d173d6898d9/image.png" alt="AWS Knowledge: Architecting (Retired)" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/5f3538f6-0bb1-4ff5-911b-d2701075392f" title="AWS Knowledge: Serverless"><img src="https://images.credly.com/size/100x100/images/0c20a5b7-b4e9-4c2f-8b68-342e00a85e05/blob" alt="AWS Knowledge: Serverless" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/455690f2-a4f3-4122-be29-6b377b28dfda" title="AWS Knowledge: Amazon Q Developer Fundamentals"><img src="https://images.credly.com/size/100x100/images/7c51f63c-14ef-4df9-a340-14938d05963a/blob" alt="AWS Knowledge: Amazon Q Developer Fundamentals" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/04175d89-ec79-43cf-95f7-4031854bf5a9" title="AWS Partner: Generative AI Technical"><img src="https://images.credly.com/size/100x100/images/9bb8bd52-365f-447d-b83b-9d3ee560f5e5/blob" alt="AWS Partner: Generative AI Technical" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/f9785728-0e06-4c8b-9d62-08d85f00085e" title="AWS Partner: Generative AI Essentials"><img src="https://images.credly.com/size/100x100/images/4b547104-5ce9-43d5-8708-a7abb4b0c7ec/blob" alt="AWS Partner: Generative AI Essentials" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/0ffd3248-5444-4b5f-88ef-6ecf120d17eb" title="AWS Educate Getting Started with Storage"><img src="https://images.credly.com/size/100x100/images/3b1b42e6-dfc2-492b-90df-8058096cb93d/blob" alt="AWS Educate Getting Started with Storage" width="100" height="100"></a>
+
+</div>
+<!-- CREDLY-BADGES:END -->
 
 ### 🎯 Developer Achievements
 
@@ -300,13 +387,13 @@ Fast fingers for fast coding! 🚀
 
 <div align="center">
 
-## � Complete Profile Overview
+## 📊 Complete Profile Overview
 
 ![Metrics](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/github-metrics.svg)
 
 ---
 
-## � Profile Introduction
+## 👤 Profile Introduction
 
 ![Introduction](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.introduction.svg)
 
@@ -344,7 +431,7 @@ Fast fingers for fast coding! 🚀
 
 ---
 
-## � Achievements
+## 🏆 Achievements
 
 ### 🏆 GitHub Achievements - Detailed View
 
@@ -356,7 +443,7 @@ Fast fingers for fast coding! 🚀
 
 ---
 
-## �‍💻 Code Contributions
+## 👨‍💻 Code Contributions
 
 ### 👨‍💻 Lines of Code Changed
 
@@ -374,7 +461,7 @@ Fast fingers for fast coding! 🚀
 
 ![Repositories](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.repositories.pinned.svg)
 
-### � Recently Starred Repositories
+### ⭐ Recently Starred Repositories
 
 ![Stars](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.stars.svg)
 
@@ -398,7 +485,7 @@ Fast fingers for fast coding! 🚀
 
 ![Followup](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.followup.svg)
 
-### � Comment Reactions
+### 💬 Comment Reactions
 
 ![Reactions](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.reactions.svg)
 
@@ -408,7 +495,7 @@ Fast fingers for fast coding! 🚀
 
 ---
 
-## � Additional Content
+## 📦 Additional Content
 
 ### 🎫 Gists
 

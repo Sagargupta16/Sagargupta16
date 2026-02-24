@@ -1,0 +1,54 @@
+# Credly Badges Auto-Update Workflow
+# Fetches latest badges from Credly and updates the README
+# Uses the CREDLY-BADGES markers in README.md for replacement
+name: Update Credly Badges
+
+on:
+  schedule:
+    - cron: "0 9 * * 1" # Every Monday at 9 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-badges:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install yq (YAML parser)
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+
+      - name: Read Credly username from config
+        id: config
+        run: |
+          CREDLY_USER=$(yq '.credly.username' .github/config/profiles.yml)
+          echo "credly_user=$CREDLY_USER" >> $GITHUB_OUTPUT
+          echo "Credly username: $CREDLY_USER"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update Credly badges in README
+        env:
+          CREDLY_USERNAME: ${{ steps.config.outputs.credly_user }}
+          README_PATH: README.md
+        run: python scripts/update-credly-badges.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update Credly badges"
+            git push
+          else
+            echo "No badge changes to commit"
+          fi

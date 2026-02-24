@@ -331,11 +331,11 @@ Fast fingers for fast coding! 🚀
 
 <div align="center">
 
-<a href="https://www.credly.com/badges/591e74ef-f6a8-4b77-82dc-07e06fb8060e" title="AWS Certified Solutions Architect – Associate"><img src="https://images.credly.com/size/100x100/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect – Associate" width="100" height="100"></a>
-<a href="https://www.credly.com/badges/be7f9e0a-593a-4544-8dfd-f69f669ec57d" title="AWS Certified Developer – Associate"><img src="https://images.credly.com/size/100x100/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" alt="AWS Certified Developer – Associate" width="100" height="100"></a>
-<a href="https://www.credly.com/badges/d6dc337a-0af5-48f8-b64f-eb2a5925f07b" title="AWS Certified Machine Learning Engineer – Associate"><img src="https://images.credly.com/size/100x100/images/1a634b4e-3d6b-4a74-b118-c0dcb429e8d2/image.png" alt="AWS Certified Machine Learning Engineer – Associate" width="100" height="100"></a>
 <a href="https://www.credly.com/badges/e18d2154-e153-40b3-8f39-6684e561396e" title="AWS Certified AI Practitioner"><img src="https://images.credly.com/size/100x100/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS Certified AI Practitioner" width="100" height="100"></a>
 <a href="https://www.credly.com/badges/bf8ffb47-284c-4c45-adb8-3df4f807e404" title="AWS Certified Cloud Practitioner"><img src="https://images.credly.com/size/100x100/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/d6dc337a-0af5-48f8-b64f-eb2a5925f07b" title="AWS Certified Machine Learning Engineer – Associate"><img src="https://images.credly.com/size/100x100/images/1a634b4e-3d6b-4a74-b118-c0dcb429e8d2/image.png" alt="AWS Certified Machine Learning Engineer – Associate" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/be7f9e0a-593a-4544-8dfd-f69f669ec57d" title="AWS Certified Developer – Associate"><img src="https://images.credly.com/size/100x100/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" alt="AWS Certified Developer – Associate" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/591e74ef-f6a8-4b77-82dc-07e06fb8060e" title="AWS Certified Solutions Architect – Associate"><img src="https://images.credly.com/size/100x100/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect – Associate" width="100" height="100"></a>
 <a href="https://www.credly.com/badges/8b0723a5-bac7-4262-b5b6-20337b2979a1" title="HashiCorp Certified: Terraform Associate (003)"><img src="https://images.credly.com/size/100x100/images/0dc62494-dc94-469a-83af-e35309f27356/blob" alt="HashiCorp Certified: Terraform Associate (003)" width="100" height="100"></a>
 
 </div>
@@ -344,10 +344,10 @@ Fast fingers for fast coding! 🚀
 
 <div align="center">
 
+<a href="https://www.credly.com/badges/ea4a5540-aa93-4f8b-96d2-9bf31de86f72" title="Well-Architected Proficient"><img src="https://images.credly.com/size/100x100/images/b870667f-00a3-48d7-b988-9c02b441b883/image.png" alt="Well-Architected Proficient" width="100" height="100"></a>
 <a href="https://www.credly.com/badges/8b9674fa-8ff7-4ada-909d-f5102e7d1121" title="AWS Generative AI Technical Intermediate (L200)"><img src="https://images.credly.com/size/100x100/images/a5e0f58e-77c2-452d-b81d-79981315f238/blob" alt="AWS Generative AI Technical Intermediate (L200)" width="100" height="100"></a>
 <a href="https://www.credly.com/badges/e6f41590-40d9-4ad6-bc80-c8476208a2b3" title="AWS AI Foundational (L100)"><img src="https://images.credly.com/size/100x100/images/97c269f6-c8d0-40bd-8cbc-5c7834dbbc91/blob" alt="AWS AI Foundational (L100)" width="100" height="100"></a>
-<a href="https://www.credly.com/badges/9c9dd9fd-42a5-4110-8ff7-e7fd185544f6" title="AWS Partner: Technical Accredited"><img src="https://images.credly.com/size/100x100/images/8f006312-3154-45bf-a845-4a043641e83c/blob" alt="AWS Partner: Technical Accredited" width="100" height="100"></a>
-<a href="https://www.credly.com/badges/ea4a5540-aa93-4f8b-96d2-9bf31de86f72" title="Well-Architected Proficient"><img src="https://images.credly.com/size/100x100/images/b870667f-00a3-48d7-b988-9c02b441b883/image.png" alt="Well-Architected Proficient" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/9c9dd9fd-42a5-4110-8ff7-e7fd185544f6" title="AWS Partner: Technical Accredited - Training Badge"><img src="https://images.credly.com/size/100x100/images/8f006312-3154-45bf-a845-4a043641e83c/blob" alt="AWS Partner: Technical Accredited - Training Badge" width="100" height="100"></a>
 
 </div>
 
@@ -355,13 +355,14 @@ Fast fingers for fast coding! 🚀
 
 <div align="center">
 
-<a href="https://www.credly.com/badges/d03e1d39-4e40-483d-9845-f11da0d01170" title="AWS Knowledge: Cloud Essentials"><img src="https://images.credly.com/size/100x100/images/7cf036b0-c609-4378-a7be-9969e1dea7ab/blob" alt="AWS Knowledge: Cloud Essentials" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/5f3538f6-0bb1-4ff5-911b-d2701075392f" title="AWS Knowledge: Serverless - Training Badge"><img src="https://images.credly.com/size/100x100/images/0c20a5b7-b4e9-4c2f-8b68-342e00a85e05/blob" alt="AWS Knowledge: Serverless - Training Badge" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/455690f2-a4f3-4122-be29-6b377b28dfda" title="AWS Knowledge: Amazon Q Developer Fundamentals - Training Badge"><img src="https://images.credly.com/size/100x100/images/7c51f63c-14ef-4df9-a340-14938d05963a/blob" alt="AWS Knowledge: Amazon Q Developer Fundamentals - Training Badge" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/d03e1d39-4e40-483d-9845-f11da0d01170" title="AWS Knowledge: Cloud Essentials - Training Badge"><img src="https://images.credly.com/size/100x100/images/7cf036b0-c609-4378-a7be-9969e1dea7ab/blob" alt="AWS Knowledge: Cloud Essentials - Training Badge" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/04175d89-ec79-43cf-95f7-4031854bf5a9" title="AWS Partner: Generative AI Technical - Training Badge"><img src="https://images.credly.com/size/100x100/images/9bb8bd52-365f-447d-b83b-9d3ee560f5e5/blob" alt="AWS Partner: Generative AI Technical - Training Badge" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/f9785728-0e06-4c8b-9d62-08d85f00085e" title="AWS Partner: Generative AI Essentials - Training Badge"><img src="https://images.credly.com/size/100x100/images/4b547104-5ce9-43d5-8708-a7abb4b0c7ec/blob" alt="AWS Partner: Generative AI Essentials - Training Badge" width="100" height="100"></a>
 <a href="https://www.credly.com/badges/ca2a1336-e6e0-4e76-aa97-a919759d26d3" title="AWS Knowledge: Architecting (Retired)"><img src="https://images.credly.com/size/100x100/images/519a6dba-f145-4c1a-85a2-1d173d6898d9/image.png" alt="AWS Knowledge: Architecting (Retired)" width="100" height="100"></a>
-<a href="https://www.credly.com/badges/5f3538f6-0bb1-4ff5-911b-d2701075392f" title="AWS Knowledge: Serverless"><img src="https://images.credly.com/size/100x100/images/0c20a5b7-b4e9-4c2f-8b68-342e00a85e05/blob" alt="AWS Knowledge: Serverless" width="100" height="100"></a>
-<a href="https://www.credly.com/badges/455690f2-a4f3-4122-be29-6b377b28dfda" title="AWS Knowledge: Amazon Q Developer Fundamentals"><img src="https://images.credly.com/size/100x100/images/7c51f63c-14ef-4df9-a340-14938d05963a/blob" alt="AWS Knowledge: Amazon Q Developer Fundamentals" width="100" height="100"></a>
-<a href="https://www.credly.com/badges/04175d89-ec79-43cf-95f7-4031854bf5a9" title="AWS Partner: Generative AI Technical"><img src="https://images.credly.com/size/100x100/images/9bb8bd52-365f-447d-b83b-9d3ee560f5e5/blob" alt="AWS Partner: Generative AI Technical" width="100" height="100"></a>
-<a href="https://www.credly.com/badges/f9785728-0e06-4c8b-9d62-08d85f00085e" title="AWS Partner: Generative AI Essentials"><img src="https://images.credly.com/size/100x100/images/4b547104-5ce9-43d5-8708-a7abb4b0c7ec/blob" alt="AWS Partner: Generative AI Essentials" width="100" height="100"></a>
-<a href="https://www.credly.com/badges/0ffd3248-5444-4b5f-88ef-6ecf120d17eb" title="AWS Educate Getting Started with Storage"><img src="https://images.credly.com/size/100x100/images/3b1b42e6-dfc2-492b-90df-8058096cb93d/blob" alt="AWS Educate Getting Started with Storage" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/0ffd3248-5444-4b5f-88ef-6ecf120d17eb" title="AWS Educate Getting Started with Storage - Training Badge"><img src="https://images.credly.com/size/100x100/images/3b1b42e6-dfc2-492b-90df-8058096cb93d/blob" alt="AWS Educate Getting Started with Storage - Training Badge" width="100" height="100"></a>
+<a href="https://www.credly.com/badges/af8b4f3b-0327-451e-ad85-a436f6bfca9a" title="AWS Educate Introduction to Cloud 101 - Training Badge"><img src="https://images.credly.com/size/100x100/images/e51a8579-188d-4363-8ed1-12ad164ef57b/blob" alt="AWS Educate Introduction to Cloud 101 - Training Badge" width="100" height="100"></a>
 
 </div>
 <!-- CREDLY-BADGES:END -->

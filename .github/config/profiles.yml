@@ -51,6 +51,12 @@ contact:
   available_for_hire: true
   open_to_collaborations: true
 
+# Professional timeline (for manual badge updates)
+career:
+  current_role: "ProServe (Cloud Consultant) - DevOps"
+  company: "Amazon Web Services (AWS)"
+  start_date: "2025-01"  # Update Experience badge in README when this changes
+
 # Badge and theme preferences
 preferences:
   badge_style: "for-the-badge"  # Options: for-the-badge, flat-square, flat, plastic
@@ -64,7 +70,7 @@ resume:
 
 # Metrics
 metrics:
-  update_schedule: "0 8 1/2 * *"  # Every 2 days at 8 AM
+  update_schedule: "0 8 */2 * *"  # Every 2 days at 8 AM UTC
   delay_seconds: 15
   branch: "main"
   output_folder: "metrics"

@@ -107,6 +107,12 @@ jobs:
           if ! grep -q "| ${NEXT} |" resume/VERSIONS.md; then
             sed -i "/^|[-\|]*$/a | ${NEXT} | ${DATE} | \`sagar-resume-${NEXT}.pdf\` | ${MSG_SAFE} |" resume/VERSIONS.md
           fi
+      - name: Clean up upload folder
+        run: |
+          # Remove processed PDFs from upload folder (keep .gitkeep)
+          find resume/upload -name "*.pdf" -type f -delete
+          echo "Cleaned up resume/upload/"
+
       - name: Commit changes
         run: |
           NEXT="${{ steps.next.outputs.next }}"

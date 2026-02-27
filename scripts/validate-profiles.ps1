@@ -56,12 +56,14 @@ $readme = Get-Content $readmeFile -Raw
 $issues = @()
 
 # --- LeetCode checks ---
-if ($readme -match "leetcode\.com/SAGARGUPTA16") {
-    $issues += "❌ Found 'SAGARGUPTA16' in LeetCode URL (should be '$leetcodeUser')"
+# Use negative lookahead (?!10) to avoid false-positiving on 'sagargupta1610'
+# (the correct LeetCode username) when matching the GitHub username 'Sagargupta16'
+if ($readme -match "leetcode\.com/SAGARGUPTA16(?!10)") {
+    $issues += "❌ Found GitHub username in LeetCode URL (should be '$leetcodeUser')"
 }
 
-if ($readme -match "SAGARGUPTA16.*theme=") {
-    $issues += "❌ Found 'SAGARGUPTA16' in LeetCode card (should be '$leetcodeUser')"
+if ($readme -match "leetcard[^\n]*SAGARGUPTA16(?!10)") {
+    $issues += "❌ Found GitHub username in LeetCode card URL (should be '$leetcodeUser')"
 }
 
 # Check for consistent LeetCode usage
@@ -134,9 +136,9 @@ else {
     if ($Fix) {
         Write-Host "`n🔧 Attempting to fix issues..." -ForegroundColor Cyan
 
-        # Fix LeetCode username
-        $readme = $readme -replace "leetcode\.com/SAGARGUPTA16", "leetcode.com/$leetcodeUser"
-        $readme = $readme -replace "SAGARGUPTA16\?theme=", "$leetcodeUser?theme="
+        # Fix LeetCode username (negative lookahead to not replace sagargupta1610)
+        $readme = $readme -replace "leetcode\.com/SAGARGUPTA16(?!10)", "leetcode.com/$leetcodeUser"
+        $readme = $readme -replace "(leetcard[^\n]*)SAGARGUPTA16(?!10)", "`$1$leetcodeUser"
 
         Set-Content $readmeFile -Value $readme -NoNewline
         Write-Host "✅ Fixed README.md - please review changes!" -ForegroundColor Green

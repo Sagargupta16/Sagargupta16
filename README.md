@@ -70,7 +70,7 @@
 
 |       🎓 **Education**       |       💼 **Professional**        |    🏅 **Competitive**     |     🎖️ **Certifications**     |
 | :--------------------------: | :------------------------------: | :-----------------------: | :---------------------------: |
-|  **MCA from NIT Warangal**   |       **ProServe at AWS**        | **1950+ LeetCode Rating** |   **6 AWS Certifications**    |
+|  **MCA from NIT Warangal**   |       **ProServe at AWS**        | **1950+ LeetCode Rating** | **6 Industry Certifications** |
 | First Class with Distinction |    DevOps & Cloud Specialist     |   1100+ Problems Solved   | HashiCorp Terraform Certified |
 |     Academic Excellence      | Infrastructure Automation Expert | 80+ Contests Participated |    Multiple Holopin Badges    |
 

@@ -53,7 +53,7 @@ contact:
 
 # Professional timeline (for manual badge updates)
 career:
-  current_role: "ProServe (Cloud Consultant) - DevOps"
+  current_role: "ProServe (Cloud Consultant) - DevOps/MLOps"
   company: "Amazon Web Services (AWS)"
   start_date: "2025-01"  # Update Experience badge in README when this changes
 

@@ -2,13 +2,13 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=200&section=header&text=Sagar%20Gupta&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient&fontFamily=Pacifico" />
 </div>
 
----
+<br/>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
 </div>
 
----
+<br/>
 
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
@@ -28,7 +28,7 @@
 
 > ### 👨‍💻 **Hi, I'm Sagar Gupta**
 >
-> I am a **ProServe (Cloud Consultant) - DevOps** at [**Amazon Web Services (AWS)**](https://aws.amazon.com/) and hold a postgraduate degree (MCA) from [**NIT Warangal**](https://www.nitw.ac.in/).
+> I am a **ProServe (Cloud Consultant) - DevOps/MLOps** at [**Amazon Web Services (AWS)**](https://aws.amazon.com/) and hold a postgraduate degree (MCA) from [**NIT Warangal**](https://www.nitw.ac.in/).
 >
 > I specialize in **DevOps Engineering** • **MLOps** • **AWS Cloud Infrastructure** • **Full Stack Development** with a strong focus on automation and scalable cloud solutions.
 
@@ -36,12 +36,9 @@
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
 
-<details>
-<summary align="center"><h3 style="display: inline;">👋 More About Me (Click to Expand)</h3></summary>
-
 ## 👨‍💻 About Me
 
-- 💼 Currently working as **ProServe (Cloud Consultant) - DevOps** at **Amazon Web Services (AWS)**.
+- 💼 Currently working as **ProServe (Cloud Consultant) - DevOps/MLOps** at **Amazon Web Services (AWS)**.
 - 🎓 I completed my Master's in Computer Applications (MCA) from **National Institute of Technology, Warangal**.
 - 🚀 Specializing in **DevOps Infrastructure Automation**, **Terraform**, **AWS Cloud Solutions**, and **CI/CD Pipelines**.
 - 🏆 Competitive Programming: **1950+ LeetCode rating**, **1100+ problems solved**, **80+ contests participated**.
@@ -101,13 +98,11 @@
 <tr>
 <td align="center" width="33%">
 
-**[💰 Financial Dashboard](https://github.com/Sagargupta16/Financial-Dashboard)**
+**[📊 Ledger Sync](https://github.com/Sagargupta16/ledger-sync)**
 
-20+ page personal finance analytics with investment tracking, tax planning, and Sankey cash flow diagrams
+Excel-to-dashboard finance app — Sankey diagrams, anomaly detection, 20+ pages
 
-![React](https://img.shields.io/badge/React_19-blue?style=flat&logo=react&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) ![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat&logo=chartdotjs&logoColor=white)
-
-[Live Demo](https://sagargupta16.github.io/Financial-Dashboard)
+![React](https://img.shields.io/badge/React_19-blue?style=flat&logo=react&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat&logo=sqlalchemy&logoColor=white)
 
 </td>
 <td align="center" width="33%">
@@ -240,22 +235,17 @@ Full-stack app with CI/CD, Docker, GitHub Actions, and AWS deployment pipeline
 
 ### 🧠 AI Coding Assistants
 
-![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=github&logoColor=white)
-![ChatGPT](https://img.shields.io/badge/ChatGPT-74AA9C?style=for-the-badge&logo=openai&logoColor=white)
-![Claude](https://img.shields.io/badge/Claude-191919?style=for-the-badge&logo=anthropic&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)
-![Cursor AI](https://img.shields.io/badge/Cursor_AI-000000?style=for-the-badge&logo=cursor&logoColor=white)
-
-</div>
-
-<!-- CONNECT WITH ME -->
-<div align="center">
-
-<h2 id="connect-with-me">🌐 Connect With Me</h2>
+![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=flat-square&logo=github&logoColor=white)
+![ChatGPT](https://img.shields.io/badge/ChatGPT-74AA9C?style=flat-square&logo=openai&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-191919?style=flat-square&logo=anthropic&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=google&logoColor=white)
+![Cursor AI](https://img.shields.io/badge/Cursor_AI-000000?style=flat-square&logo=cursor&logoColor=white)
 
 </div>
 
 <div align="center">
+
+## 🌐 Connect With Me
 
 [![LinkedIn](https://img.shields.io/badge/Let's%20Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sagar-gupta-16-10)
 [![LeetCode](https://img.shields.io/badge/Solve%20With%20Me-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/sagargupta1610/)
@@ -375,11 +365,6 @@ Fast fingers for fast coding! 🚀
 
 </div>
 
-## 🎧 What's Vibin?
-
-[![Spotify](https://img.shields.io/badge/Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/user/31viv6sijcyqscehz45zz2wdlvy4)
-
-</details>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
 

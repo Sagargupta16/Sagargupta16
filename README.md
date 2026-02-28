@@ -42,7 +42,7 @@
 - 🎓 I completed my Master's in Computer Applications (MCA) from **National Institute of Technology, Warangal**.
 - 🚀 Specializing in **DevOps Infrastructure Automation**, **Terraform**, **AWS Cloud Solutions**, and **CI/CD Pipelines**.
 - 🏆 Competitive Programming: **1950+ LeetCode rating**, **1100+ problems solved**, **80+ contests participated**.
-- 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta16.github.io/portfolio-react/)
+- 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta.online/portfolio-react/)
 - 📫 Reach me at **<sg85207@gmail.com>**
 - 📄 Know about my experiences [My Resume](https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/main/sagar_resume.pdf)
 
@@ -249,7 +249,7 @@ Full-stack app with CI/CD, Docker, GitHub Actions, and AWS deployment pipeline
 
 [![LinkedIn](https://img.shields.io/badge/Let's%20Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sagar-gupta-16-10)
 [![LeetCode](https://img.shields.io/badge/Solve%20With%20Me-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/sagargupta1610/)
-[![Portfolio](https://img.shields.io/badge/View%20My%20Work-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://sagargupta16.github.io/portfolio-react/)
+[![Portfolio](https://img.shields.io/badge/View%20My%20Work-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://sagargupta.online/portfolio-react/)
 [![Email](https://img.shields.io/badge/Email%20Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sg85207@gmail.com)
 [![GitHub](https://img.shields.io/badge/Follow%20Me-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sagargupta16)
 

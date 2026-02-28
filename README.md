@@ -104,6 +104,8 @@ Excel-to-dashboard finance app — Sankey diagrams, anomaly detection, 20+ pages
 
 ![React](https://img.shields.io/badge/React_19-blue?style=flat&logo=react&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat&logo=sqlalchemy&logoColor=white)
 
+[Live Demo](https://sagargupta.online/ledger-sync/)
+
 </td>
 <td align="center" width="33%">
 
@@ -152,7 +154,7 @@ Full-stack app with CI/CD, Docker, GitHub Actions, and AWS deployment pipeline
 | Project | Description | Tech |
 |---------|-------------|------|
 | [Financial Dashboard](https://github.com/Sagargupta16/Financial-Dashboard) | 20+ page finance dashboard — 50/30/20 budgeting, tax planning, investments | React 19, TypeScript, Chart.js |
-| [Ledger Sync](https://github.com/Sagargupta16/ledger-sync) | Excel-to-dashboard finance app — Sankey diagrams, anomaly detection, 20+ pages | React 19, FastAPI, SQLAlchemy |
+| [Ledger Sync](https://github.com/Sagargupta16/ledger-sync) | Excel-to-dashboard finance app — Sankey diagrams, anomaly detection, 20+ pages ([Live](https://sagargupta.online/ledger-sync/)) | React 19, FastAPI, Neon PostgreSQL |
 | [Data Vault](https://github.com/Sagargupta16/data-vault) | Private data vault — 526+ contacts, finance tracking, AI chat interface | React, Express, MongoDB, AI |
 
 #### 🌐 Full-Stack Web Applications (9 Projects)

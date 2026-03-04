@@ -17,6 +17,7 @@
 </div>
 
 <div align="center">
+  <a href="https://sagargupta.online/portfolio-react/"><img src="https://img.shields.io/badge/Portfolio-sagargupta.online-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" /></a>
   <img src="https://img.shields.io/badge/LeetCode-Contest%20Rating%201950+-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Rating" />
   <img src="https://img.shields.io/badge/AWS-6%20Industry%20Certs-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Certifications" />
   <img src="https://img.shields.io/badge/Experience-1%2B%20Years-2E9EF7?style=for-the-badge" alt="Experience" />
@@ -36,214 +37,26 @@
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
 
-## 👨‍💻 About Me
+## 🗂️ Featured Projects
 
-- 💼 Currently working as **ProServe (Cloud Consultant) - DevOps/MLOps** at **Amazon Web Services (AWS)**.
-- 🎓 I completed my Master's in Computer Applications (MCA) from **National Institute of Technology, Warangal**.
-- 🚀 Specializing in **DevOps Infrastructure Automation**, **Terraform**, **AWS Cloud Solutions**, and **CI/CD Pipelines**.
-- 🏆 Competitive Programming: **1950+ LeetCode rating**, **1100+ problems solved**, **80+ contests participated**.
-- 👨‍💻 To know more about me visit my [Portfolio](https://sagargupta.online/portfolio-react/)
-- 📫 Reach me at **<sg85207@gmail.com>**
-- 📄 Know about my experiences [My Resume](https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/main/sagar_resume.pdf)
-
-## 🔭 Currently Working On
-
-- 🌱 Learning **MLOps & Machine Learning Pipeline Automation**
-- 🔨 Building **Multi-Cloud Infrastructure Solutions** with Terraform
-- 📝 Contributing to **Open Source DevOps Tools**
-- 💡 Exploring **AI/ML Integration with AWS Services**
-- 🎯 Optimizing **CI/CD Pipelines** for enterprise-scale deployments
-
-## ⚡ Fun Facts
-
-- 🎯 Solved **1100+ coding problems** on LeetCode (and counting!)
-- ☕ Coffee enthusiast - Code runs on caffeine ☕→💻
-- 📚 Continuous learner - Always exploring cutting-edge technologies
-- 🏆 Participated in **80+ competitive programming contests**
-
-## 🏆 Key Achievements
+| Project | Description | Tech | Link |
+|---------|-------------|------|------|
+| [📊 Ledger Sync](https://github.com/Sagargupta16/ledger-sync) | Excel-to-dashboard finance app — Sankey diagrams, anomaly detection, 20+ pages | React 19, FastAPI, Neon PostgreSQL | [Live](https://sagargupta.online/ledger-sync/) |
+| [🧠 GroundZeroNN](https://github.com/Sagargupta16/GroundZeroNN) | Neural network library from scratch — 79.8% MNIST accuracy, no ML frameworks | Python, NumPy | |
+| [🚀 DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | Full-stack app with CI/CD, Docker, GitHub Actions & AWS deployment pipeline | FastAPI, React, Docker, AWS | |
+| [🔄 Blue Green AWS](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) | Blue-Green deployment with ECS, ALB, CodePipeline — 18 Terraform modules | Terraform, AWS, Docker | |
+| [🤖 LeetCode Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) | LSTM-based contest rating predictor — 85%+ accuracy, MAE < 15 | FastAPI, TensorFlow, React | |
+| [🧩 SelfHub](https://github.com/Sagargupta16/SelfHub) | MCP server — personal AI memory hub for Claude & VS Code Copilot | TypeScript, MCP Protocol | |
+| [📋 Placemento](https://github.com/MCA-NITW/placemento) | Placement management system — OTP auth, AG Grid/Charts, monorepo | React 19, Express 5, TypeScript | |
+| [💰 Financial Dashboard](https://github.com/Sagargupta16/Financial-Dashboard) | 20+ page personal finance analytics with investment tracking & tax planning | React 19, TypeScript, Chart.js | [Live](https://sagargupta16.github.io/Financial-Dashboard) |
 
 <div align="center">
 
-|       🎓 **Education**       |       💼 **Professional**        |    🏅 **Competitive**     |     🎖️ **Certifications**     |
-| :--------------------------: | :------------------------------: | :-----------------------: | :---------------------------: |
-|  **MCA from NIT Warangal**   |       **ProServe at AWS**        | **1950+ LeetCode Rating** | **6 Industry Certifications** |
-| First Class with Distinction |    DevOps & Cloud Specialist     |   1100+ Problems Solved   | HashiCorp Terraform Certified |
-|     Academic Excellence      | Infrastructure Automation Expert | 80+ Contests Participated |    Multiple Holopin Badges    |
-
-</div>
-
-## 🎯 My Focus Areas & Continuous Learning
-
-<div align="center">
-
-|    🎯 **Core Expertise & Focus**     |     📚 **Currently Learning & Expanding**      |
-| :----------------------------------: | :--------------------------------------------: |
-| **DevOps Infrastructure Automation** |   **Advanced AWS Services & Architectures**    |
-|  Terraform & Infrastructure as Code  | Kubernetes Deep Dive & Container Orchestration |
-|   **CI/CD Pipeline Optimization**    |   **Multi-Cloud Solutions & Best Practices**   |
-|   AWS Cloud Solutions & Migration    |     AI/ML Integration with Cloud Services      |
-| **Container Technologies & Docker**  |       **Advanced Security & Compliance**       |
-| Monitoring & Observability Solutions |    Serverless Architecture & Microservices     |
-
-</div>
-
-## 🗂️ Project Portfolio — 34+ Repositories
-
-<div align="center">
-
-### 🌟 Featured Projects
-
-<table>
-<tr>
-<td align="center" width="33%">
-
-**[📊 Ledger Sync](https://github.com/Sagargupta16/ledger-sync)**
-
-Excel-to-dashboard finance app — Sankey diagrams, anomaly detection, 20+ pages
-
-![React](https://img.shields.io/badge/React_19-blue?style=flat&logo=react&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat&logo=sqlalchemy&logoColor=white)
-
-[Live Demo](https://sagargupta.online/ledger-sync/)
-
-</td>
-<td align="center" width="33%">
-
-**[🧠 GroundZeroNN](https://github.com/Sagargupta16/GroundZeroNN)**
-
-Neural network library from scratch — backpropagation, gradient descent, 79.8% MNIST accuracy — no ML frameworks
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white)
-
-</td>
-<td align="center" width="33%">
-
-**[🚀 DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM)**
-
-Full-stack app with CI/CD, Docker, GitHub Actions, and AWS deployment pipeline
-
-![AWS](https://img.shields.io/badge/AWS-FF9900?style=flat&logo=amazonaws&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white) ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat&logo=terraform&logoColor=white)
-
-</td>
-</tr>
-</table>
-
-### 📊 Complete Project Categories
-
-#### 🤖 AI / Machine Learning (6 Projects)
-
-| Project | Description | Tech |
-|---------|-------------|------|
-| [GroundZeroNN](https://github.com/Sagargupta16/GroundZeroNN) | Neural network library from scratch — 79.8% MNIST accuracy | Python, NumPy |
-| [LeetCode Rating Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) | LSTM-based contest rating predictor — 85%+ accuracy, MAE < 15 | FastAPI, TensorFlow, React |
-| [SelfHub](https://github.com/Sagargupta16/SelfHub) | MCP server — personal AI memory hub for Claude & VS Code Copilot | TypeScript, MCP Protocol |
-| [Stock Market Prediction](https://github.com/Sagargupta16/Stock-market-prediction) | LSTM neural network for stock price forecasting | Python, TensorFlow, Pandas |
-| [AI Code Translator](https://github.com/Sagargupta16/ai-code-translator) | Translate code between languages using GPT with streaming output | Next.js, TypeScript, OpenAI |
-| [StockSage AI](https://github.com/Sagargupta16/StockSage-AI) | AI-powered Indian stock prediction & paper trading platform | Python, ML (In Development) |
-
-#### ☁️ DevOps / Cloud Infrastructure (3 Projects)
-
-| Project | Description | Tech |
-|---------|-------------|------|
-| [DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | Full-stack app with CI/CD pipeline, Docker, and AWS deployment | FastAPI, React, Docker, AWS |
-| [Blue Green AWS Terraform](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) | Blue-Green deployment with ECS, ALB, CodePipeline — 18 Terraform modules | Terraform, AWS, Docker |
-| [AWS Amplify CI/CD](https://github.com/Sagargupta16/aws-amplify-cicd) | Serverless app with preview environments and automated PR deployments | AWS Amplify Gen2, GraphQL |
-
-#### 💰 Finance & Data (3 Projects)
-
-| Project | Description | Tech |
-|---------|-------------|------|
-| [Financial Dashboard](https://github.com/Sagargupta16/Financial-Dashboard) | 20+ page finance dashboard — 50/30/20 budgeting, tax planning, investments | React 19, TypeScript, Chart.js |
-| [Ledger Sync](https://github.com/Sagargupta16/ledger-sync) | Excel-to-dashboard finance app — Sankey diagrams, anomaly detection, 20+ pages ([Live](https://sagargupta.online/ledger-sync/)) | React 19, FastAPI, Neon PostgreSQL |
-| [Data Vault](https://github.com/Sagargupta16/data-vault) | Private data vault — 526+ contacts, finance tracking, AI chat interface | React, Express, MongoDB, AI |
-
-#### 🌐 Full-Stack Web Applications (9 Projects)
-
-| Project | Description | Tech |
-|---------|-------------|------|
-| [Placemento](https://github.com/MCA-NITW/placemento) | Placement management system — OTP auth, AG Grid/Charts, monorepo | React 19, Express 5, TypeScript |
-| [LeetCode Among Us](https://github.com/MCA-NITW/leetcode_among_us) | Competitive programming tracker with leaderboards and analytics | React, Express, LeetCode API |
-| [Brainstorm Verse](https://github.com/Sagargupta16/brainstorm-verse) | Idea-sharing platform with Clerk auth and file uploads | Next.js 14, MongoDB, Clerk |
-| [Lingua Connect](https://github.com/Sagargupta16/TRINIT_BugBiters_Dev) | Language tutoring marketplace with video calls and Stripe payments | MERN, Redux, Stripe, WebRTC |
-| [Tour Vibes](https://github.com/Sagargupta16/tour-vibes) | Travel journal with image uploads, feeds, and pagination | React, Express, MongoDB, Multer |
-| [Contact Manager (MERN)](https://github.com/Sagargupta16/Contact-Manager-Mern) | Full-stack contact app with MongoDB persistence and dark mode | MERN Stack |
-| [MCA NITW Portal](https://github.com/MCA-NITW/mca_nitw) | Alumni network, placement cell, and student management portal | React, MUI, Express, MongoDB |
-| [BMS](https://github.com/Sagargupta16/BMS) | Student management system with coding platform integration | FastAPI, MongoDB, Pydantic |
-| [Authentication System](https://github.com/Sagargupta16/Authentication-System) | JWT auth system with Joi password validation and bcrypt hashing | Express, React, MongoDB, JWT |
-
-#### 📐 Templates & Starter Kits (3 Projects)
-
-| Project | Description | Tech |
-|---------|-------------|------|
-| [MERN Template](https://github.com/Sagargupta16/MERN-TEMPLATE) | Production-ready MERN template — JWT, OTP, rate limiting, logging | React, Vite, Express, MongoDB |
-| [FARM Template](https://github.com/Sagargupta16/FARM-APP-TEMPLATE) | FastAPI + React + MongoDB template with Docker Compose | FastAPI, React, Docker |
-| [AI Project Template](https://github.com/Sagargupta16/AI_Project_Template) | ML/AI project scaffold with data pipelines and best practices | Python, Jupyter, scikit-learn |
-
-#### 📱 Frontend & Games (7 Projects)
-
-| Project | Description | Tech |
-|---------|-------------|------|
-| [Portfolio React](https://github.com/Sagargupta16/portfolio-react) | Data-driven portfolio with particles, animations, and CI/CD | React 19, Framer Motion, Vite |
-| [Music Web Player](https://github.com/Sagargupta16/Music-Web-App) | Glassmorphism music player with shuffle, repeat, and rotating art | HTML5, CSS3, JavaScript |
-| [Contact Manager (React)](https://github.com/Sagargupta16/Contact-Manager-React) | Client-side contact app with localStorage persistence | React, Redux, React Router |
-| [Pac-Man Game](https://github.com/Sagargupta16/PacMan-Game__UnityEngine) | Classic Pac-Man with AI ghost pathfinding in Unity | C#, Unity Engine |
-| [Tic-Tac-Toe](https://github.com/Sagargupta16/Tic-Tac-Toe) | CSS-only game logic — AI opponent via checkbox states | HTML, CSS |
-| [Portfolio (Vanilla)](https://github.com/Sagargupta16/PortFolio) | Portfolio with 5 color themes and dark/light mode | HTML, CSS, JavaScript |
-| [DS Implementations](https://github.com/Sagargupta16/DS-Implementations) | 17 topics — sorting, graphs, trees, hashing in C++ | C++ |
-
-#### 📚 Academic & Research
-
-| Project | Description | Tech |
-|---------|-------------|------|
-| [Academic Codes](https://github.com/Sagargupta16/Academic-Codes) | 5 semesters of MCA coursework — C++, Python, ML, DL | C++, Python, R |
-| [LDPC Codes](https://github.com/Sagargupta16/LDPC-Codes) | Error-correcting code simulation with BER analysis | Python, NumPy |
-| [MCA Academic](https://github.com/MCA-NITW/Academic) | Exam papers and study materials for NIT Warangal MCA | Documents |
+**[View all 34+ projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/main/sagar_resume.pdf)**
 
 </div>
 
 ---
-
-<div align="center">
-
-## 💻 Tech Stack & Tools
-
-### ☁️ Cloud & DevOps
-
-<img src="https://skillicons.dev/icons?i=aws,terraform,docker,kubernetes,githubactions,git,github,ansible,jenkins,gitlab,bash,linux" alt="Cloud & DevOps" />
-
-### 💻 Programming Languages
-
-<img src="https://skillicons.dev/icons?i=python,javascript,typescript,cpp,java,cs,r,html,css" alt="Programming Languages" />
-
-### 🎨 Frontend Development
-
-<img src="https://skillicons.dev/icons?i=react,nextjs,redux,tailwind,vite,materialui" alt="Frontend" />
-
-### ⚙️ Backend Development
-
-<img src="https://skillicons.dev/icons?i=nodejs,express,fastapi,graphql" alt="Backend" />
-
-### 🗄️ Databases
-
-<img src="https://skillicons.dev/icons?i=mongodb,mysql,postgres,redis,dynamodb" alt="Databases" />
-
-### 🤖 AI/ML & Data Science
-
-<img src="https://skillicons.dev/icons?i=tensorflow,pytorch,opencv,sklearn" alt="AI/ML" />
-
-### 🎮 Game Development & Others
-
-<img src="https://skillicons.dev/icons?i=unity,vscode,figma,postman" alt="Tools" />
-
-### 🧠 AI Coding Assistants
-
-![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=flat-square&logo=github&logoColor=white)
-![ChatGPT](https://img.shields.io/badge/ChatGPT-74AA9C?style=flat-square&logo=openai&logoColor=white)
-![Claude](https://img.shields.io/badge/Claude-191919?style=flat-square&logo=anthropic&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=google&logoColor=white)
-![Cursor AI](https://img.shields.io/badge/Cursor_AI-000000?style=flat-square&logo=cursor&logoColor=white)
-
-</div>
 
 <div align="center">
 
@@ -254,6 +67,32 @@ Full-stack app with CI/CD, Docker, GitHub Actions, and AWS deployment pipeline
 [![Portfolio](https://img.shields.io/badge/View%20My%20Work-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://sagargupta.online/portfolio-react/)
 [![Email](https://img.shields.io/badge/Email%20Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sg85207@gmail.com)
 [![GitHub](https://img.shields.io/badge/Follow%20Me-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sagargupta16)
+
+</div>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+
+<div align="center">
+
+## 💻 Tech Stack & Tools
+
+<img src="https://skillicons.dev/icons?i=aws,terraform,docker,kubernetes,githubactions,git,github,ansible,jenkins,gitlab,bash,linux&perline=12" alt="Cloud & DevOps" />
+<br/>
+<img src="https://skillicons.dev/icons?i=python,javascript,typescript,cpp,java,cs,r,html,css&perline=9" alt="Languages" />
+<br/>
+<img src="https://skillicons.dev/icons?i=react,nextjs,redux,tailwind,vite,materialui,nodejs,express,fastapi,graphql&perline=10" alt="Web Development" />
+<br/>
+<img src="https://skillicons.dev/icons?i=mongodb,mysql,postgres,redis,dynamodb,tensorflow,pytorch,opencv,sklearn&perline=9" alt="Databases & AI/ML" />
+<br/>
+<img src="https://skillicons.dev/icons?i=unity,vscode,figma,postman&perline=4" alt="Tools" />
+
+<br/>
+
+![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=flat-square&logo=github&logoColor=white)
+![ChatGPT](https://img.shields.io/badge/ChatGPT-74AA9C?style=flat-square&logo=openai&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-191919?style=flat-square&logo=anthropic&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=google&logoColor=white)
+![Cursor AI](https://img.shields.io/badge/Cursor_AI-000000?style=flat-square&logo=cursor&logoColor=white)
 
 </div>
 
@@ -269,24 +108,18 @@ Full-stack app with CI/CD, Docker, GitHub Actions, and AWS deployment pipeline
 
 ### 🔥 Current Streak
 
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=tokyonight" alt="GitHub Streak Stats" />
-</div>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=tokyonight" alt="GitHub Streak Stats" />
 
-<br/>
+<br/><br/>
 
 ### 📈 GitHub Rank
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&rank_icon=github" alt="GitHub Stats"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=tokyonight" alt="Top Languages"/>
-</div>
+<img src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&rank_icon=github" alt="GitHub Stats"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=tokyonight" alt="Top Languages"/>
 
-<br/>
+<br/><br/>
 
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=sagargupta16&custom_title=Sagar's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=A9FEF7&line=626069&point=F8D847&area_color=FE428E&title_color=FE428E&area=true&theme=react-dark" width="100%" alt="GitHub Activity Graph">
-</div>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=sagargupta16&custom_title=Sagar's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=A9FEF7&line=626069&point=F8D847&area_color=FE428E&title_color=FE428E&area=true&theme=react-dark" width="100%" alt="GitHub Activity Graph">
 
 <br/>
 
@@ -302,15 +135,11 @@ Full-stack app with CI/CD, Docker, GitHub Actions, and AWS deployment pipeline
   </picture>
 </div>
 
-### ⚡ Typing Speed Stats
+### ⚡ Typing Speed
 
-Fast fingers for fast coding! 🚀
-
-<div align="center">
- <a href="https://monkeytype.com/profile/Sagargupta16">
-   <img src="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/monkeytype-readme/monkeytype-readme-pb.svg" alt="My Monkeytype profile" />
- </a>
-</div>
+<a href="https://monkeytype.com/profile/Sagargupta16">
+  <img src="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/monkeytype-readme/monkeytype-readme-pb.svg" alt="My Monkeytype profile" />
+</a>
 
 </div>
 
@@ -359,6 +188,8 @@ Fast fingers for fast coding! 🚀
 </div>
 <!-- CREDLY-BADGES:END -->
 
+<sub>Badges auto-updated weekly via [Credly Badge README Updater](https://github.com/marketplace/actions/credly-badge-readme-updater)</sub>
+
 ### 🎯 Developer Achievements
 
 <div align="center">
@@ -371,135 +202,49 @@ Fast fingers for fast coding! 🚀
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
 
 <details>
-<summary align="center"><h3 style="display: inline;">📈 Detailed GitHub Metrics</h3></summary>
+<summary align="center"><h3 style="display: inline;">📈 Detailed GitHub Metrics (Click to Expand)</h3></summary>
 
 <div align="center">
-
-## 📊 Complete Profile Overview
 
 ![Metrics](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/github-metrics.svg)
 
 ---
 
-## 👤 Profile Introduction
-
-![Introduction](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.introduction.svg)
-
----
-
-## 📅 Calendar & Commit Activity
-
 ### 📅 Isometric Commit Calendar
 
 ![Isometric Calendar](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.isocalendar.svg)
 
-### 📆 Commit Calendar - Full History
-
-![Calendar](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.calendar.svg)
-
-### 💡 Coding Habits & Activity Patterns
+### 💡 Coding Habits
 
 ![Coding Habits](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.habits.svg)
 
-### 📰 Recent Activity
+### 🏆 Achievements
 
-![Activity](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.activity.svg)
+![Achievements](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.achievements.compact.svg)
 
----
+### 🎮 LeetCode Performance
 
-## 🈷️ Language Statistics
-
-### 🈷️ Most Used Languages - Detailed
-
-![Languages](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.languages.svg)
-
-### 🈷️ Recently Used Languages
-
-![Recent Languages](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.languages.recent.svg)
-
----
-
-## 🏆 Achievements
-
-### 🏆 GitHub Achievements - Detailed View
-
-![Achievements Detailed](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.achievements.svg)
-
-### 🏆 GitHub Achievements - Compact View
-
-![Achievements Compact](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.achievements.compact.svg)
-
----
-
-## 👨‍💻 Code Contributions
-
-### 👨‍💻 Lines of Code Changed
-
-![Lines](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.lines.svg)
-
-### 🎩 Notable Contributions
-
-![Notable](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.notable.svg)
-
----
-
-## 🌟 Repository & Stars
-
-### 📓 Pinned Repositories
-
-![Repositories](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.repositories.pinned.svg)
-
-### ⭐ Recently Starred Repositories
-
-![Stars](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.stars.svg)
-
-### ✨ Stargazers Growth
-
-![Stargazers](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.stargazers.svg)
+![LeetCode](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.leetcode.svg)
 
 ### 📌 Starred Topics
 
 ![Topics](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.topics.svg)
 
----
-
-## 🤝 Community Engagement
-
-### 🧑‍🤝‍🧑 Followers
-
-![People](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.people.followers.svg)
-
-### 🎟️ Follow-up Issues & Pull Requests
-
-![Followup](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.followup.svg)
-
-### 💬 Comment Reactions
-
-![Reactions](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.reactions.svg)
-
-### 💬 GitHub Discussions
-
-![Discussions](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.discussions.svg)
-
----
-
-## 📦 Additional Content
-
-### 🎫 Gists
-
-![Gists](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.gists.svg)
-
----
-
-## 🎮 Competitive Programming
-
-### 🗳️ LeetCode Performance Metrics
-
-![LeetCode](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.leetcode.svg)
-
 </div>
 
 </details>
+
+<div align="center">
+
+### 🐍 Watch the Snake Eat My Contributions
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/output/github-snake.svg" />
+  <img alt="Snake animation" src="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/output/github-snake.svg" />
+</picture>
+
+</div>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
 

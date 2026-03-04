@@ -96,12 +96,6 @@
 
 </div>
 
-## 📈 Weekly Coding Stats
-
-<!--START_SECTION:waka-->
-*WakaTime stats will appear here once you install the [WakaTime extension](https://wakatime.com) and add the `WAKATIME_API_KEY` secret.*
-<!--END_SECTION:waka-->
-
 ## ⚡ Recent GitHub Activity
 
 <!--START_SECTION:activity-->

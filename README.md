@@ -99,7 +99,7 @@
 ## ⚡ Recent GitHub Activity
 
 <!--START_SECTION:activity-->
-1. 💪 Opened PR [#1655](https://github.com/saturn-abhishek/awesome-github-profile-readme/pull/1655) in [saturn-abhishek/awesome-github-profile-readme](https://github.com/saturn-abhishek/awesome-github-profile-readme)
+1. ❌ Closed PR [#138](https://github.com/Sagargupta16/portfolio-react/pull/138) in [Sagargupta16/portfolio-react](https://github.com/Sagargupta16/portfolio-react)
 <!--END_SECTION:activity-->
 
 ## 📊 GitHub Stats

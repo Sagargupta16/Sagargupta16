@@ -99,7 +99,7 @@
 ## ⚡ Recent GitHub Activity
 
 <!--START_SECTION:activity-->
-1. 🎉 Merged PR [#16](https://github.com/Sagargupta16/Academic-Codes/pull/16) in [Sagargupta16/Academic-Codes](https://github.com/Sagargupta16/Academic-Codes)
+1. 💪 Opened PR [#22](https://github.com/Sagargupta16/sagargupta16.github.io/pull/22) in [Sagargupta16/sagargupta16.github.io](https://github.com/Sagargupta16/sagargupta16.github.io)
 <!--END_SECTION:activity-->
 
 ## 📊 GitHub Stats

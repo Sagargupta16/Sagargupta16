@@ -2,7 +2,7 @@
 
 ## Latest Version
 
-- **Version**: v1.0.4
+- **Version**: v1.0.5
 - **Last Updated**: 2026-03-05
 - **File**: `sagar_resume.pdf` (always the current version)
 
@@ -18,6 +18,7 @@
 
 | Version | Date | File Name | Changes |
 |---------|------|-----------|---------|
+| v1.0.5 | 2026-03-05 | `sagar-resume-v1.0.5.pdf` | expand: typescript notes |
 | v1.0.4 | 2026-03-05 | `sagar-resume-v1.0.4.pdf` | docs: kubernetes notes |
 | v1.0.3 | 2026-02-24 | `sagar-resume-v1.0.3.pdf` | feat: Add GitHub Actions workflow to automate resume versioning, PDF creation, and `VERSIONS.md` updates. |
 | v1.0.2 | 2025-09-27 | `sagar-resume-v1.0.2.pdf` | Add files via upload |

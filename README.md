@@ -99,7 +99,7 @@
 ## ⚡ Recent GitHub Activity
 
 <!--START_SECTION:activity-->
-1. 💪 Opened PR [#22](https://github.com/Sagargupta16/sagargupta16.github.io/pull/22) in [Sagargupta16/sagargupta16.github.io](https://github.com/Sagargupta16/sagargupta16.github.io)
+1. 🎉 Merged PR [#124](https://github.com/Sagargupta16/Contact-Manager-React/pull/124) in [Sagargupta16/Contact-Manager-React](https://github.com/Sagargupta16/Contact-Manager-React)
 <!--END_SECTION:activity-->
 
 ## 📊 GitHub Stats

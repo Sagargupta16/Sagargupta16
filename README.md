@@ -99,7 +99,7 @@
 ## ⚡ Recent GitHub Activity
 
 <!--START_SECTION:activity-->
-1. ❌ Closed PR [#138](https://github.com/Sagargupta16/portfolio-react/pull/138) in [Sagargupta16/portfolio-react](https://github.com/Sagargupta16/portfolio-react)
+1. 🎉 Merged PR [#16](https://github.com/Sagargupta16/Academic-Codes/pull/16) in [Sagargupta16/Academic-Codes](https://github.com/Sagargupta16/Academic-Codes)
 <!--END_SECTION:activity-->
 
 ## 📊 GitHub Stats

@@ -103,8 +103,6 @@
 | Repository | PR | Description |
 |:-----------|:---|:------------|
 | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) (21K⭐) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document custom deployment steps as Python functions |
-| [MCA-NITW/placemento](https://github.com/MCA-NITW/placemento) | [#248](https://github.com/MCA-NITW/placemento/pull/248) | Complete Placemento Platform: Enhanced UI, Statistics |
-| [MCA-NITW/placemento](https://github.com/MCA-NITW/placemento) | [#236](https://github.com/MCA-NITW/placemento/pull/236) | Fix code scanning alert: Database query injection |
 | [firstcontributions/first-contributions](https://github.com/firstcontributions/first-contributions) (52K⭐) | [#112840](https://github.com/firstcontributions/first-contributions/pull/112840) | Add Sagar Gupta |
 
 ### 🔄 Under Review
@@ -138,20 +136,20 @@ Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**,
 
 ### 🏆 GitHub Trophies
 
-<img src="https://github-profile-trophy.vercel.app/api/?username=sagargupta16&theme=tokyonight&no-frame=true&row=1&column=7" alt="GitHub Trophies" />
+<img src="https://github-trophies.vercel.app/api/?username=sagargupta16&theme=tokyonight&no-frame=true&row=1&column=7" alt="GitHub Trophies" />
 
 <br/>
 
 ### 🔥 Current Streak
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=sagargupta16&theme=tokyonight" alt="GitHub Streak Stats" />
+<img src="https://streak-stats.demolab.com/?user=sagargupta16&theme=tokyonight" alt="GitHub Streak Stats" />
 
 <br/><br/>
 
 ### 📈 GitHub Rank
 
-<img src="https://github-readme-stats.vercel.app/api?username=sagargupta16&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&rank_icon=github" alt="GitHub Stats"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=tokyonight" alt="Top Languages"/>
+<img src="https://github-readme-stats-eight-theta.vercel.app/api?username=sagargupta16&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&rank_icon=github" alt="GitHub Stats"/>
+<img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=tokyonight" alt="Top Languages"/>
 
 <br/><br/>
 

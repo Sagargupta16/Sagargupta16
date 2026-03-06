@@ -99,7 +99,7 @@
 ## ⚡ Recent GitHub Activity
 
 <!--START_SECTION:activity-->
-1. 🎉 Merged PR [#124](https://github.com/Sagargupta16/Contact-Manager-React/pull/124) in [Sagargupta16/Contact-Manager-React](https://github.com/Sagargupta16/Contact-Manager-React)
+1. ❌ Closed PR [#62840](https://github.com/apache/airflow/pull/62840) in [apache/airflow](https://github.com/apache/airflow)
 <!--END_SECTION:activity-->
 
 ## 📊 GitHub Stats

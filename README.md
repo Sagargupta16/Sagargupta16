@@ -52,7 +52,7 @@
 
 <div align="center">
 
-**[View all 34+ projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/main/sagar_resume.pdf)**
+**[View all 34+ projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://github.com/Sagargupta16/latex-resume/releases/download/latest/resume.pdf)**
 
 </div>
 
@@ -103,18 +103,17 @@
 | Repository | PR | Description |
 |:-----------|:---|:------------|
 | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) (21K⭐) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document custom deployment steps as Python functions |
-| [firstcontributions/first-contributions](https://github.com/firstcontributions/first-contributions) (52K⭐) | [#112840](https://github.com/firstcontributions/first-contributions/pull/112840) | Add Sagar Gupta |
+| [awslabs/mcp](https://github.com/awslabs/mcp) (8K⭐) | [#2607](https://github.com/awslabs/mcp/pull/2607) | Fix Kendra documentation menu to match source directory |
 
 ### 🔄 Under Review
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
-| [awslabs/mcp](https://github.com/awslabs/mcp) (8K⭐) | [#2557](https://github.com/awslabs/mcp/pull/2557) | Fix Kendra documentation menu to match source directory |
-| [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) (9K⭐) | [#7](https://github.com/shanraisshan/claude-code-best-practice/pull/7) | Add `/audit` command for best practices compliance |
-| [chroma-core/chroma](https://github.com/chroma-core/chroma) (26K⭐) | [#6538](https://github.com/chroma-core/chroma/pull/6538) | Replace ValueError/TypeError with InvalidArgumentError |
-| [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) (32K⭐) | [#9381](https://github.com/stanfordnlp/dspy/pull/9381) | Add docstrings to predict module public APIs |
-| [unslothai/unsloth](https://github.com/unslothai/unsloth) (53K⭐) | [#4152](https://github.com/unslothai/unsloth/pull/4152) | Improve Colab model export documentation |
-| [apache/airflow](https://github.com/apache/airflow) (44K⭐) | [#62840](https://github.com/apache/airflow/pull/62840) | Add template_fields to SalesforceBulkOperator |
+| [apache/airflow](https://github.com/apache/airflow) (44K⭐) | [#63109](https://github.com/apache/airflow/pull/63109) | Add template_fields to SalesforceBulkOperator |
+| [chroma-core/chroma](https://github.com/chroma-core/chroma) (26K⭐) | [#6590](https://github.com/chroma-core/chroma/pull/6590) | Replace ValueError/TypeError with InvalidArgumentError |
+| [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) (32K⭐) | [#9405](https://github.com/stanfordnlp/dspy/pull/9405) | Add docstrings to predict module public APIs |
+| [unslothai/unsloth](https://github.com/unslothai/unsloth) (53K⭐) | [#4184](https://github.com/unslothai/unsloth/pull/4184) | Improve Colab model export documentation |
+| [feast-dev/feast](https://github.com/feast-dev/feast) (6K⭐) | [#6081](https://github.com/feast-dev/feast/pull/6081) | Add Claude Code agent skills for Feast |
 
 ### 💬 Discussion Contributions
 
@@ -124,9 +123,11 @@ Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**,
 
 | Project | Description | Stars |
 |:--------|:------------|:------|
+| [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/github/stars/Sagargupta16/mcp-toolkit?style=flat) |
+| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 40-70% on Claude Code costs with proven strategies | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-cost-optimizer?style=flat) |
+| [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-code-recipes?style=flat) |
 | [awesome-mcp-servers](https://github.com/Sagargupta16/awesome-mcp-servers) | Curated list of MCP servers, tools, and resources | ![Stars](https://img.shields.io/github/stars/Sagargupta16/awesome-mcp-servers?style=flat) |
 | [deploy-guide](https://github.com/Sagargupta16/deploy-guide) | Step-by-step deployment guides for every platform (25+ guides) | ![Stars](https://img.shields.io/github/stars/Sagargupta16/deploy-guide?style=flat) |
-| [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit) | ![Stars](https://img.shields.io/github/stars/Sagargupta16/mcp-toolkit?style=flat) |
 | [agent-recipes](https://github.com/Sagargupta16/agent-recipes) | Copy-paste AI agent workflows for developer tasks | ![Stars](https://img.shields.io/github/stars/Sagargupta16/agent-recipes?style=flat) |
 | [ai-git-hooks](https://github.com/Sagargupta16/ai-git-hooks) | AI-powered git hooks (code review, commit messages, security) | ![Stars](https://img.shields.io/github/stars/Sagargupta16/ai-git-hooks?style=flat) |
 

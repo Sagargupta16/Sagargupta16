@@ -102,6 +102,7 @@
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
+| [feast-dev/feast](https://github.com/feast-dev/feast) (9K⭐) | [#6081](https://github.com/feast-dev/feast/pull/6081) | Add Claude Code agent skills for Feast |
 | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) (21K⭐) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document custom deployment steps as Python functions |
 | [awslabs/mcp](https://github.com/awslabs/mcp) (8K⭐) | [#2607](https://github.com/awslabs/mcp/pull/2607) | Fix Kendra documentation menu to match source directory |
 
@@ -112,8 +113,8 @@
 | [apache/airflow](https://github.com/apache/airflow) (44K⭐) | [#63109](https://github.com/apache/airflow/pull/63109) | Add template_fields to SalesforceBulkOperator |
 | [chroma-core/chroma](https://github.com/chroma-core/chroma) (26K⭐) | [#6590](https://github.com/chroma-core/chroma/pull/6590) | Replace ValueError/TypeError with InvalidArgumentError |
 | [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) (32K⭐) | [#9405](https://github.com/stanfordnlp/dspy/pull/9405) | Add docstrings to predict module public APIs |
-| [unslothai/unsloth](https://github.com/unslothai/unsloth) (53K⭐) | [#4184](https://github.com/unslothai/unsloth/pull/4184) | Improve Colab model export documentation |
-| [feast-dev/feast](https://github.com/feast-dev/feast) (6K⭐) | [#6081](https://github.com/feast-dev/feast/pull/6081) | Add Claude Code agent skills for Feast |
+| [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) (10K⭐) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
+| [mm65x/tokemon](https://github.com/mm65x/tokemon) | [#13](https://github.com/mm65x/tokemon/pull/13) | Fix cross-provider pricing normalization in cost engine |
 
 ### 💬 Discussion Contributions
 

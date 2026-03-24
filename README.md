@@ -116,6 +116,12 @@
 | [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) (10K⭐) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
 | [mm65x/tokemon](https://github.com/mm65x/tokemon) | [#13](https://github.com/mm65x/tokemon/pull/13) | Fix cross-provider pricing normalization in cost engine |
 
+### 🤝 Community Impact
+
+| Repository | PR | What Happened |
+|:-----------|:---|:--------------|
+| [forem/selfhost](https://github.com/forem/selfhost) (1.5K⭐) | [#91](https://github.com/forem/selfhost/pull/91) | Fixed AWS Ansible deploy + Elastic IP. Community confirmed working. Maintainers left Forem before review. |
+
 ### 💬 Discussion Contributions
 
 Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**, **ArgoCD**, **AWS CDK**, **Vite**, **Tailwind CSS**, **shadcn/ui**, **Pydantic**, **Ruff** and more — helping developers solve real-world problems.

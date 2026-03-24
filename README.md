@@ -114,7 +114,6 @@
 | [chroma-core/chroma](https://github.com/chroma-core/chroma) (26K⭐) | [#6590](https://github.com/chroma-core/chroma/pull/6590) | Replace ValueError/TypeError with InvalidArgumentError |
 | [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) (32K⭐) | [#9405](https://github.com/stanfordnlp/dspy/pull/9405) | Add docstrings to predict module public APIs |
 | [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) (10K⭐) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
-| [aws-samples/aws-iot-twinmaker-samples](https://github.com/aws-samples/aws-iot-twinmaker-samples) (114⭐) | [#166](https://github.com/aws-samples/aws-iot-twinmaker-samples/pull/166) | Migrate langchain.llms.bedrock to langchain_aws |
 | [mm65x/tokemon](https://github.com/mm65x/tokemon) | [#13](https://github.com/mm65x/tokemon/pull/13) | Fix cross-provider pricing normalization in cost engine |
 
 ### 💬 Discussion Contributions

@@ -41,13 +41,13 @@
 
 | Project | Description | Tech | Link |
 |---------|-------------|------|------|
-| [📊 Ledger Sync](https://github.com/Sagargupta16/ledger-sync) | Excel-to-dashboard finance app — Sankey diagrams, anomaly detection, 20+ pages | React 19, FastAPI, Neon PostgreSQL | [Live](https://sagargupta.online/ledger-sync/) |
-| [🔍 Instagram Leaderboard](https://github.com/Sagargupta16/InstagramLikesLeaderboard) | Browser tool showing who likes your Instagram posts the most — ranked leaderboards | Preact, TypeScript | [Live](https://sagargupta16.github.io/InstagramLikesLeaderboard/) |
+| [📊 Ledger Sync](https://github.com/Sagargupta16/ledger-sync) | Excel-to-dashboard finance app - Sankey diagrams, anomaly detection, 20+ pages | React 19, FastAPI, Neon PostgreSQL | [Live](https://sagargupta.online/ledger-sync/) |
+| [🔍 Instagram Leaderboard](https://github.com/Sagargupta16/InstagramLikesLeaderboard) | Browser tool showing who likes your Instagram posts the most - ranked leaderboards | Preact, TypeScript | [Live](https://sagargupta16.github.io/InstagramLikesLeaderboard/) |
 | [🚀 DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | Full-stack app with CI/CD, Docker, GitHub Actions & AWS deployment pipeline | FastAPI, React, Docker, AWS | |
-| [🔄 Blue Green AWS](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) | Blue-Green deployment with ECS, ALB, CodePipeline — 18 Terraform modules | Terraform, AWS, Docker | |
-| [🤖 LeetCode Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) | LSTM-based contest rating predictor — 85%+ accuracy, MAE < 15 | FastAPI, TensorFlow, React | [Live](https://leetcode-rating-predictor.onrender.com/) |
-| [🧩 SelfHub](https://github.com/Sagargupta16/SelfHub) | MCP server — personal AI memory hub for Claude & VS Code Copilot | TypeScript, MCP Protocol | |
-| [📋 Placemento](https://github.com/MCA-NITW/placemento) | Placement management system — OTP auth, AG Grid/Charts, monorepo | React 19, Express 5, TypeScript | |
+| [🔄 Blue Green AWS](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) | Blue-Green deployment with ECS, ALB, CodePipeline - 18 Terraform modules | Terraform, AWS, Docker | |
+| [🤖 LeetCode Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) | LSTM-based contest rating predictor - 85%+ accuracy, MAE < 15 | FastAPI, TensorFlow, React | [Live](https://leetcode-rating-predictor.onrender.com/) |
+| [🧩 SelfHub](https://github.com/Sagargupta16/SelfHub) | MCP server - personal AI memory hub for Claude & VS Code Copilot | TypeScript, MCP Protocol | |
+| [📋 Placemento](https://github.com/MCA-NITW/placemento) | Placement management system - OTP auth, AG Grid/Charts, monorepo | React 19, Express 5, TypeScript | |
 | [💰 Financial Dashboard](https://github.com/Sagargupta16/Financial-Dashboard) | 20+ page personal finance analytics with investment tracking & tax planning | React 19, TypeScript, Chart.js | [Live](https://sagargupta16.github.io/Financial-Dashboard) |
 
 <div align="center">
@@ -128,7 +128,7 @@
 
 ### 💬 Discussion Contributions
 
-Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**, **ArgoCD**, **AWS CDK**, **Vite**, **Tailwind CSS**, **shadcn/ui**, **Pydantic**, **Ruff** and more — helping developers solve real-world problems.
+Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**, **ArgoCD**, **AWS CDK**, **Vite**, **Tailwind CSS**, **shadcn/ui**, **Pydantic**, **Ruff** and more - helping developers solve real-world problems.
 
 ### 🏗️ Community Projects
 

@@ -118,6 +118,7 @@
 | [mm65x/tokemon](https://github.com/mm65x/tokemon) | [#13](https://github.com/mm65x/tokemon/pull/13) | Fix cross-provider pricing normalization in cost engine |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |
 | [terraform-aws-modules/terraform-aws-step-functions](https://github.com/terraform-aws-modules/terraform-aws-step-functions) | [#79](https://github.com/terraform-aws-modules/terraform-aws-step-functions/pull/79) | Add missing CloudWatch Logs IAM permissions |
+| [aws-ia/terraform-aws-bedrock](https://github.com/aws-ia/terraform-aws-bedrock) | [#172](https://github.com/aws-ia/terraform-aws-bedrock/pull/172) | Fix name_prefix, tag propagation, external roles, add MCP example |
 
 ### 🤝 Community Impact
 

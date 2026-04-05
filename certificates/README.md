@@ -1,6 +1,6 @@
 # Certificates
 
-This folder contains all my professional certificates and achievements.
+Offline archive of professional certificates and competition achievements. These are not referenced in the profile README (Credly badges handle that); this directory is a general-purpose backup store for certificate files.
 
 ## Certificates List
 

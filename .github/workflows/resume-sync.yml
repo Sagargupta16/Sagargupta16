@@ -1,0 +1,51 @@
+name: Sync Resume from latex-resume
+
+on:
+  schedule:
+    - cron: "0 10 * * 1" # Every Monday at 10 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-resume:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Download latest resume from latex-resume releases
+        id: download
+        run: |
+          DOWNLOAD_URL="https://github.com/Sagargupta16/latex-resume/releases/download/latest/resume.pdf"
+          echo "Downloading from: $DOWNLOAD_URL"
+          curl -fSL -o resume-latest.pdf "$DOWNLOAD_URL"
+
+          # Compare with current version
+          if [ -f sagar_resume.pdf ]; then
+            CURRENT_HASH=$(sha256sum sagar_resume.pdf | cut -d' ' -f1)
+            NEW_HASH=$(sha256sum resume-latest.pdf | cut -d' ' -f1)
+
+            if [ "$CURRENT_HASH" = "$NEW_HASH" ]; then
+              echo "Resume is already up to date."
+              echo "changed=false" >> "$GITHUB_OUTPUT"
+              rm resume-latest.pdf
+              exit 0
+            fi
+          fi
+
+          mv resume-latest.pdf sagar_resume.pdf
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit updated resume
+        if: steps.download.outputs.changed == 'true'
+        run: |
+          git add sagar_resume.pdf
+          git commit -m "docs: sync resume from latex-resume latest release"
+          git push

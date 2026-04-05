@@ -125,6 +125,43 @@ foreach ($match in $credlyMatches) {
     }
 }
 
+# --- Role / title consistency ---
+$currentRole = & yq '.career.current_role' $configFile
+if ($currentRole -and $currentRole -ne "null") {
+    if ($readme -notmatch [regex]::Escape($currentRole)) {
+        $issues += "⚠️  Current role '$currentRole' from profiles.yml not found in README"
+    }
+}
+
+# --- Experience badge check ---
+$startDate = & yq '.career.start_date' $configFile
+if ($startDate -and $startDate -ne "null") {
+    $startYear = [int]($startDate -split "-")[0]
+    $currentYear = (Get-Date).Year
+    $yearsExp = $currentYear - $startYear
+    # Check if the Experience badge reflects the correct range
+    if ($readme -match "Experience-(\d+)\%2B\%20Years") {
+        $badgeYears = [int]$Matches[1]
+        if ($badgeYears -ne $yearsExp) {
+            $issues += "⚠️  Experience badge says ${badgeYears}+ years but career.start_date ($startDate) suggests ${yearsExp}+ years"
+        }
+    }
+}
+
+# --- Industry certification count check ---
+# Count badges in the Industry Certifications section (between markers)
+$certSection = [regex]::Match($readme, "Industry Certifications.*?</div>", [System.Text.RegularExpressions.RegexOptions]::Singleline)
+if ($certSection.Success) {
+    $certBadgeCount = ([regex]::Matches($certSection.Value, '<a href="https://www.credly.com/badges/')).Count
+    # Check if the shield badge in the header matches
+    if ($readme -match "AWS-(\d+)\%20Industry\%20Certs") {
+        $headerCertCount = [int]$Matches[1]
+        if ($headerCertCount -ne $certBadgeCount) {
+            $issues += "⚠️  Header badge says $headerCertCount industry certs but Credly section has $certBadgeCount"
+        }
+    }
+}
+
 # Display results
 if ($issues.Count -eq 0) {
     Write-Host "✅ All usernames are consistent!" -ForegroundColor Green

@@ -35,7 +35,7 @@
 
 </div>
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+<img src="assets/divider.gif" width="100%"/>
 
 ## 🗂️ Featured Projects
 
@@ -71,7 +71,7 @@
 
 </div>
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+<img src="assets/divider.gif" width="100%"/>
 
 <div align="center">
 
@@ -118,7 +118,6 @@
 | [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) (10K⭐) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
 | [mm65x/tokemon](https://github.com/mm65x/tokemon) | [#13](https://github.com/mm65x/tokemon/pull/13) | Fix cross-provider pricing normalization in cost engine |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |
-| [terraform-aws-modules/terraform-aws-step-functions](https://github.com/terraform-aws-modules/terraform-aws-step-functions) | [#79](https://github.com/terraform-aws-modules/terraform-aws-step-functions/pull/79) | Add missing CloudWatch Logs IAM permissions |
 | [aws-ia/terraform-aws-bedrock](https://github.com/aws-ia/terraform-aws-bedrock) | [#172](https://github.com/aws-ia/terraform-aws-bedrock/pull/172) | Fix name_prefix, tag propagation, external roles, add MCP example |
 
 ### 🤝 Community Impact
@@ -149,24 +148,44 @@ Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**,
 
 ### 🏆 GitHub Trophies
 
-<img src="https://github-trophies.vercel.app/api/?username=sagargupta16&theme=tokyonight&no-frame=true&row=1&column=7" alt="GitHub Trophies" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-trophies.vercel.app/api/?username=sagargupta16&theme=tokyonight&no-frame=true&row=1&column=7">
+  <source media="(prefers-color-scheme: light)" srcset="https://github-trophies.vercel.app/api/?username=sagargupta16&theme=flat&no-frame=true&row=1&column=7">
+  <img src="https://github-trophies.vercel.app/api/?username=sagargupta16&theme=tokyonight&no-frame=true&row=1&column=7" alt="GitHub Trophies" />
+</picture>
 
 <br/>
 
 ### 🔥 Current Streak
 
-<img src="https://streak-stats.demolab.com/?user=sagargupta16&theme=tokyonight" alt="GitHub Streak Stats" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=sagargupta16&theme=tokyonight">
+  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=sagargupta16&theme=default">
+  <img src="https://streak-stats.demolab.com/?user=sagargupta16&theme=tokyonight" alt="GitHub Streak Stats" />
+</picture>
 
 <br/><br/>
 
 ### 📈 GitHub Rank
 
-<img src="https://github-readme-stats-eight-theta.vercel.app/api?username=sagargupta16&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&rank_icon=github" alt="GitHub Stats"/>
-<img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=tokyonight" alt="Top Languages"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=sagargupta16&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&rank_icon=github">
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=sagargupta16&show_icons=true&theme=default&include_all_commits=true&count_private=true&rank_icon=github">
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=sagargupta16&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&rank_icon=github" alt="GitHub Stats"/>
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=tokyonight">
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=default">
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=tokyonight" alt="Top Languages"/>
+</picture>
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=sagargupta16&custom_title=Sagar's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=A9FEF7&line=626069&point=F8D847&area_color=FE428E&title_color=FE428E&area=true&theme=react-dark" width="100%" alt="GitHub Activity Graph">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=sagargupta16&custom_title=Sagar's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=A9FEF7&line=626069&point=F8D847&area_color=FE428E&title_color=FE428E&area=true&theme=react-dark">
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=sagargupta16&custom_title=Sagar's%20GitHub%20Activity%20Graph&theme=minimal&area=true">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=sagargupta16&custom_title=Sagar's%20GitHub%20Activity%20Graph&bg_color=0D1117&color=A9FEF7&line=626069&point=F8D847&area_color=FE428E&title_color=FE428E&area=true&theme=react-dark" width="100%" alt="GitHub Activity Graph">
+</picture>
 
 <br/>
 
@@ -246,36 +265,36 @@ Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**,
 </div>
 
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+<img src="assets/divider.gif" width="100%"/>
 
 <details>
 <summary align="center"><h3 style="display: inline;">📈 Detailed GitHub Metrics (Click to Expand)</h3></summary>
 
 <div align="center">
 
-![Metrics](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/github-metrics.svg)
+![Metrics](metrics/github-metrics.svg)
 
 ---
 
 ### 📅 Isometric Commit Calendar
 
-![Isometric Calendar](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.isocalendar.svg)
+![Isometric Calendar](metrics/metrics.plugin.isocalendar.svg)
 
 ### 💡 Coding Habits
 
-![Coding Habits](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.habits.svg)
+![Coding Habits](metrics/metrics.plugin.habits.svg)
 
 ### 🏆 Achievements
 
-![Achievements](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.achievements.compact.svg)
+![Achievements](metrics/metrics.plugin.achievements.compact.svg)
 
 ### 🎮 LeetCode Performance
 
-![LeetCode](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.leetcode.svg)
+![LeetCode](metrics/metrics.plugin.leetcode.svg)
 
 ### 📌 Starred Topics
 
-![Topics](https://github.com/Sagargupta16/Sagargupta16/blob/main/metrics/metrics.plugin.topics.svg)
+![Topics](metrics/metrics.plugin.topics.svg)
 
 </div>
 
@@ -293,7 +312,7 @@ Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**,
 
 </div>
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+<img src="assets/divider.gif" width="100%"/>
 
 <div align="center">
 

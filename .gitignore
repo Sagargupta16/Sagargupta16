@@ -5,6 +5,9 @@
 # Markdown linting configuration (keep local)
 .markdownlint.json
 
+# AI assistant config (personal, not for public repo)
+CLAUDE.md
+
 # Temporary files
 *.tmp
 *.temp
@@ -16,10 +19,7 @@
 .DS_Store  # macOS
 Thumbs.db  # Windows
 
-# Resume upload staging (allow PDFs so the versioning workflow can trigger)
-resume/upload/*
-!resume/upload/.gitkeep
-!resume/upload/*.pdf
+# Resume is synced from latex-resume releases (see .github/workflows/resume-sync.yml)
 
 # Backup files (from validate script)
 *.backup-*

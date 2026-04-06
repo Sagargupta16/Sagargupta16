@@ -135,7 +135,8 @@ Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**,
 | Project | Description | Stars |
 |:--------|:------------|:------|
 | [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/github/stars/Sagargupta16/mcp-toolkit?style=flat) |
-| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 40-70% on Claude Code costs with proven strategies | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-cost-optimizer?style=flat) |
+| [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace with 17 reusable dev skills and 24 commands | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-skills?style=flat) |
+| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-cost-optimizer?style=flat) |
 | [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-code-recipes?style=flat) |
 | [awesome-mcp-servers](https://github.com/Sagargupta16/awesome-mcp-servers) | Curated list of MCP servers, tools, and resources | ![Stars](https://img.shields.io/github/stars/Sagargupta16/awesome-mcp-servers?style=flat) |
 | [deploy-guide](https://github.com/Sagargupta16/deploy-guide) | Step-by-step deployment guides for every platform (25+ guides) | ![Stars](https://img.shields.io/github/stars/Sagargupta16/deploy-guide?style=flat) |

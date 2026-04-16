@@ -5,7 +5,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;1950%2B+LeetCode+Rating+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;2000%2B+LeetCode+Rating+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
 </div>
 
 <br/>
@@ -18,7 +18,7 @@
 
 <div align="center">
   <a href="https://sagargupta.online/portfolio-react/"><img src="https://img.shields.io/badge/Portfolio-sagargupta.online-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" /></a>
-  <img src="https://img.shields.io/badge/LeetCode-Contest%20Rating%201950+-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Rating" />
+  <img src="https://img.shields.io/badge/LeetCode-Contest%20Rating%202000+-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Rating" />
   <img src="https://img.shields.io/badge/AWS-6%20Industry%20Certs-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS Certifications" />
   <img src="https://img.shields.io/badge/Experience-2%2B%20Years-2E9EF7?style=for-the-badge" alt="Experience" />
 </div>
@@ -53,7 +53,7 @@
 
 <div align="center">
 
-**[View all 34+ projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://github.com/Sagargupta16/latex-resume/releases/download/latest/resume.pdf)**
+**[View all 28+ projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://github.com/Sagargupta16/latex-resume/releases/download/latest/resume.pdf)**
 
 </div>
 
@@ -108,14 +108,22 @@
 | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) (21K⭐) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document custom deployment steps as Python functions |
 | [awslabs/mcp](https://github.com/awslabs/mcp) (8K⭐) | [#2607](https://github.com/awslabs/mcp/pull/2607) | Fix Kendra documentation menu to match source directory |
 | [cloudposse/terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) (437⭐) | [#197](https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197) | Add S3 native locking docs, fix variable descriptions |
+| [rohitg00/awesome-claude-code-toolkit](https://github.com/rohitg00/awesome-claude-code-toolkit) | [#218](https://github.com/rohitg00/awesome-claude-code-toolkit/pull/218) | Add claude-cost-optimizer to toolkit listing |
 
 ### 🔄 Under Review
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
-| [chroma-core/chroma](https://github.com/chroma-core/chroma) (26K⭐) | [#6590](https://github.com/chroma-core/chroma/pull/6590) | Replace ValueError/TypeError with InvalidArgumentError |
-| [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) (32K⭐) | [#9405](https://github.com/stanfordnlp/dspy/pull/9405) | Add docstrings to predict module public APIs |
-| [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) (10K⭐) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
+| [aws/aws-cdk](https://github.com/aws/aws-cdk) (12K⭐) | [#37601](https://github.com/aws/aws-cdk/pull/37601) | Scope batch SubmitJob IAM to specific resources |
+| [aws/aws-cdk](https://github.com/aws/aws-cdk) (12K⭐) | [#37602](https://github.com/aws/aws-cdk/pull/37602) | Apply timeout to FileDefinitionBody and StringDefinitionBody |
+| [anthropics/skills](https://github.com/anthropics/skills) (5.4K⭐) | [#939](https://github.com/anthropics/skills/pull/939)-[#942](https://github.com/anthropics/skills/pull/942) | 4 PRs: path fixes, filename collisions, progressive disclosure, merge duplicates |
+| [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) (6K⭐) | [#2446](https://github.com/modelcontextprotocol/python-sdk/pull/2446) | Add subject field to AccessToken |
+| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) (1K⭐) | [#132](https://github.com/awslabs/agent-plugins/pull/132), [#133](https://github.com/awslabs/agent-plugins/pull/133) | validate-drawio early exit, shorten MCP server names |
+| [terraform-aws-modules/terraform-aws-eventbridge](https://github.com/terraform-aws-modules/terraform-aws-eventbridge) | [#196](https://github.com/terraform-aws-modules/terraform-aws-eventbridge/pull/196) | Support partner event bus for logging and operations |
+| [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) (11K⭐) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
+| [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) (5.9K⭐) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |
+| [chroma-core/chroma](https://github.com/chroma-core/chroma) (27K⭐) | [#6590](https://github.com/chroma-core/chroma/pull/6590) | Replace ValueError/TypeError with InvalidArgumentError |
+| [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) (34K⭐) | [#9405](https://github.com/stanfordnlp/dspy/pull/9405) | Add docstrings to predict module public APIs |
 | [mm65x/tokemon](https://github.com/mm65x/tokemon) | [#13](https://github.com/mm65x/tokemon/pull/13) | Fix cross-provider pricing normalization in cost engine |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |
 | [aws-ia/terraform-aws-bedrock](https://github.com/aws-ia/terraform-aws-bedrock) | [#172](https://github.com/aws-ia/terraform-aws-bedrock/pull/172) | Fix name_prefix, tag propagation, external roles, add MCP example |
@@ -128,14 +136,14 @@
 
 ### 💬 Discussion Contributions
 
-Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**, **ArgoCD**, **AWS CDK**, **Vite**, **Tailwind CSS**, **shadcn/ui**, **Pydantic**, **Ruff** and more - helping developers solve real-world problems.
+3 accepted answers on [community/community](https://github.com/community/community/discussions) Q&A - helping developers with GitHub Actions, API access, and workflow patterns. Active in discussions across **FastAPI**, **Next.js**, **AWS CDK**, **Vite**, **Tailwind CSS**, and more.
 
 ### 🏗️ Community Projects
 
 | Project | Description | Stars |
 |:--------|:------------|:------|
 | [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/github/stars/Sagargupta16/mcp-toolkit?style=flat) |
-| [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace with 17 reusable dev skills and 24 commands | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-skills?style=flat) |
+| [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 18 plugins, 22 agents, 9 hooks, 21 commands | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-skills?style=flat) |
 | [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-cost-optimizer?style=flat) |
 | [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-code-recipes?style=flat) |
 | [awesome-mcp-servers](https://github.com/Sagargupta16/awesome-mcp-servers) | Curated list of MCP servers, tools, and resources | ![Stars](https://img.shields.io/github/stars/Sagargupta16/awesome-mcp-servers?style=flat) |
@@ -192,7 +200,7 @@ Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**,
 
 ### 🏅 Competitive Programming Journey
 
-**🏆 Contest Rating:** 1950+ | **✅ Problems Solved:** 1100+ | **🎮 Contests:** 80+
+**🏆 Contest Rating:** 2000+ | **✅ Problems Solved:** 1200+ | **🎮 Contests:** 100+
 
 <div align="center">
   <picture>
@@ -326,4 +334,4 @@ Active in Q&A discussions on **FastAPI**, **Next.js**, **Prisma**, **Supabase**,
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=120&section=footer"/>
 </p>
-<!-- updated Thu Mar  5 18:08:16 IST 2026 -->
+<!-- updated Wed Apr 16 14:30:00 IST 2026 -->

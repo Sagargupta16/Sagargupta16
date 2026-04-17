@@ -116,7 +116,7 @@
 |:-----------|:---|:------------|
 | [aws/aws-cdk](https://github.com/aws/aws-cdk) (12K⭐) | [#37601](https://github.com/aws/aws-cdk/pull/37601) | Scope batch SubmitJob IAM to specific resources |
 | [aws/aws-cdk](https://github.com/aws/aws-cdk) (12K⭐) | [#37602](https://github.com/aws/aws-cdk/pull/37602) | Apply timeout to FileDefinitionBody and StringDefinitionBody |
-| [anthropics/skills](https://github.com/anthropics/skills) (5.4K⭐) | [#939](https://github.com/anthropics/skills/pull/939)-[#942](https://github.com/anthropics/skills/pull/942) | 4 PRs: path fixes, filename collisions, progressive disclosure, merge duplicates |
+| [anthropics/skills](https://github.com/anthropics/skills) (5.4K⭐) | [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | skill-creator progressive disclosure refactor; merge duplicate plugins |
 | [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) (6K⭐) | [#2446](https://github.com/modelcontextprotocol/python-sdk/pull/2446) | Add subject field to AccessToken |
 | [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) (1K⭐) | [#132](https://github.com/awslabs/agent-plugins/pull/132), [#133](https://github.com/awslabs/agent-plugins/pull/133) | validate-drawio early exit, shorten MCP server names |
 | [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) (11K⭐) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
@@ -125,7 +125,6 @@
 | [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) (34K⭐) | [#9405](https://github.com/stanfordnlp/dspy/pull/9405) | Add docstrings to predict module public APIs |
 | [mm65x/tokemon](https://github.com/mm65x/tokemon) | [#13](https://github.com/mm65x/tokemon/pull/13) | Fix cross-provider pricing normalization in cost engine |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |
-| [aws-ia/terraform-aws-bedrock](https://github.com/aws-ia/terraform-aws-bedrock) | [#172](https://github.com/aws-ia/terraform-aws-bedrock/pull/172) | Fix name_prefix, tag propagation, external roles, add MCP example |
 
 ### 🤝 Community Impact
 

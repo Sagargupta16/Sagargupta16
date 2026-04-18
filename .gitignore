@@ -35,3 +35,7 @@ node_modules/
 # Python cache (if you add any Python scripts)
 __pycache__/
 *.pyc
+
+# Added for consistency
+.DS_Store
+Thumbs.db

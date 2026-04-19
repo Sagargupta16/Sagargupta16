@@ -97,10 +97,7 @@ def generate_section(certifications, professional, knowledge):
     lines.append("#### \U0001f3c5 Industry Certifications")
     lines.append("")
     lines.append('<div align="center">')
-    lines.append("")
-    for badge in certifications:
-        lines.append(badge_to_html(badge))
-    lines.append("")
+    lines.append("&nbsp;".join(badge_to_html(b) for b in certifications))
     lines.append("</div>")
 
     # Professional & Partner Badges
@@ -109,10 +106,7 @@ def generate_section(certifications, professional, knowledge):
         lines.append("#### \U0001f396\ufe0f Professional & Partner Badges")
         lines.append("")
         lines.append('<div align="center">')
-        lines.append("")
-        for badge in professional:
-            lines.append(badge_to_html(badge))
-        lines.append("")
+        lines.append("&nbsp;".join(badge_to_html(b) for b in professional))
         lines.append("</div>")
 
     # Knowledge & Learning Badges
@@ -121,10 +115,7 @@ def generate_section(certifications, professional, knowledge):
         lines.append("#### \U0001f4da Knowledge & Learning Badges")
         lines.append("")
         lines.append('<div align="center">')
-        lines.append("")
-        for badge in knowledge:
-            lines.append(badge_to_html(badge))
-        lines.append("")
+        lines.append("&nbsp;".join(badge_to_html(b) for b in knowledge))
         lines.append("</div>")
 
     return "\n".join(lines)

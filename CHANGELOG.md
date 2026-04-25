@@ -2,6 +2,10 @@
 
 All notable changes to this profile README repository.
 
+## [4.0.2] - 2026-04-25
+
+- Actually fix Credly badges rendering vertically -- the 4.0.1 pattern (`<p align="center">` with one anchor per line) still caused GFM to wrap each `<a>` in its own paragraph. Updater now emits a single line of anchors joined by plain spaces inside `<p align="center">`, which is the only layout where GFM preserves inline flow.
+
 ## [4.0.1] - 2026-04-25
 
 - Fix Credly badges rendering vertically on GitHub profile page -- switch from `<div align="center">` + `&nbsp;` to `<p align="center">` with newline-separated anchors (updater script + README regenerated)

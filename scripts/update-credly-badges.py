@@ -92,15 +92,15 @@ def badge_to_html(badge, size=BADGE_SIZE):
 def _render_group(title, badges):
     """Render one category as a heading + <p align='center'> block.
 
-    Uses <p align="center"> with each anchor on its own line. GitHub's
-    markdown pipeline collapses the newlines to single spaces inside <p>,
-    guaranteeing horizontal inline flow -- unlike <div align="center"> +
-    &nbsp;, which can stack vertically on narrow viewports.
+    CRITICAL: all anchors MUST be on a single line separated by plain
+    spaces. Newlines between <a> tags cause GitHub's markdown pipeline
+    to wrap each anchor in its own paragraph (block-level), producing
+    a vertical stack. &nbsp; does not help because it's about whitespace
+    semantics, not block-vs-inline flow. This is the same pattern the
+    official Credly Badge README Updater action emits.
     """
-    lines = ["", f"#### {title}", "", '<p align="center">']
-    lines.extend(f"  {badge_to_html(b)}" for b in badges)
-    lines.append("</p>")
-    return lines
+    anchors = " ".join(badge_to_html(b) for b in badges)
+    return ["", f"#### {title}", "", '<p align="center">', anchors, "</p>"]
 
 
 def generate_section(certifications, professional, knowledge):

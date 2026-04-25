@@ -82,9 +82,16 @@ def badge_to_html(badge, size=BADGE_SIZE):
         f"images.credly.com/size/{size}x{size}/images/",
     )
 
+    # Wrap <img> in <picture> to bypass GitHub's js-gh-image-fallback class,
+    # which forces display:block on any <img> directly inside an <a>. With
+    # the <picture> wrapper, GitHub renders the image inline via its
+    # <themed-picture data-catalyst-inline="true"> wrapper. Without this,
+    # badges stack vertically regardless of outer <p align="center">.
     return (
         f'<a href="{badge_url}" title="{name}">'
+        f"<picture>"
         f'<img src="{sized_url}" alt="{name}" width="{size}" height="{size}">'
+        f"</picture>"
         f"</a>"
     )
 

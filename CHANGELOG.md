@@ -2,9 +2,13 @@
 
 All notable changes to this profile README repository.
 
+## [4.0.3] - 2026-04-25
+
+- Actually fix Credly badges rendering vertically on GitHub profile page -- root cause was GitHub's `js-gh-image-fallback` class forcing `display:block` on any `<img>` directly inside an `<a>`. Solution: wrap each `<img>` in a `<picture>` element, which bypasses the sanitizer class entirely and renders via GitHub's `<themed-picture data-catalyst-inline="true">` wrapper. Verified via GitHub's markdown API before pushing.
+
 ## [4.0.2] - 2026-04-25
 
-- Actually fix Credly badges rendering vertically -- the 4.0.1 pattern (`<p align="center">` with one anchor per line) still caused GFM to wrap each `<a>` in its own paragraph. Updater now emits a single line of anchors joined by plain spaces inside `<p align="center">`, which is the only layout where GFM preserves inline flow.
+- Attempt to fix Credly badges rendering vertically -- emitted all anchors on a single line inside `<p align="center">`. Did not work; GitHub still forced block layout via the `js-gh-image-fallback` class on sanitized images.
 
 ## [4.0.1] - 2026-04-25
 

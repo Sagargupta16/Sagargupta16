@@ -2,6 +2,10 @@
 
 All notable changes to this profile README repository.
 
+## [4.0.1] - 2026-04-25
+
+- Fix Credly badges rendering vertically on GitHub profile page -- switch from `<div align="center">` + `&nbsp;` to `<p align="center">` with newline-separated anchors (updater script + README regenerated)
+
 ## [4.0.0] - 2026-04-05
 
 - Replace resume-versioning workflow with `resume-sync.yml` (auto-syncs from latex-resume releases weekly)

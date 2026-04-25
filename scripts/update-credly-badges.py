@@ -89,34 +89,29 @@ def badge_to_html(badge, size=BADGE_SIZE):
     )
 
 
+def _render_group(title, badges):
+    """Render one category as a heading + <p align='center'> block.
+
+    Uses <p align="center"> with each anchor on its own line. GitHub's
+    markdown pipeline collapses the newlines to single spaces inside <p>,
+    guaranteeing horizontal inline flow -- unlike <div align="center"> +
+    &nbsp;, which can stack vertically on narrow viewports.
+    """
+    lines = ["", f"#### {title}", "", '<p align="center">']
+    lines.extend(f"  {badge_to_html(b)}" for b in badges)
+    lines.append("</p>")
+    return lines
+
+
 def generate_section(certifications, professional, knowledge):
     """Generate the full markdown/HTML for the badges section."""
-    lines = []
+    lines = _render_group("\U0001f3c5 Industry Certifications", certifications)[1:]
 
-    # Industry Certifications
-    lines.append("#### \U0001f3c5 Industry Certifications")
-    lines.append("")
-    lines.append('<div align="center">')
-    lines.append("&nbsp;".join(badge_to_html(b) for b in certifications))
-    lines.append("</div>")
-
-    # Professional & Partner Badges
     if professional:
-        lines.append("")
-        lines.append("#### \U0001f396\ufe0f Professional & Partner Badges")
-        lines.append("")
-        lines.append('<div align="center">')
-        lines.append("&nbsp;".join(badge_to_html(b) for b in professional))
-        lines.append("</div>")
+        lines.extend(_render_group("\U0001f396\ufe0f Professional & Partner Badges", professional))
 
-    # Knowledge & Learning Badges
     if knowledge:
-        lines.append("")
-        lines.append("#### \U0001f4da Knowledge & Learning Badges")
-        lines.append("")
-        lines.append('<div align="center">')
-        lines.append("&nbsp;".join(badge_to_html(b) for b in knowledge))
-        lines.append("</div>")
+        lines.extend(_render_group("\U0001f4da Knowledge & Learning Badges", knowledge))
 
     return "\n".join(lines)
 

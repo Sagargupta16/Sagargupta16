@@ -108,7 +108,6 @@
 | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) (21K⭐) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document custom deployment steps as Python functions |
 | [awslabs/mcp](https://github.com/awslabs/mcp) (8K⭐) | [#2607](https://github.com/awslabs/mcp/pull/2607) | Fix Kendra documentation menu to match source directory |
 | [cloudposse/terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) (437⭐) | [#197](https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197) | Add S3 native locking docs, fix variable descriptions |
-| [rohitg00/awesome-claude-code-toolkit](https://github.com/rohitg00/awesome-claude-code-toolkit) | [#218](https://github.com/rohitg00/awesome-claude-code-toolkit/pull/218) | Add claude-cost-optimizer to toolkit listing |
 
 ### 🔄 Under Review
 

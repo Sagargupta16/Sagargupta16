@@ -121,9 +121,6 @@
 | [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) (1K⭐) | [#132](https://github.com/awslabs/agent-plugins/pull/132), [#133](https://github.com/awslabs/agent-plugins/pull/133) | validate-drawio early exit, shorten MCP server names |
 | [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) (11K⭐) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
 | [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) (5.9K⭐) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |
-| [chroma-core/chroma](https://github.com/chroma-core/chroma) (27K⭐) | [#6590](https://github.com/chroma-core/chroma/pull/6590) | Replace ValueError/TypeError with InvalidArgumentError |
-| [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) (34K⭐) | [#9405](https://github.com/stanfordnlp/dspy/pull/9405) | Add docstrings to predict module public APIs |
-| [mm65x/tokemon](https://github.com/mm65x/tokemon) | [#13](https://github.com/mm65x/tokemon/pull/13) | Fix cross-provider pricing normalization in cost engine |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |
 
 ### 🤝 Community Impact

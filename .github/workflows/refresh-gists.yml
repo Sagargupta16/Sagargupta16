@@ -1,0 +1,127 @@
+name: Refresh Gists
+
+# Weekly auto-refresh of public gists with current repo + star counts.
+# Manually triggerable via workflow_dispatch.
+#
+# Requires a fine-grained PAT stored as GIST_TOKEN secret with:
+#   - gist scope (read/write)
+#   - read:user scope (to list starred/repos)
+
+on:
+  schedule:
+    - cron: '0 21 * * 0'  # Sundays 21:00 UTC = Monday 02:30 IST (aligns with Renovate cadence)
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Configure gh CLI
+        env:
+          GH_TOKEN: ${{ secrets.GIST_TOKEN }}
+        run: gh auth status
+
+      - name: Refresh repositories gist
+        env:
+          GH_TOKEN: ${{ secrets.GIST_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          # Fetch all public owned repos
+          gh api --paginate "/user/repos?per_page=100&affiliation=owner" --jq \
+            '.[] | select(.owner.login == "Sagargupta16") | select(.private == false)' \
+            | jq -s 'sort_by(-.stargazers_count)' > /tmp/repos.json
+
+          TOTAL=$(jq length /tmp/repos.json)
+          DATE=$(date -u +"%Y-%m-%d")
+
+          {
+            echo "# My Complete GitHub Repository Collection"
+            echo
+            echo "A showcase of all my public repositories across AI agents, DevOps/Cloud, Full-Stack Web, ML/Data Science, Games, and more."
+            echo
+            echo "_Auto-updated on $DATE from \`gh api user/repos\`. Total: $TOTAL public repositories._"
+            echo
+            echo "---"
+            echo
+            echo "## Top 10 by stars"
+            echo
+            echo "| # | Repository | Stars | Language | Description |"
+            echo "|---|---|---:|---|---|"
+            jq -r '.[:10][] | "| \(1 + input_line_number / 0) | [\(.name)](\(.html_url)) | \(.stargazers_count) | \(.language // "-") | \(.description // "-" | gsub("\\|";"\\|") | .[0:90]) |"' /tmp/repos.json 2>/dev/null || \
+              jq -r '.[:10] | to_entries[] | "| \(.key+1) | [\(.value.name)](\(.value.html_url)) | \(.value.stargazers_count) | \(.value.language // "-") | \(.value.description // "-" | gsub("\\|";"\\|") | .[0:90]) |"' /tmp/repos.json
+            echo
+            echo "---"
+            echo
+            echo "## All Repositories"
+            echo
+            echo "| Repository | Stars | Language | Archived | Description |"
+            echo "|---|---:|---|---|---|"
+            jq -r '.[] | "| [\(.name)](\(.html_url)) | \(.stargazers_count) | \(.language // "-") | \(if .archived then "yes" else "-" end) | \(.description // "-" | gsub("\\|";"\\|") | .[0:80]) |"' /tmp/repos.json
+            echo
+            echo "---"
+            echo
+            echo "_Regenerated: $(date -u +"%Y-%m-%d %H:%M") UTC_"
+          } > /tmp/my-github-repositories.md
+
+          gh gist edit ef2f64c28b4dfbfe3d240f506d69c4c7 \
+            -f my-github-repositories.md /tmp/my-github-repositories.md
+
+      - name: Refresh stars gist
+        env:
+          GH_TOKEN: ${{ secrets.GIST_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          gh api --paginate "/users/Sagargupta16/starred?per_page=100" \
+            | jq -s 'add | sort_by(-.stargazers_count)' > /tmp/stars.json
+
+          TOTAL=$(jq length /tmp/stars.json)
+          DATE=$(date -u +"%Y-%m-%d")
+
+          {
+            echo "# My GitHub Stars Collection"
+            echo
+            echo "My curated collection of $TOTAL starred repositories -- tracking the state of AI agents, DevOps, ML, and developer tools."
+            echo
+            echo "_Auto-updated on $DATE from \`gh api users/Sagargupta16/starred\`._"
+            echo
+            echo "---"
+            echo
+            echo "## Top 30 by stars"
+            echo
+            echo "| # | Repository | Stars | Language | Description |"
+            echo "|---|---|---:|---|---|"
+            jq -r '.[:30] | to_entries[] | "| \(.key+1) | [\(.value.full_name)](\(.value.html_url)) | \(.value.stargazers_count) | \(.value.language // "-") | \(.value.description // "-" | gsub("\\|";"\\|") | .[0:80]) |"' /tmp/stars.json
+            echo
+            echo "---"
+            echo
+            echo "## All starred repos (by language)"
+            echo
+            jq -r '
+              group_by(.language // "(other)")
+              | sort_by(-(length))
+              | .[]
+              | "### \((.[0].language // "(other)")) (\(length))\n\n"
+                + (map("- [\(.full_name)](\(.html_url)) -- \(.stargazers_count)* -- \(.description // "" | .[0:80])") | join("\n"))
+                + "\n"
+            ' /tmp/stars.json
+            echo
+            echo "---"
+            echo
+            echo "_Regenerated: $(date -u +"%Y-%m-%d %H:%M") UTC_"
+          } > /tmp/github-stars-collection.md
+
+          gh gist edit b66367555840a54f4974e436852651a1 \
+            -f github-stars-collection.md /tmp/github-stars-collection.md
+
+      - name: Summary
+        run: |
+          echo "✅ Repos gist refreshed: https://gist.github.com/Sagargupta16/ef2f64c28b4dfbfe3d240f506d69c4c7"
+          echo "✅ Stars gist refreshed: https://gist.github.com/Sagargupta16/b66367555840a54f4974e436852651a1"
+          echo "ℹ️  VS Code extensions gist is not auto-refreshed (requires local \`code\` CLI)."
+          echo "    Manually update via: code --list-extensions --show-versions > ext.md"

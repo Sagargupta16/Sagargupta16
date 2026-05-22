@@ -51,7 +51,7 @@ jobs:
       # Combined overview (all plugins in one SVG)
       - name: Generate combined overview
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/github-metrics.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -114,7 +114,7 @@ jobs:
 
       - name: Generate introduction
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.introduction.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -127,7 +127,7 @@ jobs:
 
       - name: Generate isometric calendar
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.isocalendar.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -141,7 +141,7 @@ jobs:
 
       - name: Generate calendar
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.calendar.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -154,7 +154,7 @@ jobs:
 
       - name: Generate coding habits
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.habits.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -169,7 +169,7 @@ jobs:
 
       - name: Generate activity
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.activity.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -185,7 +185,7 @@ jobs:
 
       - name: Generate languages (most used)
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.languages.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -202,7 +202,7 @@ jobs:
 
       - name: Generate languages (recently used)
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.languages.recent.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -219,7 +219,7 @@ jobs:
 
       - name: Generate achievements (detailed)
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.achievements.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -234,7 +234,7 @@ jobs:
 
       - name: Generate achievements (compact)
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.achievements.compact.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -249,7 +249,7 @@ jobs:
 
       - name: Generate lines of code
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.lines.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -264,7 +264,7 @@ jobs:
 
       - name: Generate notable contributions
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.notable.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -277,7 +277,7 @@ jobs:
 
       - name: Generate pinned repositories
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.repositories.pinned.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -291,7 +291,7 @@ jobs:
 
       - name: Generate recently starred
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.stars.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -305,7 +305,7 @@ jobs:
 
       - name: Generate stargazers
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.stargazers.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -318,7 +318,7 @@ jobs:
 
       - name: Generate starred topics
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.topics.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -333,7 +333,7 @@ jobs:
 
       - name: Generate followers
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.people.followers.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -347,7 +347,7 @@ jobs:
 
       - name: Generate follow-up issues and PRs
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.followup.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -360,7 +360,7 @@ jobs:
 
       - name: Generate reactions
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.reactions.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -375,7 +375,7 @@ jobs:
 
       - name: Generate discussions
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.discussions.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -389,7 +389,7 @@ jobs:
 
       - name: Generate gists
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.gists.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
@@ -402,7 +402,7 @@ jobs:
 
       - name: Generate LeetCode stats
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest
         with:
           filename: metrics/metrics.plugin.leetcode.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}

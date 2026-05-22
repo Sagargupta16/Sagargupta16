@@ -41,7 +41,7 @@ jobs:
 
       - name: Update Credly badges
         id: credly
-        uses: Sagargupta16/credly-badge-readme-action@v1
+        uses: Sagargupta16/credly-badge-readme-action@53428cd4bf0496ade08bbc52632b6f540b029af0 # v1
         with:
           credly-username: ${{ steps.config.outputs.credly_user }}
 

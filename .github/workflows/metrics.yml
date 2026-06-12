@@ -461,6 +461,7 @@ jobs:
           git add metrics/
           if ! git diff --cached --quiet; then
             git commit -m "chore: update metrics"
+            git pull --rebase origin main
             git push
           else
             echo "No metrics changes to commit"

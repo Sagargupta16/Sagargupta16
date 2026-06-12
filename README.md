@@ -76,16 +76,16 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 
 ### 🏗️ Community Projects
 
-| Project | Description | Stars |
-|:--------|:------------|:------|
-| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-cost-optimizer?style=flat) |
-| [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/github/stars/Sagargupta16/mcp-toolkit?style=flat) |
-| [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 18 plugins, 22 agents, 9 hooks, 21 commands | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-skills?style=flat) |
-| [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code | ![Stars](https://img.shields.io/github/stars/Sagargupta16/claude-code-recipes?style=flat) |
-| [awesome-mcp-servers](https://github.com/Sagargupta16/awesome-mcp-servers) | Curated list of MCP servers, tools, and resources | ![Stars](https://img.shields.io/github/stars/Sagargupta16/awesome-mcp-servers?style=flat) |
-| [deploy-guide](https://github.com/Sagargupta16/deploy-guide) | Step-by-step deployment guides for every platform (25+ guides) | ![Stars](https://img.shields.io/github/stars/Sagargupta16/deploy-guide?style=flat) |
-| [agent-recipes](https://github.com/Sagargupta16/agent-recipes) | Copy-paste AI agent workflows for developer tasks | ![Stars](https://img.shields.io/github/stars/Sagargupta16/agent-recipes?style=flat) |
-| [ai-git-hooks](https://github.com/Sagargupta16/ai-git-hooks) | AI-powered git hooks (code review, commit messages, security) | ![Stars](https://img.shields.io/github/stars/Sagargupta16/ai-git-hooks?style=flat) |
+| Project | Description |
+|:--------|:------------|
+| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools |
+| [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) |
+| [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 18 plugins, 22 agents, 9 hooks, 21 commands |
+| [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code |
+| [awesome-mcp-servers](https://github.com/Sagargupta16/awesome-mcp-servers) | Curated list of MCP servers, tools, and resources |
+| [deploy-guide](https://github.com/Sagargupta16/deploy-guide) | Step-by-step deployment guides for every platform (25+ guides) |
+| [agent-recipes](https://github.com/Sagargupta16/agent-recipes) | Copy-paste AI agent workflows for developer tasks |
+| [ai-git-hooks](https://github.com/Sagargupta16/ai-git-hooks) | AI-powered git hooks (code review, commit messages, security) |
 
 <img src="assets/divider.gif" width="100%"/>
 

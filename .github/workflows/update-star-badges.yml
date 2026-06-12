@@ -1,0 +1,37 @@
+# Refreshes the static follower/star badge numbers in README.md daily.
+# Static shields.io /badge/ URLs render reliably; the dynamic /github/*
+# endpoints share a public token pool that intermittently fails with
+# "Unable to select next GitHub token from pool" on the profile page.
+name: Update Star Badges
+on:
+  schedule:
+    - cron: "0 7 * * *" # Daily 7 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Refresh badge counts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/update-star-badges.py
+
+      - name: Commit updated badges
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh star badges"
+            git push
+          else
+            echo "No badge changes to commit"
+          fi

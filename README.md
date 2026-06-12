@@ -50,19 +50,18 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 | Repository | PR | Description |
 |:-----------|:---|:------------|
 | [apache/airflow](https://github.com/apache/airflow) (44K⭐) | [#63109](https://github.com/apache/airflow/pull/63109) | Add template_fields to SalesforceBulkOperator |
-| [feast-dev/feast](https://github.com/feast-dev/feast) (9K⭐) | [#6081](https://github.com/feast-dev/feast/pull/6081) | Add Claude Code agent skills for Feast |
+| [feast-dev/feast](https://github.com/feast-dev/feast) (7K⭐) | [#6081](https://github.com/feast-dev/feast/pull/6081) | Add Claude Code agent skills for Feast |
 | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) (21K⭐) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document custom deployment steps as Python functions |
 | [awslabs/mcp](https://github.com/awslabs/mcp) (8K⭐) | [#2607](https://github.com/awslabs/mcp/pull/2607) | Fix Kendra documentation menu to match source directory |
 | [cloudposse/terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) (437⭐) | [#197](https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197) | Add S3 native locking docs, fix variable descriptions |
-| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) (1K⭐) | [#132](https://github.com/awslabs/agent-plugins/pull/132) | validate-drawio early exit — eliminated noisy false-positive warnings across every non-drawio file edit |
+| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) (784⭐) | [#132](https://github.com/awslabs/agent-plugins/pull/132) | validate-drawio early exit — eliminated noisy false-positive warnings across every non-drawio file edit |
 
 ### 🔄 Under Review
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
-| [anthropics/skills](https://github.com/anthropics/skills) (5.4K⭐) | [#939](https://github.com/anthropics/skills/pull/939), [#940](https://github.com/anthropics/skills/pull/940), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | package_skill.py path fix; filename collision fix across languages; skill-creator progressive disclosure refactor; merge duplicate plugins |
+| [anthropics/skills](https://github.com/anthropics/skills) (149K⭐) | [#939](https://github.com/anthropics/skills/pull/939), [#940](https://github.com/anthropics/skills/pull/940), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | package_skill.py path fix; filename collision fix across languages; skill-creator progressive disclosure refactor; merge duplicate plugins |
 | [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) (11K⭐) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
-| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) (1K⭐) | [#133](https://github.com/awslabs/agent-plugins/pull/133) | Shorten MCP server names for Bedrock API 64-char tool-name limit |
 | [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) (5.9K⭐) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |
 

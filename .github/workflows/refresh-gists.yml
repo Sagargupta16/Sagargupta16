@@ -3,9 +3,9 @@ name: Refresh Gists
 # Weekly auto-refresh of public gists with current repo + star counts.
 # Manually triggerable via workflow_dispatch.
 #
-# Requires a fine-grained PAT stored as GIST_TOKEN secret with:
-#   - gist scope (read/write)
-#   - read:user scope (to list starred/repos)
+# Requires a PAT with gist (read/write) + read:user scope. Uses GIST_TOKEN
+# if set, else falls back to PERSONAL_ACCESS_TOKEN (the metrics PAT).
+# The default GITHUB_TOKEN cannot edit gists -- they are user-scoped.
 
 on:
   schedule:
@@ -22,12 +22,12 @@ jobs:
     steps:
       - name: Configure gh CLI
         env:
-          GH_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GH_TOKEN: ${{ secrets.GIST_TOKEN || secrets.PERSONAL_ACCESS_TOKEN }}
         run: gh auth status
 
       - name: Refresh repositories gist
         env:
-          GH_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GH_TOKEN: ${{ secrets.GIST_TOKEN || secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           set -euo pipefail
 
@@ -73,7 +73,7 @@ jobs:
 
       - name: Refresh stars gist
         env:
-          GH_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GH_TOKEN: ${{ secrets.GIST_TOKEN || secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           set -euo pipefail
 

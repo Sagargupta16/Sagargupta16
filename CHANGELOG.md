@@ -2,6 +2,23 @@
 
 All notable changes to this profile README repository.
 
+## [4.1.0] - 2026-06-11
+
+Credibility and first-impression pass, informed by hiring research (Ladders eye-tracking, Schweitzer trust studies): no claim may exceed live data, strongest proof in the first screen.
+
+- Fix inflated LeetCode claim in 3 places: "2000+ Contest Rating" -> "Knight | Peak 2007" / "Top 5%" (live rating is ~1880; peak 2007.04, top 5.07%)
+- Fix cert badge "AWS | 6 Industry Certs" -> "Certified | 6x AWS/Terraform" (5 AWS + 1 HashiCorp; matches resume wording)
+- Move Open Source Contributions section above Featured Projects (strongest hire signal was 40% down a 10,000px page)
+- Drop stale "Under Review" entries that were closed unmerged (aws-cdk #37601/#37602, python-sdk #2446 closed as duplicate)
+- Fix LeetCode Predictor description: "LSTM-based, 85%+ accuracy, MAE < 15" -> "Dense-NN, 121K+ records, test MAE 7.84" (matches repo README)
+- Remove flaky shields.io dynamic followers/stars hero badges (intermittent "UNABLE TO SELECT NEXT GITHUB TOKEN FROM POOL" render)
+- Add dark/light `<picture>` variants to both typing SVGs (pale-aqua text was near-invisible in light mode)
+- Trim overlapping stats widgets: remove trophies row and activity graph (streak + rank cards + leetcard remain)
+- Unify AI-tools badge row to for-the-badge style
+- metrics.yml: copy `/metrics_renders` output into `metrics/` before commit -- every generate step uses `output_action: none`, so the commit step had found nothing to commit since 2026-02-07 (section frozen at "Last updated 5 Feb 2026")
+- refresh-gists.yml: fall back to PERSONAL_ACCESS_TOKEN when GIST_TOKEN is unset (5 consecutive weekly failures since 2026-05-10 with empty GH_TOKEN)
+- profiles.yml: career.start_date corrected to 2024-08 (FTE start per resume)
+
 ## [4.0.3] - 2026-04-25
 
 - Actually fix Credly badges rendering vertically on GitHub profile page -- root cause was GitHub's `js-gh-image-fallback` class forcing `display:block` on any `<img>` directly inside an `<a>`. Solution: wrap each `<img>` in a `<picture>` element, which bypasses the sanitizer class entirely and renders via GitHub's `<themed-picture data-catalyst-inline="true">` wrapper. Verified via GitHub's markdown API before pushing.

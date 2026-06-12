@@ -416,6 +416,24 @@ jobs:
           plugins_errors_fatal: no
 
       # ============================================================
+      # Copy renders into the repo
+      # ============================================================
+      # Every generate step above uses `output_action: none`, which leaves
+      # rendered SVGs in the action's /metrics_renders mount instead of the
+      # workspace. Without this copy the commit step below finds no changes
+      # and silently commits nothing (root cause of the Feb-Jun 2026 staleness).
+      - name: Copy rendered SVGs into metrics/
+        run: |
+          if [ -d /metrics_renders/metrics ]; then
+            sudo cp -r /metrics_renders/metrics/. metrics/
+            sudo chown -R "$(id -u):$(id -g)" metrics/
+            echo "Copied $(ls /metrics_renders/metrics | wc -l) rendered file(s) into metrics/"
+          else
+            echo "::error::/metrics_renders/metrics not found - no renders were produced"
+            exit 1
+          fi
+
+      # ============================================================
       # Validate generated SVGs
       # ============================================================
       - name: Validate metrics files

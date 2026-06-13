@@ -149,12 +149,14 @@ if ($startDate -and $startDate -ne "null") {
 }
 
 # --- Industry certification count check ---
-# Count badges in the Industry Certifications section (between markers)
-$certSection = [regex]::Match($readme, "Industry Certifications.*?</div>", [System.Text.RegularExpressions.RegexOptions]::Singleline)
+# Count badges in the Industry Certifications subsection only (heading up to the
+# next #### subheading), not the whole Credly block which also holds Professional
+# and Knowledge badges.
+$certSection = [regex]::Match($readme, "Industry Certifications.*?(?=\r?\n####|<!-- CREDLY-BADGES:END)", [System.Text.RegularExpressions.RegexOptions]::Singleline)
 if ($certSection.Success) {
     $certBadgeCount = ([regex]::Matches($certSection.Value, '<a href="https://www.credly.com/badges/')).Count
-    # Check if the shield badge in the header matches
-    if ($readme -match "AWS-(\d+)\%20Industry\%20Certs") {
+    # Header badge format is "Certified-6x%20AWS%2FTerraform".
+    if ($readme -match "Certified-(\d+)x\%20AWS") {
         $headerCertCount = [int]$Matches[1]
         if ($headerCertCount -ne $certBadgeCount) {
             $issues += "⚠️  Header badge says $headerCertCount industry certs but Credly section has $certBadgeCount"

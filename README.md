@@ -16,8 +16,8 @@
 
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
-  <img src="https://img.shields.io/badge/Followers-95-FE428E?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Followers" />
-  <img src="https://img.shields.io/badge/Total%20Stars-211-F8D847?style=for-the-badge&logo=github&logoColor=black" alt="GitHub Stars" />
+  <img src="https://img.shields.io/badge/Followers-94-FE428E?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Followers" />
+  <img src="https://img.shields.io/badge/Total%20Stars-168-F8D847?style=for-the-badge&logo=github&logoColor=black" alt="GitHub Stars" />
 </div>
 
 <div align="center">
@@ -79,14 +79,14 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 
 | Project | Description | Stars |
 |:--------|:------------|:------|
-| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/badge/Stars-27-F8D847?style=flat&logo=github) |
-| [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/badge/Stars-4-F8D847?style=flat&logo=github) |
-| [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 18 plugins, 22 agents, 9 hooks, 21 commands | ![Stars](https://img.shields.io/badge/Stars-4-F8D847?style=flat&logo=github) |
-| [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code | ![Stars](https://img.shields.io/badge/Stars-5-F8D847?style=flat&logo=github) |
-| [awesome-mcp-servers](https://github.com/Sagargupta16/awesome-mcp-servers) | Curated list of MCP servers, tools, and resources | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
-| [deploy-guide](https://github.com/Sagargupta16/deploy-guide) | Step-by-step deployment guides for every platform (25+ guides) | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
-| [agent-recipes](https://github.com/Sagargupta16/agent-recipes) | Copy-paste AI agent workflows for developer tasks | ![Stars](https://img.shields.io/badge/Stars-4-F8D847?style=flat&logo=github) |
-| [ai-git-hooks](https://github.com/Sagargupta16/ai-git-hooks) | AI-powered git hooks (code review, commit messages, security) | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
+| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/badge/Stars-26-F8D847?style=flat&logo=github) |
+| [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
+| [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 18 plugins, 22 agents, 9 hooks, 21 commands | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
+| [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code | ![Stars](https://img.shields.io/badge/Stars-4-F8D847?style=flat&logo=github) |
+| [awesome-mcp-servers](https://github.com/Sagargupta16/awesome-mcp-servers) | Curated list of MCP servers, tools, and resources | ![Stars](https://img.shields.io/badge/Stars-2-F8D847?style=flat&logo=github) |
+| [deploy-guide](https://github.com/Sagargupta16/deploy-guide) | Step-by-step deployment guides for every platform (25+ guides) | ![Stars](https://img.shields.io/badge/Stars-2-F8D847?style=flat&logo=github) |
+| [agent-recipes](https://github.com/Sagargupta16/agent-recipes) | Copy-paste AI agent workflows for developer tasks | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
+| [ai-git-hooks](https://github.com/Sagargupta16/ai-git-hooks) | AI-powered git hooks (code review, commit messages, security) | ![Stars](https://img.shields.io/badge/Stars-2-F8D847?style=flat&logo=github) |
 
 <sub>Star counts auto-refreshed daily via [update-star-badges.yml](.github/workflows/update-star-badges.yml) -- static badges, immune to shields.io token-pool outages</sub>
 

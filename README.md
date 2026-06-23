@@ -16,8 +16,8 @@
 
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
-  <img src="https://img.shields.io/badge/Followers-93-FE428E?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Followers" />
-  <img src="https://img.shields.io/badge/Total%20Stars-169-F8D847?style=for-the-badge&logo=github&logoColor=black" alt="GitHub Stars" />
+  <img src="https://img.shields.io/badge/Followers-92-FE428E?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Followers" />
+  <img src="https://img.shields.io/badge/Total%20Stars-170-F8D847?style=for-the-badge&logo=github&logoColor=black" alt="GitHub Stars" />
 </div>
 
 <div align="center">
@@ -79,7 +79,7 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 
 | Project | Description | Stars |
 |:--------|:------------|:------|
-| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/badge/Stars-26-F8D847?style=flat&logo=github) |
+| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/badge/Stars-27-F8D847?style=flat&logo=github) |
 | [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
 | [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 18 plugins, 22 agents, 9 hooks, 21 commands | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
 | [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code | ![Stars](https://img.shields.io/badge/Stars-4-F8D847?style=flat&logo=github) |

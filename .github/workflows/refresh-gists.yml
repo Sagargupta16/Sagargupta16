@@ -52,8 +52,7 @@ jobs:
             echo
             echo "| # | Repository | Stars | Language | Description |"
             echo "|---|---|---:|---|---|"
-            jq -r '.[:10][] | "| \(1 + input_line_number / 0) | [\(.name)](\(.html_url)) | \(.stargazers_count) | \(.language // "-") | \(.description // "-" | gsub("\\|";"\\|") | .[0:90]) |"' /tmp/repos.json 2>/dev/null || \
-              jq -r '.[:10] | to_entries[] | "| \(.key+1) | [\(.value.name)](\(.value.html_url)) | \(.value.stargazers_count) | \(.value.language // "-") | \(.value.description // "-" | gsub("\\|";"\\|") | .[0:90]) |"' /tmp/repos.json
+            jq -r '.[:10] | to_entries[] | "| \(.key+1) | [\(.value.name)](\(.value.html_url)) | \(.value.stargazers_count) | \(.value.language // "-") | \(.value.description // "-" | gsub("\\|";"\\|") | .[0:90]) |"' /tmp/repos.json
             echo
             echo "---"
             echo

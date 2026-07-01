@@ -1,6 +1,9 @@
-# VS Code settings
-.vscode/
-!.vscode/settings.json  # Keep settings but ignore others
+# VS Code settings (keep settings.json, ignore the rest).
+# Must use .vscode/* not .vscode/ -- git cannot re-include a file whose
+# parent directory is excluded wholesale. Inline "# ..." comments after a
+# pattern are not supported by git, so keep comments on their own lines.
+.vscode/*
+!.vscode/settings.json
 
 # Markdown linting configuration (keep local)
 .markdownlint.json
@@ -16,8 +19,8 @@ CLAUDE.md
 *.bak
 *.old
 *~
-.DS_Store  # macOS
-Thumbs.db  # Windows
+.DS_Store
+Thumbs.db
 
 # Resume is synced from latex-resume releases (see .github/workflows/resume-sync.yml)
 
@@ -35,7 +38,3 @@ node_modules/
 # Python cache (if you add any Python scripts)
 __pycache__/
 *.pyc
-
-# Added for consistency
-.DS_Store
-Thumbs.db

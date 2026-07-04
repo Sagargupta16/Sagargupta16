@@ -63,10 +63,9 @@ preferences:
   github_stats_theme: "tokyonight"
   profile_view_color: "2E9EF7"
   
-# Resume
+# Resume (source of truth: latex-resume releases)
 resume:
-  filename: "sagar_resume.pdf"
-  path: "https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/main/sagar_resume.pdf"
+  path: "https://github.com/Sagargupta16/latex-resume/releases/download/latest/resume.pdf"
 
 # Metrics
 metrics:

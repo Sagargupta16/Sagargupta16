@@ -22,7 +22,7 @@ CLAUDE.md
 .DS_Store
 Thumbs.db
 
-# Resume is synced from latex-resume releases (see .github/workflows/resume-sync.yml)
+# Resume lives in latex-resume releases; not stored in this repo
 
 # Backup files (from validate script)
 *.backup-*

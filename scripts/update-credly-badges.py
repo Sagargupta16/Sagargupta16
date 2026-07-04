@@ -58,6 +58,9 @@ def categorize_badges(badges):
         template = badge.get("badge_template", {})
         name = template.get("name", "")
 
+        if "Retired" in name:
+            continue
+
         if any(kw in name for kw in CERT_KEYWORDS):
             certifications.append(badge)
         elif any(kw in name for kw in PROFESSIONAL_KEYWORDS):

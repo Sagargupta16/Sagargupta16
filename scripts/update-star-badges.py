@@ -82,6 +82,14 @@ def main():
         flags=re.MULTILINE,
     )
 
+    # Freshness check: fail loudly if the badge patterns ever drift so stale
+    # counts can't linger silently after a regex mismatch.
+    if (
+        f"Followers-{followers}-" not in text
+        or f"Total%20Stars-{total_stars}-" not in text
+    ):
+        raise SystemExit("Badge patterns not found in README; update regexes")
+
     if text != original:
         with open(README, "w", encoding="utf-8", newline="\n") as f:
             f.write(text)

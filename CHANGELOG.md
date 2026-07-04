@@ -2,6 +2,16 @@
 
 All notable changes to this profile README repository.
 
+## [4.2.0] - 2026-07-04
+
+- Drop hardcoded star counts from OSS contribution tables (repo names age better; counts drifted)
+- Group MCP/agent tooling in Community Projects: move SelfHub up from Featured Projects
+- Add "AI Agents & MCP" line to the hero typing animation
+- Remove retired AWS Knowledge: Architecting badge; update-credly-badges.py now skips any badge with "Retired" in its name so regeneration cannot reintroduce it
+- update-star-badges.py: fail loudly if badge regexes stop matching, so stale counts cannot linger silently
+- Remove duplicate resume artifacts (root sagar_resume.pdf, resume/ directory, resume-sync.yml); the latex-resume release link is the single source of truth
+- Remove stale "updated ..." HTML comment at README bottom (one-off leftover, nothing regenerates it)
+
 ## [4.1.0] - 2026-06-11
 
 Credibility and first-impression pass, informed by hiring research (Ladders eye-tracking, Schweitzer trust studies): no claim may exceed live data, strongest proof in the first screen.

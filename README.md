@@ -6,9 +6,9 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+5%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F">
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=2E9EF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+5%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+5%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F" alt="Typing Animation" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+5%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=2E9EF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+5%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+5%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP" alt="Typing Animation" />
   </picture>
 </div>
 
@@ -17,7 +17,7 @@
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
   <img src="https://img.shields.io/badge/Followers-94-FE428E?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Followers" />
-  <img src="https://img.shields.io/badge/Total%20Stars-174-F8D847?style=for-the-badge&logo=github&logoColor=black" alt="GitHub Stars" />
+  <img src="https://img.shields.io/badge/Total%20Stars-173-F8D847?style=for-the-badge&logo=github&logoColor=black" alt="GitHub Stars" />
 </div>
 
 <div align="center">
@@ -49,27 +49,27 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
-| [apache/airflow](https://github.com/apache/airflow) (44K⭐) | [#63109](https://github.com/apache/airflow/pull/63109) | Add template_fields to SalesforceBulkOperator |
-| [feast-dev/feast](https://github.com/feast-dev/feast) (7K⭐) | [#6081](https://github.com/feast-dev/feast/pull/6081) | Add Claude Code agent skills for Feast |
-| [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) (21K⭐) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document custom deployment steps as Python functions |
-| [awslabs/mcp](https://github.com/awslabs/mcp) (8K⭐) | [#2607](https://github.com/awslabs/mcp/pull/2607) | Fix Kendra documentation menu to match source directory |
-| [cloudposse/terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) (437⭐) | [#197](https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197) | Add S3 native locking docs, fix variable descriptions |
-| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) (784⭐) | [#132](https://github.com/awslabs/agent-plugins/pull/132) | validate-drawio early exit — eliminated noisy false-positive warnings across every non-drawio file edit |
+| [apache/airflow](https://github.com/apache/airflow) | [#63109](https://github.com/apache/airflow/pull/63109) | Add template_fields to SalesforceBulkOperator |
+| [feast-dev/feast](https://github.com/feast-dev/feast) | [#6081](https://github.com/feast-dev/feast/pull/6081) | Add Claude Code agent skills for Feast |
+| [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document custom deployment steps as Python functions |
+| [awslabs/mcp](https://github.com/awslabs/mcp) | [#2607](https://github.com/awslabs/mcp/pull/2607) | Fix Kendra documentation menu to match source directory |
+| [cloudposse/terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) | [#197](https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197) | Add S3 native locking docs, fix variable descriptions |
+| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#132](https://github.com/awslabs/agent-plugins/pull/132) | validate-drawio early exit — eliminated noisy false-positive warnings across every non-drawio file edit |
 
 ### 🔄 Under Review
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
-| [anthropics/skills](https://github.com/anthropics/skills) (149K⭐) | [#939](https://github.com/anthropics/skills/pull/939), [#940](https://github.com/anthropics/skills/pull/940), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | package_skill.py path fix; filename collision fix across languages; skill-creator progressive disclosure refactor; merge duplicate plugins |
-| [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) (11K⭐) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
-| [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) (5.9K⭐) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |
+| [anthropics/skills](https://github.com/anthropics/skills) | [#939](https://github.com/anthropics/skills/pull/939), [#940](https://github.com/anthropics/skills/pull/940), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | package_skill.py path fix; filename collision fix across languages; skill-creator progressive disclosure refactor; merge duplicate plugins |
+| [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
+| [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |
 
 ### 🤝 Community Impact
 
 | Repository | PR | What Happened |
 |:-----------|:---|:--------------|
-| [forem/selfhost](https://github.com/forem/selfhost) (1.5K⭐) | [#91](https://github.com/forem/selfhost/pull/91) | Fixed AWS Ansible deploy + Elastic IP. Community confirmed working. Maintainers left Forem before review. |
+| [forem/selfhost](https://github.com/forem/selfhost) | [#91](https://github.com/forem/selfhost/pull/91) | Fixed AWS Ansible deploy + Elastic IP. Community confirmed working. Maintainers left Forem before review. |
 
 ### 💬 Discussion Contributions
 
@@ -79,8 +79,9 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 
 | Project | Description | Stars |
 |:--------|:------------|:------|
-| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/badge/Stars-29-F8D847?style=flat&logo=github) |
+| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/badge/Stars-28-F8D847?style=flat&logo=github) |
 | [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
+| [SelfHub](https://github.com/Sagargupta16/SelfHub) | MCP server - personal AI memory hub for Claude & VS Code Copilot | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
 | [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 18 plugins, 22 agents, 9 hooks, 21 commands | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
 | [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code | ![Stars](https://img.shields.io/badge/Stars-5-F8D847?style=flat&logo=github) |
 | [awesome-mcp-servers](https://github.com/Sagargupta16/awesome-mcp-servers) | Curated list of MCP servers, tools, and resources | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
@@ -102,7 +103,6 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 | [🚀 DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | Full-stack app with CI/CD, Docker, GitHub Actions & AWS deployment pipeline | FastAPI, React, Docker, AWS | |
 | [🔄 Blue Green AWS](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) | Blue-Green deployment with ECS, ALB, CodePipeline - 18 Terraform modules | Terraform, AWS, Docker | |
 | [🤖 LeetCode Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) | Dense-NN contest rating predictor trained on 121K+ contest records - test MAE 7.84 | FastAPI, TensorFlow, React | [Live](https://leetcode-rating-predictor.onrender.com/) |
-| [🧩 SelfHub](https://github.com/Sagargupta16/SelfHub) | MCP server - personal AI memory hub for Claude & VS Code Copilot | TypeScript, MCP Protocol | |
 | [📋 Placemento](https://github.com/MCA-NITW/placemento) | Placement management system - OTP auth, AG Grid/Charts, monorepo | React 19, Express 5, TypeScript | |
 | [💰 Financial Dashboard](https://github.com/Sagargupta16/Financial-Dashboard) | 20+ page personal finance analytics with investment tracking & tax planning | React 19, TypeScript, Chart.js | [Live](https://sagargupta16.github.io/Financial-Dashboard) |
 
@@ -221,7 +221,7 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 #### 📚 Knowledge & Learning Badges
 
 <p align="center">
-<a href="https://www.credly.com/badges/5f3538f6-0bb1-4ff5-911b-d2701075392f" title="AWS Knowledge: Serverless - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/0c20a5b7-b4e9-4c2f-8b68-342e00a85e05/blob" alt="AWS Knowledge: Serverless - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/455690f2-a4f3-4122-be29-6b377b28dfda" title="AWS Knowledge: Amazon Q Developer Fundamentals - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/7c51f63c-14ef-4df9-a340-14938d05963a/blob" alt="AWS Knowledge: Amazon Q Developer Fundamentals - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/d03e1d39-4e40-483d-9845-f11da0d01170" title="AWS Knowledge: Cloud Essentials - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/7cf036b0-c609-4378-a7be-9969e1dea7ab/blob" alt="AWS Knowledge: Cloud Essentials - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/04175d89-ec79-43cf-95f7-4031854bf5a9" title="AWS Partner: Generative AI Technical - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/9bb8bd52-365f-447d-b83b-9d3ee560f5e5/blob" alt="AWS Partner: Generative AI Technical - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/f9785728-0e06-4c8b-9d62-08d85f00085e" title="AWS Partner: Generative AI Essentials - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/4b547104-5ce9-43d5-8708-a7abb4b0c7ec/blob" alt="AWS Partner: Generative AI Essentials - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/ca2a1336-e6e0-4e76-aa97-a919759d26d3" title="AWS Knowledge: Architecting (Retired)"><picture><img src="https://images.credly.com/size/100x100/images/519a6dba-f145-4c1a-85a2-1d173d6898d9/image.png" alt="AWS Knowledge: Architecting (Retired)" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/0ffd3248-5444-4b5f-88ef-6ecf120d17eb" title="AWS Educate Getting Started with Storage - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/3b1b42e6-dfc2-492b-90df-8058096cb93d/blob" alt="AWS Educate Getting Started with Storage - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/af8b4f3b-0327-451e-ad85-a436f6bfca9a" title="AWS Educate Introduction to Cloud 101 - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/e51a8579-188d-4363-8ed1-12ad164ef57b/blob" alt="AWS Educate Introduction to Cloud 101 - Training Badge" width="100" height="100"></picture></a>
+<a href="https://www.credly.com/badges/5f3538f6-0bb1-4ff5-911b-d2701075392f" title="AWS Knowledge: Serverless - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/0c20a5b7-b4e9-4c2f-8b68-342e00a85e05/blob" alt="AWS Knowledge: Serverless - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/455690f2-a4f3-4122-be29-6b377b28dfda" title="AWS Knowledge: Amazon Q Developer Fundamentals - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/7c51f63c-14ef-4df9-a340-14938d05963a/blob" alt="AWS Knowledge: Amazon Q Developer Fundamentals - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/d03e1d39-4e40-483d-9845-f11da0d01170" title="AWS Knowledge: Cloud Essentials - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/7cf036b0-c609-4378-a7be-9969e1dea7ab/blob" alt="AWS Knowledge: Cloud Essentials - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/04175d89-ec79-43cf-95f7-4031854bf5a9" title="AWS Partner: Generative AI Technical - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/9bb8bd52-365f-447d-b83b-9d3ee560f5e5/blob" alt="AWS Partner: Generative AI Technical - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/f9785728-0e06-4c8b-9d62-08d85f00085e" title="AWS Partner: Generative AI Essentials - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/4b547104-5ce9-43d5-8708-a7abb4b0c7ec/blob" alt="AWS Partner: Generative AI Essentials - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/0ffd3248-5444-4b5f-88ef-6ecf120d17eb" title="AWS Educate Getting Started with Storage - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/3b1b42e6-dfc2-492b-90df-8058096cb93d/blob" alt="AWS Educate Getting Started with Storage - Training Badge" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/af8b4f3b-0327-451e-ad85-a436f6bfca9a" title="AWS Educate Introduction to Cloud 101 - Training Badge"><picture><img src="https://images.credly.com/size/100x100/images/e51a8579-188d-4363-8ed1-12ad164ef57b/blob" alt="AWS Educate Introduction to Cloud 101 - Training Badge" width="100" height="100"></picture></a>
 </p>
 <!-- CREDLY-BADGES:END -->
 
@@ -300,4 +300,3 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=120&section=footer"/>
 </p>
-<!-- updated Wed Apr 16 14:30:00 IST 2026 -->

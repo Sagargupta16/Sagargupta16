@@ -43,7 +43,7 @@
 
 ## 🌍 Open Source Contributions
 
-Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a focus on **IAM security**, **protocol extensions**, and **developer experience**. Contributions span Apache Airflow, Anthropic's skills framework, AWS Labs MCP servers, Terraform modules, and Claude Code developer tooling.
+Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling -- with a focus on **IAM security**, **protocol extensions**, and **developer experience**. Contributions span Apache Airflow, Anthropic's skills framework, AWS Labs MCP servers, Terraform modules, and Claude Code developer tooling.
 
 ### ✅ Merged Pull Requests
 
@@ -54,14 +54,17 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document custom deployment steps as Python functions |
 | [awslabs/mcp](https://github.com/awslabs/mcp) | [#2607](https://github.com/awslabs/mcp/pull/2607) | Fix Kendra documentation menu to match source directory |
 | [cloudposse/terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) | [#197](https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197) | Add S3 native locking docs, fix variable descriptions |
-| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#132](https://github.com/awslabs/agent-plugins/pull/132) | validate-drawio early exit — eliminated noisy false-positive warnings across every non-drawio file edit |
+| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#132](https://github.com/awslabs/agent-plugins/pull/132) | validate-drawio early exit -- eliminated noisy false-positive warnings across every non-drawio file edit |
 
 ### 🔄 Under Review
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
-| [anthropics/skills](https://github.com/anthropics/skills) | [#939](https://github.com/anthropics/skills/pull/939), [#940](https://github.com/anthropics/skills/pull/940), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | package_skill.py path fix; filename collision fix across languages; skill-creator progressive disclosure refactor; merge duplicate plugins |
-| [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867) | Fix IoT cloudwatch_metric substitution template validation |
+| [anthropics/skills](https://github.com/anthropics/skills) | [#939](https://github.com/anthropics/skills/pull/939), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | package_skill.py path fix; skill-creator progressive disclosure refactor; merge duplicate plugins |
+| [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867), [#47940](https://github.com/hashicorp/terraform-provider-aws/pull/47940), [#48389](https://github.com/hashicorp/terraform-provider-aws/pull/48389), [#48390](https://github.com/hashicorp/terraform-provider-aws/pull/48390), [#48396](https://github.com/hashicorp/terraform-provider-aws/pull/48396) | IoT substitution templates; VPC endpoint policy removal; bedrockagentcore additional_params; API Gateway status_code + binary_media_types fixes |
+| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#212](https://github.com/awslabs/agent-plugins/pull/212) | Quote CLAUDE_PLUGIN_ROOT in hooks -- fixes plugin boot on paths with spaces |
+| [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) | [#4470](https://github.com/modelcontextprotocol/servers/pull/4470) | Normalize git_log output schema across filtered and unfiltered paths |
+| [awslabs/mcp](https://github.com/awslabs/mcp) | [#4076](https://github.com/awslabs/mcp/pull/4076) | Accept skill-type results in aws-iac-mcp search_documentation (KeyError fix) |
 | [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |
 
@@ -102,13 +105,13 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 | [🔍 Instagram Leaderboard](https://github.com/Sagargupta16/InstagramLikesLeaderboard) | Browser tool showing who likes your Instagram posts the most - ranked leaderboards | Preact, TypeScript | [Live](https://sagargupta16.github.io/InstagramLikesLeaderboard/) |
 | [🚀 DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | Full-stack app with CI/CD, Docker, GitHub Actions & AWS deployment pipeline | FastAPI, React, Docker, AWS | |
 | [🔄 Blue Green AWS](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) | Blue-Green deployment with ECS, ALB, CodePipeline - 18 Terraform modules | Terraform, AWS, Docker | |
-| [🤖 LeetCode Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) | Dense-NN contest rating predictor trained on 121K+ contest records - test MAE 7.84 | FastAPI, TensorFlow, React | [Live](https://leetcode-rating-predictor.onrender.com/) |
+| [🤖 LeetCode Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) | Dense-NN contest rating predictor trained on 244K+ contest records | FastAPI, TensorFlow, React | [Live](https://leetcode-rating-predictor.onrender.com/) |
 | [📋 Placemento](https://github.com/MCA-NITW/placemento) | Placement management system - OTP auth, AG Grid/Charts, monorepo | React 19, Express 5, TypeScript | |
 | [💰 Financial Dashboard](https://github.com/Sagargupta16/Financial-Dashboard) | 20+ page personal finance analytics with investment tracking & tax planning | React 19, TypeScript, Chart.js | [Live](https://sagargupta16.github.io/Financial-Dashboard) |
 
 <div align="center">
 
-**[View all 28+ projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://github.com/Sagargupta16/latex-resume/releases/download/latest/resume.pdf)**
+**[View all 28+ projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf)**
 
 </div>
 
@@ -209,7 +212,7 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 #### 🏅 Industry Certifications
 
 <p align="center">
-<a href="https://www.credly.com/badges/e18d2154-e153-40b3-8f39-6684e561396e" title="AWS Certified AI Practitioner"><picture><img src="https://images.credly.com/size/100x100/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS Certified AI Practitioner" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/bf8ffb47-284c-4c45-adb8-3df4f807e404" title="AWS Certified Cloud Practitioner"><picture><img src="https://images.credly.com/size/100x100/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/d6dc337a-0af5-48f8-b64f-eb2a5925f07b" title="AWS Certified Machine Learning Engineer – Associate"><picture><img src="https://images.credly.com/size/100x100/images/1a634b4e-3d6b-4a74-b118-c0dcb429e8d2/image.png" alt="AWS Certified Machine Learning Engineer – Associate" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/be7f9e0a-593a-4544-8dfd-f69f669ec57d" title="AWS Certified Developer – Associate"><picture><img src="https://images.credly.com/size/100x100/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" alt="AWS Certified Developer – Associate" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/591e74ef-f6a8-4b77-82dc-07e06fb8060e" title="AWS Certified Solutions Architect – Associate"><picture><img src="https://images.credly.com/size/100x100/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect – Associate" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/8b0723a5-bac7-4262-b5b6-20337b2979a1" title="HashiCorp Certified: Terraform Associate (003)"><picture><img src="https://images.credly.com/size/100x100/images/0dc62494-dc94-469a-83af-e35309f27356/blob" alt="HashiCorp Certified: Terraform Associate (003)" width="100" height="100"></picture></a>
+<a href="https://www.credly.com/badges/e18d2154-e153-40b3-8f39-6684e561396e" title="AWS Certified AI Practitioner"><picture><img src="https://images.credly.com/size/100x100/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS Certified AI Practitioner" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/bf8ffb47-284c-4c45-adb8-3df4f807e404" title="AWS Certified Cloud Practitioner"><picture><img src="https://images.credly.com/size/100x100/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/d6dc337a-0af5-48f8-b64f-eb2a5925f07b" title="AWS Certified Machine Learning Engineer - Associate"><picture><img src="https://images.credly.com/size/100x100/images/1a634b4e-3d6b-4a74-b118-c0dcb429e8d2/image.png" alt="AWS Certified Machine Learning Engineer - Associate" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/be7f9e0a-593a-4544-8dfd-f69f669ec57d" title="AWS Certified Developer - Associate"><picture><img src="https://images.credly.com/size/100x100/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" alt="AWS Certified Developer - Associate" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/591e74ef-f6a8-4b77-82dc-07e06fb8060e" title="AWS Certified Solutions Architect - Associate"><picture><img src="https://images.credly.com/size/100x100/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect - Associate" width="100" height="100"></picture></a> <a href="https://www.credly.com/badges/8b0723a5-bac7-4262-b5b6-20337b2979a1" title="HashiCorp Certified: Terraform Associate (003)"><picture><img src="https://images.credly.com/size/100x100/images/0dc62494-dc94-469a-83af-e35309f27356/blob" alt="HashiCorp Certified: Terraform Associate (003)" width="100" height="100"></picture></a>
 </p>
 
 #### 🎖️ Professional & Partner Badges
@@ -234,7 +237,6 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling — with a
 [![An image of @sagargupta's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/sagargupta)](https://holopin.io/@sagargupta)
 
 </div>
-
 
 <img src="assets/divider.gif" width="100%"/>
 

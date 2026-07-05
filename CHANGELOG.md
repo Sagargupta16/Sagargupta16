@@ -2,6 +2,13 @@
 
 All notable changes to this profile README repository.
 
+## [4.3.0] - 2026-07-05
+
+- Under Review table refreshed against live PR state: drop anthropics/skills #940 (closed unmerged 2026-07-04, superseded by upstream restructure), add 3 new PRs from 2026-07-04 (awslabs/agent-plugins #212, modelcontextprotocol/servers #4470, awslabs/mcp #4076), expand terraform-provider-aws row to all 5 open PRs
+- LeetCode Predictor: 121K+ -> 244K+ contest records per canonical FACTS.md; drop stale MAE figure
+- Resume download link fixed to canonical releases/latest/download/resume.pdf form
+- Strip en/em dashes from prose and Credly badge names; update-credly-badges.py now normalizes dashes so weekly regeneration cannot reintroduce them
+
 ## [4.2.0] - 2026-07-04
 
 - Drop hardcoded star counts from OSS contribution tables (repo names age better; counts drifted)

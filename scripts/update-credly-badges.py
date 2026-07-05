@@ -74,7 +74,8 @@ def categorize_badges(badges):
 def badge_to_html(badge, size=BADGE_SIZE):
     """Generate an HTML anchor+img tag for a single badge."""
     template = badge.get("badge_template", {})
-    name = template.get("name", "Badge")
+    # Credly names carry en/em dashes; house style forbids them
+    name = template.get("name", "Badge").replace("–", "-").replace("—", "-")
     image_url = template.get("image_url", "")
     badge_id = badge.get("id", "")
     badge_url = f"https://www.credly.com/badges/{badge_id}"

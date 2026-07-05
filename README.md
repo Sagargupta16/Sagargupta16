@@ -238,7 +238,6 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling -- with a 
 
 </div>
 
-
 <img src="assets/divider.gif" width="100%"/>
 
 <details>

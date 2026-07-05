@@ -1,0 +1,8 @@
+# Profile README is intentionally HTML-heavy (badges, pictures, centered
+# blocks) and its tables embed long GitHub URLs. Relax the rules that
+# conflict with that by design; keep the rest of the default set.
+MD013: false # line-length: table rows with PR URLs cannot fit 80 chars
+MD033: false # no-inline-html: the entire hero/badge layout is HTML
+MD045: false # no-alt-text: decorative divider/animation images
+MD041: false # first-line-heading: file opens with a centered <div> banner
+MD060: false # table-column-style: mixed compact/padded pipes render identically on GitHub

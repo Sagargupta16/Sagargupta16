@@ -41,11 +41,52 @@
 
 <img src="assets/divider.gif" width="100%"/>
 
-## 🌍 Open Source Contributions
+## 🗂️ Featured Projects
 
-Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling -- with a focus on **IAM security**, **protocol extensions**, and **developer experience**. Contributions span Apache Airflow, Anthropic's skills framework, AWS Labs MCP servers, Terraform modules, and Claude Code developer tooling.
+| Project | Description | Tech | Link |
+|---------|-------------|------|------|
+| [🎨 Kalchar](https://github.com/Sagargupta16/kalchar) | Production folk-art portfolio & gallery - Madhubani, Pichwai, Lippan, Gond artwork on a custom domain | Next.js 16, React 19, Neon, R2, Vercel | [Live](https://kalchar.co.in/) |
+| [📊 Ledger Sync](https://github.com/Sagargupta16/ledger-sync) | Excel-to-dashboard finance app - Sankey diagrams, anomaly detection, 20+ pages | React 19, FastAPI, Neon PostgreSQL | [Live](https://sagargupta.online/ledger-sync/) |
+| [🔭 GitScope](https://github.com/Sagargupta16/GitScope) | Chrome extension adding contribution insights to any GitHub profile - streaks, languages, PR stats, heatmap | JS, Manifest V3, GraphQL, CF Workers | [Chrome Web Store](https://chromewebstore.google.com/detail/gitscope/fndaanihifimmlnmkjdmjbbkbdajolff) |
+| [💼 Portfolio](https://github.com/Sagargupta16/portfolio-react) | Data-driven developer portfolio - projects, experience & achievements rendered from JSON | React 19, Vite, Tailwind, Framer Motion | [Live](https://sagargupta.online/portfolio-react/) |
+| [🔍 Instagram Leaderboard](https://github.com/Sagargupta16/InstagramLikesLeaderboard) | Browser tool showing who likes your Instagram posts the most - ranked leaderboards | Preact, TypeScript | [Live](https://sagargupta16.github.io/InstagramLikesLeaderboard/) |
+| [💰 Financial Dashboard](https://github.com/Sagargupta16/Financial-Dashboard) | 20+ page personal finance analytics with investment tracking & tax planning | React 19, TypeScript, Chart.js | [Live](https://sagargupta16.github.io/Financial-Dashboard) |
+| [🤖 LeetCode Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) | Dense-NN contest rating predictor trained on 244K+ contest records | FastAPI, TensorFlow, React | [Live](https://leetcode-rating-predictor.onrender.com/) |
+| [🔄 Blue Green AWS](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) | Blue-Green deployment with ECS, ALB, CodePipeline - 18 Terraform modules | Terraform, AWS, Docker | |
+| [🚀 DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | Full-stack app with CI/CD, Docker, GitHub Actions & AWS deployment pipeline | FastAPI, React, Docker, AWS | |
+| [📋 Placemento](https://github.com/MCA-NITW/placemento) | Placement management system - OTP auth, AG Grid/Charts, monorepo | React 19, Express 5, TypeScript | |
 
-### ✅ Merged Pull Requests
+<img src="assets/divider.gif" width="100%"/>
+
+## 🏗️ Community & Developer Tools
+
+Open-source tooling for the Claude Code / MCP ecosystem -- built for my own workflow, shared for everyone's.
+
+| Project | Description | Stars |
+|:--------|:------------|:------|
+| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/badge/Stars-29-F8D847?style=flat&logo=github) |
+| [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
+| [SelfHub](https://github.com/Sagargupta16/SelfHub) | MCP server - personal AI memory hub for Claude & VS Code Copilot | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
+| [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 18 plugins, 22 agents, 9 hooks, 21 commands | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
+| [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code | ![Stars](https://img.shields.io/badge/Stars-5-F8D847?style=flat&logo=github) |
+| [awesome-mcp-servers](https://github.com/Sagargupta16/awesome-mcp-servers) | Curated list of MCP servers, tools, and resources | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
+| [deploy-guide](https://github.com/Sagargupta16/deploy-guide) | 37 step-by-step deployment guides - 12 platforms, 14 frameworks, 6 databases | ![Stars](https://img.shields.io/badge/Stars-2-F8D847?style=flat&logo=github) |
+| [agent-recipes](https://github.com/Sagargupta16/agent-recipes) | Copy-paste AI agent workflows for developer tasks | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
+| [ai-git-hooks](https://github.com/Sagargupta16/ai-git-hooks) | AI-powered git hooks (code review, commit messages, security) | ![Stars](https://img.shields.io/badge/Stars-2-F8D847?style=flat&logo=github) |
+
+<sub>Star counts auto-refreshed daily via [update-star-badges.yml](.github/workflows/update-star-badges.yml) -- static badges, immune to shields.io token-pool outages</sub>
+
+<div align="center">
+
+**[View all 28+ projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf)**
+
+</div>
+
+<img src="assets/divider.gif" width="100%"/>
+
+## 🌍 Open Source
+
+Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent tooling:
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
@@ -56,7 +97,9 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling -- with a 
 | [cloudposse/terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) | [#197](https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197) | Add S3 native locking docs, fix variable descriptions |
 | [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#132](https://github.com/awslabs/agent-plugins/pull/132) | validate-drawio early exit -- eliminated noisy false-positive warnings across every non-drawio file edit |
 
-### 🔄 Under Review
+<details>
+<summary><b>🔄 12+ PRs under review</b> (terraform-provider-aws, anthropics/skills, modelcontextprotocol/servers, awslabs) + community impact</summary>
+<br/>
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
@@ -68,52 +111,9 @@ Contributing to the AWS ecosystem, MCP protocol, and AI-agent tooling -- with a 
 | [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |
 
-### 🤝 Community Impact
+**Community impact:** [forem/selfhost #91](https://github.com/forem/selfhost/pull/91) -- fixed AWS Ansible deploy + Elastic IP; community confirmed working. Plus 3 accepted answers on [community/community](https://github.com/community/community/discussions) Q&A across GitHub Actions, API access, and workflow patterns.
 
-| Repository | PR | What Happened |
-|:-----------|:---|:--------------|
-| [forem/selfhost](https://github.com/forem/selfhost) | [#91](https://github.com/forem/selfhost/pull/91) | Fixed AWS Ansible deploy + Elastic IP. Community confirmed working. Maintainers left Forem before review. |
-
-### 💬 Discussion Contributions
-
-3 accepted answers on [community/community](https://github.com/community/community/discussions) Q&A - helping developers with GitHub Actions, API access, and workflow patterns. Active in discussions across **FastAPI**, **Next.js**, **AWS CDK**, **Vite**, **Tailwind CSS**, and more.
-
-### 🏗️ Community Projects
-
-| Project | Description | Stars |
-|:--------|:------------|:------|
-| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/badge/Stars-29-F8D847?style=flat&logo=github) |
-| [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
-| [SelfHub](https://github.com/Sagargupta16/SelfHub) | MCP server - personal AI memory hub for Claude & VS Code Copilot | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
-| [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 18 plugins, 22 agents, 9 hooks, 21 commands | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
-| [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code | ![Stars](https://img.shields.io/badge/Stars-5-F8D847?style=flat&logo=github) |
-| [awesome-mcp-servers](https://github.com/Sagargupta16/awesome-mcp-servers) | Curated list of MCP servers, tools, and resources | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
-| [deploy-guide](https://github.com/Sagargupta16/deploy-guide) | Step-by-step deployment guides for every platform (25+ guides) | ![Stars](https://img.shields.io/badge/Stars-2-F8D847?style=flat&logo=github) |
-| [agent-recipes](https://github.com/Sagargupta16/agent-recipes) | Copy-paste AI agent workflows for developer tasks | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
-| [ai-git-hooks](https://github.com/Sagargupta16/ai-git-hooks) | AI-powered git hooks (code review, commit messages, security) | ![Stars](https://img.shields.io/badge/Stars-2-F8D847?style=flat&logo=github) |
-
-<sub>Star counts auto-refreshed daily via [update-star-badges.yml](.github/workflows/update-star-badges.yml) -- static badges, immune to shields.io token-pool outages</sub>
-
-<img src="assets/divider.gif" width="100%"/>
-
-## 🗂️ Featured Projects
-
-| Project | Description | Tech | Link |
-|---------|-------------|------|------|
-| [🔭 GitScope](https://github.com/Sagargupta16/GitScope) | Chrome extension adding contribution insights to any GitHub profile - streaks, languages, PR stats, heatmap | JS, Manifest V3, GraphQL, CF Workers | [Chrome Web Store](https://chromewebstore.google.com/detail/gitscope/fndaanihifimmlnmkjdmjbbkbdajolff) |
-| [📊 Ledger Sync](https://github.com/Sagargupta16/ledger-sync) | Excel-to-dashboard finance app - Sankey diagrams, anomaly detection, 20+ pages | React 19, FastAPI, Neon PostgreSQL | [Live](https://sagargupta.online/ledger-sync/) |
-| [🔍 Instagram Leaderboard](https://github.com/Sagargupta16/InstagramLikesLeaderboard) | Browser tool showing who likes your Instagram posts the most - ranked leaderboards | Preact, TypeScript | [Live](https://sagargupta16.github.io/InstagramLikesLeaderboard/) |
-| [🚀 DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | Full-stack app with CI/CD, Docker, GitHub Actions & AWS deployment pipeline | FastAPI, React, Docker, AWS | |
-| [🔄 Blue Green AWS](https://github.com/Sagargupta16/Blue_Green_AWS_Terraform) | Blue-Green deployment with ECS, ALB, CodePipeline - 18 Terraform modules | Terraform, AWS, Docker | |
-| [🤖 LeetCode Predictor](https://github.com/Sagargupta16/LeetCode_Rating_Predictor) | Dense-NN contest rating predictor trained on 244K+ contest records | FastAPI, TensorFlow, React | [Live](https://leetcode-rating-predictor.onrender.com/) |
-| [📋 Placemento](https://github.com/MCA-NITW/placemento) | Placement management system - OTP auth, AG Grid/Charts, monorepo | React 19, Express 5, TypeScript | |
-| [💰 Financial Dashboard](https://github.com/Sagargupta16/Financial-Dashboard) | 20+ page personal finance analytics with investment tracking & tax planning | React 19, TypeScript, Chart.js | [Live](https://sagargupta16.github.io/Financial-Dashboard) |
-
-<div align="center">
-
-**[View all 28+ projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf)**
-
-</div>
+</details>
 
 ---
 

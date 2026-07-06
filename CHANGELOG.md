@@ -2,6 +2,14 @@
 
 All notable changes to this profile README repository.
 
+## [4.4.0] - 2026-07-06
+
+- Restructure: Featured Projects now leads (was below OSS); Open Source demoted to a compact section at the bottom
+- Featured Projects: add Kalchar (production client site, kalchar.co.in) at top and Portfolio (portfolio-react); reorder to lead with live products (Kalchar, Ledger Sync, GitScope, Portfolio)
+- Community Projects renamed to "Community & Developer Tools" with a one-line positioning intro; sits between Featured Projects and Open Source
+- Open Source: merged-PR table kept visible; Under Review + community impact collapsed into a details block
+- deploy-guide row updated to 37 guides (12 platforms, 14 frameworks, 6 databases) after v1.1.0
+
 ## [4.3.0] - 2026-07-05
 
 - Under Review table refreshed against live PR state: drop anthropics/skills #940 (closed unmerged 2026-07-04, superseded by upstream restructure), add 3 new PRs from 2026-07-04 (awslabs/agent-plugins #212, modelcontextprotocol/servers #4470, awslabs/mcp #4076), expand terraform-provider-aws row to all 5 open PRs

@@ -96,16 +96,16 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 | [awslabs/mcp](https://github.com/awslabs/mcp) | [#2607](https://github.com/awslabs/mcp/pull/2607) | Fix Kendra documentation menu to match source directory |
 | [cloudposse/terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) | [#197](https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197) | Add S3 native locking docs, fix variable descriptions |
 | [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#132](https://github.com/awslabs/agent-plugins/pull/132) | validate-drawio early exit -- eliminated noisy false-positive warnings across every non-drawio file edit |
+| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#212](https://github.com/awslabs/agent-plugins/pull/212) | Quote CLAUDE_PLUGIN_ROOT in hooks -- fixes plugin boot on paths with spaces |
 
 <details>
-<summary><b>🔄 12+ PRs under review</b> (terraform-provider-aws, anthropics/skills, modelcontextprotocol/servers, awslabs) + community impact</summary>
+<summary><b>🔄 12 PRs under review</b> (terraform-provider-aws, anthropics/skills, modelcontextprotocol/servers, awslabs) + community impact</summary>
 <br/>
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
 | [anthropics/skills](https://github.com/anthropics/skills) | [#939](https://github.com/anthropics/skills/pull/939), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | package_skill.py path fix; skill-creator progressive disclosure refactor; merge duplicate plugins |
 | [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867), [#47940](https://github.com/hashicorp/terraform-provider-aws/pull/47940), [#48389](https://github.com/hashicorp/terraform-provider-aws/pull/48389), [#48390](https://github.com/hashicorp/terraform-provider-aws/pull/48390), [#48396](https://github.com/hashicorp/terraform-provider-aws/pull/48396) | IoT substitution templates; VPC endpoint policy removal; bedrockagentcore additional_params; API Gateway status_code + binary_media_types fixes |
-| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#212](https://github.com/awslabs/agent-plugins/pull/212) | Quote CLAUDE_PLUGIN_ROOT in hooks -- fixes plugin boot on paths with spaces |
 | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) | [#4470](https://github.com/modelcontextprotocol/servers/pull/4470) | Normalize git_log output schema across filtered and unfiltered paths |
 | [awslabs/mcp](https://github.com/awslabs/mcp) | [#4076](https://github.com/awslabs/mcp/pull/4076) | Accept skill-type results in aws-iac-mcp search_documentation (KeyError fix) |
 | [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |

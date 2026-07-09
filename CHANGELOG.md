@@ -2,6 +2,11 @@
 
 All notable changes to this profile README repository.
 
+## [4.4.1] - 2026-07-09
+
+- awslabs/agent-plugins #212 merged 2026-07-08: moved from Under Review to the merged-PR table (7th upstream merge)
+- Under Review count updated to 12 (all 12 live-verified open on 2026-07-09)
+
 ## [4.4.0] - 2026-07-06
 
 - Restructure: Featured Projects now leads (was below OSS); Open Source demoted to a compact section at the bottom

@@ -2,6 +2,10 @@
 
 All notable changes to this profile README repository.
 
+## [4.4.2] - 2026-07-09
+
+- lucide-icons/lucide #4512 merged 2026-07-09: added to merged-PR table (8th upstream merge; Vue Icon kebab-case icon-node prop fix)
+
 ## [4.4.1] - 2026-07-09
 
 - awslabs/agent-plugins #212 merged 2026-07-08: moved from Under Review to the merged-PR table (7th upstream merge)

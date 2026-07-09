@@ -97,6 +97,7 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 | [cloudposse/terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) | [#197](https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197) | Add S3 native locking docs, fix variable descriptions |
 | [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#132](https://github.com/awslabs/agent-plugins/pull/132) | validate-drawio early exit -- eliminated noisy false-positive warnings across every non-drawio file edit |
 | [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#212](https://github.com/awslabs/agent-plugins/pull/212) | Quote CLAUDE_PLUGIN_ROOT in hooks -- fixes plugin boot on paths with spaces |
+| [lucide-icons/lucide](https://github.com/lucide-icons/lucide) | [#4512](https://github.com/lucide-icons/lucide/pull/4512) | Vue Icon component: support kebab-case icon-node prop, fix undefined crash |
 
 <details>
 <summary><b>🔄 12 PRs under review</b> (terraform-provider-aws, anthropics/skills, modelcontextprotocol/servers, awslabs) + community impact</summary>

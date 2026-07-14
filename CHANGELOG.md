@@ -2,6 +2,10 @@
 
 All notable changes to this profile README repository.
 
+## [4.4.3] - 2026-07-13
+
+- axios/axios #11059 merged 2026-07-13: added to merged-PR table as top row (synthesize AxiosError message from AggregateError on dual-stack connection failures; 109K-star project)
+
 ## [4.4.2] - 2026-07-09
 
 - lucide-icons/lucide #4512 merged 2026-07-09: added to merged-PR table (8th upstream merge; Vue Icon kebab-case icon-node prop fix)

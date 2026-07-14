@@ -90,6 +90,7 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
+| [axios/axios](https://github.com/axios/axios) | [#11059](https://github.com/axios/axios/pull/11059) | Synthesize AxiosError message from AggregateError on dual-stack connection failures |
 | [apache/airflow](https://github.com/apache/airflow) | [#63109](https://github.com/apache/airflow/pull/63109) | Add template_fields to SalesforceBulkOperator |
 | [feast-dev/feast](https://github.com/feast-dev/feast) | [#6081](https://github.com/feast-dev/feast/pull/6081) | Add Claude Code agent skills for Feast |
 | [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document custom deployment steps as Python functions |

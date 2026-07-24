@@ -16,8 +16,8 @@
 
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
-  <img src="https://img.shields.io/badge/Followers-99-FE428E?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Followers" />
-  <img src="https://img.shields.io/badge/Total%20Stars-194-F8D847?style=for-the-badge&logo=github&logoColor=black" alt="GitHub Stars" />
+  <img src="https://img.shields.io/badge/Followers-100-FE428E?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Followers" />
+  <img src="https://img.shields.io/badge/Total%20Stars-195-F8D847?style=for-the-badge&logo=github&logoColor=black" alt="GitHub Stars" />
 </div>
 
 <div align="center">

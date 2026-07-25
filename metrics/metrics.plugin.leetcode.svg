@@ -19,8 +19,8 @@
                             <div class="category column">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="50" height="50" class="gauge all">
                                     <circle class="gauge-base" r="53" cx="60" cy="60"/>
-                                    <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="104.56589147286822 329"/>
-                                    <text x="60" y="50" dominant-baseline="central">1271</text>
+                                    <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="104.64816204051013 329"/>
+                                    <text x="60" y="50" dominant-baseline="central">1272</text>
                                     <text x="60" y="80" dominant-baseline="central" class="secondary">/3999</text>
                                 </svg>
                                 <span class="title">All</span>
@@ -37,8 +37,8 @@
                             <div class="category column">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="50" height="50" class="gauge medium">
                                     <circle class="gauge-base" r="53" cx="60" cy="60"/>
-                                    <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="102.84202967927239 329"/>
-                                    <text x="60" y="50" dominant-baseline="central">653</text>
+                                    <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="102.9995213020584 329"/>
+                                    <text x="60" y="50" dominant-baseline="central">654</text>
                                     <text x="60" y="80" dominant-baseline="central" class="secondary">/2089</text>
                                 </svg>
                                 <span class="title">Medium</span>
@@ -63,10 +63,10 @@
                         Skills
                     </h2>
                     <div class="topics">
-                        <div class="label fundamental"><span class="dot">⬤</span> Array <span class="count">x723</span></div>
+                        <div class="label fundamental"><span class="dot">⬤</span> Array <span class="count">x724</span></div>
                         <div class="label fundamental"><span class="dot">⬤</span> String <span class="count">x294</span></div>
                         <div class="label intermediate"><span class="dot">⬤</span> Hash Table <span class="count">x280</span></div>
-                        <div class="label intermediate"><span class="dot">⬤</span> Math <span class="count">x206</span></div>
+                        <div class="label intermediate"><span class="dot">⬤</span> Math <span class="count">x207</span></div>
                         <div class="label fundamental"><span class="dot">⬤</span> Sorting <span class="count">x200</span></div>
                         <div class="label advanced"><span class="dot">⬤</span> Dynamic Programming <span class="count">x191</span></div>
                         <div class="label intermediate"><span class="dot">⬤</span> Greedy <span class="count">x145</span></div>
@@ -87,8 +87,8 @@
                             <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4 8a4 4 0 118 0 4 4 0 01-8 0z"/>
                         </svg>
                         <div class="infos">
-                            <div class="title">Smallest Subsequence of Distinct Characters</div>
-                            <div class="date">19 Jul 2026</div>
+                            <div class="title">Number of Unique XOR Triplets II</div>
+                            <div class="date">24 Jul 2026</div>
                         </div>
                     </div>
                     <div class="field">
@@ -96,8 +96,8 @@
                             <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4 8a4 4 0 118 0 4 4 0 01-8 0z"/>
                         </svg>
                         <div class="infos">
-                            <div class="title">Furthest Point From Origin</div>
-                            <div class="date">24 Apr 2026</div>
+                            <div class="title">Smallest Subsequence of Distinct Characters</div>
+                            <div class="date">19 Jul 2026</div>
                         </div>
                     </div>
                 </section>

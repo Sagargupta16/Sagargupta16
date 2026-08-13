@@ -2,6 +2,11 @@
 
 All notable changes to this profile README repository.
 
+## [4.4.4] - 2026-08-13
+
+- aws-ia/terraform-aws-vpc v4.8.0 added to the merged table: root-caused the Cloud WAN attachment-replacement bug, fix co-authored in commit 489899c7 (merged via #184)
+- Under Review table synced to live state: dropped awslabs/mcp #4076 (auto-closed as stale 2026-08-05), added expressjs/multer #1426 and aws-ia/terraform-aws-bedrock #172; count corrected 12 -> 13
+
 ## [4.4.3] - 2026-07-13
 
 - axios/axios #11059 merged 2026-07-13: added to merged-PR table as top row (synthesize AxiosError message from AggregateError on dual-stack connection failures; 109K-star project)

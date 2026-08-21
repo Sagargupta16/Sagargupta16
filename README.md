@@ -64,7 +64,7 @@ Open-source tooling for the Claude Code / MCP ecosystem -- built for my own work
 
 | Project | Description | Stars |
 |:--------|:------------|:------|
-| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/badge/Stars-34-F8D847?style=flat&logo=github) |
+| [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/badge/Stars-35-F8D847?style=flat&logo=github) |
 | [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/badge/Stars-4-F8D847?style=flat&logo=github) |
 | [SelfHub](https://github.com/Sagargupta16/SelfHub) | MCP server - personal AI memory hub for Claude & VS Code Copilot | ![Stars](https://img.shields.io/badge/Stars-5-F8D847?style=flat&logo=github) |
 | [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 18 plugins, 22 agents, 9 hooks, 21 commands | ![Stars](https://img.shields.io/badge/Stars-5-F8D847?style=flat&logo=github) |

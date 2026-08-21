@@ -63,16 +63,16 @@
                         Skills
                     </h2>
                     <div class="topics">
-                        <div class="label fundamental"><span class="dot">⬤</span> Array <span class="count">x733</span></div>
-                        <div class="label fundamental"><span class="dot">⬤</span> String <span class="count">x302</span></div>
+                        <div class="label fundamental"><span class="dot">⬤</span> Array <span class="count">x739</span></div>
+                        <div class="label fundamental"><span class="dot">⬤</span> String <span class="count">x303</span></div>
                         <div class="label intermediate"><span class="dot">⬤</span> Hash Table <span class="count">x284</span></div>
                         <div class="label intermediate"><span class="dot">⬤</span> Math <span class="count">x216</span></div>
-                        <div class="label fundamental"><span class="dot">⬤</span> Sorting <span class="count">x203</span></div>
-                        <div class="label advanced"><span class="dot">⬤</span> Dynamic Programming <span class="count">x195</span></div>
-                        <div class="label intermediate"><span class="dot">⬤</span> Greedy <span class="count">x149</span></div>
-                        <div class="label intermediate"><span class="dot">⬤</span> Depth-First Search <span class="count">x133</span></div>
-                        <div class="label intermediate"><span class="dot">⬤</span> Tree <span class="count">x117</span></div>
-                        <div class="label fundamental"><span class="dot">⬤</span> Two Pointers <span class="count">x114</span></div>
+                        <div class="label fundamental"><span class="dot">⬤</span> Sorting <span class="count">x205</span></div>
+                        <div class="label advanced"><span class="dot">⬤</span> Dynamic Programming <span class="count">x197</span></div>
+                        <div class="label intermediate"><span class="dot">⬤</span> Greedy <span class="count">x152</span></div>
+                        <div class="label intermediate"><span class="dot">⬤</span> Depth-First Search <span class="count">x134</span></div>
+                        <div class="label intermediate"><span class="dot">⬤</span> Tree <span class="count">x118</span></div>
+                        <div class="label fundamental"><span class="dot">⬤</span> Two Pointers <span class="count">x116</span></div>
                     </div>
                 </section>
                 <section class="leetcode subsection">

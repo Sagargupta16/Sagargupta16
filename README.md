@@ -100,9 +100,10 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 | [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#212](https://github.com/awslabs/agent-plugins/pull/212) | Quote CLAUDE_PLUGIN_ROOT in hooks -- fixes plugin boot on paths with spaces |
 | [lucide-icons/lucide](https://github.com/lucide-icons/lucide) | [#4512](https://github.com/lucide-icons/lucide/pull/4512) | Vue Icon component: support kebab-case icon-node prop, fix undefined crash |
 | [aws-ia/terraform-aws-vpc](https://github.com/aws-ia/terraform-aws-vpc) | [v4.8.0](https://github.com/aws-ia/terraform-aws-vpc/commit/489899c7198b6d0099275e2ffee6852b98c6012b) | Root-caused the Cloud WAN attachment-replacement bug on `create_vpc = false`; fix co-authored into the official AWS-IA module |
+| [expressjs/multer](https://github.com/expressjs/multer) | [#1426](https://github.com/expressjs/multer/pull/1426) | maxCount no longer consumed by files skipped by fileFilter |
 
 <details>
-<summary><b>🔄 13 PRs under review</b> (terraform-provider-aws, anthropics/skills, modelcontextprotocol/servers, multer, aws-ia) + community impact</summary>
+<summary><b>🔄 12 PRs under review</b> (terraform-provider-aws, anthropics/skills, modelcontextprotocol/servers, aws-ia, le-git-graph) + community impact</summary>
 <br/>
 
 | Repository | PR | Description |
@@ -110,7 +111,6 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 | [anthropics/skills](https://github.com/anthropics/skills) | [#939](https://github.com/anthropics/skills/pull/939), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | package_skill.py path fix; skill-creator progressive disclosure refactor; merge duplicate plugins |
 | [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867), [#47940](https://github.com/hashicorp/terraform-provider-aws/pull/47940), [#48389](https://github.com/hashicorp/terraform-provider-aws/pull/48389), [#48390](https://github.com/hashicorp/terraform-provider-aws/pull/48390), [#48396](https://github.com/hashicorp/terraform-provider-aws/pull/48396) | IoT substitution templates; VPC endpoint policy removal; bedrockagentcore additional_params; API Gateway status_code + binary_media_types fixes |
 | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) | [#4470](https://github.com/modelcontextprotocol/servers/pull/4470) | Normalize git_log output schema across filtered and unfiltered paths |
-| [expressjs/multer](https://github.com/expressjs/multer) | [#1426](https://github.com/expressjs/multer/pull/1426) | Do not consume maxCount for files skipped by fileFilter |
 | [aws-ia/terraform-aws-bedrock](https://github.com/aws-ia/terraform-aws-bedrock) | [#172](https://github.com/aws-ia/terraform-aws-bedrock/pull/172) | name_prefix, tag propagation, external role support, MCP examples |
 | [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |

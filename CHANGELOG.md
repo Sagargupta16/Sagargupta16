@@ -2,6 +2,11 @@
 
 All notable changes to this profile README repository.
 
+## [4.4.5] - 2026-09-01
+
+- expressjs/multer #1426 merged 2026-08-29: moved from Under Review to the merged-PR table (maxCount no longer consumed by fileFilter-skipped files)
+- Under Review count corrected 13 -> 12; summary repo list updated (multer out, le-git-graph in)
+
 ## [4.4.4] - 2026-08-13
 
 - aws-ia/terraform-aws-vpc v4.8.0 added to the merged table: root-caused the Cloud WAN attachment-replacement bug, fix co-authored in commit 489899c7 (merged via #184)

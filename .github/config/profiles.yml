@@ -28,7 +28,9 @@ credly:
   profile_url: "https://www.credly.com/users/sagar-gupta.f8eb96cc"
 
 portfolio:
-  url: "https://sagargupta16.github.io/portfolio-react/"
+  # Custom domain is canonical; the github.io host still resolves but the README
+  # links the custom domain everywhere, and the validator compares against this.
+  url: "https://sagargupta.online/portfolio-react/"
   repo: "https://github.com/Sagargupta16/portfolio-react"
 
 monkeytype:

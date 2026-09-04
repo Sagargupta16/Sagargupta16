@@ -2,6 +2,14 @@
 
 All notable changes to this profile README repository.
 
+## [4.4.6] - 2026-09-04
+
+- LeetCode peak rating corrected 2007 -> 2025 (beaten at Weekly Contest 515; 2007 is now the second-best result). Badge, alt text, and the Competitive Programming line all updated
+- LeetCode percentile 5% -> 3% (live topPercentage 2.3%) in the typing animation and the stats line; problems solved 1200+ -> 1300+ (live 1301); contests 100+ -> 105+
+- modelcontextprotocol/servers #4470 dropped from Under Review: closed 2026-09-03 as superseded by upstream #4658, which shipped the same git_log schema fix. Count corrected 12 -> 11; summary repo list updated (modelcontextprotocol out, terraform-aws-modules in)
+- claude-skills description corrected: 16 plugins, not 18. Dropped the agent/hook/command sub-counts, which were all wrong and go stale on every plugin change
+- Audited and left unchanged: 11 merged PRs all verified still merged, deploy-guide's 37 guides / 12 platforms / 14 frameworks / 6 databases confirmed against the repo, LeetCode Predictor's 244K+ training records confirmed, 6 industry certs matches the Credly block, Experience 2+ Years matches career.start_date 2024-08
+
 ## [4.4.5] - 2026-09-01
 
 - expressjs/multer #1426 merged 2026-08-29: moved from Under Review to the merged-PR table (maxCount no longer consumed by fileFilter-skipped files)

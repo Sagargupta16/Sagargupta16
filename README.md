@@ -6,9 +6,9 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+5%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=2E9EF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+5%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+5%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP" alt="Typing Animation" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+3%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=2E9EF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+3%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+3%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP" alt="Typing Animation" />
   </picture>
 </div>
 
@@ -22,7 +22,7 @@
 
 <div align="center">
   <a href="https://sagargupta.online/portfolio-react/"><img src="https://img.shields.io/badge/Portfolio-sagargupta.online-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" /></a>
-  <img src="https://img.shields.io/badge/LeetCode-Knight%20%7C%20Peak%202007-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Knight, peak contest rating 2007" />
+  <img src="https://img.shields.io/badge/LeetCode-Knight%20%7C%20Peak%202025-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Knight, peak contest rating 2025" />
   <img src="https://img.shields.io/badge/Certified-6x%20AWS%2FTerraform-FF9900?style=for-the-badge&logo=amazonwebservices&logoColor=white" alt="6 industry certifications: 5 AWS and 1 HashiCorp Terraform" />
   <img src="https://img.shields.io/badge/Experience-2%2B%20Years-2E9EF7?style=for-the-badge" alt="Experience" />
 </div>
@@ -67,7 +67,7 @@ Open-source tooling for the Claude Code / MCP ecosystem -- built for my own work
 | [claude-cost-optimizer](https://github.com/Sagargupta16/claude-cost-optimizer) | Save 30-60% on Claude Code costs with installable cost-mode skill and tools | ![Stars](https://img.shields.io/badge/Stars-35-F8D847?style=flat&logo=github) |
 | [mcp-toolkit](https://github.com/Sagargupta16/mcp-toolkit) | Reusable middleware for MCP servers (auth, cache, rate-limit, CORS) | ![Stars](https://img.shields.io/badge/Stars-4-F8D847?style=flat&logo=github) |
 | [SelfHub](https://github.com/Sagargupta16/SelfHub) | MCP server - personal AI memory hub for Claude & VS Code Copilot | ![Stars](https://img.shields.io/badge/Stars-5-F8D847?style=flat&logo=github) |
-| [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 18 plugins, 22 agents, 9 hooks, 21 commands | ![Stars](https://img.shields.io/badge/Stars-5-F8D847?style=flat&logo=github) |
+| [claude-skills](https://github.com/Sagargupta16/claude-skills) | Claude Code plugin marketplace - 16 plugins bundling agents, hooks and slash commands | ![Stars](https://img.shields.io/badge/Stars-5-F8D847?style=flat&logo=github) |
 | [claude-code-recipes](https://github.com/Sagargupta16/claude-code-recipes) | 50+ copy-paste recipes for Claude Code | ![Stars](https://img.shields.io/badge/Stars-7-F8D847?style=flat&logo=github) |
 | [awesome-mcp-servers](https://github.com/Sagargupta16/awesome-mcp-servers) | Curated list of MCP servers, tools, and resources | ![Stars](https://img.shields.io/badge/Stars-5-F8D847?style=flat&logo=github) |
 | [deploy-guide](https://github.com/Sagargupta16/deploy-guide) | 37 step-by-step deployment guides - 12 platforms, 14 frameworks, 6 databases | ![Stars](https://img.shields.io/badge/Stars-3-F8D847?style=flat&logo=github) |
@@ -103,14 +103,13 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 | [expressjs/multer](https://github.com/expressjs/multer) | [#1426](https://github.com/expressjs/multer/pull/1426) | maxCount no longer consumed by files skipped by fileFilter |
 
 <details>
-<summary><b>🔄 12 PRs under review</b> (terraform-provider-aws, anthropics/skills, modelcontextprotocol/servers, aws-ia, le-git-graph) + community impact</summary>
+<summary><b>🔄 11 PRs under review</b> (terraform-provider-aws, anthropics/skills, aws-ia, terraform-aws-modules, le-git-graph) + community impact</summary>
 <br/>
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
 | [anthropics/skills](https://github.com/anthropics/skills) | [#939](https://github.com/anthropics/skills/pull/939), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | package_skill.py path fix; skill-creator progressive disclosure refactor; merge duplicate plugins |
 | [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867), [#47940](https://github.com/hashicorp/terraform-provider-aws/pull/47940), [#48389](https://github.com/hashicorp/terraform-provider-aws/pull/48389), [#48390](https://github.com/hashicorp/terraform-provider-aws/pull/48390), [#48396](https://github.com/hashicorp/terraform-provider-aws/pull/48396) | IoT substitution templates; VPC endpoint policy removal; bedrockagentcore additional_params; API Gateway status_code + binary_media_types fixes |
-| [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) | [#4470](https://github.com/modelcontextprotocol/servers/pull/4470) | Normalize git_log output schema across filtered and unfiltered paths |
 | [aws-ia/terraform-aws-bedrock](https://github.com/aws-ia/terraform-aws-bedrock) | [#172](https://github.com/aws-ia/terraform-aws-bedrock/pull/172) | name_prefix, tag propagation, external role support, MCP examples |
 | [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |
@@ -190,7 +189,7 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 ### 🏅 Competitive Programming Journey
 
-**🏆 LeetCode Knight** (Top 5%) | **📈 Peak Rating:** 2007 | **✅ Problems Solved:** 1200+ | **🎮 Contests:** 100+
+**🏆 LeetCode Knight** (Top 3%) | **📈 Peak Rating:** 2025 | **✅ Problems Solved:** 1300+ | **🎮 Contests:** 105+
 
 <div align="center">
   <picture>

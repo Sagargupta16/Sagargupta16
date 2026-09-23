@@ -2,6 +2,15 @@
 
 All notable changes to this profile README repository.
 
+## [4.4.8] - 2026-09-23
+
+- Featured Projects: added both published AWS samples as the top two rows. aws-samples/sample-aws-terraform-org-governance (published 2026-09-23; 6 policy types and 15 delegated-admin services counted from the Terraform) and aws-samples/sample-sagemaker-image-classification-mlops, which the README had never listed (13 modules, counted from the live tree)
+
+## [4.4.7] - 2026-09-14
+
+- hashicorp/terraform-provider-aws #48389 dropped from Under Review: closed unmerged 2026-09-08. Count corrected 11 -> 10, and the bedrockagentcore additional_params clause removed from the row description
+- Audited every Under Review row and all 25 portfolio contribution entries against live GitHub state: #48389 was the only stale one, the other 10 open PRs and 12 merged results all verified accurate
+
 ## [4.4.6] - 2026-09-04
 
 - LeetCode peak rating corrected 2007 -> 2025 (beaten at Weekly Contest 515; 2007 is now the second-best result). Badge, alt text, and the Competitive Programming line all updated

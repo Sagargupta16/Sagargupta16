@@ -45,6 +45,8 @@
 
 | Project | Description | Tech | Link |
 |---------|-------------|------|------|
+| [AWS Org Governance](https://github.com/aws-samples/sample-aws-terraform-org-governance) | Published AWS sample - AWS Organizations governance on Control Tower: all 6 policy types, controls, delegated admin for 15 services | Terraform, Organizations, Control Tower | [aws-samples](https://github.com/aws-samples/sample-aws-terraform-org-governance) |
+| [SageMaker MLOps](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops) | Published AWS sample - image-classification MLOps with clinical quality gates and drift-to-retrain, 13 Terraform modules | Terraform, SageMaker, Python | [aws-samples](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops) |
 | [🎨 Kalchar](https://github.com/Sagargupta16/kalchar) | Production folk-art portfolio & gallery - Madhubani, Pichwai, Lippan, Gond artwork on a custom domain | Next.js 16, React 19, Neon, R2, Vercel | [Live](https://kalchar.co.in/) |
 | [📊 Ledger Sync](https://github.com/Sagargupta16/ledger-sync) | Excel-to-dashboard finance app - Sankey diagrams, anomaly detection, 20+ pages | React 19, FastAPI, Neon PostgreSQL | [Live](https://sagargupta.online/ledger-sync/) |
 | [🔭 GitScope](https://github.com/Sagargupta16/GitScope) | Chrome extension adding contribution insights to any GitHub profile - streaks, languages, PR stats, heatmap | JS, Manifest V3, GraphQL, CF Workers | [Chrome Web Store](https://chromewebstore.google.com/detail/gitscope/fndaanihifimmlnmkjdmjbbkbdajolff) |
@@ -103,13 +105,13 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 | [expressjs/multer](https://github.com/expressjs/multer) | [#1426](https://github.com/expressjs/multer/pull/1426) | maxCount no longer consumed by files skipped by fileFilter |
 
 <details>
-<summary><b>🔄 11 PRs under review</b> (terraform-provider-aws, anthropics/skills, aws-ia, terraform-aws-modules, le-git-graph) + community impact</summary>
+<summary><b>🔄 10 PRs under review</b> (terraform-provider-aws, anthropics/skills, aws-ia, terraform-aws-modules, le-git-graph) + community impact</summary>
 <br/>
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
 | [anthropics/skills](https://github.com/anthropics/skills) | [#939](https://github.com/anthropics/skills/pull/939), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | package_skill.py path fix; skill-creator progressive disclosure refactor; merge duplicate plugins |
-| [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867), [#47940](https://github.com/hashicorp/terraform-provider-aws/pull/47940), [#48389](https://github.com/hashicorp/terraform-provider-aws/pull/48389), [#48390](https://github.com/hashicorp/terraform-provider-aws/pull/48390), [#48396](https://github.com/hashicorp/terraform-provider-aws/pull/48396) | IoT substitution templates; VPC endpoint policy removal; bedrockagentcore additional_params; API Gateway status_code + binary_media_types fixes |
+| [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867), [#47940](https://github.com/hashicorp/terraform-provider-aws/pull/47940), [#48390](https://github.com/hashicorp/terraform-provider-aws/pull/48390), [#48396](https://github.com/hashicorp/terraform-provider-aws/pull/48396) | IoT substitution templates; VPC endpoint policy removal; API Gateway status_code + binary_media_types fixes |
 | [aws-ia/terraform-aws-bedrock](https://github.com/aws-ia/terraform-aws-bedrock) | [#172](https://github.com/aws-ia/terraform-aws-bedrock/pull/172) | name_prefix, tag propagation, external role support, MCP examples |
 | [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |

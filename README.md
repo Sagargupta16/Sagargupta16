@@ -6,9 +6,9 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+3%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=2E9EF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+3%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+3%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP" alt="Typing Animation" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+2%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=2E9EF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+2%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+2%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP" alt="Typing Animation" />
   </picture>
 </div>
 
@@ -22,7 +22,7 @@
 
 <div align="center">
   <a href="https://sagargupta.online/portfolio-react/"><img src="https://img.shields.io/badge/Portfolio-sagargupta.online-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" /></a>
-  <img src="https://img.shields.io/badge/LeetCode-Knight%20%7C%20Peak%202025-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Knight, peak contest rating 2025" />
+  <img src="https://img.shields.io/badge/LeetCode-Guardian%20%7C%20Peak%202166-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Guardian, peak contest rating 2166" />
   <img src="https://img.shields.io/badge/Certified-6x%20AWS%2FTerraform-FF9900?style=for-the-badge&logo=amazonwebservices&logoColor=white" alt="6 industry certifications: 5 AWS and 1 HashiCorp Terraform" />
   <img src="https://img.shields.io/badge/Experience-2%2B%20Years-2E9EF7?style=for-the-badge" alt="Experience" />
 </div>
@@ -39,9 +39,22 @@
 
 </div>
 
-<img src="assets/divider.gif" width="100%"/>
+<div align="center">
+  <img src="assets/svg/terminal.svg" width="100%" alt="Terminal: whoami, published AWS samples, LeetCode profile" />
+</div>
 
-## 🗂️ Featured Projects
+<img src="assets/svg/divider.svg" width="100%" alt="" />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-projects-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-projects-light.svg">
+  <img src="assets/svg/header-projects-dark.svg" width="100%" alt="Featured Projects" />
+</picture>
+
+<table><tr>
+<td width="50%"><a href="https://github.com/aws-samples/sample-aws-terraform-org-governance"><img src="assets/svg/sample-org-governance.svg" width="100%" alt="AWS Organizations Governance, published AWS sample" /></a></td>
+<td width="50%"><a href="https://github.com/aws-samples/sample-sagemaker-image-classification-mlops"><img src="assets/svg/sample-sagemaker-mlops.svg" width="100%" alt="SageMaker Image Classification MLOps, published AWS sample" /></a></td>
+</tr></table>
 
 | Project | Description | Tech | Link |
 |---------|-------------|------|------|
@@ -58,9 +71,13 @@
 | [🚀 DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | Full-stack app with CI/CD, Docker, GitHub Actions & AWS deployment pipeline | FastAPI, React, Docker, AWS | |
 | [📋 Placemento](https://github.com/MCA-NITW/placemento) | Placement management system - OTP auth, AG Grid/Charts, monorepo | React 19, Express 5, TypeScript | |
 
-<img src="assets/divider.gif" width="100%"/>
+<img src="assets/svg/divider.svg" width="100%" alt="" />
 
-## 🏗️ Community & Developer Tools
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-community-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-community-light.svg">
+  <img src="assets/svg/header-community-dark.svg" width="100%" alt="Community and Developer Tools" />
+</picture>
 
 Open-source tooling for the Claude Code / MCP ecosystem -- built for my own workflow, shared for everyone's.
 
@@ -84,9 +101,13 @@ Open-source tooling for the Claude Code / MCP ecosystem -- built for my own work
 
 </div>
 
-<img src="assets/divider.gif" width="100%"/>
+<img src="assets/svg/divider.svg" width="100%" alt="" />
 
-## 🌍 Open Source
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-opensource-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-opensource-light.svg">
+  <img src="assets/svg/header-opensource-dark.svg" width="100%" alt="Open Source" />
+</picture>
 
 Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent tooling:
 
@@ -124,7 +145,11 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 <div align="center">
 
-## 🌐 Connect With Me
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-connect-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-connect-light.svg">
+  <img src="assets/svg/header-connect-dark.svg" width="100%" alt="Connect With Me" />
+</picture>
 
 [![LinkedIn](https://img.shields.io/badge/Let's%20Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sagar-gupta-16-10)
 [![LeetCode](https://img.shields.io/badge/Solve%20With%20Me-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/sagargupta1610/)
@@ -134,21 +159,17 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 </div>
 
-<img src="assets/divider.gif" width="100%"/>
+<img src="assets/svg/divider.svg" width="100%" alt="" />
 
 <div align="center">
 
-## 💻 Tech Stack & Tools
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stack-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stack-light.svg">
+  <img src="assets/svg/header-stack-dark.svg" width="100%" alt="Tech Stack and Tools" />
+</picture>
 
-<img src="https://skillicons.dev/icons?i=aws,terraform,docker,kubernetes,githubactions,git,github,ansible,jenkins,gitlab,bash,linux&perline=12" alt="Cloud & DevOps" />
-<br/>
-<img src="https://skillicons.dev/icons?i=python,javascript,typescript,cpp,java,cs,r,html,css&perline=9" alt="Languages" />
-<br/>
-<img src="https://skillicons.dev/icons?i=react,nextjs,redux,tailwind,vite,materialui,nodejs,express,fastapi,graphql&perline=10" alt="Web Development" />
-<br/>
-<img src="https://skillicons.dev/icons?i=mongodb,mysql,postgres,redis,dynamodb,tensorflow,pytorch,opencv,sklearn&perline=9" alt="Databases & AI/ML" />
-<br/>
-<img src="https://skillicons.dev/icons?i=unity,vscode,figma,postman&perline=4" alt="Tools" />
+<img src="assets/svg/stack.svg" width="100%" alt="Tech stack: AWS, Terraform, Docker, Kubernetes, GitHub Actions, Git, Ansible, Jenkins, GitLab, Bash, Linux, Python, JavaScript, TypeScript, C++, Java, C#, R, HTML, CSS, React, Next.js, Redux, Tailwind, Vite, Material UI, Node.js, Express, FastAPI, GraphQL, MongoDB, MySQL, PostgreSQL, Redis, DynamoDB, TensorFlow, PyTorch, OpenCV, scikit-learn, Unity, VS Code, Figma, Postman" />
 
 <br/>
 
@@ -160,7 +181,11 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 </div>
 
-## 📊 GitHub Stats
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stats-light.svg">
+  <img src="assets/svg/header-stats-dark.svg" width="100%" alt="GitHub Stats" />
+</picture>
 
 <div align="center">
 
@@ -191,7 +216,7 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 ### 🏅 Competitive Programming Journey
 
-**🏆 LeetCode Knight** (Top 3%) | **📈 Peak Rating:** 2025 | **✅ Problems Solved:** 1300+ | **🎮 Contests:** 105+
+**🏆 LeetCode Guardian** (Top 2%) | **📈 Peak Rating:** 2166 | **✅ Problems Solved:** 1300+ | **🎮 Contests:** 105+
 
 <div align="center">
   <picture>
@@ -209,7 +234,11 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 </div>
 
-## 🏆 Certifications & Badges
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-certs-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-certs-light.svg">
+  <img src="assets/svg/header-certs-dark.svg" width="100%" alt="Certifications and Badges" />
+</picture>
 
 ### 🛡️ AWS & Cloud Certifications
 
@@ -243,7 +272,7 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 </div>
 
-<img src="assets/divider.gif" width="100%"/>
+<img src="assets/svg/divider.svg" width="100%" alt="" />
 
 <details>
 <summary align="center"><h3 style="display: inline;">📈 Detailed GitHub Metrics (Click to Expand)</h3></summary>
@@ -290,7 +319,7 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 </div>
 
-<img src="assets/divider.gif" width="100%"/>
+<img src="assets/svg/divider.svg" width="100%" alt="" />
 
 <div align="center">
 

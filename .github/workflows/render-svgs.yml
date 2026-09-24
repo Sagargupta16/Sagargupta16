@@ -1,0 +1,39 @@
+# Re-renders the README's self-hosted animated SVGs in assets/svg/ daily, so
+# the terminal hero's LeetCode line tracks the live contest profile. The
+# script keeps the last good values when LeetCode or skillicons.dev is down,
+# so a failed fetch never blanks an image.
+name: Render README SVGs
+on:
+  schedule:
+    - cron: "30 6 * * *" # Daily 6:30 AM UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/render-svgs.py
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Render SVGs
+        run: python scripts/render-svgs.py
+
+      - name: Commit updated SVGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/svg
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh readme svgs"
+            git push
+          else
+            echo "No SVG changes to commit"
+          fi

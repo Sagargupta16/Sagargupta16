@@ -20,7 +20,7 @@
 
 <img src="assets/svg/highlights.svg" width="100%" alt="Highlights" />
 
-<img src="assets/svg/engagements.svg" width="100%" alt="Engagements at AWS Professional Services" />
+<img src="assets/svg/worked-with.svg" width="100%" alt="Worked with: companies and customers" />
 
 <img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition" />
 

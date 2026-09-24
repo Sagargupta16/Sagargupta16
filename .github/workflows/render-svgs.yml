@@ -24,6 +24,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
+      - name: Install Pillow (shrinks the inlined Credly badges)
+        run: python -m pip install --quiet --only-binary :all: pillow==12.3.0
+
       - name: Render SVGs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

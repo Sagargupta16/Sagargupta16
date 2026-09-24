@@ -1,21 +1,19 @@
-"""
-Render the README's custom animated SVGs into assets/svg/.
+"""Render the README's custom animated SVGs into assets/svg/."""
 
-Everything here is self-hosted on purpose: free widget hosts run out of quota
-(github-profile-trophy and the activity graph both answered HTTP 402 on
-2026-09-23), while an SVG committed to this repo cannot go down.
-
-GitHub serves README images through an <img>, so each SVG must be fully
-self-contained: no scripts, no external fonts or images, CSS and SMIL
-animation only. Icons are fetched from skillicons.dev at render time and
-inlined as <symbol>s with their ids prefixed so they cannot collide.
-
-Live data (LeetCode contest stats) is fetched on every run; if a fetch fails
-the last good values in assets/svg/data.json are reused, so a flaky API never
-blanks the README. Stdlib only, like the other scripts in this folder.
-
-Run: python scripts/render-svgs.py
-"""
+# Everything here is self-hosted on purpose: free widget hosts run out of quota
+# (github-profile-trophy and the activity graph both answered HTTP 402 on
+# 2026-09-23), while an SVG committed to this repo cannot go down.
+#
+# GitHub serves README images through an <img>, so each SVG must be fully
+# self-contained: no scripts, no external fonts or images, CSS and SMIL
+# animation only. Icons are fetched from skillicons.dev at render time and
+# inlined as <symbol>s with their ids prefixed so they cannot collide.
+#
+# Live data (LeetCode contest stats) is fetched on every run; if a fetch fails
+# the last good values in assets/svg/data.json are reused, so a flaky API never
+# blanks the README. Stdlib only, like the other scripts in this folder.
+#
+# Run: python scripts/render-svgs.py
 
 from __future__ import annotations
 

@@ -45,12 +45,15 @@
 
 Average CSAT **10/10** and average Pulse feedback **5/5** across engagements.
 
-- **Lead DevOps Consultant, RWS** (Feb 2026 - present): cloud platform for a data-centre migration: the AWS Organizations OU structure, SCPs, tag policies, AWS Config rules and Security Hub standards mapped to CCMv4, plus Transit Gateway hub-and-spoke networking, all provisioned with Terraform + GitHub Actions.
-- **DevOps Consultant, DTCC** (Aug 2025 - Dec 2025): modernized legacy Terraform to cloud-native IaC on high-sensitivity financial workloads, with Amazon Q for code analysis and migration assessments.
-- **MLOps Pipeline, SME Program** (Jun 2025 - Aug 2025): SageMaker medical-image classification with blue-green endpoints, auto-scaling and drift detection, since generalized and published as an [AWS sample](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops).
-- **DevOps Consultant, State Street** (Oct 2024 - Aug 2025): a self-service Terraform module library tested with tftest + PyTest, and preventive Config and Security Hub controls mapped to CCMv4.0.
-- **Associate Professional Services, DevOps (intern), AWS** (Mar 2024 - Jul 2024): migrated an on-premises app to ECS with blue-green deployment via Terraform, CodePipeline and CodeDeploy, traced with X-Ray and CloudWatch.
-- **Software Developer Associate (intern), Ikarus-3D** (May 2023 - Jul 2023): containerized a production app on ECS/ECR with GitHub Actions CI/CD, and set up SonarQube on EC2 + RDS.
+<!-- ENGAGEMENTS:START -->
+- **RWS** (Feb 2026 to now): Lead DevOps Consultant. Stack: AWS Organizations, SCPs, Tag Policies, Security Hub, Config Rules, Transit Gateway.
+- **DTCC** (Aug 2025 to Dec 2025): DevOps Consultant. Stack: Terraform, Amazon Q, CloudFormation, DevSecOps.
+- **MLOps SME Program** (Jun 2025 to Aug 2025): Medical Image Classification MLOps Pipeline. Stack: SageMaker, CloudWatch, Lambda, API Gateway, EventBridge, CodePipeline. Published as an [AWS sample](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops).
+- **State Street** (Oct 2024 to Aug 2025): DevOps Consultant. Stack: Terraform, tftest, PyTest, EventBridge, CloudWatch, SNS.
+- **Amazon Web Services** (March 2024 to July 2024): Associate Professional Services - DevOps, internship
+- **Ikarus-3D** (May 2023 to July 2023): Software Developer Associate, internship
+
+<!-- ENGAGEMENTS:END -->
 
 </details>
 
@@ -58,11 +61,16 @@ Average CSAT **10/10** and average Pulse feedback **5/5** across engagements.
 <summary><b>Publications, talks and recognition</b></summary>
 <br/>
 
+<!-- PUBLICATIONS:START -->
+- **AWS sample:** [SageMaker Image Classification MLOps Pipeline](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops) (2026)
 - **AWS sample:** [Terraform AWS Organizations Governance on Control Tower](https://github.com/aws-samples/sample-aws-terraform-org-governance) (2026)
-- **AWS sample:** [SageMaker Image Classification MLOps](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops) (2026)
-- **AWS Prescriptive Guidance pattern:** Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub (published 2025), plus 3 more peer reviewed
-- **Tech talks:** Automating Unit Testing for Terraform with Terraform Test and PyTest (2025); GitOps Configuration Safety with Health Checks and Pipeline Gating (2026)
-- **Recognition:** 5x TFC Ambassador (AI/ML, NGDE, CloudOps, Agentic AI, Serverless), MLOps SME Program graduate, Associate Speaker certified (2026), ML Hackathon 2025 26th of 238 teams
+- **AWS Prescriptive Guidance pattern:** Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub (2025)
+- **Peer review:** 3 APG Patterns (2025-2026)
+- **Tech talk:** GitOps Configuration Safety with Health Checks and Pipeline Gating (2026)
+- **Tech talk:** Automating Unit Testing for Terraform using Terraform Test and PyTest frameworks (2025)
+- **Recognition:** ProServe MLOps SME Program Graduate; 5x TFC Ambassador: AI/ML, NGDE (Graduated), CloudOps (AWS DevOps Agent), Agentic AI, Serverless; Associate Speaker Certification; AWS T&C Subject Matter Expert (SME) Program Contributor; ML Hackathon 2025, 26th/238 teams
+
+<!-- PUBLICATIONS:END -->
 
 </details>
 
@@ -136,31 +144,37 @@ Open-source tooling for the Claude Code / MCP ecosystem -- built for my own work
 
 Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent tooling:
 
+<!-- OSS-MERGED:START -->
 | Repository | PR | Description |
 |:-----------|:---|:------------|
+| [expressjs/multer](https://github.com/expressjs/multer) | [#1426](https://github.com/expressjs/multer/pull/1426) | Do not consume maxCount for files skipped by fileFilter |
 | [axios/axios](https://github.com/axios/axios) | [#11059](https://github.com/axios/axios/pull/11059) | Synthesize AxiosError message from AggregateError on dual-stack connection failures |
-| [apache/airflow](https://github.com/apache/airflow) | [#63109](https://github.com/apache/airflow/pull/63109) | Add template_fields to SalesforceBulkOperator |
-| [feast-dev/feast](https://github.com/feast-dev/feast) | [#6081](https://github.com/feast-dev/feast/pull/6081) | Add Claude Code agent skills for Feast |
-| [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document custom deployment steps as Python functions |
-| [awslabs/mcp](https://github.com/awslabs/mcp) | [#2607](https://github.com/awslabs/mcp/pull/2607) | Fix Kendra documentation menu to match source directory |
+| [lucide-icons/lucide](https://github.com/lucide-icons/lucide) | [#4512](https://github.com/lucide-icons/lucide/pull/4512) | Support kebab-case icon-node prop on Vue Icon component |
+| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#212](https://github.com/awslabs/agent-plugins/pull/212) | Quote CLAUDE_PLUGIN_ROOT in hook commands to support paths with spaces |
+| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#132](https://github.com/awslabs/agent-plugins/pull/132) | Fix: check file extension before defusedxml dependency |
 | [cloudposse/terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) | [#197](https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197) | Add S3 native locking docs, fix variable descriptions |
-| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#132](https://github.com/awslabs/agent-plugins/pull/132) | validate-drawio early exit -- eliminated noisy false-positive warnings across every non-drawio file edit |
-| [awslabs/agent-plugins](https://github.com/awslabs/agent-plugins) | [#212](https://github.com/awslabs/agent-plugins/pull/212) | Quote CLAUDE_PLUGIN_ROOT in hooks -- fixes plugin boot on paths with spaces |
-| [lucide-icons/lucide](https://github.com/lucide-icons/lucide) | [#4512](https://github.com/lucide-icons/lucide/pull/4512) | Vue Icon component: support kebab-case icon-node prop, fix undefined crash |
-| [aws-ia/terraform-aws-vpc](https://github.com/aws-ia/terraform-aws-vpc) | [v4.8.0](https://github.com/aws-ia/terraform-aws-vpc/commit/489899c7198b6d0099275e2ffee6852b98c6012b) | Root-caused the Cloud WAN attachment-replacement bug on `create_vpc = false`; fix co-authored into the official AWS-IA module |
-| [expressjs/multer](https://github.com/expressjs/multer) | [#1426](https://github.com/expressjs/multer/pull/1426) | maxCount no longer consumed by files skipped by fileFilter |
+| [apache/airflow](https://github.com/apache/airflow) | [#63109](https://github.com/apache/airflow/pull/63109) | Add template_fields support to SalesforceBulkOperator |
+| [feast-dev/feast](https://github.com/feast-dev/feast) | [#6081](https://github.com/feast-dev/feast/pull/6081) | Add Claude Code agent skills for Feast |
+| [awslabs/mcp](https://github.com/awslabs/mcp) | [#2607](https://github.com/awslabs/mcp/pull/2607) | Fix Kendra documentation menu to match source directory |
+| [PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) | [#20956](https://github.com/PrefectHQ/prefect/pull/20956) | Document that deployment steps are Python functions |
+| [aws-ia/terraform-aws-vpc](https://github.com/aws-ia/terraform-aws-vpc) | [commit 489899c](https://github.com/aws-ia/terraform-aws-vpc/commit/489899c7198b6d0099275e2ffee6852b98c6012b) | Root-caused the Cloud WAN attachment-replacement bug; fix co-authored into v4.8.0 |
+
+<!-- OSS-MERGED:END -->
 
 <details>
-<summary><b>🔄 10 PRs under review</b> (terraform-provider-aws, anthropics/skills, aws-ia, terraform-aws-modules, le-git-graph) + community impact</summary>
+<!-- OSS-REVIEW:START -->
+<summary><b>10 PRs under review</b> (hashicorp/terraform-provider-aws, anthropics/skills, terraform-aws-modules/terraform-aws-dynamodb-table, NirmalScaria/le-git-graph, aws-ia/terraform-aws-bedrock) + community impact</summary>
 <br/>
 
 | Repository | PR | Description |
 |:-----------|:---|:------------|
-| [anthropics/skills](https://github.com/anthropics/skills) | [#939](https://github.com/anthropics/skills/pull/939), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | package_skill.py path fix; skill-creator progressive disclosure refactor; merge duplicate plugins |
-| [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867), [#47940](https://github.com/hashicorp/terraform-provider-aws/pull/47940), [#48390](https://github.com/hashicorp/terraform-provider-aws/pull/48390), [#48396](https://github.com/hashicorp/terraform-provider-aws/pull/48396) | IoT substitution templates; VPC endpoint policy removal; API Gateway status_code + binary_media_types fixes |
-| [aws-ia/terraform-aws-bedrock](https://github.com/aws-ia/terraform-aws-bedrock) | [#172](https://github.com/aws-ia/terraform-aws-bedrock/pull/172) | name_prefix, tag propagation, external role support, MCP examples |
-| [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, performance |
+| [hashicorp/terraform-provider-aws](https://github.com/hashicorp/terraform-provider-aws) | [#46867](https://github.com/hashicorp/terraform-provider-aws/pull/46867), [#47940](https://github.com/hashicorp/terraform-provider-aws/pull/47940), [#48390](https://github.com/hashicorp/terraform-provider-aws/pull/48390), [#48396](https://github.com/hashicorp/terraform-provider-aws/pull/48396) | Fix IoT cloudwatch_metric substitution template validation; r/aws_vpc_endpoint: fix policy removal not resetting to default policy; r/aws_api_gateway_gateway_response: mark status_code Computed to fix persistent diff; r/aws_api_gateway_rest_api: apply binary_media_types removal when argument is deleted |
+| [anthropics/skills](https://github.com/anthropics/skills) | [#939](https://github.com/anthropics/skills/pull/939), [#941](https://github.com/anthropics/skills/pull/941), [#942](https://github.com/anthropics/skills/pull/942) | Correct path in package_skill.py docstring; Fix: extract procedures into references to fit truncation limit; Fix: merge duplicate plugins to prevent double skill loading |
 | [terraform-aws-modules/terraform-aws-dynamodb-table](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table) | [#117](https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117) | Replace deprecated hash_key/range_key with key_schema |
+| [NirmalScaria/le-git-graph](https://github.com/NirmalScaria/le-git-graph) | [#109](https://github.com/NirmalScaria/le-git-graph/pull/109) | Infinite scroll, configurable commit count, and performance improvements |
+| [aws-ia/terraform-aws-bedrock](https://github.com/aws-ia/terraform-aws-bedrock) | [#172](https://github.com/aws-ia/terraform-aws-bedrock/pull/172) | name_prefix, tag propagation, external role support, MCP examples |
+
+<!-- OSS-REVIEW:END -->
 
 **Community impact:** [forem/selfhost #91](https://github.com/forem/selfhost/pull/91) -- fixed AWS Ansible deploy + Elastic IP; community confirmed working. Plus 3 accepted answers on [community/community](https://github.com/community/community/discussions) Q&A across GitHub Actions, API access, and workflow patterns.
 

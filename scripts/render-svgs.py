@@ -28,6 +28,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "svg"
 DATA_FILE = OUT / "data.json"
+README_PATH = ROOT / "README.md"
 
 # Palette matches the portfolio (brand/portfolio-react): warm near-black,
 # one blue family, green only for live/ok, amber only for LeetCode.
@@ -160,6 +161,7 @@ ALLOWED_HOSTS = (
     "https://api.github.com/",
     "https://images.credly.com/",
     "https://cdn.jsdelivr.net/",
+    "https://raw.githubusercontent.com/Sagargupta16/portfolio-react/",
 )
 
 
@@ -350,7 +352,14 @@ def shown_line(x: int, y: int, text: str, begin: float, color: str) -> str:
 
 def render_terminal(data: dict) -> str:
     lc = data["leetcode"]
-    w, h = 840, 292
+    samples = [
+        s["url"].split("github.com/", 1)[1]
+        for s in (data.get("portfolio") or {}).get("samples", [])
+    ] or [
+        "aws-samples/sample-aws-terraform-org-governance",
+        "aws-samples/sample-sagemaker-image-classification-mlops",
+    ]
+    w, h = 840, 292 + 24 * max(len(samples) - 2, 0)
     prompt = "sagar@aws:~$ "
     script = [
         (
@@ -361,10 +370,7 @@ def render_terminal(data: dict) -> str:
         ),
         (
             "ls ~/published",
-            [
-                "aws-samples/sample-aws-terraform-org-governance",
-                "aws-samples/sample-sagemaker-image-classification-mlops",
-            ],
+            samples,
         ),
         (
             f"leetcode --profile {LEETCODE_USER}",
@@ -805,8 +811,12 @@ def _fade_group(at: float, body: str) -> str:
     )
 
 
-def render_experience() -> str:
+def render_experience(data: dict) -> str:
     """Top rail to the current role, which then expands into its customer engagements."""
+    pf = data.get("portfolio") or {}
+    engagements = [
+        (e["when"], e["client"], e["tagline"]) for e in pf.get("engagements", [])
+    ] or ENGAGEMENTS
     w, h = 840, 330
     left, right, top_y = 96, 690, 84
     step = (right - left) / (len(MILESTONES) - 1)
@@ -818,7 +828,7 @@ def render_experience() -> str:
             "Career: "
             + ", ".join(f"{y} {a}" for y, a, _ in MILESTONES)
             + "; engagements: "
-            + ", ".join(e[1] for e in ENGAGEMENTS),
+            + ", ".join(e[1] for e in engagements),
         ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.4px}}"
         f".t{{font-family:{SANS};font-weight:700}}"
@@ -865,9 +875,9 @@ def render_experience() -> str:
     )
     sub_draw = 1.8
     parts.append(_rail(sub_left, sub_right, sub_y, open_at + 0.3, sub_draw))
-    sub_step = (sub_right - sub_left) / (len(ENGAGEMENTS) - 1)
-    sub_last = len(ENGAGEMENTS) - 1
-    for i, (when, client, what) in enumerate(ENGAGEMENTS):
+    sub_step = (sub_right - sub_left) / max(len(engagements) - 1, 1)
+    sub_last = max(len(engagements) - 1, 1)
+    for i, (when, client, what) in enumerate(engagements):
         x = sub_left + i * sub_step
         at = open_at + 0.3 + sub_draw * i / sub_last
         current = i == sub_last
@@ -896,7 +906,7 @@ def render_experience() -> str:
 
 def readme_counts() -> dict:
     """Counts that already live in the README, so the cards never drift from it."""
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
+    text = README_PATH.read_text(encoding="utf-8")
     merged = 0
     if MERGED_MARKER in text:
         block = text.split(MERGED_MARKER, 1)[1].split("<details>", 1)[0]
@@ -911,12 +921,26 @@ def readme_counts() -> dict:
 def render_highlights(data: dict) -> str:
     lc = data["leetcode"]
     counts = readme_counts()
+    pf = data.get("portfolio") or {}
+    samples = len(pf.get("samples", [])) or 2
+    tfc = next(
+        (
+            m.group(1)
+            for a in pf.get("achievements", [])
+            if (m := re.match(r"(\d+)x TFC", a["title"]))
+        ),
+        "5",
+    )
+    merged = (
+        sum(1 for e in pf.get("oss", []) if e.get("status") == "merged")
+        or counts["merged"]
+    )
     tiles = [
         ("10/10", "average client CSAT", GREEN),
         ("5/5", "average Pulse feedback", GREEN),
-        ("2", "published AWS samples", SKY),
-        ("5x", "TFC ambassador", SKY),
-        (str(counts["merged"]), "merged upstream contributions", BLUE_LIGHT),
+        (str(samples), "published AWS samples", SKY),
+        (f"{tfc}x", "TFC ambassador", SKY),
+        (str(merged), "merged upstream contributions", BLUE_LIGHT),
         (str(counts["certs"]), "industry certifications", BLUE_LIGHT),
         (lc["badge"], f"LeetCode, top {lc['top']}%", AMBER),
         (f"{lc['solved']:,}", "LeetCode problems solved", AMBER),
@@ -1082,7 +1106,7 @@ def render_footer() -> str:
 
 def credly_badges() -> list[tuple[str, str]]:
     """(title, image url) for each industry certification in the README's Credly block."""
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
+    text = README_PATH.read_text(encoding="utf-8")
     if INDUSTRY_CERTS_MARKER not in text:
         return []
     para = text.split(INDUSTRY_CERTS_MARKER, 1)[1].split("</p>", 1)[0]
@@ -1141,7 +1165,11 @@ def render_certs() -> str | None:
     for i, ((title, _), img) in enumerate(zip(badges, images)):
         cx = 16 + col * i + col / 2
         begin = 0.2 + i * 0.15
-        short = title.replace("AWS Certified ", "").replace("HashiCorp Certified: ", "").replace(" - ", " ")
+        short = (
+            title.replace("AWS Certified ", "")
+            .replace("HashiCorp Certified: ", "")
+            .replace(" - ", " ")
+        )
         lines = _wrap(short, 18)[:3]
         text = "".join(
             f'<text class="m" x="{cx}" y="{176 + j * 13}" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="8.5">{escape(line.upper())}</text>'
@@ -1403,6 +1431,298 @@ def render_ai_stack() -> str | None:
     return "".join(parts)
 
 
+# ---------------------------------------------------------------- portfolio as the source of truth
+
+# The portfolio repo is where Sagar updates everything; this README follows it.
+# Fetched from the published main branch so a portfolio merge flows here on the
+# next daily run. Only fields the portfolio already has are read.
+PORTFOLIO_RAW = (
+    "https://raw.githubusercontent.com/Sagargupta16/portfolio-react/main/data/"
+)
+MONTHS = {
+    m: i
+    for i, m in enumerate(
+        [
+            "jan",
+            "feb",
+            "mar",
+            "apr",
+            "may",
+            "jun",
+            "jul",
+            "aug",
+            "sep",
+            "oct",
+            "nov",
+            "dec",
+        ],
+        start=1,
+    )
+}
+GENERIC_SKILLS = {"AWS", "Cloud Migration", "Solution Architecture"}
+
+
+def _start_key(date: str) -> tuple[int, int]:
+    """Return a sort key for a range like 'Oct 2024 - Aug 2025' or 'March 2024 - July 2024'."""
+    m = re.match(r"\s*([A-Za-z]+)\s+(\d{4})", date)
+    if not m:
+        return (0, 0)
+    return (int(m.group(2)), MONTHS.get(m.group(1)[:3].lower(), 0))
+
+
+def _range_label(date: str) -> str:
+    parts = [p.strip() for p in date.split(" - ")]
+    parts = ["now" if p.lower() == "present" else p for p in parts]
+    return " to ".join(parts)
+
+
+def _client_label(name: str) -> str:
+    """Return the client, e.g. 'State Street' from 'DevOps Consultant - State Street'."""
+    name = name.strip().removesuffix("(Ongoing)").strip()
+    if " - " in name:
+        return name.rsplit(" - ", 1)[1].strip()
+    paren = re.search(r"\(([^)]+)\)", name)
+    if paren:
+        domain = next((k for k in ("MLOps", "DevOps", "AI") if k in name), "")
+        return f"{domain} {paren.group(1)}".strip()
+    return name
+
+
+def _tagline(name: str, skills: list[str], count: int = 2) -> str:
+    picked = [s for s in skills if s not in GENERIC_SKILLS][:count]
+    lead = "Lead DevOps, " if name.startswith("Lead") else ""
+    return lead + ", ".join(picked if not lead else picked[:1])
+
+
+def portfolio_snapshot(experience: dict, projects: dict) -> dict:
+    """Return the small slice of portfolio data the README uses, cached in data.json."""
+    aws = experience["professional_experience"][0]
+    engagements = sorted(
+        aws.get("projects", []), key=lambda p: _start_key(p.get("date", ""))
+    )
+    samples = [
+        {"title": p["title"], "url": p["github"]}
+        for p in projects.get("featured_projects", [])
+        if p.get("organization") == "aws-samples" and p.get("github")
+    ]
+    return {
+        "engagements": [
+            {
+                "when": _range_label(p.get("date", "")),
+                "client": _client_label(p["name"]),
+                "tagline": _tagline(p["name"], p.get("skills", [])),
+                "stack": [s for s in p.get("skills", []) if s not in GENERIC_SKILLS][
+                    :6
+                ],
+                "link": p.get("link"),
+                "name": p["name"],
+            }
+            for p in engagements
+        ],
+        "earlier": [
+            {
+                "title": e["title"],
+                "company": e["company"],
+                "date": e["date"],
+                "position": e.get("position", ""),
+            }
+            for e in experience["professional_experience"][1:]
+        ],
+        "contributions": aws.get("internal_contributions", []),
+        "achievements": aws.get("internal_achievements", []),
+        "samples": samples,
+        "oss": projects.get("open_source_contributions", []),
+    }
+
+
+def fetch_portfolio() -> dict:
+    experience = json.loads(fetch(f"{PORTFOLIO_RAW}experience.json"))
+    projects = json.loads(fetch(f"{PORTFOLIO_RAW}projects.json"))
+    return portfolio_snapshot(experience, projects)
+
+
+PR_URL = re.compile(r"^https://github\.com/([^/]+/[^/]+)/pull/(\d+)$")
+
+
+def live_pr_state(url: str, token: str | None) -> tuple[str, str | None] | None:
+    """Return (state, merged_at) straight from GitHub, or None for non-PR links."""
+    m = PR_URL.match(url)
+    if not m:
+        return None
+    d = json.loads(
+        fetch(
+            f"https://api.github.com/repos/{m.group(1)}/pulls/{m.group(2)}", token=token
+        )
+    )
+    if d.get("merged_at"):
+        return "merged", d["merged_at"]
+    return d.get("state", "open"), None
+
+
+def oss_with_live_state(oss: list[dict]) -> list[dict]:
+    """Re-check every entry the portfolio still lists as open; merged ones move over on their own."""
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    out = []
+    for entry in oss:
+        entry = dict(entry)
+        if entry.get("status") == "open":
+            try:
+                live = live_pr_state(entry["url"], token)
+            except Exception as exc:
+                print(f"pr state check failed for {entry['url']}: {exc}")
+                live = None
+            if live:
+                entry["status"], merged_at = live
+                if merged_at:
+                    entry["merged_at"] = merged_at
+                    print(f"now merged, portfolio still says open: {entry['url']}")
+        out.append(entry)
+    return out
+
+
+# ---------------------------------------------------------------- README blocks
+
+
+def replace_block(text: str, key: str, body: str) -> str:
+    start, end = f"<!-- {key}:START -->", f"<!-- {key}:END -->"
+    if start not in text or end not in text:
+        print(f"README has no {key} markers, skipped")
+        return text
+    i = text.index(start) + len(start)
+    j = text.index(end)
+    # the blank line before END closes any table or list for GitHub's Markdown
+    return text[:i] + "\n" + body.strip("\n") + "\n\n" + text[j:]
+
+
+def _pr_label(url: str) -> str:
+    m = PR_URL.match(url)
+    if m:
+        return f"#{m.group(2)}"
+    sha = re.search(r"/commit/([0-9a-f]{7})", url)
+    return f"commit {sha.group(1)}" if sha else "link"
+
+
+def oss_merged_block(oss: list[dict]) -> str:
+    merged = sorted(
+        (e for e in oss if e.get("status") == "merged"),
+        key=lambda e: e.get("merged_at") or "",
+        reverse=True,
+    )
+    rows = ["| Repository | PR | Description |", "|:-----------|:---|:------------|"]
+    rows += [
+        f"| [{e['repo']}](https://github.com/{e['repo']}) | [{_pr_label(e['url'])}]({e['url']}) | {e['title']} |"
+        for e in merged
+    ]
+    return "\n".join(rows)
+
+
+def oss_review_block(oss: list[dict]) -> str:
+    grouped: dict[str, list[dict]] = {}
+    for e in oss:
+        if e.get("status") == "open":
+            grouped.setdefault(e["repo"], []).append(e)
+    ordered = sorted(grouped.items(), key=lambda kv: -len(kv[1]))
+    count = sum(len(v) for v in grouped.values())
+    names = ", ".join(repo for repo, _ in ordered)
+    rows = [
+        f"<summary><b>{count} PRs under review</b> ({names}) + community impact</summary>",
+        "<br/>",
+        "",
+        "| Repository | PR | Description |",
+        "|:-----------|:---|:------------|",
+    ]
+    for repo, entries in ordered:
+        entries = sorted(entries, key=lambda e: _pr_label(e["url"]))
+        links = ", ".join(f"[{_pr_label(e['url'])}]({e['url']})" for e in entries)
+        titles = "; ".join(e["title"] for e in entries)
+        rows.append(f"| [{repo}](https://github.com/{repo}) | {links} | {titles} |")
+    return "\n".join(rows)
+
+
+def engagements_block(pf: dict) -> str:
+    lines = []
+    for e in reversed(pf["engagements"]):
+        role = e["name"].replace(" (Ongoing)", "")
+        if " - " in role:
+            role = role.rsplit(" - ", 1)[0]
+        elif role.endswith(")") and " (" in role:
+            role = role.rsplit(" (", 1)[0]
+        link = f" Published as an [AWS sample]({e['link']})." if e.get("link") else ""
+        lines.append(
+            f"- **{e['client']}** ({e['when']}): {role}. Stack: {', '.join(e['stack'])}.{link}"
+        )
+    for e in pf["earlier"]:
+        kind = f", {e['position'].lower()}" if e.get("position") else ""
+        lines.append(
+            f"- **{e['company']}** ({_range_label(e['date'])}): {e['title']}{kind}"
+        )
+    return "\n".join(lines)
+
+
+def _sample_link(title: str, samples: list[dict]) -> str | None:
+    return next(
+        (s["url"] for s in samples if s["title"].lower() in title.lower()), None
+    )
+
+
+def publications_block(pf: dict) -> str:
+    groups: dict[str, list[str]] = {
+        "sample": [],
+        "apg": [],
+        "review": [],
+        "talk": [],
+        "other": [],
+    }
+    for c in sorted(
+        pf["contributions"], key=lambda c: str(c.get("year", "")), reverse=True
+    ):
+        title, year = c["title"], c.get("year", "")
+        if title.startswith("AWS Sample Published: "):
+            name = title.split(": ", 1)[1].removesuffix("(aws-samples, MIT-0)").strip()
+            url = _sample_link(name, pf["samples"])
+            groups["sample"].append(
+                f"- **AWS sample:** {f'[{name}]({url})' if url else name} ({year})"
+            )
+        elif title.startswith("APG Pattern: "):
+            name = title.split(": ", 1)[1].removesuffix("(Published)").strip()
+            groups["apg"].append(
+                f"- **AWS Prescriptive Guidance pattern:** {name} ({year})"
+            )
+        elif "Peer Reviewed" in title:
+            groups["review"].append(
+                f"- **Peer review:** {title.replace(' Peer Reviewed', '')} ({year})"
+            )
+        elif title.startswith("Tech Talk: "):
+            groups["talk"].append(
+                f"- **Tech talk:** {title.split(': ', 1)[1]} ({year})"
+            )
+        else:
+            groups["other"].append(f"- {title} ({year})")
+    lines = [
+        line
+        for key in ("sample", "apg", "review", "talk", "other")
+        for line in groups[key]
+    ]
+    recognition = "; ".join(a["title"].replace(" - ", ", ") for a in pf["achievements"])
+    if recognition:
+        lines.append(f"- **Recognition:** {recognition}")
+    return "\n".join(lines)
+
+
+def update_readme(pf: dict) -> None:
+    # The target is always the fixed README_PATH constant; only the block
+    # contents come from the portfolio data, never any part of the path.
+    text = README_PATH.read_text(encoding="utf-8")
+    new = replace_block(text, "ENGAGEMENTS", engagements_block(pf))
+    new = replace_block(new, "PUBLICATIONS", publications_block(pf))
+    new = replace_block(new, "OSS-MERGED", oss_merged_block(pf["oss"]))
+    new = replace_block(new, "OSS-REVIEW", oss_review_block(pf["oss"]))
+    if new != text:
+        with open(README_PATH, "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(new)
+        print("wrote README.md blocks")
+
+
 def write(name: str, content: str) -> None:
     path = OUT / name
     old = path.read_text(encoding="utf-8") if path.exists() else None
@@ -1414,9 +1734,16 @@ def write(name: str, content: str) -> None:
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     data = load_data()
+    try:
+        data["portfolio"] = fetch_portfolio()
+    except Exception as exc:  # keep the last good snapshot
+        print(f"portfolio fetch failed, reusing cached snapshot: {exc}")
+    if data.get("portfolio"):
+        data["portfolio"]["oss"] = oss_with_live_state(data["portfolio"]["oss"])
+        update_readme(data["portfolio"])
     write("data.json", json.dumps(data, indent=2) + "\n")
     write("terminal.svg", render_terminal(data))
-    write("experience.svg", render_experience())
+    write("experience.svg", render_experience(data))
     write("highlights.svg", render_highlights(data))
     write("hero.svg", render_hero(data))
     write("footer.svg", render_footer())

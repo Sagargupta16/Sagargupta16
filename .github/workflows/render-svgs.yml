@@ -25,7 +25,9 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Install Pillow (shrinks the inlined Credly badges)
-        run: python -m pip install --quiet --only-binary :all: pillow==12.3.0
+        # block scalar: the ':all:' value would otherwise parse as a YAML mapping
+        run: |
+          python -m pip install --quiet --only-binary :all: pillow==12.3.0
 
       - name: Render SVGs
         env:

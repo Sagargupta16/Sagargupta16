@@ -151,6 +151,9 @@ AI_TOOLS = [
 ]
 
 SVG_CLOSE = "</svg>"
+# README landmarks the cards read counts and badges from
+INDUSTRY_CERTS_MARKER = "Industry Certifications"
+MERGED_MARKER = "Merged contributions"
 ALLOWED_HOSTS = (
     "https://leetcode.com/",
     "https://skillicons.dev/",
@@ -895,12 +898,12 @@ def readme_counts() -> dict:
     """Counts that already live in the README, so the cards never drift from it."""
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     merged = 0
-    if "Merged contributions" in text:
-        block = text.split("Merged contributions", 1)[1].split("<details>", 1)[0]
+    if MERGED_MARKER in text:
+        block = text.split(MERGED_MARKER, 1)[1].split("<details>", 1)[0]
         merged = sum(1 for line in block.splitlines() if line.startswith("| ["))
     certs = 0
-    if "Industry Certifications" in text:
-        para = text.split("Industry Certifications", 1)[1].split("</p>", 1)[0]
+    if INDUSTRY_CERTS_MARKER in text:
+        para = text.split(INDUSTRY_CERTS_MARKER, 1)[1].split("</p>", 1)[0]
         certs = para.count("<a href")
     return {"merged": merged, "certs": certs}
 
@@ -1080,9 +1083,9 @@ def render_footer() -> str:
 def credly_badges() -> list[tuple[str, str]]:
     """(title, image url) for each industry certification in the README's Credly block."""
     text = (ROOT / "README.md").read_text(encoding="utf-8")
-    if "Industry Certifications" not in text:
+    if INDUSTRY_CERTS_MARKER not in text:
         return []
-    para = text.split("Industry Certifications", 1)[1].split("</p>", 1)[0]
+    para = text.split(INDUSTRY_CERTS_MARKER, 1)[1].split("</p>", 1)[0]
     return re.findall(r'title="([^"]+)"><picture><img src="([^"]+)"', para)
 
 

@@ -6,9 +6,9 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+3%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=2E9EF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+3%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+3%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP" alt="Typing Animation" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+2%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=2E9EF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+2%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+2%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP" alt="Typing Animation" />
   </picture>
 </div>
 
@@ -22,7 +22,7 @@
 
 <div align="center">
   <a href="https://sagargupta.online/portfolio-react/"><img src="https://img.shields.io/badge/Portfolio-sagargupta.online-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" /></a>
-  <img src="https://img.shields.io/badge/LeetCode-Knight%20%7C%20Peak%202025-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Knight, peak contest rating 2025" />
+  <img src="https://img.shields.io/badge/LeetCode-Guardian%20%7C%20Peak%202166-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode Guardian, peak contest rating 2166" />
   <img src="https://img.shields.io/badge/Certified-6x%20AWS%2FTerraform-FF9900?style=for-the-badge&logo=amazonwebservices&logoColor=white" alt="6 industry certifications: 5 AWS and 1 HashiCorp Terraform" />
   <img src="https://img.shields.io/badge/Experience-2%2B%20Years-2E9EF7?style=for-the-badge" alt="Experience" />
 </div>
@@ -33,15 +33,67 @@
 
 > ### 👨‍💻 **Hi, I'm Sagar Gupta**
 >
-> I am a **ProServe (Cloud Consultant) - DevOps/MLOps** at [**Amazon Web Services (AWS)**](https://aws.amazon.com/) and hold a postgraduate degree (MCA) from [**NIT Warangal**](https://www.nitw.ac.in/).
+> Cloud Consultant at [**AWS Professional Services**](https://aws.amazon.com/professional-services/) (DevOps/MLOps). I build the AWS platforms that regulated companies migrate onto: **Terraform**, **CI/CD**, **MLOps pipelines**, and lately the **agent tooling** that makes that work faster. MCA from [**NIT Warangal**](https://www.nitw.ac.in/).
 >
 > I specialize in **DevOps Engineering** • **MLOps** • **AWS Cloud Infrastructure** • **Full Stack Development** with a strong focus on automation and scalable cloud solutions.
 
 </div>
 
-<img src="assets/divider.gif" width="100%"/>
+<div align="center">
+  <img src="assets/svg/terminal.svg" width="100%" alt="Terminal: whoami, published AWS samples, LeetCode profile" />
+</div>
 
-## 🗂️ Featured Projects
+<img src="assets/svg/divider.svg" width="100%" alt="" />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-experience-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-experience-light.svg">
+  <img src="assets/svg/header-experience-dark.svg" width="100%" alt="Experience" />
+</picture>
+
+<img src="assets/svg/experience.svg" width="100%" alt="Career timeline: 2021 MCA at NIT Warangal, 2023 software developer intern at Ikarus-3D, 2024 AWS ProServe DevOps intern, 2024 Cloud Consultant at AWS ProServe, 2026 Lead DevOps Consultant on the RWS engagement" />
+
+<img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 135+ AWS accounts onboarded, about 90% faster account setup, 1000+ preventive controls, 10/10 client CSAT, 2 published AWS samples, merged upstream contributions, LeetCode Guardian, 6 industry certifications" />
+
+<details>
+<summary><b>Engagements at AWS Professional Services</b> (Aug 2024 - present)</summary>
+<br/>
+
+- **Lead DevOps Consultant, RWS** (Feb 2026 - present): cloud platform for a data-centre migration onboarding 50+ application workloads into 135+ AWS accounts. Authored the AWS Organizations OU structure, SCPs, tag policies, AWS Config rules and Security Hub standards mapped to CCMv4, plus Transit Gateway hub-and-spoke networking. Terraform + GitHub Actions cut per-account setup from 3+ days to under 4 hours.
+- **DevOps Consultant, DTCC** (Aug 2025 - Dec 2025): modernized legacy Terraform to cloud-native IaC on high-sensitivity financial workloads, with Amazon Q for code analysis and migration assessments.
+- **MLOps Pipeline, SME Program** (Jun 2025 - Aug 2025): SageMaker medical-image classification with blue-green endpoints, auto-scaling and drift detection, since generalized and published as an [AWS sample](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops).
+- **DevOps Consultant, State Street** (Oct 2024 - Aug 2025): a 38+ service self-service Terraform module library tested with tftest + PyTest, and 1000+ preventive Config and Security Hub controls mapped to CCMv4.0. 10/10 CSAT and three consecutive 5/5 Pulse ratings.
+- **Associate Professional Services, DevOps (intern), AWS** (Mar 2024 - Jul 2024): migrated an on-premises app to ECS with blue-green deployment via Terraform, CodePipeline and CodeDeploy, traced with X-Ray and CloudWatch.
+- **Software Developer Associate (intern), Ikarus-3D** (May 2023 - Jul 2023): containerized a production app on ECS/ECR with GitHub Actions CI/CD, and set up SonarQube on EC2 + RDS.
+
+</details>
+
+<details>
+<summary><b>Publications, talks and recognition</b></summary>
+<br/>
+
+- **AWS sample:** [Terraform AWS Organizations Governance on Control Tower](https://github.com/aws-samples/sample-aws-terraform-org-governance) (2026)
+- **AWS sample:** [SageMaker Image Classification MLOps](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops) (2025)
+- **AWS Prescriptive Guidance pattern:** Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub (published 2025), plus 3 more peer reviewed
+- **Tech talks:** Automating Unit Testing for Terraform with Terraform Test and PyTest (2025); GitOps Configuration Safety with Health Checks and Pipeline Gating (2026)
+- **Recognition:** 5x TFC Ambassador (AI/ML, NGDE, CloudOps, Agentic AI, Serverless), MLOps SME Program graduate, Associate Speaker certified (2026), ML Hackathon 2025 26th of 238 teams
+
+</details>
+
+**Education:** MCA, [NIT Warangal](https://www.nitw.ac.in/) (2021 - 2024, CGPA 8.38, NIMCET AIR 208) | BCA, Devi Ahilya Vishwavidyalaya, Indore (2018 - 2021)
+
+<img src="assets/svg/divider.svg" width="100%" alt="" />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-projects-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-projects-light.svg">
+  <img src="assets/svg/header-projects-dark.svg" width="100%" alt="Featured Projects" />
+</picture>
+
+<table><tr>
+<td width="50%"><a href="https://github.com/aws-samples/sample-aws-terraform-org-governance"><img src="assets/svg/sample-org-governance.svg" width="100%" alt="AWS Organizations Governance, published AWS sample" /></a></td>
+<td width="50%"><a href="https://github.com/aws-samples/sample-sagemaker-image-classification-mlops"><img src="assets/svg/sample-sagemaker-mlops.svg" width="100%" alt="SageMaker Image Classification MLOps, published AWS sample" /></a></td>
+</tr></table>
 
 | Project | Description | Tech | Link |
 |---------|-------------|------|------|
@@ -58,9 +110,13 @@
 | [🚀 DevOps AWS FARM](https://github.com/Sagargupta16/DevOps-AWS-FARM) | Full-stack app with CI/CD, Docker, GitHub Actions & AWS deployment pipeline | FastAPI, React, Docker, AWS | |
 | [📋 Placemento](https://github.com/MCA-NITW/placemento) | Placement management system - OTP auth, AG Grid/Charts, monorepo | React 19, Express 5, TypeScript | |
 
-<img src="assets/divider.gif" width="100%"/>
+<img src="assets/svg/divider.svg" width="100%" alt="" />
 
-## 🏗️ Community & Developer Tools
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-community-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-community-light.svg">
+  <img src="assets/svg/header-community-dark.svg" width="100%" alt="Community and Developer Tools" />
+</picture>
 
 Open-source tooling for the Claude Code / MCP ecosystem -- built for my own workflow, shared for everyone's.
 
@@ -80,13 +136,17 @@ Open-source tooling for the Claude Code / MCP ecosystem -- built for my own work
 
 <div align="center">
 
-**[View all 28+ projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf)**
+**[View all 45 projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf)**
 
 </div>
 
-<img src="assets/divider.gif" width="100%"/>
+<img src="assets/svg/divider.svg" width="100%" alt="" />
 
-## 🌍 Open Source
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-opensource-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-opensource-light.svg">
+  <img src="assets/svg/header-opensource-dark.svg" width="100%" alt="Open Source" />
+</picture>
 
 Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent tooling:
 
@@ -124,7 +184,11 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 <div align="center">
 
-## 🌐 Connect With Me
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-connect-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-connect-light.svg">
+  <img src="assets/svg/header-connect-dark.svg" width="100%" alt="Connect With Me" />
+</picture>
 
 [![LinkedIn](https://img.shields.io/badge/Let's%20Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sagar-gupta-16-10)
 [![LeetCode](https://img.shields.io/badge/Solve%20With%20Me-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/sagargupta1610/)
@@ -134,21 +198,17 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 </div>
 
-<img src="assets/divider.gif" width="100%"/>
+<img src="assets/svg/divider.svg" width="100%" alt="" />
 
 <div align="center">
 
-## 💻 Tech Stack & Tools
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stack-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stack-light.svg">
+  <img src="assets/svg/header-stack-dark.svg" width="100%" alt="Tech Stack and Tools" />
+</picture>
 
-<img src="https://skillicons.dev/icons?i=aws,terraform,docker,kubernetes,githubactions,git,github,ansible,jenkins,gitlab,bash,linux&perline=12" alt="Cloud & DevOps" />
-<br/>
-<img src="https://skillicons.dev/icons?i=python,javascript,typescript,cpp,java,cs,r,html,css&perline=9" alt="Languages" />
-<br/>
-<img src="https://skillicons.dev/icons?i=react,nextjs,redux,tailwind,vite,materialui,nodejs,express,fastapi,graphql&perline=10" alt="Web Development" />
-<br/>
-<img src="https://skillicons.dev/icons?i=mongodb,mysql,postgres,redis,dynamodb,tensorflow,pytorch,opencv,sklearn&perline=9" alt="Databases & AI/ML" />
-<br/>
-<img src="https://skillicons.dev/icons?i=unity,vscode,figma,postman&perline=4" alt="Tools" />
+<img src="assets/svg/stack.svg" width="100%" alt="Tech stack: AWS, Terraform, Docker, Kubernetes, GitHub Actions, Git, Ansible, Jenkins, GitLab, Bash, Linux, Python, JavaScript, TypeScript, C++, Java, C#, R, HTML, CSS, React, Next.js, Redux, Tailwind, Vite, Material UI, Node.js, Express, FastAPI, GraphQL, MongoDB, MySQL, PostgreSQL, Redis, DynamoDB, TensorFlow, PyTorch, OpenCV, scikit-learn, Unity, VS Code, Figma, Postman" />
 
 <br/>
 
@@ -160,7 +220,11 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 </div>
 
-## 📊 GitHub Stats
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stats-light.svg">
+  <img src="assets/svg/header-stats-dark.svg" width="100%" alt="GitHub Stats" />
+</picture>
 
 <div align="center">
 
@@ -191,7 +255,9 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 ### 🏅 Competitive Programming Journey
 
-**🏆 LeetCode Knight** (Top 3%) | **📈 Peak Rating:** 2025 | **✅ Problems Solved:** 1300+ | **🎮 Contests:** 105+
+**🏆 LeetCode Guardian** (Top 2%) | **📈 Peak Rating:** 2166 | **✅ Problems Solved:** 1300+ | **🎮 Contests:** 105+
+
+**GeeksforGeeks** 400+ problems | **HackerRank** 6-Star Problem Solving | **Google Kick Start '22** Round E rank 1289 | **Podiums:** 1st at Coding Cauldron '23 and QFiesta '22, 2nd at Manage the Damage '23 and Trial By Code '22
 
 <div align="center">
   <picture>
@@ -209,7 +275,11 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 </div>
 
-## 🏆 Certifications & Badges
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-certs-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-certs-light.svg">
+  <img src="assets/svg/header-certs-dark.svg" width="100%" alt="Certifications and Badges" />
+</picture>
 
 ### 🛡️ AWS & Cloud Certifications
 
@@ -243,7 +313,7 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 </div>
 
-<img src="assets/divider.gif" width="100%"/>
+<img src="assets/svg/divider.svg" width="100%" alt="" />
 
 <details>
 <summary align="center"><h3 style="display: inline;">📈 Detailed GitHub Metrics (Click to Expand)</h3></summary>
@@ -290,7 +360,7 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 </div>
 
-<img src="assets/divider.gif" width="100%"/>
+<img src="assets/svg/divider.svg" width="100%" alt="" />
 
 <div align="center">
 

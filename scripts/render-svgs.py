@@ -1710,14 +1710,16 @@ def publications_block(pf: dict) -> str:
 
 
 def update_readme(pf: dict) -> None:
-    path = README_PATH
-    text = path.read_text(encoding="utf-8")
+    # The target is always the fixed README_PATH constant; only the block
+    # contents come from the portfolio data, never any part of the path.
+    text = README_PATH.read_text(encoding="utf-8")
     new = replace_block(text, "ENGAGEMENTS", engagements_block(pf))
     new = replace_block(new, "PUBLICATIONS", publications_block(pf))
     new = replace_block(new, "OSS-MERGED", oss_merged_block(pf["oss"]))
     new = replace_block(new, "OSS-REVIEW", oss_review_block(pf["oss"]))
     if new != text:
-        path.write_text(new, encoding="utf-8", newline="\n")
+        with open(README_PATH, "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(new)
         print("wrote README.md blocks")
 
 

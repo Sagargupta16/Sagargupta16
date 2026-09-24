@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import base64
 import datetime
+import io
 import json
 import os
 import re
@@ -1138,12 +1139,29 @@ PNG_MAGIC = bytes([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A])
 JPEG_MAGIC = bytes([0xFF, 0xD8, 0xFF])
 
 
-def _data_uri(url: str) -> str | None:
+def _downscale(raw: bytes, px: int) -> bytes:
+    """Return the image shrunk to px square as an optimized PNG, or unchanged without Pillow."""
+    try:
+        from PIL import (
+            Image,
+        )  # optional: the workflow installs it, local runs work without it
+    except ImportError:
+        return raw
+    with Image.open(io.BytesIO(raw)) as img:
+        img.thumbnail((px, px), Image.Resampling.LANCZOS)
+        out = io.BytesIO()
+        img.save(out, format="PNG", optimize=True)
+    return out.getvalue() if out.tell() < len(raw) else raw
+
+
+def _data_uri(url: str, px: int = 0) -> str | None:
     try:
         raw = fetch(url)
     except Exception as exc:
         print(f"badge image failed: {exc}")
         return None
+    if px:
+        raw = _downscale(raw, px)
     if raw.startswith(PNG_MAGIC):
         mime = "image/png"
     elif raw.startswith(JPEG_MAGIC):
@@ -1183,12 +1201,49 @@ def _short_badge(title: str) -> str:
     return title.replace(" - Training Badge", "").replace(" - ", " ")
 
 
+BADGES_PER_ROW = 6
+
+
+def _badge_row(
+    chunk: list[tuple[str, str]],
+    top: float,
+    size: int,
+    max_lines: int,
+    delay: float,
+    images: dict,
+    w: int,
+) -> list[str]:
+    """Return one centered row of floating badges with their wrapped labels."""
+    col = (w - 32) / BADGES_PER_ROW
+    x0 = 16 + (w - 32 - col * len(chunk)) / 2
+    out = []
+    for i, (title, url) in enumerate(chunk):
+        cx = x0 + col * i + col / 2
+        words = _wrap(_short_badge(title), 16 if size < 80 else 18)[:max_lines]
+        text = "".join(
+            f'<text class="m" x="{cx:.1f}" y="{top + size + 16 + j * 12}" text-anchor="middle" '
+            f'fill="rgba(255,255,255,0.7)" font-size="{8.5 if size >= 80 else 7.5}">{escape(line.upper())}</text>'
+            for j, line in enumerate(words)
+        )
+        out.append(
+            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{delay + i * 0.06:.2f}s" dur="0.5s" fill="freeze"/>'
+            f'<g class="float" style="animation-delay:{i * 0.35:.2f}s">'
+            f'<image href="{images[url]}" x="{cx - size / 2:.1f}" y="{top}" width="{size}" height="{size}"/></g>{text}</g>'
+        )
+    return out
+
+
 def render_certs() -> str | None:
     groups = [
         (label, size, lines, credly_badges(key))
         for key, label, size, lines in CREDLY_GROUPS
     ]
-    images = {url: _data_uri(url) for *_, badges in groups for _, url in badges}
+    # each badge is fetched once and shrunk to twice its drawn size, sharp on high-density screens
+    images = {
+        url: _data_uri(url, size * 2)
+        for _, size, _, badges in groups
+        for _, url in badges
+    }
     if not groups[0][3] or any(img is None for img in images.values()):
         return None
     w = 840
@@ -1199,24 +1254,15 @@ def render_certs() -> str | None:
         parts.append(
             f'<text class="m" x="24" y="{y}" fill="{BLUE_LIGHT}" font-size="10">{len(badges)} {label}</text>'
         )
-        col = (w - 32) / max(len(badges), 6)
-        x0 = 16 + (w - 32 - col * len(badges)) / 2
         top = y + 14
-        for i, (title, url) in enumerate(badges):
-            cx = x0 + col * i + col / 2
-            words = _wrap(_short_badge(title), 16 if size < 80 else 18)[:max_lines]
-            text = "".join(
-                f'<text class="m" x="{cx:.1f}" y="{top + size + 16 + j * 12}" text-anchor="middle" '
-                f'fill="rgba(255,255,255,0.7)" font-size="{8.5 if size >= 80 else 7.5}">{escape(line.upper())}</text>'
-                for j, line in enumerate(words)
-            )
-            parts.append(
-                f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{delay:.2f}s" dur="0.5s" fill="freeze"/>'
-                f'<g class="float" style="animation-delay:{i * 0.35:.2f}s">'
-                f'<image href="{images[url]}" x="{cx - size / 2:.1f}" y="{top}" width="{size}" height="{size}"/></g>{text}</g>'
-            )
-            delay += 0.06
-        y = top + size + 16 + max_lines * 12 + 26
+        row_h = size + 16 + max_lines * 12 + 14
+        # at most BADGES_PER_ROW per row, so labels never collide
+        for start in range(0, len(badges), BADGES_PER_ROW):
+            chunk = badges[start : start + BADGES_PER_ROW]
+            parts += _badge_row(chunk, top, size, max_lines, delay, images, w)
+            delay += 0.06 * len(chunk)
+            top += row_h
+        y = top + 12
     h = y - 10
     head = [
         svg_open(

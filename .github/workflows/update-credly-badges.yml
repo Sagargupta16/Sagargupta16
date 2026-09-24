@@ -44,14 +44,16 @@ jobs:
         uses: Sagargupta16/credly-badge-readme-action@53428cd4bf0496ade08bbc52632b6f540b029af0 # v1
         with:
           credly-username: ${{ steps.config.outputs.credly_user }}
+          # the block lives in a data file; scripts/render-svgs.py draws it as assets/svg/certs.svg
+          readme-path: assets/credly-badges.md
 
       - name: Show diff
         run: |
-          if git diff --quiet README.md; then
+          if git diff --quiet assets/credly-badges.md; then
             echo "No badge changes detected."
           else
             echo "Changes detected:"
-            git diff README.md
+            git diff assets/credly-badges.md
           fi
 
       - name: Commit changes
@@ -59,7 +61,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add assets/credly-badges.md
           if ! git diff --cached --quiet; then
             git commit -m "chore: update ${{ steps.credly.outputs.total-badges }} Credly badges"
             git push

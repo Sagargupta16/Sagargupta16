@@ -135,12 +135,79 @@
     "prs": 1529,
     "reviews": 34,
     "issues": 114,
-    "stars": 272,
+    "stars": 278,
+    "repo_stars": {
+      "PortFolio": 3,
+      "ds-implementations": 5,
+      "Music-Web-App": 4,
+      "Sagargupta16": 4,
+      "Snake-Game__UnityEngine": 3,
+      "Minesweeper-Game__UnityEngine": 4,
+      "FlappyBird-Game__UnityEngine": 3,
+      "PacMan-Game__UnityEngine": 3,
+      "leetcode-solutions": 1,
+      "Guess-The-Number-Game": 2,
+      "Tic-Tac-Toe": 3,
+      "Counter-App": 1,
+      "Contact-Manager-React": 4,
+      "Authentication-System": 3,
+      "Contact-Manager-Mern": 6,
+      "portfolio-react": 6,
+      "tour-vibes": 10,
+      "academic-codes": 3,
+      "farm-app-template": 3,
+      "sagargupta16.github.io": 3,
+      "bms": 3,
+      "brainstorm-verse": 5,
+      "DevOps-AWS-FARM": 3,
+      "ai-code-translator": 3,
+      "stock-market-prediction": 4,
+      "LeetCode_Rating_Predictor": 7,
+      "gfg-solutions": 1,
+      "my-journey": 3,
+      "mern-template": 3,
+      "ldpc-codes": 5,
+      "Lingua-Connect": 4,
+      "Blue_Green_AWS_Terraform": 4,
+      "aws-amplify-cicd": 1,
+      "ground-zero-nn": 1,
+      "ai-project-template": 3,
+      "Financial-Dashboard": 10,
+      "SelfHub": 5,
+      "data-vault": 1,
+      "ledger-sync": 7,
+      "stocksage-ai": 5,
+      "scripts": 1,
+      "InstagramLikesLeaderboard": 12,
+      "awesome-mcp-servers": 5,
+      "deploy-guide": 3,
+      "mcp-toolkit": 4,
+      "agent-recipes": 4,
+      "ai-git-hooks": 3,
+      "credly-badge-readme-action": 4,
+      "claude-cost-optimizer": 36,
+      "claude-code-recipes": 7,
+      "claude-skills": 5,
+      "latex-resume": 3,
+      "instagram-autopilot": 4,
+      "GitScope": 4,
+      "code-arena": 3,
+      "bedrock-multi-model-mcp": 3,
+      "craftsmanship": 1,
+      "kalchar": 3,
+      "shared-workflows": 2,
+      "skillcheck": 5,
+      "itr-agent": 8,
+      "sagas": 3,
+      "orbit": 2,
+      "kinfolk": 1,
+      "waypoint": 0
+    },
     "followers": 106,
-    "repos": 58,
+    "repos": 65,
     "streak": 24,
     "longest": 175,
-    "active_days": 318,
+    "active_days": 317,
     "calendar": [
       [
         4,
@@ -379,8 +446,8 @@
       [
         3,
         71,
-        23,
-        19,
+        22,
+        20,
         0,
         4,
         43
@@ -541,8 +608,8 @@
       [
         0,
         12,
-        6,
-        25,
+        4,
+        27,
         5,
         0,
         0
@@ -580,14 +647,14 @@
         0,
         0,
         0,
-        1,
-        1
+        0,
+        2
       ],
       [
         0,
         0,
-        21,
-        42,
+        20,
+        43,
         63,
         11,
         30
@@ -605,8 +672,8 @@
         53,
         37,
         11,
-        5,
-        10,
+        4,
+        11,
         10,
         6
       ],
@@ -621,32 +688,32 @@
     "languages": [
       [
         "TypeScript",
-        60.8,
+        58.4,
         "#3178c6"
       ],
       [
         "Python",
-        21.8,
+        21.4,
         "#3572A5"
       ],
       [
-        "JavaScript",
-        4.8,
-        "#f1e05a"
-      ],
-      [
         "C++",
-        3.8,
+        6.0,
         "#f34b7d"
       ],
       [
+        "JavaScript",
+        5.7,
+        "#f1e05a"
+      ],
+      [
         "CSS",
-        3.2,
+        3.1,
         "#663399"
       ],
       [
         "Shell",
-        1.4,
+        1.3,
         "#89e051"
       ]
     ]
@@ -982,6 +1049,496 @@
         "url": "https://github.com/awslabs/mcp/pull/4076",
         "status": "closed"
       }
-    ]
-  }
+    ],
+    "featured": [
+      {
+        "title": "SageMaker Image Classification MLOps",
+        "description": "Published by AWS under the aws-samples organization (MIT-0) - an end-to-end, production-shaped MLOps pipeline for image classification on Amazon SageMaker, declared entirely in Terraform across 85 files and 13 reusable modules. Event-driven ingestion, multi-architecture training behind hard clinical quality gates, human-approved governed deployment, and a closed drift-to-retrain loop. The worked example classifies medical images, but the architecture is domain-agnostic.",
+        "date": "July 2026",
+        "tools_tech": [
+          "Terraform",
+          "Amazon SageMaker",
+          "SageMaker Pipelines",
+          "Python",
+          "TensorFlow",
+          "AWS Lambda",
+          "EventBridge",
+          "CodePipeline",
+          "Amazon Bedrock"
+        ],
+        "github": "https://github.com/aws-samples/sample-sagemaker-image-classification-mlops",
+        "live": "",
+        "organization": "aws-samples"
+      },
+      {
+        "title": "AWS Organizations Governance on Control Tower",
+        "description": "Published by AWS under the aws-samples organization (MIT-0), the second after the SageMaker MLOps sample - a Terraform governance layer for AWS Organizations on top of an existing Control Tower landing zone. It declares the OU hierarchy, all six Organizations policy types, Control Tower baselines and controls, and delegated administrators for 15 AWS services, all from the management account.",
+        "date": "September 2026",
+        "tools_tech": [
+          "Terraform",
+          "AWS Organizations",
+          "AWS Control Tower",
+          "Service Control Policies",
+          "Resource Control Policies",
+          "AWS Security Hub",
+          "Amazon GuardDuty",
+          "IAM Identity Center"
+        ],
+        "github": "https://github.com/aws-samples/sample-aws-terraform-org-governance",
+        "live": "",
+        "organization": "aws-samples"
+      },
+      {
+        "title": "Kalchar",
+        "description": "Production folk-art portfolio and commission site for a traditional artist - Madhubani, Pichwai, Lippan, and Gond artwork gallery with a buy filter, events, workshops, custom orders, and a server-rendered admin panel. Public pages are static, catalog lives in Neon Postgres behind a single data seam, and artwork images are served from Cloudflare R2.",
+        "date": "May 2026",
+        "tools_tech": [
+          "Next.js 16",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "Neon Postgres",
+          "Drizzle ORM",
+          "Cloudflare R2",
+          "Vercel"
+        ],
+        "github": "https://github.com/Sagargupta16/kalchar",
+        "live": "https://kalchar.co.in/",
+        "organization": null
+      },
+      {
+        "title": "GitScope",
+        "description": "A Chrome extension plus web dashboard that adds deep GitHub profile insights - 9-stat grid, coding personality badges, language breakdown, activity heatmap, contribution donut, repo growth timeline, profile comparison, and a leaderboard across everyone you follow. Published on the Chrome Web Store with GitHub OAuth for traffic analytics.",
+        "date": "March 2026",
+        "tools_tech": [
+          "JavaScript",
+          "TypeScript",
+          "Chrome Extension",
+          "Manifest V3",
+          "GitHub GraphQL API",
+          "Cloudflare Workers",
+          "esbuild"
+        ],
+        "github": "https://github.com/Sagargupta16/GitScope",
+        "live": "https://chromewebstore.google.com/detail/gitscope/fndaanihifimmlnmkjdmjbbkbdajolff",
+        "organization": null
+      },
+      {
+        "title": "Ledger Sync",
+        "description": "A self-hosted personal finance dashboard (v2.19.0) with an AI chatbot that uses 15 read-only tool calls to answer questions about your spending, trends, tax, and goals. Upload Excel/CSV bank statements, get SHA-256 deduplication, 50/30/20 budgeting, bill calendar, GST analysis, subscription tracking, year-in-review, FIRE planning (Lean/Barista/Standard/Fat), India FY tax estimation, Sankey cash flow, and a Financial Health Score across 8 metrics.",
+        "date": "July 2026",
+        "tools_tech": [
+          "TypeScript",
+          "React 19",
+          "FastAPI",
+          "SQLite",
+          "Tailwind CSS",
+          "AWS Bedrock",
+          "OpenAI",
+          "Anthropic"
+        ],
+        "github": "https://github.com/Sagargupta16/ledger-sync",
+        "live": "https://sagargupta.online/ledger-sync/",
+        "organization": null
+      },
+      {
+        "title": "LeetCode Rating Predictor",
+        "description": "Full-stack LeetCode contest rating predictor using a Dense neural network trained on 244K+ contest records, featuring a FastAPI backend with LeetCode GraphQL integration and a React glassmorphism frontend.",
+        "date": "December 2023",
+        "tools_tech": [
+          "Python",
+          "React 19",
+          "FastAPI",
+          "TensorFlow",
+          "Keras",
+          "GraphQL"
+        ],
+        "github": "https://github.com/Sagargupta16/LeetCode_Rating_Predictor",
+        "live": "https://leetcode-rating-predictor.onrender.com/",
+        "organization": null
+      },
+      {
+        "title": "Blue Green AWS Terraform",
+        "description": "A comprehensive Infrastructure as Code solution for implementing Blue-Green deployment on AWS using Terraform, providing a complete CI/CD pipeline with zero-downtime deployments across ECS on EC2, ALB, CodePipeline, and KMS-encrypted artifacts.",
+        "date": "July 2025",
+        "tools_tech": [
+          "Terraform",
+          "AWS",
+          "Docker",
+          "ECS on EC2",
+          "CodePipeline",
+          "HCL"
+        ],
+        "github": "https://github.com/Sagargupta16/Blue_Green_AWS_Terraform",
+        "live": "",
+        "organization": null
+      },
+      {
+        "title": "Instagram Likes Leaderboard",
+        "description": "A browser-based tool with three modes - Likes Leaderboard, Stats Dashboard, and Follower Analysis - that scans your Instagram posts and surfaces your biggest fans, ghost followers, non-mutuals, and engagement metrics. No downloads or sign-ups required.",
+        "date": "February 2026",
+        "tools_tech": [
+          "TypeScript",
+          "Preact",
+          "Browser API",
+          "Instagram API",
+          "SCSS"
+        ],
+        "github": "https://github.com/Sagargupta16/InstagramLikesLeaderboard",
+        "live": "https://sagargupta.online/InstagramLikesLeaderboard/",
+        "organization": null
+      },
+      {
+        "title": "Personal Portfolio",
+        "description": "This site - a minimal dark developer portfolio with an ambient aurora background, project cards with live screenshots and animated SVG covers, and a fully data-driven JSON architecture. Built with React 19, Vite 8, Tailwind CSS v4, Motion, and Lenis smooth scroll.",
+        "date": "October 2022",
+        "tools_tech": [
+          "React 19",
+          "Vite 8",
+          "Tailwind CSS v4",
+          "Motion",
+          "Lenis",
+          "EmailJS"
+        ],
+        "github": "https://github.com/Sagargupta16/portfolio-react",
+        "live": "https://sagargupta.online/portfolio-react/",
+        "organization": null
+      },
+      {
+        "title": "SelfHub",
+        "description": "A Model Context Protocol (MCP) server that acts as your personal digital memory hub - store notes, preferences, code snippets, tasks, and any info from any MCP-enabled AI assistant (Claude Desktop, VS Code Copilot). Your personal knowledge base travels with you across AI conversations.",
+        "date": "March 2025",
+        "tools_tech": [
+          "TypeScript",
+          "MCP",
+          "Node.js",
+          "pnpm"
+        ],
+        "github": "https://github.com/Sagargupta16/SelfHub",
+        "live": "",
+        "organization": null
+      }
+    ],
+    "community": [
+      {
+        "title": "skillcheck",
+        "description": "Conformance suite for Agent Skills (SKILL.md), published on npm. Linters check syntax; skillcheck checks reality: 36 rules with exact skills-ref parity, client-extension awareness across 6 runtimes (Claude Code, Codex, Gemini CLI, Copilot, Cursor, OpenCode), structure and reference validation, SARIF output, and a drop-in GitHub Action.",
+        "tools_tech": [
+          "TypeScript",
+          "Node.js",
+          "npm",
+          "GitHub Actions",
+          "SARIF"
+        ],
+        "github": "https://github.com/Sagargupta16/skillcheck"
+      },
+      {
+        "title": "ITR Agent",
+        "description": "Local-first MCP server that walks you through filing an Indian income tax return, published on npm. 12 tools spanning form selection, deterministic computation, old-vs-new regime comparison, advance tax planning, and document parsing - all on your machine. The LLM never does arithmetic; every number comes from a versioned, auditable rule pack. Works with Claude Desktop, Claude Code, and any MCP client.",
+        "tools_tech": [
+          "TypeScript",
+          "MCP Protocol",
+          "Node.js",
+          "npm"
+        ],
+        "github": "https://github.com/Sagargupta16/itr-agent"
+      },
+      {
+        "title": "Claude Skills",
+        "description": "Custom Claude Code plugin marketplace (v5.2.0) with 16 curated plugins covering dev workflow, Docker, dependency audits, refactoring, git workflows, open source contributions, Python clean code, animation, and more. Installable via /plugin marketplace.",
+        "tools_tech": [
+          "Claude Code",
+          "Plugin Marketplace",
+          "Markdown",
+          "JSON",
+          "GitHub Actions"
+        ],
+        "github": "https://github.com/Sagargupta16/claude-skills"
+      },
+      {
+        "title": "Claude Cost Optimizer",
+        "description": "Installable Claude Code plugin with cost-mode skill that saves 30-60% on costs through concise responses, model routing, budget hooks, and efficient workflow patterns. Includes web-based Repo Analyzer, Cost Calculator, and Badge Checker tools.",
+        "tools_tech": [
+          "Claude Code",
+          "Plugin Marketplace",
+          "React",
+          "Vite",
+          "TypeScript",
+          "Python"
+        ],
+        "github": "https://github.com/Sagargupta16/claude-cost-optimizer"
+      },
+      {
+        "title": "Bedrock Multi-Model MCP",
+        "description": "MCP server for AWS Bedrock - text, image, video generation, and embeddings across Llama 4, Mistral, Nova, Cohere, DeepSeek, Qwen, GPT-OSS, Stability AI, Luma, and Claude. Use any Bedrock model from Claude Code or any MCP client. Supports bearer token auth and side-by-side model comparison.",
+        "tools_tech": [
+          "TypeScript",
+          "MCP Protocol",
+          "AWS Bedrock",
+          "Converse API",
+          "Stability AI",
+          "Luma Ray 2"
+        ],
+        "github": "https://github.com/Sagargupta16/bedrock-multi-model-mcp"
+      },
+      {
+        "title": "MCP Toolkit",
+        "description": "Reusable utilities and middleware for building production-ready MCP servers. Drop-in packages for the TypeScript SDK covering auth, caching, rate limiting, logging, and CORS - so you stop reimplementing the same plumbing for every MCP server.",
+        "tools_tech": [
+          "TypeScript",
+          "MCP Protocol",
+          "Node.js",
+          "npm"
+        ],
+        "github": "https://github.com/Sagargupta16/mcp-toolkit"
+      },
+      {
+        "title": "Claude Code Recipes",
+        "description": "47 copy-paste recipes for Claude Code covering 15 commands, 9 subagents, 5 hooks, skills, workflows, CLAUDE.md templates, and MCP configs. Every recipe works out of the box - just drop into your .claude/ folder and use immediately.",
+        "tools_tech": [
+          "Claude Code",
+          "AI Agents",
+          "MCP Protocol",
+          "Automation"
+        ],
+        "github": "https://github.com/Sagargupta16/claude-code-recipes"
+      },
+      {
+        "title": "Awesome MCP Servers",
+        "description": "A curated [awesome] list of Model Context Protocol servers, frameworks, clients, tutorials, and community resources - covering data, developer tools, cloud, productivity, search, AI/ML, finance, and observability.",
+        "tools_tech": [
+          "MCP Protocol",
+          "AI Agents",
+          "Curated List"
+        ],
+        "github": "https://github.com/Sagargupta16/awesome-mcp-servers"
+      },
+      {
+        "title": "Deploy Guide",
+        "description": "Step-by-step deployment guides for every platform - 37 guides, 12 platforms, 14 frameworks, 6 databases. Covers GitHub Pages, Vercel, Render, Railway, Fly.io, Netlify, Cloudflare Pages, AWS ECS, DigitalOcean, and more.",
+        "tools_tech": [
+          "DevOps",
+          "AWS",
+          "Vercel",
+          "Render",
+          "GitHub Pages",
+          "Cloudflare"
+        ],
+        "github": "https://github.com/Sagargupta16/deploy-guide"
+      },
+      {
+        "title": "Agent Recipes",
+        "description": "Copy-paste AI agent workflows for real-world developer tasks - code review, testing, migrations, documentation, security scanning, and deployment automation. Works with Claude Code, Cursor, Aider, or any AI coding assistant.",
+        "tools_tech": [
+          "AI Agents",
+          "Claude Code",
+          "Cursor",
+          "Aider"
+        ],
+        "github": "https://github.com/Sagargupta16/agent-recipes"
+      },
+      {
+        "title": "AI Git Hooks",
+        "description": "AI-powered git hooks that review code, generate commit messages, catch bugs, and scan for security issues before you push. Drop-in hooks using Claude, OpenAI, or local Ollama for every stage of your git workflow.",
+        "tools_tech": [
+          "Git Hooks",
+          "Claude",
+          "OpenAI",
+          "Ollama",
+          "Bash"
+        ],
+        "github": "https://github.com/Sagargupta16/ai-git-hooks"
+      },
+      {
+        "title": "Credly Badge README Action",
+        "description": "A GitHub Action that auto-syncs your Credly certifications and badges to your GitHub profile README - no more manual updates when you earn a new cert. Categorizes badges into Industry Certifications, Professional/Partner, and Knowledge/Learning with non-destructive HTML-marker updates.",
+        "tools_tech": [
+          "Python 3.13",
+          "GitHub Actions",
+          "Credly API",
+          "Markdown"
+        ],
+        "github": "https://github.com/Sagargupta16/credly-badge-readme-action"
+      }
+    ],
+    "intro": "Cloud consultant at AWS Professional Services. I build the AWS platforms that regulated companies migrate onto: Terraform, CI/CD, MLOps pipelines, and lately the agent tooling that makes that work faster.",
+    "education": [
+      {
+        "id": 1,
+        "date": "September 2021 - July 2024",
+        "title": "Master of Computer Applications (MCA)",
+        "institution": "National Institute of Technology Warangal",
+        "department": "Department of Computer Science & Engineering",
+        "location": "Warangal, Telangana, India",
+        "cgpa": "8.38",
+        "achievements": [
+          "Passed with First Division with Distinction",
+          "NIMCET AIR 208 (Sep 2021)",
+          "Class Representative, MCA Final Year (Aug 2023 - Jun 2024)",
+          "Additional Secretary, CSEA - NITW (Aug 2023 - Jun 2024)"
+        ],
+        "skills": [
+          "DSA",
+          "Cloud Computing",
+          "AI/ML",
+          "Deep Learning",
+          "Web Development",
+          "Game Development",
+          "Algorithms"
+        ]
+      },
+      {
+        "id": 2,
+        "date": "May 2018 - August 2021",
+        "title": "Bachelor of Computer Applications (BCA)",
+        "institution": "Devi Ahilya Vishwavidyalaya (DAVV)",
+        "department": "Department of Computer Science & Engineering",
+        "location": "Indore, Madhya Pradesh, India",
+        "cgpa": "7.34",
+        "skills": [
+          "C++",
+          "OOPs",
+          "DBMS",
+          "Data Structures",
+          "Operating Systems",
+          "Computer Networks"
+        ]
+      },
+      {
+        "id": 3,
+        "date": "April 2017 - April 2018",
+        "title": "Class XII (Senior Secondary)",
+        "institution": "Happy Days School",
+        "board": "Central Board of Secondary Education (CBSE)",
+        "field": "PCM+PE (Physics, Chemistry, Mathematics, Physical Education)",
+        "location": "Shivpuri, Madhya Pradesh, India",
+        "cgpa": "",
+        "skills": [
+          "Mathematics",
+          "Physics",
+          "Chemistry"
+        ]
+      },
+      {
+        "id": 4,
+        "date": "April 2015 - April 2016",
+        "title": "Class X (Secondary)",
+        "institution": "Kids Garden School",
+        "board": "Central Board of Secondary Education (CBSE)",
+        "location": "Shivpuri, Madhya Pradesh, India",
+        "cgpa": "",
+        "skills": []
+      }
+    ],
+    "coding_stats": {
+      "leetcode": {
+        "username": "Sagargupta1610",
+        "problems_solved": "1300+",
+        "hard_solved": "160+",
+        "contests": "107",
+        "best_rating": "2165",
+        "best_contest_rank": "63",
+        "badge": "Guardian",
+        "top_percentage": "1.1%",
+        "url": "https://leetcode.com/u/Sagargupta1610/"
+      },
+      "geeksforgeeks": {
+        "username": "sagargupta10",
+        "problems_solved": "400+",
+        "url": "https://www.geeksforgeeks.org/user/sagargupta10/"
+      },
+      "hackerrank": {
+        "username": "Sagargupta1610",
+        "problem_solving": "6-Star",
+        "cpp": "5-Star",
+        "url": "https://www.hackerrank.com/Sagargupta1610"
+      }
+    },
+    "contests": [
+      {
+        "id": 1,
+        "title": "1st Place - Coding Cauldron Online, Version '23",
+        "organizer": "NIT Trichy",
+        "date": "March 2023",
+        "type": "Competition"
+      },
+      {
+        "id": 2,
+        "title": "1st Place - QFiesta, IGNOSI '22",
+        "organizer": "NIT Warangal",
+        "date": "December 2022",
+        "type": "Competition"
+      },
+      {
+        "id": 3,
+        "title": "2nd Place - Manage the Damage, Version '23",
+        "organizer": "NIT Trichy",
+        "date": "March 2023",
+        "type": "Competition"
+      },
+      {
+        "id": 4,
+        "title": "2nd Place - Trial By Code, IGNOSI '22",
+        "organizer": "NIT Warangal",
+        "date": "December 2022",
+        "type": "Competition"
+      },
+      {
+        "id": 5,
+        "title": "Rank 1289 - Google Kick Start '22, Round E",
+        "organizer": "Google",
+        "date": "September 2022",
+        "type": "Competition"
+      },
+      {
+        "id": 6,
+        "title": "Rank 1699 - Google Kick Start '22, Round B",
+        "organizer": "Google",
+        "date": "May 2022",
+        "type": "Competition"
+      },
+      {
+        "id": 7,
+        "title": "3rd Place - Logic Head, INFOTREK '22",
+        "organizer": "NIT Trichy",
+        "date": "June 2022",
+        "type": "Competition"
+      },
+      {
+        "id": 8,
+        "title": "3rd Place - MOTHRA, Version '21",
+        "organizer": "NIT Trichy",
+        "date": "October 2021",
+        "type": "Competition"
+      },
+      {
+        "id": 9,
+        "title": "4th Place - TriNIT Hackathon",
+        "organizer": "NIT Warangal",
+        "date": "March 2024",
+        "type": "Hackathon"
+      }
+    ],
+    "project_count": 45
+  },
+  "oss_stars": {
+    "NirmalScaria/le-git-graph": 5866,
+    "PrefectHQ/prefect": 23915,
+    "anthropics/skills": 177872,
+    "apache/airflow": 46958,
+    "aws-ia/terraform-aws-bedrock": 87,
+    "aws-ia/terraform-aws-vpc": 113,
+    "awslabs/agent-plugins": 903,
+    "awslabs/mcp": 9728,
+    "axios/axios": 109209,
+    "cloudposse/terraform-aws-tfstate-backend": 442,
+    "expressjs/multer": 12083,
+    "feast-dev/feast": 7306,
+    "forem/selfhost": 1482,
+    "hashicorp/terraform-provider-aws": 11095,
+    "lucide-icons/lucide": 24697,
+    "modelcontextprotocol/servers": 90570,
+    "terraform-aws-modules/terraform-aws-dynamodb-table": 119
+  },
+  "views": 22571
 }

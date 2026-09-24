@@ -57,13 +57,14 @@ jobs:
           fi
 
       - name: Commit changes
-        if: ${{ github.event.inputs.dry_run != 'true' && steps.credly.outputs.changed == 'true' }}
+        # the action's changed output was never set, so this step never ran; git diff decides instead
+        if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/credly-badges.md
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update ${{ steps.credly.outputs.total-badges }} Credly badges"
+            git commit -m "chore: update Credly badges"
             git push
           fi
 

@@ -18,6 +18,7 @@
 from __future__ import annotations
 
 import base64
+import datetime
 import json
 import os
 import re
@@ -152,9 +153,6 @@ AI_TOOLS = [
 ]
 
 SVG_CLOSE = "</svg>"
-# README landmarks the cards read counts and badges from
-INDUSTRY_CERTS_MARKER = "Industry Certifications"
-MERGED_MARKER = "Merged contributions"
 ALLOWED_HOSTS = (
     "https://leetcode.com/",
     "https://skillicons.dev/",
@@ -162,6 +160,7 @@ ALLOWED_HOSTS = (
     "https://images.credly.com/",
     "https://cdn.jsdelivr.net/",
     "https://raw.githubusercontent.com/Sagargupta16/portfolio-react/",
+    "https://komarev.com/",
 )
 
 
@@ -223,7 +222,7 @@ def fetch_leetcode(previous: dict) -> dict:
 
 GITHUB_QUERY = (
     '{user(login:"Sagargupta16"){followers{totalCount} '
-    "repositories(ownerAffiliations:OWNER,isFork:false,first:100){totalCount nodes{stargazerCount "
+    "repositories(ownerAffiliations:OWNER,isFork:false,first:100){totalCount nodes{name stargazerCount "
     "languages(first:10,orderBy:{field:SIZE,direction:DESC}){edges{size node{name color}}}}} "
     "contributionsCollection{totalCommitContributions totalPullRequestContributions "
     "totalPullRequestReviewContributions totalIssueContributions contributionCalendar"
@@ -277,6 +276,7 @@ def fetch_github() -> dict | None:
         "reviews": cc["totalPullRequestReviewContributions"],
         "issues": cc["totalIssueContributions"],
         "stars": sum(r["stargazerCount"] for r in repos),
+        "repo_stars": {r["name"]: r["stargazerCount"] for r in repos},
         "followers": u["followers"]["totalCount"],
         "repos": u["repositories"]["totalCount"],
         "streak": current,
@@ -292,10 +292,23 @@ def fetch_github() -> dict | None:
     }
 
 
+VIEWS_URL = "https://komarev.com/ghpvc/?username=sagargupta16"
+
+
+def fetch_views() -> int:
+    """Return the profile view count, read from the counter image komarev serves."""
+    counts = re.findall(r">([0-9][0-9,]*)</text>", fetch(VIEWS_URL).decode())
+    return int(counts[-1].replace(",", ""))
+
+
 def load_data() -> dict:
     data = json.loads(json.dumps(DEFAULT_DATA))
     if DATA_FILE.exists():
         data.update(json.loads(DATA_FILE.read_text(encoding="utf-8")))
+    try:
+        data["views"] = fetch_views()
+    except Exception as exc:  # keep the last good count
+        print(f"views fetch failed, reusing cached count: {exc}")
     try:
         data["leetcode"] = fetch_leetcode(data["leetcode"])
     except Exception as exc:  # keep the last good values
@@ -904,23 +917,8 @@ def render_experience(data: dict) -> str:
 # ---------------------------------------------------------------- highlights
 
 
-def readme_counts() -> dict:
-    """Counts that already live in the README, so the cards never drift from it."""
-    text = README_PATH.read_text(encoding="utf-8")
-    merged = 0
-    if MERGED_MARKER in text:
-        block = text.split(MERGED_MARKER, 1)[1].split("<details>", 1)[0]
-        merged = sum(1 for line in block.splitlines() if line.startswith("| ["))
-    certs = 0
-    if INDUSTRY_CERTS_MARKER in text:
-        para = text.split(INDUSTRY_CERTS_MARKER, 1)[1].split("</p>", 1)[0]
-        certs = para.count("<a href")
-    return {"merged": merged, "certs": certs}
-
-
 def render_highlights(data: dict) -> str:
     lc = data["leetcode"]
-    counts = readme_counts()
     pf = data.get("portfolio") or {}
     samples = len(pf.get("samples", [])) or 2
     tfc = next(
@@ -931,17 +929,14 @@ def render_highlights(data: dict) -> str:
         ),
         "5",
     )
-    merged = (
-        sum(1 for e in pf.get("oss", []) if e.get("status") == "merged")
-        or counts["merged"]
-    )
+    merged = sum(1 for e in pf.get("oss", []) if e.get("status") == "merged")
     tiles = [
         ("10/10", "average client CSAT", GREEN),
         ("5/5", "average Pulse feedback", GREEN),
         (str(samples), "published AWS samples", SKY),
         (f"{tfc}x", "TFC ambassador", SKY),
         (str(merged), "merged upstream contributions", BLUE_LIGHT),
-        (str(counts["certs"]), "industry certifications", BLUE_LIGHT),
+        (str(len(credly_badges("Industry Certifications"))), "industry certifications", BLUE_LIGHT),
         (lc["badge"], f"LeetCode, top {lc['top']}%", AMBER),
         (f"{lc['solved']:,}", "LeetCode problems solved", AMBER),
     ]
@@ -1104,13 +1099,15 @@ def render_footer() -> str:
 # ---------------------------------------------------------------- certifications
 
 
-def credly_badges() -> list[tuple[str, str]]:
-    """(title, image url) for each industry certification in the README's Credly block."""
-    text = README_PATH.read_text(encoding="utf-8")
-    if INDUSTRY_CERTS_MARKER not in text:
-        return []
-    para = text.split(INDUSTRY_CERTS_MARKER, 1)[1].split("</p>", 1)[0]
-    return re.findall(r'title="([^"]+)"><picture><img src="([^"]+)"', para)
+def credly_badges(group: str) -> list[tuple[str, str]]:
+    """Return (title, image url) pairs for one group of the Credly block."""
+    source = CREDLY_PATH if CREDLY_PATH.exists() else README_PATH
+    text = source.read_text(encoding="utf-8")
+    for section in text.split("#### ")[1:]:
+        heading = section.split("\n", 1)[0]
+        if group.split()[0] in heading:
+            return re.findall(r'title="([^"]+)"><picture><img src="([^"]+)"', section)
+    return []
 
 
 PNG_MAGIC = bytes([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A])
@@ -1143,49 +1140,64 @@ def _wrap(text: str, width: int) -> list[str]:
     return lines + ([cur] if cur else [])
 
 
+CREDLY_GROUPS = [
+    ("Industry Certifications", "INDUSTRY CERTIFICATIONS", 84, 3),
+    ("Professional", "PROFESSIONAL AND PARTNER", 60, 2),
+    ("Knowledge", "KNOWLEDGE AND LEARNING", 56, 2),
+]
+
+
+def _short_badge(title: str) -> str:
+    for prefix in ("AWS Certified ", "HashiCorp Certified: ", "AWS Knowledge: ", "AWS Partner: ", "AWS Educate "):
+        title = title.replace(prefix, "")
+    return title.replace(" - Training Badge", "").replace(" - ", " ")
+
+
 def render_certs() -> str | None:
-    badges = credly_badges()
-    images = [_data_uri(url) for _, url in badges]
-    if not badges or any(img is None for img in images):
+    groups = [(label, size, lines, credly_badges(key)) for key, label, size, lines in CREDLY_GROUPS]
+    images = {url: _data_uri(url) for *_, badges in groups for _, url in badges}
+    if not groups[0][3] or any(img is None for img in images.values()):
         return None
-    w, h = 840, 250
-    n = len(badges)
-    col = (w - 32) / n
-    parts = [
-        svg_open(w, h, "Industry certifications: " + ", ".join(t for t, _ in badges)),
+    w = 840
+    parts, y, delay = [], 34, 0.2
+    for label, size, max_lines, badges in groups:
+        if not badges:
+            continue
+        parts.append(f'<text class="m" x="24" y="{y}" fill="{BLUE_LIGHT}" font-size="10">{len(badges)} {label}</text>')
+        col = (w - 32) / max(len(badges), 6)
+        x0 = 16 + (w - 32 - col * len(badges)) / 2
+        top = y + 14
+        for i, (title, url) in enumerate(badges):
+            cx = x0 + col * i + col / 2
+            words = _wrap(_short_badge(title), 16 if size < 80 else 18)[:max_lines]
+            text = "".join(
+                f'<text class="m" x="{cx:.1f}" y="{top + size + 16 + j * 12}" text-anchor="middle" '
+                f'fill="rgba(255,255,255,0.7)" font-size="{8.5 if size >= 80 else 7.5}">{escape(line.upper())}</text>'
+                for j, line in enumerate(words)
+            )
+            parts.append(
+                f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{delay:.2f}s" dur="0.5s" fill="freeze"/>'
+                f'<g class="float" style="animation-delay:{i * 0.35:.2f}s">'
+                f'<image href="{images[url]}" x="{cx - size / 2:.1f}" y="{top}" width="{size}" height="{size}"/></g>{text}</g>'
+            )
+            delay += 0.06
+        y = top + size + 16 + max_lines * 12 + 26
+    h = y - 10
+    head = [
+        svg_open(w, h, "Credly badges: " + ", ".join(t for *_, badges in groups for t, _ in badges)),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1px}}"
         ".float{animation:float 4s ease-in-out infinite}"
-        "@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}</style>",
+        "@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}</style>",
         '<defs><linearGradient id="shine" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
-        '<stop offset="0.5" stop-color="#fff" stop-opacity="0.16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+        '<stop offset="0.5" stop-color="#fff" stop-opacity="0.14"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
         f'<clipPath id="card"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="14"/></clipPath></defs>',
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10">{n} INDUSTRY CERTIFICATIONS  |  VERIFIED ON CREDLY</text>',
     ]
-    for i, ((title, _), img) in enumerate(zip(badges, images)):
-        cx = 16 + col * i + col / 2
-        begin = 0.2 + i * 0.15
-        short = (
-            title.replace("AWS Certified ", "")
-            .replace("HashiCorp Certified: ", "")
-            .replace(" - ", " ")
-        )
-        lines = _wrap(short, 18)[:3]
-        text = "".join(
-            f'<text class="m" x="{cx}" y="{176 + j * 13}" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="8.5">{escape(line.upper())}</text>'
-            for j, line in enumerate(lines)
-        )
-        parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="0.5s" fill="freeze"/>'
-            f'<g class="float" style="animation-delay:{i * 0.35:.2f}s">'
-            f'<image href="{img}" x="{cx - 48}" y="52" width="96" height="96"/></g>{text}</g>'
-        )
-    parts.append(
-        '<g clip-path="url(#card)"><rect x="-160" y="40" width="120" height="120" fill="url(#shine)" transform="skewX(-20)">'
-        '<animateTransform attributeName="transform" type="translate" values="0 0;1100 0" dur="5s" repeatCount="indefinite" additive="sum"/></rect></g>'
+    shine = (
+        f'<g clip-path="url(#card)"><rect x="-160" y="0" width="120" height="{h}" fill="url(#shine)" transform="skewX(-20)">'
+        '<animateTransform attributeName="transform" type="translate" values="0 0;1100 0" dur="6s" repeatCount="indefinite" additive="sum"/></rect></g>'
     )
-    parts.append(SVG_CLOSE)
-    return "".join(parts)
+    return "".join(head + parts + [shine, SVG_CLOSE])
 
 
 # ---------------------------------------------------------------- leetcode
@@ -1494,7 +1506,7 @@ def _tagline(name: str, skills: list[str], count: int = 2) -> str:
     return lead + ", ".join(picked if not lead else picked[:1])
 
 
-def portfolio_snapshot(experience: dict, projects: dict) -> dict:
+def portfolio_snapshot(experience: dict, projects: dict, extra: dict) -> dict:
     """Return the small slice of portfolio data the README uses, cached in data.json."""
     aws = experience["professional_experience"][0]
     engagements = sorted(
@@ -1532,13 +1544,29 @@ def portfolio_snapshot(experience: dict, projects: dict) -> dict:
         "achievements": aws.get("internal_achievements", []),
         "samples": samples,
         "oss": projects.get("open_source_contributions", []),
+        "featured": [
+            {k: p.get(k) for k in ("title", "description", "date", "tools_tech", "github", "live", "organization")}
+            for p in projects.get("featured_projects", [])
+        ],
+        "community": [
+            {k: p.get(k) for k in ("title", "description", "tools_tech", "github")}
+            for p in projects.get("community_projects", [])
+        ],
+        "intro": extra.get("personal", {}).get("intro", ""),
+        "education": extra.get("education", []),
+        "coding_stats": extra.get("achievements", {}).get("coding_platform_stats", {}),
+        "contests": extra.get("achievements", {}).get("achievements", []),
+        "project_count": sum(
+            len(projects.get(k, [])) for k in ("featured_projects", "collaborative_projects", "other_projects", "community_projects")
+        ),
     }
 
 
 def fetch_portfolio() -> dict:
     experience = json.loads(fetch(f"{PORTFOLIO_RAW}experience.json"))
     projects = json.loads(fetch(f"{PORTFOLIO_RAW}projects.json"))
-    return portfolio_snapshot(experience, projects)
+    extra = {name: json.loads(fetch(f"{PORTFOLIO_RAW}{name}.json")) for name in ("personal", "education", "achievements")}
+    return portfolio_snapshot(experience, projects, extra)
 
 
 PR_URL = re.compile(r"^https://github\.com/([^/]+/[^/]+)/pull/(\d+)$")
@@ -1583,17 +1611,6 @@ def oss_with_live_state(oss: list[dict]) -> list[dict]:
 # ---------------------------------------------------------------- README blocks
 
 
-def replace_block(text: str, key: str, body: str) -> str:
-    start, end = f"<!-- {key}:START -->", f"<!-- {key}:END -->"
-    if start not in text or end not in text:
-        print(f"README has no {key} markers, skipped")
-        return text
-    i = text.index(start) + len(start)
-    j = text.index(end)
-    # the blank line before END closes any table or list for GitHub's Markdown
-    return text[:i] + "\n" + body.strip("\n") + "\n\n" + text[j:]
-
-
 def _pr_label(url: str) -> str:
     m = PR_URL.match(url)
     if m:
@@ -1602,125 +1619,756 @@ def _pr_label(url: str) -> str:
     return f"commit {sha.group(1)}" if sha else "link"
 
 
-def oss_merged_block(oss: list[dict]) -> str:
-    merged = sorted(
-        (e for e in oss if e.get("status") == "merged"),
-        key=lambda e: e.get("merged_at") or "",
-        reverse=True,
+# ---------------------------------------------------------------- cards and badges
+
+CREDLY_PATH = ROOT / "assets" / "credly-badges.md"
+CAREER_START = (2024, 8)  # full time at AWS since August 2024
+
+
+def _slug(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+
+def _summary(text: str, limit: int = 118) -> str:
+    """Return the first sentence of a description, cut at a word boundary."""
+    first = text.split(". ", 1)[0].rstrip(".")
+    if len(first) <= limit:
+        return first
+    cut = first[:limit].rsplit(" ", 1)[0].rstrip(",;:")
+    return cut + "..."
+
+
+def _chips(items: list[str], x: float, y: float, max_w: float, color: str) -> str:
+    out, cx = [], x
+    for item in items:
+        w = 12 + len(item) * 6.2
+        if cx + w > x + max_w:
+            break
+        out.append(
+            f'<rect x="{cx:.1f}" y="{y}" width="{w:.1f}" height="20" rx="10" fill="{color}14" stroke="{color}55"/>'
+            f'<text class="m" x="{cx + w / 2:.1f}" y="{y + 13.5}" text-anchor="middle" fill="{color}" font-size="9">{escape(item)}</text>'
+        )
+        cx += w + 6
+    return "".join(out)
+
+
+def render_project_card(p: dict, index: int) -> str:
+    w, h = 410, 196
+    live = bool(p.get("live"))
+    lines = _wrap(_summary(p["description"]), 56)[:3]
+    body = "".join(
+        f'<text class="s" x="22" y="{86 + j * 18}" fill="rgba(255,255,255,0.68)" font-size="12.5">{escape(line)}</text>'
+        for j, line in enumerate(lines)
     )
-    rows = ["| Repository | PR | Description |", "|:-----------|:---|:------------|"]
-    rows += [
-        f"| [{e['repo']}](https://github.com/{e['repo']}) | [{_pr_label(e['url'])}]({e['url']}) | {e['title']} |"
-        for e in merged
+    status = (
+        f'<circle cx="{w - 72}" cy="30" r="3.5" fill="{GREEN}"><animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>'
+        f'<text class="m" x="{w - 62}" y="34" fill="{GREEN}" font-size="9">LIVE</text>'
+        if live
+        else f'<text class="m" x="{w - 22}" y="34" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="9">SOURCE</text>'
+    )
+    return "".join(
+        [
+            svg_open(w, h, f"{p['title']}: {_summary(p['description'])}"),
+            f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1px}}.t{{font-family:{SANS};font-weight:800}}"
+            f".s{{font-family:{SANS};font-weight:500}}</style>",
+            '<defs><linearGradient id="shine" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
+            '<stop offset="0.5" stop-color="#fff" stop-opacity="0.06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+            f'<clipPath id="c"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="16"/></clipPath></defs>',
+            f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="16" fill="{CARD}" stroke="rgba(255,255,255,0.09)"/>',
+            f'<rect x="0" y="22" width="3" height="28" rx="1.5" fill="{BLUE_LIGHT}"/>',
+            f'<text class="m" x="22" y="34" fill="{BLUE_LIGHT}" font-size="9">{escape(p.get("date", "").upper())}</text>',
+            status,
+            f'<text class="t" x="22" y="62" fill="#f3f4f6" font-size="19">{escape(p["title"])}</text>',
+            body,
+            _chips(p.get("tools_tech", [])[:5], 22, h - 38, w - 44, SKY),
+            f'<g clip-path="url(#c)"><rect x="-140" y="0" width="120" height="{h}" fill="url(#shine)" transform="skewX(-18)">'
+            f'<animateTransform attributeName="transform" type="translate" values="0 0;700 0" dur="6s" begin="{index * 0.7:.1f}s" repeatCount="indefinite" additive="sum"/></rect></g>',
+            SVG_CLOSE,
+        ]
+    )
+
+
+def render_tool_card(p: dict, stars: int | None, index: int) -> str:
+    w, h = 270, 150
+    lines = _wrap(_summary(p["description"], 96), 38)[:3]
+    body = "".join(
+        f'<text class="s" x="18" y="{68 + j * 16}" fill="rgba(255,255,255,0.66)" font-size="11">{escape(line)}</text>'
+        for j, line in enumerate(lines)
+    )
+    star = (
+        f'<path d="M{w - 50} {h - 30} l3.1 6.3 6.9 1 -5 4.9 1.2 6.9 -6.2 -3.3 -6.2 3.3 1.2 -6.9 -5 -4.9 6.9 -1z" fill="{AMBER}"/>'
+        f'<text class="m" x="{w - 36}" y="{h - 17}" fill="{AMBER}" font-size="11">{stars}</text>'
+        if stars is not None
+        else ""
+    )
+    return "".join(
+        [
+            svg_open(w, h, f"{p['title']}: {_summary(p['description'], 96)}"),
+            f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1px}}.t{{font-family:{SANS};font-weight:800}}"
+            f".s{{font-family:{SANS};font-weight:500}}</style>",
+            f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{CARD}" stroke="rgba(255,255,255,0.09)"/>',
+            f'<rect x="0" y="20" width="3" height="24" rx="1.5" fill="{SKY}">'
+            f'<animate attributeName="opacity" values="1;0.4;1" dur="3s" begin="{index * 0.25:.2f}s" repeatCount="indefinite"/></rect>',
+            f'<text class="t" x="18" y="40" fill="#f3f4f6" font-size="15">{escape(p["title"])}</text>',
+            star,
+            body,
+            _chips(p.get("tools_tech", [])[:3], 18, h - 32, w - 92, BLUE_LIGHT),
+            SVG_CLOSE,
+        ]
+    )
+
+
+def render_profile_badges(data: dict) -> str:
+    gh = data.get("github") or {}
+    lc = data["leetcode"]
+    today = datetime.date.today()
+    years = today.year - CAREER_START[0] - (1 if today.month < CAREER_START[1] else 0)
+    certs = len(credly_badges("Industry Certifications"))
+    pills = [
+        ("PROFILE VIEWS", f"{data.get('views', 0):,}", BLUE_LIGHT),
+        ("FOLLOWERS", f"{gh.get('followers', 0):,}", BLUE_LIGHT),
+        ("TOTAL STARS", f"{gh.get('stars', 0):,}", AMBER),
+        (
+            "LEETCODE",
+            f"{lc['badge'].upper()}  |  PEAK {max(lc.get('history') or [lc['rating']])}",
+            AMBER,
+        ),
+        ("CERTIFIED", f"{certs}x AWS / TERRAFORM", SKY),
+        ("EXPERIENCE", f"{years}+ YEARS AT AWS", GREEN),
+        ("PORTFOLIO", "SAGARGUPTA.ONLINE", BLUE_LIGHT),
     ]
-    return "\n".join(rows)
-
-
-def oss_review_block(oss: list[dict]) -> str:
-    grouped: dict[str, list[dict]] = {}
-    for e in oss:
-        if e.get("status") == "open":
-            grouped.setdefault(e["repo"], []).append(e)
-    ordered = sorted(grouped.items(), key=lambda kv: -len(kv[1]))
-    count = sum(len(v) for v in grouped.values())
-    names = ", ".join(repo for repo, _ in ordered)
-    rows = [
-        f"<summary><b>{count} PRs under review</b> ({names}) + community impact</summary>",
-        "<br/>",
-        "",
-        "| Repository | PR | Description |",
-        "|:-----------|:---|:------------|",
+    w, h = 840, 104
+    parts = [
+        svg_open(w, h, "; ".join(f"{k.title()} {v}" for k, v, _ in pills)),
+        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}</style>",
     ]
-    for repo, entries in ordered:
-        entries = sorted(entries, key=lambda e: _pr_label(e["url"]))
-        links = ", ".join(f"[{_pr_label(e['url'])}]({e['url']})" for e in entries)
-        titles = "; ".join(e["title"] for e in entries)
-        rows.append(f"| [{repo}](https://github.com/{repo}) | {links} | {titles} |")
-    return "\n".join(rows)
+    # two centered rows: four, then three
+    for row, (lo, hi) in enumerate(((0, 4), (4, 7))):
+        items = pills[lo:hi]
+        widths = [24 + (len(k) + len(v)) * 7.1 + 18 for k, v, _ in items]
+        total = sum(widths) + 12 * (len(items) - 1)
+        x = (w - total) / 2
+        y = 8 + row * 50
+        for i, ((key, value, color), bw) in enumerate(zip(items, widths)):
+            kw = 16 + len(key) * 7.1
+            begin = 0.1 + (lo + i) * 0.1
+            parts.append(
+                f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.1f}s" dur="0.4s" fill="freeze"/>'
+                f'<rect x="{x:.1f}" y="{y}" width="{bw:.1f}" height="36" rx="18" fill="{CARD}" stroke="{color}55"/>'
+                f'<rect x="{x:.1f}" y="{y}" width="{kw:.1f}" height="36" rx="18" fill="{color}1f"/>'
+                f'<text class="m" x="{x + kw / 2:.1f}" y="{y + 22}" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9.5">{key}</text>'
+                f'<text class="m" x="{x + kw + (bw - kw) / 2:.1f}" y="{y + 22}" text-anchor="middle" fill="{color}" font-size="10.5">{escape(value)}</text></g>'
+            )
+            x += bw + 12
+    parts.append(SVG_CLOSE)
+    return "".join(parts)
 
 
-def engagements_block(pf: dict) -> str:
-    lines = []
-    for e in reversed(pf["engagements"]):
+CONNECT = [
+    (
+        "linkedin",
+        "LinkedIn",
+        "linkedin",
+        "https://www.linkedin.com/in/sagar-gupta-16-10",
+    ),
+    ("leetcode", "LeetCode", "leetcode", "https://leetcode.com/sagargupta1610/"),
+    (
+        "portfolio",
+        "Portfolio",
+        "googlechrome",
+        "https://sagargupta.online/portfolio-react/",
+    ),
+    ("email", "Email", "gmail", "mailto:sg85207@gmail.com"),
+    ("github", "GitHub", "github", "https://github.com/Sagargupta16"),
+]
+
+
+def _button_label(label: str, has_icon: bool, w: int) -> str:
+    if has_icon:
+        return f'<text class="m" x="48" y="27" fill="#f3f4f6" font-size="11">{label.upper()}</text>'
+    return f'<text class="m" x="{w / 2}" y="27" text-anchor="middle" fill="#f3f4f6" font-size="11">{label.upper()}</text>'
+
+
+def render_connect_button(label: str, icon_path: str | None, index: int) -> str:
+    w, h = 156, 44
+    icon = (
+        f'<svg x="16" y="12" width="20" height="20" viewBox="0 0 24 24"><path d="{icon_path}" fill="rgba(255,255,255,0.9)"/></svg>'
+        if icon_path
+        else ""
+    )
+    return "".join(
+        [
+            svg_open(w, h, label),
+            f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.4px}}</style>",
+            f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="22" fill="{CARD}" stroke="{BLUE_LIGHT}66"/>',
+            f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="22" fill="{BLUE}22" opacity="0">'
+            f'<animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.1;0.2;1" dur="5s" begin="{index * 0.5:.1f}s" repeatCount="indefinite"/></rect>',
+            icon,
+            _button_label(label, icon_path is not None, w),
+            SVG_CLOSE,
+        ]
+    )
+
+
+def render_oss(data: dict) -> str | None:
+    pf = data.get("portfolio") or {}
+    oss = pf.get("oss") or []
+    merged = [e for e in oss if e.get("status") == "merged"]
+    review = [e for e in oss if e.get("status") == "open"]
+    if not merged:
+        return None
+    stars = data.get("oss_stars", {})
+    repos: dict[str, int] = {}
+    for e in merged:
+        repos[e["repo"]] = repos.get(e["repo"], 0) + 1
+    ranked = sorted(repos, key=lambda r: -stars.get(r, 0))
+    reach = sum(stars.get(r, 0) for r in repos)
+    w, h = 840, 250
+    tiles = [
+        (str(len(merged)), "merged upstream"),
+        (str(len(review)), "in review"),
+        (str(len(repos)), "projects contributed to"),
+        (
+            f"{reach // 1000}K+" if reach >= 1000 else str(reach),
+            "combined stars",
+        ),
+    ]
+    parts = [
+        svg_open(
+            w,
+            h,
+            f"Open source: {len(merged)} merged upstream, {len(review)} in review, across {len(repos)} projects",
+        ),
+        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.v{{font-family:{SANS};font-weight:800}}</style>",
+        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
+        f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10">OPEN SOURCE  |  MERGED UPSTREAM</text>',
+    ]
+    tw = (w - 32 - 3 * 10) / 4
+    for i, (value, label) in enumerate(tiles):
+        x = 16 + i * (tw + 10)
+        parts.append(
+            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.1 + i * 0.1:.1f}s" dur="0.4s" fill="freeze"/>'
+            f'<rect x="{x:.1f}" y="44" width="{tw:.1f}" height="62" rx="10" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
+            f'<text class="v" x="{x + 14:.1f}" y="76" fill="#f3f4f6" font-size="22">{value}</text>'
+            f'<text class="m" x="{x + 14:.1f}" y="95" fill="rgba(255,255,255,0.5)" font-size="8">{label.upper()}</text></g>'
+        )
+    # merged-into chips, biggest projects first
+    x, y = 24.0, 128
+    for i, repo in enumerate(ranked):
+        count = repos[repo]
+        s = stars.get(repo, 0)
+        star_txt = f"  {s / 1000:.1f}K" if s >= 1000 else (f"  {s}" if s else "")
+        label = f"{repo}{'  x' + str(count) if count > 1 else ''}{star_txt}"
+        cw = 16 + len(label) * 6.3
+        if x + cw > w - 24:
+            x, y = 24.0, y + 30
+        if y > h - 30:
+            break
+        parts.append(
+            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.5 + i * 0.06:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="22" rx="11" fill="{SKY}12" stroke="{SKY}44"/>'
+            f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 15}" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="9">{escape(label)}</text></g>'
+        )
+        x += cw + 8
+    parts.append(SVG_CLOSE)
+    return "".join(parts)
+
+
+def fetch_oss_stars(oss: list[dict]) -> dict[str, int]:
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    stars = {}
+    for repo in sorted({e["repo"] for e in oss}):
+        try:
+            stars[repo] = json.loads(
+                fetch(f"https://api.github.com/repos/{repo}", token=token)
+            ).get("stargazers_count", 0)
+        except Exception as exc:
+            print(f"stars for {repo} failed: {exc}")
+    return stars
+
+
+def render_cards(data: dict) -> None:
+    pf = data.get("portfolio") or {}
+    for i, p in enumerate(
+        q for q in pf.get("featured", []) if q.get("organization") != "aws-samples"
+    ):
+        write(f"project-{_slug(p['title'])}.svg", render_project_card(p, i))
+    repo_stars = (data.get("github") or {}).get("repo_stars", {})
+    for i, p in enumerate(pf.get("community", [])):
+        name = p["github"].rstrip("/").rsplit("/", 1)[-1]
+        write(
+            f"tool-{_slug(p['title'])}.svg",
+            render_tool_card(p, repo_stars.get(name), i),
+        )
+    paths = {}
+    for _, _, slug, _ in CONNECT:
+        paths[slug] = fetch_simple_icon(slug)
+    for i, (key, label, slug, _) in enumerate(CONNECT):
+        write(f"connect-{key}.svg", render_connect_button(label, paths[slug], i))
+
+
+# ---------------------------------------------------------------- list cards (engagements, publications, OSS)
+
+
+def _clip(text: str, limit: int) -> str:
+    return text if len(text) <= limit else text[: limit - 3].rsplit(" ", 1)[0] + "..."
+
+
+def render_list_card(
+    kicker: str, rows: list[tuple[str, str, str]], accent: str, footer: str = ""
+) -> str:
+    """Return a card of rows: bold primary, dimmed secondary line, mono meta on the right."""
+    w = 840
+    row_h = 46
+    top = 50
+    h = top + len(rows) * row_h + (34 if footer else 12)
+    parts = [
+        svg_open(
+            w, h, kicker.title() + ": " + "; ".join(f"{a} {b} {c}" for a, b, c in rows)
+        ),
+        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.t{{font-family:{SANS};font-weight:700}}"
+        f".s{{font-family:{SANS};font-weight:500}}</style>",
+        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
+        f'<text class="m" x="24" y="31" fill="{accent}" font-size="10">{escape(kicker)}</text>',
+    ]
+    for i, (primary, secondary, meta) in enumerate(rows):
+        y = top + i * row_h
+        begin = 0.15 + i * 0.07
+        parts.append(
+            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<animateTransform attributeName="transform" type="translate" from="-8 0" to="0 0" begin="{begin:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<line x1="24" y1="{y}" x2="{w - 24}" y2="{y}" stroke="rgba(255,255,255,0.06)"/>'
+            f'<circle cx="30" cy="{y + 23}" r="3" fill="{accent}"/>'
+            f'<text class="t" x="44" y="{y + 20}" fill="#f3f4f6" font-size="13.5">{escape(_clip(primary, 60))}</text>'
+            f'<text class="s" x="44" y="{y + 37}" fill="rgba(255,255,255,0.6)" font-size="11.5">{escape(_clip(secondary, 104))}</text>'
+            f'<text class="m" x="{w - 24}" y="{y + 20}" text-anchor="end" fill="rgba(255,255,255,0.45)" font-size="9">{escape(meta.upper())}</text></g>'
+        )
+    if footer:
+        parts.append(
+            f'<text class="s" x="24" y="{h - 14}" fill="rgba(255,255,255,0.55)" font-size="11">{escape(_clip(footer, 150))}</text>'
+        )
+    parts.append(SVG_CLOSE)
+    return "".join(parts)
+
+
+def render_engagements(pf: dict) -> str:
+    rows = []
+    for e in reversed(pf.get("engagements", [])):
         role = e["name"].replace(" (Ongoing)", "")
         if " - " in role:
             role = role.rsplit(" - ", 1)[0]
         elif role.endswith(")") and " (" in role:
             role = role.rsplit(" (", 1)[0]
-        link = f" Published as an [AWS sample]({e['link']})." if e.get("link") else ""
-        lines.append(
-            f"- **{e['client']}** ({e['when']}): {role}. Stack: {', '.join(e['stack'])}.{link}"
-        )
-    for e in pf["earlier"]:
+        rows.append((e["client"], f"{role}  |  {', '.join(e['stack'])}", e["when"]))
+    for e in pf.get("earlier", []):
         kind = f", {e['position'].lower()}" if e.get("position") else ""
-        lines.append(
-            f"- **{e['company']}** ({_range_label(e['date'])}): {e['title']}{kind}"
-        )
-    return "\n".join(lines)
-
-
-def _sample_link(title: str, samples: list[dict]) -> str | None:
-    return next(
-        (s["url"] for s in samples if s["title"].lower() in title.lower()), None
+        rows.append((e["company"], f"{e['title']}{kind}", _range_label(e["date"])))
+    return render_list_card(
+        "ENGAGEMENTS AT AWS PROFESSIONAL SERVICES  |  AVERAGE CSAT 10/10  |  AVERAGE PULSE 5/5",
+        rows,
+        GREEN,
     )
 
 
-def publications_block(pf: dict) -> str:
-    groups: dict[str, list[str]] = {
-        "sample": [],
-        "apg": [],
-        "review": [],
-        "talk": [],
-        "other": [],
-    }
+def render_publications(pf: dict) -> str:
+    kinds = []
     for c in sorted(
-        pf["contributions"], key=lambda c: str(c.get("year", "")), reverse=True
+        pf.get("contributions", []), key=lambda c: str(c.get("year", "")), reverse=True
     ):
-        title, year = c["title"], c.get("year", "")
+        title, year = c["title"], str(c.get("year", ""))
         if title.startswith("AWS Sample Published: "):
-            name = title.split(": ", 1)[1].removesuffix("(aws-samples, MIT-0)").strip()
-            url = _sample_link(name, pf["samples"])
-            groups["sample"].append(
-                f"- **AWS sample:** {f'[{name}]({url})' if url else name} ({year})"
+            kinds.append(
+                (
+                    0,
+                    "AWS sample",
+                    title.split(": ", 1)[1]
+                    .removesuffix("(aws-samples, MIT-0)")
+                    .strip(),
+                    year,
+                )
             )
         elif title.startswith("APG Pattern: "):
-            name = title.split(": ", 1)[1].removesuffix("(Published)").strip()
-            groups["apg"].append(
-                f"- **AWS Prescriptive Guidance pattern:** {name} ({year})"
+            kinds.append(
+                (
+                    1,
+                    "AWS Prescriptive Guidance",
+                    title.split(": ", 1)[1].removesuffix("(Published)").strip(),
+                    year,
+                )
             )
         elif "Peer Reviewed" in title:
-            groups["review"].append(
-                f"- **Peer review:** {title.replace(' Peer Reviewed', '')} ({year})"
-            )
+            kinds.append((2, "Peer review", title.replace(" Peer Reviewed", ""), year))
         elif title.startswith("Tech Talk: "):
-            groups["talk"].append(
-                f"- **Tech talk:** {title.split(': ', 1)[1]} ({year})"
-            )
+            kinds.append((3, "Tech talk", title.split(": ", 1)[1], year))
         else:
-            groups["other"].append(f"- {title} ({year})")
-    lines = [
-        line
-        for key in ("sample", "apg", "review", "talk", "other")
-        for line in groups[key]
+            kinds.append((4, "Contribution", title, year))
+    kinds.sort(key=lambda k: k[0])
+    rows = [(label, text, year) for _, label, text, year in kinds]
+    rows += [
+        ("Recognition", a["title"].replace(" - ", ", "), str(a.get("year", "")))
+        for a in pf.get("achievements", [])
     ]
-    recognition = "; ".join(a["title"].replace(" - ", ", ") for a in pf["achievements"])
-    if recognition:
-        lines.append(f"- **Recognition:** {recognition}")
-    return "\n".join(lines)
+    return render_list_card("PUBLICATIONS, TALKS AND RECOGNITION", rows, SKY)
 
 
-def update_readme(pf: dict) -> None:
-    # The target is always the fixed README_PATH constant; only the block
-    # contents come from the portfolio data, never any part of the path.
-    text = README_PATH.read_text(encoding="utf-8")
-    new = replace_block(text, "ENGAGEMENTS", engagements_block(pf))
-    new = replace_block(new, "PUBLICATIONS", publications_block(pf))
-    new = replace_block(new, "OSS-MERGED", oss_merged_block(pf["oss"]))
-    new = replace_block(new, "OSS-REVIEW", oss_review_block(pf["oss"]))
-    if new != text:
+def render_education(pf: dict) -> str:
+    rows = []
+    for e in pf.get("education", [])[:2]:
+        facts = [f"CGPA {e['cgpa']}"] if e.get("cgpa") else []
+        facts += [a for a in (e.get("achievements") or [])[:2]]
+        rows.append(
+            (
+                f"{e['title']}",
+                f"{e['institution']}  |  {', '.join(facts)}",
+                _range_label(e["date"]),
+            )
+        )
+    return render_list_card("EDUCATION", rows, BLUE_LIGHT)
+
+
+def render_oss_merged(pf: dict) -> str:
+    merged = sorted(
+        (e for e in pf.get("oss", []) if e.get("status") == "merged"),
+        key=lambda e: e.get("merged_at") or "",
+        reverse=True,
+    )
+    rows = [(e["repo"], e["title"], _pr_label(e["url"])) for e in merged]
+    return render_list_card(
+        f"{len(rows)} MERGED UPSTREAM  |  NEWEST FIRST", rows, GREEN
+    )
+
+
+def render_oss_review(pf: dict) -> str:
+    grouped: dict[str, list[dict]] = {}
+    for e in pf.get("oss", []):
+        if e.get("status") == "open":
+            grouped.setdefault(e["repo"], []).append(e)
+    ordered = sorted(grouped.items(), key=lambda kv: -len(kv[1]))
+    rows = [
+        (
+            repo,
+            "; ".join(e["title"] for e in entries),
+            ", ".join(
+                _pr_label(e["url"])
+                for e in sorted(entries, key=lambda e: _pr_label(e["url"]))
+            ),
+        )
+        for repo, entries in ordered
+    ]
+    count = sum(len(v) for v in grouped.values())
+    footer = "Community impact: fixed the AWS Ansible deploy and Elastic IP allocation in forem/selfhost, plus 3 accepted answers on GitHub Community Q&A"
+    return render_list_card(f"{count} PRS IN REVIEW", rows, AMBER, footer)
+
+
+def render_competitive(pf: dict, data: dict) -> str:
+    stats = pf.get("coding_stats", {})
+    lc = data["leetcode"]
+    tiles = [
+        (
+            "LEETCODE",
+            lc["badge"],
+            f"best contest rank {stats.get('leetcode', {}).get('best_contest_rank', '')}",
+        ),
+        (
+            "GEEKSFORGEEKS",
+            stats.get("geeksforgeeks", {}).get("problems_solved", ""),
+            "problems solved",
+        ),
+        (
+            "HACKERRANK",
+            stats.get("hackerrank", {}).get("problem_solving", ""),
+            "problem solving",
+        ),
+        ("KICK START '22", "1289", "round E rank"),
+    ]
+    podiums = [
+        a["title"]
+        for a in pf.get("contests", [])
+        if re.match(r"(1st|2nd|3rd|4th) Place", a["title"])
+    ]
+    w, h = 840, 196
+    tw = (w - 32 - 3 * 10) / 4
+    parts = [
+        svg_open(
+            w,
+            h,
+            "Competitive programming: "
+            + "; ".join(f"{a} {b} {c}" for a, b, c in tiles)
+            + "; "
+            + "; ".join(podiums),
+        ),
+        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.v{{font-family:{SANS};font-weight:800}}</style>",
+        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
+        f'<text class="m" x="24" y="30" fill="{AMBER}" font-size="10">COMPETITIVE PROGRAMMING</text>',
+    ]
+    for i, (key, value, label) in enumerate(tiles):
+        x = 16 + i * (tw + 10)
+        parts.append(
+            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.1 + i * 0.1:.1f}s" dur="0.4s" fill="freeze"/>'
+            f'<rect x="{x:.1f}" y="44" width="{tw:.1f}" height="72" rx="10" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
+            f'<text class="m" x="{x + 14:.1f}" y="64" fill="{AMBER}" font-size="8.5">{escape(key)}</text>'
+            f'<text class="v" x="{x + 14:.1f}" y="90" fill="#f3f4f6" font-size="20">{escape(str(value))}</text>'
+            f'<text class="m" x="{x + 14:.1f}" y="107" fill="rgba(255,255,255,0.5)" font-size="8">{escape(label.upper())}</text></g>'
+        )
+    x, y = 24.0, 134
+    for i, title in enumerate(podiums):
+        label = title.replace(" Place - ", "  ").replace(", ", " ")
+        cw = 16 + len(label) * 6.2
+        if x + cw > w - 24:
+            x, y = 24.0, y + 28
+        parts.append(
+            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.5 + i * 0.06:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="22" rx="11" fill="{AMBER}12" stroke="{AMBER}44"/>'
+            f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 15}" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-size="9">{escape(label.upper())}</text></g>'
+        )
+        x += cw + 8
+    parts.append(SVG_CLOSE)
+    return "".join(parts)
+
+
+INTRO_KEYWORDS = [
+    "AWS Professional Services",
+    "Terraform",
+    "CI/CD",
+    "MLOps pipelines",
+    "agent tooling",
+]
+SPECIALTIES = [
+    "DevOps Engineering",
+    "MLOps",
+    "AWS Cloud Infrastructure",
+    "Full Stack Development",
+]
+
+
+def _highlight(line: str) -> str:
+    """Escape a line and color the intro keywords it contains."""
+    out = escape(line)
+    for word in INTRO_KEYWORDS:
+        out = out.replace(
+            escape(word),
+            f'<tspan fill="{BLUE_LIGHT}" font-weight="700">{escape(word)}</tspan>',
+        )
+    return out
+
+
+def render_intro(pf: dict) -> str:
+    intro = pf.get("intro") or (
+        "Cloud consultant at AWS Professional Services. I build the AWS platforms that regulated companies migrate onto: "
+        "Terraform, CI/CD, MLOps pipelines, and lately the agent tooling that makes that work faster."
+    )
+    lines = _wrap(intro, 92)
+    w = 840
+    h = 60 + len(lines) * 24 + 56
+    parts = [
+        svg_open(w, h, intro),
+        f"<style>.s{{font-family:{SANS};font-weight:500}}.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}</style>",
+        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{CARD}" stroke="rgba(255,255,255,0.08)"/>',
+        f'<rect x="0" y="24" width="3" height="{len(lines) * 24 + 12}" rx="1.5" fill="{BLUE}"/>',
+        f'<text class="m" x="28" y="36" fill="{BLUE_LIGHT}" font-size="10">ABOUT</text>',
+    ]
+    for i, line in enumerate(lines):
+        parts.append(
+            f'<text class="s" x="28" y="{64 + i * 24}" fill="rgba(255,255,255,0.8)" font-size="15.5">{_highlight(line)}</text>'
+        )
+    parts.append(_chips(SPECIALTIES, 28, h - 40, w - 56, SKY))
+    parts.append(SVG_CLOSE)
+    return "".join(parts)
+
+
+CTAS = [
+    (
+        "cta-portfolio",
+        "View all {n} projects",
+        "https://sagargupta.online/portfolio-react/",
+    ),
+    (
+        "cta-resume",
+        "Download resume",
+        "https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf",
+    ),
+]
+
+
+def render_cta(label: str, primary: bool) -> str:
+    w, h = 250, 48
+    fill = BLUE if primary else CARD
+    return "".join(
+        [
+            svg_open(w, h, label),
+            f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.4px}}</style>",
+            f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="24" fill="{fill}" stroke="{BLUE_LIGHT}88"/>',
+            f'<text class="m" x="{w / 2}" y="29" text-anchor="middle" fill="#ffffff" font-size="11.5">{escape(label.upper())}</text>',
+            f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="24" fill="#ffffff" opacity="0">'
+            '<animate attributeName="opacity" values="0;0.12;0" dur="3s" repeatCount="indefinite"/></rect>',
+            SVG_CLOSE,
+        ]
+    )
+
+
+# ---------------------------------------------------------------- the README itself
+
+
+def _img(src: str, alt: str, width: str = "100%") -> str:
+    return f'<img src="assets/svg/{src}" width="{width}" alt="{escape(alt, quote=True)}" />'
+
+
+def _link(href: str, inner: str) -> str:
+    return f'<a href="{href}">{inner}</a>'
+
+
+def _header(key: str, title: str) -> str:
+    return (
+        "<picture>\n"
+        f'  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-{key}-dark.svg">\n'
+        f'  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-{key}-light.svg">\n'
+        f"  {_img(f'header-{key}-dark.svg', title)}\n"
+        "</picture>"
+    )
+
+
+def _row(cells: list[str], width: str) -> str:
+    """Return linked images side by side; no table, so GitHub draws no grid lines."""
+    inner = "\n".join(c.replace('width="100%"', f'width="{width}"') for c in cells)
+    return f'<p align="center">\n{inner}\n</p>'
+
+
+DIVIDER = _img("divider.svg", "")
+PORTFOLIO_URL = "https://sagargupta.online/portfolio-react/"
+CREDLY_URL = "https://www.credly.com/users/sagar-gupta.f8eb96cc"
+MERGED_URL = "https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16"
+REVIEW_URL = "https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Aopen+-user%3ASagargupta16"
+SNAKE = (
+    "<picture>\n"
+    '  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/output/github-snake-dark.svg" />\n'
+    '  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/output/github-snake.svg" />\n'
+    '  <img alt="Contribution snake" src="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/output/github-snake.svg" width="100%" />\n'
+    "</picture>"
+)
+
+
+def render_readme(data: dict) -> str:
+    pf = data.get("portfolio") or {}
+    projects = [
+        p for p in pf.get("featured", []) if p.get("organization") != "aws-samples"
+    ]
+    project_cells = [
+        _link(
+            p.get("live") or p.get("github"),
+            _img(
+                f"project-{_slug(p['title'])}.svg",
+                f"{p['title']}: {_summary(p['description'])}",
+            ),
+        )
+        for p in projects
+    ]
+    tool_cells = [
+        _link(
+            p["github"],
+            _img(
+                f"tool-{_slug(p['title'])}.svg",
+                f"{p['title']}: {_summary(p['description'], 96)}",
+            ),
+        )
+        for p in pf.get("community", [])
+    ]
+    samples = [
+        _link(
+            "https://github.com/aws-samples/sample-aws-terraform-org-governance",
+            _img(
+                "sample-org-governance.svg",
+                "AWS Organizations Governance, published AWS sample",
+            ),
+        ),
+        _link(
+            "https://github.com/aws-samples/sample-sagemaker-image-classification-mlops",
+            _img(
+                "sample-sagemaker-mlops.svg",
+                "SageMaker Image Classification MLOps, published AWS sample",
+            ),
+        ),
+    ]
+    count = pf.get("project_count", 45)
+    ctas = [
+        _link(url, _img(f"{key}.svg", label.format(n=count)))
+        for key, label, url in CTAS
+    ]
+    connect = [
+        _link(url, _img(f"connect-{key}.svg", label)) for key, label, _, url in CONNECT
+    ]
+    blocks = [
+        "<!-- Generated by scripts/render-svgs.py from the portfolio data. Edit the portfolio or the script, not this file. -->",
+        _link(
+            PORTFOLIO_URL,
+            _img(
+                "hero.svg", "Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS Professional Services"
+            ),
+        ),
+        _link(
+            PORTFOLIO_URL,
+            _img(
+                "profile-badges.svg",
+                "Followers, total stars, LeetCode, certifications, years at AWS, portfolio",
+            ),
+        ),
+        _img("intro.svg", pf.get("intro") or "About"),
+        _img(
+            "terminal.svg", "Terminal: whoami, published AWS samples, LeetCode profile"
+        ),
+        DIVIDER,
+        _header("experience", "Experience"),
+        _img("experience.svg", "Career timeline and customer engagements"),
+        _img("highlights.svg", "Highlights"),
+        _img("engagements.svg", "Engagements at AWS Professional Services"),
+        _img("publications.svg", "Publications, talks and recognition"),
+        _img("education.svg", "Education"),
+        DIVIDER,
+        _header("projects", "Featured Projects"),
+        _row(samples, "49%"),
+        _row(project_cells, "49%"),
+        _row(ctas, "30%"),
+        DIVIDER,
+        _header("community", "Community and Developer Tools"),
+        _row(tool_cells, "32%"),
+        DIVIDER,
+        _header("opensource", "Open Source"),
+        _link(MERGED_URL, _img("oss.svg", "Open source summary")),
+        _link(MERGED_URL, _img("oss-merged.svg", "Merged upstream pull requests")),
+        _link(REVIEW_URL, _img("oss-review.svg", "Pull requests in review")),
+        DIVIDER,
+        _header("connect", "Connect With Me"),
+        _row(connect, "18%"),
+        DIVIDER,
+        _header("stack", "Tech Stack and Tools"),
+        _img("stack.svg", "Tech stack"),
+        _img("ai-stack.svg", "AI-assisted engineering"),
+        DIVIDER,
+        _header("stats", "GitHub Stats"),
+        _img("github.svg", "GitHub stats"),
+        _link(
+            "https://leetcode.com/sagargupta1610/",
+            _img("leetcode.svg", "LeetCode contest rating"),
+        ),
+        _img("competitive.svg", "Competitive programming"),
+        SNAKE,
+        DIVIDER,
+        _header("certs", "Certifications and Badges"),
+        _link(CREDLY_URL, _img("certs.svg", "Credly badges")),
+        DIVIDER,
+        # a 1px copy of the komarev counter keeps visits counted; the number itself shows in profile-badges.svg
+        _img("footer.svg", "Thanks for visiting") + f' <img src="{VIEWS_URL}" width="1" height="1" alt="" />',
+    ]
+    return "\n\n".join(blocks) + "\n"
+
+
+def write_readme(data: dict) -> None:
+    content = render_readme(data)
+    old = README_PATH.read_text(encoding="utf-8") if README_PATH.exists() else None
+    if old != content:
+        # README_PATH is a constant; only the generated layout above is written
         with open(README_PATH, "w", encoding="utf-8", newline="\n") as fh:
-            fh.write(new)
-        print("wrote README.md blocks")
+            fh.write(content)
+        print("wrote README.md")
 
 
 def write(name: str, content: str) -> None:
@@ -1740,18 +2388,34 @@ def main() -> None:
         print(f"portfolio fetch failed, reusing cached snapshot: {exc}")
     if data.get("portfolio"):
         data["portfolio"]["oss"] = oss_with_live_state(data["portfolio"]["oss"])
-        update_readme(data["portfolio"])
+        stars = fetch_oss_stars(data["portfolio"]["oss"])
+        if stars:
+            data["oss_stars"] = {**data.get("oss_stars", {}), **stars}
     write("data.json", json.dumps(data, indent=2) + "\n")
     write("terminal.svg", render_terminal(data))
     write("experience.svg", render_experience(data))
     write("highlights.svg", render_highlights(data))
     write("hero.svg", render_hero(data))
     write("footer.svg", render_footer())
+    write("profile-badges.svg", render_profile_badges(data))
+    render_cards(data)
+    pf = data.get("portfolio") or {}
+    if pf:
+        write("intro.svg", render_intro(pf))
+        write("engagements.svg", render_engagements(pf))
+        write("publications.svg", render_publications(pf))
+        write("education.svg", render_education(pf))
+        write("oss-merged.svg", render_oss_merged(pf))
+        write("oss-review.svg", render_oss_review(pf))
+        write("competitive.svg", render_competitive(pf, data))
+    for i, (key, label, _) in enumerate(CTAS):
+        write(f"{key}.svg", render_cta(label.format(n=pf.get("project_count", 45)), i == 0))
     for name, content in (
         ("certs.svg", render_certs()),
         ("leetcode.svg", render_leetcode(data)),
         ("github.svg", render_github(data)),
         ("ai-stack.svg", render_ai_stack()),
+        ("oss.svg", render_oss(data)),
     ):
         if content is None:
             print(f"{name} kept as is: its data fetch failed")
@@ -1768,6 +2432,7 @@ def main() -> None:
     else:
         print("stack.svg kept as is: an icon fetch failed")
     write("divider.svg", render_divider())
+    write_readme(data)
 
 
 if __name__ == "__main__":

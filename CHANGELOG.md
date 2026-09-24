@@ -2,6 +2,16 @@
 
 All notable changes to this profile README repository.
 
+## [4.7.0] - 2026-09-24
+
+- The portfolio (brand/portfolio-react `data/*.json`) is now the single source of truth for the parts of this README that change: the daily render reads it from the portfolio's main branch
+  - Career timeline engagements and the engagement list: client, dates and stack from the AWS entry's projects
+  - Publications, talks and recognition from `internal_contributions` and `internal_achievements`, with AWS sample links matched to the portfolio's aws-samples projects
+  - Highlights: published AWS samples, TFC ambassador count and merged contributions
+  - Terminal hero: the published samples list
+- Open-source tables generated from `open_source_contributions`, with every open PR re-checked live on each run: a PR that merges moves to the merged table and the under-review count follows, even before the portfolio is updated
+- Generated regions sit between `<!-- ENGAGEMENTS -->`, `<!-- PUBLICATIONS -->`, `<!-- OSS-MERGED -->` and `<!-- OSS-REVIEW -->` markers; edit the portfolio, not these blocks
+
 ## [4.6.0] - 2026-09-24
 
 - The README is now fully self-hosted: every third-party widget is replaced by an SVG rendered by `scripts/render-svgs.py`

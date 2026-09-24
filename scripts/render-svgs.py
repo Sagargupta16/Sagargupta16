@@ -352,7 +352,10 @@ def shown_line(x: int, y: int, text: str, begin: float, color: str) -> str:
 
 def render_terminal(data: dict) -> str:
     lc = data["leetcode"]
-    samples = [s["url"].split("github.com/", 1)[1] for s in (data.get("portfolio") or {}).get("samples", [])] or [
+    samples = [
+        s["url"].split("github.com/", 1)[1]
+        for s in (data.get("portfolio") or {}).get("samples", [])
+    ] or [
         "aws-samples/sample-aws-terraform-org-governance",
         "aws-samples/sample-sagemaker-image-classification-mlops",
     ]
@@ -811,7 +814,9 @@ def _fade_group(at: float, body: str) -> str:
 def render_experience(data: dict) -> str:
     """Top rail to the current role, which then expands into its customer engagements."""
     pf = data.get("portfolio") or {}
-    engagements = [(e["when"], e["client"], e["tagline"]) for e in pf.get("engagements", [])] or ENGAGEMENTS
+    engagements = [
+        (e["when"], e["client"], e["tagline"]) for e in pf.get("engagements", [])
+    ] or ENGAGEMENTS
     w, h = 840, 330
     left, right, top_y = 96, 690, 84
     step = (right - left) / (len(MILESTONES) - 1)
@@ -918,8 +923,18 @@ def render_highlights(data: dict) -> str:
     counts = readme_counts()
     pf = data.get("portfolio") or {}
     samples = len(pf.get("samples", [])) or 2
-    tfc = next((m.group(1) for a in pf.get("achievements", []) if (m := re.match(r"(\d+)x TFC", a["title"]))), "5")
-    merged = sum(1 for e in pf.get("oss", []) if e.get("status") == "merged") or counts["merged"]
+    tfc = next(
+        (
+            m.group(1)
+            for a in pf.get("achievements", [])
+            if (m := re.match(r"(\d+)x TFC", a["title"]))
+        ),
+        "5",
+    )
+    merged = (
+        sum(1 for e in pf.get("oss", []) if e.get("status") == "merged")
+        or counts["merged"]
+    )
     tiles = [
         ("10/10", "average client CSAT", GREEN),
         ("5/5", "average Pulse feedback", GREEN),
@@ -1150,7 +1165,11 @@ def render_certs() -> str | None:
     for i, ((title, _), img) in enumerate(zip(badges, images)):
         cx = 16 + col * i + col / 2
         begin = 0.2 + i * 0.15
-        short = title.replace("AWS Certified ", "").replace("HashiCorp Certified: ", "").replace(" - ", " ")
+        short = (
+            title.replace("AWS Certified ", "")
+            .replace("HashiCorp Certified: ", "")
+            .replace(" - ", " ")
+        )
         lines = _wrap(short, 18)[:3]
         text = "".join(
             f'<text class="m" x="{cx}" y="{176 + j * 13}" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="8.5">{escape(line.upper())}</text>'
@@ -1444,7 +1463,7 @@ GENERIC_SKILLS = {"AWS", "Cloud Migration", "Solution Architecture"}
 
 
 def _start_key(date: str) -> tuple[int, int]:
-    """Sort key from a range like 'Oct 2024 - Aug 2025' or 'March 2024 - July 2024'."""
+    """Return a sort key for a range like 'Oct 2024 - Aug 2025' or 'March 2024 - July 2024'."""
     m = re.match(r"\s*([A-Za-z]+)\s+(\d{4})", date)
     if not m:
         return (0, 0)
@@ -1458,7 +1477,7 @@ def _range_label(date: str) -> str:
 
 
 def _client_label(name: str) -> str:
-    """'DevOps Consultant - State Street' -> 'State Street'; '... MLOps Pipeline (SME Program)' -> 'MLOps SME Program'."""
+    """Return the client, e.g. 'State Street' from 'DevOps Consultant - State Street'."""
     name = name.strip().removesuffix("(Ongoing)").strip()
     if " - " in name:
         return name.rsplit(" - ", 1)[1].strip()
@@ -1476,7 +1495,7 @@ def _tagline(name: str, skills: list[str], count: int = 2) -> str:
 
 
 def portfolio_snapshot(experience: dict, projects: dict) -> dict:
-    """The small slice of portfolio data the README uses, cached in data.json."""
+    """Return the small slice of portfolio data the README uses, cached in data.json."""
     aws = experience["professional_experience"][0]
     engagements = sorted(
         aws.get("projects", []), key=lambda p: _start_key(p.get("date", ""))
@@ -1526,7 +1545,7 @@ PR_URL = re.compile(r"^https://github\.com/([^/]+/[^/]+)/pull/(\d+)$")
 
 
 def live_pr_state(url: str, token: str | None) -> tuple[str, str | None] | None:
-    """(state, merged_at) straight from GitHub, or None for non-PR links."""
+    """Return (state, merged_at) straight from GitHub, or None for non-PR links."""
     m = PR_URL.match(url)
     if not m:
         return None
@@ -1574,6 +1593,7 @@ def replace_block(text: str, key: str, body: str) -> str:
     # the blank line before END closes any table or list for GitHub's Markdown
     return text[:i] + "\n" + body.strip("\n") + "\n\n" + text[j:]
 
+
 def _pr_label(url: str) -> str:
     m = PR_URL.match(url)
     if m:
@@ -1618,6 +1638,7 @@ def oss_review_block(oss: list[dict]) -> str:
         rows.append(f"| [{repo}](https://github.com/{repo}) | {links} | {titles} |")
     return "\n".join(rows)
 
+
 def engagements_block(pf: dict) -> str:
     lines = []
     for e in reversed(pf["engagements"]):
@@ -1627,11 +1648,16 @@ def engagements_block(pf: dict) -> str:
         elif role.endswith(")") and " (" in role:
             role = role.rsplit(" (", 1)[0]
         link = f" Published as an [AWS sample]({e['link']})." if e.get("link") else ""
-        lines.append(f"- **{e['client']}** ({e['when']}): {role}. Stack: {', '.join(e['stack'])}.{link}")
+        lines.append(
+            f"- **{e['client']}** ({e['when']}): {role}. Stack: {', '.join(e['stack'])}.{link}"
+        )
     for e in pf["earlier"]:
         kind = f", {e['position'].lower()}" if e.get("position") else ""
-        lines.append(f"- **{e['company']}** ({_range_label(e['date'])}): {e['title']}{kind}")
+        lines.append(
+            f"- **{e['company']}** ({_range_label(e['date'])}): {e['title']}{kind}"
+        )
     return "\n".join(lines)
+
 
 def _sample_link(title: str, samples: list[dict]) -> str | None:
     return next(
@@ -1640,27 +1666,48 @@ def _sample_link(title: str, samples: list[dict]) -> str | None:
 
 
 def publications_block(pf: dict) -> str:
-    groups: dict[str, list[str]] = {"sample": [], "apg": [], "review": [], "talk": [], "other": []}
-    for c in sorted(pf["contributions"], key=lambda c: str(c.get("year", "")), reverse=True):
+    groups: dict[str, list[str]] = {
+        "sample": [],
+        "apg": [],
+        "review": [],
+        "talk": [],
+        "other": [],
+    }
+    for c in sorted(
+        pf["contributions"], key=lambda c: str(c.get("year", "")), reverse=True
+    ):
         title, year = c["title"], c.get("year", "")
         if title.startswith("AWS Sample Published: "):
             name = title.split(": ", 1)[1].removesuffix("(aws-samples, MIT-0)").strip()
             url = _sample_link(name, pf["samples"])
-            groups["sample"].append(f"- **AWS sample:** {f'[{name}]({url})' if url else name} ({year})")
+            groups["sample"].append(
+                f"- **AWS sample:** {f'[{name}]({url})' if url else name} ({year})"
+            )
         elif title.startswith("APG Pattern: "):
             name = title.split(": ", 1)[1].removesuffix("(Published)").strip()
-            groups["apg"].append(f"- **AWS Prescriptive Guidance pattern:** {name} ({year})")
+            groups["apg"].append(
+                f"- **AWS Prescriptive Guidance pattern:** {name} ({year})"
+            )
         elif "Peer Reviewed" in title:
-            groups["review"].append(f"- **Peer review:** {title.replace(' Peer Reviewed', '')} ({year})")
+            groups["review"].append(
+                f"- **Peer review:** {title.replace(' Peer Reviewed', '')} ({year})"
+            )
         elif title.startswith("Tech Talk: "):
-            groups["talk"].append(f"- **Tech talk:** {title.split(': ', 1)[1]} ({year})")
+            groups["talk"].append(
+                f"- **Tech talk:** {title.split(': ', 1)[1]} ({year})"
+            )
         else:
             groups["other"].append(f"- {title} ({year})")
-    lines = [line for key in ("sample", "apg", "review", "talk", "other") for line in groups[key]]
+    lines = [
+        line
+        for key in ("sample", "apg", "review", "talk", "other")
+        for line in groups[key]
+    ]
     recognition = "; ".join(a["title"].replace(" - ", ", ") for a in pf["achievements"])
     if recognition:
         lines.append(f"- **Recognition:** {recognition}")
     return "\n".join(lines)
+
 
 def update_readme(pf: dict) -> None:
     path = README_PATH

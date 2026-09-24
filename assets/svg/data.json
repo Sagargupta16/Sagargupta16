@@ -130,12 +130,12 @@
     ]
   },
   "github": {
-    "contributions": 8095,
-    "commits": 5970,
-    "prs": 1533,
+    "contributions": 8098,
+    "commits": 5972,
+    "prs": 1534,
     "reviews": 34,
     "issues": 114,
-    "stars": 278,
+    "stars": 272,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -145,10 +145,8 @@
       "Minesweeper-Game__UnityEngine": 4,
       "FlappyBird-Game__UnityEngine": 3,
       "PacMan-Game__UnityEngine": 3,
-      "leetcode-solutions": 1,
       "Guess-The-Number-Game": 2,
       "Tic-Tac-Toe": 3,
-      "Counter-App": 1,
       "Contact-Manager-React": 4,
       "Authentication-System": 3,
       "Contact-Manager-Mern": 6,
@@ -163,21 +161,17 @@
       "ai-code-translator": 3,
       "stock-market-prediction": 4,
       "LeetCode_Rating_Predictor": 7,
-      "gfg-solutions": 1,
       "my-journey": 3,
       "mern-template": 3,
       "ldpc-codes": 5,
       "Lingua-Connect": 4,
       "Blue_Green_AWS_Terraform": 4,
-      "aws-amplify-cicd": 1,
       "ground-zero-nn": 1,
       "ai-project-template": 3,
       "Financial-Dashboard": 10,
       "SelfHub": 5,
-      "data-vault": 1,
       "ledger-sync": 7,
       "stocksage-ai": 5,
-      "scripts": 1,
       "InstagramLikesLeaderboard": 12,
       "awesome-mcp-servers": 5,
       "deploy-guide": 3,
@@ -200,14 +194,13 @@
       "itr-agent": 8,
       "sagas": 3,
       "orbit": 2,
-      "kinfolk": 1,
-      "waypoint": 0
+      "kinfolk": 1
     },
     "followers": 106,
-    "repos": 65,
+    "repos": 58,
     "streak": 24,
     "longest": 175,
-    "active_days": 317,
+    "active_days": 318,
     "calendar": [
       [
         4,
@@ -446,8 +439,8 @@
       [
         3,
         71,
-        22,
-        20,
+        23,
+        19,
         0,
         4,
         43
@@ -608,8 +601,8 @@
       [
         0,
         12,
-        4,
-        27,
+        6,
+        25,
         5,
         0,
         0
@@ -647,14 +640,14 @@
         0,
         0,
         0,
-        0,
-        2
+        1,
+        1
       ],
       [
         0,
         0,
-        20,
-        43,
+        21,
+        42,
         63,
         11,
         30
@@ -672,8 +665,8 @@
         53,
         37,
         11,
-        4,
-        11,
+        5,
+        10,
         10,
         6
       ],
@@ -682,38 +675,38 @@
         8,
         5,
         6,
-        14
+        17
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        58.3,
+        60.7,
         "#3178c6"
       ],
       [
         "Python",
-        21.5,
+        22.0,
         "#3572A5"
       ],
       [
-        "C++",
-        6.0,
-        "#f34b7d"
-      ],
-      [
         "JavaScript",
-        5.7,
+        4.8,
         "#f1e05a"
       ],
       [
+        "C++",
+        3.7,
+        "#f34b7d"
+      ],
+      [
         "CSS",
-        3.1,
+        3.2,
         "#663399"
       ],
       [
         "Shell",
-        1.3,
+        1.4,
         "#89e051"
       ]
     ]
@@ -1524,7 +1517,7 @@
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5866,
     "PrefectHQ/prefect": 23915,
-    "anthropics/skills": 177879,
+    "anthropics/skills": 177887,
     "apache/airflow": 46957,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
@@ -1540,5 +1533,5 @@
     "modelcontextprotocol/servers": 90570,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 119
   },
-  "views": 22576
+  "views": 22582
 }

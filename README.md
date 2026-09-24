@@ -1,18 +1,4 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=200&section=header&text=Sagar%20Gupta&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient&fontFamily=Pacifico" />
-</div>
-
-<br/>
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+2%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=2E9EF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+2%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+There!+%F0%9F%91%8B+I'm+Sagar+Gupta;AWS+ProServe+(Cloud+Consultant)+-+DevOps/MLOps;Full+Stack+Developer+|+NIT+Warangal+Alumnus;Top+2%25+on+LeetCode+|+6+Industry+Certifications;Building+Scalable+Cloud+Solutions+%E2%98%81%EF%B8%8F;AI+Agents+%26+MCP" alt="Typing Animation" />
-  </picture>
-</div>
-
-<br/>
+<img src="assets/svg/hero.svg" width="100%" alt="Sagar Gupta, Cloud Consultant at AWS Professional Services. DevOps and MLOps on AWS, AI agents and MCP tooling." />
 
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=sagargupta16&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
@@ -31,8 +17,6 @@
 
 <div align="center">
 
-> ### 👨‍💻 **Hi, I'm Sagar Gupta**
->
 > Cloud Consultant at [**AWS Professional Services**](https://aws.amazon.com/professional-services/) (DevOps/MLOps). I build the AWS platforms that regulated companies migrate onto: **Terraform**, **CI/CD**, **MLOps pipelines**, and lately the **agent tooling** that makes that work faster. MCA from [**NIT Warangal**](https://www.nitw.ac.in/).
 >
 > I specialize in **DevOps Engineering** • **MLOps** • **AWS Cloud Infrastructure** • **Full Stack Development** with a strong focus on automation and scalable cloud solutions.
@@ -51,18 +35,20 @@
   <img src="assets/svg/header-experience-dark.svg" width="100%" alt="Experience" />
 </picture>
 
-<img src="assets/svg/experience.svg" width="100%" alt="Career timeline: 2021 MCA at NIT Warangal, 2023 software developer intern at Ikarus-3D, 2024 AWS ProServe DevOps intern, 2024 Cloud Consultant at AWS ProServe, 2026 Lead DevOps Consultant on the RWS engagement" />
+<img src="assets/svg/experience.svg" width="100%" alt="Career timeline: 2021 MCA at NIT Warangal, 2023 software developer intern at Ikarus-3D, 2024 AWS ProServe DevOps intern, then full time as DevOps/MLOps Cloud Consultant at AWS Hyderabad, expanding into customer engagements with State Street, the MLOps SME Program, DTCC and RWS" />
 
-<img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 135+ AWS accounts onboarded, about 90% faster account setup, 1000+ preventive controls, 10/10 client CSAT, 2 published AWS samples, merged upstream contributions, LeetCode Guardian, 6 industry certifications" />
+<img src="assets/svg/highlights.svg" width="100%" alt="Highlights: average client CSAT 10/10, average Pulse feedback 5/5, 2 published AWS samples, 5x TFC ambassador, merged upstream contributions, industry certifications, LeetCode Guardian, LeetCode problems solved" />
 
 <details>
 <summary><b>Engagements at AWS Professional Services</b> (Aug 2024 - present)</summary>
 <br/>
 
-- **Lead DevOps Consultant, RWS** (Feb 2026 - present): cloud platform for a data-centre migration onboarding 50+ application workloads into 135+ AWS accounts. Authored the AWS Organizations OU structure, SCPs, tag policies, AWS Config rules and Security Hub standards mapped to CCMv4, plus Transit Gateway hub-and-spoke networking. Terraform + GitHub Actions cut per-account setup from 3+ days to under 4 hours.
+Average CSAT **10/10** and average Pulse feedback **5/5** across engagements.
+
+- **Lead DevOps Consultant, RWS** (Feb 2026 - present): cloud platform for a data-centre migration: the AWS Organizations OU structure, SCPs, tag policies, AWS Config rules and Security Hub standards mapped to CCMv4, plus Transit Gateway hub-and-spoke networking, all provisioned with Terraform + GitHub Actions.
 - **DevOps Consultant, DTCC** (Aug 2025 - Dec 2025): modernized legacy Terraform to cloud-native IaC on high-sensitivity financial workloads, with Amazon Q for code analysis and migration assessments.
 - **MLOps Pipeline, SME Program** (Jun 2025 - Aug 2025): SageMaker medical-image classification with blue-green endpoints, auto-scaling and drift detection, since generalized and published as an [AWS sample](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops).
-- **DevOps Consultant, State Street** (Oct 2024 - Aug 2025): a 38+ service self-service Terraform module library tested with tftest + PyTest, and 1000+ preventive Config and Security Hub controls mapped to CCMv4.0. 10/10 CSAT and three consecutive 5/5 Pulse ratings.
+- **DevOps Consultant, State Street** (Oct 2024 - Aug 2025): a self-service Terraform module library tested with tftest + PyTest, and preventive Config and Security Hub controls mapped to CCMv4.0.
 - **Associate Professional Services, DevOps (intern), AWS** (Mar 2024 - Jul 2024): migrated an on-premises app to ECS with blue-green deployment via Terraform, CodePipeline and CodeDeploy, traced with X-Ray and CloudWatch.
 - **Software Developer Associate (intern), Ikarus-3D** (May 2023 - Jul 2023): containerized a production app on ECS/ECR with GitHub Actions CI/CD, and set up SonarQube on EC2 + RDS.
 
@@ -73,7 +59,7 @@
 <br/>
 
 - **AWS sample:** [Terraform AWS Organizations Governance on Control Tower](https://github.com/aws-samples/sample-aws-terraform-org-governance) (2026)
-- **AWS sample:** [SageMaker Image Classification MLOps](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops) (2025)
+- **AWS sample:** [SageMaker Image Classification MLOps](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops) (2026)
 - **AWS Prescriptive Guidance pattern:** Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub (published 2025), plus 3 more peer reviewed
 - **Tech talks:** Automating Unit Testing for Terraform with Terraform Test and PyTest (2025); GitOps Configuration Safety with Health Checks and Pipeline Gating (2026)
 - **Recognition:** 5x TFC Ambassador (AI/ML, NGDE, CloudOps, Agentic AI, Serverless), MLOps SME Program graduate, Associate Speaker certified (2026), ML Hackathon 2025 26th of 238 teams
@@ -212,11 +198,7 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 <br/>
 
-![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=github&logoColor=white)
-![ChatGPT](https://img.shields.io/badge/ChatGPT-74AA9C?style=for-the-badge&logo=openai&logoColor=white)
-![Claude](https://img.shields.io/badge/Claude-191919?style=for-the-badge&logo=anthropic&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)
-![Cursor AI](https://img.shields.io/badge/Cursor_AI-000000?style=for-the-badge&logo=cursor&logoColor=white)
+<img src="assets/svg/ai-stack.svg" width="100%" alt="AI-assisted engineering: Claude Code, Kiro, Codex, Amazon Q, Amazon Bedrock, MCP, GitHub Copilot, Cursor, Gemini, ChatGPT" />
 
 </div>
 
@@ -228,28 +210,7 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 <div align="center">
 
-### 🔥 Current Streak
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=sagargupta16&theme=tokyonight">
-  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=sagargupta16&theme=default">
-  <img src="https://streak-stats.demolab.com/?user=sagargupta16&theme=tokyonight" alt="GitHub Streak Stats" />
-</picture>
-
-<br/><br/>
-
-### 📈 GitHub Rank
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=sagargupta16&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&rank_icon=github">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=sagargupta16&show_icons=true&theme=default&include_all_commits=true&count_private=true&rank_icon=github">
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=sagargupta16&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&rank_icon=github" alt="GitHub Stats"/>
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=tokyonight">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=default">
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=sagargupta16&layout=compact&langs_count=8&theme=tokyonight" alt="Top Languages"/>
-</picture>
+<img src="assets/svg/github.svg" width="100%" alt="GitHub: contributions last year, commits, pull requests, stars, followers, contribution calendar, current streak and top languages" />
 
 <br/><br/>
 
@@ -259,13 +220,7 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 **GeeksforGeeks** 400+ problems | **HackerRank** 6-Star Problem Solving | **Google Kick Start '22** Round E rank 1289 | **Podiums:** 1st at Coding Cauldron '23 and QFiesta '22, 2nd at Manage the Damage '23 and Trial By Code '22
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://leetcard.jacoblin.cool/sagargupta1610?theme=dark&font=Patrick%20Hand&ext=heatmap">
-    <source media="(prefers-color-scheme: light)" srcset="https://leetcard.jacoblin.cool/sagargupta1610?theme=light&font=Patrick%20Hand&ext=heatmap">
-    <img src="https://leetcard.jacoblin.cool/sagargupta1610?theme=dark&font=Patrick%20Hand&ext=heatmap" alt="LeetCode Stats" />
-  </picture>
-</div>
+<a href="https://leetcode.com/sagargupta1610/"><img src="assets/svg/leetcode.svg" width="100%" alt="LeetCode Guardian: contest rating history, rating, percentile and problems solved by difficulty" /></a>
 
 ### ⚡ Typing Speed
 
@@ -281,7 +236,11 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
   <img src="assets/svg/header-certs-dark.svg" width="100%" alt="Certifications and Badges" />
 </picture>
 
-### 🛡️ AWS & Cloud Certifications
+<a href="https://www.credly.com/users/sagar-gupta.f8eb96cc"><img src="assets/svg/certs.svg" width="100%" alt="Industry certifications, verified on Credly" /></a>
+
+<details>
+<summary><b>All Credly badges</b> (industry, professional and learning, auto-updated weekly)</summary>
+<br/>
 
 <!-- CREDLY-BADGES:START -->
 #### 🏅 Industry Certifications
@@ -304,6 +263,8 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 <!-- CREDLY-BADGES:END -->
 
 <sub>Badges auto-updated weekly via [Credly Badge README Updater](https://github.com/marketplace/actions/credly-badge-readme-updater)</sub>
+
+</details>
 
 ### 🎯 Developer Achievements
 
@@ -362,18 +323,4 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
-<div align="center">
-
-### 🌟 Thanks for visiting! Let's connect and build something amazing together! 🚀
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=A9FEF7&center=true&vCenter=true&width=600&lines=Happy+Coding!+%F0%9F%92%BB;Open+to+Collaboration+%F0%9F%A4%9D;Let's+Build+the+Future!+%F0%9F%9A%80">
-  <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=2E9EF7&center=true&vCenter=true&width=600&lines=Happy+Coding!+%F0%9F%92%BB;Open+to+Collaboration+%F0%9F%A4%9D;Let's+Build+the+Future!+%F0%9F%9A%80">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=A9FEF7&center=true&vCenter=true&width=600&lines=Happy+Coding!+%F0%9F%92%BB;Open+to+Collaboration+%F0%9F%A4%9D;Let's+Build+the+Future!+%F0%9F%9A%80" alt="Footer Animation" />
-</picture>
-
-</div>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=120&section=footer"/>
-</p>
+<img src="assets/svg/footer.svg" width="100%" alt="Thanks for visiting. Open to collaboration." />

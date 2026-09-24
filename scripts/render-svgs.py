@@ -28,6 +28,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "svg"
 DATA_FILE = OUT / "data.json"
+README_PATH = ROOT / "README.md"
 
 # Palette matches the portfolio (brand/portfolio-react): warm near-black,
 # one blue family, green only for live/ok, amber only for LeetCode.
@@ -900,7 +901,7 @@ def render_experience(data: dict) -> str:
 
 def readme_counts() -> dict:
     """Counts that already live in the README, so the cards never drift from it."""
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
+    text = README_PATH.read_text(encoding="utf-8")
     merged = 0
     if MERGED_MARKER in text:
         block = text.split(MERGED_MARKER, 1)[1].split("<details>", 1)[0]
@@ -1090,7 +1091,7 @@ def render_footer() -> str:
 
 def credly_badges() -> list[tuple[str, str]]:
     """(title, image url) for each industry certification in the README's Credly block."""
-    text = (ROOT / "README.md").read_text(encoding="utf-8")
+    text = README_PATH.read_text(encoding="utf-8")
     if INDUSTRY_CERTS_MARKER not in text:
         return []
     para = text.split(INDUSTRY_CERTS_MARKER, 1)[1].split("</p>", 1)[0]
@@ -1458,7 +1459,7 @@ def _range_label(date: str) -> str:
 
 def _client_label(name: str) -> str:
     """'DevOps Consultant - State Street' -> 'State Street'; '... MLOps Pipeline (SME Program)' -> 'MLOps SME Program'."""
-    name = re.sub(r"\s*\(Ongoing\)\s*$", "", name)
+    name = name.strip().removesuffix("(Ongoing)").strip()
     if " - " in name:
         return name.rsplit(" - ", 1)[1].strip()
     paren = re.search(r"\(([^)]+)\)", name)
@@ -1621,7 +1622,10 @@ def engagements_block(pf: dict) -> str:
     lines = []
     for e in reversed(pf["engagements"]):
         role = e["name"].replace(" (Ongoing)", "")
-        role = role.rsplit(" - ", 1)[0] if " - " in role else re.sub(r"\s*\([^)]*\)\s*$", "", role)
+        if " - " in role:
+            role = role.rsplit(" - ", 1)[0]
+        elif role.endswith(")") and " (" in role:
+            role = role.rsplit(" (", 1)[0]
         link = f" Published as an [AWS sample]({e['link']})." if e.get("link") else ""
         lines.append(f"- **{e['client']}** ({e['when']}): {role}. Stack: {', '.join(e['stack'])}.{link}")
     for e in pf["earlier"]:
@@ -1640,11 +1644,11 @@ def publications_block(pf: dict) -> str:
     for c in sorted(pf["contributions"], key=lambda c: str(c.get("year", "")), reverse=True):
         title, year = c["title"], c.get("year", "")
         if title.startswith("AWS Sample Published: "):
-            name = re.sub(r"\s*\(aws-samples, MIT-0\)\s*$", "", title.split(": ", 1)[1])
+            name = title.split(": ", 1)[1].removesuffix("(aws-samples, MIT-0)").strip()
             url = _sample_link(name, pf["samples"])
             groups["sample"].append(f"- **AWS sample:** {f'[{name}]({url})' if url else name} ({year})")
         elif title.startswith("APG Pattern: "):
-            name = re.sub(r"\s*\(Published\)\s*$", "", title.split(": ", 1)[1])
+            name = title.split(": ", 1)[1].removesuffix("(Published)").strip()
             groups["apg"].append(f"- **AWS Prescriptive Guidance pattern:** {name} ({year})")
         elif "Peer Reviewed" in title:
             groups["review"].append(f"- **Peer review:** {title.replace(' Peer Reviewed', '')} ({year})")
@@ -1659,7 +1663,7 @@ def publications_block(pf: dict) -> str:
     return "\n".join(lines)
 
 def update_readme(pf: dict) -> None:
-    path = ROOT / "README.md"
+    path = README_PATH
     text = path.read_text(encoding="utf-8")
     new = replace_block(text, "ENGAGEMENTS", engagements_block(pf))
     new = replace_block(new, "PUBLICATIONS", publications_block(pf))

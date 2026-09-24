@@ -164,6 +164,7 @@ ALLOWED_HOSTS = (
     "https://cdn.jsdelivr.net/",
     "https://raw.githubusercontent.com/Sagargupta16/portfolio-react/",
     "https://komarev.com/",
+    "https://www.google.com/s2/favicons",
 )
 
 
@@ -831,7 +832,7 @@ def render_experience(data: dict) -> str:
     """Top rail to the current role, which then expands into its customer engagements."""
     pf = data.get("portfolio") or {}
     engagements = [
-        (e["when"], e["client"], e["tagline"]) for e in pf.get("engagements", [])
+        (e["when"], e["client"], e["tagline"]) for e in _customers(pf)
     ] or ENGAGEMENTS
     w, h = 840, 330
     left, right, top_y = 96, 690, 84
@@ -1114,7 +1115,7 @@ def _plain_dashes(text: str) -> str:
 def credly_badges(group: str) -> list[tuple[str, str]]:
     """Return (title, image url) pairs for one group of the Credly block."""
     source = CREDLY_PATH if CREDLY_PATH.exists() else README_PATH
-    keyword = group.split()[0]
+    wanted = ("Industry",) if group == INDUSTRY_GROUP else ("Professional", "Knowledge")
     current = None
     found: list[tuple[str, str]] = []
     # Headings come as '#### Industry Certifications' or as an icon plus '**Industry Certifications**'
@@ -1128,7 +1129,7 @@ def credly_badges(group: str) -> list[tuple[str, str]]:
             if named:
                 current = named
             continue
-        if current == keyword:
+        if current in wanted:
             found += re.findall(
                 r'title="([^"]+)">(?:<picture>)?<img src="([^"]+)"', line
             )
@@ -1182,10 +1183,11 @@ def _wrap(text: str, width: int) -> list[str]:
     return lines + ([cur] if cur else [])
 
 
+LEARNING_GROUP = "Learning and Partner Badges"
+# (group, label, drawn size, label lines, badges per row)
 CREDLY_GROUPS = [
-    (INDUSTRY_GROUP, "INDUSTRY CERTIFICATIONS", 84, 3),
-    ("Professional", "PROFESSIONAL AND PARTNER", 60, 2),
-    ("Knowledge", "KNOWLEDGE AND LEARNING", 56, 2),
+    (INDUSTRY_GROUP, "INDUSTRY CERTIFICATIONS", 84, 3, 6),
+    (LEARNING_GROUP, "LEARNING AND PARTNER BADGES", 58, 2, 8),
 ]
 
 
@@ -1201,9 +1203,6 @@ def _short_badge(title: str) -> str:
     return title.replace(" - Training Badge", "").replace(" - ", " ")
 
 
-BADGES_PER_ROW = 6
-
-
 def _badge_row(
     chunk: list[tuple[str, str]],
     top: float,
@@ -1211,10 +1210,11 @@ def _badge_row(
     max_lines: int,
     delay: float,
     images: dict,
-    w: int,
+    per_row: int,
 ) -> list[str]:
     """Return one centered row of floating badges with their wrapped labels."""
-    col = (w - 32) / BADGES_PER_ROW
+    w = 840
+    col = (w - 32) / per_row
     x0 = 16 + (w - 32 - col * len(chunk)) / 2
     out = []
     for i, (title, url) in enumerate(chunk):
@@ -1235,20 +1235,20 @@ def _badge_row(
 
 def render_certs() -> str | None:
     groups = [
-        (label, size, lines, credly_badges(key))
-        for key, label, size, lines in CREDLY_GROUPS
+        (label, size, lines, per_row, credly_badges(key))
+        for key, label, size, lines, per_row in CREDLY_GROUPS
     ]
     # each badge is fetched once and shrunk to twice its drawn size, sharp on high-density screens
     images = {
         url: _data_uri(url, size * 2)
-        for _, size, _, badges in groups
+        for _, size, _, _, badges in groups
         for _, url in badges
     }
-    if not groups[0][3] or any(img is None for img in images.values()):
+    if not groups[0][4] or any(img is None for img in images.values()):
         return None
     w = 840
     parts, y, delay = [], 34, 0.2
-    for label, size, max_lines, badges in groups:
+    for label, size, max_lines, per_row, badges in groups:
         if not badges:
             continue
         parts.append(
@@ -1256,10 +1256,10 @@ def render_certs() -> str | None:
         )
         top = y + 14
         row_h = size + 16 + max_lines * 12 + 14
-        # at most BADGES_PER_ROW per row, so labels never collide
-        for start in range(0, len(badges), BADGES_PER_ROW):
-            chunk = badges[start : start + BADGES_PER_ROW]
-            parts += _badge_row(chunk, top, size, max_lines, delay, images, w)
+        # at most per_row per row, so labels never collide
+        for start in range(0, len(badges), per_row):
+            chunk = badges[start : start + per_row]
+            parts += _badge_row(chunk, top, size, max_lines, delay, images, per_row)
             delay += 0.06 * len(chunk)
             top += row_h
         y = top + 12
@@ -2066,64 +2066,142 @@ def render_list_card(
     return "".join(parts)
 
 
-def render_engagements(pf: dict) -> str:
-    rows = []
-    for e in reversed(pf.get("engagements", [])):
-        role = e["name"].replace(" (Ongoing)", "")
-        if " - " in role:
-            role = role.rsplit(" - ", 1)[0]
-        elif role.endswith(")") and " (" in role:
-            role = role.rsplit(" (", 1)[0]
-        rows.append((e["client"], f"{role}  |  {', '.join(e['stack'])}", e["when"]))
-    for e in pf.get("earlier", []):
-        kind = f", {e['position'].lower()}" if e.get("position") else ""
-        rows.append((e["company"], f"{e['title']}{kind}", _range_label(e["date"])))
-    return render_list_card(
-        "ENGAGEMENTS AT AWS PROFESSIONAL SERVICES  |  AVERAGE CSAT 10/10  |  AVERAGE PULSE 5/5",
-        rows,
-        GREEN,
+COMPANY_ICONS = {"Amazon Web Services": "aws.amazon.com", "RWS": "rws.com", "DTCC": "dtcc.com"}
+
+
+def _customers(pf: dict) -> list[dict]:
+    """Return the engagements that were customer work ('Role - Client'), newest last."""
+    return [e for e in pf.get("engagements", []) if " - " in e["name"]]
+
+
+def _company_icon(name: str) -> str | None:
+    domain = COMPANY_ICONS.get(name)
+    if not domain:
+        return None
+    return _data_uri(f"https://www.google.com/s2/favicons?domain={domain}&sz=64", 64)
+
+
+def _logo_tile(name: str, x: float, y: float, size: int) -> str:
+    icon = _company_icon(name)
+    frame = f'<rect x="{x:.1f}" y="{y}" width="{size}" height="{size}" rx="12" fill="#ffffff0f" stroke="rgba(255,255,255,0.12)"/>'
+    if icon:
+        pad = 9
+        return frame + f'<image href="{icon}" x="{x + pad:.1f}" y="{y + pad}" width="{size - 2 * pad}" height="{size - 2 * pad}"/>'
+    initials = "".join(word[0] for word in name.replace("-", " ").split()[:2]).upper()
+    return frame + (
+        f'<text class="t" x="{x + size / 2:.1f}" y="{y + size / 2 + 6}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="17">{escape(initials)}</text>'
     )
 
 
-def render_publications(pf: dict) -> str:
-    kinds = []
-    for c in sorted(
-        pf.get("contributions", []), key=lambda c: str(c.get("year", "")), reverse=True
-    ):
+def render_worked_with(pf: dict) -> str:
+    """Return a row of company tiles: logo, company, and the title held there."""
+    tiles = [("Amazon Web Services", "DevOps/MLOps Cloud Consultant")]
+    for e in reversed(_customers(pf)):
+        role = e["name"].replace(" (Ongoing)", "").rsplit(" - ", 1)[0]
+        tiles.append((e["client"], role))
+    for e in pf.get("earlier", []):
+        if e["company"] != "Amazon Web Services":
+            tiles.append((e["company"], f"{e['title']} (intern)" if e.get("position") == "Internship" else e["title"]))
+    w, h = 840, 232
+    gap, pad = 10, 16
+    tw = (w - 2 * pad - (len(tiles) - 1) * gap) / len(tiles)
+    parts = [
+        svg_open(w, h, "Worked with: " + "; ".join(f"{c}, {r}" for c, r in tiles)),
+        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.t{{font-family:{SANS};font-weight:800}}"
+        f".s{{font-family:{SANS};font-weight:500}}</style>",
+        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
+        f'<text class="m" x="24" y="31" fill="{GREEN}" font-size="10">WORKED WITH  |  AVERAGE CSAT 10/10  |  AVERAGE PULSE 5/5</text>',
+    ]
+    for i, (company, role) in enumerate(tiles):
+        x = pad + i * (tw + gap)
+        cx = x + tw / 2
+        begin = 0.15 + i * 0.12
+        lines = _wrap(role, 22)[:2]
+        role_text = "".join(
+            f'<text class="s" x="{cx:.1f}" y="{168 + j * 16}" text-anchor="middle" fill="rgba(255,255,255,0.62)" font-size="11.5">{escape(line)}</text>'
+            for j, line in enumerate(lines)
+        )
+        parts.append(
+            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
+            f'<animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
+            f'<rect x="{x:.1f}" y="46" width="{tw:.1f}" height="{h - 62}" rx="12" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
+            + _logo_tile(company, cx - 26, 62, 52)
+            + f'<text class="t" x="{cx:.1f}" y="146" text-anchor="middle" fill="#f3f4f6" font-size="14.5">{escape(company)}</text>'
+            + role_text
+            + "</g>"
+        )
+    parts.append(SVG_CLOSE)
+    return "".join(parts)
+
+
+def _publication_groups(pf: dict) -> list[tuple[str, list[tuple[str, str]]]]:
+    samples, papers, talks = [], [], []
+    for c in sorted(pf.get("contributions", []), key=lambda c: str(c.get("year", "")), reverse=True):
         title, year = c["title"], str(c.get("year", ""))
         if title.startswith("AWS Sample Published: "):
-            kinds.append(
-                (
-                    0,
-                    "AWS sample",
-                    title.split(": ", 1)[1]
-                    .removesuffix("(aws-samples, MIT-0)")
-                    .strip(),
-                    year,
-                )
-            )
+            samples.append((title.split(": ", 1)[1].removesuffix("(aws-samples, MIT-0)").strip(), year))
         elif title.startswith("APG Pattern: "):
-            kinds.append(
-                (
-                    1,
-                    "AWS Prescriptive Guidance",
-                    title.split(": ", 1)[1].removesuffix("(Published)").strip(),
-                    year,
-                )
-            )
+            papers.append(("APG pattern: " + title.split(": ", 1)[1].removesuffix("(Published)").strip(), year))
         elif "Peer Reviewed" in title:
-            kinds.append((2, "Peer review", title.replace(" Peer Reviewed", ""), year))
+            papers.append((title.replace(" Peer Reviewed", " peer reviewed"), year))
         elif title.startswith("Tech Talk: "):
-            kinds.append((3, "Tech talk", title.split(": ", 1)[1], year))
+            talks.append((title.split(": ", 1)[1], year))
         else:
-            kinds.append((4, "Contribution", title, year))
-    kinds.sort(key=lambda k: k[0])
-    rows = [(label, text, year) for _, label, text, year in kinds]
-    rows += [
-        ("Recognition", a["title"].replace(" - ", ", "), str(a.get("year", "")))
-        for a in pf.get("achievements", [])
+            papers.append((title, year))
+    recognition = [(a["title"].replace(" - ", ", "), str(a.get("year", ""))) for a in pf.get("achievements", [])]
+    return [("AWS SAMPLES", samples), ("PUBLICATIONS", papers), ("TECH TALKS", talks), ("RECOGNITION", recognition)]
+
+
+def _panel(label: str, items: list[tuple[str, str]], x: float, y: float, pw: float, ph: float, accent: str, delay: float) -> str:
+    out = [
+        f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{delay:.2f}s" dur="0.45s" fill="freeze"/>'
+        f'<rect x="{x:.1f}" y="{y:.1f}" width="{pw:.1f}" height="{ph:.1f}" rx="12" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
+        f'<rect x="{x:.1f}" y="{y + 16:.1f}" width="3" height="22" rx="1.5" fill="{accent}"/>'
+        f'<text class="m" x="{x + 18:.1f}" y="{y + 31:.1f}" fill="{accent}" font-size="9.5">{label}</text>'
     ]
-    return render_list_card("PUBLICATIONS, TALKS AND RECOGNITION", rows, SKY)
+    cy = y + 56
+    for text, year in items:
+        lines = _wrap(text, 50)[:3]
+        out.append(
+            f'<circle cx="{x + 21:.1f}" cy="{cy - 4:.1f}" r="2.5" fill="{accent}"/>'
+            f'<text class="m" x="{x + pw - 16:.1f}" y="{cy:.1f}" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="8.5">{escape(year)}</text>'
+            + "".join(
+                f'<text class="s" x="{x + 32:.1f}" y="{cy + j * 16:.1f}" fill="rgba(255,255,255,0.78)" font-size="12">{escape(line)}</text>'
+                for j, line in enumerate(lines)
+            )
+        )
+        cy += 16 * len(lines) + 12
+    out.append("</g>")
+    return "".join(out)
+
+
+def _panel_height(items: list[tuple[str, str]]) -> float:
+    return 56 + sum(16 * len(_wrap(text, 50)[:3]) + 12 for text, _ in items) + 4
+
+
+def render_publications(pf: dict) -> str:
+    """Return AWS samples, publications, talks and recognition as a 2x2 grid of panels."""
+    groups = _publication_groups(pf)
+    accents = [SKY, BLUE_LIGHT, GREEN, AMBER]
+    w, pad, gap = 840, 16, 12
+    pw = (w - 2 * pad - gap) / 2
+    rows = [groups[0:2], groups[2:4]]
+    heights = [max(_panel_height(items) for _, items in row) for row in rows]
+    h = 44 + sum(heights) + gap + pad
+    parts = [
+        svg_open(w, h, "Publications, talks and recognition: " + "; ".join(t for _, items in groups for t, _ in items)),
+        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.s{{font-family:{SANS};font-weight:500}}</style>",
+        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
+        f'<text class="m" x="24" y="30" fill="{SKY}" font-size="10">PUBLICATIONS, TALKS AND RECOGNITION</text>',
+    ]
+    y = 44.0
+    for r, row in enumerate(rows):
+        for c, (label, items) in enumerate(row):
+            i = r * 2 + c
+            parts.append(_panel(label, items, pad + c * (pw + gap), y, pw, heights[r], accents[i], 0.15 + i * 0.12))
+        y += heights[r] + gap
+    parts.append(SVG_CLOSE)
+    return "".join(parts)
 
 
 def render_education(pf: dict) -> str:
@@ -2434,7 +2512,7 @@ def render_readme(data: dict) -> str:
         _header("experience", "Experience"),
         _img("experience.svg", "Career timeline and customer engagements"),
         _img("highlights.svg", "Highlights"),
-        _img("engagements.svg", "Engagements at AWS Professional Services"),
+        _img("worked-with.svg", "Worked with: companies and customers"),
         _img("publications.svg", "Publications, talks and recognition"),
         _img("education.svg", "Education"),
         DIVIDER,
@@ -2518,7 +2596,7 @@ def write_portfolio_cards(data: dict) -> None:
     pf = data.get("portfolio") or {}
     if pf:
         write("intro.svg", render_intro(pf))
-        write("engagements.svg", render_engagements(pf))
+        write("worked-with.svg", render_worked_with(pf))
         write("publications.svg", render_publications(pf))
         write("education.svg", render_education(pf))
         write("oss-merged.svg", render_oss_merged(pf))

@@ -938,7 +938,11 @@ def render_highlights(data: dict) -> str:
         (str(samples), "published AWS samples", SKY),
         (f"{tfc}x", "TFC ambassador", SKY),
         (str(merged), "merged upstream contributions", BLUE_LIGHT),
-        (str(len(credly_badges(INDUSTRY_GROUP))), "industry certifications", BLUE_LIGHT),
+        (
+            str(len(credly_badges(INDUSTRY_GROUP))),
+            "industry certifications",
+            BLUE_LIGHT,
+        ),
         (lc["badge"], f"LeetCode, top {lc['top']}%", AMBER),
         (f"{lc['solved']:,}", "LeetCode problems solved", AMBER),
     ]
@@ -1109,13 +1113,25 @@ def _plain_dashes(text: str) -> str:
 def credly_badges(group: str) -> list[tuple[str, str]]:
     """Return (title, image url) pairs for one group of the Credly block."""
     source = CREDLY_PATH if CREDLY_PATH.exists() else README_PATH
-    text = source.read_text(encoding="utf-8")
-    for section in text.split("#### ")[1:]:
-        heading = section.split("\n", 1)[0]
-        if group.split()[0] in heading:
-            found = re.findall(r'title="([^"]+)">(?:<picture>)?<img src="([^"]+)"', section)
-            return [(_plain_dashes(title), url) for title, url in found]
-    return []
+    keyword = group.split()[0]
+    current = None
+    found: list[tuple[str, str]] = []
+    # Headings come as '#### Industry Certifications' or as an icon plus '**Industry Certifications**'
+    # depending on the updater version, so a heading is any non-badge line naming a group.
+    for line in source.read_text(encoding="utf-8").splitlines():
+        if "<a " not in line:
+            named = next(
+                (k for k in ("Industry", "Professional", "Knowledge") if k in line),
+                None,
+            )
+            if named:
+                current = named
+            continue
+        if current == keyword:
+            found += re.findall(
+                r'title="([^"]+)">(?:<picture>)?<img src="([^"]+)"', line
+            )
+    return [(_plain_dashes(title), url) for title, url in found]
 
 
 PNG_MAGIC = bytes([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A])
@@ -1156,13 +1172,22 @@ CREDLY_GROUPS = [
 
 
 def _short_badge(title: str) -> str:
-    for prefix in ("AWS Certified ", "HashiCorp Certified: ", "AWS Knowledge: ", "AWS Partner: ", "AWS Educate "):
+    for prefix in (
+        "AWS Certified ",
+        "HashiCorp Certified: ",
+        "AWS Knowledge: ",
+        "AWS Partner: ",
+        "AWS Educate ",
+    ):
         title = title.replace(prefix, "")
     return title.replace(" - Training Badge", "").replace(" - ", " ")
 
 
 def render_certs() -> str | None:
-    groups = [(label, size, lines, credly_badges(key)) for key, label, size, lines in CREDLY_GROUPS]
+    groups = [
+        (label, size, lines, credly_badges(key))
+        for key, label, size, lines in CREDLY_GROUPS
+    ]
     images = {url: _data_uri(url) for *_, badges in groups for _, url in badges}
     if not groups[0][3] or any(img is None for img in images.values()):
         return None
@@ -1171,7 +1196,9 @@ def render_certs() -> str | None:
     for label, size, max_lines, badges in groups:
         if not badges:
             continue
-        parts.append(f'<text class="m" x="24" y="{y}" fill="{BLUE_LIGHT}" font-size="10">{len(badges)} {label}</text>')
+        parts.append(
+            f'<text class="m" x="24" y="{y}" fill="{BLUE_LIGHT}" font-size="10">{len(badges)} {label}</text>'
+        )
         col = (w - 32) / max(len(badges), 6)
         x0 = 16 + (w - 32 - col * len(badges)) / 2
         top = y + 14
@@ -1192,7 +1219,12 @@ def render_certs() -> str | None:
         y = top + size + 16 + max_lines * 12 + 26
     h = y - 10
     head = [
-        svg_open(w, h, "Credly badges: " + ", ".join(t for *_, badges in groups for t, _ in badges)),
+        svg_open(
+            w,
+            h,
+            "Credly badges: "
+            + ", ".join(t for *_, badges in groups for t, _ in badges),
+        ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1px}}"
         ".float{animation:float 4s ease-in-out infinite}"
         "@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}</style>",
@@ -1553,7 +1585,18 @@ def portfolio_snapshot(experience: dict, projects: dict, extra: dict) -> dict:
         "samples": samples,
         "oss": projects.get("open_source_contributions", []),
         "featured": [
-            {k: p.get(k) for k in ("title", "description", "date", "tools_tech", "github", "live", "organization")}
+            {
+                k: p.get(k)
+                for k in (
+                    "title",
+                    "description",
+                    "date",
+                    "tools_tech",
+                    "github",
+                    "live",
+                    "organization",
+                )
+            }
             for p in projects.get("featured_projects", [])
         ],
         "community": [
@@ -1565,7 +1608,13 @@ def portfolio_snapshot(experience: dict, projects: dict, extra: dict) -> dict:
         "coding_stats": extra.get("achievements", {}).get("coding_platform_stats", {}),
         "contests": extra.get("achievements", {}).get("achievements", []),
         "project_count": sum(
-            len(projects.get(k, [])) for k in ("featured_projects", "collaborative_projects", "other_projects", "community_projects")
+            len(projects.get(k, []))
+            for k in (
+                "featured_projects",
+                "collaborative_projects",
+                "other_projects",
+                "community_projects",
+            )
         ),
     }
 
@@ -1573,7 +1622,10 @@ def portfolio_snapshot(experience: dict, projects: dict, extra: dict) -> dict:
 def fetch_portfolio() -> dict:
     experience = json.loads(fetch(f"{PORTFOLIO_RAW}experience.json"))
     projects = json.loads(fetch(f"{PORTFOLIO_RAW}projects.json"))
-    extra = {name: json.loads(fetch(f"{PORTFOLIO_RAW}{name}.json")) for name in ("personal", "education", "achievements")}
+    extra = {
+        name: json.loads(fetch(f"{PORTFOLIO_RAW}{name}.json"))
+        for name in ("personal", "education", "achievements")
+    }
     return portfolio_snapshot(experience, projects, extra)
 
 
@@ -2317,7 +2369,8 @@ def render_readme(data: dict) -> str:
         _link(
             PORTFOLIO_URL,
             _img(
-                "hero.svg", "Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS Professional Services"
+                "hero.svg",
+                "Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS Professional Services",
             ),
         ),
         _link(
@@ -2372,7 +2425,8 @@ def render_readme(data: dict) -> str:
         _link(CREDLY_URL, _img("certs.svg", "Credly badges")),
         DIVIDER,
         # a 1px copy of the komarev counter keeps visits counted; the number itself shows in profile-badges.svg
-        _img("footer.svg", "Thanks for visiting") + f' <img src="{VIEWS_URL}" width="1" height="1" alt="" />',
+        _img("footer.svg", "Thanks for visiting")
+        + f' <img src="{VIEWS_URL}" width="1" height="1" alt="" />',
     ]
     return "\n\n".join(blocks) + "\n"
 
@@ -2425,7 +2479,10 @@ def write_portfolio_cards(data: dict) -> None:
         write("oss-review.svg", render_oss_review(pf))
         write("competitive.svg", render_competitive(pf, data))
     for i, (key, label, _) in enumerate(CTAS):
-        write(f"{key}.svg", render_cta(label.format(n=pf.get("project_count", 45)), i == 0))
+        write(
+            f"{key}.svg",
+            render_cta(label.format(n=pf.get("project_count", 45)), i == 0),
+        )
 
 
 def main() -> None:

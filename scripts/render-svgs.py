@@ -153,6 +153,8 @@ AI_TOOLS = [
 ]
 
 SVG_CLOSE = "</svg>"
+INDUSTRY_GROUP = "Industry Certifications"
+PORTFOLIO_URL = "https://sagargupta.online/portfolio-react/"
 ALLOWED_HOSTS = (
     "https://leetcode.com/",
     "https://skillicons.dev/",
@@ -297,7 +299,7 @@ VIEWS_URL = "https://komarev.com/ghpvc/?username=sagargupta16"
 
 def fetch_views() -> int:
     """Return the profile view count, read from the counter image komarev serves."""
-    counts = re.findall(r">([0-9][0-9,]*)</text>", fetch(VIEWS_URL).decode())
+    counts = re.findall(r">(\d[\d,]*)</text>", fetch(VIEWS_URL).decode())
     return int(counts[-1].replace(",", ""))
 
 
@@ -936,7 +938,7 @@ def render_highlights(data: dict) -> str:
         (str(samples), "published AWS samples", SKY),
         (f"{tfc}x", "TFC ambassador", SKY),
         (str(merged), "merged upstream contributions", BLUE_LIGHT),
-        (str(len(credly_badges("Industry Certifications"))), "industry certifications", BLUE_LIGHT),
+        (str(len(credly_badges(INDUSTRY_GROUP))), "industry certifications", BLUE_LIGHT),
         (lc["badge"], f"LeetCode, top {lc['top']}%", AMBER),
         (f"{lc['solved']:,}", "LeetCode problems solved", AMBER),
     ]
@@ -1099,6 +1101,11 @@ def render_footer() -> str:
 # ---------------------------------------------------------------- certifications
 
 
+def _plain_dashes(text: str) -> str:
+    """Return text with en and em dashes replaced by a plain hyphen."""
+    return text.replace("\u2013", "-").replace("\u2014", "-")
+
+
 def credly_badges(group: str) -> list[tuple[str, str]]:
     """Return (title, image url) pairs for one group of the Credly block."""
     source = CREDLY_PATH if CREDLY_PATH.exists() else README_PATH
@@ -1106,7 +1113,8 @@ def credly_badges(group: str) -> list[tuple[str, str]]:
     for section in text.split("#### ")[1:]:
         heading = section.split("\n", 1)[0]
         if group.split()[0] in heading:
-            return re.findall(r'title="([^"]+)"><picture><img src="([^"]+)"', section)
+            found = re.findall(r'title="([^"]+)">(?:<picture>)?<img src="([^"]+)"', section)
+            return [(_plain_dashes(title), url) for title, url in found]
     return []
 
 
@@ -1141,7 +1149,7 @@ def _wrap(text: str, width: int) -> list[str]:
 
 
 CREDLY_GROUPS = [
-    ("Industry Certifications", "INDUSTRY CERTIFICATIONS", 84, 3),
+    (INDUSTRY_GROUP, "INDUSTRY CERTIFICATIONS", 84, 3),
     ("Professional", "PROFESSIONAL AND PARTNER", 60, 2),
     ("Knowledge", "KNOWLEDGE AND LEARNING", 56, 2),
 ]
@@ -1723,7 +1731,7 @@ def render_profile_badges(data: dict) -> str:
     lc = data["leetcode"]
     today = datetime.date.today()
     years = today.year - CAREER_START[0] - (1 if today.month < CAREER_START[1] else 0)
-    certs = len(credly_badges("Industry Certifications"))
+    certs = len(credly_badges(INDUSTRY_GROUP))
     pills = [
         ("PROFILE VIEWS", f"{data.get('views', 0):,}", BLUE_LIGHT),
         ("FOLLOWERS", f"{gh.get('followers', 0):,}", BLUE_LIGHT),
@@ -1776,7 +1784,7 @@ CONNECT = [
         "portfolio",
         "Portfolio",
         "googlechrome",
-        "https://sagargupta.online/portfolio-react/",
+        PORTFOLIO_URL,
     ),
     ("email", "Email", "gmail", "mailto:sg85207@gmail.com"),
     ("github", "GitHub", "github", "https://github.com/Sagargupta16"),
@@ -1808,6 +1816,18 @@ def render_connect_button(label: str, icon_path: str | None, index: int) -> str:
             SVG_CLOSE,
         ]
     )
+
+
+def _oss_chip_label(repo: str, count: int, stars: int) -> str:
+    """Return a chip label: repo, a count when merged more than once, and its stars."""
+    label = repo
+    if count > 1:
+        label += f"  x{count}"
+    if stars >= 1000:
+        label += f"  {stars / 1000:.1f}K"
+    elif stars:
+        label += f"  {stars}"
+    return label
 
 
 def render_oss(data: dict) -> str | None:
@@ -1855,10 +1875,7 @@ def render_oss(data: dict) -> str | None:
     # merged-into chips, biggest projects first
     x, y = 24.0, 128
     for i, repo in enumerate(ranked):
-        count = repos[repo]
-        s = stars.get(repo, 0)
-        star_txt = f"  {s / 1000:.1f}K" if s >= 1000 else (f"  {s}" if s else "")
-        label = f"{repo}{'  x' + str(count) if count > 1 else ''}{star_txt}"
+        label = _oss_chip_label(repo, repos[repo], stars.get(repo, 0))
         cw = 16 + len(label) * 6.3
         if x + cw > w - 24:
             x, y = 24.0, y + 30
@@ -2015,7 +2032,7 @@ def render_education(pf: dict) -> str:
     rows = []
     for e in pf.get("education", [])[:2]:
         facts = [f"CGPA {e['cgpa']}"] if e.get("cgpa") else []
-        facts += [a for a in (e.get("achievements") or [])[:2]]
+        facts += list((e.get("achievements") or [])[:2])
         rows.append(
             (
                 f"{e['title']}",
@@ -2180,7 +2197,7 @@ CTAS = [
     (
         "cta-portfolio",
         "View all {n} projects",
-        "https://sagargupta.online/portfolio-react/",
+        PORTFOLIO_URL,
     ),
     (
         "cta-resume",
@@ -2234,7 +2251,6 @@ def _row(cells: list[str], width: str) -> str:
 
 
 DIVIDER = _img("divider.svg", "")
-PORTFOLIO_URL = "https://sagargupta.online/portfolio-react/"
 CREDLY_URL = "https://www.credly.com/users/sagar-gupta.f8eb96cc"
 MERGED_URL = "https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16"
 REVIEW_URL = "https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Aopen+-user%3ASagargupta16"
@@ -2379,9 +2395,7 @@ def write(name: str, content: str) -> None:
         print(f"wrote {name} ({len(content):,} bytes)")
 
 
-def main() -> None:
-    OUT.mkdir(parents=True, exist_ok=True)
-    data = load_data()
+def refresh_portfolio(data: dict) -> None:
     try:
         data["portfolio"] = fetch_portfolio()
     except Exception as exc:  # keep the last good snapshot
@@ -2391,14 +2405,16 @@ def main() -> None:
         stars = fetch_oss_stars(data["portfolio"]["oss"])
         if stars:
             data["oss_stars"] = {**data.get("oss_stars", {}), **stars}
-    write("data.json", json.dumps(data, indent=2) + "\n")
-    write("terminal.svg", render_terminal(data))
-    write("experience.svg", render_experience(data))
-    write("highlights.svg", render_highlights(data))
-    write("hero.svg", render_hero(data))
-    write("footer.svg", render_footer())
-    write("profile-badges.svg", render_profile_badges(data))
-    render_cards(data)
+
+
+def write_optional(name: str, content: str | None) -> None:
+    if content is None:
+        print(f"{name} kept as is: its data fetch failed")
+    else:
+        write(name, content)
+
+
+def write_portfolio_cards(data: dict) -> None:
     pf = data.get("portfolio") or {}
     if pf:
         write("intro.svg", render_intro(pf))
@@ -2410,27 +2426,35 @@ def main() -> None:
         write("competitive.svg", render_competitive(pf, data))
     for i, (key, label, _) in enumerate(CTAS):
         write(f"{key}.svg", render_cta(label.format(n=pf.get("project_count", 45)), i == 0))
+
+
+def main() -> None:
+    OUT.mkdir(parents=True, exist_ok=True)
+    data = load_data()
+    refresh_portfolio(data)
+    write("data.json", json.dumps(data, indent=2) + "\n")
+    write("terminal.svg", render_terminal(data))
+    write("experience.svg", render_experience(data))
+    write("highlights.svg", render_highlights(data))
+    write("hero.svg", render_hero(data))
+    write("footer.svg", render_footer())
+    write("profile-badges.svg", render_profile_badges(data))
+    render_cards(data)
+    write_portfolio_cards(data)
     for name, content in (
         ("certs.svg", render_certs()),
         ("leetcode.svg", render_leetcode(data)),
         ("github.svg", render_github(data)),
         ("ai-stack.svg", render_ai_stack()),
         ("oss.svg", render_oss(data)),
+        ("stack.svg", render_stack()),
     ):
-        if content is None:
-            print(f"{name} kept as is: its data fetch failed")
-        else:
-            write(name, content)
+        write_optional(name, content)
     write("sample-org-governance.svg", render_org_card())
     write("sample-sagemaker-mlops.svg", render_mlops_card())
     for key, num, title, sub in HEADERS:
         for theme in ("dark", "light"):
             write(f"header-{key}-{theme}.svg", render_header(num, title, sub, theme))
-    stack = render_stack()
-    if stack is not None:
-        write("stack.svg", stack)
-    else:
-        print("stack.svg kept as is: an icon fetch failed")
     write("divider.svg", render_divider())
     write_readme(data)
 

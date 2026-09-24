@@ -154,6 +154,7 @@ AI_TOOLS = [
 ]
 
 SVG_CLOSE = "</svg>"
+AWS_NAME = "Amazon Web Services"
 INDUSTRY_GROUP = "Industry Certifications"
 PORTFOLIO_URL = "https://sagargupta.online/portfolio-react/"
 ALLOWED_HOSTS = (
@@ -2066,7 +2067,7 @@ def render_list_card(
     return "".join(parts)
 
 
-COMPANY_ICONS = {"Amazon Web Services": "aws.amazon.com", "RWS": "rws.com", "DTCC": "dtcc.com"}
+COMPANY_ICONS = {AWS_NAME: "aws.amazon.com", "RWS": "rws.com", "DTCC": "dtcc.com"}
 
 
 def _customers(pf: dict) -> list[dict]:
@@ -2095,12 +2096,12 @@ def _logo_tile(name: str, x: float, y: float, size: int) -> str:
 
 def render_worked_with(pf: dict) -> str:
     """Return a row of company tiles: logo, company, and the title held there."""
-    tiles = [("Amazon Web Services", "DevOps/MLOps Cloud Consultant")]
+    tiles = [(AWS_NAME, "DevOps/MLOps Cloud Consultant")]
     for e in reversed(_customers(pf)):
         role = e["name"].replace(" (Ongoing)", "").rsplit(" - ", 1)[0]
         tiles.append((e["client"], role))
     for e in pf.get("earlier", []):
-        if e["company"] != "Amazon Web Services":
+        if e["company"] != AWS_NAME:
             tiles.append((e["company"], f"{e['title']} (intern)" if e.get("position") == "Internship" else e["title"]))
     w, h = 840, 232
     gap, pad = 10, 16

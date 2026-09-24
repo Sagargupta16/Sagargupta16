@@ -10,6 +10,8 @@ All notable changes to this profile README repository.
   - Section headers with dark and light variants for the seven main sections, replacing the emoji `##` headings
   - Scrolling tech-stack strip (two rows, 44 icons inlined from skillicons.dev) replacing the five static icon rows
   - Divider pulse replacing `divider.gif` in all six places
+- Experience section, new and first: an animated career timeline (NIT Warangal 2021 to the RWS engagement in 2026), a highlights card (135+ accounts, ~90% faster account setup, 1000+ controls, 10/10 CSAT, 2 AWS samples, merged-contribution and certification counts read from this README, live LeetCode badge), collapsible engagement details, publications and talks, and education. Every figure is taken from the resume and portfolio data
+- Intro rewritten in the portfolio's own words; competitive programming line now adds GeeksforGeeks, HackerRank, Google Kick Start and hackathon podiums; portfolio link count corrected 28+ -> 45 projects
 - LeetCode stats corrected to the live profile: Knight -> Guardian, peak 2025 -> 2166, Top 3% -> Top 2% (live topPercentage 1.11%), in the typing banner, the badge and the Competitive Programming line
 
 ## [4.4.8] - 2026-09-23

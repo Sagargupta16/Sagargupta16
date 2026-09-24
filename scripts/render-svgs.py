@@ -1,4 +1,5 @@
-"""Render the README's custom animated SVGs into assets/svg/.
+"""
+Render the README's custom animated SVGs into assets/svg/.
 
 Everything here is self-hosted on purpose: free widget hosts run out of quota
 (github-profile-trophy and the activity graph both answered HTTP 402 on
@@ -105,22 +106,40 @@ ICON_ROWS = [
 ]
 
 HEADERS = [
-    ("projects", "01", "Featured Projects", "what I have built and shipped"),
+    ("experience", "01", "Experience", "where I work and what shipped"),
+    ("projects", "02", "Featured Projects", "what I have built and shipped"),
     (
         "community",
-        "02",
+        "03",
         "Community and Developer Tools",
         "open tooling for Claude Code and MCP",
     ),
-    ("opensource", "03", "Open Source", "merged upstream work"),
-    ("connect", "04", "Connect With Me", "where to find me"),
-    ("stack", "05", "Tech Stack and Tools", "what I work with daily"),
-    ("stats", "06", "GitHub Stats", "activity, streaks and contests"),
-    ("certs", "07", "Certifications and Badges", "verified on Credly"),
+    ("opensource", "04", "Open Source", "merged upstream work"),
+    ("connect", "05", "Connect With Me", "where to find me"),
+    ("stack", "06", "Tech Stack and Tools", "what I work with daily"),
+    ("stats", "07", "GitHub Stats", "activity, streaks and contests"),
+    ("certs", "08", "Certifications and Badges", "verified on Credly"),
+]
+
+# Career milestones for the timeline, oldest first. Two short lines each so
+# every label fits its 168 px column; the last one is the current role.
+MILESTONES = [
+    ("2021", "MCA, NIT Warangal", "NIMCET AIR 208"),
+    ("2023", "Software Dev Intern", "Ikarus-3D, Mohali"),
+    ("2024", "ProServe DevOps Intern", "AWS, Hyderabad"),
+    ("2024", "Cloud Consultant", "AWS ProServe"),
+    ("2026", "Lead DevOps Consultant", "RWS engagement"),
 ]
 
 
+SVG_CLOSE = "</svg>"
+ALLOWED_HOSTS = ("https://leetcode.com/", "https://skillicons.dev/")
+
+
 def fetch(url: str, body: dict | None = None, timeout: int = 20) -> bytes:
+    # https only, and only the two hosts this script reads from
+    if not url.startswith(ALLOWED_HOSTS):
+        raise ValueError(f"refusing to fetch {url}")
     data = json.dumps(body).encode() if body is not None else None
     req = urllib.request.Request(
         url,
@@ -131,7 +150,8 @@ def fetch(url: str, body: dict | None = None, timeout: int = 20) -> bytes:
             "Referer": "https://leetcode.com",
         },
     )
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
+    # scheme and host were checked against ALLOWED_HOSTS above
+    with urllib.request.urlopen(req, timeout=timeout) as resp:  # nosec B310
         return resp.read()
 
 
@@ -250,7 +270,7 @@ def render_terminal(data: dict) -> str:
         fill = GREEN if i == 2 else "rgba(255,255,255,0.22)"
         parts.append(f'<circle cx="{cx}" cy="19" r="5.5" fill="{fill}"/>')
     parts.append(
-        f'<text x="420" y="24" text-anchor="middle" fill="rgba(255,255,255,0.45)" '
+        '<text x="420" y="24" text-anchor="middle" fill="rgba(255,255,255,0.45)" '
         'style="font-size:12px">sagar@aws: ~</text>'
     )
     y, t, idx = 70, 0.6, 0
@@ -267,11 +287,12 @@ def render_terminal(data: dict) -> str:
         t += 0.25
         for out in outputs:
             y += 24
-            color = (
-                AMBER
-                if cmd.startswith("leetcode")
-                else (SKY if "aws-samples" in out else "rgba(255,255,255,0.72)")
-            )
+            if cmd.startswith("leetcode"):
+                color = AMBER
+            elif "aws-samples" in out:
+                color = SKY
+            else:
+                color = "rgba(255,255,255,0.72)"
             parts.append(shown_line(40, y, out, t, color))
             t += 0.12
         y += 34
@@ -285,7 +306,7 @@ def render_terminal(data: dict) -> str:
         f'<g opacity="0"><set attributeName="opacity" to="1" begin="{t:.2f}s" fill="freeze"/>'
         f'<rect class="cur" x="{cx}" y="{y - 13}" width="9" height="17" fill="{BLUE_LIGHT}"/></g>'
     )
-    parts.append("</svg>")
+    parts.append(SVG_CLOSE)
     return "".join(parts)
 
 
@@ -445,7 +466,7 @@ def render_org_card() -> str:
             "0;0.3;0.4;0.5;0.92;1",
         )
     )
-    parts.append("</svg>")
+    parts.append(SVG_CLOSE)
     return "".join(parts)
 
 
@@ -522,7 +543,7 @@ def render_mlops_card() -> str:
         f'<circle cx="366" cy="{y - 24}" r="3" fill="{GREEN}">'
         '<animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>'
     )
-    parts.append("</svg>")
+    parts.append(SVG_CLOSE)
     return "".join(parts)
 
 
@@ -546,7 +567,7 @@ def render_header(num: str, title: str, sub: str, theme: str) -> str:
             f'<rect x="-160" y="{h - 5}" width="160" height="2" fill="url(#sweep)">'
             f'<animateTransform attributeName="transform" type="translate" values="0 0;1000 0" dur="4.5s" repeatCount="indefinite"/></rect>',
             f'<circle cx="{w - 8}" cy="30" r="3" fill="{dim}"/>',
-            "</svg>",
+            SVG_CLOSE,
         ]
     )
 
@@ -561,14 +582,14 @@ def fetch_icon(name: str) -> str | None:
         print(f"icon {name} failed: {exc}")
         return None
     inner = raw.find("<svg", raw.find("<svg") + 1)
-    end = raw.rfind("</svg>", 0, raw.rfind("</svg>"))
+    end = raw.rfind(SVG_CLOSE, 0, raw.rfind(SVG_CLOSE))
     if inner == -1 or end == -1:
         return None
-    body = raw[inner : end + len("</svg>")]
+    body = raw[inner : end + len(SVG_CLOSE)]
     body = re.sub(r'\sid="([^"]+)"', lambda m: f' id="{name}-{m.group(1)}"', body)
     body = re.sub(r"url\(#([^)]+)\)", lambda m: f"url(#{name}-{m.group(1)})", body)
     body = re.sub(r'href="#([^"]+)"', lambda m: f'href="#{name}-{m.group(1)}"', body)
-    inner_body = body[body.find(">") + 1 : body.rfind("</svg>")]
+    inner_body = body[body.find(">") + 1 : body.rfind(SVG_CLOSE)]
     return f'<symbol id="i-{name}" viewBox="0 0 256 256">{inner_body}</symbol>'
 
 
@@ -586,7 +607,7 @@ def render_stack() -> str | None:
     parts = [
         svg_open(w, h, "Tech stack: " + ", ".join(n for row in ICON_ROWS for n in row)),
         f"<defs>{''.join(symbols)}"
-        f'<linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="{BG}"/>'
+        + f'<linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="{BG}"/>'
         f'<stop offset="0.08" stop-color="{BG}" stop-opacity="0"/><stop offset="0.92" stop-color="{BG}" stop-opacity="0"/>'
         f'<stop offset="1" stop-color="{BG}"/></linearGradient>'
         f'<clipPath id="win"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="14"/></clipPath></defs>',
@@ -625,9 +646,132 @@ def render_divider() -> str:
             f'<circle cx="{w / 2}" cy="7" r="2.5" fill="{BLUE_LIGHT}"/>',
             '<rect x="-220" y="6" width="220" height="2" fill="url(#pulse)">'
             '<animateTransform attributeName="transform" type="translate" values="0 0;1060 0" dur="3.6s" repeatCount="indefinite"/></rect>',
-            "</svg>",
+            SVG_CLOSE,
         ]
     )
+
+
+# ---------------------------------------------------------------- career timeline
+
+
+def render_experience() -> str:
+    """A rail that draws itself left to right, lighting each milestone as it passes."""
+    w, h = 840, 196
+    left, right, rail_y = 84, 756, 92
+    step = (right - left) / (len(MILESTONES) - 1)
+    draw = 3.0  # seconds for the rail to reach the last milestone
+    parts = [
+        svg_open(
+            w, h, "Career timeline: " + ", ".join(f"{y} {a}" for y, a, _ in MILESTONES)
+        ),
+        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.4px}}"
+        f".t{{font-family:{SANS};font-weight:700}}"
+        ".now{animation:ring 2.2s ease-out infinite;transform-origin:center;transform-box:fill-box}"
+        "@keyframes ring{0%{opacity:0.9;transform:scale(1)}100%{opacity:0;transform:scale(2.6)}}</style>",
+        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
+        f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10">CAREER</text>',
+        f'<line x1="{left}" y1="{rail_y}" x2="{right}" y2="{rail_y}" stroke="rgba(255,255,255,0.10)" stroke-width="2"/>',
+        f'<line x1="{left}" y1="{rail_y}" x2="{right}" y2="{rail_y}" stroke="{BLUE}" stroke-width="2" '
+        f'stroke-dasharray="{right - left}" stroke-dashoffset="{right - left}">'
+        f'<animate attributeName="stroke-dashoffset" from="{right - left}" to="0" dur="{draw}s" begin="0.3s" fill="freeze"/></line>',
+    ]
+    last = len(MILESTONES) - 1
+    for i, (year, role, where) in enumerate(MILESTONES):
+        x = left + i * step
+        at = 0.3 + draw * i / last
+        current = i == last
+        dot = GREEN if current else BLUE_LIGHT
+        if current:
+            parts.append(
+                f'<circle class="now" cx="{x}" cy="{rail_y}" r="7" fill="none" stroke="{GREEN}" stroke-width="1.5" opacity="0">'
+                f'<set attributeName="opacity" to="1" begin="{at:.2f}s" fill="freeze"/></circle>'
+            )
+        parts.append(
+            f'<circle cx="{x}" cy="{rail_y}" r="6" fill="{BG}" stroke="{dot}" stroke-width="2" opacity="0.25">'
+            f'<animate attributeName="opacity" to="1" begin="{at:.2f}s" dur="0.3s" fill="freeze"/></circle>'
+        )
+        parts.append(
+            f'<circle cx="{x}" cy="{rail_y}" r="2.6" fill="{dot}" opacity="0">'
+            f'<animate attributeName="opacity" to="1" begin="{at:.2f}s" dur="0.3s" fill="freeze"/></circle>'
+        )
+        year_fill = GREEN if current else BLUE_LIGHT
+        label = f"{year}  NOW" if current else year
+        parts.append(
+            f'<text class="m" x="{x}" y="{rail_y - 22}" text-anchor="middle" fill="{year_fill}" font-size="10" opacity="0.35">{label}'
+            f'<animate attributeName="opacity" to="1" begin="{at:.2f}s" dur="0.3s" fill="freeze"/></text>'
+        )
+        parts.append(
+            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{at + 0.1:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<text class="t" x="{x}" y="{rail_y + 32}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(role)}</text>'
+            f'<text class="m" x="{x}" y="{rail_y + 52}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">'
+            f"{escape(where.upper())}</text></g>"
+        )
+    parts.append(SVG_CLOSE)
+    return "".join(parts)
+
+
+# ---------------------------------------------------------------- highlights
+
+
+def readme_counts() -> dict:
+    """Counts that already live in the README, so the highlights card never drifts from it."""
+    text = (ROOT / "README.md").read_text(encoding="utf-8")
+    merged = 0
+    if "Merged contributions" in text:
+        block = text.split("Merged contributions", 1)[1].split("<details>", 1)[0]
+        merged = sum(1 for line in block.splitlines() if line.startswith("| ["))
+    certs = 0
+    if "Industry Certifications" in text:
+        para = text.split("Industry Certifications", 1)[1].split("</p>", 1)[0]
+        certs = para.count("<a href")
+    return {"merged": merged, "certs": certs}
+
+
+def render_highlights(data: dict) -> str:
+    lc = data["leetcode"]
+    counts = readme_counts()
+    tiles = [
+        ("135+", "AWS accounts onboarded", BLUE_LIGHT),
+        ("~90%", "faster account setup", BLUE_LIGHT),
+        ("1000+", "preventive controls, CCMv4", BLUE_LIGHT),
+        ("10/10", "client CSAT", BLUE_LIGHT),
+        ("2", "published AWS samples", SKY),
+        (str(counts["merged"]), "merged upstream contributions", SKY),
+        (lc["badge"], f"LeetCode, top {lc['top']}%", AMBER),
+        (str(counts["certs"]), "industry certifications", SKY),
+    ]
+    w, h = 840, 212
+    cols, gap, pad = 4, 12, 16
+    tw = (w - 2 * pad - (cols - 1) * gap) / cols
+    th = 80
+    parts = [
+        svg_open(w, h, "Highlights: " + "; ".join(f"{v} {k}" for v, k, _ in tiles)),
+        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}"
+        f".v{{font-family:{SANS};font-weight:800}}</style>",
+    ]
+    for i, (value, label, accent) in enumerate(tiles):
+        col, row = i % cols, i // cols
+        x = pad + col * (tw + gap)
+        y = pad + row * (th + gap)
+        begin = 0.2 + i * 0.12
+        live = accent == AMBER
+        dot = (
+            f'<circle cx="{x + tw - 14}" cy="{y + 16}" r="3" fill="{GREEN}">'
+            '<animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>'
+            if live
+            else ""
+        )
+        parts.append(
+            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
+            f'<animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
+            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="12" fill="{CARD}" stroke="rgba(255,255,255,0.08)"/>'
+            f'<rect x="{x}" y="{y + 18}" width="3" height="26" rx="1.5" fill="{accent}"/>'
+            f'<text class="v" x="{x + 18}" y="{y + 42}" fill="#f3f4f6" font-size="26">{escape(value)}</text>'
+            f'<text class="m" x="{x + 18}" y="{y + 64}" fill="rgba(255,255,255,0.5)" font-size="8.5">{escape(label.upper())}</text>'
+            f"{dot}</g>"
+        )
+    parts.append(SVG_CLOSE)
+    return "".join(parts)
 
 
 def write(name: str, content: str) -> None:
@@ -643,6 +787,8 @@ def main() -> None:
     data = load_data()
     write("data.json", json.dumps(data, indent=2) + "\n")
     write("terminal.svg", render_terminal(data))
+    write("experience.svg", render_experience())
+    write("highlights.svg", render_highlights(data))
     write("sample-org-governance.svg", render_org_card())
     write("sample-sagemaker-mlops.svg", render_mlops_card())
     for key, num, title, sub in HEADERS:

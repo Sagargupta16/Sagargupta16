@@ -33,7 +33,7 @@
 
 > ### 👨‍💻 **Hi, I'm Sagar Gupta**
 >
-> I am a **ProServe (Cloud Consultant) - DevOps/MLOps** at [**Amazon Web Services (AWS)**](https://aws.amazon.com/) and hold a postgraduate degree (MCA) from [**NIT Warangal**](https://www.nitw.ac.in/).
+> Cloud Consultant at [**AWS Professional Services**](https://aws.amazon.com/professional-services/) (DevOps/MLOps). I build the AWS platforms that regulated companies migrate onto: **Terraform**, **CI/CD**, **MLOps pipelines**, and lately the **agent tooling** that makes that work faster. MCA from [**NIT Warangal**](https://www.nitw.ac.in/).
 >
 > I specialize in **DevOps Engineering** • **MLOps** • **AWS Cloud Infrastructure** • **Full Stack Development** with a strong focus on automation and scalable cloud solutions.
 
@@ -42,6 +42,45 @@
 <div align="center">
   <img src="assets/svg/terminal.svg" width="100%" alt="Terminal: whoami, published AWS samples, LeetCode profile" />
 </div>
+
+<img src="assets/svg/divider.svg" width="100%" alt="" />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-experience-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-experience-light.svg">
+  <img src="assets/svg/header-experience-dark.svg" width="100%" alt="Experience" />
+</picture>
+
+<img src="assets/svg/experience.svg" width="100%" alt="Career timeline: 2021 MCA at NIT Warangal, 2023 software developer intern at Ikarus-3D, 2024 AWS ProServe DevOps intern, 2024 Cloud Consultant at AWS ProServe, 2026 Lead DevOps Consultant on the RWS engagement" />
+
+<img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 135+ AWS accounts onboarded, about 90% faster account setup, 1000+ preventive controls, 10/10 client CSAT, 2 published AWS samples, merged upstream contributions, LeetCode Guardian, 6 industry certifications" />
+
+<details>
+<summary><b>Engagements at AWS Professional Services</b> (Aug 2024 - present)</summary>
+<br/>
+
+- **Lead DevOps Consultant, RWS** (Feb 2026 - present): cloud platform for a data-centre migration onboarding 50+ application workloads into 135+ AWS accounts. Authored the AWS Organizations OU structure, SCPs, tag policies, AWS Config rules and Security Hub standards mapped to CCMv4, plus Transit Gateway hub-and-spoke networking. Terraform + GitHub Actions cut per-account setup from 3+ days to under 4 hours.
+- **DevOps Consultant, DTCC** (Aug 2025 - Dec 2025): modernized legacy Terraform to cloud-native IaC on high-sensitivity financial workloads, with Amazon Q for code analysis and migration assessments.
+- **MLOps Pipeline, SME Program** (Jun 2025 - Aug 2025): SageMaker medical-image classification with blue-green endpoints, auto-scaling and drift detection, since generalized and published as an [AWS sample](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops).
+- **DevOps Consultant, State Street** (Oct 2024 - Aug 2025): a 38+ service self-service Terraform module library tested with tftest + PyTest, and 1000+ preventive Config and Security Hub controls mapped to CCMv4.0. 10/10 CSAT and three consecutive 5/5 Pulse ratings.
+- **Associate Professional Services, DevOps (intern), AWS** (Mar 2024 - Jul 2024): migrated an on-premises app to ECS with blue-green deployment via Terraform, CodePipeline and CodeDeploy, traced with X-Ray and CloudWatch.
+- **Software Developer Associate (intern), Ikarus-3D** (May 2023 - Jul 2023): containerized a production app on ECS/ECR with GitHub Actions CI/CD, and set up SonarQube on EC2 + RDS.
+
+</details>
+
+<details>
+<summary><b>Publications, talks and recognition</b></summary>
+<br/>
+
+- **AWS sample:** [Terraform AWS Organizations Governance on Control Tower](https://github.com/aws-samples/sample-aws-terraform-org-governance) (2026)
+- **AWS sample:** [SageMaker Image Classification MLOps](https://github.com/aws-samples/sample-sagemaker-image-classification-mlops) (2025)
+- **AWS Prescriptive Guidance pattern:** Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub (published 2025), plus 3 more peer reviewed
+- **Tech talks:** Automating Unit Testing for Terraform with Terraform Test and PyTest (2025); GitOps Configuration Safety with Health Checks and Pipeline Gating (2026)
+- **Recognition:** 5x TFC Ambassador (AI/ML, NGDE, CloudOps, Agentic AI, Serverless), MLOps SME Program graduate, Associate Speaker certified (2026), ML Hackathon 2025 26th of 238 teams
+
+</details>
+
+**Education:** MCA, [NIT Warangal](https://www.nitw.ac.in/) (2021 - 2024, CGPA 8.38, NIMCET AIR 208) | BCA, Devi Ahilya Vishwavidyalaya, Indore (2018 - 2021)
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
@@ -97,7 +136,7 @@ Open-source tooling for the Claude Code / MCP ecosystem -- built for my own work
 
 <div align="center">
 
-**[View all 28+ projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf)**
+**[View all 45 projects, experience & achievements on my Portfolio](https://sagargupta.online/portfolio-react/)** | **[Download Resume](https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf)**
 
 </div>
 
@@ -217,6 +256,8 @@ Merged contributions across the AWS ecosystem, MCP protocol, and AI-agent toolin
 ### 🏅 Competitive Programming Journey
 
 **🏆 LeetCode Guardian** (Top 2%) | **📈 Peak Rating:** 2166 | **✅ Problems Solved:** 1300+ | **🎮 Contests:** 105+
+
+**GeeksforGeeks** 400+ problems | **HackerRank** 6-Star Problem Solving | **Google Kick Start '22** Round E rank 1289 | **Podiums:** 1st at Coding Cauldron '23 and QFiesta '22, 2nd at Manage the Damage '23 and Trial By Code '22
 
 <div align="center">
   <picture>

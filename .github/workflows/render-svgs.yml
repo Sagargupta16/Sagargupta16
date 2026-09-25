@@ -24,7 +24,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: Install Pillow (shrinks the inlined Credly badges)
+      - name: GitHub stats card
+        uses: Sagargupta16/github-stats-card-action@3fbf436d266c8261780007d34d773edb1269864a # v1.0.0
+        with:
+          username: Sagargupta16
+          output: assets/svg/github.svg
+
+      - name: LeetCode card
+        uses: Sagargupta16/leetcode-card-action@e57d2d1534a6411cbdea59dfef5030e61d06abf2 # v1.0.0
+        with:
+          username: sagargupta1610
+          output: assets/svg/leetcode.svg
+
+      - name: Install Pillow (shrinks the inlined company logos)
         # block scalar: the ':all:' value would otherwise parse as a YAML mapping
         run: |
           python -m pip install --quiet --only-binary :all: pillow==12.3.0

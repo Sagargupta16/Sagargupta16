@@ -2,6 +2,10 @@
 
 All notable changes to this profile README repository.
 
+## [4.10.0] - 2026-09-25
+
+- "Get this card" strips under the GitHub stats, LeetCode, open-source and certifications cards. Each is a slim animated SVG linking to the Quick start of the public action that makes that kind of card (github-stats-card-action, leetcode-card-action, oss-contributions-card-action, credly-badge-readme-action), so visitors can add the same card to their own profile. The cards keep their existing links
+
 ## [4.9.0] - 2026-09-24
 
 - Worked With card replaces the engagements list: one tile per company with its logo (monogram where no sharp logo exists), the company name and the title held there. The MLOps SME program is no longer listed as an engagement, on the card or on the timeline rail

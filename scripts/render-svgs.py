@@ -1813,7 +1813,10 @@ def _logo_tile(name: str, x: float, y: float, size: int) -> str:
     frame = f'<rect x="{x:.1f}" y="{y}" width="{size}" height="{size}" rx="12" fill="#ffffff0f" stroke="rgba(255,255,255,0.12)"/>'
     if icon:
         pad = 9
-        return frame + f'<image href="{icon}" x="{x + pad:.1f}" y="{y + pad}" width="{size - 2 * pad}" height="{size - 2 * pad}"/>'
+        return (
+            frame
+            + f'<image href="{icon}" x="{x + pad:.1f}" y="{y + pad}" width="{size - 2 * pad}" height="{size - 2 * pad}"/>'
+        )
     initials = "".join(word[0] for word in name.replace("-", " ").split()[:2]).upper()
     return frame + (
         f'<text class="t" x="{x + size / 2:.1f}" y="{y + size / 2 + 6}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="17">{escape(initials)}</text>'
@@ -1828,7 +1831,14 @@ def render_worked_with(pf: dict) -> str:
         tiles.append((e["client"], role))
     for e in pf.get("earlier", []):
         if e["company"] != AWS_NAME:
-            tiles.append((e["company"], f"{e['title']} (intern)" if e.get("position") == "Internship" else e["title"]))
+            tiles.append(
+                (
+                    e["company"],
+                    f"{e['title']} (intern)"
+                    if e.get("position") == "Internship"
+                    else e["title"],
+                )
+            )
     w, h = 840, 232
     gap, pad = 10, 16
     tw = (w - 2 * pad - (len(tiles) - 1) * gap) / len(tiles)
@@ -1863,23 +1873,55 @@ def render_worked_with(pf: dict) -> str:
 
 def _publication_groups(pf: dict) -> list[tuple[str, list[tuple[str, str]]]]:
     samples, papers, talks = [], [], []
-    for c in sorted(pf.get("contributions", []), key=lambda c: str(c.get("year", "")), reverse=True):
+    for c in sorted(
+        pf.get("contributions", []), key=lambda c: str(c.get("year", "")), reverse=True
+    ):
         title, year = c["title"], str(c.get("year", ""))
         if title.startswith("AWS Sample Published: "):
-            samples.append((title.split(": ", 1)[1].removesuffix("(aws-samples, MIT-0)").strip(), year))
+            samples.append(
+                (
+                    title.split(": ", 1)[1]
+                    .removesuffix("(aws-samples, MIT-0)")
+                    .strip(),
+                    year,
+                )
+            )
         elif title.startswith("APG Pattern: "):
-            papers.append(("APG pattern: " + title.split(": ", 1)[1].removesuffix("(Published)").strip(), year))
+            papers.append(
+                (
+                    "APG pattern: "
+                    + title.split(": ", 1)[1].removesuffix("(Published)").strip(),
+                    year,
+                )
+            )
         elif "Peer Reviewed" in title:
             papers.append((title.replace(" Peer Reviewed", " peer reviewed"), year))
         elif title.startswith("Tech Talk: "):
             talks.append((title.split(": ", 1)[1], year))
         else:
             papers.append((title, year))
-    recognition = [(a["title"].replace(" - ", ", "), str(a.get("year", ""))) for a in pf.get("achievements", [])]
-    return [("AWS SAMPLES", samples), ("PUBLICATIONS", papers), ("TECH TALKS", talks), ("RECOGNITION", recognition)]
+    recognition = [
+        (a["title"].replace(" - ", ", "), str(a.get("year", "")))
+        for a in pf.get("achievements", [])
+    ]
+    return [
+        ("AWS SAMPLES", samples),
+        ("PUBLICATIONS", papers),
+        ("TECH TALKS", talks),
+        ("RECOGNITION", recognition),
+    ]
 
 
-def _panel(label: str, items: list[tuple[str, str]], x: float, y: float, pw: float, ph: float, accent: str, delay: float) -> str:
+def _panel(
+    label: str,
+    items: list[tuple[str, str]],
+    x: float,
+    y: float,
+    pw: float,
+    ph: float,
+    accent: str,
+    delay: float,
+) -> str:
     out = [
         f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{delay:.2f}s" dur="0.45s" fill="freeze"/>'
         f'<rect x="{x:.1f}" y="{y:.1f}" width="{pw:.1f}" height="{ph:.1f}" rx="12" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
@@ -1916,7 +1958,12 @@ def render_publications(pf: dict) -> str:
     heights = [max(_panel_height(items) for _, items in row) for row in rows]
     h = 44 + sum(heights) + gap + pad
     parts = [
-        svg_open(w, h, "Publications, talks and recognition: " + "; ".join(t for _, items in groups for t, _ in items)),
+        svg_open(
+            w,
+            h,
+            "Publications, talks and recognition: "
+            + "; ".join(t for _, items in groups for t, _ in items),
+        ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.s{{font-family:{SANS};font-weight:500}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
         f'<text class="m" x="24" y="30" fill="{SKY}" font-size="10">PUBLICATIONS, TALKS AND RECOGNITION</text>',
@@ -1925,7 +1972,18 @@ def render_publications(pf: dict) -> str:
     for r, row in enumerate(rows):
         for c, (label, items) in enumerate(row):
             i = r * 2 + c
-            parts.append(_panel(label, items, pad + c * (pw + gap), y, pw, heights[r], accents[i], 0.15 + i * 0.12))
+            parts.append(
+                _panel(
+                    label,
+                    items,
+                    pad + c * (pw + gap),
+                    y,
+                    pw,
+                    heights[r],
+                    accents[i],
+                    0.15 + i * 0.12,
+                )
+            )
         y += heights[r] + gap
     parts.append(SVG_CLOSE)
     return "".join(parts)
@@ -2110,6 +2168,49 @@ CTAS = [
 ]
 
 
+# "Get this card" strips under the cards anyone can reproduce with a public action.
+# (file key, action repo, card name); the strip links to the repo's Quick start.
+GET_THIS_CARD = [
+    ("github", "github-stats-card-action", "GitHub stats card"),
+    ("leetcode", "leetcode-card-action", "LeetCode card"),
+    ("oss", "oss-contributions-card-action", "open-source cards"),
+    ("certs", "credly-badge-readme-action", "Credly badges card"),
+]
+
+
+def render_get_this_card(repo: str, card: str) -> str:
+    """Return a slim strip naming the public action that makes this kind of card."""
+    w, h = 840, 40
+    return "".join(
+        [
+            svg_open(w, h, f"Get the {card} for your own profile: Sagargupta16/{repo}"),
+            f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.3px}}</style>",
+            '<defs><linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
+            '<stop offset="0.5" stop-color="#fff" stop-opacity="0.07"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+            f'<clipPath id="c"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="12"/></clipPath></defs>',
+            f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="{CARD}" stroke="{BLUE_LIGHT}40"/>',
+            f'<circle cx="22" cy="20" r="3.5" fill="{GREEN}"><animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>',
+            f'<text class="m" x="36" y="24" fill="rgba(255,255,255,0.55)" font-size="9.5">GET THIS {escape(card.upper())} FOR YOUR PROFILE</text>',
+            f'<text class="m" x="{w - 22}" y="24" text-anchor="end" fill="{BLUE_LIGHT}" font-size="10.5">SAGARGUPTA16/{escape(repo.upper())}  -&gt;</text>',
+            f'<g clip-path="url(#c)"><rect x="-160" y="0" width="140" height="{h}" fill="url(#sweep)" transform="skewX(-20)">'
+            '<animateTransform attributeName="transform" type="translate" values="0 0;1200 0" dur="5s" repeatCount="indefinite" additive="sum"/></rect></g>',
+            SVG_CLOSE,
+        ]
+    )
+
+
+def _get_this_card(key: str) -> str:
+    """Return the README markup of the strip for one card, linked to its action repo."""
+    repo, card = next((r, c) for k, r, c in GET_THIS_CARD if k == key)
+    return _link(
+        f"https://github.com/Sagargupta16/{repo}#quick-start",
+        _img(
+            f"get-{key}.svg",
+            f"Get the {card} for your own profile: Sagargupta16/{repo}",
+        ),
+    )
+
+
 def render_cta(label: str, primary: bool) -> str:
     w, h = 250, 48
     fill = BLUE if primary else CARD
@@ -2255,6 +2356,7 @@ def render_readme(data: dict) -> str:
         _link(MERGED_URL, _img("oss.svg", "Open source summary")),
         _link(MERGED_URL, _img("oss-merged.svg", "Merged upstream pull requests")),
         _link(REVIEW_URL, _img("oss-review.svg", "Pull requests in review")),
+        _get_this_card("oss"),
         DIVIDER,
         _header("connect", "Connect With Me"),
         _row(connect, "18%"),
@@ -2265,15 +2367,18 @@ def render_readme(data: dict) -> str:
         DIVIDER,
         _header("stats", "GitHub Stats"),
         _img("github.svg", "GitHub stats"),
+        _get_this_card("github"),
         _link(
             "https://leetcode.com/sagargupta1610/",
             _img("leetcode.svg", "LeetCode contest rating"),
         ),
+        _get_this_card("leetcode"),
         _img("competitive.svg", "Competitive programming"),
         SNAKE,
         DIVIDER,
         _header("certs", "Certifications and Badges"),
         _link(CREDLY_URL, _img("certs.svg", "Credly badges")),
+        _get_this_card("certs"),
         DIVIDER,
         # a 1px copy of the komarev counter keeps visits counted; the number itself shows in profile-badges.svg
         _img("footer.svg", "Thanks for visiting")
@@ -2334,6 +2439,8 @@ def write_portfolio_cards(data: dict) -> None:
             f"{key}.svg",
             render_cta(label.format(n=pf.get("project_count", 45)), i == 0),
         )
+    for key, repo, card in GET_THIS_CARD:
+        write(f"get-{key}.svg", render_get_this_card(repo, card))
 
 
 def main() -> None:

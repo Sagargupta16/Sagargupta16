@@ -96,6 +96,8 @@
 
 <a href="https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Aopen+-user%3ASagargupta16"><img src="assets/svg/oss-review.svg" width="100%" alt="Pull requests in review" /></a>
 
+<a href="https://github.com/Sagargupta16/oss-contributions-card-action#quick-start"><img src="assets/svg/get-oss.svg" width="100%" alt="Get the open-source cards for your own profile: Sagargupta16/oss-contributions-card-action" /></a>
+
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
 <picture>
@@ -134,7 +136,11 @@
 
 <img src="assets/svg/github.svg" width="100%" alt="GitHub stats" />
 
+<a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></a>
+
 <a href="https://leetcode.com/sagargupta1610/"><img src="assets/svg/leetcode.svg" width="100%" alt="LeetCode contest rating" /></a>
+
+<a href="https://github.com/Sagargupta16/leetcode-card-action#quick-start"><img src="assets/svg/get-leetcode.svg" width="100%" alt="Get the LeetCode card for your own profile: Sagargupta16/leetcode-card-action" /></a>
 
 <img src="assets/svg/competitive.svg" width="100%" alt="Competitive programming" />
 
@@ -153,6 +159,8 @@
 </picture>
 
 <a href="https://www.credly.com/users/sagar-gupta.f8eb96cc"><img src="assets/svg/certs.svg" width="100%" alt="Credly badges" /></a>
+
+<a href="https://github.com/Sagargupta16/credly-badge-readme-action#quick-start"><img src="assets/svg/get-certs.svg" width="100%" alt="Get the Credly badges card for your own profile: Sagargupta16/credly-badge-readme-action" /></a>
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 

@@ -130,9 +130,9 @@
     ]
   },
   "github": {
-    "contributions": 8112,
-    "commits": 5979,
-    "prs": 1538,
+    "contributions": 8116,
+    "commits": 5981,
+    "prs": 1539,
     "reviews": 34,
     "issues": 114,
     "stars": 272,
@@ -197,10 +197,11 @@
       "kinfolk": 1,
       "github-stats-card-action": 0,
       "leetcode-card-action": 0,
-      "oss-contributions-card-action": 0
+      "oss-contributions-card-action": 0,
+      "readme-kit-action": 0
     },
     "followers": 106,
-    "repos": 61,
+    "repos": 62,
     "streak": 25,
     "longest": 175,
     "active_days": 319,
@@ -679,23 +680,23 @@
         5,
         6,
         18,
-        13
+        17
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        60.3,
+        60.0,
         "#3178c6"
       ],
       [
         "Python",
-        22.5,
+        22.9,
         "#3572A5"
       ],
       [
         "JavaScript",
-        4.8,
+        4.7,
         "#f1e05a"
       ],
       [
@@ -705,7 +706,7 @@
       ],
       [
         "CSS",
-        3.2,
+        3.1,
         "#663399"
       ],
       [
@@ -1218,6 +1219,50 @@
     ],
     "community": [
       {
+        "title": "GitHub Stats Card Action",
+        "description": "A GitHub Action that renders an animated GitHub stats card as an SVG in your own repo, so your profile README never depends on a hosted widget. Five stat tiles, a contribution calendar, current and longest streak, and top languages in one self-hosted card, published on the GitHub Marketplace.",
+        "tools_tech": [
+          "Python 3.13",
+          "GitHub Actions",
+          "GitHub GraphQL API",
+          "SVG"
+        ],
+        "github": "https://github.com/Sagargupta16/github-stats-card-action"
+      },
+      {
+        "title": "LeetCode Card Action",
+        "description": "A GitHub Action that renders an animated LeetCode card as an SVG in your own repo. Contest rating history is drawn as a line with the peak marked, next to the contest badge, current rating, top percentage, and problems solved by difficulty. Published on the GitHub Marketplace.",
+        "tools_tech": [
+          "Python 3.13",
+          "GitHub Actions",
+          "LeetCode GraphQL",
+          "SVG"
+        ],
+        "github": "https://github.com/Sagargupta16/leetcode-card-action"
+      },
+      {
+        "title": "OSS Contributions Card Action",
+        "description": "A GitHub Action that finds your merged and open pull requests to other people's repos through the GitHub GraphQL search, with no manual list to maintain, and renders them as animated SVG cards in your own repo: a summary card, a merged list, and an in-review list. Published on the GitHub Marketplace.",
+        "tools_tech": [
+          "Python 3.13",
+          "GitHub Actions",
+          "GitHub GraphQL API",
+          "SVG"
+        ],
+        "github": "https://github.com/Sagargupta16/oss-contributions-card-action"
+      },
+      {
+        "title": "readme-kit",
+        "description": "A GitHub Action that turns one profile.yml into a matching set of self-hosted animated SVG cards for your GitHub profile README: hero, terminal, section headers, divider, footer, timeline, tiles, panels, stats, buttons, and project cards. One theme.accent colors the whole set. Published on the GitHub Marketplace.",
+        "tools_tech": [
+          "Python 3.13",
+          "GitHub Actions",
+          "YAML",
+          "SVG"
+        ],
+        "github": "https://github.com/Sagargupta16/readme-kit-action"
+      },
+      {
         "title": "skillcheck",
         "description": "Conformance suite for Agent Skills (SKILL.md), published on npm. Linters check syntax; skillcheck checks reality: 36 rules with exact skills-ref parity, client-extension awareness across 6 runtimes (Claude Code, Codex, Gemini CLI, Copilot, Cursor, OpenCode), structure and reference validation, SARIF output, and a drop-in GitHub Action.",
         "tools_tech": [
@@ -1348,7 +1393,7 @@
       },
       {
         "title": "Credly Badge README Action",
-        "description": "A GitHub Action that auto-syncs your Credly certifications and badges to your GitHub profile README - no more manual updates when you earn a new cert. Categorizes badges into Industry Certifications, Professional/Partner, and Knowledge/Learning with non-destructive HTML-marker updates.",
+        "description": "A GitHub Action that auto-syncs your Credly certifications and badges to your GitHub profile README - no more manual updates when you earn a new cert. Categorizes badges into Industry Certifications, Professional/Partner, and Knowledge/Learning with non-destructive HTML-marker updates. Since v1.1.0 an SVG card mode (output readme, svg, or both) draws every badge into one animated SVG card in two or three groups.",
         "tools_tech": [
           "Python 3.13",
           "GitHub Actions",
@@ -1516,12 +1561,12 @@
         "type": "Hackathon"
       }
     ],
-    "project_count": 45
+    "project_count": 49
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5866,
-    "PrefectHQ/prefect": 23920,
-    "anthropics/skills": 177989,
+    "PrefectHQ/prefect": 23921,
+    "anthropics/skills": 177991,
     "apache/airflow": 46964,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
@@ -1530,12 +1575,12 @@
     "axios/axios": 109212,
     "cloudposse/terraform-aws-tfstate-backend": 442,
     "expressjs/multer": 12084,
-    "feast-dev/feast": 7307,
+    "feast-dev/feast": 7308,
     "forem/selfhost": 1481,
     "hashicorp/terraform-provider-aws": 11099,
-    "lucide-icons/lucide": 24706,
-    "modelcontextprotocol/servers": 90580,
+    "lucide-icons/lucide": 24707,
+    "modelcontextprotocol/servers": 90582,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 119
   },
-  "views": 22604
+  "views": 22609
 }

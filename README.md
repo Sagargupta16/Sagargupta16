@@ -51,7 +51,7 @@
 </p>
 
 <p align="center">
-<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/cta-portfolio.svg" width="30%" alt="View all 45 projects" /></a>
+<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/cta-portfolio.svg" width="30%" alt="View all 49 projects" /></a>
 <a href="https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf"><img src="assets/svg/cta-resume.svg" width="30%" alt="Download resume" /></a>
 </p>
 
@@ -64,6 +64,10 @@
 </picture>
 
 <p align="center">
+<a href="https://github.com/Sagargupta16/github-stats-card-action"><img src="assets/svg/tool-github-stats-card-action.svg" width="32%" alt="GitHub Stats Card Action: A GitHub Action that renders an animated GitHub stats card as an SVG in your own repo, so your..." /></a>
+<a href="https://github.com/Sagargupta16/leetcode-card-action"><img src="assets/svg/tool-leetcode-card-action.svg" width="32%" alt="LeetCode Card Action: A GitHub Action that renders an animated LeetCode card as an SVG in your own repo" /></a>
+<a href="https://github.com/Sagargupta16/oss-contributions-card-action"><img src="assets/svg/tool-oss-contributions-card-action.svg" width="32%" alt="OSS Contributions Card Action: A GitHub Action that finds your merged and open pull requests to other people&#x27;s repos through..." /></a>
+<a href="https://github.com/Sagargupta16/readme-kit-action"><img src="assets/svg/tool-readme-kit.svg" width="32%" alt="readme-kit: A GitHub Action that turns one profile.yml into a matching set of self-hosted animated SVG..." /></a>
 <a href="https://github.com/Sagargupta16/skillcheck"><img src="assets/svg/tool-skillcheck.svg" width="32%" alt="skillcheck: Conformance suite for Agent Skills (SKILL.md), published on npm" /></a>
 <a href="https://github.com/Sagargupta16/itr-agent"><img src="assets/svg/tool-itr-agent.svg" width="32%" alt="ITR Agent: Local-first MCP server that walks you through filing an Indian income tax return, published on..." /></a>
 <a href="https://github.com/Sagargupta16/claude-skills"><img src="assets/svg/tool-claude-skills.svg" width="32%" alt="Claude Skills: Custom Claude Code plugin marketplace (v5.2.0) with 16 curated plugins covering dev workflow..." /></a>

@@ -16,6 +16,11 @@ on:
 permissions:
   contents: write
 
+# runs queue instead of overlapping: two runs pushing at once reject each other
+concurrency:
+  group: render-readme-svgs
+  cancel-in-progress: false
+
 jobs:
   render:
     runs-on: ubuntu-latest
@@ -53,6 +58,8 @@ jobs:
           git add assets/svg README.md
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh readme svgs and portfolio blocks"
+            # another bot (metrics, credly, snake) may have pushed meanwhile
+            git pull --rebase --autostash origin main
             git push
           else
             echo "No SVG changes to commit"

@@ -130,9 +130,9 @@
     ]
   },
   "github": {
-    "contributions": 8134,
-    "commits": 5990,
-    "prs": 1548,
+    "contributions": 8136,
+    "commits": 5991,
+    "prs": 1549,
     "reviews": 34,
     "issues": 114,
     "stars": 295,
@@ -681,7 +681,7 @@
         6,
         18,
         23,
-        12
+        14
       ]
     ],
     "languages": [
@@ -1567,8 +1567,8 @@
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5865,
     "PrefectHQ/prefect": 23927,
-    "anthropics/skills": 178377,
-    "apache/airflow": 46974,
+    "anthropics/skills": 178391,
+    "apache/airflow": 46976,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 904,
@@ -1580,8 +1580,8 @@
     "forem/selfhost": 1481,
     "hashicorp/terraform-provider-aws": 11103,
     "lucide-icons/lucide": 24722,
-    "modelcontextprotocol/servers": 90599,
+    "modelcontextprotocol/servers": 90602,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 119
   },
-  "views": 22673
+  "views": 22683
 }

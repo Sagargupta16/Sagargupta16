@@ -2,6 +2,10 @@
 
 All notable changes to this profile README repository.
 
+## [4.12.2] - 2026-09-26
+
+- Customer engagements on the career rail show the title held there instead of the stack: "DevOps Consultant, AWS" under State Street and DTCC, "Lead DevOps Consultant, AWS" under RWS, the same titles as the Worked With card
+
 ## [4.12.1] - 2026-09-26
 
 - Dropdowns removed. On GitHub a `<details>` block draws a disclosure triangle and a white focus box that no SVG can hide, so projects are back to showing all 8 cards, and community shows its top six plus a "See all 16 community tools" button

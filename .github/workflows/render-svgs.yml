@@ -12,6 +12,7 @@ on:
     branches: [main]
     paths:
       - scripts/render-svgs.py
+      - assets/logos/**
 
 permissions:
   contents: write
@@ -40,11 +41,6 @@ jobs:
         with:
           username: sagargupta1610
           output: assets/svg/leetcode.svg
-
-      - name: Install Pillow (shrinks the inlined company logos)
-        # block scalar: the ':all:' value would otherwise parse as a YAML mapping
-        run: |
-          python -m pip install --quiet --only-binary :all: pillow==12.3.0
 
       - name: Render SVGs
         env:

@@ -19,7 +19,6 @@ from __future__ import annotations
 
 import base64
 import datetime
-import io
 import json
 import os
 import re
@@ -114,10 +113,10 @@ HEADERS = [
     (
         "publications",
         "03",
-        "Publications and Talks",
-        "AWS samples, talks and recognition",
+        "Publications, Talks and Recognition",
+        "AWS samples, patterns, talks and programs",
     ),
-    ("projects", "04", "Featured Projects", "what I have built and shipped"),
+    ("projects", "04", "Featured Projects", "what I have built"),
     ("stack", "05", "Tech Stack and Tools", "what I work with daily"),
     ("opensource", "06", "Open Source", "merged upstream work"),
     (
@@ -126,11 +125,11 @@ HEADERS = [
         "Community and Developer Tools",
         "open tools anyone can use",
     ),
-    ("stats", "08", "GitHub Stats", "activity, streaks and contests"),
+    ("stats", "08", "Coding Stats", "GitHub activity, LeetCode and contests"),
     ("education", "09", "Education", "where I studied"),
 ]
 
-# The community cards shown on the profile, in this order; the rest sit behind the "all tools" button.
+# The community cards shown on the profile, in this order; the rest sit in a "show more" dropdown.
 COMMUNITY_TOP = [
     "github-stats-card-action",
     "leetcode-card-action",
@@ -139,13 +138,53 @@ COMMUNITY_TOP = [
     "skillcheck",
     "claude-skills",
 ]
-COMMUNITY_ALL_URL = "https://github.com/Sagargupta16?tab=repositories&type=source"
+PROJECTS_SHOWN = 4  # featured project cards before the "show more" dropdown
+
+# One-line card copy for the README. The portfolio descriptions are written for the
+# portfolio page and are too long for a card; anything missing here falls back to them.
+CARD_SUMMARIES = {
+    "kalchar": "Live portfolio and commission site for a traditional folk artist: Madhubani, Pichwai, Lippan and Gond art, custom orders and an admin panel.",
+    "gitscope": "Chrome extension and web dashboard for deep GitHub profile insights: a 9-stat grid, activity heatmap, profile comparison and a leaderboard.",
+    "ledger-sync": "Self-hosted personal finance dashboard with an AI chatbot that answers spending, tax and goal questions through 15 read-only tool calls.",
+    "leetcode-rating-predictor": "Predicts LeetCode contest rating changes with a dense neural network trained on 244K+ contest records, served by FastAPI and React.",
+    "blue-green-aws-terraform": "Zero-downtime blue-green deployments on AWS in Terraform: ECS on EC2 behind an ALB, shipped by CodePipeline with KMS-encrypted artifacts.",
+    "instagram-likes-leaderboard": "Browser tool that scans your Instagram posts to show your biggest fans, ghost followers and non-mutuals. No downloads or sign-ups.",
+    "personal-portfolio": "My portfolio: a dark, data-driven React 19 site with live project screenshots, animated SVG covers and an ambient aurora background.",
+    "selfhub": "MCP server that works as a personal memory hub: save notes, preferences, snippets and tasks from any MCP-enabled AI assistant.",
+    "github-stats-card-action": "GitHub Action that renders an animated GitHub stats card as an SVG in your own repo.",
+    "leetcode-card-action": "GitHub Action that renders an animated LeetCode card with your contest rating history.",
+    "oss-contributions-card-action": "GitHub Action that finds your upstream pull requests and renders them as SVG cards.",
+    "readme-kit": "GitHub Action that turns one profile.yml into a full set of animated profile README cards.",
+    "skillcheck": "Conformance suite for Agent Skills (SKILL.md): 36 rules across 6 runtimes, on npm.",
+    "itr-agent": "Local-first MCP server that walks you through filing an Indian income tax return, on npm.",
+    "claude-skills": "Claude Code plugin marketplace with 16 curated plugins for dev workflow, git and clean code.",
+    "claude-cost-optimizer": "Claude Code plugin that cuts costs 30 to 60% with concise responses, model routing and budget hooks.",
+    "bedrock-multi-model-mcp": "MCP server for Amazon Bedrock: text, image, video and embeddings across Llama, Nova, Claude and more.",
+    "mcp-toolkit": "Drop-in auth, caching, rate limiting, logging and CORS for MCP servers built on the TypeScript SDK.",
+    "claude-code-recipes": "47 copy-paste Claude Code recipes: commands, subagents, hooks, skills and CLAUDE.md templates.",
+    "awesome-mcp-servers": "Curated list of Model Context Protocol servers, frameworks, clients and tutorials.",
+    "deploy-guide": "37 step-by-step deployment guides across 12 platforms, 14 frameworks and 6 databases.",
+    "agent-recipes": "Copy-paste AI agent workflows for code review, testing, migrations, security scans and deploys.",
+    "ai-git-hooks": "AI git hooks that review code, write commit messages and scan for security issues before you push.",
+    "credly-badge-readme-action": "GitHub Action that syncs your Credly certifications and badges into your profile README.",
+}
+MIN_STARS_SHOWN = 10  # a tool card shows its star count only from this many stars
+
+# Company logos for the Worked With card, stored in assets/logos and drawn white.
+# Sources: Wikimedia Commons (AWS, State Street, DTCC) and the company sites (RWS, Ikarus 3D).
+LOGOS = {
+    "Amazon Web Services": "aws.svg",
+    "RWS": "rws.svg",
+    "DTCC": "dtcc.svg",
+    "State Street": "state-street.svg",
+    "Ikarus-3D": "ikarus-3d.png",
+}
 
 # Career: the top rail, oldest first, ending on the current full-time role,
 # which then expands into its customer engagements on a second rail.
 MILESTONES = [
     ("2021", "MCA, NIT Warangal", "NIMCET AIR 208"),
-    ("2023", "Software Dev Intern", "Ikarus-3D, Mohali"),
+    ("2023", "Software Developer Associate", "Ikarus-3D, Mohali, intern"),
     ("2024", "ProServe DevOps Intern", "AWS, Hyderabad"),
     ("2024", "DevOps/MLOps Cloud Consultant", "AWS, Hyderabad"),
 ]
@@ -349,125 +388,6 @@ def svg_open(w: int, h: int, label: str) -> str:
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" '
         f'role="img" aria-label="{escape(label)}">'
     )
-
-
-# ---------------------------------------------------------------- terminal hero
-
-
-def typed_line(
-    idx: int,
-    x: int,
-    y: int,
-    text: str,
-    begin: float,
-    color: str,
-    char_w: float = 8.4,
-    cps: float = 38,
-) -> tuple[str, float]:
-    """A line that types itself out, character by character, then holds."""
-    n = len(text)
-    dur = max(n / cps, 0.2)
-    widths = ";".join(f"{i * char_w:.1f}" for i in range(n + 1))
-    clip = (
-        f'<clipPath id="t{idx}"><rect x="{x}" y="{y - 14}" width="0" height="20">'
-        f'<animate attributeName="width" values="{widths}" dur="{dur:.2f}s" begin="{begin:.2f}s" '
-        f'calcMode="discrete" fill="freeze"/></rect></clipPath>'
-    )
-    line = f'<text x="{x}" y="{y}" fill="{color}" clip-path="url(#t{idx})">{escape(text)}</text>'
-    return clip + line, begin + dur
-
-
-def shown_line(x: int, y: int, text: str, begin: float, color: str) -> str:
-    """An output line: appears whole once its command has finished typing."""
-    return (
-        f'<text x="{x}" y="{y}" fill="{color}" opacity="0">{escape(text)}'
-        f'<set attributeName="opacity" to="1" begin="{begin:.2f}s" fill="freeze"/></text>'
-    )
-
-
-def render_terminal(data: dict) -> str:
-    lc = data["leetcode"]
-    samples = [
-        s["url"].split("github.com/", 1)[1]
-        for s in (data.get("portfolio") or {}).get("samples", [])
-    ] or [
-        "aws-samples/sample-aws-terraform-org-governance",
-        "aws-samples/sample-sagemaker-image-classification-mlops",
-    ]
-    w, h = 840, 292 + 24 * max(len(samples) - 2, 0)
-    prompt = "sagar@aws:~$ "
-    script = [
-        (
-            "whoami",
-            [
-                "Sagar Gupta  |  Cloud Consultant, AWS Professional Services (DevOps / MLOps)"
-            ],
-        ),
-        (
-            "ls ~/published",
-            samples,
-        ),
-        (
-            f"leetcode --profile {LEETCODE_USER}",
-            [
-                f"{lc['badge']}  |  rating {lc['rating']}  |  top {lc['top']}%  |  "
-                f"{lc['contests']} contests  |  {lc['solved']} solved"
-            ],
-        ),
-    ]
-    parts = [
-        svg_open(w, h, "Terminal: whoami, published AWS samples, LeetCode profile"),
-        f"<style>text{{font-family:{MONO};font-size:14px}}"
-        ".cur{animation:blink 1.05s steps(1) infinite}"
-        "@keyframes blink{50%{opacity:0}}</style>",
-        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" '
-        'stroke="rgba(255,255,255,0.10)"/>',
-        f'<rect x="0.5" y="0.5" width="{w - 1}" height="36" rx="14" fill="{CARD}"/>',
-        f'<rect x="0.5" y="24" width="{w - 1}" height="13" fill="{CARD}"/>',
-        '<line x1="0" y1="37" x2="840" y2="37" stroke="rgba(255,255,255,0.08)"/>',
-    ]
-    for i, cx in enumerate((24, 44, 64)):
-        fill = GREEN if i == 2 else "rgba(255,255,255,0.22)"
-        parts.append(f'<circle cx="{cx}" cy="19" r="5.5" fill="{fill}"/>')
-    parts.append(
-        '<text x="420" y="24" text-anchor="middle" fill="rgba(255,255,255,0.45)" '
-        'style="font-size:12px">sagar@aws: ~</text>'
-    )
-    y, t, idx = 70, 0.6, 0
-    for cmd, outputs in script:
-        parts.append(
-            f'<text x="24" y="{y}" fill="{GREEN}" opacity="0">{escape(prompt)}'
-            f'<set attributeName="opacity" to="1" begin="{t:.2f}s" fill="freeze"/></text>'
-        )
-        line, t = typed_line(
-            idx, 24 + int(len(prompt) * 8.4), y, cmd, t + 0.15, "#e5e7eb"
-        )
-        parts.append(line)
-        idx += 1
-        t += 0.25
-        for out in outputs:
-            y += 24
-            if cmd.startswith("leetcode"):
-                color = AMBER
-            elif "aws-samples" in out:
-                color = SKY
-            else:
-                color = "rgba(255,255,255,0.72)"
-            parts.append(shown_line(40, y, out, t, color))
-            t += 0.12
-        y += 34
-        t += 0.45
-    parts.append(
-        f'<text x="24" y="{y}" fill="{GREEN}" opacity="0">{escape(prompt)}'
-        f'<set attributeName="opacity" to="1" begin="{t:.2f}s" fill="freeze"/></text>'
-    )
-    cx = 24 + int(len(prompt) * 8.4)
-    parts.append(
-        f'<g opacity="0"><set attributeName="opacity" to="1" begin="{t:.2f}s" fill="freeze"/>'
-        f'<rect class="cur" x="{cx}" y="{y - 13}" width="9" height="17" fill="{BLUE_LIGHT}"/></g>'
-    )
-    parts.append(SVG_CLOSE)
-    return "".join(parts)
 
 
 # ---------------------------------------------------------------- sample cards
@@ -940,7 +860,6 @@ def render_experience(data: dict) -> str:
 
 
 def render_highlights(data: dict) -> str:
-    lc = data["leetcode"]
     pf = data.get("portfolio") or {}
     samples = len(pf.get("samples", [])) or 2
     tfc = next(
@@ -951,22 +870,14 @@ def render_highlights(data: dict) -> str:
         ),
         "5",
     )
-    merged = sum(1 for e in pf.get("oss", []) if e.get("status") == "merged")
+    # certifications, open source and LeetCode each have their own card further down
     tiles = [
         ("10/10", "average client CSAT", GREEN),
         ("5/5", "average Pulse feedback", GREEN),
         (str(samples), "published AWS samples", SKY),
         (f"{tfc}x", "TFC ambassador", SKY),
-        (str(merged), "merged upstream contributions", BLUE_LIGHT),
-        (
-            str(len(credly_badges(INDUSTRY_GROUP))),
-            "industry certifications",
-            BLUE_LIGHT,
-        ),
-        (lc["badge"], f"LeetCode, top {lc['top']}%", AMBER),
-        (f"{lc['solved']:,}", "LeetCode problems solved", AMBER),
     ]
-    w, h = 840, 212
+    w, h = 840, 112
     cols, gap, pad = 4, 12, 16
     tw = (w - 2 * pad - (cols - 1) * gap) / cols
     th = 80
@@ -1097,8 +1008,7 @@ def render_hero(data: dict) -> str:
 
 FOOTER_LINES = [
     "Thanks for visiting",
-    "Open to collaboration",
-    "Let's build something great",
+    "More at sagargupta.online",
 ]
 
 
@@ -1107,7 +1017,7 @@ def render_footer() -> str:
     wave = "M0 110 C 140 80, 280 140, 420 110 S 700 80, 840 110"
     return "".join(
         [
-            svg_open(w, h, "Thanks for visiting. Open to collaboration."),
+            svg_open(w, h, "Thanks for visiting. More at sagargupta.online."),
             f"<style>.s{{font-family:{SANS};font-weight:800}}.m{{font-family:{MONO};font-weight:700;letter-spacing:2px}}</style>",
             f'<text class="m" x="{w / 2}" y="34" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">SAGAR GUPTA  |  AWS PROFESSIONAL SERVICES</text>',
             _rotating(FOOTER_LINES, w / 2, 78, "s", 30, "#f3f4f6").replace(
@@ -1154,42 +1064,6 @@ def credly_badges(group: str) -> list[tuple[str, str]]:
     return [(_plain_dashes(title), url) for title, url in found]
 
 
-PNG_MAGIC = bytes([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A])
-JPEG_MAGIC = bytes([0xFF, 0xD8, 0xFF])
-
-
-def _downscale(raw: bytes, px: int) -> bytes:
-    """Return the image shrunk to px square as an optimized PNG, or unchanged without Pillow."""
-    try:
-        from PIL import (
-            Image,
-        )  # optional: the workflow installs it, local runs work without it
-    except ImportError:
-        return raw
-    with Image.open(io.BytesIO(raw)) as img:
-        img.thumbnail((px, px), Image.Resampling.LANCZOS)
-        out = io.BytesIO()
-        img.save(out, format="PNG", optimize=True)
-    return out.getvalue() if out.tell() < len(raw) else raw
-
-
-def _data_uri(url: str, px: int = 0) -> str | None:
-    try:
-        raw = fetch(url)
-    except Exception as exc:
-        print(f"badge image failed: {exc}")
-        return None
-    if px:
-        raw = _downscale(raw, px)
-    if raw.startswith(PNG_MAGIC):
-        mime = "image/png"
-    elif raw.startswith(JPEG_MAGIC):
-        mime = "image/jpeg"
-    else:
-        return None
-    return f"data:{mime};base64,{base64.b64encode(raw).decode()}"
-
-
 def _wrap(text: str, width: int) -> list[str]:
     lines, cur = [], ""
     for word in text.split():
@@ -1198,7 +1072,13 @@ def _wrap(text: str, width: int) -> list[str]:
             cur = word
         else:
             cur = f"{cur} {word}".strip()
-    return lines + ([cur] if cur else [])
+    lines += [cur] if cur else []
+    # never leave one short word alone on the last line: pull the previous word down with it
+    if len(lines) > 1 and " " not in lines[-1] and " " in lines[-2]:
+        head, moved = lines[-2].rsplit(" ", 1)
+        if len(moved) + 1 + len(lines[-1]) <= width:
+            lines[-2:] = [head, f"{moved} {lines[-1]}"]
+    return lines
 
 
 # (group, label, drawn size, label lines, badges per row)
@@ -1248,16 +1128,14 @@ def render_ai_stack() -> str | None:
         col, row = i % cols, i // cols
         x = pad + col * (cw + gap)
         y = 42 + row * (ch + 10)
-        if slug:
-            icon = (
-                f'<svg x="{x + 12}" y="{y + 12}" width="20" height="20" viewBox="0 0 24 24">'
-                f'<path d="{paths[slug]}" fill="rgba(255,255,255,0.85)"/></svg>'
-            )
-        else:
-            icon = (
-                f'<circle cx="{x + 22}" cy="{y + 22}" r="10" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.6"/>'
-                f'<text class="m" x="{x + 22}" y="{y + 26}" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="10">{label[0]}</text>'
-            )
+        # a tool with no published icon gets no placeholder letter, just its name
+        icon = (
+            f'<svg x="{x + 12}" y="{y + 12}" width="20" height="20" viewBox="0 0 24 24">'
+            f'<path d="{paths[slug]}" fill="rgba(255,255,255,0.85)"/></svg>'
+            if slug
+            else ""
+        )
+        label_x = x + 42 if slug else x + 16
         a = i / len(AI_TOOLS)
         b = a + 0.5 / len(AI_TOOLS)
         c = min(a + 1 / len(AI_TOOLS), 1)
@@ -1267,7 +1145,7 @@ def render_ai_stack() -> str | None:
             f'<rect x="{x}" y="{y}" width="{cw}" height="{ch}" rx="10" fill="{BLUE}1c" stroke="{BLUE_LIGHT}" stroke-width="1.2" opacity="0">'
             f'<animate attributeName="opacity" values="0;0;1;0;0" keyTimes="{glow_times}" dur="{cycle:.1f}s" repeatCount="indefinite"/></rect>'
             f"{icon}"
-            f'<text class="m" x="{x + 42}" y="{y + 26}" fill="rgba(255,255,255,0.85)" font-size="10">{escape(label.upper())}</text>'
+            f'<text class="m" x="{label_x}" y="{y + 26}" fill="rgba(255,255,255,0.85)" font-size="10">{escape(label.upper())}</text>'
         )
     parts.append(SVG_CLOSE)
     return "".join(parts)
@@ -1488,6 +1366,11 @@ def _summary(text: str, limit: int = 118) -> str:
     return cut + "..."
 
 
+def _card_text(p: dict, limit: int = 118) -> str:
+    """Return the README card copy for a project: its one-liner, else the cut description."""
+    return CARD_SUMMARIES.get(_slug(p["title"])) or _summary(p["description"], limit)
+
+
 def _chips(items: list[str], x: float, y: float, max_w: float, color: str) -> str:
     out, cx = [], x
     for item in items:
@@ -1505,7 +1388,7 @@ def _chips(items: list[str], x: float, y: float, max_w: float, color: str) -> st
 def render_project_card(p: dict, index: int) -> str:
     w, h = 410, 196
     live = bool(p.get("live"))
-    lines = _wrap(_summary(p["description"]), 56)[:3]
+    lines = _wrap(_card_text(p), 56)[:3]
     body = "".join(
         f'<text class="s" x="22" y="{86 + j * 18}" fill="rgba(255,255,255,0.68)" font-size="12.5">{escape(line)}</text>'
         for j, line in enumerate(lines)
@@ -1518,7 +1401,7 @@ def render_project_card(p: dict, index: int) -> str:
     )
     return "".join(
         [
-            svg_open(w, h, f"{p['title']}: {_summary(p['description'])}"),
+            svg_open(w, h, f"{p['title']}: {_card_text(p)}"),
             f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1px}}.t{{font-family:{SANS};font-weight:800}}"
             f".s{{font-family:{SANS};font-weight:500}}</style>",
             '<defs><linearGradient id="shine" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
@@ -1540,7 +1423,7 @@ def render_project_card(p: dict, index: int) -> str:
 
 def render_tool_card(p: dict, stars: int | None, index: int) -> str:
     w, h = 270, 150
-    lines = _wrap(_summary(p["description"], 96), 38)[:3]
+    lines = _wrap(_card_text(p, 96), 38)[:3]
     body = "".join(
         f'<text class="s" x="18" y="{68 + j * 16}" fill="rgba(255,255,255,0.66)" font-size="11">{escape(line)}</text>'
         for j, line in enumerate(lines)
@@ -1548,12 +1431,12 @@ def render_tool_card(p: dict, stars: int | None, index: int) -> str:
     star = (
         f'<path d="M{w - 50} {h - 30} l3.1 6.3 6.9 1 -5 4.9 1.2 6.9 -6.2 -3.3 -6.2 3.3 1.2 -6.9 -5 -4.9 6.9 -1z" fill="{AMBER}"/>'
         f'<text class="m" x="{w - 36}" y="{h - 17}" fill="{AMBER}" font-size="11">{stars}</text>'
-        if stars is not None
+        if stars is not None and stars >= MIN_STARS_SHOWN
         else ""
     )
     return "".join(
         [
-            svg_open(w, h, f"{p['title']}: {_summary(p['description'], 96)}"),
+            svg_open(w, h, f"{p['title']}: {_card_text(p, 96)}"),
             f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1px}}.t{{font-family:{SANS};font-weight:800}}"
             f".s{{font-family:{SANS};font-weight:500}}</style>",
             f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{CARD}" stroke="rgba(255,255,255,0.09)"/>',
@@ -1614,6 +1497,9 @@ def render_profile_badges(data: dict) -> str:
     return "".join(parts)
 
 
+RESUME_URL = (
+    "https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf"
+)
 CONNECT = [
     (
         "linkedin",
@@ -1621,15 +1507,16 @@ CONNECT = [
         "linkedin",
         "https://www.linkedin.com/in/sagar-gupta-16-10",
     ),
-    ("leetcode", "LeetCode", "leetcode", "https://leetcode.com/sagargupta1610/"),
+    ("resume", "Resume", "adobeacrobatreader", RESUME_URL),
+    ("email", "Email", "gmail", "mailto:sg85207@gmail.com"),
     (
         "portfolio",
         "Portfolio",
         "googlechrome",
         PORTFOLIO_URL,
     ),
-    ("email", "Email", "gmail", "mailto:sg85207@gmail.com"),
     ("github", "GitHub", "github", "https://github.com/Sagargupta16"),
+    ("leetcode", "LeetCode", "leetcode", "https://leetcode.com/sagargupta1610/"),
 ]
 
 
@@ -1779,8 +1666,17 @@ def render_list_card(
     """Return a card of rows: bold primary, dimmed secondary line, mono meta on the right."""
     w = 840
     row_h = 46
+    line_h = 15  # a secondary line that does not fit wraps once instead of being cut
     top = 50
-    h = top + len(rows) * row_h + (34 if footer else 12)
+    seconds = [_wrap(secondary, 104) for _, secondary, _ in rows]
+    for i, lines in enumerate(seconds):
+        if len(lines) > 2:
+            seconds[i] = [lines[0], _clip(" ".join(lines[1:]), 104)]
+    h = (
+        top
+        + sum(row_h + line_h * (len(s) - 1) for s in seconds)
+        + (34 if footer else 12)
+    )
     parts = [
         svg_open(
             w, h, kicker.title() + ": " + "; ".join(f"{a} {b} {c}" for a, b, c in rows)
@@ -1790,18 +1686,23 @@ def render_list_card(
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
         f'<text class="m" x="24" y="31" fill="{accent}" font-size="10">{escape(kicker)}</text>',
     ]
-    for i, (primary, secondary, meta) in enumerate(rows):
-        y = top + i * row_h
+    y = top
+    for i, ((primary, _, meta), lines) in enumerate(zip(rows, seconds)):
         begin = 0.15 + i * 0.07
+        second = "".join(
+            f'<text class="s" x="44" y="{y + 37 + j * line_h}" fill="rgba(255,255,255,0.6)" font-size="11.5">{escape(line)}</text>'
+            for j, line in enumerate(lines)
+        )
         parts.append(
             f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="0.4s" fill="freeze"/>'
             f'<animateTransform attributeName="transform" type="translate" from="-8 0" to="0 0" begin="{begin:.2f}s" dur="0.4s" fill="freeze"/>'
             f'<line x1="24" y1="{y}" x2="{w - 24}" y2="{y}" stroke="rgba(255,255,255,0.06)"/>'
             f'<circle cx="30" cy="{y + 23}" r="3" fill="{accent}"/>'
             f'<text class="t" x="44" y="{y + 20}" fill="#f3f4f6" font-size="13.5">{escape(_clip(primary, 60))}</text>'
-            f'<text class="s" x="44" y="{y + 37}" fill="rgba(255,255,255,0.6)" font-size="11.5">{escape(_clip(secondary, 104))}</text>'
+            f"{second}"
             f'<text class="m" x="{w - 24}" y="{y + 20}" text-anchor="end" fill="rgba(255,255,255,0.45)" font-size="9">{escape(meta.upper())}</text></g>'
         )
+        y += row_h + line_h * (len(lines) - 1)
     if footer:
         parts.append(
             f'<text class="s" x="24" y="{h - 14}" fill="rgba(255,255,255,0.55)" font-size="11">{escape(_clip(footer, 150))}</text>'
@@ -1810,7 +1711,12 @@ def render_list_card(
     return "".join(parts)
 
 
-COMPANY_ICONS = {AWS_NAME: "aws.amazon.com", "RWS": "rws.com", "DTCC": "dtcc.com"}
+LOGO_DIR = ROOT / "assets" / "logos"
+# turns any logo white while keeping its shape, so five brands read as one set
+WHITE_FILTER = (
+    '<filter id="white"><feColorMatrix type="matrix" '
+    'values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter>'
+)
 
 
 def _customers(pf: dict) -> list[dict]:
@@ -1818,26 +1724,24 @@ def _customers(pf: dict) -> list[dict]:
     return [e for e in pf.get("engagements", []) if " - " in e["name"]]
 
 
-def _company_icon(name: str) -> str | None:
-    domain = COMPANY_ICONS.get(name)
-    if not domain:
+def _company_logo(name: str) -> str | None:
+    """Return the company's stored logo as a data URI, or None if there is none."""
+    path = LOGO_DIR / LOGOS.get(name, "")
+    if not LOGOS.get(name) or not path.is_file():
         return None
-    return _data_uri(f"https://www.google.com/s2/favicons?domain={domain}&sz=64", 64)
+    mime = "image/svg+xml" if path.suffix == ".svg" else "image/png"
+    return f"data:{mime};base64,{base64.b64encode(path.read_bytes()).decode()}"
 
 
-def _logo_tile(name: str, x: float, y: float, size: int) -> str:
-    icon = _company_icon(name)
-    frame = f'<rect x="{x:.1f}" y="{y}" width="{size}" height="{size}" rx="12" fill="#ffffff0f" stroke="rgba(255,255,255,0.12)"/>'
-    if icon:
-        pad = 9
+def _logo_block(name: str, cx: float, y: float, width: float) -> str:
+    """Return the logo drawn white and centred, or the company name where no logo is stored."""
+    logo = _company_logo(name)
+    if logo:
         return (
-            frame
-            + f'<image href="{icon}" x="{x + pad:.1f}" y="{y + pad}" width="{size - 2 * pad}" height="{size - 2 * pad}"/>'
+            f'<image href="{logo}" x="{cx - width / 2:.1f}" y="{y}" width="{width:.1f}" height="40" '
+            'preserveAspectRatio="xMidYMid meet" filter="url(#white)"/>'
         )
-    initials = "".join(word[0] for word in name.replace("-", " ").split()[:2]).upper()
-    return frame + (
-        f'<text class="t" x="{x + size / 2:.1f}" y="{y + size / 2 + 6}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="17">{escape(initials)}</text>'
-    )
+    return f'<text class="t" x="{cx:.1f}" y="{y + 27}" text-anchor="middle" fill="#f3f4f6" font-size="15">{escape(name)}</text>'
 
 
 def render_worked_with(pf: dict) -> str:
@@ -1856,15 +1760,16 @@ def render_worked_with(pf: dict) -> str:
                     else e["title"],
                 )
             )
-    w, h = 840, 232
+    w, h = 840, 196
     gap, pad = 10, 16
     tw = (w - 2 * pad - (len(tiles) - 1) * gap) / len(tiles)
     parts = [
         svg_open(w, h, "Worked with: " + "; ".join(f"{c}, {r}" for c, r in tiles)),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.t{{font-family:{SANS};font-weight:800}}"
         f".s{{font-family:{SANS};font-weight:500}}</style>",
+        f"<defs>{WHITE_FILTER}</defs>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="31" fill="{GREEN}" font-size="10">WORKED WITH  |  AVERAGE CSAT 10/10  |  AVERAGE PULSE 5/5</text>',
+        f'<text class="m" x="24" y="31" fill="{GREEN}" font-size="10">WORKED WITH</text>',
     ]
     for i, (company, role) in enumerate(tiles):
         x = pad + i * (tw + gap)
@@ -1872,15 +1777,14 @@ def render_worked_with(pf: dict) -> str:
         begin = 0.15 + i * 0.12
         lines = _wrap(role, 22)[:2]
         role_text = "".join(
-            f'<text class="s" x="{cx:.1f}" y="{168 + j * 16}" text-anchor="middle" fill="rgba(255,255,255,0.62)" font-size="11.5">{escape(line)}</text>'
+            f'<text class="s" x="{cx:.1f}" y="{136 + j * 16}" text-anchor="middle" fill="rgba(255,255,255,0.62)" font-size="11.5">{escape(line)}</text>'
             for j, line in enumerate(lines)
         )
         parts.append(
             f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
             f'<animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
             f'<rect x="{x:.1f}" y="46" width="{tw:.1f}" height="{h - 62}" rx="12" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
-            + _logo_tile(company, cx - 26, 62, 52)
-            + f'<text class="t" x="{cx:.1f}" y="146" text-anchor="middle" fill="#f3f4f6" font-size="14.5">{escape(company)}</text>'
+            + _logo_block(company, cx, 66, tw - 44)
             + role_text
             + "</g>"
         )
@@ -2010,7 +1914,9 @@ def render_education(pf: dict) -> str:
     rows = []
     for e in pf.get("education", [])[:2]:
         facts = [f"CGPA {e['cgpa']}"] if e.get("cgpa") else []
-        facts += list((e.get("achievements") or [])[:2])
+        facts += [
+            a.removeprefix("Passed with ") for a in (e.get("achievements") or [])[:1]
+        ]
         rows.append(
             (
                 f"{e['title']}",
@@ -2055,14 +1961,14 @@ def render_oss_review(pf: dict) -> str:
     return render_list_card(f"{count} PRS IN REVIEW", rows, AMBER, footer)
 
 
-def render_competitive(pf: dict, data: dict) -> str:
+def render_competitive(pf: dict) -> str:
     stats = pf.get("coding_stats", {})
-    lc = data["leetcode"]
     tiles = [
+        # the LeetCode rating and badge have their own card above; this tile adds the best rank
         (
             "LEETCODE",
-            lc["badge"],
-            f"best contest rank {stats.get('leetcode', {}).get('best_contest_rank', '')}",
+            f"#{stats.get('leetcode', {}).get('best_contest_rank', '')}",
+            "best contest rank",
         ),
         (
             "GEEKSFORGEEKS",
@@ -2077,7 +1983,10 @@ def render_competitive(pf: dict, data: dict) -> str:
         ("KICK START '22", "1289", "round E rank"),
     ]
     podiums = [
+        # every podium names its year; add it from the date where the title leaves it out
         a["title"]
+        if re.search(r"'\d\d", a["title"]) or not a.get("date")
+        else f"{a['title']} '{str(a['date'])[-2:]}"
         for a in pf.get("contests", [])
         if re.match(r"(1st|2nd|3rd|4th) Place", a["title"])
     ]
@@ -2177,11 +2086,6 @@ CTAS = [
         "View all {n} projects",
         PORTFOLIO_URL,
     ),
-    (
-        "cta-resume",
-        "Download resume",
-        "https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf",
-    ),
 ]
 
 
@@ -2198,6 +2102,7 @@ GET_THIS_CARD = [
 def render_get_this_card(repo: str, card: str) -> str:
     """Return a slim strip naming the public action that makes this kind of card."""
     w, h = 840, 40
+    this = "THESE" if card.endswith("cards") else "THIS"
     return "".join(
         [
             svg_open(w, h, f"Get the {card} for your own profile: Sagargupta16/{repo}"),
@@ -2207,7 +2112,7 @@ def render_get_this_card(repo: str, card: str) -> str:
             f'<clipPath id="c"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="12"/></clipPath></defs>',
             f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="{CARD}" stroke="{BLUE_LIGHT}40"/>',
             f'<circle cx="22" cy="20" r="3.5" fill="{GREEN}"><animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>',
-            f'<text class="m" x="36" y="24" fill="rgba(255,255,255,0.55)" font-size="9.5">GET THIS {escape(card.upper())} FOR YOUR PROFILE</text>',
+            f'<text class="m" x="36" y="24" fill="rgba(255,255,255,0.55)" font-size="9.5">GET {this} {escape(card.upper())} FOR YOUR PROFILE</text>',
             f'<text class="m" x="{w - 22}" y="24" text-anchor="end" fill="{BLUE_LIGHT}" font-size="10.5">SAGARGUPTA16/{escape(repo.upper())}  -&gt;</text>',
             f'<g clip-path="url(#c)"><rect x="-160" y="0" width="140" height="{h}" fill="url(#sweep)" transform="skewX(-20)">'
             '<animateTransform attributeName="transform" type="translate" values="0 0;1200 0" dur="5s" repeatCount="indefinite" additive="sum"/></rect></g>',
@@ -2271,6 +2176,15 @@ def _row(cells: list[str], width: str) -> str:
     return f'<p align="center">\n{inner}\n</p>'
 
 
+def _more(button: str, alt: str, body: str) -> str:
+    """Return a click-to-open block whose summary is an SVG button, so nothing is plain text."""
+    # inside <picture> GitHub does not wrap the image in a link to itself, so a click
+    # opens the dropdown instead of the SVG file
+    img = _img(button, alt).replace('width="100%"', 'width="30%"')
+    summary = f"<picture>{img}</picture>"
+    return f'<div align="center">\n<details>\n<summary>{summary}</summary>\n\n{body}\n\n</details>\n</div>'
+
+
 DIVIDER = _img("divider.svg", "")
 CREDLY_URL = "https://www.credly.com/users/sagar-gupta.f8eb96cc"
 MERGED_URL = "https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16"
@@ -2292,32 +2206,24 @@ def render_readme(data: dict) -> str:
     project_cells = [
         _link(
             p.get("live") or p.get("github"),
-            _img(
-                f"project-{_slug(p['title'])}.svg",
-                f"{p['title']}: {_summary(p['description'])}",
-            ),
+            _img(f"project-{_slug(p['title'])}.svg", f"{p['title']}: {_card_text(p)}"),
         )
         for p in projects
     ]
-    by_slug = {_slug(p["title"]): p for p in pf.get("community", [])}
-    tool_cells = [
-        _link(
+    community = pf.get("community", [])
+    by_slug = {_slug(p["title"]): p for p in community}
+    top = [s for s in COMMUNITY_TOP if s in by_slug]
+    rest = [_slug(p["title"]) for p in community if _slug(p["title"]) not in top]
+    tool_cells = {
+        s: _link(
             by_slug[s]["github"],
             _img(
-                f"tool-{s}.svg",
-                f"{by_slug[s]['title']}: {_summary(by_slug[s]['description'], 96)}",
+                f"tool-{s}.svg", f"{by_slug[s]['title']}: {_card_text(by_slug[s], 96)}"
             ),
         )
-        for s in COMMUNITY_TOP
-        if s in by_slug
-    ]
-    all_tools = _link(
-        COMMUNITY_ALL_URL,
-        _img(
-            "cta-community.svg",
-            f"See all {len(by_slug)} community tools",
-        ),
-    )
+        for s in top + rest
+    }
+    more_projects = project_cells[PROJECTS_SHOWN:]
     samples = [
         _link(
             "https://github.com/aws-samples/sample-aws-terraform-org-governance",
@@ -2359,7 +2265,7 @@ def render_readme(data: dict) -> str:
             ),
         ),
         _img("intro.svg", pf.get("intro") or "About"),
-        _row(connect, "18%"),
+        _row(connect, "15.5%"),
         DIVIDER,
         _header("experience", "Experience"),
         _img("experience.svg", "Career timeline and customer engagements"),
@@ -2370,12 +2276,23 @@ def render_readme(data: dict) -> str:
         _link(CREDLY_URL, _img("certs.svg", "Credly badges")),
         _get_this_card("certs"),
         DIVIDER,
-        _header("publications", "Publications and Talks"),
+        _header("publications", "Publications, Talks and Recognition"),
         _img("publications.svg", "Publications, talks and recognition"),
         DIVIDER,
         _header("projects", "Featured Projects"),
         _row(samples, "49%"),
-        _row(project_cells, "49%"),
+        _row(project_cells[:PROJECTS_SHOWN], "49%"),
+        *(
+            [
+                _more(
+                    "cta-projects-more.svg",
+                    f"Show {len(more_projects)} more projects",
+                    _row(more_projects, "49%"),
+                )
+            ]
+            if more_projects
+            else []
+        ),
         _row(ctas, "30%"),
         DIVIDER,
         _header("stack", "Tech Stack and Tools"),
@@ -2389,10 +2306,20 @@ def render_readme(data: dict) -> str:
         _get_this_card("oss"),
         DIVIDER,
         _header("community", "Community and Developer Tools"),
-        _row(tool_cells, "32%"),
-        _row([all_tools], "30%"),
+        _row([tool_cells[s] for s in top], "32%"),
+        *(
+            [
+                _more(
+                    "cta-community-more.svg",
+                    f"Show {len(rest)} more community tools",
+                    _row([tool_cells[s] for s in rest], "32%"),
+                )
+            ]
+            if rest
+            else []
+        ),
         DIVIDER,
-        _header("stats", "GitHub Stats"),
+        _header("stats", "Coding Stats"),
         _img("github.svg", "GitHub stats"),
         _get_this_card("github"),
         _link(
@@ -2406,9 +2333,6 @@ def render_readme(data: dict) -> str:
         _header("education", "Education"),
         _img("education.svg", "Education"),
         DIVIDER,
-        _img(
-            "terminal.svg", "Terminal: whoami, published AWS samples, LeetCode profile"
-        ),
         # a 1px copy of the komarev counter keeps visits counted; the number itself shows in profile-badges.svg
         _img("footer.svg", "Thanks for visiting")
         + f' <img src="{VIEWS_URL}" width="1" height="1" alt="" />',
@@ -2462,7 +2386,7 @@ def write_portfolio_cards(data: dict) -> None:
         write("education.svg", render_education(pf))
         write("oss-merged.svg", render_oss_merged(pf))
         write("oss-review.svg", render_oss_review(pf))
-        write("competitive.svg", render_competitive(pf, data))
+        write("competitive.svg", render_competitive(pf))
     for i, (key, label, _) in enumerate(CTAS):
         write(
             f"{key}.svg",
@@ -2470,10 +2394,20 @@ def write_portfolio_cards(data: dict) -> None:
         )
     for key, repo, card in GET_THIS_CARD:
         write(f"get-{key}.svg", render_get_this_card(repo, card))
-    write(
-        "cta-community.svg",
-        render_cta(f"See all {len(pf.get('community', []))} community tools", False),
-    )
+    # the buttons that open the "show more" dropdowns; counts match render_readme
+    featured = [
+        p for p in pf.get("featured", []) if p.get("organization") != "aws-samples"
+    ]
+    slugs = {_slug(p["title"]) for p in pf.get("community", [])}
+    more = {
+        "cta-projects-more": (max(len(featured) - PROJECTS_SHOWN, 0), "projects"),
+        "cta-community-more": (
+            len(slugs - set(COMMUNITY_TOP)),
+            "community tools",
+        ),
+    }
+    for key, (n, what) in more.items():
+        write(f"{key}.svg", render_cta(f"Show {n} more {what}", False))
 
 
 def main() -> None:
@@ -2481,7 +2415,6 @@ def main() -> None:
     data = load_data()
     refresh_portfolio(data)
     write("data.json", json.dumps(data, indent=2) + "\n")
-    write("terminal.svg", render_terminal(data))
     write("experience.svg", render_experience(data))
     write("highlights.svg", render_highlights(data))
     write("hero.svg", render_hero(data))

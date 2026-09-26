@@ -7,11 +7,12 @@
 <img src="assets/svg/intro.svg" width="100%" alt="Cloud consultant at AWS Professional Services. I build the AWS platforms that regulated companies migrate onto: Terraform, CI/CD, MLOps pipelines, and lately the agent tooling that makes that work faster." />
 
 <p align="center">
-<a href="https://www.linkedin.com/in/sagar-gupta-16-10"><img src="assets/svg/connect-linkedin.svg" width="18%" alt="LinkedIn" /></a>
-<a href="https://leetcode.com/sagargupta1610/"><img src="assets/svg/connect-leetcode.svg" width="18%" alt="LeetCode" /></a>
-<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/connect-portfolio.svg" width="18%" alt="Portfolio" /></a>
-<a href="mailto:sg85207@gmail.com"><img src="assets/svg/connect-email.svg" width="18%" alt="Email" /></a>
-<a href="https://github.com/Sagargupta16"><img src="assets/svg/connect-github.svg" width="18%" alt="GitHub" /></a>
+<a href="https://www.linkedin.com/in/sagar-gupta-16-10"><img src="assets/svg/connect-linkedin.svg" width="15.5%" alt="LinkedIn" /></a>
+<a href="https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf"><img src="assets/svg/connect-resume.svg" width="15.5%" alt="Resume" /></a>
+<a href="mailto:sg85207@gmail.com"><img src="assets/svg/connect-email.svg" width="15.5%" alt="Email" /></a>
+<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/connect-portfolio.svg" width="15.5%" alt="Portfolio" /></a>
+<a href="https://github.com/Sagargupta16"><img src="assets/svg/connect-github.svg" width="15.5%" alt="GitHub" /></a>
+<a href="https://leetcode.com/sagargupta1610/"><img src="assets/svg/connect-leetcode.svg" width="15.5%" alt="LeetCode" /></a>
 </p>
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
@@ -45,7 +46,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-publications-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-publications-light.svg">
-  <img src="assets/svg/header-publications-dark.svg" width="100%" alt="Publications and Talks" />
+  <img src="assets/svg/header-publications-dark.svg" width="100%" alt="Publications, Talks and Recognition" />
 </picture>
 
 <img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition" />
@@ -64,19 +65,28 @@
 </p>
 
 <p align="center">
-<a href="https://kalchar.co.in/"><img src="assets/svg/project-kalchar.svg" width="49%" alt="Kalchar: Production folk-art portfolio and commission site for a traditional artist - Madhubani, Pichwai, Lippan, and Gond..." /></a>
-<a href="https://chromewebstore.google.com/detail/gitscope/fndaanihifimmlnmkjdmjbbkbdajolff"><img src="assets/svg/project-gitscope.svg" width="49%" alt="GitScope: A Chrome extension plus web dashboard that adds deep GitHub profile insights - 9-stat grid, coding personality..." /></a>
-<a href="https://sagargupta.online/ledger-sync/"><img src="assets/svg/project-ledger-sync.svg" width="49%" alt="Ledger Sync: A self-hosted personal finance dashboard (v2.19.0) with an AI chatbot that uses 15 read-only tool calls to answer..." /></a>
-<a href="https://leetcode-rating-predictor.onrender.com/"><img src="assets/svg/project-leetcode-rating-predictor.svg" width="49%" alt="LeetCode Rating Predictor: Full-stack LeetCode contest rating predictor using a Dense neural network trained on 244K+ contest records, featuring..." /></a>
-<a href="https://github.com/Sagargupta16/Blue_Green_AWS_Terraform"><img src="assets/svg/project-blue-green-aws-terraform.svg" width="49%" alt="Blue Green AWS Terraform: A comprehensive Infrastructure as Code solution for implementing Blue-Green deployment on AWS using Terraform..." /></a>
-<a href="https://sagargupta.online/InstagramLikesLeaderboard/"><img src="assets/svg/project-instagram-likes-leaderboard.svg" width="49%" alt="Instagram Likes Leaderboard: A browser-based tool with three modes - Likes Leaderboard, Stats Dashboard, and Follower Analysis - that scans your..." /></a>
-<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/project-personal-portfolio.svg" width="49%" alt="Personal Portfolio: This site - a minimal dark developer portfolio with an ambient aurora background, project cards with live screenshots..." /></a>
-<a href="https://github.com/Sagargupta16/SelfHub"><img src="assets/svg/project-selfhub.svg" width="49%" alt="SelfHub: A Model Context Protocol (MCP) server that acts as your personal digital memory hub - store notes, preferences, code..." /></a>
+<a href="https://kalchar.co.in/"><img src="assets/svg/project-kalchar.svg" width="49%" alt="Kalchar: Live portfolio and commission site for a traditional folk artist: Madhubani, Pichwai, Lippan and Gond art, custom orders and an admin panel." /></a>
+<a href="https://chromewebstore.google.com/detail/gitscope/fndaanihifimmlnmkjdmjbbkbdajolff"><img src="assets/svg/project-gitscope.svg" width="49%" alt="GitScope: Chrome extension and web dashboard for deep GitHub profile insights: a 9-stat grid, activity heatmap, profile comparison and a leaderboard." /></a>
+<a href="https://sagargupta.online/ledger-sync/"><img src="assets/svg/project-ledger-sync.svg" width="49%" alt="Ledger Sync: Self-hosted personal finance dashboard with an AI chatbot that answers spending, tax and goal questions through 15 read-only tool calls." /></a>
+<a href="https://leetcode-rating-predictor.onrender.com/"><img src="assets/svg/project-leetcode-rating-predictor.svg" width="49%" alt="LeetCode Rating Predictor: Predicts LeetCode contest rating changes with a dense neural network trained on 244K+ contest records, served by FastAPI and React." /></a>
 </p>
+
+<div align="center">
+<details>
+<summary><picture><img src="assets/svg/cta-projects-more.svg" width="30%" alt="Show 4 more projects" /></picture></summary>
+
+<p align="center">
+<a href="https://github.com/Sagargupta16/Blue_Green_AWS_Terraform"><img src="assets/svg/project-blue-green-aws-terraform.svg" width="49%" alt="Blue Green AWS Terraform: Zero-downtime blue-green deployments on AWS in Terraform: ECS on EC2 behind an ALB, shipped by CodePipeline with KMS-encrypted artifacts." /></a>
+<a href="https://sagargupta.online/InstagramLikesLeaderboard/"><img src="assets/svg/project-instagram-likes-leaderboard.svg" width="49%" alt="Instagram Likes Leaderboard: Browser tool that scans your Instagram posts to show your biggest fans, ghost followers and non-mutuals. No downloads or sign-ups." /></a>
+<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/project-personal-portfolio.svg" width="49%" alt="Personal Portfolio: My portfolio: a dark, data-driven React 19 site with live project screenshots, animated SVG covers and an ambient aurora background." /></a>
+<a href="https://github.com/Sagargupta16/SelfHub"><img src="assets/svg/project-selfhub.svg" width="49%" alt="SelfHub: MCP server that works as a personal memory hub: save notes, preferences, snippets and tasks from any MCP-enabled AI assistant." /></a>
+</p>
+
+</details>
+</div>
 
 <p align="center">
 <a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/cta-portfolio.svg" width="30%" alt="View all 49 projects" /></a>
-<a href="https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf"><img src="assets/svg/cta-resume.svg" width="30%" alt="Download resume" /></a>
 </p>
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
@@ -116,24 +126,40 @@
 </picture>
 
 <p align="center">
-<a href="https://github.com/Sagargupta16/github-stats-card-action"><img src="assets/svg/tool-github-stats-card-action.svg" width="32%" alt="GitHub Stats Card Action: A GitHub Action that renders an animated GitHub stats card as an SVG in your own repo, so your..." /></a>
-<a href="https://github.com/Sagargupta16/leetcode-card-action"><img src="assets/svg/tool-leetcode-card-action.svg" width="32%" alt="LeetCode Card Action: A GitHub Action that renders an animated LeetCode card as an SVG in your own repo" /></a>
-<a href="https://github.com/Sagargupta16/oss-contributions-card-action"><img src="assets/svg/tool-oss-contributions-card-action.svg" width="32%" alt="OSS Contributions Card Action: A GitHub Action that finds your merged and open pull requests to other people&#x27;s repos through..." /></a>
-<a href="https://github.com/Sagargupta16/readme-kit-action"><img src="assets/svg/tool-readme-kit.svg" width="32%" alt="readme-kit: A GitHub Action that turns one profile.yml into a matching set of self-hosted animated SVG..." /></a>
-<a href="https://github.com/Sagargupta16/skillcheck"><img src="assets/svg/tool-skillcheck.svg" width="32%" alt="skillcheck: Conformance suite for Agent Skills (SKILL.md), published on npm" /></a>
-<a href="https://github.com/Sagargupta16/claude-skills"><img src="assets/svg/tool-claude-skills.svg" width="32%" alt="Claude Skills: Custom Claude Code plugin marketplace (v5.2.0) with 16 curated plugins covering dev workflow..." /></a>
+<a href="https://github.com/Sagargupta16/github-stats-card-action"><img src="assets/svg/tool-github-stats-card-action.svg" width="32%" alt="GitHub Stats Card Action: GitHub Action that renders an animated GitHub stats card as an SVG in your own repo." /></a>
+<a href="https://github.com/Sagargupta16/leetcode-card-action"><img src="assets/svg/tool-leetcode-card-action.svg" width="32%" alt="LeetCode Card Action: GitHub Action that renders an animated LeetCode card with your contest rating history." /></a>
+<a href="https://github.com/Sagargupta16/oss-contributions-card-action"><img src="assets/svg/tool-oss-contributions-card-action.svg" width="32%" alt="OSS Contributions Card Action: GitHub Action that finds your upstream pull requests and renders them as SVG cards." /></a>
+<a href="https://github.com/Sagargupta16/readme-kit-action"><img src="assets/svg/tool-readme-kit.svg" width="32%" alt="readme-kit: GitHub Action that turns one profile.yml into a full set of animated profile README cards." /></a>
+<a href="https://github.com/Sagargupta16/skillcheck"><img src="assets/svg/tool-skillcheck.svg" width="32%" alt="skillcheck: Conformance suite for Agent Skills (SKILL.md): 36 rules across 6 runtimes, on npm." /></a>
+<a href="https://github.com/Sagargupta16/claude-skills"><img src="assets/svg/tool-claude-skills.svg" width="32%" alt="Claude Skills: Claude Code plugin marketplace with 16 curated plugins for dev workflow, git and clean code." /></a>
 </p>
 
+<div align="center">
+<details>
+<summary><picture><img src="assets/svg/cta-community-more.svg" width="30%" alt="Show 10 more community tools" /></picture></summary>
+
 <p align="center">
-<a href="https://github.com/Sagargupta16?tab=repositories&type=source"><img src="assets/svg/cta-community.svg" width="30%" alt="See all 16 community tools" /></a>
+<a href="https://github.com/Sagargupta16/itr-agent"><img src="assets/svg/tool-itr-agent.svg" width="32%" alt="ITR Agent: Local-first MCP server that walks you through filing an Indian income tax return, on npm." /></a>
+<a href="https://github.com/Sagargupta16/claude-cost-optimizer"><img src="assets/svg/tool-claude-cost-optimizer.svg" width="32%" alt="Claude Cost Optimizer: Claude Code plugin that cuts costs 30 to 60% with concise responses, model routing and budget hooks." /></a>
+<a href="https://github.com/Sagargupta16/bedrock-multi-model-mcp"><img src="assets/svg/tool-bedrock-multi-model-mcp.svg" width="32%" alt="Bedrock Multi-Model MCP: MCP server for Amazon Bedrock: text, image, video and embeddings across Llama, Nova, Claude and more." /></a>
+<a href="https://github.com/Sagargupta16/mcp-toolkit"><img src="assets/svg/tool-mcp-toolkit.svg" width="32%" alt="MCP Toolkit: Drop-in auth, caching, rate limiting, logging and CORS for MCP servers built on the TypeScript SDK." /></a>
+<a href="https://github.com/Sagargupta16/claude-code-recipes"><img src="assets/svg/tool-claude-code-recipes.svg" width="32%" alt="Claude Code Recipes: 47 copy-paste Claude Code recipes: commands, subagents, hooks, skills and CLAUDE.md templates." /></a>
+<a href="https://github.com/Sagargupta16/awesome-mcp-servers"><img src="assets/svg/tool-awesome-mcp-servers.svg" width="32%" alt="Awesome MCP Servers: Curated list of Model Context Protocol servers, frameworks, clients and tutorials." /></a>
+<a href="https://github.com/Sagargupta16/deploy-guide"><img src="assets/svg/tool-deploy-guide.svg" width="32%" alt="Deploy Guide: 37 step-by-step deployment guides across 12 platforms, 14 frameworks and 6 databases." /></a>
+<a href="https://github.com/Sagargupta16/agent-recipes"><img src="assets/svg/tool-agent-recipes.svg" width="32%" alt="Agent Recipes: Copy-paste AI agent workflows for code review, testing, migrations, security scans and deploys." /></a>
+<a href="https://github.com/Sagargupta16/ai-git-hooks"><img src="assets/svg/tool-ai-git-hooks.svg" width="32%" alt="AI Git Hooks: AI git hooks that review code, write commit messages and scan for security issues before you push." /></a>
+<a href="https://github.com/Sagargupta16/credly-badge-readme-action"><img src="assets/svg/tool-credly-badge-readme-action.svg" width="32%" alt="Credly Badge README Action: GitHub Action that syncs your Credly certifications and badges into your profile README." /></a>
 </p>
+
+</details>
+</div>
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stats-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stats-light.svg">
-  <img src="assets/svg/header-stats-dark.svg" width="100%" alt="GitHub Stats" />
+  <img src="assets/svg/header-stats-dark.svg" width="100%" alt="Coding Stats" />
 </picture>
 
 <img src="assets/svg/github.svg" width="100%" alt="GitHub stats" />
@@ -163,7 +189,5 @@
 <img src="assets/svg/education.svg" width="100%" alt="Education" />
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
-
-<img src="assets/svg/terminal.svg" width="100%" alt="Terminal: whoami, published AWS samples, LeetCode profile" />
 
 <img src="assets/svg/footer.svg" width="100%" alt="Thanks for visiting" /> <img src="https://komarev.com/ghpvc/?username=sagargupta16" width="1" height="1" alt="" />

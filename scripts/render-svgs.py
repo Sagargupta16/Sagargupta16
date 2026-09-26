@@ -110,19 +110,36 @@ ICON_ROWS = [
 
 HEADERS = [
     ("experience", "01", "Experience", "where I work and what shipped"),
-    ("projects", "02", "Featured Projects", "what I have built and shipped"),
+    ("certs", "02", "Certifications and Badges", "verified on Credly"),
+    (
+        "publications",
+        "03",
+        "Publications and Talks",
+        "AWS samples, talks and recognition",
+    ),
+    ("projects", "04", "Featured Projects", "what I have built and shipped"),
+    ("stack", "05", "Tech Stack and Tools", "what I work with daily"),
+    ("opensource", "06", "Open Source", "merged upstream work"),
     (
         "community",
-        "03",
+        "07",
         "Community and Developer Tools",
-        "open tooling for Claude Code and MCP",
+        "open tools anyone can use",
     ),
-    ("opensource", "04", "Open Source", "merged upstream work"),
-    ("connect", "05", "Connect With Me", "where to find me"),
-    ("stack", "06", "Tech Stack and Tools", "what I work with daily"),
-    ("stats", "07", "GitHub Stats", "activity, streaks and contests"),
-    ("certs", "08", "Certifications and Badges", "verified on Credly"),
+    ("stats", "08", "GitHub Stats", "activity, streaks and contests"),
+    ("education", "09", "Education", "where I studied"),
 ]
+
+# The community cards shown on the profile, in this order; the rest sit behind the "all tools" button.
+COMMUNITY_TOP = [
+    "github-stats-card-action",
+    "leetcode-card-action",
+    "oss-contributions-card-action",
+    "readme-kit",
+    "skillcheck",
+    "claude-skills",
+]
+COMMUNITY_ALL_URL = "https://github.com/Sagargupta16?tab=repositories&type=source"
 
 # Career: the top rail, oldest first, ending on the current full-time role,
 # which then expands into its customer engagements on a second rail.
@@ -2282,16 +2299,25 @@ def render_readme(data: dict) -> str:
         )
         for p in projects
     ]
+    by_slug = {_slug(p["title"]): p for p in pf.get("community", [])}
     tool_cells = [
         _link(
-            p["github"],
+            by_slug[s]["github"],
             _img(
-                f"tool-{_slug(p['title'])}.svg",
-                f"{p['title']}: {_summary(p['description'], 96)}",
+                f"tool-{s}.svg",
+                f"{by_slug[s]['title']}: {_summary(by_slug[s]['description'], 96)}",
             ),
         )
-        for p in pf.get("community", [])
+        for s in COMMUNITY_TOP
+        if s in by_slug
     ]
+    all_tools = _link(
+        COMMUNITY_ALL_URL,
+        _img(
+            "cta-community.svg",
+            f"See all {len(by_slug)} community tools",
+        ),
+    )
     samples = [
         _link(
             "https://github.com/aws-samples/sample-aws-terraform-org-governance",
@@ -2333,24 +2359,28 @@ def render_readme(data: dict) -> str:
             ),
         ),
         _img("intro.svg", pf.get("intro") or "About"),
-        _img(
-            "terminal.svg", "Terminal: whoami, published AWS samples, LeetCode profile"
-        ),
+        _row(connect, "18%"),
         DIVIDER,
         _header("experience", "Experience"),
         _img("experience.svg", "Career timeline and customer engagements"),
         _img("highlights.svg", "Highlights"),
         _img("worked-with.svg", "Worked with: companies and customers"),
+        DIVIDER,
+        _header("certs", "Certifications and Badges"),
+        _link(CREDLY_URL, _img("certs.svg", "Credly badges")),
+        _get_this_card("certs"),
+        DIVIDER,
+        _header("publications", "Publications and Talks"),
         _img("publications.svg", "Publications, talks and recognition"),
-        _img("education.svg", "Education"),
         DIVIDER,
         _header("projects", "Featured Projects"),
         _row(samples, "49%"),
         _row(project_cells, "49%"),
         _row(ctas, "30%"),
         DIVIDER,
-        _header("community", "Community and Developer Tools"),
-        _row(tool_cells, "32%"),
+        _header("stack", "Tech Stack and Tools"),
+        _img("stack.svg", "Tech stack"),
+        _img("ai-stack.svg", "AI-assisted engineering"),
         DIVIDER,
         _header("opensource", "Open Source"),
         _link(MERGED_URL, _img("oss.svg", "Open source summary")),
@@ -2358,12 +2388,9 @@ def render_readme(data: dict) -> str:
         _link(REVIEW_URL, _img("oss-review.svg", "Pull requests in review")),
         _get_this_card("oss"),
         DIVIDER,
-        _header("connect", "Connect With Me"),
-        _row(connect, "18%"),
-        DIVIDER,
-        _header("stack", "Tech Stack and Tools"),
-        _img("stack.svg", "Tech stack"),
-        _img("ai-stack.svg", "AI-assisted engineering"),
+        _header("community", "Community and Developer Tools"),
+        _row(tool_cells, "32%"),
+        _row([all_tools], "30%"),
         DIVIDER,
         _header("stats", "GitHub Stats"),
         _img("github.svg", "GitHub stats"),
@@ -2376,10 +2403,12 @@ def render_readme(data: dict) -> str:
         _img("competitive.svg", "Competitive programming"),
         SNAKE,
         DIVIDER,
-        _header("certs", "Certifications and Badges"),
-        _link(CREDLY_URL, _img("certs.svg", "Credly badges")),
-        _get_this_card("certs"),
+        _header("education", "Education"),
+        _img("education.svg", "Education"),
         DIVIDER,
+        _img(
+            "terminal.svg", "Terminal: whoami, published AWS samples, LeetCode profile"
+        ),
         # a 1px copy of the komarev counter keeps visits counted; the number itself shows in profile-badges.svg
         _img("footer.svg", "Thanks for visiting")
         + f' <img src="{VIEWS_URL}" width="1" height="1" alt="" />',
@@ -2441,6 +2470,10 @@ def write_portfolio_cards(data: dict) -> None:
         )
     for key, repo, card in GET_THIS_CARD:
         write(f"get-{key}.svg", render_get_this_card(repo, card))
+    write(
+        "cta-community.svg",
+        render_cta(f"See all {len(pf.get('community', []))} community tools", False),
+    )
 
 
 def main() -> None:

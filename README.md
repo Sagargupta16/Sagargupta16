@@ -6,7 +6,13 @@
 
 <img src="assets/svg/intro.svg" width="100%" alt="Cloud consultant at AWS Professional Services. I build the AWS platforms that regulated companies migrate onto: Terraform, CI/CD, MLOps pipelines, and lately the agent tooling that makes that work faster." />
 
-<img src="assets/svg/terminal.svg" width="100%" alt="Terminal: whoami, published AWS samples, LeetCode profile" />
+<p align="center">
+<a href="https://www.linkedin.com/in/sagar-gupta-16-10"><img src="assets/svg/connect-linkedin.svg" width="18%" alt="LinkedIn" /></a>
+<a href="https://leetcode.com/sagargupta1610/"><img src="assets/svg/connect-leetcode.svg" width="18%" alt="LeetCode" /></a>
+<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/connect-portfolio.svg" width="18%" alt="Portfolio" /></a>
+<a href="mailto:sg85207@gmail.com"><img src="assets/svg/connect-email.svg" width="18%" alt="Email" /></a>
+<a href="https://github.com/Sagargupta16"><img src="assets/svg/connect-github.svg" width="18%" alt="GitHub" /></a>
+</p>
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
@@ -22,9 +28,27 @@
 
 <img src="assets/svg/worked-with.svg" width="100%" alt="Worked with: companies and customers" />
 
-<img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition" />
+<img src="assets/svg/divider.svg" width="100%" alt="" />
 
-<img src="assets/svg/education.svg" width="100%" alt="Education" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-certs-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-certs-light.svg">
+  <img src="assets/svg/header-certs-dark.svg" width="100%" alt="Certifications and Badges" />
+</picture>
+
+<a href="https://www.credly.com/users/sagar-gupta.f8eb96cc"><img src="assets/svg/certs.svg" width="100%" alt="Credly badges" /></a>
+
+<a href="https://github.com/Sagargupta16/credly-badge-readme-action#quick-start"><img src="assets/svg/get-certs.svg" width="100%" alt="Get the Credly badges card for your own profile: Sagargupta16/credly-badge-readme-action" /></a>
+
+<img src="assets/svg/divider.svg" width="100%" alt="" />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-publications-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-publications-light.svg">
+  <img src="assets/svg/header-publications-dark.svg" width="100%" alt="Publications and Talks" />
+</picture>
+
+<img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition" />
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
@@ -58,29 +82,14 @@
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-community-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-community-light.svg">
-  <img src="assets/svg/header-community-dark.svg" width="100%" alt="Community and Developer Tools" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stack-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stack-light.svg">
+  <img src="assets/svg/header-stack-dark.svg" width="100%" alt="Tech Stack and Tools" />
 </picture>
 
-<p align="center">
-<a href="https://github.com/Sagargupta16/github-stats-card-action"><img src="assets/svg/tool-github-stats-card-action.svg" width="32%" alt="GitHub Stats Card Action: A GitHub Action that renders an animated GitHub stats card as an SVG in your own repo, so your..." /></a>
-<a href="https://github.com/Sagargupta16/leetcode-card-action"><img src="assets/svg/tool-leetcode-card-action.svg" width="32%" alt="LeetCode Card Action: A GitHub Action that renders an animated LeetCode card as an SVG in your own repo" /></a>
-<a href="https://github.com/Sagargupta16/oss-contributions-card-action"><img src="assets/svg/tool-oss-contributions-card-action.svg" width="32%" alt="OSS Contributions Card Action: A GitHub Action that finds your merged and open pull requests to other people&#x27;s repos through..." /></a>
-<a href="https://github.com/Sagargupta16/readme-kit-action"><img src="assets/svg/tool-readme-kit.svg" width="32%" alt="readme-kit: A GitHub Action that turns one profile.yml into a matching set of self-hosted animated SVG..." /></a>
-<a href="https://github.com/Sagargupta16/skillcheck"><img src="assets/svg/tool-skillcheck.svg" width="32%" alt="skillcheck: Conformance suite for Agent Skills (SKILL.md), published on npm" /></a>
-<a href="https://github.com/Sagargupta16/itr-agent"><img src="assets/svg/tool-itr-agent.svg" width="32%" alt="ITR Agent: Local-first MCP server that walks you through filing an Indian income tax return, published on..." /></a>
-<a href="https://github.com/Sagargupta16/claude-skills"><img src="assets/svg/tool-claude-skills.svg" width="32%" alt="Claude Skills: Custom Claude Code plugin marketplace (v5.2.0) with 16 curated plugins covering dev workflow..." /></a>
-<a href="https://github.com/Sagargupta16/claude-cost-optimizer"><img src="assets/svg/tool-claude-cost-optimizer.svg" width="32%" alt="Claude Cost Optimizer: Installable Claude Code plugin with cost-mode skill that saves 30-60% on costs through concise..." /></a>
-<a href="https://github.com/Sagargupta16/bedrock-multi-model-mcp"><img src="assets/svg/tool-bedrock-multi-model-mcp.svg" width="32%" alt="Bedrock Multi-Model MCP: MCP server for AWS Bedrock - text, image, video generation, and embeddings across Llama 4..." /></a>
-<a href="https://github.com/Sagargupta16/mcp-toolkit"><img src="assets/svg/tool-mcp-toolkit.svg" width="32%" alt="MCP Toolkit: Reusable utilities and middleware for building production-ready MCP servers" /></a>
-<a href="https://github.com/Sagargupta16/claude-code-recipes"><img src="assets/svg/tool-claude-code-recipes.svg" width="32%" alt="Claude Code Recipes: 47 copy-paste recipes for Claude Code covering 15 commands, 9 subagents, 5 hooks, skills..." /></a>
-<a href="https://github.com/Sagargupta16/awesome-mcp-servers"><img src="assets/svg/tool-awesome-mcp-servers.svg" width="32%" alt="Awesome MCP Servers: A curated [awesome] list of Model Context Protocol servers, frameworks, clients, tutorials, and..." /></a>
-<a href="https://github.com/Sagargupta16/deploy-guide"><img src="assets/svg/tool-deploy-guide.svg" width="32%" alt="Deploy Guide: Step-by-step deployment guides for every platform - 37 guides, 12 platforms, 14 frameworks, 6..." /></a>
-<a href="https://github.com/Sagargupta16/agent-recipes"><img src="assets/svg/tool-agent-recipes.svg" width="32%" alt="Agent Recipes: Copy-paste AI agent workflows for real-world developer tasks - code review, testing..." /></a>
-<a href="https://github.com/Sagargupta16/ai-git-hooks"><img src="assets/svg/tool-ai-git-hooks.svg" width="32%" alt="AI Git Hooks: AI-powered git hooks that review code, generate commit messages, catch bugs, and scan for..." /></a>
-<a href="https://github.com/Sagargupta16/credly-badge-readme-action"><img src="assets/svg/tool-credly-badge-readme-action.svg" width="32%" alt="Credly Badge README Action: A GitHub Action that auto-syncs your Credly certifications and badges to your GitHub profile..." /></a>
-</p>
+<img src="assets/svg/stack.svg" width="100%" alt="Tech stack" />
+
+<img src="assets/svg/ai-stack.svg" width="100%" alt="AI-assisted engineering" />
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
@@ -101,30 +110,23 @@
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-connect-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-connect-light.svg">
-  <img src="assets/svg/header-connect-dark.svg" width="100%" alt="Connect With Me" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-community-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-community-light.svg">
+  <img src="assets/svg/header-community-dark.svg" width="100%" alt="Community and Developer Tools" />
 </picture>
 
 <p align="center">
-<a href="https://www.linkedin.com/in/sagar-gupta-16-10"><img src="assets/svg/connect-linkedin.svg" width="18%" alt="LinkedIn" /></a>
-<a href="https://leetcode.com/sagargupta1610/"><img src="assets/svg/connect-leetcode.svg" width="18%" alt="LeetCode" /></a>
-<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/connect-portfolio.svg" width="18%" alt="Portfolio" /></a>
-<a href="mailto:sg85207@gmail.com"><img src="assets/svg/connect-email.svg" width="18%" alt="Email" /></a>
-<a href="https://github.com/Sagargupta16"><img src="assets/svg/connect-github.svg" width="18%" alt="GitHub" /></a>
+<a href="https://github.com/Sagargupta16/github-stats-card-action"><img src="assets/svg/tool-github-stats-card-action.svg" width="32%" alt="GitHub Stats Card Action: A GitHub Action that renders an animated GitHub stats card as an SVG in your own repo, so your..." /></a>
+<a href="https://github.com/Sagargupta16/leetcode-card-action"><img src="assets/svg/tool-leetcode-card-action.svg" width="32%" alt="LeetCode Card Action: A GitHub Action that renders an animated LeetCode card as an SVG in your own repo" /></a>
+<a href="https://github.com/Sagargupta16/oss-contributions-card-action"><img src="assets/svg/tool-oss-contributions-card-action.svg" width="32%" alt="OSS Contributions Card Action: A GitHub Action that finds your merged and open pull requests to other people&#x27;s repos through..." /></a>
+<a href="https://github.com/Sagargupta16/readme-kit-action"><img src="assets/svg/tool-readme-kit.svg" width="32%" alt="readme-kit: A GitHub Action that turns one profile.yml into a matching set of self-hosted animated SVG..." /></a>
+<a href="https://github.com/Sagargupta16/skillcheck"><img src="assets/svg/tool-skillcheck.svg" width="32%" alt="skillcheck: Conformance suite for Agent Skills (SKILL.md), published on npm" /></a>
+<a href="https://github.com/Sagargupta16/claude-skills"><img src="assets/svg/tool-claude-skills.svg" width="32%" alt="Claude Skills: Custom Claude Code plugin marketplace (v5.2.0) with 16 curated plugins covering dev workflow..." /></a>
 </p>
 
-<img src="assets/svg/divider.svg" width="100%" alt="" />
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stack-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stack-light.svg">
-  <img src="assets/svg/header-stack-dark.svg" width="100%" alt="Tech Stack and Tools" />
-</picture>
-
-<img src="assets/svg/stack.svg" width="100%" alt="Tech stack" />
-
-<img src="assets/svg/ai-stack.svg" width="100%" alt="AI-assisted engineering" />
+<p align="center">
+<a href="https://github.com/Sagargupta16?tab=repositories&type=source"><img src="assets/svg/cta-community.svg" width="30%" alt="See all 16 community tools" /></a>
+</p>
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
@@ -153,15 +155,15 @@
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-certs-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-certs-light.svg">
-  <img src="assets/svg/header-certs-dark.svg" width="100%" alt="Certifications and Badges" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-education-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-education-light.svg">
+  <img src="assets/svg/header-education-dark.svg" width="100%" alt="Education" />
 </picture>
 
-<a href="https://www.credly.com/users/sagar-gupta.f8eb96cc"><img src="assets/svg/certs.svg" width="100%" alt="Credly badges" /></a>
-
-<a href="https://github.com/Sagargupta16/credly-badge-readme-action#quick-start"><img src="assets/svg/get-certs.svg" width="100%" alt="Get the Credly badges card for your own profile: Sagargupta16/credly-badge-readme-action" /></a>
+<img src="assets/svg/education.svg" width="100%" alt="Education" />
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
+
+<img src="assets/svg/terminal.svg" width="100%" alt="Terminal: whoami, published AWS samples, LeetCode profile" />
 
 <img src="assets/svg/footer.svg" width="100%" alt="Thanks for visiting" /> <img src="https://komarev.com/ghpvc/?username=sagargupta16" width="1" height="1" alt="" />

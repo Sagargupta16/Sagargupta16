@@ -69,21 +69,11 @@
 <a href="https://chromewebstore.google.com/detail/gitscope/fndaanihifimmlnmkjdmjbbkbdajolff"><img src="assets/svg/project-gitscope.svg" width="49%" alt="GitScope: Chrome extension and web dashboard for deep GitHub profile insights: a 9-stat grid, activity heatmap, profile comparison and a leaderboard." /></a>
 <a href="https://sagargupta.online/ledger-sync/"><img src="assets/svg/project-ledger-sync.svg" width="49%" alt="Ledger Sync: Self-hosted personal finance dashboard with an AI chatbot that answers spending, tax and goal questions through 15 read-only tool calls." /></a>
 <a href="https://leetcode-rating-predictor.onrender.com/"><img src="assets/svg/project-leetcode-rating-predictor.svg" width="49%" alt="LeetCode Rating Predictor: Predicts LeetCode contest rating changes with a dense neural network trained on 244K+ contest records, served by FastAPI and React." /></a>
-</p>
-
-<div align="center">
-<details>
-<summary><picture><img src="assets/svg/cta-projects-more.svg" width="30%" alt="Show 4 more projects" /></picture></summary>
-
-<p align="center">
 <a href="https://github.com/Sagargupta16/Blue_Green_AWS_Terraform"><img src="assets/svg/project-blue-green-aws-terraform.svg" width="49%" alt="Blue Green AWS Terraform: Zero-downtime blue-green deployments on AWS in Terraform: ECS on EC2 behind an ALB, shipped by CodePipeline with KMS-encrypted artifacts." /></a>
 <a href="https://sagargupta.online/InstagramLikesLeaderboard/"><img src="assets/svg/project-instagram-likes-leaderboard.svg" width="49%" alt="Instagram Likes Leaderboard: Browser tool that scans your Instagram posts to show your biggest fans, ghost followers and non-mutuals. No downloads or sign-ups." /></a>
 <a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/project-personal-portfolio.svg" width="49%" alt="Personal Portfolio: My portfolio: a dark, data-driven React 19 site with live project screenshots, animated SVG covers and an ambient aurora background." /></a>
 <a href="https://github.com/Sagargupta16/SelfHub"><img src="assets/svg/project-selfhub.svg" width="49%" alt="SelfHub: MCP server that works as a personal memory hub: save notes, preferences, snippets and tasks from any MCP-enabled AI assistant." /></a>
 </p>
-
-</details>
-</div>
 
 <p align="center">
 <a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/cta-portfolio.svg" width="30%" alt="View all 49 projects" /></a>
@@ -134,25 +124,9 @@
 <a href="https://github.com/Sagargupta16/claude-skills"><img src="assets/svg/tool-claude-skills.svg" width="32%" alt="Claude Skills: Claude Code plugin marketplace with 16 curated plugins for dev workflow, git and clean code." /></a>
 </p>
 
-<div align="center">
-<details>
-<summary><picture><img src="assets/svg/cta-community-more.svg" width="30%" alt="Show 10 more community tools" /></picture></summary>
-
 <p align="center">
-<a href="https://github.com/Sagargupta16/itr-agent"><img src="assets/svg/tool-itr-agent.svg" width="32%" alt="ITR Agent: Local-first MCP server that walks you through filing an Indian income tax return, on npm." /></a>
-<a href="https://github.com/Sagargupta16/claude-cost-optimizer"><img src="assets/svg/tool-claude-cost-optimizer.svg" width="32%" alt="Claude Cost Optimizer: Claude Code plugin that cuts costs 30 to 60% with concise responses, model routing and budget hooks." /></a>
-<a href="https://github.com/Sagargupta16/bedrock-multi-model-mcp"><img src="assets/svg/tool-bedrock-multi-model-mcp.svg" width="32%" alt="Bedrock Multi-Model MCP: MCP server for Amazon Bedrock: text, image, video and embeddings across Llama, Nova, Claude and more." /></a>
-<a href="https://github.com/Sagargupta16/mcp-toolkit"><img src="assets/svg/tool-mcp-toolkit.svg" width="32%" alt="MCP Toolkit: Drop-in auth, caching, rate limiting, logging and CORS for MCP servers built on the TypeScript SDK." /></a>
-<a href="https://github.com/Sagargupta16/claude-code-recipes"><img src="assets/svg/tool-claude-code-recipes.svg" width="32%" alt="Claude Code Recipes: 47 copy-paste Claude Code recipes: commands, subagents, hooks, skills and CLAUDE.md templates." /></a>
-<a href="https://github.com/Sagargupta16/awesome-mcp-servers"><img src="assets/svg/tool-awesome-mcp-servers.svg" width="32%" alt="Awesome MCP Servers: Curated list of Model Context Protocol servers, frameworks, clients and tutorials." /></a>
-<a href="https://github.com/Sagargupta16/deploy-guide"><img src="assets/svg/tool-deploy-guide.svg" width="32%" alt="Deploy Guide: 37 step-by-step deployment guides across 12 platforms, 14 frameworks and 6 databases." /></a>
-<a href="https://github.com/Sagargupta16/agent-recipes"><img src="assets/svg/tool-agent-recipes.svg" width="32%" alt="Agent Recipes: Copy-paste AI agent workflows for code review, testing, migrations, security scans and deploys." /></a>
-<a href="https://github.com/Sagargupta16/ai-git-hooks"><img src="assets/svg/tool-ai-git-hooks.svg" width="32%" alt="AI Git Hooks: AI git hooks that review code, write commit messages and scan for security issues before you push." /></a>
-<a href="https://github.com/Sagargupta16/credly-badge-readme-action"><img src="assets/svg/tool-credly-badge-readme-action.svg" width="32%" alt="Credly Badge README Action: GitHub Action that syncs your Credly certifications and badges into your profile README." /></a>
+<a href="https://github.com/Sagargupta16/Sagargupta16/blob/main/COMMUNITY.md"><img src="assets/svg/cta-community.svg" width="30%" alt="See all 16 community tools" /></a>
 </p>
-
-</details>
-</div>
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 

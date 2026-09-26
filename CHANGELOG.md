@@ -2,6 +2,13 @@
 
 All notable changes to this profile README repository.
 
+## [4.11.0] - 2026-09-26
+
+- Sections reordered for a reader who scans the top of the page: intro, connect buttons, experience, certifications, publications, projects, tech stack, open source, community, GitHub stats, education, terminal, footer. Certifications move up from last to second, the connect buttons move up under the intro (their own section header is gone), and open source now comes before community
+- Publications and education get their own numbered sections instead of sitting inside Experience
+- Community shows six cards (the four card actions, skillcheck, claude-skills) and a "See all 16 community tools" button; the other tool cards are still generated
+- The terminal card moves from the top to just above the footer
+
 ## [4.10.0] - 2026-09-25
 
 - "Get this card" strips under the GitHub stats, LeetCode, open-source and certifications cards. Each is a slim animated SVG linking to the Quick start of the public action that makes that kind of card (github-stats-card-action, leetcode-card-action, oss-contributions-card-action, credly-badge-readme-action), so visitors can add the same card to their own profile. The cards keep their existing links

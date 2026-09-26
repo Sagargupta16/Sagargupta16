@@ -2,6 +2,17 @@
 
 All notable changes to this profile README repository.
 
+## [4.12.0] - 2026-09-26
+
+- Projects and community show a first set of cards and a "Show N more" SVG button that opens the rest in place (a `<details>` block whose summary image sits in `<picture>`, so GitHub does not link the image to itself)
+- Resume moves into the connect row under the intro: LinkedIn, Resume, Email, Portfolio, GitHub, LeetCode; the separate "Download resume" button is gone
+- Worked With uses each company's real logo (AWS, State Street and DTCC from Wikimedia Commons, RWS and Ikarus 3D from their sites), stored in `assets/logos` and drawn white so the five read as one set
+- Project and tool cards use one-line summaries written for the card, so no description ends in "..."; version numbers are gone from the copy, and a tool shows its stars only from 10 up
+- Repetition removed: Highlights keeps CSAT, Pulse, AWS samples and TFC ambassador (certifications, merged PRs and LeetCode each have their own card), the Worked With header drops the CSAT and Pulse figures, competitive programming shows the best LeetCode contest rank instead of the badge, and the terminal card is removed
+- Section 08 is now Coding Stats; section 03 is Publications, Talks and Recognition; section 04's subtitle no longer repeats section 01's
+- Smaller fixes: the Ikarus-3D title matches the portfolio (Software Developer Associate, intern), education reads "CGPA 8.38, First Division with Distinction", the TriNIT podium gets its year, "GET THESE OPEN-SOURCE CARDS", list rows wrap onto a second line instead of cutting a PR title, a single word no longer wraps onto its own line, Kiro loses its placeholder letter, and the footer points to sagargupta.online
+- The workflow no longer installs Pillow (nothing downloads images at render time now) and re-renders when a logo changes
+
 ## [4.11.0] - 2026-09-26
 
 - Sections reordered for a reader who scans the top of the page: intro, connect buttons, experience, certifications, publications, projects, tech stack, open source, community, GitHub stats, education, terminal, footer. Certifications move up from last to second, the connect buttons move up under the intro (their own section header is gone), and open source now comes before community

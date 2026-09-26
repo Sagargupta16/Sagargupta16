@@ -2,6 +2,11 @@
 
 All notable changes to this profile README repository.
 
+## [4.12.1] - 2026-09-26
+
+- Dropdowns removed. On GitHub a `<details>` block draws a disclosure triangle and a white focus box that no SVG can hide, so projects are back to showing all 8 cards, and community shows its top six plus a "See all 16 community tools" button
+- New generated page `COMMUNITY.md`: every community tool card in the same style, with a "Back to profile" button; the render workflow commits it with the README
+
 ## [4.12.0] - 2026-09-26
 
 - Projects and community show a first set of cards and a "Show N more" SVG button that opens the rest in place (a `<details>` block whose summary image sits in `<picture>`, so GitHub does not link the image to itself)

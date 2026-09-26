@@ -41,7 +41,7 @@ jobs:
 
       - name: Update Credly badges
         id: credly
-        uses: Sagargupta16/credly-badge-readme-action@7ffd35098950b3649eb545322672388a5b19cd20 # v1.1.0
+        uses: Sagargupta16/credly-badge-readme-action@26998bf92012385289aa35446d0e32e94b961485 # v1.1.1
         with:
           credly-username: ${{ steps.config.outputs.credly_user }}
           # the block lives in a data file; scripts/render-svgs.py draws it as assets/svg/certs.svg

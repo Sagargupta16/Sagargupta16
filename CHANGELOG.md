@@ -12,6 +12,7 @@ All notable changes to this profile README repository.
 - Section 08 is now Coding Stats; section 03 is Publications, Talks and Recognition; section 04's subtitle no longer repeats section 01's
 - Smaller fixes: the Ikarus-3D title matches the portfolio (Software Developer Associate, intern), education reads "CGPA 8.38, First Division with Distinction", the TriNIT podium gets its year, "GET THESE OPEN-SOURCE CARDS", list rows wrap onto a second line instead of cutting a PR title, a single word no longer wraps onto its own line, Kiro loses its placeholder letter, and the footer points to sagargupta.online
 - The workflow no longer installs Pillow (nothing downloads images at render time now) and re-renders when a logo changes
+- Credly workflow pinned to credly-badge-readme-action v1.1.1, whose card labels drop the word "Badge": the Claude partner badge reads "CLAUDE PARTNER / CLAUDE CODE" instead of "CLAUDE PARTNER / BADGE CLAUDE"
 
 ## [4.11.0] - 2026-09-26
 

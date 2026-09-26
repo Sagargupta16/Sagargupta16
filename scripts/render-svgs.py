@@ -768,8 +768,9 @@ def _fade_group(at: float, body: str) -> str:
 def render_experience(data: dict) -> str:
     """Top rail to the current role, which then expands into its customer engagements."""
     pf = data.get("portfolio") or {}
+    # under each customer: the title held there, at AWS (same titles as the Worked With card)
     engagements = [
-        (e["when"], e["client"], e["tagline"]) for e in _customers(pf)
+        (e["when"], e["client"], f"{_engagement_role(e)}, AWS") for e in _customers(pf)
     ] or ENGAGEMENTS
     w, h = 840, 330
     left, right, top_y = 96, 690, 84
@@ -1723,6 +1724,11 @@ def _customers(pf: dict) -> list[dict]:
     return [e for e in pf.get("engagements", []) if " - " in e["name"]]
 
 
+def _engagement_role(e: dict) -> str:
+    """Return the title held on an engagement: 'Lead DevOps Consultant - RWS' gives the role."""
+    return e["name"].replace(" (Ongoing)", "").rsplit(" - ", 1)[0]
+
+
 def _company_logo(name: str) -> str | None:
     """Return the company's stored logo as a data URI, or None if there is none."""
     path = LOGO_DIR / LOGOS.get(name, "")
@@ -1747,8 +1753,7 @@ def render_worked_with(pf: dict) -> str:
     """Return a row of company tiles: logo, company, and the title held there."""
     tiles = [(AWS_NAME, "DevOps/MLOps Cloud Consultant")]
     for e in reversed(_customers(pf)):
-        role = e["name"].replace(" (Ongoing)", "").rsplit(" - ", 1)[0]
-        tiles.append((e["client"], role))
+        tiles.append((e["client"], _engagement_role(e)))
     for e in pf.get("earlier", []):
         if e["company"] != AWS_NAME:
             tiles.append(

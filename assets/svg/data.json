@@ -4,19 +4,19 @@
     "rating": 2166,
     "top": 1.11,
     "contests": 107,
-    "solved": 1322,
+    "solved": 1323,
     "by_difficulty": {
       "Easy": [
         478,
-        966
+        968
       ],
       "Medium": [
-        679,
-        2117
+        680,
+        2121
       ],
       "Hard": [
         165,
-        977
+        979
       ]
     },
     "history": [
@@ -130,9 +130,9 @@
     ]
   },
   "github": {
-    "contributions": 8151,
+    "contributions": 8152,
     "commits": 5996,
-    "prs": 1557,
+    "prs": 1558,
     "reviews": 34,
     "issues": 116,
     "stars": 295,
@@ -202,19 +202,10 @@
     },
     "followers": 106,
     "repos": 62,
-    "streak": 26,
-    "longest": 175,
-    "active_days": 320,
+    "streak": 27,
+    "longest": 168,
+    "active_days": 314,
     "calendar": [
-      [
-        4,
-        17,
-        14,
-        19,
-        26,
-        10,
-        22
-      ],
       [
         44,
         7,
@@ -682,6 +673,9 @@
         18,
         23,
         29
+      ],
+      [
+        1
       ]
     ],
     "languages": [
@@ -1566,22 +1560,22 @@
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5865,
-    "PrefectHQ/prefect": 23930,
-    "anthropics/skills": 178487,
-    "apache/airflow": 46983,
+    "PrefectHQ/prefect": 23933,
+    "anthropics/skills": 178614,
+    "apache/airflow": 46991,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 904,
-    "awslabs/mcp": 9731,
-    "axios/axios": 109219,
+    "awslabs/mcp": 9732,
+    "axios/axios": 109230,
     "cloudposse/terraform-aws-tfstate-backend": 442,
     "expressjs/multer": 12086,
-    "feast-dev/feast": 7310,
+    "feast-dev/feast": 7311,
     "forem/selfhost": 1481,
     "hashicorp/terraform-provider-aws": 11103,
-    "lucide-icons/lucide": 24726,
-    "modelcontextprotocol/servers": 90604,
+    "lucide-icons/lucide": 24741,
+    "modelcontextprotocol/servers": 90618,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 119
   },
-  "views": 22696
+  "views": 22730
 }

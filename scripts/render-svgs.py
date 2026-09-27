@@ -188,12 +188,14 @@ LOGOS = {
 
 # Career: the top rail, oldest first, ending on the current full-time role,
 # which then expands into its customer engagements on a second rail.
+# Every stop reads the same way: what (degree or role), then where (school or
+# company), then the city. Education and work share the one pattern.
 MILESTONES = [
-    ("2018", "BCA, DAVV", "Indore"),
-    ("2021", "MCA, NIT Warangal", "NIMCET AIR 208"),
-    ("2023", "Software Developer", "Ikarus-3D, Mohali, intern"),
-    ("2024", "ProServe DevOps Intern", "AWS, Hyderabad"),
-    ("2024", "Cloud Consultant", "AWS, DevOps/MLOps"),
+    ("2018", "BCA", "DAVV", "Indore, India"),
+    ("2021", "MCA", "NIT Warangal", "Warangal, India"),
+    ("2023", "Software Developer Intern", "Ikarus-3D", "Mohali, India"),
+    ("2024", "ProServe DevOps Intern", "AWS", "Hyderabad, India"),
+    ("2024", "Cloud Consultant", "AWS", "Hyderabad, India"),
 ]
 ENGAGEMENTS = [
     ("Oct 2024 to Aug 2025", "State Street", "Terraform module library"),
@@ -781,7 +783,7 @@ def render_experience(data: dict) -> str:
         (e["when"], e["client"], f"{_engagement_role(e)}, AWS") for e in _customers(pf)
     ] or ENGAGEMENTS
     w, h = 840, 330
-    left, right, top_y = 80, 760, 84
+    left, right, top_y = 70, 772, 84
     step = (right - left) / (len(MILESTONES) - 1)
     draw = 2.4
     parts = [
@@ -789,7 +791,7 @@ def render_experience(data: dict) -> str:
             w,
             h,
             "Career: "
-            + "; ".join(f"{y}, {a} ({where})" for y, a, where in MILESTONES)
+            + "; ".join(f"{y}, {what}, {org}, {city}" for y, what, org, city in MILESTONES)
             + ". Customer engagements at AWS: "
             + "; ".join(f"{client}, {role} ({when})" for when, client, role in engagements),
         ),
@@ -802,7 +804,7 @@ def render_experience(data: dict) -> str:
         _rail(left, right, top_y, 0.3, draw),
     ]
     last = len(MILESTONES) - 1
-    for i, (year, role, where) in enumerate(MILESTONES):
+    for i, (year, what, org, city) in enumerate(MILESTONES):
         x = left + i * step
         at = 0.3 + draw * i / last
         current = i == last
@@ -814,16 +816,17 @@ def render_experience(data: dict) -> str:
                 at,
                 (
                     f'<text class="m" x="{x}" y="{top_y - 22}" text-anchor="middle" fill="{color}" font-size="10">{label}</text>'
-                    f'<text class="t" x="{x}" y="{top_y + 30}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(role)}</text>'
-                    f'<text class="m" x="{x}" y="{top_y + 49}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">{escape(where.upper())}</text>'
+                    f'<text class="t" x="{x}" y="{top_y + 30}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(what)}</text>'
+                    f'<text class="t" x="{x}" y="{top_y + 47}" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="11.5">{escape(org)}</text>'
+                    f'<text class="m" x="{x}" y="{top_y + 63}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">{escape(city.upper())}</text>'
                 ),
             )
         )
     # the current role opens into its engagements: a drop, then a bracket over the second rail
     open_at = 0.3 + draw + 0.2
     sub_y, sub_left, sub_right = 250, 120, 720
-    bracket_y = 176
-    drop = f"M{right} {top_y + 58} V{bracket_y} H{sub_left} M{right} {bracket_y} H{sub_right}"
+    bracket_y = 186
+    drop = f"M{right} {top_y + 72} V{bracket_y} H{sub_left} M{right} {bracket_y} H{sub_right}"
     parts.append(
         f'<path d="{drop}" fill="none" stroke="{GREEN}88" stroke-width="1.4" stroke-dasharray="3 4" opacity="0">'
         f'<animate attributeName="opacity" to="1" begin="{open_at:.2f}s" dur="0.4s" fill="freeze"/></path>'
@@ -1934,10 +1937,13 @@ def render_education(pf: dict) -> str:
         facts += [
             a.removeprefix("Passed with ") for a in (e.get("achievements") or [])[:1]
         ]
+        # same "school, city, country" order as the career rail
+        parts = [p.strip() for p in (e.get("location") or "").split(",") if p.strip()]
+        city = f", {parts[0]}, {parts[-1]}" if len(parts) > 1 else ""
         rows.append(
             (
                 f"{e['title']}",
-                f"{e['institution']}  |  {', '.join(facts)}",
+                f"{e['institution']}{city}  |  {', '.join(facts)}",
                 _range_label(e["date"]),
             )
         )

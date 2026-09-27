@@ -6,7 +6,7 @@ All notable changes to this profile README repository.
 
 - Alt text carries each card's content: the README and COMMUNITY.md reuse the label every card is rendered with, so screen readers and search read the career steps, customers and titles, highlight numbers, certification names, publications, stack, OSS projects, GitHub and LeetCode numbers and education instead of a bare title
 - Community tool cards name their stack and, above 10, their stars in the label and alt text
-- The career rail starts at the 2018 BCA (DAVV, Indore) and runs to the current role across a wider rail
+- The career rail starts at the 2018 BCA and every stop reads the same way: what (degree or role), then where (school or company), then the city ("BCA / DAVV / Indore, India", "MCA / NIT Warangal / Warangal, India", "Cloud Consultant / AWS / Hyderabad, India"); the education card adds the same city and country after the school
 - Credit request for reuse: the script header, the generated README comment and a new `AGENTS.md` ask anyone adapting the design, and any AI assistant helping them, to keep the MIT notice and a "Profile design adapted from Sagargupta16" line
 
 ## [4.12.2] - 2026-09-26

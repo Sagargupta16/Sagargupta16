@@ -220,6 +220,10 @@ AI_TOOLS = [
 
 SVG_CLOSE = "</svg>"
 AWS_NAME = "Amazon Web Services"
+# One wording for the current AWS title everywhere on the profile, matching the
+# portfolio's experience.json and the resume: short on tight cards, long in text.
+AWS_TITLE = "Cloud Consultant (DevOps/MLOps)"
+AWS_TITLE_LONG = f"{AWS_TITLE}, AWS Professional Services"
 INDUSTRY_GROUP = "Industry Certifications"
 PORTFOLIO_URL = "https://sagargupta.online/portfolio-react/"
 ALLOWED_HOSTS = (
@@ -917,7 +921,7 @@ def render_highlights(data: dict) -> str:
 # ---------------------------------------------------------------- hero and footer
 
 HERO_LINES = [
-    "Cloud Consultant, AWS Professional Services",
+    f"{AWS_TITLE} at AWS",  # the long form runs into the node graph
     "DevOps and MLOps on AWS, in Terraform",
     "Building AI agents and MCP tooling",
     "Full stack developer, NIT Warangal alumnus",
@@ -968,7 +972,7 @@ def render_hero(data: dict) -> str:
         svg_open(
             w,
             h,
-            f"Sagar Gupta. Cloud Consultant at AWS Professional Services. LeetCode {lc['badge']}.",
+            f"Sagar Gupta. {AWS_TITLE_LONG}. LeetCode {lc['badge']}.",
         ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:2px}}"
         f".n{{font-family:{SANS};font-weight:800;letter-spacing:-1px}}.s{{font-family:{SANS};font-weight:600}}</style>",
@@ -1767,7 +1771,7 @@ def _logo_block(name: str, cx: float, y: float, width: float) -> str:
 
 def render_worked_with(pf: dict) -> str:
     """Return a row of company tiles: logo, company, and the title held there."""
-    tiles = [(AWS_NAME, "DevOps/MLOps Cloud Consultant")]
+    tiles = [(AWS_NAME, AWS_TITLE)]
     for e in reversed(_customers(pf)):
         tiles.append((e["client"], _engagement_role(e)))
     for e in pf.get("earlier", []):
@@ -2322,7 +2326,7 @@ def render_readme(data: dict) -> str:
             PORTFOLIO_URL,
             _img(
                 "hero.svg",
-                "Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS Professional Services",
+                f"Sagar Gupta, {AWS_TITLE_LONG}",
             ),
         ),
         _link(

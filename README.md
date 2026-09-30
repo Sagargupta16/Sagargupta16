@@ -138,11 +138,11 @@
   <img src="assets/svg/header-stats-dark.svg" width="100%" alt="Coding Stats" />
 </picture>
 
-<img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,050 contributions, 5,889 commits, 1,564 pull requests, 297 stars, longest streak 168 days" />
+<img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,054 contributions, 5,891 commits, 1,565 pull requests, 297 stars, longest streak 168 days" />
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></a>
 
-<a href="https://leetcode.com/sagargupta1610/"><img src="assets/svg/leetcode.svg" width="100%" alt="LeetCode: contest rating 2166, top 1.11%, 107 contests, 1323 problems solved" /></a>
+<a href="https://leetcode.com/sagargupta1610/"><img src="assets/svg/leetcode.svg" width="100%" alt="LeetCode: contest rating 2166, top 1.11%, 107 contests, 1324 problems solved" /></a>
 
 <a href="https://github.com/Sagargupta16/leetcode-card-action#quick-start"><img src="assets/svg/get-leetcode.svg" width="100%" alt="Get the LeetCode card for your own profile: Sagargupta16/leetcode-card-action" /></a>
 

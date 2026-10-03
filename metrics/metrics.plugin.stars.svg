@@ -23,7 +23,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>Sagargupta16/github-stats-card-action</span>
-                                        <span>starred 5 days ago</span>
+                                        <span>starred 7 days ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">Render an animated GitHub stats card (contributions, calendar, streak, languages) as an SVG in your own repo. No hosted widget, no quota errors.</div>
@@ -76,7 +76,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>Sagargupta16/leetcode-card-action</span>
-                                        <span>starred 5 days ago</span>
+                                        <span>starred 7 days ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">Render an animated LeetCode card (contest rating history, badge, solved by difficulty) as an SVG in your own repo. No hosted widget.</div>
@@ -129,7 +129,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>Sagargupta16/oss-contributions-card-action</span>
-                                        <span>starred 5 days ago</span>
+                                        <span>starred 7 days ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">Find your merged and open pull requests to other people's repos automatically and render them as animated SVG cards in your own repo. No manual list.</div>
@@ -182,7 +182,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>Sagargupta16/readme-kit-action</span>
-                                        <span>starred 5 days ago</span>
+                                        <span>starred 7 days ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">Turn one profile.yml into a matching set of self-hosted animated SVG cards for your GitHub profile README: hero, terminal, timeline, tiles, panels, stats, buttons, projects, headers, footer.</div>

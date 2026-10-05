@@ -130,9 +130,9 @@
     ]
   },
   "github": {
-    "contributions": 8070,
-    "commits": 5898,
-    "prs": 1572,
+    "contributions": 7875,
+    "commits": 5705,
+    "prs": 1570,
     "reviews": 34,
     "issues": 116,
     "stars": 298,
@@ -675,6 +675,7 @@
         0
       ],
       [
+        0,
         0
       ]
     ],
@@ -1559,23 +1560,23 @@
     "project_count": 49
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5863,
-    "PrefectHQ/prefect": 23964,
-    "anthropics/skills": 179588,
-    "apache/airflow": 47047,
+    "NirmalScaria/le-git-graph": 5861,
+    "PrefectHQ/prefect": 23969,
+    "anthropics/skills": 179734,
+    "apache/airflow": 47056,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
-    "awslabs/agent-plugins": 909,
-    "awslabs/mcp": 9751,
-    "axios/axios": 109276,
+    "awslabs/agent-plugins": 911,
+    "awslabs/mcp": 9753,
+    "axios/axios": 109302,
     "cloudposse/terraform-aws-tfstate-backend": 442,
-    "expressjs/multer": 12090,
-    "feast-dev/feast": 7322,
+    "expressjs/multer": 12091,
+    "feast-dev/feast": 7320,
     "forem/selfhost": 1482,
-    "hashicorp/terraform-provider-aws": 11108,
-    "lucide-icons/lucide": 24843,
-    "modelcontextprotocol/servers": 90998,
+    "hashicorp/terraform-provider-aws": 11109,
+    "lucide-icons/lucide": 24861,
+    "modelcontextprotocol/servers": 91015,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 120
   },
-  "views": 22964
+  "views": 22982
 }

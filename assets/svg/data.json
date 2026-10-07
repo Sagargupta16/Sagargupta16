@@ -130,12 +130,12 @@
     ]
   },
   "github": {
-    "contributions": 7934,
-    "commits": 5738,
-    "prs": 1596,
+    "contributions": 7942,
+    "commits": 5742,
+    "prs": 1599,
     "reviews": 34,
     "issues": 116,
-    "stars": 298,
+    "stars": 299,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -173,7 +173,7 @@
       "ledger-sync": 8,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 6,
+      "awesome-mcp-servers": 7,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -198,13 +198,14 @@
       "github-stats-card-action": 3,
       "leetcode-card-action": 3,
       "oss-contributions-card-action": 3,
-      "readme-kit-action": 4
+      "readme-kit-action": 4,
+      "agent-brain": 0
     },
-    "followers": 107,
-    "repos": 62,
-    "streak": 1,
+    "followers": 108,
+    "repos": 63,
+    "streak": 2,
     "longest": 161,
-    "active_days": 312,
+    "active_days": 313,
     "calendar": [
       [
         2,
@@ -677,18 +678,19 @@
       [
         0,
         0,
-        59
+        59,
+        8
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        59.0,
+        58.8,
         "#3178c6"
       ],
       [
         "Python",
-        24.3,
+        24.4,
         "#3572A5"
       ],
       [
@@ -1561,23 +1563,23 @@
     "project_count": 49
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5861,
-    "PrefectHQ/prefect": 23978,
-    "anthropics/skills": 179864,
-    "apache/airflow": 47070,
+    "NirmalScaria/le-git-graph": 5860,
+    "PrefectHQ/prefect": 23983,
+    "anthropics/skills": 180006,
+    "apache/airflow": 47081,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
-    "awslabs/agent-plugins": 912,
-    "awslabs/mcp": 9758,
-    "axios/axios": 109350,
+    "awslabs/agent-plugins": 914,
+    "awslabs/mcp": 9759,
+    "axios/axios": 109345,
     "cloudposse/terraform-aws-tfstate-backend": 442,
-    "expressjs/multer": 12091,
+    "expressjs/multer": 12090,
     "feast-dev/feast": 7321,
-    "forem/selfhost": 1482,
+    "forem/selfhost": 1481,
     "hashicorp/terraform-provider-aws": 11109,
-    "lucide-icons/lucide": 24876,
-    "modelcontextprotocol/servers": 91042,
+    "lucide-icons/lucide": 24888,
+    "modelcontextprotocol/servers": 91058,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 120
   },
-  "views": 22997
+  "views": 23034
 }

@@ -200,7 +200,7 @@ MILESTONES = [
 ENGAGEMENTS = [
     ("Oct 2024 to Aug 2025", "State Street", "Terraform module library"),
     ("Jun 2025 to Aug 2025", "MLOps SME Program", "SageMaker pipeline"),
-    ("Aug 2025 to Dec 2025", "DTCC", "Terraform modernization"),
+    ("Aug 2025 to Nov 2025", "DTCC", "Terraform modernization"),
     ("Feb 2026 to now", "RWS", "Lead DevOps, landing zone"),
 ]
 
@@ -888,7 +888,7 @@ def render_highlights(data: dict) -> str:
     # certifications, open source and LeetCode each have their own card further down
     tiles = [
         ("10/10", "average client CSAT", GREEN),
-        ("5/5", "average Pulse feedback", GREEN),
+        ("~90%", "faster account setup", GREEN),
         (str(samples), "published AWS samples", SKY),
         (f"{tfc}x", "TFC ambassador", SKY),
     ]

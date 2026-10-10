@@ -1479,6 +1479,15 @@ def render_tool_card(p: dict, stars: int | None, index: int) -> str:
     )
 
 
+def cert_issuer(name: str) -> str:
+    """Short issuer label for the certification pill."""
+    if name.startswith("AWS"):
+        return "AWS"
+    if "Terraform" in name:
+        return "TERRAFORM"
+    return "OTHER"
+
+
 def active_certifications(pf: dict, today: datetime.date) -> tuple[int, str]:
     """Count unexpired industry certifications and name their issuers.
 
@@ -1494,14 +1503,7 @@ def active_certifications(pf: dict, today: datetime.date) -> tuple[int, str]:
         if not c.get("expiryDate") or c["expiryDate"] >= today.isoformat()
     ]
     issuers = sorted(
-        {
-            "AWS"
-            if c["name"].startswith("AWS")
-            else "TERRAFORM"
-            if "Terraform" in c["name"]
-            else "OTHER"
-            for c in active
-        },
+        {cert_issuer(c["name"]) for c in active},
         key=lambda s: (s != "AWS", s),
     )
     return len(active), " / ".join(issuers)

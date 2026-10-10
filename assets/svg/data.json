@@ -130,9 +130,9 @@
     ]
   },
   "github": {
-    "contributions": 7988,
-    "commits": 5763,
-    "prs": 1621,
+    "contributions": 7992,
+    "commits": 5766,
+    "prs": 1622,
     "reviews": 34,
     "issues": 116,
     "stars": 305,
@@ -690,28 +690,28 @@
         8,
         3,
         19,
-        24
+        28
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        57.1,
+        56.7,
         "#3178c6"
       ],
       [
         "Python",
-        23.4,
+        24.0,
         "#3572A5"
       ],
       [
         "C++",
-        5.6,
+        5.5,
         "#f34b7d"
       ],
       [
         "JavaScript",
-        5.6,
+        5.5,
         "#f1e05a"
       ],
       [
@@ -1624,7 +1624,7 @@
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5860,
     "PrefectHQ/prefect": 24001,
-    "anthropics/skills": 180275,
+    "anthropics/skills": 180276,
     "apache/airflow": 47140,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,

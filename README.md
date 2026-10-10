@@ -101,11 +101,11 @@
   <img src="assets/svg/header-opensource-dark.svg" width="100%" alt="Open Source" />
 </picture>
 
-<a href="https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16"><img src="assets/svg/oss.svg" width="100%" alt="Open source: 11 merged upstream, 10 in review, across 10 projects" /></a>
+<a href="https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16"><img src="assets/svg/oss.svg" width="100%" alt="Open source: 12 merged upstream, 12 in review, across 11 projects" /></a>
 
-<a href="https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16"><img src="assets/svg/oss-merged.svg" width="100%" alt="11 pull requests merged upstream, in axios/axios, feast-dev/feast, PrefectHQ/prefect, awslabs/mcp, apache/airflow, cloudposse/terraform-aws-tfstate-backend, awslabs/agent-plugins, lucide-icons/lucide, aws-ia/terraform-aws-vpc, expressjs/multer" /></a>
+<a href="https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16"><img src="assets/svg/oss-merged.svg" width="100%" alt="12 pull requests merged upstream, in axios/axios, feast-dev/feast, PrefectHQ/prefect, awslabs/mcp, apache/airflow, cloudposse/terraform-aws-tfstate-backend, awslabs/agent-plugins, lucide-icons/lucide, aws-ia/terraform-aws-vpc, expressjs/multer, terraform-aws-modules/terraform-aws-atlantis" /></a>
 
-<a href="https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Aopen+-user%3ASagargupta16"><img src="assets/svg/oss-review.svg" width="100%" alt="10 pull requests in review upstream, in terraform-aws-modules/terraform-aws-dynamodb-table, hashicorp/terraform-provider-aws, NirmalScaria/le-git-graph, anthropics/skills, aws-ia/terraform-aws-bedrock" /></a>
+<a href="https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Aopen+-user%3ASagargupta16"><img src="assets/svg/oss-review.svg" width="100%" alt="12 pull requests in review upstream, in terraform-aws-modules/terraform-aws-dynamodb-table, hashicorp/terraform-provider-aws, NirmalScaria/le-git-graph, anthropics/skills, aws-ia/terraform-aws-bedrock" /></a>
 
 <a href="https://github.com/Sagargupta16/oss-contributions-card-action#quick-start"><img src="assets/svg/get-oss.svg" width="100%" alt="Get the open-source cards for your own profile: Sagargupta16/oss-contributions-card-action" /></a>
 
@@ -138,7 +138,7 @@
   <img src="assets/svg/header-stats-dark.svg" width="100%" alt="Coding Stats" />
 </picture>
 
-<img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 7,978 contributions, 5,759 commits, 1,616 pull requests, 299 stars, longest streak 161 days" />
+<img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 7,986 contributions, 5,762 commits, 1,620 pull requests, 299 stars, longest streak 161 days" />
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></a>
 

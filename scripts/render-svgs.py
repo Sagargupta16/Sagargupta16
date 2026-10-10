@@ -1480,7 +1480,7 @@ def render_tool_card(p: dict, stars: int | None, index: int) -> str:
 
 
 def cert_issuer(name: str) -> str:
-    """Short issuer label for the certification pill."""
+    """Return the short issuer label shown on the certification pill."""
     if name.startswith("AWS"):
         return "AWS"
     if "Terraform" in name:

@@ -2,6 +2,11 @@
 
 All notable changes to this profile README repository.
 
+## [4.13.2] - 2026-10-10
+
+- Highlights card: "10/10 average client CSAT" becomes "10/10 State Street CSAT"; only one engagement has a recorded CSAT, so "average" overstated it
+- Profile badges: the certification pill counts only unexpired industry certifications from the portfolio's expiry dates (Credly keeps expired badges) and names the issuers, so it reads "5x AWS" now that the Terraform Associate expired on 2026-09-10; the Credly count stays as the fallback
+
 ## [4.13.1] - 2026-10-10
 
 - Highlights card: "5/5 average Pulse feedback" replaced by "~90% faster account setup" (per-account setup from 3+ days to under 4 hours on the RWS engagement); no Pulse feedback exists to back the old tile

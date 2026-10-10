@@ -795,9 +795,13 @@ def render_experience(data: dict) -> str:
             w,
             h,
             "Career: "
-            + "; ".join(f"{y}, {what}, {org}, {city}" for y, what, org, city in MILESTONES)
+            + "; ".join(
+                f"{y}, {what}, {org}, {city}" for y, what, org, city in MILESTONES
+            )
             + ". Customer engagements at AWS: "
-            + "; ".join(f"{client}, {role} ({when})" for when, client, role in engagements),
+            + "; ".join(
+                f"{client}, {role} ({when})" for when, client, role in engagements
+            ),
         ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.4px}}"
         f".t{{font-family:{SANS};font-weight:700}}"
@@ -887,7 +891,7 @@ def render_highlights(data: dict) -> str:
     )
     # certifications, open source and LeetCode each have their own card further down
     tiles = [
-        ("10/10", "average client CSAT", GREEN),
+        ("10/10", "State Street CSAT", GREEN),
         ("~90%", "faster account setup", GREEN),
         (str(samples), "published AWS samples", SKY),
         (f"{tfc}x", "TFC ambassador", SKY),
@@ -1289,6 +1293,10 @@ def portfolio_snapshot(experience: dict, projects: dict, extra: dict) -> dict:
         "intro": extra.get("personal", {}).get("intro", ""),
         "education": extra.get("education", []),
         "coding_stats": extra.get("achievements", {}).get("coding_platform_stats", {}),
+        "certifications": [
+            {k: c.get(k) for k in ("name", "expiryDate")}
+            for c in extra.get("achievements", {}).get("certifications", [])
+        ],
         "contests": extra.get("achievements", {}).get("achievements", []),
         "project_count": sum(
             len(projects.get(k, []))
@@ -1471,12 +1479,40 @@ def render_tool_card(p: dict, stars: int | None, index: int) -> str:
     )
 
 
+def active_certifications(pf: dict, today: datetime.date) -> tuple[int, str]:
+    """Count unexpired industry certifications and name their issuers.
+
+    Credly keeps expired badges, so the count comes from the portfolio's
+    expiry dates; the Credly block is the fallback when that data is missing.
+    """
+    certs = pf.get("certifications") or []
+    if not certs:
+        return len(credly_badges(INDUSTRY_GROUP)), "AWS / TERRAFORM"
+    active = [
+        c
+        for c in certs
+        if not c.get("expiryDate") or c["expiryDate"] >= today.isoformat()
+    ]
+    issuers = sorted(
+        {
+            "AWS"
+            if c["name"].startswith("AWS")
+            else "TERRAFORM"
+            if "Terraform" in c["name"]
+            else "OTHER"
+            for c in active
+        },
+        key=lambda s: (s != "AWS", s),
+    )
+    return len(active), " / ".join(issuers)
+
+
 def render_profile_badges(data: dict) -> str:
     gh = data.get("github") or {}
     lc = data["leetcode"]
     today = datetime.date.today()
     years = today.year - CAREER_START[0] - (1 if today.month < CAREER_START[1] else 0)
-    certs = len(credly_badges(INDUSTRY_GROUP))
+    certs, issuers = active_certifications(data.get("portfolio") or {}, today)
     pills = [
         ("PROFILE VIEWS", f"{data.get('views', 0):,}", BLUE_LIGHT),
         ("FOLLOWERS", f"{gh.get('followers', 0):,}", BLUE_LIGHT),
@@ -1486,7 +1522,7 @@ def render_profile_badges(data: dict) -> str:
             f"{lc['badge'].upper()}  |  PEAK {max(lc.get('history') or [lc['rating']])}",
             AMBER,
         ),
-        ("CERTIFIED", f"{certs}x AWS / TERRAFORM", SKY),
+        ("CERTIFIED", f"{certs}x {issuers}", SKY),
         ("EXPERIENCE", f"{years}+ YEARS AT AWS", GREEN),
         ("PORTFOLIO", "SAGARGUPTA.ONLINE", BLUE_LIGHT),
     ]

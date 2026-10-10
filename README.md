@@ -27,7 +27,7 @@
 
 <img src="assets/svg/experience.svg" width="100%" alt="Career: 2018, BCA, DAVV, Indore, India; 2021, MCA, NIT Warangal, Warangal, India; 2023, Software Developer Intern, Ikarus-3D, Mohali, India; 2024, ProServe DevOps Intern, AWS, Hyderabad, India; 2024, Cloud Consultant, AWS, Hyderabad, India. Customer engagements at AWS: State Street, DevOps Consultant, AWS (Oct 2024 to Aug 2025); DTCC, DevOps Consultant, AWS (Aug 2025 to Nov 2025); RWS, Lead DevOps Consultant, AWS (Feb 2026 to now)" />
 
-<img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 10/10 average client CSAT; ~90% faster account setup; 2 published AWS samples; 5x TFC ambassador" />
+<img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 10/10 State Street CSAT; ~90% faster account setup; 2 published AWS samples; 5x TFC ambassador" />
 
 <img src="assets/svg/worked-with.svg" width="100%" alt="Worked with: Amazon Web Services, Cloud Consultant (DevOps/MLOps); RWS, Lead DevOps Consultant; DTCC, DevOps Consultant; State Street, DevOps Consultant; Ikarus-3D, Software Developer Associate (intern)" />
 
@@ -138,7 +138,7 @@
   <img src="assets/svg/header-stats-dark.svg" width="100%" alt="Coding Stats" />
 </picture>
 
-<img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 7,986 contributions, 5,762 commits, 1,620 pull requests, 299 stars, longest streak 161 days" />
+<img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 7,988 contributions, 5,763 commits, 1,621 pull requests, 305 stars, longest streak 161 days" />
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></a>
 

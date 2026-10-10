@@ -750,7 +750,7 @@
         "name": "Medical Image Classification MLOps Pipeline (SME Program)"
       },
       {
-        "when": "Aug 2025 to Dec 2025",
+        "when": "Aug 2025 to Nov 2025",
         "client": "DTCC",
         "tagline": "Terraform, Amazon Q",
         "stack": [
@@ -804,7 +804,7 @@
         "year": "2026"
       },
       {
-        "title": "APG Pattern: Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub (Published)",
+        "title": "APG Pattern (co-author): Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub Actions",
         "type": "publication",
         "year": "2025"
       },
@@ -1052,7 +1052,7 @@
     "featured": [
       {
         "title": "SageMaker Image Classification MLOps",
-        "description": "Published by AWS under the aws-samples organization (MIT-0) - an end-to-end, production-shaped MLOps pipeline for image classification on Amazon SageMaker, declared entirely in Terraform across 85 files and 13 reusable modules. Event-driven ingestion, multi-architecture training behind hard clinical quality gates, human-approved governed deployment, and a closed drift-to-retrain loop. The worked example classifies medical images, but the architecture is domain-agnostic.",
+        "description": "Published by AWS under the aws-samples organization (MIT-0) - an end-to-end, production-shaped MLOps pipeline for image classification on Amazon SageMaker, declared entirely in Terraform across 86 files and 13 reusable modules. Event-driven ingestion, multi-architecture training behind hard clinical quality gates, human-approved governed deployment, and a closed drift-to-retrain loop. The worked example classifies medical images, but the architecture is domain-agnostic.",
         "date": "July 2026",
         "tools_tech": [
           "Terraform",
@@ -1124,7 +1124,7 @@
       },
       {
         "title": "Ledger Sync",
-        "description": "A self-hosted personal finance dashboard (v2.19.0) with an AI chatbot that uses 15 read-only tool calls to answer questions about your spending, trends, tax, and goals. Upload Excel/CSV bank statements, get SHA-256 deduplication, 50/30/20 budgeting, bill calendar, GST analysis, subscription tracking, year-in-review, FIRE planning (Lean/Barista/Standard/Fat), India FY tax estimation, Sankey cash flow, and a Financial Health Score across 8 metrics.",
+        "description": "A self-hosted personal finance dashboard (v2.28.0) with an AI chatbot that uses 15 read-only tool calls to answer questions about your spending, trends, tax, and goals. Upload Excel/CSV bank statements, get SHA-256 deduplication, 50/30/20 budgeting, bill calendar, GST analysis, subscription tracking, year-in-review, FIRE planning (Lean/Barista/Standard/Fat), India FY tax estimation, Sankey cash flow, and a Financial Health Score across 8 metrics.",
         "date": "July 2026",
         "tools_tech": [
           "TypeScript",
@@ -1142,7 +1142,7 @@
       },
       {
         "title": "LeetCode Rating Predictor",
-        "description": "Full-stack LeetCode contest rating predictor using a Dense neural network trained on 244K+ contest records, featuring a FastAPI backend with LeetCode GraphQL integration and a React glassmorphism frontend.",
+        "description": "Full-stack LeetCode contest rating predictor using a Dense neural network trained on 121K+ contest records, featuring a FastAPI backend with LeetCode GraphQL integration and a React glassmorphism frontend.",
         "date": "December 2023",
         "tools_tech": [
           "Python",
@@ -1265,7 +1265,7 @@
       },
       {
         "title": "skillcheck",
-        "description": "Conformance suite for Agent Skills (SKILL.md), published on npm. Linters check syntax; skillcheck checks reality: 36 rules with exact skills-ref parity, client-extension awareness across 6 runtimes (Claude Code, Codex, Gemini CLI, Copilot, Cursor, OpenCode), structure and reference validation, SARIF output, and a drop-in GitHub Action.",
+        "description": "Conformance suite for Agent Skills (SKILL.md), published on npm. Linters check syntax; skillcheck checks reality: 36 rules with exact skills-ref parity, a 19-field client-extension registry across 3 runtimes (Claude Code, Copilot, Cursor), structure and reference validation, SARIF output, and a drop-in GitHub Action.",
         "tools_tech": [
           "TypeScript",
           "Node.js",
@@ -1358,7 +1358,7 @@
       },
       {
         "title": "Deploy Guide",
-        "description": "Step-by-step deployment guides for every platform - 37 guides, 12 platforms, 14 frameworks, 6 databases. Covers GitHub Pages, Vercel, Render, Railway, Fly.io, Netlify, Cloudflare Pages, AWS ECS, DigitalOcean, and more.",
+        "description": "Step-by-step deployment guides for every platform - 38 guides, 13 platforms, 14 frameworks, 6 databases. Covers GitHub Pages, Vercel, Render, Railway, Fly.io, Netlify, Cloudflare Pages, AWS ECS, DigitalOcean, and more.",
         "tools_tech": [
           "DevOps",
           "AWS",
@@ -1404,7 +1404,7 @@
         "github": "https://github.com/Sagargupta16/credly-badge-readme-action"
       }
     ],
-    "intro": "Cloud consultant at AWS Professional Services. I build the AWS platforms that regulated companies migrate onto: Terraform, CI/CD, MLOps pipelines, and lately the agent tooling that makes that work faster.",
+    "intro": "Cloud consultant at AWS Professional Services. Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines, plus the MCP servers and Claude Code skills I build to do that work faster.",
     "education": [
       {
         "id": 1,
@@ -1487,7 +1487,7 @@
       },
       "geeksforgeeks": {
         "username": "sagargupta10",
-        "problems_solved": "400+",
+        "problems_solved": "500+",
         "url": "https://www.geeksforgeeks.org/user/sagargupta10/"
       },
       "hackerrank": {
@@ -1562,26 +1562,26 @@
         "type": "Hackathon"
       }
     ],
-    "project_count": 49
+    "project_count": 48
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5861,
-    "PrefectHQ/prefect": 23996,
-    "anthropics/skills": 180104,
-    "apache/airflow": 47132,
+    "NirmalScaria/le-git-graph": 5860,
+    "PrefectHQ/prefect": 24002,
+    "anthropics/skills": 180218,
+    "apache/airflow": 47137,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 916,
-    "awslabs/mcp": 9763,
-    "axios/axios": 109352,
-    "cloudposse/terraform-aws-tfstate-backend": 443,
-    "expressjs/multer": 12090,
+    "awslabs/mcp": 9765,
+    "axios/axios": 109347,
+    "cloudposse/terraform-aws-tfstate-backend": 442,
+    "expressjs/multer": 12087,
     "feast-dev/feast": 7323,
     "forem/selfhost": 1481,
-    "hashicorp/terraform-provider-aws": 11112,
-    "lucide-icons/lucide": 24912,
-    "modelcontextprotocol/servers": 91093,
-    "terraform-aws-modules/terraform-aws-dynamodb-table": 120
+    "hashicorp/terraform-provider-aws": 11113,
+    "lucide-icons/lucide": 24923,
+    "modelcontextprotocol/servers": 91109,
+    "terraform-aws-modules/terraform-aws-dynamodb-table": 117
   },
-  "views": 23101
+  "views": 23153
 }

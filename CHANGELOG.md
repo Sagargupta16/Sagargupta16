@@ -2,6 +2,12 @@
 
 All notable changes to this profile README repository.
 
+## [4.13.1] - 2026-10-10
+
+- Highlights card: "5/5 average Pulse feedback" replaced by "~90% faster account setup" (per-account setup from 3+ days to under 4 hours on the RWS engagement); no Pulse feedback exists to back the old tile
+- Career rail: the DTCC engagement ends Nov 2025, not Dec 2025
+- Re-render picks up the portfolio data fixed on 2026-10-10: the new intro line, 48 projects, GeeksforGeeks 500+, and the Amplify APG pattern listed as co-authored
+
 ## [4.13.0] - 2026-09-27
 
 - Alt text carries each card's content: the README and COMMUNITY.md reuse the label every card is rendered with, so screen readers and search read the career steps, customers and titles, highlight numbers, certification names, publications, stack, OSS projects, GitHub and LeetCode numbers and education instead of a bare title

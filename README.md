@@ -6,7 +6,7 @@
 
 <a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/profile-badges.svg" width="100%" alt="Followers, total stars, LeetCode, certifications, years at AWS, portfolio" /></a>
 
-<img src="assets/svg/intro.svg" width="100%" alt="Cloud consultant at AWS Professional Services. I build the AWS platforms that regulated companies migrate onto: Terraform, CI/CD, MLOps pipelines, and lately the agent tooling that makes that work faster." />
+<img src="assets/svg/intro.svg" width="100%" alt="Cloud consultant at AWS Professional Services. Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines, plus the MCP servers and Claude Code skills I build to do that work faster." />
 
 <p align="center">
 <a href="https://www.linkedin.com/in/sagar-gupta-16-10"><img src="assets/svg/connect-linkedin.svg" width="15.5%" alt="LinkedIn" /></a>
@@ -25,9 +25,9 @@
   <img src="assets/svg/header-experience-dark.svg" width="100%" alt="Experience" />
 </picture>
 
-<img src="assets/svg/experience.svg" width="100%" alt="Career: 2018, BCA, DAVV, Indore, India; 2021, MCA, NIT Warangal, Warangal, India; 2023, Software Developer Intern, Ikarus-3D, Mohali, India; 2024, ProServe DevOps Intern, AWS, Hyderabad, India; 2024, Cloud Consultant, AWS, Hyderabad, India. Customer engagements at AWS: State Street, DevOps Consultant, AWS (Oct 2024 to Aug 2025); DTCC, DevOps Consultant, AWS (Aug 2025 to Dec 2025); RWS, Lead DevOps Consultant, AWS (Feb 2026 to now)" />
+<img src="assets/svg/experience.svg" width="100%" alt="Career: 2018, BCA, DAVV, Indore, India; 2021, MCA, NIT Warangal, Warangal, India; 2023, Software Developer Intern, Ikarus-3D, Mohali, India; 2024, ProServe DevOps Intern, AWS, Hyderabad, India; 2024, Cloud Consultant, AWS, Hyderabad, India. Customer engagements at AWS: State Street, DevOps Consultant, AWS (Oct 2024 to Aug 2025); DTCC, DevOps Consultant, AWS (Aug 2025 to Nov 2025); RWS, Lead DevOps Consultant, AWS (Feb 2026 to now)" />
 
-<img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 10/10 average client CSAT; 5/5 average Pulse feedback; 2 published AWS samples; 5x TFC ambassador" />
+<img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 10/10 average client CSAT; ~90% faster account setup; 2 published AWS samples; 5x TFC ambassador" />
 
 <img src="assets/svg/worked-with.svg" width="100%" alt="Worked with: Amazon Web Services, Cloud Consultant (DevOps/MLOps); RWS, Lead DevOps Consultant; DTCC, DevOps Consultant; State Street, DevOps Consultant; Ikarus-3D, Software Developer Associate (intern)" />
 
@@ -51,7 +51,7 @@
   <img src="assets/svg/header-publications-dark.svg" width="100%" alt="Publications, Talks and Recognition" />
 </picture>
 
-<img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition: SageMaker Image Classification MLOps Pipeline; Terraform AWS Organizations Governance on Control Tower; 3 APG Patterns peer reviewed; APG pattern: Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub; GitOps Configuration Safety with Health Checks and Pipeline Gating; Automating Unit Testing for Terraform using Terraform Test and PyTest frameworks; ProServe MLOps SME Program Graduate; 5x TFC Ambassador: AI/ML, NGDE (Graduated), CloudOps (AWS DevOps Agent), Agentic AI, Serverless; Associate Speaker Certification; AWS T&amp;C Subject Matter Expert (SME) Program Contributor; ML Hackathon 2025, 26th/238 teams" />
+<img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition: SageMaker Image Classification MLOps Pipeline; Terraform AWS Organizations Governance on Control Tower; 3 APG Patterns peer reviewed; APG Pattern (co-author): Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub Actions; GitOps Configuration Safety with Health Checks and Pipeline Gating; Automating Unit Testing for Terraform using Terraform Test and PyTest frameworks; ProServe MLOps SME Program Graduate; 5x TFC Ambassador: AI/ML, NGDE (Graduated), CloudOps (AWS DevOps Agent), Agentic AI, Serverless; Associate Speaker Certification; AWS T&amp;C Subject Matter Expert (SME) Program Contributor; ML Hackathon 2025, 26th/238 teams" />
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
@@ -78,7 +78,7 @@
 </p>
 
 <p align="center">
-<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/cta-portfolio.svg" width="30%" alt="View all 49 projects" /></a>
+<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/cta-portfolio.svg" width="30%" alt="View all 48 projects" /></a>
 </p>
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
@@ -146,7 +146,7 @@
 
 <a href="https://github.com/Sagargupta16/leetcode-card-action#quick-start"><img src="assets/svg/get-leetcode.svg" width="100%" alt="Get the LeetCode card for your own profile: Sagargupta16/leetcode-card-action" /></a>
 
-<img src="assets/svg/competitive.svg" width="100%" alt="Competitive programming: LEETCODE #63 best contest rank; GEEKSFORGEEKS 400+ problems solved; HACKERRANK 6-Star problem solving; KICK START &#x27;22 1289 round E rank; 1st Place - Coding Cauldron Online, Version &#x27;23; 1st Place - QFiesta, IGNOSI &#x27;22; 2nd Place - Manage the Damage, Version &#x27;23; 2nd Place - Trial By Code, IGNOSI &#x27;22; 3rd Place - Logic Head, INFOTREK &#x27;22; 3rd Place - MOTHRA, Version &#x27;21; 4th Place - TriNIT Hackathon &#x27;24" />
+<img src="assets/svg/competitive.svg" width="100%" alt="Competitive programming: LEETCODE #63 best contest rank; GEEKSFORGEEKS 500+ problems solved; HACKERRANK 6-Star problem solving; KICK START &#x27;22 1289 round E rank; 1st Place - Coding Cauldron Online, Version &#x27;23; 1st Place - QFiesta, IGNOSI &#x27;22; 2nd Place - Manage the Damage, Version &#x27;23; 2nd Place - Trial By Code, IGNOSI &#x27;22; 3rd Place - Logic Head, INFOTREK &#x27;22; 3rd Place - MOTHRA, Version &#x27;21; 4th Place - TriNIT Hackathon &#x27;24" />
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/output/github-snake-dark.svg" />

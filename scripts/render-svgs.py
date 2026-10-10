@@ -1489,11 +1489,9 @@ def cert_issuer(name: str) -> str:
 
 
 def active_certifications(pf: dict, today: datetime.date) -> tuple[int, str]:
-    """Count unexpired industry certifications and name their issuers.
-
-    Credly keeps expired badges, so the count comes from the portfolio's
-    expiry dates; the Credly block is the fallback when that data is missing.
-    """
+    """Count unexpired industry certifications and name their issuers."""
+    # Credly keeps expired badges, so the count comes from the portfolio's
+    # expiry dates; the Credly block is the fallback when that data is missing.
     certs = pf.get("certifications") or []
     if not certs:
         return len(credly_badges(INDUSTRY_GROUP)), "AWS / TERRAFORM"

@@ -130,12 +130,12 @@
     ]
   },
   "github": {
-    "contributions": 7986,
-    "commits": 5762,
-    "prs": 1620,
+    "contributions": 7992,
+    "commits": 5766,
+    "prs": 1622,
     "reviews": 34,
     "issues": 116,
-    "stars": 299,
+    "stars": 305,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -145,8 +145,10 @@
       "Minesweeper-Game__UnityEngine": 4,
       "FlappyBird-Game__UnityEngine": 3,
       "PacMan-Game__UnityEngine": 3,
+      "leetcode-solutions": 1,
       "Guess-The-Number-Game": 3,
       "Tic-Tac-Toe": 3,
+      "Counter-App": 1,
       "Contact-Manager-React": 4,
       "Authentication-System": 3,
       "Contact-Manager-Mern": 6,
@@ -161,17 +163,21 @@
       "ai-code-translator": 3,
       "stock-market-prediction": 4,
       "LeetCode_Rating_Predictor": 7,
+      "gfg-solutions": 1,
       "my-journey": 3,
       "mern-template": 3,
       "ldpc-codes": 5,
       "Lingua-Connect": 4,
       "Blue_Green_AWS_Terraform": 4,
+      "aws-amplify-cicd": 1,
       "ground-zero-nn": 1,
       "ai-project-template": 3,
       "Financial-Dashboard": 11,
       "SelfHub": 5,
+      "data-vault": 1,
       "ledger-sync": 8,
       "stocksage-ai": 5,
+      "scripts": 1,
       "InstagramLikesLeaderboard": 12,
       "awesome-mcp-servers": 7,
       "deploy-guide": 3,
@@ -195,6 +201,7 @@
       "sagas": 3,
       "orbit": 2,
       "kinfolk": 3,
+      "waypoint": 0,
       "github-stats-card-action": 3,
       "leetcode-card-action": 3,
       "oss-contributions-card-action": 3,
@@ -203,10 +210,10 @@
       "svg-forge": 0
     },
     "followers": 109,
-    "repos": 64,
+    "repos": 71,
     "streak": 5,
     "longest": 161,
-    "active_days": 316,
+    "active_days": 315,
     "calendar": [
       [
         2,
@@ -427,8 +434,8 @@
       [
         3,
         71,
-        23,
-        19,
+        22,
+        20,
         0,
         4,
         43
@@ -589,8 +596,8 @@
       [
         0,
         12,
-        6,
-        25,
+        4,
+        27,
         5,
         0,
         0
@@ -628,14 +635,14 @@
         0,
         0,
         0,
-        1,
-        1
+        0,
+        2
       ],
       [
         0,
         0,
-        21,
-        42,
+        20,
+        43,
         63,
         11,
         30
@@ -653,8 +660,8 @@
         53,
         37,
         11,
-        5,
-        10,
+        4,
+        11,
         10,
         6
       ],
@@ -663,8 +670,8 @@
         8,
         5,
         6,
-        18,
-        23,
+        17,
+        24,
         29
       ],
       [
@@ -683,33 +690,33 @@
         8,
         3,
         19,
-        22
+        28
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        59.3,
+        56.7,
         "#3178c6"
       ],
       [
         "Python",
-        23.9,
+        24.0,
         "#3572A5"
       ],
       [
-        "JavaScript",
-        4.8,
-        "#f1e05a"
-      ],
-      [
         "C++",
-        3.5,
+        5.5,
         "#f34b7d"
       ],
       [
+        "JavaScript",
+        5.5,
+        "#f1e05a"
+      ],
+      [
         "CSS",
-        3.2,
+        3.1,
         "#663399"
       ],
       [
@@ -1521,6 +1528,32 @@
         "url": "https://www.hackerrank.com/Sagargupta1610"
       }
     },
+    "certifications": [
+      {
+        "name": "AWS Certified Developer - Associate",
+        "expiryDate": "2029-01-31"
+      },
+      {
+        "name": "AWS Certified AI Practitioner",
+        "expiryDate": "2028-07-07"
+      },
+      {
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "expiryDate": "2028-06-28"
+      },
+      {
+        "name": "HashiCorp Certified: Terraform Associate (003)",
+        "expiryDate": "2026-09-10"
+      },
+      {
+        "name": "AWS Certified Solutions Architect - Associate",
+        "expiryDate": "2027-07-07"
+      },
+      {
+        "name": "AWS Certified Cloud Practitioner",
+        "expiryDate": "2029-01-31"
+      }
+    ],
     "contests": [
       {
         "id": 1,
@@ -1590,17 +1623,17 @@
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5860,
-    "PrefectHQ/prefect": 24002,
-    "anthropics/skills": 180261,
-    "apache/airflow": 47139,
+    "PrefectHQ/prefect": 24001,
+    "anthropics/skills": 180276,
+    "apache/airflow": 47140,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 916,
     "awslabs/mcp": 9764,
-    "axios/axios": 109345,
+    "axios/axios": 109343,
     "cloudposse/terraform-aws-tfstate-backend": 442,
     "expressjs/multer": 12087,
-    "feast-dev/feast": 7323,
+    "feast-dev/feast": 7322,
     "forem/selfhost": 1481,
     "hashicorp/terraform-provider-aws": 11113,
     "lucide-icons/lucide": 24922,
@@ -1608,5 +1641,5 @@
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23164
+  "views": 23170
 }

@@ -7,7 +7,7 @@ Please do not open a public issue or pull request for a security problem.
 Report it privately instead, in either of these ways:
 
 - On GitHub: open the **Security** tab of this repository and choose **Report a vulnerability**.
-- By email: write to **sg85207@gmail.com** with the subject `[Sagargupta16 security]`.
+- By email: write to <sg85207@gmail.com> with the subject `[Sagargupta16 security]`.
 
 Include what you found, how to reproduce it, and the impact you expect. You should get a first
 response within 7 days, and we will agree on a fix and a disclosure timeline together.

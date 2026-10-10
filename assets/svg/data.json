@@ -130,12 +130,12 @@
     ]
   },
   "github": {
-    "contributions": 7992,
-    "commits": 5766,
+    "contributions": 7993,
+    "commits": 5767,
     "prs": 1622,
     "reviews": 34,
     "issues": 116,
-    "stars": 305,
+    "stars": 299,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -145,10 +145,8 @@
       "Minesweeper-Game__UnityEngine": 4,
       "FlappyBird-Game__UnityEngine": 3,
       "PacMan-Game__UnityEngine": 3,
-      "leetcode-solutions": 1,
       "Guess-The-Number-Game": 3,
       "Tic-Tac-Toe": 3,
-      "Counter-App": 1,
       "Contact-Manager-React": 4,
       "Authentication-System": 3,
       "Contact-Manager-Mern": 6,
@@ -163,21 +161,17 @@
       "ai-code-translator": 3,
       "stock-market-prediction": 4,
       "LeetCode_Rating_Predictor": 7,
-      "gfg-solutions": 1,
       "my-journey": 3,
       "mern-template": 3,
       "ldpc-codes": 5,
       "Lingua-Connect": 4,
       "Blue_Green_AWS_Terraform": 4,
-      "aws-amplify-cicd": 1,
       "ground-zero-nn": 1,
       "ai-project-template": 3,
       "Financial-Dashboard": 11,
       "SelfHub": 5,
-      "data-vault": 1,
       "ledger-sync": 8,
       "stocksage-ai": 5,
-      "scripts": 1,
       "InstagramLikesLeaderboard": 12,
       "awesome-mcp-servers": 7,
       "deploy-guide": 3,
@@ -201,7 +195,6 @@
       "sagas": 3,
       "orbit": 2,
       "kinfolk": 3,
-      "waypoint": 0,
       "github-stats-card-action": 3,
       "leetcode-card-action": 3,
       "oss-contributions-card-action": 3,
@@ -210,10 +203,10 @@
       "svg-forge": 0
     },
     "followers": 109,
-    "repos": 71,
+    "repos": 64,
     "streak": 5,
     "longest": 161,
-    "active_days": 315,
+    "active_days": 316,
     "calendar": [
       [
         2,
@@ -434,8 +427,8 @@
       [
         3,
         71,
-        22,
-        20,
+        23,
+        19,
         0,
         4,
         43
@@ -596,8 +589,8 @@
       [
         0,
         12,
-        4,
-        27,
+        6,
+        25,
         5,
         0,
         0
@@ -635,14 +628,14 @@
         0,
         0,
         0,
-        0,
-        2
+        1,
+        1
       ],
       [
         0,
         0,
-        20,
-        43,
+        21,
+        42,
         63,
         11,
         30
@@ -660,8 +653,8 @@
         53,
         37,
         11,
-        4,
-        11,
+        5,
+        10,
         10,
         6
       ],
@@ -670,8 +663,8 @@
         8,
         5,
         6,
-        17,
-        24,
+        18,
+        23,
         29
       ],
       [
@@ -690,33 +683,33 @@
         8,
         3,
         19,
-        28
+        29
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        56.7,
+        58.9,
         "#3178c6"
       ],
       [
         "Python",
-        24.0,
+        24.5,
         "#3572A5"
       ],
       [
-        "C++",
-        5.5,
-        "#f34b7d"
-      ],
-      [
         "JavaScript",
-        5.5,
+        4.7,
         "#f1e05a"
       ],
       [
+        "C++",
+        3.4,
+        "#f34b7d"
+      ],
+      [
         "CSS",
-        3.1,
+        3.2,
         "#663399"
       ],
       [
@@ -1624,8 +1617,8 @@
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5860,
     "PrefectHQ/prefect": 24001,
-    "anthropics/skills": 180276,
-    "apache/airflow": 47140,
+    "anthropics/skills": 180279,
+    "apache/airflow": 47139,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 916,
@@ -1636,7 +1629,7 @@
     "feast-dev/feast": 7322,
     "forem/selfhost": 1481,
     "hashicorp/terraform-provider-aws": 11113,
-    "lucide-icons/lucide": 24922,
+    "lucide-icons/lucide": 24923,
     "modelcontextprotocol/servers": 91113,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557

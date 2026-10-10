@@ -138,7 +138,7 @@
   <img src="assets/svg/header-stats-dark.svg" width="100%" alt="Coding Stats" />
 </picture>
 
-<img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 7,961 contributions, 5,751 commits, 1,609 pull requests, 299 stars, longest streak 161 days" />
+<img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 7,978 contributions, 5,759 commits, 1,616 pull requests, 299 stars, longest streak 161 days" />
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></a>
 

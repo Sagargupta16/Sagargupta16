@@ -130,12 +130,12 @@
     ]
   },
   "github": {
-    "contributions": 8062,
-    "commits": 5800,
-    "prs": 1657,
+    "contributions": 8089,
+    "commits": 5816,
+    "prs": 1668,
     "reviews": 35,
     "issues": 116,
-    "stars": 301,
+    "stars": 302,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -179,7 +179,7 @@
       "agent-recipes": 4,
       "ai-git-hooks": 3,
       "credly-badge-readme-action": 4,
-      "claude-cost-optimizer": 37,
+      "claude-cost-optimizer": 38,
       "claude-code-recipes": 8,
       "claude-skills": 5,
       "latex-resume": 3,
@@ -200,10 +200,11 @@
       "oss-contributions-card-action": 3,
       "readme-kit-action": 4,
       "agent-brain": 0,
-      "svg-forge": 1
+      "svg-forge": 1,
+      "stackdraw": 0
     },
     "followers": 111,
-    "repos": 64,
+    "repos": 65,
     "streak": 6,
     "longest": 154,
     "active_days": 310,
@@ -663,7 +664,7 @@
         8,
         4,
         4,
-        12,
+        11,
         0,
         0
       ],
@@ -677,38 +678,38 @@
         81
       ],
       [
-        17
+        45
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        57.8,
+        56.2,
         "#3178c6"
       ],
       [
         "Python",
-        25.9,
+        25.7,
         "#3572A5"
       ],
       [
         "JavaScript",
-        4.7,
+        7.1,
         "#f1e05a"
       ],
       [
         "C++",
-        3.3,
+        3.1,
         "#f34b7d"
       ],
       [
         "CSS",
-        3.1,
+        3.0,
         "#663399"
       ],
       [
         "Shell",
-        1.3,
+        1.2,
         "#89e051"
       ]
     ]
@@ -2079,23 +2080,23 @@
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5860,
-    "PrefectHQ/prefect": 24001,
-    "anthropics/skills": 180353,
-    "apache/airflow": 47141,
+    "PrefectHQ/prefect": 24002,
+    "anthropics/skills": 180431,
+    "apache/airflow": 47145,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
-    "awslabs/agent-plugins": 916,
-    "awslabs/mcp": 9764,
-    "axios/axios": 109345,
+    "awslabs/agent-plugins": 917,
+    "awslabs/mcp": 9765,
+    "axios/axios": 109365,
     "cloudposse/terraform-aws-tfstate-backend": 442,
-    "expressjs/multer": 12087,
+    "expressjs/multer": 12088,
     "feast-dev/feast": 7323,
     "forem/selfhost": 1481,
     "hashicorp/terraform-provider-aws": 11113,
-    "lucide-icons/lucide": 24933,
-    "modelcontextprotocol/servers": 91131,
+    "lucide-icons/lucide": 24943,
+    "modelcontextprotocol/servers": 91136,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23197
+  "views": 23227
 }

@@ -2,6 +2,12 @@
 
 All notable changes to this profile README repository.
 
+## [4.13.3] - 2026-10-11
+
+- GitHub stats card on github-stats-card-action v1.1.0: every contribution-calendar level and language swatch now reaches WCAG 3:1 on the card, so quiet days no longer vanish (80 contrast errors to 0)
+- LeetCode card on leetcode-card-action v1.0.1: the rating axis labels reach 4.5:1 (were 3.18:1)
+- Certifications card on credly-badge-readme-action v1.2.0: the 22 badges are inlined as WebP, so certs.svg drops from about 381 KB to about 121 KB
+
 ## [4.13.2] - 2026-10-10
 
 - Highlights card: "10/10 average client CSAT" becomes "10/10 State Street CSAT"; only one engagement has a recorded CSAT, so "average" overstated it

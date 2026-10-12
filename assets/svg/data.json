@@ -8,15 +8,15 @@
     "by_difficulty": {
       "Easy": [
         478,
-        969
+        971
       ],
       "Medium": [
         681,
-        2124
+        2128
       ],
       "Hard": [
         165,
-        980
+        982
       ]
     },
     "history": [
@@ -130,9 +130,9 @@
     ]
   },
   "github": {
-    "contributions": 8089,
-    "commits": 5816,
-    "prs": 1668,
+    "contributions": 8029,
+    "commits": 5755,
+    "prs": 1669,
     "reviews": 35,
     "issues": 116,
     "stars": 302,
@@ -678,7 +678,8 @@
         81
       ],
       [
-        45
+        48,
+        0
       ]
     ],
     "languages": [
@@ -694,18 +695,18 @@
       ],
       [
         "JavaScript",
-        7.1,
+        7.0,
         "#f1e05a"
+      ],
+      [
+        "CSS",
+        3.2,
+        "#663399"
       ],
       [
         "C++",
         3.1,
         "#f34b7d"
-      ],
-      [
-        "CSS",
-        3.0,
-        "#663399"
       ],
       [
         "Shell",
@@ -2080,23 +2081,23 @@
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5860,
-    "PrefectHQ/prefect": 24002,
-    "anthropics/skills": 180431,
-    "apache/airflow": 47145,
+    "PrefectHQ/prefect": 24008,
+    "anthropics/skills": 180684,
+    "apache/airflow": 47149,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
-    "awslabs/agent-plugins": 917,
-    "awslabs/mcp": 9765,
-    "axios/axios": 109365,
+    "awslabs/agent-plugins": 918,
+    "awslabs/mcp": 9773,
+    "axios/axios": 109359,
     "cloudposse/terraform-aws-tfstate-backend": 442,
-    "expressjs/multer": 12088,
-    "feast-dev/feast": 7323,
+    "expressjs/multer": 12087,
+    "feast-dev/feast": 7326,
     "forem/selfhost": 1481,
-    "hashicorp/terraform-provider-aws": 11113,
-    "lucide-icons/lucide": 24943,
-    "modelcontextprotocol/servers": 91136,
+    "hashicorp/terraform-provider-aws": 11112,
+    "lucide-icons/lucide": 24964,
+    "modelcontextprotocol/servers": 91167,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23227
+  "views": 23244
 }

@@ -16,6 +16,7 @@ All notable changes to this profile README repository.
 ## [4.14.1] - 2026-10-14
 
 - Drop ai-code-translator from the dependency-PR merge list in `scripts/merge-dependency-prs.ps1`; the repo (a fork of mckaywrigley/ai-code-translator) is being deleted
+- Offline renders keep the full alt text of cards they reuse from the cache (`stack.svg`, `ai-stack.svg`); they wrote the short fallback, so the "README matches the renderer" check failed on every scripts/ PR
 
 ## [4.14.0] - 2026-10-14
 

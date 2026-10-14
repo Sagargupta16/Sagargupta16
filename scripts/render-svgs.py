@@ -2510,6 +2510,13 @@ def write_optional(name: str, content: str | None) -> None:
     if content is None:
         reason = "using the offline cache" if OFFLINE else "its data fetch failed"
         print(f"{name} kept as is: {reason}")
+        # keep the kept card's full alt text too; without it an offline run writes the
+        # short fallback ("Tech stack") and the README no longer matches the online render
+        path = OUT / name
+        if path.exists() and (
+            m := re.search(r'aria-label="([^"]*)"', path.read_text(encoding="utf-8"))
+        ):
+            LABELS[name] = html.unescape(m.group(1))
     else:
         write(name, content)
 

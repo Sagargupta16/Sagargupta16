@@ -2,6 +2,12 @@
 
 All notable changes to this profile README repository.
 
+## [4.14.0] - 2026-10-14
+
+- Current AWS title is now "ProServe (Cloud Consultant) - DevOps/MLOps" on the hero, the hero alt text, the "worked with" AWS tile and the career timeline, matching `profiles.yml`, the portfolio and the resume
+- "Worked with" tiles show up to 3 role lines (the AWS title lost "- DevOps/MLOps" at 2), and no line starts with the hyphen
+- Career timeline titles wrap instead of running off the card, and every node drops its org and city by the same amount so the row stays aligned
+
 ## [4.13.3] - 2026-10-11
 
 - GitHub stats card on github-stats-card-action v1.1.0: every contribution-calendar level and language swatch now reaches WCAG 3:1 on the card, so quiet days no longer vanish (80 contrast errors to 0)

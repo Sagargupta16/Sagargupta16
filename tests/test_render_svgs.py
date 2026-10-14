@@ -22,27 +22,20 @@ class RendererTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory)
             with patch.object(renderer, "OUT", out):
-                self.assertNotIn("divider-static.svg", renderer.render_readme(data))
-                (out / "divider-static.svg").touch()
-                self.assertIn("divider-static.svg", renderer.render_readme(data))
+                self.assertNotIn("divider-mobile.svg", renderer.render_readme(data))
+                (out / "divider-mobile.svg").touch()
+                self.assertIn("divider-mobile.svg", renderer.render_readme(data))
 
-    def test_picture_prioritizes_reduced_motion_on_small_screens(self):
+    def test_picture_selects_the_phone_layout_on_small_screens(self):
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory)
-            for name in (
-                "card-mobile.svg",
-                "card-static.svg",
-                "card-mobile-static.svg",
-            ):
-                (out / name).touch()
+            (out / "card-mobile.svg").touch()
             with patch.object(renderer, "OUT", out):
                 picture = ET.fromstring(renderer._img("card.svg", "A & B", "400"))
         sources = picture.findall("source")
-        self.assertEqual(
-            sources[0].get("media"),
-            "(max-width: 600px) and (prefers-reduced-motion: reduce)",
-        )
-        self.assertIn("card-mobile-static.svg", sources[0].get("srcset"))
+        self.assertEqual(len(sources), 1)
+        self.assertEqual(sources[0].get("media"), "(max-width: 600px)")
+        self.assertIn("card-mobile.svg", sources[0].get("srcset"))
         self.assertEqual(picture.find("img").get("width"), "400")
         self.assertEqual(picture.find("img").get("alt"), "A & B")
         self.assertNotIn("style=", ET.tostring(picture, encoding="unicode"))
@@ -125,7 +118,7 @@ class RendererTests(unittest.TestCase):
         self.assertIn("Previously earned", root.get("aria-label"))
         self.assertIn("Expiry not recorded", root.get("aria-label"))
 
-    def test_successful_leetcode_response_can_clear_an_old_badge(self):
+    def test_leetcode_response_without_badge_keeps_the_last_one(self):
         payload = {
             "data": {
                 "matchedUser": {
@@ -145,7 +138,7 @@ class RendererTests(unittest.TestCase):
         }
         with patch.object(renderer, "fetch", return_value=json.dumps(payload).encode()):
             result = renderer.fetch_leetcode({"badge": "Guardian"})
-        self.assertEqual(result["badge"], "")
+        self.assertEqual(result["badge"], "Guardian")
         payload["errors"] = [{"message": "Partial response"}]
         with patch.object(renderer, "fetch", return_value=json.dumps(payload).encode()):
             with self.assertRaises(LookupError):

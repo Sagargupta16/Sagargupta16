@@ -15,11 +15,6 @@ from urllib.parse import unquote, urlsplit
 
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[1]
-ANIMATION_TAGS = {"animate", "animatecolor", "animatemotion", "animatetransform", "set"}
-CSS_ANIMATION = re.compile(
-    r"@(?:-\w+-)?keyframes\b|(?:^|[;{])\s*(?:-\w+-)?animation(?:-[\w-]+)?\s*:",
-    re.IGNORECASE,
-)
 UNESCAPED_AMPERSAND = re.compile(r"&(?!#\d+;|#x[0-9a-fA-F]+;|[a-zA-Z][a-zA-Z0-9]+;)")
 REQUIRED_CONFIG = (
     "github.username",
@@ -112,9 +107,6 @@ class ProfileHTML(HTMLParser):
         self.issues: list[str] = []
         self.links: list[str] = []
         self.images: set[str] = set()
-        self.static_images: set[str] = set()
-        self.image_fallbacks: list[tuple[str, bool]] = []
-        self.pictures: list[set[str]] = []
 
     def report(self, message: str) -> None:
         self.issues.append(f"{self.document}:{self.getpos()[0]}: {message}")
@@ -131,8 +123,6 @@ class ProfileHTML(HTMLParser):
         for raw in re.findall(r"""=\s*("[^"]*"|'[^']*')""", self.get_starttag_text()):
             if UNESCAPED_AMPERSAND.search(raw):
                 self.report("escape attribute ampersands as &amp;")
-        if tag == "picture":
-            self.pictures.append(set())
         if tag == "a":
             link = attributes.get("href", "") or ""
             issue = url_issue(link)
@@ -151,35 +141,16 @@ class ProfileHTML(HTMLParser):
                 self.report(str(error))
         if not candidates:
             self.report(f"<{tag}> has no image source")
-        reduced = bool(
-            re.search(
-                r"prefers-reduced-motion\s*:\s*reduce\b",
-                attributes.get("media", "") or "",
-            )
-        )
         for source in candidates:
             issue = url_issue(source, image=True)
             if issue:
                 self.report(issue)
             self.images.add(source)
-            if reduced:
-                self.static_images.add(source)
-                if self.pictures:
-                    self.pictures[-1].add(source)
-        if tag == "img":
-            if "alt" not in attributes:
-                self.report("<img> is missing alt text")
-            for source in candidates:
-                self.image_fallbacks.append(
-                    (source, bool(self.pictures and self.pictures[-1]))
-                )
+        if tag == "img" and "alt" not in attributes:
+            self.report("<img> is missing alt text")
 
     def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self.handle_starttag(tag, attrs)
-
-    def handle_endtag(self, tag: str) -> None:
-        if tag == "picture" and self.pictures:
-            self.pictures.pop()
 
 
 def local_image(root: Path, source: str) -> Path | None:
@@ -200,18 +171,21 @@ def svg_text(tree: ET.Element) -> str:
     )
 
 
-def svg_has_animation(tree: ET.Element) -> bool:
-    for element in tree.iter():
-        tag = element.tag.rsplit("}", 1)[-1].lower()
-        if tag in ANIMATION_TAGS:
-            return True
-        css = element.get("style", "")
-        if tag == "style":
-            css += "".join(element.itertext())
-        css = re.sub(r"/\*.*?\*/", "", css, flags=re.DOTALL)
-        if CSS_ANIMATION.search(css):
-            return True
-    return False
+def experience_issues(config: dict[str, str], text: str, today: dt.date) -> list[str]:
+    """Every "N+ years at AWS" the cards show must follow career.start_date."""
+    start = config.get("career.start_date")
+    if not start:
+        return []
+    match = re.fullmatch(r"(\d{4})-(\d{2})", start)
+    if not match:
+        return [f"career.start_date: expected YYYY-MM, got {start!r}"]
+    year, month = int(match[1]), int(match[2])
+    expected = today.year - year - (today.month < month)
+    shown = {int(n) for n in re.findall(r"(\d+)\+ years at AWS", text, re.IGNORECASE)}
+    return [
+        f"career.start_date: a card shows {n}+ years at AWS, expected {expected}+ from {start}"
+        for n in sorted(shown - {expected})
+    ]
 
 
 def profile_link_issues(links: list[str], config: dict[str, str]) -> list[str]:
@@ -280,7 +254,7 @@ def certification_issues(
     issues = []
     for path, tree in trees.items():
         count = tree.get("data-active-certifications")
-        card_name = path.stem.removesuffix("-static").removesuffix("-mobile")
+        card_name = path.stem.removesuffix("-mobile")
         if card_name in {"profile-badges", "certs-status"} and count is None:
             issues.append(
                 f"{path.relative_to(root)}: missing active certification metadata"
@@ -341,24 +315,8 @@ def validate(root: Path, today: dt.date | None = None) -> list[str]:
                     for element in tree.iter()
                 ):
                     issues.append(f"{source}: SVG must not contain scripts")
-                is_static = (
-                    source in document.static_images
-                    or "static" in path.parts
-                    or path.stem.endswith("-static")
-                )
-                if is_static and svg_has_animation(tree):
-                    issues.append(f"{source}: static SVG still contains animation")
             except (OSError, ValueError, ET.ParseError) as error:
                 issues.append(f"{source}: {error}")
-        for source, has_fallback in document.image_fallbacks:
-            try:
-                path = local_image(root, source)
-            except ValueError:
-                continue  # The invalid source was reported above.
-            if path in trees and svg_has_animation(trees[path]) and not has_fallback:
-                issues.append(
-                    f"{document.document}: {source} needs a reduced-motion source"
-                )
     if documents:
         issues.extend(profile_link_issues(documents[0].links, config))
     text = re.sub(r"\s+", " ", " ".join(svg_text(tree) for tree in trees.values()))
@@ -366,6 +324,7 @@ def validate(root: Path, today: dt.date | None = None) -> list[str]:
         issues.append(
             "career.current_role: configured role is missing from the SVG content"
         )
+    issues.extend(experience_issues(config, text, today))
     issues.extend(certification_issues(root, trees, today))
     return list(dict.fromkeys(issues))
 

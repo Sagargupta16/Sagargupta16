@@ -23,7 +23,7 @@ class ValidateReadmeTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
         (self.root / ".github/config").mkdir(parents=True)
-        (self.root / "assets/svg/static").mkdir(parents=True)
+        (self.root / "assets/svg").mkdir(parents=True)
         (self.root / ".github/config/profiles.yml").write_text(
             'github:\n  username: "test-user"\n'
             'linkedin:\n  username: "test-user"\n'
@@ -51,18 +51,18 @@ class ValidateReadmeTests(unittest.TestCase):
             encoding="utf-8",
         )
         self.write_svg("profile-badges.svg", 'data-active-certifications="1"')
-        self.write_svg("static/profile-badges.svg", 'data-active-certifications="1"')
+        self.write_svg("profile-badges-mobile.svg", 'data-active-certifications="1"')
         self.readme = (
             '<a href="https://example.com/">'
-            '<picture><source media="(prefers-reduced-motion: reduce)" '
-            'srcset="assets/svg/static/profile-badges.svg">'
+            '<picture><source media="(max-width: 600px)" '
+            'srcset="assets/svg/profile-badges-mobile.svg">'
             '<img src="assets/svg/profile-badges.svg" alt="Cloud profile"></picture></a>\n'
             '<a href="https://example.com/resume.pdf">Resume</a>\n'
             '<a href="https://leetcode.com/coder123/">LeetCode</a>\n'
             '<a href="https://github.com/search?q=is%3Apr&amp;type=pullrequests">PRs</a>\n'
         )
         (self.root / "COMMUNITY.md").write_text(
-            '<img src="assets/svg/static/profile-badges.svg" alt="Community">',
+            '<img src="assets/svg/profile-badges-mobile.svg" alt="Community">',
             encoding="utf-8",
         )
         self.save_readme()
@@ -85,8 +85,7 @@ class ValidateReadmeTests(unittest.TestCase):
 
     def test_missing_mobile_srcset_asset_fails(self):
         self.readme = self.readme.replace(
-            "<picture>",
-            '<picture><source media="(max-width: 600px)" srcset="assets/svg/missing.svg">',
+            "assets/svg/profile-badges-mobile.svg", "assets/svg/missing.svg"
         )
         self.save_readme()
         self.assertTrue(
@@ -98,8 +97,8 @@ class ValidateReadmeTests(unittest.TestCase):
 
     def test_every_srcset_candidate_is_checked(self):
         self.readme = self.readme.replace(
-            'srcset="assets/svg/static/profile-badges.svg"',
-            'srcset="assets/svg/static/profile-badges.svg 1x, assets/svg/missing.svg 2x"',
+            'srcset="assets/svg/profile-badges-mobile.svg"',
+            'srcset="assets/svg/profile-badges-mobile.svg 1x, assets/svg/missing.svg 2x"',
         )
         self.save_readme()
         self.assertTrue(any("missing.svg" in issue for issue in self.issues()))
@@ -109,67 +108,6 @@ class ValidateReadmeTests(unittest.TestCase):
             "<svg><text></svg>", encoding="utf-8"
         )
         self.assertTrue(any("mismatched tag" in issue for issue in self.issues()))
-
-    def test_static_smil_animation_fails(self):
-        self.write_svg(
-            "static/profile-badges.svg",
-            'data-active-certifications="1"',
-            '<animate attributeName="opacity" to="1" dur="1s"/>',
-        )
-        self.assertTrue(
-            any(
-                "static SVG still contains animation" in issue
-                for issue in self.issues()
-            )
-        )
-
-    def test_animated_card_without_reduced_motion_fallback_fails(self):
-        self.write_svg(
-            "profile-badges.svg",
-            'data-active-certifications="1"',
-            '<animate attributeName="opacity" to="1" dur="1s"/>',
-        )
-        self.readme = self.readme.replace(
-            '<source media="(prefers-reduced-motion: reduce)" '
-            'srcset="assets/svg/static/profile-badges.svg">',
-            "",
-        )
-        self.save_readme()
-        self.assertTrue(
-            any("needs a reduced-motion source" in issue for issue in self.issues())
-        )
-
-    def test_static_css_animation_fails(self):
-        for animation in (
-            "<style>@keyframes fade{to{opacity:1}}</style>",
-            '<g style="animation: fade 1s"><text>Animated</text></g>',
-            "<style>.label { -webkit-animation-delay: 1s; }</style>",
-        ):
-            with self.subTest(animation=animation):
-                self.write_svg(
-                    "static/profile-badges.svg",
-                    'data-active-certifications="1"',
-                    animation,
-                )
-                self.assertTrue(
-                    any(
-                        "static SVG still contains animation" in issue
-                        for issue in self.issues()
-                    )
-                )
-
-    def test_reduced_motion_source_must_be_static_regardless_of_name(self):
-        self.write_svg("motion.svg", body='<set attributeName="opacity" to="1"/>')
-        self.readme = self.readme.replace(
-            "assets/svg/static/profile-badges.svg", "assets/svg/motion.svg"
-        )
-        self.save_readme()
-        self.assertTrue(
-            any(
-                "static SVG still contains animation" in issue
-                for issue in self.issues()
-            )
-        )
 
     def test_github_pulls_link_fails(self):
         self.readme += '<a href="https://github.com/pulls?q=is%3Apr">PRs</a>'

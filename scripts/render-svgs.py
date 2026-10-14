@@ -35,8 +35,7 @@ import xml.etree.ElementTree as ET
 from html import escape
 from pathlib import Path
 
-from mobile_cards import render_mobile_cards
-from svg_variants import make_static_svg
+from mobile_cards import cert_status, render_mobile_cards
 from vendor import github_stats_card, leetcode_card
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -280,7 +279,16 @@ def fetch_leetcode(previous: dict) -> dict:
         "https://leetcode.com/graphql",
         {"query": LEETCODE_QUERY, "variables": {"u": LEETCODE_USER}},
     )
-    return leetcode_card.parse_profile(json.loads(raw), LEETCODE_USER)
+    fresh = leetcode_card.parse_profile(json.loads(raw), LEETCODE_USER)
+    # LeetCode sometimes answers without the badge; keep the last one over a blank pill
+    fresh["badge"] = fresh["badge"] or previous.get("badge", "")
+    return fresh
+
+
+def utc_today() -> datetime.date:
+    """The day every expiry and years-at-AWS figure is drawn for, in UTC like
+    the Actions runner, so the validator agrees wherever the script runs."""
+    return datetime.datetime.now(datetime.timezone.utc).date()
 
 
 def fetch_github() -> dict | None:
@@ -907,18 +915,22 @@ def _rotating(
     return "".join(out)
 
 
+# the hero's node graph; the phone hero draws the same graph scaled down
+HERO_NODES = [
+    (620, 70, "AWS"),
+    (730, 60, "TF"),
+    (790, 140, "K8S"),
+    (690, 180, "ML"),
+    (590, 160, "CI"),
+    (700, 118, "MCP"),
+]
+HERO_LINKS = [(0, 5), (1, 5), (2, 5), (3, 5), (4, 5), (0, 1), (2, 3), (3, 4)]
+
+
 def render_hero(data: dict) -> str:
     lc = data["leetcode"]
     w, h = 840, 250
-    nodes = [
-        (620, 70, "AWS"),
-        (730, 60, "TF"),
-        (790, 140, "K8S"),
-        (690, 180, "ML"),
-        (590, 160, "CI"),
-        (700, 118, "MCP"),
-    ]
-    links = [(0, 5), (1, 5), (2, 5), (3, 5), (4, 5), (0, 1), (2, 3), (3, 4)]
+    nodes, links = HERO_NODES, HERO_LINKS
     parts = [
         svg_open(
             w,
@@ -1469,14 +1481,7 @@ def active_certifications(pf: dict, today: datetime.date) -> tuple[int, str]:
     """Count unexpired industry certifications and name their issuers."""
     # Credly keeps expired badges. An unknown expiry is not proof of active status.
     certs = pf.get("certifications") or []
-    active = []
-    for cert in certs:
-        try:
-            expiry = datetime.date.fromisoformat(cert.get("expiryDate") or "")
-        except ValueError:
-            continue
-        if expiry >= today:
-            active.append(cert)
+    active = [c for c in certs if cert_status(c, today)[0] == "active"]
     issuers = sorted(
         {cert_issuer(c["name"]) for c in active},
         key=lambda s: (s != "AWS", s),
@@ -1487,7 +1492,7 @@ def active_certifications(pf: dict, today: datetime.date) -> tuple[int, str]:
 def render_profile_badges(data: dict) -> str:
     gh = data.get("github") or {}
     lc = data["leetcode"]
-    today = datetime.date.today()
+    today = utc_today()
     years = today.year - CAREER_START[0] - (1 if today.month < CAREER_START[1] else 0)
     certs, issuers = active_certifications(data.get("portfolio") or {}, today)
     pills = [
@@ -2231,22 +2236,15 @@ def render_cta(label: str, primary: bool) -> str:
 
 def _img(src: str, alt: str, width: str = "100%") -> str:
     """GitHub accepts picture media sources but strips custom layout CSS."""
-    stem = Path(src).stem
-    sources = []
-    mobile = f"{stem}-mobile.svg"
-    static = f"{stem}-static.svg"
-    mobile_static = f"{stem}-mobile-static.svg"
-    # Put the combined preference first so mobile never masks reduced motion.
-    for name, media in (
-        (mobile_static, "(max-width: 600px) and (prefers-reduced-motion: reduce)"),
-        (static, "(prefers-reduced-motion: reduce)"),
-        (mobile, "(max-width: 600px)"),
-    ):
-        if (OUT / name).exists():
-            sources.append(f'<source media="{media}" srcset="assets/svg/{name}" />')
+    mobile = f"{Path(src).stem}-mobile.svg"
+    source = (
+        f'<source media="(max-width: 600px)" srcset="assets/svg/{mobile}" />'
+        if (OUT / mobile).exists()
+        else ""
+    )
     image = f'<img src="assets/svg/{src}" width="{width}" alt="{escape(alt, quote=True)}" />'
     # Picture also avoids GitHub's direct-link image fallback block styling.
-    return "<picture>" + "".join(sources) + image + "</picture>"
+    return f"<picture>{source}{image}</picture>"
 
 
 def _card(src: str, fallback: str, width: str = "100%") -> str:
@@ -2297,18 +2295,15 @@ def _link(href: str, inner: str) -> str:
 
 def _header(key: str, title: str) -> str:
     sources = []
-    for narrow, reduced in ((True, True), (False, True), (True, False), (False, False)):
+    # the narrow pair comes first: the first matching source wins
+    for narrow in (True, False):
         for theme in ("light", "dark"):
-            name = f"header-{key}-{theme}{'-mobile' if narrow else ''}{'-static' if reduced else ''}.svg"
-            media = [f"(prefers-color-scheme: {theme})"]
+            name = f"header-{key}-{theme}{'-mobile' if narrow else ''}.svg"
+            media = f"(prefers-color-scheme: {theme})"
             if narrow:
-                media.append("(max-width: 600px)")
-            if reduced:
-                media.append("(prefers-reduced-motion: reduce)")
+                media += " and (max-width: 600px)"
             if (OUT / name).exists():
-                sources.append(
-                    f'<source media="{" and ".join(media)}" srcset="assets/svg/{name}" />'
-                )
+                sources.append(f'<source media="{media}" srcset="assets/svg/{name}" />')
     return (
         "<picture>"
         + "".join(sources)
@@ -2349,7 +2344,6 @@ MERGED_URL = "https://github.com/search?q=is%3Apr+author%3ASagargupta16+is%3Amer
 REVIEW_URL = "https://github.com/search?q=is%3Apr+author%3ASagargupta16+is%3Aopen+-user%3ASagargupta16&type=pullrequests"
 SNAKE = (
     "<picture>\n"
-    '  <source media="(prefers-reduced-motion: reduce)" srcset="assets/svg/contributions-static.svg" />\n'
     '  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/output/github-snake-dark.svg" />\n'
     '  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/output/github-snake.svg" />\n'
     '  <img alt="Contribution snake" src="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/output/github-snake.svg" width="100%" />\n'
@@ -2567,7 +2561,8 @@ def write_portfolio_cards(data: dict) -> None:
 def render_note(
     title: str, lines: list[str], width: int = 840, accent: str = BLUE_LIGHT
 ) -> str:
-    """A readable, static status card, with real wrapping rather than clipped copy."""
+    """A readable status card, with real wrapping rather than clipped copy; each
+    line fades in after the one above it, and the accent bar pulses."""
     narrow = width < 500
     font_size = 17 if narrow else 14
     limit = 30 if narrow else 94
@@ -2578,32 +2573,41 @@ def render_note(
     parts = [
         svg_open(width, height, title + ": " + "; ".join(lines)),
         f'<rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="14" fill="{BG}" stroke="#24313b"/>',
+        f'<rect x="0" y="16" width="3" height="22" rx="1.5" fill="{accent}">'
+        '<animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/></rect>',
     ]
     for i, text in enumerate(title_lines):
         parts.append(
-            f'<text x="20" y="{32 + i * 25}" fill="{accent}" font-family="{SANS}" font-size="20" font-weight="700">{escape(text)}</text>'
+            _fade_group(
+                0.15 + i * 0.1,
+                f'<text x="20" y="{32 + i * 25}" fill="{accent}" font-family="{SANS}" font-size="20" font-weight="700">{escape(text)}</text>',
+            )
         )
     for i, text in enumerate(wrapped):
         parts.append(
-            f'<text x="20" y="{start + i * 23}" fill="#cbd5e1" font-family="{SANS}" font-size="{font_size}">{escape(text)}</text>'
+            _fade_group(
+                0.15 + (len(title_lines) + i) * 0.1,
+                f'<text x="20" y="{start + i * 23}" fill="#cbd5e1" font-family="{SANS}" font-size="{font_size}">{escape(text)}</text>',
+            )
         )
     return "".join(parts) + SVG_CLOSE
 
 
 def render_certification_status(data: dict, width: int = 840) -> str:
     pf = data.get("portfolio") or {}
-    today = datetime.date.today()
+    today = utc_today()
     count, issuers = active_certifications(pf, today)
-    expired = [
-        c
-        for c in pf.get("certifications", [])
-        if c.get("expiryDate") and c["expiryDate"] < today.isoformat()
-    ]
-    unknown = [c for c in pf.get("certifications", []) if not c.get("expiryDate")]
+    statuses = [(c, *cert_status(c, today)) for c in pf.get("certifications", [])]
     lines = [
-        f"Previously earned: {c['name']}. Expired {c['expiryDate']}." for c in expired
+        f"Previously earned: {c['name']}. {detail}."
+        for c, status, detail in statuses
+        if status == "expired"
     ]
-    lines.extend(f"Expiry not recorded: {c['name']}." for c in unknown)
+    lines.extend(
+        f"Expiry not recorded: {c['name']}."
+        for c, status, _ in statuses
+        if status == "unknown"
+    )
     if not lines:
         lines = ["Active status is based on the recorded certification expiry dates."]
     lines.append("The Credly gallery below also includes learning and partner badges.")
@@ -2624,43 +2628,18 @@ def render_freshness(data: dict, width: int = 840) -> str:
         if not stamp:
             lines.append(f"{label}: saved snapshot; refresh date unavailable.")
             continue
+        # the date alone says how old a snapshot is, and keeps the card a pure
+        # function of data.json, so CI can diff a re-render against the commit
         try:
             when = datetime.datetime.fromisoformat(stamp.replace("Z", "+00:00"))
-            age = (datetime.datetime.now(datetime.timezone.utc) - when).days
-            state = " (saved snapshot)" if age > 3 else ""
-            lines.append(f"{label}: verified {when:%d %b %Y}{state}.")
+            lines.append(f"{label}: verified {when:%d %b %Y}.")
         except (ValueError, TypeError):
             lines.append(f"{label}: saved snapshot; refresh date unavailable.")
     return render_note("Data refreshes", lines, width)
 
 
-def render_contribution_snapshot(data: dict) -> str:
-    calendar = (data.get("github") or {}).get("calendar", [])
-    columns = max(len(calendar), 1)
-    step = 12
-    w, h = columns * step + 24, 108
-    parts = [
-        svg_open(w, h, "Static contribution calendar. Contribution counts by day."),
-        f'<rect width="{w}" height="{h}" rx="12" fill="{BG}"/>',
-    ]
-    for x, week in enumerate(calendar):
-        for y, count in enumerate(week):
-            color = (
-                "#17202b"
-                if count == 0
-                else "#2563eb"
-                if count < 5
-                else "#3b82f6"
-                if count < 15
-                else "#60a5fa"
-            )
-            parts.append(
-                f'<rect x="{12 + x * step}" y="{12 + y * step}" width="9" height="9" rx="2" fill="{color}"/>'
-            )
-    return "".join(parts) + SVG_CLOSE
-
-
-def write_accessible_variants(data: dict) -> None:
+def write_responsive_variants(data: dict) -> None:
+    """Phone layouts and the status cards, from the same snapshot as the desktop."""
     pf = data.get("portfolio") or {}
     customers = _customers(pf)
     context = {
@@ -2672,7 +2651,9 @@ def write_accessible_variants(data: dict) -> None:
         "stack": [name for row in ICON_ROWS for name in row],
         "ai_tools": [label for label, _ in AI_TOOLS],
         "aws_title": AWS_TITLE,
-        "today": datetime.date.today().isoformat(),
+        "hero_lines": HERO_LINES[1:],  # the title has its own line on the phone
+        "hero_graph": (HERO_NODES, HERO_LINKS),
+        "today": utc_today().isoformat(),
         "career_start": CAREER_START,
         "card_summaries": CARD_SUMMARIES,
         "engagements": [
@@ -2696,14 +2677,6 @@ def write_accessible_variants(data: dict) -> None:
                 320,
             ),
         )
-    write("contributions-static.svg", render_contribution_snapshot(data))
-    # External Actions own the desktop stats/badge cards. Derive fallbacks after
-    # those Actions finish so each refresh keeps both presentations in sync.
-    for path in sorted(OUT.glob("*.svg")):
-        if path.stem.endswith("-static"):
-            continue
-        source = path.read_text(encoding="utf-8")
-        write(f"{path.stem}-static.svg", make_static_svg(source))
 
 
 def main() -> None:
@@ -2753,7 +2726,7 @@ def main() -> None:
         for theme in ("dark", "light"):
             write(f"header-{key}-{theme}.svg", render_header(num, title, sub, theme))
     write("divider.svg", render_divider())
-    write_accessible_variants(data)
+    write_responsive_variants(data)
     write_readme(data)
 
 

@@ -60,7 +60,7 @@ class MobileCardsTests(unittest.TestCase):
             "ai_tools": ["Claude Code", "GitHub Copilot", "Amazon Bedrock"],
             "badges": [
                 (
-                    "AWS Certified Developer – Associate",
+                    "AWS Certified Developer \u2013 Associate",
                     "https://example.invalid/badge.png",
                 ),
                 ("AWS Knowledge: Migration Foundations - Training Badge", ""),
@@ -82,7 +82,7 @@ class MobileCardsTests(unittest.TestCase):
                 x + mobile.text_width(element.text or "", size), width - 10
             )
 
-    def test_expected_cards_are_valid_static_svg_with_bounded_text(self) -> None:
+    def test_expected_cards_are_valid_animated_svg_with_bounded_text(self) -> None:
         expected = {
             "hero",
             "profile-badges",
@@ -111,7 +111,7 @@ class MobileCardsTests(unittest.TestCase):
         for name, svg in self.cards.items():
             with self.subTest(name=name):
                 self.assert_bounds(svg)
-                self.assertNotIn("<animate", svg)
+                self.assertIn("<animate", svg)
                 self.assertNotIn("<script", svg)
                 self.assertNotIn("<image", svg)
 
@@ -213,7 +213,7 @@ class MobileCardsTests(unittest.TestCase):
         )
         self.assertNotIn("None", text)
         self.assertNotIn("%", text)
-        self.assertIn("— Top worldwide", text)
+        self.assertIn("- Top worldwide", text)
 
     def test_render_has_no_io_or_input_mutation(self) -> None:
         before = json.dumps((self.data, self.context), sort_keys=True)

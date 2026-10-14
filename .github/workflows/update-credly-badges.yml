@@ -15,10 +15,12 @@ on:
 
 permissions:
   contents: write
+  actions: write # start the renderer once the badges change
 
-# The daily renderer also updates variants of this card; serialize both writers.
+# Its own group: sharing the renderer's would let a queued render cancel this
+# weekly run while it waits. Only this workflow writes the two files it commits.
 concurrency:
-  group: render-readme-svgs
+  group: update-credly-badges
   cancel-in-progress: false
 
 jobs:
@@ -46,34 +48,31 @@ jobs:
           output: both
           svg-path: assets/svg/certs.svg
 
-      - name: Refresh responsive and static variants
-        run: python scripts/render-svgs.py --offline
-
-      - name: Validate generated profile
-        run: |
-          python -m unittest discover -s tests -v
-          python scripts/validate-readme.py
-
       - name: Show diff
         run: |
-          if git diff --quiet assets/credly-badges.md assets/svg README.md COMMUNITY.md; then
-            echo "No generated profile changes detected."
+          if git diff --quiet assets/credly-badges.md assets/svg/certs.svg; then
+            echo "No badge changes detected."
           else
             echo "Changes detected:"
-            git diff --stat assets/credly-badges.md assets/svg README.md COMMUNITY.md
+            git diff --stat assets/credly-badges.md assets/svg/certs.svg
           fi
 
       - name: Commit changes
         # the action's changed output was never set, so this step never ran; git diff decides instead
         if: ${{ github.event.inputs.dry_run != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/credly-badges.md assets/svg README.md COMMUNITY.md
+          git add assets/credly-badges.md assets/svg/certs.svg
           if ! git diff --cached --quiet; then
             git commit -m "chore: update Credly badges"
             git pull --rebase --autostash origin main
             git push
+            # the renderer redraws the phone card and alt text from the new badges;
+            # a GITHUB_TOKEN push starts no workflows, but a dispatch does
+            gh workflow run render-svgs.yml --ref main
           fi
 
       - name: Dry run notice

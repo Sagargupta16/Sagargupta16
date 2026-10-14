@@ -45,7 +45,13 @@ jobs:
       - name: Validate committed profile
         run: python scripts/validate-readme.py
 
-      - name: Verify cached-data rendering
+      - name: Verify the committed output matches the renderer
         run: |
           python scripts/render-svgs.py --offline
           python scripts/validate-readme.py
+          # a renderer change must ship with its regenerated README and SVGs
+          if [ -n "$(git status --porcelain)" ]; then
+            git status --short
+            echo "::error::Generated files are stale. Run python scripts/render-svgs.py --offline and commit the result."
+            exit 1
+          fi

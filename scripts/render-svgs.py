@@ -31,7 +31,6 @@ import json
 import os
 import re
 import urllib.request
-import xml.etree.ElementTree as ET
 from html import escape
 from pathlib import Path
 
@@ -285,14 +284,12 @@ def fetch_leetcode(previous: dict) -> dict:
 
 
 def utc_today() -> datetime.date:
-    """The day every expiry and years-at-AWS figure is drawn for, in UTC like
-    the Actions runner, so the validator agrees wherever the script runs."""
+    """Return today in UTC, the runner's and the validator's day, for expiries and years."""
     return datetime.datetime.now(datetime.timezone.utc).date()
 
 
 def cert_status(certificate: dict, today: datetime.date) -> tuple[str, str]:
-    """The one expiry rule for every certification count and card: active through
-    the expiry day; anything without a valid ISO date is unknown, never active."""
+    """Classify a certification: active through its expiry day, unknown without an ISO date."""
     try:
         expires = datetime.date.fromisoformat(str(certificate.get("expiryDate") or ""))
     except ValueError:
@@ -1693,15 +1690,13 @@ def render_cards(data: dict) -> None:
         )
     paths = {}
     for key, _, slug, _ in CONNECT:
-        cached = None
+        # the icon path the last run drew into this button (render_connect_button)
         icon_file = OUT / f"connect-{key}.svg"
-        if icon_file.exists():
-            doc = ET.fromstring(icon_file.read_text(encoding="utf-8"))
-            for nested in doc.findall(".//{http://www.w3.org/2000/svg}svg"):
-                icon = nested.find("{http://www.w3.org/2000/svg}path")
-                if nested.get("viewBox") == "0 0 24 24" and icon is not None:
-                    cached = icon.get("d")
-                    break
+        found = icon_file.exists() and re.search(
+            r'viewBox="0 0 24 24"><path d="([^"]+)"',
+            icon_file.read_text(encoding="utf-8"),
+        )
+        cached = found.group(1) if found else None
         paths[slug] = cached if OFFLINE else fetch_simple_icon(slug) or cached
     for i, (key, label, slug, _) in enumerate(CONNECT):
         write(f"connect-{key}.svg", render_connect_button(label, paths[slug], i))
@@ -2232,7 +2227,7 @@ def render_cta(label: str, primary: bool) -> str:
 
 
 def _img(src: str, alt: str, width: str = "100%") -> str:
-    """GitHub strips custom layout CSS, so cards carry numeric widths."""
+    """Wrap one card image; widths are numeric because GitHub strips layout CSS."""
     image = f'<img src="assets/svg/{src}" width="{width}" alt="{escape(alt, quote=True)}" />'
     # Picture avoids GitHub's direct-link image fallback block styling.
     return f"<picture>{image}</picture>"
@@ -2544,8 +2539,7 @@ def write_portfolio_cards(data: dict) -> None:
 
 
 def render_note(title: str, lines: list[str], accent: str = BLUE_LIGHT) -> str:
-    """A readable status card, with real wrapping rather than clipped copy; each
-    line fades in after the one above it, and the accent bar pulses."""
+    """Draw a wrapped status card whose lines fade in one after another."""
     width = 840
     wrapped = [line for text in lines for line in _wrap(text, 94)]
     title_lines = _wrap(title, 72)

@@ -5,7 +5,7 @@ import json
 import sys
 import tempfile
 import unittest
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ET  # nosec B405
 from pathlib import Path
 from unittest.mock import patch
 
@@ -18,7 +18,7 @@ SPEC.loader.exec_module(renderer)
 
 class RendererTests(unittest.TestCase):
     def test_picture_wraps_image_with_numeric_width(self):
-        picture = ET.fromstring(renderer._img("card.svg", "A & B", "400"))
+        picture = ET.fromstring(renderer._img("card.svg", "A & B", "400"))  # nosec B314
         self.assertEqual(picture.findall("source"), [])
         self.assertEqual(picture.find("img").get("width"), "400")
         self.assertEqual(picture.find("img").get("alt"), "A & B")
@@ -71,7 +71,7 @@ class RendererTests(unittest.TestCase):
             "card_summary": " ".join(["Useful information"] * 20),
             "tools_tech": ["Python", "TypeScript"],
         }
-        root = ET.fromstring(renderer.render_project_card(project, 0))
+        root = ET.fromstring(renderer.render_project_card(project, 0))  # nosec B314
         height = float(root.get("height"))
         texts = root.findall(".//{http://www.w3.org/2000/svg}text")
         for text in texts:
@@ -83,7 +83,7 @@ class RendererTests(unittest.TestCase):
         url = renderer.MERGED_URL
         markup = renderer._link(url, "Open pull requests")
         self.assertIn("&amp;type=pullrequests", markup)
-        self.assertEqual(ET.fromstring(markup).get("href"), url)
+        self.assertEqual(ET.fromstring(markup).get("href"), url)  # nosec B314
         self.assertNotIn("github.com/pulls", url)
 
     def test_active_count_excludes_expired_certificates(self):
@@ -96,7 +96,7 @@ class RendererTests(unittest.TestCase):
                 ]
             }
         }
-        root = ET.fromstring(renderer.render_certification_status(data))
+        root = ET.fromstring(renderer.render_certification_status(data))  # nosec B314
         self.assertEqual(root.get("data-active-certifications"), "1")
         self.assertIn("Previously earned", root.get("aria-label"))
         self.assertIn("Expiry not recorded", root.get("aria-label"))

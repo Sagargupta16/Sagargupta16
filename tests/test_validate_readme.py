@@ -3,7 +3,7 @@
 import datetime as dt
 import importlib.util
 import json
-import subprocess
+import subprocess  # nosec B404
 import sys
 import tempfile
 import unittest
@@ -199,7 +199,7 @@ class ValidateReadmeTests(unittest.TestCase):
     def test_cli_exits_nonzero_on_validation_error(self):
         self.readme += '<img src="assets/svg/missing.svg" alt="Missing">'
         self.save_readme()
-        result = subprocess.run(
+        result = subprocess.run(  # nosec B603
             [sys.executable, str(SCRIPT), "--root", str(self.root)],
             capture_output=True,
             text=True,

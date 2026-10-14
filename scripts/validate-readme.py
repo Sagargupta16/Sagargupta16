@@ -8,7 +8,9 @@ import datetime as dt
 import json
 import re
 import sys
-import xml.etree.ElementTree as ET
+
+# parses only this repository's own generated SVGs, never third-party input
+import xml.etree.ElementTree as ET  # nosec B405
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -102,6 +104,7 @@ def srcset_urls(value: str) -> list[str]:
 
 class ProfileHTML(HTMLParser):
     def __init__(self, document: str) -> None:
+        """Collect the links, image sources and issues of one document."""
         super().__init__(convert_charrefs=True)
         self.document = document
         self.issues: list[str] = []
@@ -113,6 +116,19 @@ class ProfileHTML(HTMLParser):
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attributes = dict(attrs)
+        self._check_markup(tag, attrs, attributes)
+        if tag == "a":
+            self._check_link(attributes.get("href", "") or "")
+        if tag in {"img", "source"}:
+            self._check_image(tag, attributes)
+
+    def _check_markup(
+        self,
+        tag: str,
+        attrs: list[tuple[str, str | None]],
+        attributes: dict[str, str | None],
+    ) -> None:
+        """Report markup that GitHub strips or that breaks once sanitized."""
         if len(attributes) != len(attrs):
             self.report(f"duplicate attribute on <{tag}>")
         if tag in {"script", "iframe", "style"}:
@@ -123,14 +139,14 @@ class ProfileHTML(HTMLParser):
         for raw in re.findall(r"""=\s*("[^"]*"|'[^']*')""", self.get_starttag_text()):
             if UNESCAPED_AMPERSAND.search(raw):
                 self.report("escape attribute ampersands as &amp;")
-        if tag == "a":
-            link = attributes.get("href", "") or ""
-            issue = url_issue(link)
-            if issue:
-                self.report(issue)
-            self.links.append(link)
-        if tag not in {"img", "source"}:
-            return
+
+    def _check_link(self, link: str) -> None:
+        issue = url_issue(link)
+        if issue:
+            self.report(issue)
+        self.links.append(link)
+
+    def _check_image(self, tag: str, attributes: dict[str, str | None]) -> None:
         candidates: list[str] = []
         if attributes.get("src"):
             candidates.append(attributes["src"])
@@ -265,18 +281,10 @@ def certification_issues(
     return issues
 
 
-def validate(root: Path, today: dt.date | None = None) -> list[str]:
-    root = root.resolve()
-    today = today or dt.datetime.now(dt.timezone.utc).date()
-    try:
-        config = read_profile_config(root / ".github/config/profiles.yml")
-    except (OSError, ValueError) as error:
-        return [str(error)]
-    missing = [key for key in REQUIRED_CONFIG if not config.get(key)]
-    if missing:
-        return ["Missing profile settings: " + ", ".join(missing)]
-    issues = []
+def read_documents(root: Path) -> tuple[list[ProfileHTML], list[str]]:
+    """Parse README.md and COMMUNITY.md, keeping each one's markup issues."""
     documents: list[ProfileHTML] = []
+    issues: list[str] = []
     for filename in ("README.md", "COMMUNITY.md"):
         try:
             html = (root / filename).read_text(encoding="utf-8")
@@ -287,33 +295,48 @@ def validate(root: Path, today: dt.date | None = None) -> list[str]:
         parsed.feed(html)
         documents.append(parsed)
         issues.extend(parsed.issues)
+    return documents, issues
+
+
+def svg_issues(
+    root: Path, document: str, source: str, trees: dict[Path, ET.Element]
+) -> list[str]:
+    """Check one image reference; a parsed local SVG is kept in trees."""
+    path = local_image(root, source)
+    if path is None:
+        return []
+    if not path.is_file():
+        return [f"{document}: missing image {source}"]
+    if path.suffix.lower() != ".svg":
+        return [f"{document}: local profile image must be SVG: {source}"]
+    if path not in trees:
+        # only this repository's own generated SVGs reach this parse
+        trees[path] = ET.parse(path).getroot()  # nosec B314
+    tree = trees[path]
+    issues = []
+    if tree.tag != "{http://www.w3.org/2000/svg}svg":
+        issues.append(f"{source}: expected an SVG root element and namespace")
+    if any(element.tag.rsplit("}", 1)[-1] == "script" for element in tree.iter()):
+        issues.append(f"{source}: SVG must not contain scripts")
+    return issues
+
+
+def validate(root: Path, today: dt.date | None = None) -> list[str]:
+    root = root.resolve()
+    today = today or dt.datetime.now(dt.timezone.utc).date()
+    try:
+        config = read_profile_config(root / ".github/config/profiles.yml")
+    except (OSError, ValueError) as error:
+        return [str(error)]
+    missing = [key for key in REQUIRED_CONFIG if not config.get(key)]
+    if missing:
+        return ["Missing profile settings: " + ", ".join(missing)]
+    documents, issues = read_documents(root)
     trees: dict[Path, ET.Element] = {}
     for document in documents:
         for source in sorted(document.images):
             try:
-                path = local_image(root, source)
-                if path is None:
-                    continue
-                if not path.is_file():
-                    issues.append(f"{document.document}: missing image {source}")
-                    continue
-                if path.suffix.lower() != ".svg":
-                    issues.append(
-                        f"{document.document}: local profile image must be SVG: {source}"
-                    )
-                    continue
-                if path not in trees:
-                    trees[path] = ET.parse(path).getroot()
-                tree = trees[path]
-                if tree.tag != "{http://www.w3.org/2000/svg}svg":
-                    issues.append(
-                        f"{source}: expected an SVG root element and namespace"
-                    )
-                if any(
-                    element.tag.rsplit("}", 1)[-1] == "script"
-                    for element in tree.iter()
-                ):
-                    issues.append(f"{source}: SVG must not contain scripts")
+                issues.extend(svg_issues(root, document.document, source, trees))
             except (OSError, ValueError, ET.ParseError) as error:
                 issues.append(f"{source}: {error}")
     if documents:

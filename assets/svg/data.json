@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8074,
-    "commits": 5776,
-    "prs": 1691,
-    "stars": 302,
+    "contributions": 7964,
+    "commits": 5688,
+    "prs": 1669,
+    "stars": 299,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -156,7 +156,6 @@
       "bms": 3,
       "brainstorm-verse": 5,
       "DevOps-AWS-FARM": 3,
-      "ai-code-translator": 3,
       "stock-market-prediction": 4,
       "LeetCode_Rating_Predictor": 7,
       "my-journey": 3,
@@ -213,7 +212,7 @@
         7,
         7,
         10,
-        47
+        44
       ],
       [
         11,
@@ -225,13 +224,13 @@
         20
       ],
       [
-        6,
+        4,
         8,
         36,
         18,
         2,
         13,
-        52
+        42
       ],
       [
         12,
@@ -240,7 +239,7 @@
         38,
         51,
         15,
-        39
+        35
       ],
       [
         9,
@@ -263,14 +262,14 @@
       [
         41,
         6,
-        80,
+        77,
         22,
-        19,
+        18,
         6,
         17
       ],
       [
-        13,
+        12,
         20,
         22,
         14,
@@ -279,7 +278,7 @@
         8
       ],
       [
-        68,
+        64,
         4,
         19,
         1,
@@ -299,7 +298,7 @@
       [
         13,
         9,
-        80,
+        72,
         4,
         1,
         16,
@@ -334,7 +333,7 @@
       ],
       [
         42,
-        31,
+        28,
         15,
         22,
         23,
@@ -384,16 +383,16 @@
         4,
         49,
         10,
-        106
+        105
       ],
       [
         47,
         22,
         18,
         112,
-        1926,
-        21,
-        32
+        1888,
+        20,
+        31
       ],
       [
         43,
@@ -402,7 +401,7 @@
         10,
         19,
         17,
-        79
+        78
       ],
       [
         0,
@@ -415,7 +414,7 @@
       ],
       [
         3,
-        71,
+        70,
         23,
         19,
         0,
@@ -423,7 +422,7 @@
         43
       ],
       [
-        5,
+        2,
         1,
         24,
         0,
@@ -434,7 +433,7 @@
       [
         28,
         36,
-        13,
+        12,
         12,
         33,
         14,
@@ -447,7 +446,7 @@
         13,
         31,
         13,
-        67
+        66
       ],
       [
         5,
@@ -460,7 +459,7 @@
       ],
       [
         2,
-        24,
+        23,
         2,
         2,
         4,
@@ -470,11 +469,11 @@
       [
         15,
         1,
-        29,
+        28,
         0,
         0,
-        63,
-        25
+        62,
+        23
       ],
       [
         26,
@@ -491,7 +490,7 @@
         2,
         20,
         2,
-        151,
+        149,
         15
       ],
       [
@@ -518,7 +517,7 @@
         23,
         8,
         0,
-        110,
+        109,
         34
       ],
       [
@@ -543,15 +542,15 @@
         8,
         1,
         0,
-        156,
+        150,
         37,
-        111,
-        57
+        110,
+        55
       ],
       [
         4,
         8,
-        81,
+        80,
         6,
         19,
         9,
@@ -573,7 +572,7 @@
         18,
         1,
         9,
-        31
+        30
       ],
       [
         0,
@@ -624,13 +623,13 @@
         0,
         0,
         21,
-        42,
+        40,
         63,
         11,
         30
       ],
       [
-        79,
+        75,
         2,
         2,
         3,
@@ -668,7 +667,7 @@
       [
         0,
         0,
-        59,
+        57,
         8,
         3,
         19,
@@ -678,13 +677,13 @@
         48,
         0,
         22,
-        23
+        27
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        56.0,
+        55.9,
         "#3178c6"
       ],
       [
@@ -2102,33 +2101,33 @@
         "type": "Hackathon"
       }
     ],
-    "project_count": 48
+    "project_count": 47
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5861,
-    "PrefectHQ/prefect": 24017,
-    "anthropics/skills": 180994,
-    "apache/airflow": 47170,
+    "PrefectHQ/prefect": 24016,
+    "anthropics/skills": 181032,
+    "apache/airflow": 47171,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 918,
-    "awslabs/mcp": 9777,
-    "axios/axios": 109396,
+    "awslabs/mcp": 9779,
+    "axios/axios": 109393,
     "cloudposse/terraform-aws-tfstate-backend": 442,
-    "expressjs/multer": 12086,
-    "feast-dev/feast": 7327,
+    "expressjs/multer": 12085,
+    "feast-dev/feast": 7328,
     "forem/selfhost": 1481,
     "hashicorp/terraform-provider-aws": 11114,
-    "lucide-icons/lucide": 25005,
-    "modelcontextprotocol/servers": 91237,
+    "lucide-icons/lucide": 25008,
+    "modelcontextprotocol/servers": 91247,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23269,
+  "views": 23271,
   "source_updated_at": {
-    "github": "2026-10-14T07:36:58+00:00",
-    "leetcode": "2026-10-14T07:36:53+00:00",
-    "portfolio": "2026-10-14T07:36:59+00:00",
-    "views": "2026-10-14T07:36:53+00:00"
+    "github": "2026-10-14T11:05:03+00:00",
+    "leetcode": "2026-10-14T11:04:59+00:00",
+    "portfolio": "2026-10-14T11:05:04+00:00",
+    "views": "2026-10-14T11:04:59+00:00"
   }
 }

@@ -1,5 +1,4 @@
-# Profile Validation Workflow
-# Runs the validate-profiles script on push to ensure consistency
+# Validate generated SVGs and profile configuration without fetching remote data.
 name: Validate Profiles
 
 on:
@@ -7,8 +6,31 @@ on:
     branches: [main]
     paths:
       - "README.md"
+      - "COMMUNITY.md"
+      - "assets/svg/**"
+      - "assets/credly-badges.md"
+      - "scripts/**"
+      - "tests/**"
       - ".github/config/profiles.yml"
+      - ".github/workflows/validate-profiles.yml"
+      - ".github/workflows/render-svgs.yml"
+      - ".github/workflows/update-credly-badges.yml"
+  pull_request:
+    paths:
+      - "README.md"
+      - "COMMUNITY.md"
+      - "assets/svg/**"
+      - "assets/credly-badges.md"
+      - "scripts/**"
+      - "tests/**"
+      - ".github/config/profiles.yml"
+      - ".github/workflows/validate-profiles.yml"
+      - ".github/workflows/render-svgs.yml"
+      - ".github/workflows/update-credly-badges.yml"
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   validate:
@@ -17,10 +39,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: Install yq (YAML parser)
-        run: |
-          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-          sudo chmod +x /usr/local/bin/yq
+      - name: Test profile validation and rendering
+        run: python -m unittest discover -s tests -v
 
-      - name: Run profile validation
-        run: pwsh scripts/validate-profiles.ps1
+      - name: Validate committed profile
+        run: python scripts/validate-readme.py
+
+      - name: Verify the committed output matches the renderer
+        run: |
+          python scripts/render-svgs.py --offline
+          python scripts/validate-readme.py
+          # a renderer change must ship with its regenerated README and SVGs
+          if [ -n "$(git status --porcelain)" ]; then
+            git status --short
+            echo "::error::Generated files are stale. Run python scripts/render-svgs.py --offline and commit the result."
+            exit 1
+          fi

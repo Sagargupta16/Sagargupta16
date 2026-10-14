@@ -130,11 +130,9 @@
     ]
   },
   "github": {
-    "contributions": 8069,
-    "commits": 5774,
+    "contributions": 8068,
+    "commits": 5773,
     "prs": 1689,
-    "reviews": 35,
-    "issues": 116,
     "stars": 302,
     "repo_stars": {
       "PortFolio": 3,
@@ -204,10 +202,9 @@
       "stackdraw": 0
     },
     "followers": 111,
-    "repos": 65,
     "streak": 2,
     "longest": 154,
-    "active_days": 312,
+    "active_days": 311,
     "calendar": [
       [
         3,
@@ -419,8 +416,8 @@
       [
         3,
         71,
-        23,
-        19,
+        22,
+        20,
         0,
         4,
         43
@@ -581,8 +578,8 @@
       [
         0,
         12,
-        6,
-        25,
+        4,
+        27,
         5,
         0,
         0
@@ -620,14 +617,14 @@
         0,
         0,
         0,
-        1,
-        1
+        0,
+        2
       ],
       [
         0,
         0,
-        21,
-        42,
+        20,
+        43,
         63,
         11,
         30
@@ -645,8 +642,8 @@
         53,
         37,
         11,
-        5,
-        10,
+        4,
+        11,
         10,
         6
       ],
@@ -655,8 +652,8 @@
         8,
         5,
         6,
-        18,
-        23,
+        17,
+        24,
         29
       ],
       [
@@ -681,7 +678,7 @@
         48,
         0,
         22,
-        18
+        17
       ]
     ],
     "languages": [
@@ -720,9 +717,9 @@
   "portfolio": {
     "engagements": [
       {
-        "when": "Oct 2024 to Aug 2025",
         "client": "State Street",
-        "tagline": "Terraform, tftest",
+        "link": null,
+        "name": "DevOps Consultant - State Street",
         "stack": [
           "Terraform",
           "tftest",
@@ -731,13 +728,13 @@
           "CloudWatch",
           "SNS"
         ],
-        "link": null,
-        "name": "DevOps Consultant - State Street"
+        "tagline": "Terraform, tftest",
+        "when": "Oct 2024 to Aug 2025"
       },
       {
-        "when": "Jun 2025 to Aug 2025",
         "client": "MLOps SME Program",
-        "tagline": "SageMaker, CloudWatch",
+        "link": "https://github.com/aws-samples/sample-sagemaker-image-classification-mlops",
+        "name": "Medical Image Classification MLOps Pipeline (SME Program)",
         "stack": [
           "SageMaker",
           "CloudWatch",
@@ -746,26 +743,26 @@
           "EventBridge",
           "CodePipeline"
         ],
-        "link": "https://github.com/aws-samples/sample-sagemaker-image-classification-mlops",
-        "name": "Medical Image Classification MLOps Pipeline (SME Program)"
+        "tagline": "SageMaker, CloudWatch",
+        "when": "Jun 2025 to Aug 2025"
       },
       {
-        "when": "Aug 2025 to Nov 2025",
         "client": "DTCC",
-        "tagline": "Terraform, Amazon Q",
+        "link": null,
+        "name": "DevOps Consultant - DTCC",
         "stack": [
           "Terraform",
           "Amazon Q",
           "CloudFormation",
           "DevSecOps"
         ],
-        "link": null,
-        "name": "DevOps Consultant - DTCC"
+        "tagline": "Terraform, Amazon Q",
+        "when": "Aug 2025 to Nov 2025"
       },
       {
-        "when": "Feb 2026 to now",
         "client": "RWS",
-        "tagline": "Lead DevOps, AWS Organizations",
+        "link": null,
+        "name": "Lead DevOps Consultant - RWS (Ongoing)",
         "stack": [
           "AWS Organizations",
           "SCPs",
@@ -774,22 +771,22 @@
           "Config Rules",
           "Transit Gateway"
         ],
-        "link": null,
-        "name": "Lead DevOps Consultant - RWS (Ongoing)"
+        "tagline": "Lead DevOps, AWS Organizations",
+        "when": "Feb 2026 to now"
       }
     ],
     "earlier": [
       {
-        "title": "Associate Professional Services - DevOps",
         "company": "Amazon Web Services",
         "date": "March 2024 - July 2024",
-        "position": "Internship"
+        "position": "Internship",
+        "title": "Associate Professional Services - DevOps"
       },
       {
-        "title": "Software Developer Associate",
         "company": "Ikarus-3D",
         "date": "May 2023 - July 2023",
-        "position": "Internship"
+        "position": "Internship",
+        "title": "Software Developer Associate"
       }
     ],
     "contributions": [
@@ -863,219 +860,223 @@
     ],
     "oss": [
       {
+        "merged_at": "2026-07-13",
         "repo": "axios/axios",
         "stars": 109215,
+        "status": "merged",
         "title": "Synthesize AxiosError message from AggregateError on dual-stack connection failures",
-        "url": "https://github.com/axios/axios/pull/11059",
-        "merged_at": "2026-07-13",
-        "status": "merged"
+        "url": "https://github.com/axios/axios/pull/11059"
       },
       {
+        "merged_at": "2026-03-16",
         "repo": "feast-dev/feast",
         "stars": 7268,
+        "status": "merged",
         "title": "Add Claude Code agent skills for Feast",
-        "url": "https://github.com/feast-dev/feast/pull/6081",
-        "merged_at": "2026-03-16",
-        "status": "merged"
+        "url": "https://github.com/feast-dev/feast/pull/6081"
       },
       {
+        "merged_at": "2026-03-04",
         "repo": "PrefectHQ/prefect",
         "stars": 23832,
+        "status": "merged",
         "title": "Document that deployment steps are Python functions",
-        "url": "https://github.com/PrefectHQ/prefect/pull/20956",
-        "merged_at": "2026-03-04",
-        "status": "merged"
+        "url": "https://github.com/PrefectHQ/prefect/pull/20956"
       },
       {
+        "merged_at": "2026-03-09",
         "repo": "awslabs/mcp",
         "stars": 9690,
+        "status": "merged",
         "title": "Fix Kendra documentation menu to match source directory",
-        "url": "https://github.com/awslabs/mcp/pull/2607",
-        "merged_at": "2026-03-09",
-        "status": "merged"
+        "url": "https://github.com/awslabs/mcp/pull/2607"
       },
       {
+        "merged_at": "2026-03-23",
         "repo": "apache/airflow",
         "stars": 46843,
+        "status": "merged",
         "title": "Add template_fields support to SalesforceBulkOperator",
-        "url": "https://github.com/apache/airflow/pull/63109",
-        "merged_at": "2026-03-23",
-        "status": "merged"
+        "url": "https://github.com/apache/airflow/pull/63109"
       },
       {
+        "merged_at": "2026-03-24",
         "repo": "cloudposse/terraform-aws-tfstate-backend",
         "stars": 442,
+        "status": "merged",
         "title": "Add S3 native locking docs, fix variable descriptions",
-        "url": "https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197",
-        "merged_at": "2026-03-24",
-        "status": "merged"
+        "url": "https://github.com/cloudposse/terraform-aws-tfstate-backend/pull/197"
       },
       {
         "repo": "terraform-aws-modules/terraform-aws-dynamodb-table",
         "stars": 119,
+        "status": "open",
         "title": "Replace deprecated hash_key/range_key with key_schema",
-        "url": "https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117",
-        "status": "open"
+        "url": "https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
         "stars": 11088,
+        "status": "open",
         "title": "Fix IoT cloudwatch_metric substitution template validation",
-        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/46867",
-        "status": "open"
+        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/46867"
       },
       {
         "repo": "NirmalScaria/le-git-graph",
         "stars": 5863,
+        "status": "open",
         "title": "Infinite scroll, configurable commit count, and performance improvements",
-        "url": "https://github.com/NirmalScaria/le-git-graph/pull/109",
-        "status": "open"
+        "url": "https://github.com/NirmalScaria/le-git-graph/pull/109"
       },
       {
+        "note": "Community confirmed working. Maintainers left Forem before review.",
         "repo": "forem/selfhost",
         "stars": 1483,
-        "title": "Fix AWS Ansible deploy + Elastic IP allocation",
-        "url": "https://github.com/forem/selfhost/pull/91",
         "status": "closed",
-        "note": "Community confirmed working. Maintainers left Forem before review."
+        "title": "Fix AWS Ansible deploy + Elastic IP allocation",
+        "url": "https://github.com/forem/selfhost/pull/91"
       },
       {
         "repo": "anthropics/skills",
         "stars": 176128,
+        "status": "open",
         "title": "Fix: extract procedures into references to fit truncation limit",
-        "url": "https://github.com/anthropics/skills/pull/941",
-        "status": "open"
+        "url": "https://github.com/anthropics/skills/pull/941"
       },
       {
         "repo": "anthropics/skills",
         "stars": 176128,
+        "status": "open",
         "title": "Fix: merge duplicate plugins to prevent double skill loading",
-        "url": "https://github.com/anthropics/skills/pull/942",
-        "status": "open"
+        "url": "https://github.com/anthropics/skills/pull/942"
       },
       {
-        "repo": "awslabs/agent-plugins",
-        "stars": 893,
-        "title": "Fix: check file extension before defusedxml dependency",
-        "url": "https://github.com/awslabs/agent-plugins/pull/132",
         "merged_at": "2026-04-30",
-        "status": "merged"
-      },
-      {
         "repo": "awslabs/agent-plugins",
         "stars": 893,
-        "title": "Quote CLAUDE_PLUGIN_ROOT in hook commands to support paths with spaces",
-        "url": "https://github.com/awslabs/agent-plugins/pull/212",
-        "merged_at": "2026-07-08",
-        "status": "merged"
+        "status": "merged",
+        "title": "Fix: check file extension before defusedxml dependency",
+        "url": "https://github.com/awslabs/agent-plugins/pull/132"
       },
       {
+        "merged_at": "2026-07-08",
+        "repo": "awslabs/agent-plugins",
+        "stars": 893,
+        "status": "merged",
+        "title": "Quote CLAUDE_PLUGIN_ROOT in hook commands to support paths with spaces",
+        "url": "https://github.com/awslabs/agent-plugins/pull/212"
+      },
+      {
+        "merged_at": "2026-07-09",
         "repo": "lucide-icons/lucide",
         "stars": 24490,
+        "status": "merged",
         "title": "Support kebab-case icon-node prop on Vue Icon component",
-        "url": "https://github.com/lucide-icons/lucide/pull/4512",
-        "merged_at": "2026-07-09",
-        "status": "merged"
+        "url": "https://github.com/lucide-icons/lucide/pull/4512"
       },
       {
         "repo": "aws-ia/terraform-aws-vpc",
         "stars": 113,
+        "status": "merged",
         "title": "Root-caused the Cloud WAN attachment-replacement bug; fix co-authored into v4.8.0",
-        "url": "https://github.com/aws-ia/terraform-aws-vpc/commit/489899c7198b6d0099275e2ffee6852b98c6012b",
-        "status": "merged"
+        "url": "https://github.com/aws-ia/terraform-aws-vpc/commit/489899c7198b6d0099275e2ffee6852b98c6012b"
       },
       {
         "repo": "modelcontextprotocol/servers",
         "stars": 90295,
+        "status": "closed",
         "title": "Normalize git_log schema across filtered and unfiltered branches",
-        "url": "https://github.com/modelcontextprotocol/servers/pull/4470",
-        "status": "closed"
+        "url": "https://github.com/modelcontextprotocol/servers/pull/4470"
       },
       {
+        "merged_at": "2026-08-29",
         "repo": "expressjs/multer",
         "stars": 12084,
+        "status": "merged",
         "title": "Do not consume maxCount for files skipped by fileFilter",
-        "url": "https://github.com/expressjs/multer/pull/1426",
-        "merged_at": "2026-08-29",
-        "status": "merged"
+        "url": "https://github.com/expressjs/multer/pull/1426"
       },
       {
         "repo": "aws-ia/terraform-aws-bedrock",
         "stars": 87,
+        "status": "open",
         "title": "name_prefix, tag propagation, external role support, MCP examples",
-        "url": "https://github.com/aws-ia/terraform-aws-bedrock/pull/172",
-        "status": "open"
+        "url": "https://github.com/aws-ia/terraform-aws-bedrock/pull/172"
       },
       {
         "repo": "anthropics/skills",
         "stars": 176128,
+        "status": "open",
         "title": "Correct path in package_skill.py docstring",
-        "url": "https://github.com/anthropics/skills/pull/939",
-        "status": "open"
+        "url": "https://github.com/anthropics/skills/pull/939"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
         "stars": 11088,
+        "status": "open",
         "title": "r/aws_vpc_endpoint: fix policy removal not resetting to default policy",
-        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/47940",
-        "status": "open"
+        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/47940"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
         "stars": 11088,
+        "status": "closed",
         "title": "r/aws_bedrockagentcore_harness: add additional_params to bedrock_model_config",
-        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/48389",
-        "status": "closed"
+        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/48389"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
         "stars": 11088,
+        "status": "open",
         "title": "r/aws_api_gateway_gateway_response: mark status_code Computed to fix persistent diff",
-        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/48390",
-        "status": "open"
+        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/48390"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
         "stars": 11088,
+        "status": "open",
         "title": "r/aws_api_gateway_rest_api: apply binary_media_types removal when argument is deleted",
-        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/48396",
-        "status": "open"
+        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/48396"
       },
       {
         "repo": "awslabs/mcp",
         "stars": 9690,
+        "status": "closed",
         "title": "Accept skill-type results in search_documentation",
-        "url": "https://github.com/awslabs/mcp/pull/4076",
-        "status": "closed"
+        "url": "https://github.com/awslabs/mcp/pull/4076"
       },
       {
+        "merged_at": "2026-10-08",
         "repo": "terraform-aws-modules/terraform-aws-atlantis",
         "stars": 557,
+        "status": "merged",
         "title": "Pass service.security_group_egress_rules through to the ECS service security group",
-        "url": "https://github.com/terraform-aws-modules/terraform-aws-atlantis/pull/446",
-        "merged_at": "2026-10-08",
-        "status": "merged"
+        "url": "https://github.com/terraform-aws-modules/terraform-aws-atlantis/pull/446"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
         "stars": 11088,
+        "status": "open",
         "title": "Update integration_http_method and passthrough_behavior in place on aws_api_gateway_integration",
-        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/50225",
-        "status": "open"
+        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/50225"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
         "stars": 11088,
+        "status": "open",
         "title": "Replace aws_api_gateway_domain_name when endpoint types change to or from PRIVATE",
-        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/50226",
-        "status": "open"
+        "url": "https://github.com/hashicorp/terraform-provider-aws/pull/50226"
       }
     ],
     "featured": [
       {
-        "title": "SageMaker Image Classification MLOps",
-        "description": "Published by AWS under the aws-samples organization (MIT-0) - an end-to-end, production-shaped MLOps pipeline for image classification on Amazon SageMaker, declared entirely in Terraform across 86 files and 13 reusable modules. Event-driven ingestion, multi-architecture training behind hard clinical quality gates, human-approved governed deployment, and a closed drift-to-retrain loop. The worked example classifies medical images, but the architecture is domain-agnostic.",
+        "card_summary": null,
         "date": "July 2026",
+        "description": "Published by AWS under the aws-samples organization (MIT-0) - an end-to-end, production-shaped MLOps pipeline for image classification on Amazon SageMaker, declared entirely in Terraform across 86 files and 13 reusable modules. Event-driven ingestion, multi-architecture training behind hard clinical quality gates, human-approved governed deployment, and a closed drift-to-retrain loop. The worked example classifies medical images, but the architecture is domain-agnostic.",
+        "github": "https://github.com/aws-samples/sample-sagemaker-image-classification-mlops",
+        "live": "",
+        "organization": "aws-samples",
+        "title": "SageMaker Image Classification MLOps",
         "tools_tech": [
           "Terraform",
           "Amazon SageMaker",
@@ -1086,15 +1087,16 @@
           "EventBridge",
           "CodePipeline",
           "Amazon Bedrock"
-        ],
-        "github": "https://github.com/aws-samples/sample-sagemaker-image-classification-mlops",
-        "live": "",
-        "organization": "aws-samples"
+        ]
       },
       {
-        "title": "AWS Organizations Governance on Control Tower",
-        "description": "Published by AWS under the aws-samples organization (MIT-0), the second after the SageMaker MLOps sample - a Terraform governance layer for AWS Organizations on top of an existing Control Tower landing zone. It declares the OU hierarchy, all six Organizations policy types, Control Tower baselines and controls, and delegated administrators for 15 AWS services, all from the management account.",
+        "card_summary": null,
         "date": "September 2026",
+        "description": "Published by AWS under the aws-samples organization (MIT-0), the second after the SageMaker MLOps sample - a Terraform governance layer for AWS Organizations on top of an existing Control Tower landing zone. It declares the OU hierarchy, all six Organizations policy types, Control Tower baselines and controls, and delegated administrators for 15 AWS services, all from the management account.",
+        "github": "https://github.com/aws-samples/sample-aws-terraform-org-governance",
+        "live": "",
+        "organization": "aws-samples",
+        "title": "AWS Organizations Governance on Control Tower",
         "tools_tech": [
           "Terraform",
           "AWS Organizations",
@@ -1104,15 +1106,16 @@
           "AWS Security Hub",
           "Amazon GuardDuty",
           "IAM Identity Center"
-        ],
-        "github": "https://github.com/aws-samples/sample-aws-terraform-org-governance",
-        "live": "",
-        "organization": "aws-samples"
+        ]
       },
       {
-        "title": "Kalchar",
-        "description": "Production folk-art portfolio and commission site for a traditional artist - Madhubani, Pichwai, Lippan, and Gond artwork gallery with a buy filter, events, workshops, custom orders, and a server-rendered admin panel. Public pages are static, catalog lives in Neon Postgres behind a single data seam, and artwork images are served from Cloudflare R2.",
+        "card_summary": null,
         "date": "May 2026",
+        "description": "Production folk-art portfolio and commission site for a traditional artist - Madhubani, Pichwai, Lippan, and Gond artwork gallery with a buy filter, events, workshops, custom orders, and a server-rendered admin panel. Public pages are static, catalog lives in Neon Postgres behind a single data seam, and artwork images are served from Cloudflare R2.",
+        "github": "https://github.com/Sagargupta16/kalchar",
+        "live": "https://kalchar.co.in/",
+        "organization": null,
+        "title": "Kalchar",
         "tools_tech": [
           "Next.js 16",
           "React 19",
@@ -1122,15 +1125,16 @@
           "Drizzle ORM",
           "Cloudflare R2",
           "Vercel"
-        ],
-        "github": "https://github.com/Sagargupta16/kalchar",
-        "live": "https://kalchar.co.in/",
-        "organization": null
+        ]
       },
       {
-        "title": "GitScope",
-        "description": "A Chrome extension plus web dashboard that adds deep GitHub profile insights - 9-stat grid, coding personality badges, language breakdown, activity heatmap, contribution donut, repo growth timeline, profile comparison, and a leaderboard across everyone you follow. Published on the Chrome Web Store with GitHub OAuth for traffic analytics.",
+        "card_summary": null,
         "date": "March 2026",
+        "description": "A Chrome extension plus web dashboard that adds deep GitHub profile insights - 9-stat grid, coding personality badges, language breakdown, activity heatmap, contribution donut, repo growth timeline, profile comparison, and a leaderboard across everyone you follow. Published on the Chrome Web Store with GitHub OAuth for traffic analytics.",
+        "github": "https://github.com/Sagargupta16/GitScope",
+        "live": "https://chromewebstore.google.com/detail/gitscope/fndaanihifimmlnmkjdmjbbkbdajolff",
+        "organization": null,
+        "title": "GitScope",
         "tools_tech": [
           "JavaScript",
           "TypeScript",
@@ -1139,15 +1143,16 @@
           "GitHub GraphQL API",
           "Cloudflare Workers",
           "esbuild"
-        ],
-        "github": "https://github.com/Sagargupta16/GitScope",
-        "live": "https://chromewebstore.google.com/detail/gitscope/fndaanihifimmlnmkjdmjbbkbdajolff",
-        "organization": null
+        ]
       },
       {
-        "title": "Ledger Sync",
-        "description": "A self-hosted personal finance dashboard (v2.28.0) with an AI chatbot that uses 15 read-only tool calls to answer questions about your spending, trends, tax, and goals. Upload Excel/CSV bank statements, get SHA-256 deduplication, 50/30/20 budgeting, bill calendar, GST analysis, subscription tracking, year-in-review, FIRE planning (Lean/Barista/Standard/Fat), India FY tax estimation, Sankey cash flow, and a Financial Health Score across 8 metrics.",
+        "card_summary": null,
         "date": "July 2026",
+        "description": "A self-hosted personal finance dashboard (v2.28.0) with an AI chatbot that uses 15 read-only tool calls to answer questions about your spending, trends, tax, and goals. Upload Excel/CSV bank statements, get SHA-256 deduplication, 50/30/20 budgeting, bill calendar, GST analysis, subscription tracking, year-in-review, FIRE planning (Lean/Barista/Standard/Fat), India FY tax estimation, Sankey cash flow, and a Financial Health Score across 8 metrics.",
+        "github": "https://github.com/Sagargupta16/ledger-sync",
+        "live": "https://sagargupta.online/ledger-sync/",
+        "organization": null,
+        "title": "Ledger Sync",
         "tools_tech": [
           "TypeScript",
           "React 19",
@@ -1157,15 +1162,16 @@
           "AWS Bedrock",
           "OpenAI",
           "Anthropic"
-        ],
-        "github": "https://github.com/Sagargupta16/ledger-sync",
-        "live": "https://sagargupta.online/ledger-sync/",
-        "organization": null
+        ]
       },
       {
-        "title": "LeetCode Rating Predictor",
-        "description": "Full-stack LeetCode contest rating predictor using a Dense neural network trained on 121K+ contest records, featuring a FastAPI backend with LeetCode GraphQL integration and a React glassmorphism frontend.",
+        "card_summary": null,
         "date": "December 2023",
+        "description": "Full-stack LeetCode contest rating predictor using a Dense neural network trained on 121K+ contest records, featuring a FastAPI backend with LeetCode GraphQL integration and a React glassmorphism frontend.",
+        "github": "https://github.com/Sagargupta16/LeetCode_Rating_Predictor",
+        "live": "https://leetcode-rating-predictor.onrender.com/",
+        "organization": null,
+        "title": "LeetCode Rating Predictor",
         "tools_tech": [
           "Python",
           "React 19",
@@ -1173,15 +1179,16 @@
           "TensorFlow",
           "Keras",
           "GraphQL"
-        ],
-        "github": "https://github.com/Sagargupta16/LeetCode_Rating_Predictor",
-        "live": "https://leetcode-rating-predictor.onrender.com/",
-        "organization": null
+        ]
       },
       {
-        "title": "Blue Green AWS Terraform",
-        "description": "A comprehensive Infrastructure as Code solution for implementing Blue-Green deployment on AWS using Terraform, providing a complete CI/CD pipeline with zero-downtime deployments across ECS on EC2, ALB, CodePipeline, and KMS-encrypted artifacts.",
+        "card_summary": null,
         "date": "July 2025",
+        "description": "A comprehensive Infrastructure as Code solution for implementing Blue-Green deployment on AWS using Terraform, providing a complete CI/CD pipeline with zero-downtime deployments across ECS on EC2, ALB, CodePipeline, and KMS-encrypted artifacts.",
+        "github": "https://github.com/Sagargupta16/Blue_Green_AWS_Terraform",
+        "live": "",
+        "organization": null,
+        "title": "Blue Green AWS Terraform",
         "tools_tech": [
           "Terraform",
           "AWS",
@@ -1189,30 +1196,32 @@
           "ECS on EC2",
           "CodePipeline",
           "HCL"
-        ],
-        "github": "https://github.com/Sagargupta16/Blue_Green_AWS_Terraform",
-        "live": "",
-        "organization": null
+        ]
       },
       {
-        "title": "Instagram Likes Leaderboard",
-        "description": "A browser-based tool with three modes - Likes Leaderboard, Stats Dashboard, and Follower Analysis - that scans your Instagram posts and surfaces your biggest fans, ghost followers, non-mutuals, and engagement metrics. No downloads or sign-ups required.",
+        "card_summary": null,
         "date": "February 2026",
+        "description": "A browser-based tool with three modes - Likes Leaderboard, Stats Dashboard, and Follower Analysis - that scans your Instagram posts and surfaces your biggest fans, ghost followers, non-mutuals, and engagement metrics. No downloads or sign-ups required.",
+        "github": "https://github.com/Sagargupta16/InstagramLikesLeaderboard",
+        "live": "https://sagargupta.online/InstagramLikesLeaderboard/",
+        "organization": null,
+        "title": "Instagram Likes Leaderboard",
         "tools_tech": [
           "TypeScript",
           "Preact",
           "Browser API",
           "Instagram API",
           "SCSS"
-        ],
-        "github": "https://github.com/Sagargupta16/InstagramLikesLeaderboard",
-        "live": "https://sagargupta.online/InstagramLikesLeaderboard/",
-        "organization": null
+        ]
       },
       {
-        "title": "Personal Portfolio",
-        "description": "This site - a minimal dark developer portfolio with an ambient aurora background, project cards with live screenshots and animated SVG covers, and a fully data-driven JSON architecture. Built with React 19, Vite 8, Tailwind CSS v4, Motion, and Lenis smooth scroll.",
+        "card_summary": null,
         "date": "October 2022",
+        "description": "This site - a minimal dark developer portfolio with an ambient aurora background, project cards with live screenshots and animated SVG covers, and a fully data-driven JSON architecture. Built with React 19, Vite 8, Tailwind CSS v4, Motion, and Lenis smooth scroll.",
+        "github": "https://github.com/Sagargupta16/portfolio-react",
+        "live": "https://sagargupta.online/portfolio-react/",
+        "organization": null,
+        "title": "Personal Portfolio",
         "tools_tech": [
           "React 19",
           "Vite 8",
@@ -1220,109 +1229,116 @@
           "Motion",
           "Lenis",
           "EmailJS"
-        ],
-        "github": "https://github.com/Sagargupta16/portfolio-react",
-        "live": "https://sagargupta.online/portfolio-react/",
-        "organization": null
+        ]
       },
       {
-        "title": "SelfHub",
-        "description": "A Model Context Protocol (MCP) server that acts as your personal digital memory hub - store notes, preferences, code snippets, tasks, and any info from any MCP-enabled AI assistant (Claude Desktop, VS Code Copilot). Your personal knowledge base travels with you across AI conversations.",
+        "card_summary": null,
         "date": "March 2025",
+        "description": "A Model Context Protocol (MCP) server that acts as your personal digital memory hub - store notes, preferences, code snippets, tasks, and any info from any MCP-enabled AI assistant (Claude Desktop, VS Code Copilot). Your personal knowledge base travels with you across AI conversations.",
+        "github": "https://github.com/Sagargupta16/SelfHub",
+        "live": "",
+        "organization": null,
+        "title": "SelfHub",
         "tools_tech": [
           "TypeScript",
           "MCP",
           "Node.js",
           "pnpm"
-        ],
-        "github": "https://github.com/Sagargupta16/SelfHub",
-        "live": "",
-        "organization": null
+        ]
       }
     ],
     "community": [
       {
-        "title": "GitHub Stats Card Action",
+        "card_summary": null,
         "description": "A GitHub Action that renders an animated GitHub stats card as an SVG in your own repo, so your profile README never depends on a hosted widget. Five stat tiles, a contribution calendar, current and longest streak, and top languages in one self-hosted card, published on the GitHub Marketplace.",
+        "github": "https://github.com/Sagargupta16/github-stats-card-action",
+        "title": "GitHub Stats Card Action",
         "tools_tech": [
           "Python 3.13",
           "GitHub Actions",
           "GitHub GraphQL API",
           "SVG"
-        ],
-        "github": "https://github.com/Sagargupta16/github-stats-card-action"
+        ]
       },
       {
-        "title": "LeetCode Card Action",
+        "card_summary": null,
         "description": "A GitHub Action that renders an animated LeetCode card as an SVG in your own repo. Contest rating history is drawn as a line with the peak marked, next to the contest badge, current rating, top percentage, and problems solved by difficulty. Published on the GitHub Marketplace.",
+        "github": "https://github.com/Sagargupta16/leetcode-card-action",
+        "title": "LeetCode Card Action",
         "tools_tech": [
           "Python 3.13",
           "GitHub Actions",
           "LeetCode GraphQL",
           "SVG"
-        ],
-        "github": "https://github.com/Sagargupta16/leetcode-card-action"
+        ]
       },
       {
-        "title": "OSS Contributions Card Action",
+        "card_summary": null,
         "description": "A GitHub Action that finds your merged and open pull requests to other people's repos through the GitHub GraphQL search, with no manual list to maintain, and renders them as animated SVG cards in your own repo: a summary card, a merged list, and an in-review list. Published on the GitHub Marketplace.",
+        "github": "https://github.com/Sagargupta16/oss-contributions-card-action",
+        "title": "OSS Contributions Card Action",
         "tools_tech": [
           "Python 3.13",
           "GitHub Actions",
           "GitHub GraphQL API",
           "SVG"
-        ],
-        "github": "https://github.com/Sagargupta16/oss-contributions-card-action"
+        ]
       },
       {
-        "title": "readme-kit",
+        "card_summary": null,
         "description": "A GitHub Action that turns one profile.yml into a matching set of self-hosted animated SVG cards for your GitHub profile README: hero, terminal, section headers, divider, footer, timeline, tiles, panels, stats, buttons, and project cards. One theme.accent colors the whole set. Published on the GitHub Marketplace.",
+        "github": "https://github.com/Sagargupta16/readme-kit-action",
+        "title": "readme-kit",
         "tools_tech": [
           "Python 3.13",
           "GitHub Actions",
           "YAML",
           "SVG"
-        ],
-        "github": "https://github.com/Sagargupta16/readme-kit-action"
+        ]
       },
       {
-        "title": "skillcheck",
+        "card_summary": null,
         "description": "Conformance suite for Agent Skills (SKILL.md), published on npm. Linters check syntax; skillcheck checks reality: 36 rules with exact skills-ref parity, a 19-field client-extension registry across 3 runtimes (Claude Code, Copilot, Cursor), structure and reference validation, SARIF output, and a drop-in GitHub Action.",
+        "github": "https://github.com/Sagargupta16/skillcheck",
+        "title": "skillcheck",
         "tools_tech": [
           "TypeScript",
           "Node.js",
           "npm",
           "GitHub Actions",
           "SARIF"
-        ],
-        "github": "https://github.com/Sagargupta16/skillcheck"
+        ]
       },
       {
-        "title": "ITR Agent",
+        "card_summary": null,
         "description": "Local-first MCP server that walks you through filing an Indian income tax return, published on npm. 12 tools spanning form selection, deterministic computation, old-vs-new regime comparison, advance tax planning, and document parsing - all on your machine. The LLM never does arithmetic; every number comes from a versioned, auditable rule pack. Works with Claude Desktop, Claude Code, and any MCP client.",
+        "github": "https://github.com/Sagargupta16/itr-agent",
+        "title": "ITR Agent",
         "tools_tech": [
           "TypeScript",
           "MCP Protocol",
           "Node.js",
           "npm"
-        ],
-        "github": "https://github.com/Sagargupta16/itr-agent"
+        ]
       },
       {
-        "title": "Claude Skills",
+        "card_summary": null,
         "description": "Custom Claude Code plugin marketplace (v5.2.0) with 16 curated plugins covering dev workflow, Docker, dependency audits, refactoring, git workflows, open source contributions, Python clean code, animation, and more. Installable via /plugin marketplace.",
+        "github": "https://github.com/Sagargupta16/claude-skills",
+        "title": "Claude Skills",
         "tools_tech": [
           "Claude Code",
           "Plugin Marketplace",
           "Markdown",
           "JSON",
           "GitHub Actions"
-        ],
-        "github": "https://github.com/Sagargupta16/claude-skills"
+        ]
       },
       {
-        "title": "Claude Cost Optimizer",
+        "card_summary": null,
         "description": "Installable Claude Code plugin with cost-mode skill that saves 30-60% on costs through concise responses, model routing, budget hooks, and efficient workflow patterns. Includes web-based Repo Analyzer, Cost Calculator, and Badge Checker tools.",
+        "github": "https://github.com/Sagargupta16/claude-cost-optimizer",
+        "title": "Claude Cost Optimizer",
         "tools_tech": [
           "Claude Code",
           "Plugin Marketplace",
@@ -1330,12 +1346,13 @@
           "Vite",
           "TypeScript",
           "Python"
-        ],
-        "github": "https://github.com/Sagargupta16/claude-cost-optimizer"
+        ]
       },
       {
-        "title": "Bedrock Multi-Model MCP",
+        "card_summary": null,
         "description": "MCP server for AWS Bedrock - text, image, video generation, and embeddings across Llama 4, Mistral, Nova, Cohere, DeepSeek, Qwen, GPT-OSS, Stability AI, Luma, and Claude. Use any Bedrock model from Claude Code or any MCP client. Supports bearer token auth and side-by-side model comparison.",
+        "github": "https://github.com/Sagargupta16/bedrock-multi-model-mcp",
+        "title": "Bedrock Multi-Model MCP",
         "tools_tech": [
           "TypeScript",
           "MCP Protocol",
@@ -1343,44 +1360,48 @@
           "Converse API",
           "Stability AI",
           "Luma Ray 2"
-        ],
-        "github": "https://github.com/Sagargupta16/bedrock-multi-model-mcp"
+        ]
       },
       {
-        "title": "MCP Toolkit",
+        "card_summary": null,
         "description": "Reusable utilities and middleware for building production-ready MCP servers. Drop-in packages for the TypeScript SDK covering auth, caching, rate limiting, logging, and CORS - so you stop reimplementing the same plumbing for every MCP server.",
+        "github": "https://github.com/Sagargupta16/mcp-toolkit",
+        "title": "MCP Toolkit",
         "tools_tech": [
           "TypeScript",
           "MCP Protocol",
           "Node.js",
           "npm"
-        ],
-        "github": "https://github.com/Sagargupta16/mcp-toolkit"
+        ]
       },
       {
-        "title": "Claude Code Recipes",
+        "card_summary": null,
         "description": "47 copy-paste recipes for Claude Code covering 15 commands, 9 subagents, 5 hooks, skills, workflows, CLAUDE.md templates, and MCP configs. Every recipe works out of the box - just drop into your .claude/ folder and use immediately.",
+        "github": "https://github.com/Sagargupta16/claude-code-recipes",
+        "title": "Claude Code Recipes",
         "tools_tech": [
           "Claude Code",
           "AI Agents",
           "MCP Protocol",
           "Automation"
-        ],
-        "github": "https://github.com/Sagargupta16/claude-code-recipes"
+        ]
       },
       {
-        "title": "Awesome MCP Servers",
+        "card_summary": null,
         "description": "A curated [awesome] list of Model Context Protocol servers, frameworks, clients, tutorials, and community resources - covering data, developer tools, cloud, productivity, search, AI/ML, finance, and observability.",
+        "github": "https://github.com/Sagargupta16/awesome-mcp-servers",
+        "title": "Awesome MCP Servers",
         "tools_tech": [
           "MCP Protocol",
           "AI Agents",
           "Curated List"
-        ],
-        "github": "https://github.com/Sagargupta16/awesome-mcp-servers"
+        ]
       },
       {
-        "title": "Deploy Guide",
+        "card_summary": null,
         "description": "Step-by-step deployment guides for every platform - 38 guides, 13 platforms, 14 frameworks, 6 databases. Covers GitHub Pages, Vercel, Render, Railway, Fly.io, Netlify, Cloudflare Pages, AWS ECS, DigitalOcean, and more.",
+        "github": "https://github.com/Sagargupta16/deploy-guide",
+        "title": "Deploy Guide",
         "tools_tech": [
           "DevOps",
           "AWS",
@@ -1388,60 +1409,61 @@
           "Render",
           "GitHub Pages",
           "Cloudflare"
-        ],
-        "github": "https://github.com/Sagargupta16/deploy-guide"
+        ]
       },
       {
-        "title": "Agent Recipes",
+        "card_summary": null,
         "description": "Copy-paste AI agent workflows for real-world developer tasks - code review, testing, migrations, documentation, security scanning, and deployment automation. Works with Claude Code, Cursor, Aider, or any AI coding assistant.",
+        "github": "https://github.com/Sagargupta16/agent-recipes",
+        "title": "Agent Recipes",
         "tools_tech": [
           "AI Agents",
           "Claude Code",
           "Cursor",
           "Aider"
-        ],
-        "github": "https://github.com/Sagargupta16/agent-recipes"
+        ]
       },
       {
-        "title": "AI Git Hooks",
+        "card_summary": null,
         "description": "AI-powered git hooks that review code, generate commit messages, catch bugs, and scan for security issues before you push. Drop-in hooks using Claude, OpenAI, or local Ollama for every stage of your git workflow.",
+        "github": "https://github.com/Sagargupta16/ai-git-hooks",
+        "title": "AI Git Hooks",
         "tools_tech": [
           "Git Hooks",
           "Claude",
           "OpenAI",
           "Ollama",
           "Bash"
-        ],
-        "github": "https://github.com/Sagargupta16/ai-git-hooks"
+        ]
       },
       {
-        "title": "Credly Badge README Action",
+        "card_summary": null,
         "description": "A GitHub Action that auto-syncs your Credly certifications and badges to your GitHub profile README - no more manual updates when you earn a new cert. Categorizes badges into Industry Certifications, Professional/Partner, and Knowledge/Learning with non-destructive HTML-marker updates. Since v1.1.0 an SVG card mode (output readme, svg, or both) draws every badge into one animated SVG card in two or three groups.",
+        "github": "https://github.com/Sagargupta16/credly-badge-readme-action",
+        "title": "Credly Badge README Action",
         "tools_tech": [
           "Python 3.13",
           "GitHub Actions",
           "Credly API",
           "Markdown"
-        ],
-        "github": "https://github.com/Sagargupta16/credly-badge-readme-action"
+        ]
       }
     ],
     "intro": "Cloud consultant at AWS Professional Services. Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines, plus the MCP servers and Claude Code skills I build to do that work faster.",
     "education": [
       {
-        "id": 1,
-        "date": "September 2021 - July 2024",
-        "title": "Master of Computer Applications (MCA)",
-        "institution": "National Institute of Technology Warangal",
-        "department": "Department of Computer Science & Engineering",
-        "location": "Warangal, Telangana, India",
-        "cgpa": "8.38",
         "achievements": [
           "Passed with First Division with Distinction",
           "NIMCET AIR 208 (Sep 2021)",
           "Class Representative, MCA Final Year (Aug 2023 - Jun 2024)",
           "Additional Secretary, CSEA - NITW (Aug 2023 - Jun 2024)"
         ],
+        "cgpa": "8.38",
+        "date": "September 2021 - July 2024",
+        "department": "Department of Computer Science & Engineering",
+        "id": 1,
+        "institution": "National Institute of Technology Warangal",
+        "location": "Warangal, Telangana, India",
         "skills": [
           "DSA",
           "Cloud Computing",
@@ -1450,16 +1472,16 @@
           "Web Development",
           "Game Development",
           "Algorithms"
-        ]
+        ],
+        "title": "Master of Computer Applications (MCA)"
       },
       {
-        "id": 2,
-        "date": "May 2018 - August 2021",
-        "title": "Bachelor of Computer Applications (BCA)",
-        "institution": "Devi Ahilya Vishwavidyalaya (DAVV)",
-        "department": "Department of Computer Science & Engineering",
-        "location": "Indore, Madhya Pradesh, India",
         "cgpa": "7.34",
+        "date": "May 2018 - August 2021",
+        "department": "Department of Computer Science & Engineering",
+        "id": 2,
+        "institution": "Devi Ahilya Vishwavidyalaya (DAVV)",
+        "location": "Indore, Madhya Pradesh, India",
         "skills": [
           "C++",
           "OOPs",
@@ -1467,32 +1489,33 @@
           "Data Structures",
           "Operating Systems",
           "Computer Networks"
-        ]
+        ],
+        "title": "Bachelor of Computer Applications (BCA)"
       },
       {
-        "id": 3,
-        "date": "April 2017 - April 2018",
-        "title": "Class XII (Senior Secondary)",
-        "institution": "Happy Days School",
         "board": "Central Board of Secondary Education (CBSE)",
-        "field": "PCM+PE (Physics, Chemistry, Mathematics, Physical Education)",
-        "location": "Shivpuri, Madhya Pradesh, India",
         "cgpa": "",
+        "date": "April 2017 - April 2018",
+        "field": "PCM+PE (Physics, Chemistry, Mathematics, Physical Education)",
+        "id": 3,
+        "institution": "Happy Days School",
+        "location": "Shivpuri, Madhya Pradesh, India",
         "skills": [
           "Mathematics",
           "Physics",
           "Chemistry"
-        ]
+        ],
+        "title": "Class XII (Senior Secondary)"
       },
       {
-        "id": 4,
-        "date": "April 2015 - April 2016",
-        "title": "Class X (Secondary)",
-        "institution": "Kids Garden School",
         "board": "Central Board of Secondary Education (CBSE)",
-        "location": "Shivpuri, Madhya Pradesh, India",
         "cgpa": "",
-        "skills": []
+        "date": "April 2015 - April 2016",
+        "id": 4,
+        "institution": "Kids Garden School",
+        "location": "Shivpuri, Madhya Pradesh, India",
+        "skills": [],
+        "title": "Class X (Secondary)"
       }
     ],
     "coding_stats": {
@@ -1990,99 +2013,99 @@
     },
     "certifications": [
       {
-        "name": "AWS Certified Developer - Associate",
-        "expiryDate": "2029-01-31"
+        "expiryDate": "2029-01-31",
+        "name": "AWS Certified Developer - Associate"
       },
       {
-        "name": "AWS Certified AI Practitioner",
-        "expiryDate": "2028-07-07"
+        "expiryDate": "2028-07-07",
+        "name": "AWS Certified AI Practitioner"
       },
       {
-        "name": "AWS Certified Machine Learning Engineer - Associate",
-        "expiryDate": "2028-06-28"
+        "expiryDate": "2028-06-28",
+        "name": "AWS Certified Machine Learning Engineer - Associate"
       },
       {
-        "name": "HashiCorp Certified: Terraform Associate (003)",
-        "expiryDate": "2026-09-10"
+        "expiryDate": "2026-09-10",
+        "name": "HashiCorp Certified: Terraform Associate (003)"
       },
       {
-        "name": "AWS Certified Solutions Architect - Associate",
-        "expiryDate": "2027-07-07"
+        "expiryDate": "2027-07-07",
+        "name": "AWS Certified Solutions Architect - Associate"
       },
       {
-        "name": "AWS Certified Cloud Practitioner",
-        "expiryDate": "2029-01-31"
+        "expiryDate": "2029-01-31",
+        "name": "AWS Certified Cloud Practitioner"
       }
     ],
     "contests": [
       {
+        "date": "March 2023",
         "id": 1,
+        "organizer": "NIT Trichy",
         "title": "1st Place - Coding Cauldron Online, Version '23",
-        "organizer": "NIT Trichy",
-        "date": "March 2023",
         "type": "Competition"
       },
       {
+        "date": "December 2022",
         "id": 2,
+        "organizer": "NIT Warangal",
         "title": "1st Place - QFiesta, IGNOSI '22",
-        "organizer": "NIT Warangal",
-        "date": "December 2022",
         "type": "Competition"
       },
       {
-        "id": 3,
-        "title": "2nd Place - Manage the Damage, Version '23",
-        "organizer": "NIT Trichy",
         "date": "March 2023",
+        "id": 3,
+        "organizer": "NIT Trichy",
+        "title": "2nd Place - Manage the Damage, Version '23",
         "type": "Competition"
       },
       {
-        "id": 4,
-        "title": "2nd Place - Trial By Code, IGNOSI '22",
-        "organizer": "NIT Warangal",
         "date": "December 2022",
-        "type": "Competition"
-      },
-      {
-        "id": 5,
-        "title": "Rank 1289 - Google Kick Start '22, Round E",
-        "organizer": "Google",
-        "date": "September 2022",
-        "type": "Competition"
-      },
-      {
-        "id": 6,
-        "title": "Rank 1699 - Google Kick Start '22, Round B",
-        "organizer": "Google",
-        "date": "May 2022",
-        "type": "Competition"
-      },
-      {
-        "id": 7,
-        "title": "3rd Place - Logic Head, INFOTREK '22",
-        "organizer": "NIT Trichy",
-        "date": "June 2022",
-        "type": "Competition"
-      },
-      {
-        "id": 8,
-        "title": "3rd Place - MOTHRA, Version '21",
-        "organizer": "NIT Trichy",
-        "date": "October 2021",
-        "type": "Competition"
-      },
-      {
-        "id": 9,
-        "title": "4th Place - TriNIT Hackathon",
+        "id": 4,
         "organizer": "NIT Warangal",
+        "title": "2nd Place - Trial By Code, IGNOSI '22",
+        "type": "Competition"
+      },
+      {
+        "date": "September 2022",
+        "id": 5,
+        "organizer": "Google",
+        "title": "Rank 1289 - Google Kick Start '22, Round E",
+        "type": "Competition"
+      },
+      {
+        "date": "May 2022",
+        "id": 6,
+        "organizer": "Google",
+        "title": "Rank 1699 - Google Kick Start '22, Round B",
+        "type": "Competition"
+      },
+      {
+        "date": "June 2022",
+        "id": 7,
+        "organizer": "NIT Trichy",
+        "title": "3rd Place - Logic Head, INFOTREK '22",
+        "type": "Competition"
+      },
+      {
+        "date": "October 2021",
+        "id": 8,
+        "organizer": "NIT Trichy",
+        "title": "3rd Place - MOTHRA, Version '21",
+        "type": "Competition"
+      },
+      {
         "date": "March 2024",
+        "id": 9,
+        "organizer": "NIT Warangal",
+        "title": "4th Place - TriNIT Hackathon",
         "type": "Hackathon"
       }
     ],
     "project_count": 48
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5861,
+    "NirmalScaria/le-git-graph": 5860,
     "PrefectHQ/prefect": 24017,
     "anthropics/skills": 180969,
     "apache/airflow": 47169,
@@ -2090,7 +2113,7 @@
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 918,
     "awslabs/mcp": 9777,
-    "axios/axios": 109385,
+    "axios/axios": 109384,
     "cloudposse/terraform-aws-tfstate-backend": 442,
     "expressjs/multer": 12086,
     "feast-dev/feast": 7327,
@@ -2101,5 +2124,10 @@
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23268
+  "views": 23264,
+  "source_updated_at": {
+    "github": "2026-10-14T04:00:20+00:00",
+    "leetcode": "2026-10-14T04:00:30+00:00",
+    "portfolio": "2026-10-14T04:02:11+00:00"
+  }
 }

@@ -23,6 +23,7 @@
 
 from __future__ import annotations
 
+import argparse
 import base64
 import datetime
 import html
@@ -33,10 +34,13 @@ import urllib.request
 from html import escape
 from pathlib import Path
 
+from vendor import github_stats_card, leetcode_card
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "svg"
 DATA_FILE = OUT / "data.json"
 README_PATH = ROOT / "README.md"
+OFFLINE = False
 
 # Palette matches the portfolio (brand/portfolio-react): warm near-black,
 # one blue family, green only for live/ok, amber only for LeetCode.
@@ -116,16 +120,16 @@ ICON_ROWS = [
 
 HEADERS = [
     ("experience", "01", "Experience", "where I work and what shipped"),
-    ("certs", "02", "Certifications and Badges", "verified on Credly"),
+    ("projects", "02", "Featured Projects", "what I have built"),
+    ("opensource", "03", "Open Source", "merged upstream work"),
+    ("certs", "04", "Certifications and Badges", "verified on Credly"),
     (
         "publications",
-        "03",
+        "05",
         "Publications, Talks and Recognition",
         "AWS samples, patterns, talks and programs",
     ),
-    ("projects", "04", "Featured Projects", "what I have built"),
-    ("stack", "05", "Tech Stack and Tools", "what I work with daily"),
-    ("opensource", "06", "Open Source", "merged upstream work"),
+    ("stack", "06", "Tech Stack and Tools", "what I work with daily"),
     (
         "community",
         "07",
@@ -152,7 +156,7 @@ CARD_SUMMARIES = {
     "kalchar": "Live portfolio and commission site for a traditional folk artist: Madhubani, Pichwai, Lippan and Gond art, custom orders and an admin panel.",
     "gitscope": "Chrome extension and web dashboard for deep GitHub profile insights: a 9-stat grid, activity heatmap, profile comparison and a leaderboard.",
     "ledger-sync": "Self-hosted personal finance dashboard with an AI chatbot that answers spending, tax and goal questions through 15 read-only tool calls.",
-    "leetcode-rating-predictor": "Predicts LeetCode contest rating changes with a dense neural network trained on 244K+ contest records, served by FastAPI and React.",
+    "leetcode-rating-predictor": "Predicts LeetCode contest rating changes with a dense neural network, lightweight NumPy inference, FastAPI and React.",
     "blue-green-aws-terraform": "Zero-downtime blue-green deployments on AWS in Terraform: ECS on EC2 behind an ALB, shipped by CodePipeline with KMS-encrypted artifacts.",
     "instagram-likes-leaderboard": "Browser tool that scans your Instagram posts to show your biggest fans, ghost followers and non-mutuals. No downloads or sign-ups.",
     "personal-portfolio": "My portfolio: a dark, data-driven React 19 site with live project screenshots, animated SVG covers and an ambient aurora background.",
@@ -161,7 +165,7 @@ CARD_SUMMARIES = {
     "leetcode-card-action": "GitHub Action that renders an animated LeetCode card with your contest rating history.",
     "oss-contributions-card-action": "GitHub Action that finds your upstream pull requests and renders them as SVG cards.",
     "readme-kit": "GitHub Action that turns one profile.yml into a full set of animated profile README cards.",
-    "skillcheck": "Conformance suite for Agent Skills (SKILL.md): 36 rules across 6 runtimes, on npm.",
+    "skillcheck": "Checks Agent Skills, including extension compatibility for Claude Code, Copilot and Cursor.",
     "itr-agent": "Local-first MCP server that walks you through filing an Indian income tax return, on npm.",
     "claude-skills": "Claude Code plugin marketplace with 16 curated plugins for dev workflow, git and clean code.",
     "claude-cost-optimizer": "Claude Code plugin that cuts costs 30 to 60% with concise responses, model routing and budget hooks.",
@@ -169,7 +173,7 @@ CARD_SUMMARIES = {
     "mcp-toolkit": "Drop-in auth, caching, rate limiting, logging and CORS for MCP servers built on the TypeScript SDK.",
     "claude-code-recipes": "47 copy-paste Claude Code recipes: commands, subagents, hooks, skills and CLAUDE.md templates.",
     "awesome-mcp-servers": "Curated list of Model Context Protocol servers, frameworks, clients and tutorials.",
-    "deploy-guide": "37 step-by-step deployment guides across 12 platforms, 14 frameworks and 6 databases.",
+    "deploy-guide": "Step-by-step deployment guides for web apps, APIs and databases across common hosting platforms.",
     "agent-recipes": "Copy-paste AI agent workflows for code review, testing, migrations, security scans and deploys.",
     "ai-git-hooks": "AI git hooks that review code, write commit messages and scan for security issues before you push.",
     "credly-badge-readme-action": "GitHub Action that syncs your Credly certifications and badges into your profile README.",
@@ -241,6 +245,8 @@ ALLOWED_HOSTS = (
 def fetch(
     url: str, body: dict | None = None, timeout: int = 20, token: str | None = None
 ) -> bytes:
+    if OFFLINE:
+        raise RuntimeError("network fetch disabled by --offline")
     # https only, and only the hosts this script reads from
     if not url.startswith(ALLOWED_HOSTS):
         raise ValueError(f"refusing to fetch {url}")
@@ -271,53 +277,26 @@ def fetch_leetcode(previous: dict) -> dict:
         "https://leetcode.com/graphql",
         {"query": LEETCODE_QUERY, "variables": {"u": LEETCODE_USER}},
     )
-    d = json.loads(raw)["data"]
-    rank = d["userContestRanking"]
-    solved = {
-        x["difficulty"]: x["count"]
-        for x in d["matchedUser"]["submitStats"]["acSubmissionNum"]
-    }
-    totals = {x["difficulty"]: x["count"] for x in d["allQuestionsCount"]}
-    history = [
-        round(x["rating"]) for x in d["userContestRankingHistory"] if x["attended"]
-    ]
-    return {
-        "badge": (rank.get("badge") or {}).get("name") or previous["badge"],
-        "rating": round(rank["rating"]),
-        "top": round(rank["topPercentage"], 2),
-        "contests": rank["attendedContestsCount"],
-        "solved": solved["All"],
-        "by_difficulty": {
-            k: [solved.get(k, 0), totals.get(k, 0)] for k in ("Easy", "Medium", "Hard")
-        },
-        "history": history,
-    }
+    fresh = leetcode_card.parse_profile(json.loads(raw), LEETCODE_USER)
+    # LeetCode sometimes answers without the badge; keep the last one over a blank pill
+    fresh["badge"] = fresh["badge"] or previous.get("badge", "")
+    return fresh
 
 
-GITHUB_QUERY = (
-    '{user(login:"Sagargupta16"){followers{totalCount} '
-    "repositories(ownerAffiliations:OWNER,isFork:false,first:100){totalCount nodes{name stargazerCount "
-    "languages(first:10,orderBy:{field:SIZE,direction:DESC}){edges{size node{name color}}}}} "
-    "contributionsCollection{totalCommitContributions totalPullRequestContributions "
-    "totalPullRequestReviewContributions totalIssueContributions contributionCalendar"
-    "{totalContributions weeks{contributionDays{contributionCount date}}}}}}"
-)
+def utc_today() -> datetime.date:
+    """Return today in UTC, the runner's and the validator's day, for expiries and years."""
+    return datetime.datetime.now(datetime.timezone.utc).date()
 
 
-def streaks(days: list[int]) -> tuple[int, int]:
-    """Current and longest run of days with at least one contribution."""
-    longest = run = 0
-    for count in days:
-        run = run + 1 if count else 0
-        longest = max(longest, run)
-    current = 0
-    # today may still be empty; a streak is only broken by an empty yesterday
-    tail = days[:-1] if days and days[-1] == 0 else days
-    for count in reversed(tail):
-        if not count:
-            break
-        current += 1
-    return current, longest
+def cert_status(certificate: dict, today: datetime.date) -> tuple[str, str]:
+    """Classify a certification: active through its expiry day, unknown without an ISO date."""
+    try:
+        expires = datetime.date.fromisoformat(str(certificate.get("expiryDate") or ""))
+    except ValueError:
+        return "unknown", "Expiry not recorded"
+    if expires < today:
+        return "expired", f"Expired {expires.isoformat()}"
+    return "active", f"Valid through {expires.isoformat()}"
 
 
 def fetch_github() -> dict | None:
@@ -325,45 +304,9 @@ def fetch_github() -> dict | None:
     if not token:
         print("no GITHUB_TOKEN, keeping the last github stats")
         return None
-    raw = fetch("https://api.github.com/graphql", {"query": GITHUB_QUERY}, token=token)
-    u = json.loads(raw)["data"]["user"]
-    repos = u["repositories"]["nodes"]
-    langs: dict[str, list] = {}
-    for repo in repos:
-        for edge in repo["languages"]["edges"]:
-            name = edge["node"]["name"]
-            entry = langs.setdefault(name, [0, edge["node"]["color"] or "#8b949e"])
-            entry[0] += edge["size"]
-    top = sorted(langs.items(), key=lambda kv: -kv[1][0])[:6]
-    total = sum(size for size, _ in langs.values()) or 1
-    cc = u["contributionsCollection"]
-    days = [
-        day["contributionCount"]
-        for week in cc["contributionCalendar"]["weeks"]
-        for day in week["contributionDays"]
-    ]
-    current, longest = streaks(days)
-    return {
-        "contributions": cc["contributionCalendar"]["totalContributions"],
-        "commits": cc["totalCommitContributions"],
-        "prs": cc["totalPullRequestContributions"],
-        "reviews": cc["totalPullRequestReviewContributions"],
-        "issues": cc["totalIssueContributions"],
-        "stars": sum(r["stargazerCount"] for r in repos),
-        "repo_stars": {r["name"]: r["stargazerCount"] for r in repos},
-        "followers": u["followers"]["totalCount"],
-        "repos": u["repositories"]["totalCount"],
-        "streak": current,
-        "longest": longest,
-        "active_days": sum(1 for c in days if c),
-        "calendar": [
-            [day["contributionCount"] for day in week["contributionDays"]]
-            for week in cc["contributionCalendar"]["weeks"]
-        ],
-        "languages": [
-            [name, round(size * 100 / total, 1), color] for name, (size, color) in top
-        ],
-    }
+    if OFFLINE:
+        raise RuntimeError("network fetch disabled by --offline")
+    return github_stats_card.fetch_stats("Sagargupta16", token, 6, set())
 
 
 VIEWS_URL = "https://komarev.com/ghpvc/?username=sagargupta16"
@@ -375,22 +318,34 @@ def fetch_views() -> int:
     return int(counts[-1].replace(",", ""))
 
 
+def record_refresh(data: dict, source: str) -> None:
+    """Record successful retrieval, never the time a cached snapshot was rendered."""
+    data.setdefault("source_updated_at", {})[source] = datetime.datetime.now(
+        datetime.timezone.utc
+    ).isoformat(timespec="seconds")
+
+
 def load_data() -> dict:
     data = json.loads(json.dumps(DEFAULT_DATA))
     if DATA_FILE.exists():
         data.update(json.loads(DATA_FILE.read_text(encoding="utf-8")))
+    if OFFLINE:
+        return data
     try:
         data["views"] = fetch_views()
+        record_refresh(data, "views")
     except Exception as exc:  # keep the last good count
         print(f"views fetch failed, reusing cached count: {exc}")
     try:
         data["leetcode"] = fetch_leetcode(data["leetcode"])
+        record_refresh(data, "leetcode")
     except Exception as exc:  # keep the last good values
         print(f"leetcode fetch failed, reusing cached values: {exc}")
     try:
         github = fetch_github()
         if github:
             data["github"] = github
+            record_refresh(data, "github")
     except Exception as exc:  # keep the last good values
         print(f"github fetch failed, reusing cached values: {exc}")
     return data
@@ -1290,12 +1245,22 @@ def portfolio_snapshot(experience: dict, projects: dict, extra: dict) -> dict:
                     "github",
                     "live",
                     "organization",
+                    "card_summary",
                 )
             }
             for p in projects.get("featured_projects", [])
         ],
         "community": [
-            {k: p.get(k) for k in ("title", "description", "tools_tech", "github")}
+            {
+                k: p.get(k)
+                for k in (
+                    "title",
+                    "description",
+                    "tools_tech",
+                    "github",
+                    "card_summary",
+                )
+            }
             for p in projects.get("community_projects", [])
         ],
         "intro": extra.get("personal", {}).get("intro", ""),
@@ -1399,36 +1364,44 @@ def _summary(text: str, limit: int = 118) -> str:
 
 def _card_text(p: dict, limit: int = 118) -> str:
     """Return the README card copy for a project: its one-liner, else the cut description."""
-    return CARD_SUMMARIES.get(_slug(p["title"])) or _summary(p["description"], limit)
+    return (
+        p.get("card_summary")
+        or CARD_SUMMARIES.get(_slug(p["title"]))
+        or _summary(p["description"], limit)
+    )
 
 
 def _chips(items: list[str], x: float, y: float, max_w: float, color: str) -> str:
     out, cx = [], x
     for item in items:
-        w = 12 + len(item) * 6.2
+        w = 16 + len(item) * 7.5
         if cx + w > x + max_w:
             break
         out.append(
             f'<rect x="{cx:.1f}" y="{y}" width="{w:.1f}" height="20" rx="10" fill="{color}14" stroke="{color}55"/>'
-            f'<text class="m" x="{cx + w / 2:.1f}" y="{y + 13.5}" text-anchor="middle" fill="{color}" font-size="9">{escape(item)}</text>'
+            f'<text class="m" x="{cx + w / 2:.1f}" y="{y + 14.5}" text-anchor="middle" fill="{color}" font-size="10.5">{escape(item)}</text>'
         )
         cx += w + 6
     return "".join(out)
 
 
 def render_project_card(p: dict, index: int) -> str:
-    w, h = 410, 196
+    w = 410
     live = bool(p.get("live"))
-    lines = _wrap(_card_text(p), 56)[:3]
+    titles = _wrap(p["title"], 34)
+    lines = _wrap(_card_text(p), 47)
+    body_y = 62 + 24 * len(titles)
+    line_h = 20
+    h = max(240, body_y + line_h * len(lines) + 58)
     body = "".join(
-        f'<text class="s" x="22" y="{86 + j * 18}" fill="rgba(255,255,255,0.68)" font-size="12.5">{escape(line)}</text>'
+        f'<text class="s" x="22" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="14">{escape(line)}</text>'
         for j, line in enumerate(lines)
     )
     status = (
         f'<circle cx="{w - 72}" cy="30" r="3.5" fill="{GREEN}"><animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>'
         f'<text class="m" x="{w - 62}" y="34" fill="{GREEN}" font-size="9">LIVE</text>'
         if live
-        else f'<text class="m" x="{w - 22}" y="34" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="9">SOURCE</text>'
+        else f'<text class="m" x="{w - 22}" y="34" text-anchor="end" fill="#a8b4c1" font-size="10.5">SOURCE</text>'
     )
     return "".join(
         [
@@ -1442,7 +1415,10 @@ def render_project_card(p: dict, index: int) -> str:
             f'<rect x="0" y="22" width="3" height="28" rx="1.5" fill="{BLUE_LIGHT}"/>',
             f'<text class="m" x="22" y="34" fill="{BLUE_LIGHT}" font-size="9">{escape(p.get("date", "").upper())}</text>',
             status,
-            f'<text class="t" x="22" y="62" fill="#f3f4f6" font-size="19">{escape(p["title"])}</text>',
+            "".join(
+                f'<text class="t" x="22" y="{62 + 24 * j}" fill="#f3f4f6" font-size="20">{escape(title)}</text>'
+                for j, title in enumerate(titles)
+            ),
             body,
             _chips(p.get("tools_tech", [])[:5], 22, h - 38, w - 44, SKY),
             f'<g clip-path="url(#c)"><rect x="-140" y="0" width="120" height="{h}" fill="url(#shine)" transform="skewX(-18)">'
@@ -1453,10 +1429,14 @@ def render_project_card(p: dict, index: int) -> str:
 
 
 def render_tool_card(p: dict, stars: int | None, index: int) -> str:
-    w, h = 270, 150
-    lines = _wrap(_card_text(p, 96), 38)[:3]
+    w = 270
+    titles = _wrap(p["title"], 27)
+    lines = _wrap(_card_text(p, 96), 33)
+    body_y = 44 + len(titles) * 22
+    line_h = 18
+    h = max(220, body_y + len(lines) * line_h + 44)
     body = "".join(
-        f'<text class="s" x="18" y="{68 + j * 16}" fill="rgba(255,255,255,0.66)" font-size="11">{escape(line)}</text>'
+        f'<text class="s" x="18" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="13">{escape(line)}</text>'
         for j, line in enumerate(lines)
     )
     star = (
@@ -1478,7 +1458,10 @@ def render_tool_card(p: dict, stars: int | None, index: int) -> str:
             f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{CARD}" stroke="rgba(255,255,255,0.09)"/>',
             f'<rect x="0" y="20" width="3" height="24" rx="1.5" fill="{SKY}">'
             f'<animate attributeName="opacity" values="1;0.4;1" dur="3s" begin="{index * 0.25:.2f}s" repeatCount="indefinite"/></rect>',
-            f'<text class="t" x="18" y="40" fill="#f3f4f6" font-size="15">{escape(p["title"])}</text>',
+            "".join(
+                f'<text class="t" x="18" y="{40 + 22 * j}" fill="#f3f4f6" font-size="16">{escape(title)}</text>'
+                for j, title in enumerate(titles)
+            ),
             star,
             body,
             _chips(p.get("tools_tech", [])[:3], 18, h - 32, w - 92, BLUE_LIGHT),
@@ -1498,16 +1481,9 @@ def cert_issuer(name: str) -> str:
 
 def active_certifications(pf: dict, today: datetime.date) -> tuple[int, str]:
     """Count unexpired industry certifications and name their issuers."""
-    # Credly keeps expired badges, so the count comes from the portfolio's
-    # expiry dates; the Credly block is the fallback when that data is missing.
+    # Credly keeps expired badges. An unknown expiry is not proof of active status.
     certs = pf.get("certifications") or []
-    if not certs:
-        return len(credly_badges(INDUSTRY_GROUP)), "AWS / TERRAFORM"
-    active = [
-        c
-        for c in certs
-        if not c.get("expiryDate") or c["expiryDate"] >= today.isoformat()
-    ]
+    active = [c for c in certs if cert_status(c, today)[0] == "active"]
     issuers = sorted(
         {cert_issuer(c["name"]) for c in active},
         key=lambda s: (s != "AWS", s),
@@ -1518,7 +1494,7 @@ def active_certifications(pf: dict, today: datetime.date) -> tuple[int, str]:
 def render_profile_badges(data: dict) -> str:
     gh = data.get("github") or {}
     lc = data["leetcode"]
-    today = datetime.date.today()
+    today = utc_today()
     years = today.year - CAREER_START[0] - (1 if today.month < CAREER_START[1] else 0)
     certs, issuers = active_certifications(data.get("portfolio") or {}, today)
     pills = [
@@ -1536,7 +1512,9 @@ def render_profile_badges(data: dict) -> str:
     ]
     w, h = 840, 104
     parts = [
-        svg_open(w, h, "; ".join(f"{k.title()} {v}" for k, v, _ in pills)),
+        svg_open(w, h, "; ".join(f"{k.title()} {v}" for k, v, _ in pills)).replace(
+            'role="img"', f'role="img" data-active-certifications="{certs}"'
+        ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}</style>",
     ]
     # two centered rows: four, then three
@@ -1586,21 +1564,21 @@ CONNECT = [
 
 def _button_label(label: str, has_icon: bool, w: int) -> str:
     if has_icon:
-        return f'<text class="m" x="48" y="27" fill="#f3f4f6" font-size="11">{label.upper()}</text>'
-    return f'<text class="m" x="{w / 2}" y="27" text-anchor="middle" fill="#f3f4f6" font-size="11">{label.upper()}</text>'
+        return f'<text class="m" x="40" y="28" fill="#f3f4f6" font-size="12">{label.upper()}</text>'
+    return f'<text class="m" x="{w / 2}" y="28" text-anchor="middle" fill="#f3f4f6" font-size="12">{label.upper()}</text>'
 
 
 def render_connect_button(label: str, icon_path: str | None, index: int) -> str:
-    w, h = 156, 44
+    w, h = 128, 44
     icon = (
-        f'<svg x="16" y="12" width="20" height="20" viewBox="0 0 24 24"><path d="{icon_path}" fill="rgba(255,255,255,0.9)"/></svg>'
+        f'<svg x="12" y="12" width="20" height="20" viewBox="0 0 24 24"><path d="{icon_path}" fill="rgba(255,255,255,0.9)"/></svg>'
         if icon_path
         else ""
     )
     return "".join(
         [
             svg_open(w, h, label),
-            f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.4px}}</style>",
+            f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:0.4px}}</style>",
             f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="22" fill="{CARD}" stroke="{BLUE_LIGHT}66"/>',
             f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="22" fill="{BLUE}22" opacity="0">'
             f'<animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.1;0.2;1" dur="5s" begin="{index * 0.5:.1f}s" repeatCount="indefinite"/></rect>',
@@ -1639,8 +1617,8 @@ def render_oss(data: dict) -> str | None:
     w, h = 840, 250
     tiles = [
         (str(len(merged)), "merged upstream"),
-        (str(len(review)), "in review"),
-        (str(len(repos)), "projects contributed to"),
+        (str(len(review)), "open PRs"),
+        (str(len(repos)), "repos with merges"),
         (
             f"{reach // 1000}K+" if reach >= 1000 else str(reach),
             "combined stars",
@@ -1650,7 +1628,7 @@ def render_oss(data: dict) -> str | None:
         svg_open(
             w,
             h,
-            f"Open source: {len(merged)} merged upstream, {len(review)} in review, across {len(repos)} projects",
+            f"Open source: {len(merged)} merged upstream, {len(review)} open PRs, {len(repos)} repositories with merges",
         ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.v{{font-family:{SANS};font-weight:800}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
@@ -1711,8 +1689,15 @@ def render_cards(data: dict) -> None:
             render_tool_card(p, repo_stars.get(name), i),
         )
     paths = {}
-    for _, _, slug, _ in CONNECT:
-        paths[slug] = fetch_simple_icon(slug)
+    for key, _, slug, _ in CONNECT:
+        # the icon path the last run drew into this button (render_connect_button)
+        icon_file = OUT / f"connect-{key}.svg"
+        found = icon_file.exists() and re.search(
+            r'viewBox="0 0 24 24"><path d="([^"]+)"',
+            icon_file.read_text(encoding="utf-8"),
+        )
+        cached = found.group(1) if found else None
+        paths[slug] = cached if OFFLINE else fetch_simple_icon(slug) or cached
     for i, (key, label, slug, _) in enumerate(CONNECT):
         write(f"connect-{key}.svg", render_connect_button(label, paths[slug], i))
 
@@ -1898,11 +1883,21 @@ def _publication_groups(pf: dict) -> list[tuple[str, list[tuple[str, str]]]]:
         (a["title"].replace(" - ", ", "), str(a.get("year", "")))
         for a in pf.get("achievements", [])
     ]
-    return [
+    groups = [
         ("AWS SAMPLES", samples),
-        ("PUBLICATIONS", papers),
+        ("PUBLICATIONS & REVIEWS", papers),
         ("TECH TALKS", talks),
         ("RECOGNITION", recognition),
+    ]
+    return [
+        (
+            label,
+            [
+                (re.sub(r"\bAPG\b", "AWS Prescriptive Guidance", title), year)
+                for title, year in items
+            ],
+        )
+        for label, items in groups
     ]
 
 
@@ -1920,26 +1915,29 @@ def _panel(
         f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{delay:.2f}s" dur="0.45s" fill="freeze"/>'
         f'<rect x="{x:.1f}" y="{y:.1f}" width="{pw:.1f}" height="{ph:.1f}" rx="12" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
         f'<rect x="{x:.1f}" y="{y + 16:.1f}" width="3" height="22" rx="1.5" fill="{accent}"/>'
-        f'<text class="m" x="{x + 18:.1f}" y="{y + 31:.1f}" fill="{accent}" font-size="9.5">{label}</text>'
+        f'<text class="m" x="{x + 18:.1f}" y="{y + 31:.1f}" fill="{accent}" font-size="10.5">{escape(label)}</text>'
     ]
     cy = y + 56
     for text, year in items:
-        lines = _wrap(text, 50)[:3]
+        lines = _wrap(text, 50)
         out.append(
             f'<circle cx="{x + 21:.1f}" cy="{cy - 4:.1f}" r="2.5" fill="{accent}"/>'
-            f'<text class="m" x="{x + pw - 16:.1f}" y="{cy:.1f}" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="8.5">{escape(year)}</text>'
             + "".join(
                 f'<text class="s" x="{x + 32:.1f}" y="{cy + j * 16:.1f}" fill="rgba(255,255,255,0.78)" font-size="12">{escape(line)}</text>'
                 for j, line in enumerate(lines)
             )
         )
-        cy += 16 * len(lines) + 12
+        cy += 16 * len(lines)
+        out.append(
+            f'<text class="m" x="{x + 32:.1f}" y="{cy:.1f}" fill="#a8b4c1" font-size="10.5">{escape(year)}</text>'
+        )
+        cy += 24
     out.append("</g>")
     return "".join(out)
 
 
 def _panel_height(items: list[tuple[str, str]]) -> float:
-    return 56 + sum(16 * len(_wrap(text, 50)[:3]) + 12 for text, _ in items) + 4
+    return 56 + sum(16 * len(_wrap(text, 50)) + 24 for text, _ in items) + 4
 
 
 def render_publications(pf: dict) -> str:
@@ -2034,7 +2032,7 @@ def render_oss_review(pf: dict) -> str:
     ]
     count = sum(len(v) for v in grouped.values())
     footer = "Community impact: fixed the AWS Ansible deploy and Elastic IP allocation in forem/selfhost, plus 3 accepted answers on GitHub Community Q&A"
-    return render_list_card(f"{count} PRS IN REVIEW", rows, AMBER, footer)
+    return render_list_card(f"{count} OPEN PRS", rows, AMBER, footer)
 
 
 def render_competitive(pf: dict) -> str:
@@ -2229,7 +2227,10 @@ def render_cta(label: str, primary: bool) -> str:
 
 
 def _img(src: str, alt: str, width: str = "100%") -> str:
-    return f'<img src="assets/svg/{src}" width="{width}" alt="{escape(alt, quote=True)}" />'
+    """Wrap one card image; widths are numeric because GitHub strips layout CSS."""
+    image = f'<img src="assets/svg/{src}" width="{width}" alt="{escape(alt, quote=True)}" />'
+    # Picture avoids GitHub's direct-link image fallback block styling.
+    return f"<picture>{image}</picture>"
 
 
 def _card(src: str, fallback: str, width: str = "100%") -> str:
@@ -2247,7 +2248,7 @@ def _oss_alt(pf: dict, merged: bool) -> str:
     status = "merged" if merged else "open"
     wanted = [e for e in pf.get("oss", []) if e.get("status") == status]
     repos = list(dict.fromkeys(e["repo"] for e in wanted if e.get("repo")))
-    kind = "merged upstream" if merged else "in review upstream"
+    kind = "merged upstream" if merged else "open upstream"
     if not repos:
         return f"Pull requests {kind}"
     return f"{len(wanted)} pull requests {kind}, in " + ", ".join(repos)
@@ -2275,16 +2276,19 @@ def _leetcode_alt(data: dict) -> str:
 
 
 def _link(href: str, inner: str) -> str:
-    return f'<a href="{href}">{inner}</a>'
+    return f'<a href="{escape(href, quote=True)}">{inner}</a>'
 
 
 def _header(key: str, title: str) -> str:
+    sources = [
+        f'<source media="(prefers-color-scheme: {theme})" srcset="assets/svg/header-{key}-{theme}.svg" />'
+        for theme in ("dark", "light")
+    ]
     return (
-        "<picture>\n"
-        f'  <source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-{key}-dark.svg">\n'
-        f'  <source media="(prefers-color-scheme: light)" srcset="assets/svg/header-{key}-light.svg">\n'
-        f"  {_img(f'header-{key}-dark.svg', title)}\n"
-        "</picture>"
+        "<picture>"
+        + "".join(sources)
+        + f'<img src="assets/svg/header-{key}-dark.svg" width="100%" alt="{escape(title)}" />'
+        + "</picture>"
     )
 
 
@@ -2314,10 +2318,10 @@ def _tool_cell(p: dict) -> str:
     )
 
 
-DIVIDER = _img("divider.svg", "")
+DIVIDER = "divider.svg"
 CREDLY_URL = "https://www.credly.com/users/sagar-gupta.f8eb96cc"
-MERGED_URL = "https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16"
-REVIEW_URL = "https://github.com/pulls?q=is%3Apr+author%3ASagargupta16+is%3Aopen+-user%3ASagargupta16"
+MERGED_URL = "https://github.com/search?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16&type=pullrequests"
+REVIEW_URL = "https://github.com/search?q=is%3Apr+author%3ASagargupta16+is%3Aopen+-user%3ASagargupta16&type=pullrequests"
 SNAKE = (
     "<picture>\n"
     '  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Sagargupta16/Sagargupta16/output/github-snake-dark.svg" />\n'
@@ -2328,6 +2332,7 @@ SNAKE = (
 
 
 def render_readme(data: dict) -> str:
+    divider = _img(DIVIDER, "")
     pf = data.get("portfolio") or {}
     projects = [
         p for p in pf.get("featured", []) if p.get("organization") != "aws-samples"
@@ -2380,45 +2385,49 @@ def render_readme(data: dict) -> str:
         ),
         _link(
             PORTFOLIO_URL,
-            _img(
-                "profile-badges.svg",
-                "Followers, total stars, LeetCode, certifications, years at AWS, portfolio",
-            ),
+            _card("profile-badges.svg", "Profile statistics and active certifications"),
         ),
         _card("intro.svg", pf.get("intro") or "About"),
-        _row(connect, "15.5%"),
-        DIVIDER,
+        _row(connect, "128"),
+        divider,
         _header("experience", "Experience"),
         _card("experience.svg", "Career timeline and customer engagements"),
         _card("highlights.svg", "Highlights"),
         _card("worked-with.svg", "Worked with: companies and customers"),
-        DIVIDER,
-        _header("certs", "Certifications and Badges"),
-        _link(CREDLY_URL, _img("certs.svg", _certs_alt())),
-        _get_this_card("certs"),
-        DIVIDER,
-        _header("publications", "Publications, Talks and Recognition"),
-        _card("publications.svg", "Publications, talks and recognition"),
-        DIVIDER,
+        divider,
         _header("projects", "Featured Projects"),
-        _row(samples, "49%"),
-        _row(project_cells, "49%"),
-        _row(ctas, "30%"),
-        DIVIDER,
-        _header("stack", "Tech Stack and Tools"),
-        _card("stack.svg", "Tech stack"),
-        _card("ai-stack.svg", "AI-assisted engineering"),
-        DIVIDER,
+        _row(samples, "400"),
+        _row(project_cells, "400"),
+        _row(ctas, "250"),
+        divider,
         _header("opensource", "Open Source"),
         _link(MERGED_URL, _card("oss.svg", "Open source summary")),
         _link(MERGED_URL, _img("oss-merged.svg", _oss_alt(pf, merged=True))),
         _link(REVIEW_URL, _img("oss-review.svg", _oss_alt(pf, merged=False))),
         _get_this_card("oss"),
-        DIVIDER,
+        divider,
+        _header("certs", "Certifications and Badges"),
+        _link(
+            CREDLY_URL,
+            _card("certs-status.svg", "Active and previously earned certifications"),
+        ),
+        _link(CREDLY_URL, _img("certs.svg", _certs_alt())),
+        _get_this_card("certs"),
+        divider,
+        _header("publications", "Publications, Talks and Recognition"),
+        _link(
+            PORTFOLIO_URL,
+            _card("publications.svg", "Publications, talks and recognition"),
+        ),
+        divider,
+        _header("stack", "Tech Stack and Tools"),
+        _card("stack.svg", "Tech stack"),
+        _card("ai-stack.svg", "AI-assisted engineering"),
+        divider,
         _header("community", "Community and Developer Tools"),
-        _row(top_tools, "32%"),
-        _row([see_all], "30%"),
-        DIVIDER,
+        _row(top_tools, "270"),
+        _row([see_all], "250"),
+        divider,
         _header("stats", "Coding Stats"),
         _img("github.svg", _github_alt(data)),
         _get_this_card("github"),
@@ -2429,13 +2438,15 @@ def render_readme(data: dict) -> str:
         _get_this_card("leetcode"),
         _card("competitive.svg", "Competitive programming"),
         SNAKE,
-        DIVIDER,
+        divider,
         _header("education", "Education"),
         _card("education.svg", "Education"),
-        DIVIDER,
+        divider,
         # a 1px copy of the komarev counter keeps visits counted; the number itself shows in profile-badges.svg
-        _card("footer.svg", "Thanks for visiting")
+        _link(PORTFOLIO_URL, _card("footer.svg", "Visit my portfolio"))
         + f' <img src="{VIEWS_URL}" width="1" height="1" alt="" />',
+        _row([connect[i] for i in (1, 2, 3)], "128"),
+        _card("freshness.svg", "Last successful data refreshes"),
     ]
     return "\n\n".join(blocks) + "\n"
 
@@ -2446,8 +2457,8 @@ def render_community_page(data: dict) -> str:
     blocks = [
         GENERATED_NOTE,
         _header("community", "Community and Developer Tools"),
-        _row([_tool_cell(p) for p in tools], "32%"),
-        _row([_link(PROFILE_URL, _img("cta-profile.svg", "Back to profile"))], "30%"),
+        _row([_tool_cell(p) for p in tools], "270"),
+        _row([_link(PROFILE_URL, _img("cta-profile.svg", "Back to profile"))], "250"),
     ]
     return "\n\n".join(blocks) + "\n"
 
@@ -2481,8 +2492,11 @@ def write(name: str, content: str) -> None:
 
 
 def refresh_portfolio(data: dict) -> None:
+    if OFFLINE:
+        return
     try:
         data["portfolio"] = fetch_portfolio()
+        record_refresh(data, "portfolio")
     except Exception as exc:  # keep the last good snapshot
         print(f"portfolio fetch failed, reusing cached snapshot: {exc}")
     if data.get("portfolio"):
@@ -2494,7 +2508,8 @@ def refresh_portfolio(data: dict) -> None:
 
 def write_optional(name: str, content: str | None) -> None:
     if content is None:
-        print(f"{name} kept as is: its data fetch failed")
+        reason = "using the offline cache" if OFFLINE else "its data fetch failed"
+        print(f"{name} kept as is: {reason}")
     else:
         write(name, content)
 
@@ -2523,11 +2538,109 @@ def write_portfolio_cards(data: dict) -> None:
     write("cta-profile.svg", render_cta("Back to profile", False))
 
 
+def render_note(title: str, lines: list[str], accent: str = BLUE_LIGHT) -> str:
+    """Draw a wrapped status card whose lines fade in one after another."""
+    width = 840
+    wrapped = [line for text in lines for line in _wrap(text, 94)]
+    title_lines = _wrap(title, 72)
+    start = 28 + len(title_lines) * 25
+    height = start + len(wrapped) * 23 + 18
+    parts = [
+        svg_open(width, height, title + ": " + "; ".join(lines)),
+        f'<rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="14" fill="{BG}" stroke="#24313b"/>',
+        f'<rect x="0" y="16" width="3" height="22" rx="1.5" fill="{accent}">'
+        '<animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/></rect>',
+    ]
+    for i, text in enumerate(title_lines):
+        parts.append(
+            _fade_group(
+                0.15 + i * 0.1,
+                f'<text x="20" y="{32 + i * 25}" fill="{accent}" font-family="{SANS}" font-size="20" font-weight="700">{escape(text)}</text>',
+            )
+        )
+    for i, text in enumerate(wrapped):
+        parts.append(
+            _fade_group(
+                0.15 + (len(title_lines) + i) * 0.1,
+                f'<text x="20" y="{start + i * 23}" fill="#cbd5e1" font-family="{SANS}" font-size="14">{escape(text)}</text>',
+            )
+        )
+    return "".join(parts) + SVG_CLOSE
+
+
+def render_certification_status(data: dict) -> str:
+    pf = data.get("portfolio") or {}
+    today = utc_today()
+    count, issuers = active_certifications(pf, today)
+    statuses = [(c, *cert_status(c, today)) for c in pf.get("certifications", [])]
+    lines = [
+        f"Previously earned: {c['name']}. {detail}."
+        for c, status, detail in statuses
+        if status == "expired"
+    ]
+    lines.extend(
+        f"Expiry not recorded: {c['name']}."
+        for c, status, _ in statuses
+        if status == "unknown"
+    )
+    if not lines:
+        lines = ["Active status is based on the recorded certification expiry dates."]
+    lines.append("The Credly gallery below also includes learning and partner badges.")
+    return render_note(f"{count} active {issuers} certifications", lines).replace(
+        'role="img"', f'role="img" data-active-certifications="{count}"'
+    )
+
+
+def render_freshness(data: dict) -> str:
+    stamps = data.get("source_updated_at") or {}
+    lines = []
+    for source, label in (
+        ("github", "GitHub"),
+        ("leetcode", "LeetCode"),
+        ("portfolio", "Portfolio"),
+    ):
+        stamp = stamps.get(source)
+        if not stamp:
+            lines.append(f"{label}: saved snapshot; refresh date unavailable.")
+            continue
+        # the date alone says how old a snapshot is, and keeps the card a pure
+        # function of data.json, so CI can diff a re-render against the commit
+        try:
+            when = datetime.datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+            lines.append(f"{label}: verified {when:%d %b %Y}.")
+        except (ValueError, TypeError):
+            lines.append(f"{label}: saved snapshot; refresh date unavailable.")
+    return render_note("Data refreshes", lines)
+
+
 def main() -> None:
+    global OFFLINE
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--offline",
+        action="store_true",
+        help="Regenerate using checked-in snapshots and icons, without network requests.",
+    )
+    args = parser.parse_args()
+    OFFLINE = args.offline
     OUT.mkdir(parents=True, exist_ok=True)
     data = load_data()
     refresh_portfolio(data)
     write("data.json", json.dumps(data, indent=2) + "\n")
+    # Use one successful (or last-good) snapshot for every screen and motion
+    # preference. Independent Action fetches could otherwise disagree.
+    if data.get("github"):
+        write(
+            "github.svg",
+            github_stats_card.render_card(
+                data["github"], "Sagargupta16", "GITHUB | @SAGARGUPTA16", BLUE_LIGHT
+            )
+            + "\n",
+        )
+    write(
+        "leetcode.svg",
+        leetcode_card.render_card(data["leetcode"], LEETCODE_USER) + "\n",
+    )
     write("experience.svg", render_experience(data))
     write("highlights.svg", render_highlights(data))
     write("hero.svg", render_hero(data))
@@ -2536,9 +2649,9 @@ def main() -> None:
     render_cards(data)
     write_portfolio_cards(data)
     for name, content in (
-        ("ai-stack.svg", render_ai_stack()),
+        ("ai-stack.svg", None if OFFLINE else render_ai_stack()),
         ("oss.svg", render_oss(data)),
-        ("stack.svg", render_stack()),
+        ("stack.svg", None if OFFLINE else render_stack()),
     ):
         write_optional(name, content)
     write("sample-org-governance.svg", render_org_card())
@@ -2547,6 +2660,8 @@ def main() -> None:
         for theme in ("dark", "light"):
             write(f"header-{key}-{theme}.svg", render_header(num, title, sub, theme))
     write("divider.svg", render_divider())
+    write("certs-status.svg", render_certification_status(data))
+    write("freshness.svg", render_freshness(data))
     write_readme(data)
 
 

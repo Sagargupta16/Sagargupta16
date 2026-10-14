@@ -67,7 +67,7 @@ preferences:
   
 # Resume (source of truth: latex-resume releases)
 resume:
-  path: "https://github.com/Sagargupta16/latex-resume/releases/download/latest/resume.pdf"
+  path: "https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf"
 
 # Metrics
 metrics:

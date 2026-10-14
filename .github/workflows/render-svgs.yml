@@ -11,7 +11,10 @@ on:
   push:
     branches: [main]
     paths:
-      - scripts/render-svgs.py
+      - scripts/**
+      - .github/config/profiles.yml
+      - .github/workflows/render-svgs.yml
+      - tests/**
       - assets/logos/**
 
 permissions:
@@ -30,22 +33,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: GitHub stats card
-        uses: Sagargupta16/github-stats-card-action@4a7221cb12bbfb6e89d97c7a2623b60596bf105e # v1.1.0
-        with:
-          username: Sagargupta16
-          output: assets/svg/github.svg
-
-      - name: LeetCode card
-        uses: Sagargupta16/leetcode-card-action@ad7ddec98a2a2e6dfa3feed553e629a6df1a52e4 # v1.0.1
-        with:
-          username: sagargupta1610
-          output: assets/svg/leetcode.svg
-
-      - name: Render SVGs
+      - name: Fetch once and render all SVG variants
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/render-svgs.py
+
+      - name: Validate generated profile
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/validate-readme.py
 
       - name: Commit updated SVGs
         run: |

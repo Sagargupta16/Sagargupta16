@@ -202,7 +202,7 @@ MILESTONES = [
     ("2021", "MCA", "NIT Warangal", "Warangal, India"),
     ("2023", "Software Developer Intern", "Ikarus-3D", "Mohali, India"),
     ("2024", "ProServe DevOps Intern", "AWS", "Hyderabad, India"),
-    ("2024", "Cloud Consultant", "AWS", "Hyderabad, India"),
+    ("2024", "ProServe (Cloud Consultant)", "AWS", "Hyderabad, India"),
 ]
 ENGAGEMENTS = [
     ("Oct 2024 to Aug 2025", "State Street", "Terraform module library"),
@@ -229,8 +229,8 @@ SVG_CLOSE = "</svg>"
 AWS_NAME = "Amazon Web Services"
 # One wording for the current AWS title everywhere on the profile, matching the
 # portfolio's experience.json and the resume: short on tight cards, long in text.
-AWS_TITLE = "Cloud Consultant (DevOps/MLOps)"
-AWS_TITLE_LONG = f"{AWS_TITLE}, AWS Professional Services"
+AWS_TITLE = "ProServe (Cloud Consultant) - DevOps/MLOps"
+AWS_TITLE_LONG = f"{AWS_TITLE} at AWS"
 INDUSTRY_GROUP = "Industry Certifications"
 PORTFOLIO_URL = "https://sagargupta.online/portfolio-react/"
 ALLOWED_HOSTS = (
@@ -751,21 +751,29 @@ def render_experience(data: dict) -> str:
         _rail(left, right, top_y, 0.3, draw),
     ]
     last = len(MILESTONES) - 1
-    for i, (year, what, org, city) in enumerate(MILESTONES):
+    # a title longer than one line ("ProServe (Cloud Consultant)" on the edge node) wraps,
+    # and every node's org and city drop by the same amount so the row stays aligned
+    titles = [_wrap(what, 25) for _, what, _, _ in MILESTONES]
+    drop = 16 * (max(len(t) for t in titles) - 1)
+    for i, (year, _, org, city) in enumerate(MILESTONES):
         x = left + i * step
         at = 0.3 + draw * i / last
         current = i == last
         color = GREEN if current else BLUE_LIGHT
         label = f"{year}  FULL TIME" if current else year
+        what_text = "".join(
+            f'<text class="t" x="{x}" y="{top_y + 30 + j * 16}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(line)}</text>'
+            for j, line in enumerate(titles[i])
+        )
         parts.append(_node(x, top_y, at, color, ring=current))
         parts.append(
             _fade_group(
                 at,
                 (
                     f'<text class="m" x="{x}" y="{top_y - 22}" text-anchor="middle" fill="{color}" font-size="10">{label}</text>'
-                    f'<text class="t" x="{x}" y="{top_y + 30}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(what)}</text>'
-                    f'<text class="t" x="{x}" y="{top_y + 47}" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="11.5">{escape(org)}</text>'
-                    f'<text class="m" x="{x}" y="{top_y + 63}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">{escape(city.upper())}</text>'
+                    + what_text
+                    + f'<text class="t" x="{x}" y="{top_y + 47 + drop}" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="11.5">{escape(org)}</text>'
+                    f'<text class="m" x="{x}" y="{top_y + 63 + drop}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">{escape(city.upper())}</text>'
                 ),
             )
         )
@@ -1823,7 +1831,12 @@ def render_worked_with(pf: dict) -> str:
         x = pad + i * (tw + gap)
         cx = x + tw / 2
         begin = 0.15 + i * 0.12
-        lines = _wrap(role, 22)[:2]
+        # 3 rows fit the tile ([:2] cut "- DevOps/MLOps" off the AWS title); keep " - " on the
+        # first half so no row starts with the hyphen
+        lines = [
+            line.replace("\x01", " ")
+            for line in _wrap(role.replace(" - ", "\x01- "), 22)[:3]
+        ]
         role_text = "".join(
             f'<text class="s" x="{cx:.1f}" y="{136 + j * 16}" text-anchor="middle" fill="rgba(255,255,255,0.62)" font-size="11.5">{escape(line)}</text>'
             for j, line in enumerate(lines)

@@ -51,18 +51,18 @@ class ValidateReadmeTests(unittest.TestCase):
             encoding="utf-8",
         )
         self.write_svg("profile-badges.svg", 'data-active-certifications="1"')
-        self.write_svg("profile-badges-mobile.svg", 'data-active-certifications="1"')
+        self.write_svg("profile-badges-light.svg", 'data-active-certifications="1"')
         self.readme = (
             '<a href="https://example.com/">'
-            '<picture><source media="(max-width: 600px)" '
-            'srcset="assets/svg/profile-badges-mobile.svg">'
+            '<picture><source media="(prefers-color-scheme: light)" '
+            'srcset="assets/svg/profile-badges-light.svg">'
             '<img src="assets/svg/profile-badges.svg" alt="Cloud profile"></picture></a>\n'
             '<a href="https://example.com/resume.pdf">Resume</a>\n'
             '<a href="https://leetcode.com/coder123/">LeetCode</a>\n'
             '<a href="https://github.com/search?q=is%3Apr&amp;type=pullrequests">PRs</a>\n'
         )
         (self.root / "COMMUNITY.md").write_text(
-            '<img src="assets/svg/profile-badges-mobile.svg" alt="Community">',
+            '<img src="assets/svg/profile-badges-light.svg" alt="Community">',
             encoding="utf-8",
         )
         self.save_readme()
@@ -83,9 +83,9 @@ class ValidateReadmeTests(unittest.TestCase):
     def test_valid_profile_with_escaped_search_query(self):
         self.assertEqual([], self.issues())
 
-    def test_missing_mobile_srcset_asset_fails(self):
+    def test_missing_srcset_asset_fails(self):
         self.readme = self.readme.replace(
-            "assets/svg/profile-badges-mobile.svg", "assets/svg/missing.svg"
+            "assets/svg/profile-badges-light.svg", "assets/svg/missing.svg"
         )
         self.save_readme()
         self.assertTrue(
@@ -97,8 +97,8 @@ class ValidateReadmeTests(unittest.TestCase):
 
     def test_every_srcset_candidate_is_checked(self):
         self.readme = self.readme.replace(
-            'srcset="assets/svg/profile-badges-mobile.svg"',
-            'srcset="assets/svg/profile-badges-mobile.svg 1x, assets/svg/missing.svg 2x"',
+            'srcset="assets/svg/profile-badges-light.svg"',
+            'srcset="assets/svg/profile-badges-light.svg 1x, assets/svg/missing.svg 2x"',
         )
         self.save_readme()
         self.assertTrue(any("missing.svg" in issue for issue in self.issues()))

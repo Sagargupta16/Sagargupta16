@@ -4,12 +4,11 @@ All notable changes to this profile README repository.
 
 ## [4.15.0] - 2026-10-14
 
-- Phone layouts: every card has a 320px variant that `<picture>` picks below 600px, project and tool cards wrap naturally, contact buttons are larger and small text is bigger
-- Phone cards move like the desktop ones: blocks fade and rise in order, accent bars pulse, a shine sweeps each card, the career rail and rating chart draw in, the hero carries the node graph and rotating lines, GitHub gains a 20-week heatmap and LeetCode difficulty bars grow in
+- Project and tool cards wrap naturally at numeric widths, contact buttons are larger and small text is bigger
 - Featured projects and upstream contributions now follow experience; publications and the closing card link to the portfolio
 - Upstream PR links use public GitHub search, and the cards say "open PRs" and "repos with merges"
-- A certification status card separates active certifications from previously earned ones, and a freshness card shows when each source last refreshed; unsupported runtime and model-training claims removed
-- GitHub stats and LeetCode cards are drawn from the vendored v1.1.0 / v1.0.1 renderers, so desktop and phone share one fetch; `--offline` regenerates from the checked-in data
+- A certification status card separates active certifications from previously earned ones, and a freshness card shows when each source last refreshed; both fade in line by line; unsupported runtime and model-training claims removed
+- GitHub stats and LeetCode cards are drawn from the vendored v1.1.0 / v1.0.1 renderers, so they and the hero and profile badges share one fetch; `--offline` regenerates from the checked-in data
 - `scripts/validate-readme.py` replaces the PowerShell/yq validator (`validate-profiles.ps1` now calls it): image references, links, usernames, the configured role, years at AWS from `career.start_date` and the active certification count; `validate-profiles.yml` also runs on pull requests and fails when the committed output differs from a re-render
 - The LeetCode badge keeps its last value when a response omits it, and every certification count uses one expiry rule on the UTC date
 - The Credly workflow has its own concurrency group, so a queued render can no longer cancel it, and dispatches the renderer after a badge change

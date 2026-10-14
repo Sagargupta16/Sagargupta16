@@ -17,25 +17,9 @@ SPEC.loader.exec_module(renderer)
 
 
 class RendererTests(unittest.TestCase):
-    def test_divider_sources_are_resolved_when_readme_is_rendered(self):
-        data = json.loads(renderer.DATA_FILE.read_text(encoding="utf-8"))
-        with tempfile.TemporaryDirectory() as directory:
-            out = Path(directory)
-            with patch.object(renderer, "OUT", out):
-                self.assertNotIn("divider-mobile.svg", renderer.render_readme(data))
-                (out / "divider-mobile.svg").touch()
-                self.assertIn("divider-mobile.svg", renderer.render_readme(data))
-
-    def test_picture_selects_the_phone_layout_on_small_screens(self):
-        with tempfile.TemporaryDirectory() as directory:
-            out = Path(directory)
-            (out / "card-mobile.svg").touch()
-            with patch.object(renderer, "OUT", out):
-                picture = ET.fromstring(renderer._img("card.svg", "A & B", "400"))
-        sources = picture.findall("source")
-        self.assertEqual(len(sources), 1)
-        self.assertEqual(sources[0].get("media"), "(max-width: 600px)")
-        self.assertIn("card-mobile.svg", sources[0].get("srcset"))
+    def test_picture_wraps_image_with_numeric_width(self):
+        picture = ET.fromstring(renderer._img("card.svg", "A & B", "400"))
+        self.assertEqual(picture.findall("source"), [])
         self.assertEqual(picture.find("img").get("width"), "400")
         self.assertEqual(picture.find("img").get("alt"), "A & B")
         self.assertNotIn("style=", ET.tostring(picture, encoding="unicode"))
@@ -87,14 +71,13 @@ class RendererTests(unittest.TestCase):
             "card_summary": " ".join(["Useful information"] * 20),
             "tools_tech": ["Python", "TypeScript"],
         }
-        for mobile in (False, True):
-            root = ET.fromstring(renderer.render_project_card(project, 0, mobile))
-            height = float(root.get("height"))
-            texts = root.findall(".//{http://www.w3.org/2000/svg}text")
-            for text in texts:
-                self.assertLess(float(text.get("y")), height)
-            body = " ".join("".join(text.itertext()) for text in texts)
-            self.assertIn(project["card_summary"], body)
+        root = ET.fromstring(renderer.render_project_card(project, 0))
+        height = float(root.get("height"))
+        texts = root.findall(".//{http://www.w3.org/2000/svg}text")
+        for text in texts:
+            self.assertLess(float(text.get("y")), height)
+        body = " ".join("".join(text.itertext()) for text in texts)
+        self.assertIn(project["card_summary"], body)
 
     def test_links_escape_queries_without_changing_destination(self):
         url = renderer.MERGED_URL

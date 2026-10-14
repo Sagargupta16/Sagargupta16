@@ -70,7 +70,7 @@ jobs:
             git commit -m "chore: update Credly badges"
             git pull --rebase --autostash origin main
             git push
-            # the renderer redraws the phone card and alt text from the new badges;
+            # the renderer redraws the README alt text from the new badges;
             # a GITHUB_TOKEN push starts no workflows, but a dispatch does
             gh workflow run render-svgs.yml --ref main
           fi

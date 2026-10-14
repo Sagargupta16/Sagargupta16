@@ -254,8 +254,7 @@ def certification_issues(
     issues = []
     for path, tree in trees.items():
         count = tree.get("data-active-certifications")
-        card_name = path.stem.removesuffix("-mobile")
-        if card_name in {"profile-badges", "certs-status"} and count is None:
+        if path.stem in {"profile-badges", "certs-status"} and count is None:
             issues.append(
                 f"{path.relative_to(root)}: missing active certification metadata"
             )

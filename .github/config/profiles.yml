@@ -55,7 +55,7 @@ contact:
 
 # Professional timeline (for manual badge updates)
 career:
-  current_role: "ProServe (Cloud Consultant) - DevOps/MLOps"
+  current_role: "Cloud Consultant (DevOps/MLOps)"
   company: "Amazon Web Services (AWS)"
   start_date: "2024-08"  # FTE start per resume (internship Mar-Jul 2024). Update Experience badge in README when this changes
 
@@ -67,7 +67,7 @@ preferences:
   
 # Resume (source of truth: latex-resume releases)
 resume:
-  path: "https://github.com/Sagargupta16/latex-resume/releases/download/latest/resume.pdf"
+  path: "https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf"
 
 # Metrics
 metrics:

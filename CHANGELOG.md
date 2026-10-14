@@ -2,6 +2,16 @@
 
 All notable changes to this profile README repository.
 
+## [Unreleased]
+
+- Keep the profile SVG-only while adding narrow layouts, naturally wrapping project/tool cards and larger contact buttons.
+- Supply static SVG alternatives for reduced-motion preferences, including the cards produced by external Actions.
+- Move featured projects and upstream contributions directly after experience; link publications and the closing card to the portfolio.
+- Use public GitHub search for upstream pull requests and distinguish open PRs from reviews and repositories with merged work.
+- Distinguish active certifications from previously earned badges; remove unsupported runtime and model-training claims.
+- Improve small text and publication metadata, and expose the last successful source refresh without treating cached data as newly fetched.
+- Regenerate from cached inputs with `--offline`; validate image references, static alternatives, profile data and generated markup before automation commits.
+
 ## [4.13.3] - 2026-10-11
 
 - GitHub stats card on github-stats-card-action v1.1.0: every contribution-calendar level and language swatch now reaches WCAG 3:1 on the card, so quiet days no longer vanish (80 contrast errors to 0)

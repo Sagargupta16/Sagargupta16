@@ -16,47 +16,51 @@ on:
 permissions:
   contents: write
 
+# The daily renderer also updates variants of this card; serialize both writers.
+concurrency:
+  group: render-readme-svgs
+  cancel-in-progress: false
+
 jobs:
   update-badges:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: Install yq (YAML parser)
-        run: |
-          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-          sudo chmod +x /usr/local/bin/yq
-
       - name: Read Credly username from config
         id: config
         run: |
-          CREDLY_USER=$(yq '.credly.username' .github/config/profiles.yml)
-          if [ -z "$CREDLY_USER" ] || [ "$CREDLY_USER" = "null" ]; then
-            echo "::error::Failed to read credly.username from profiles.yml"
-            exit 1
-          fi
-          echo "credly_user=$CREDLY_USER" >> $GITHUB_OUTPUT
-          echo "Credly username: $CREDLY_USER"
+          CREDLY_USER=$(python scripts/validate-readme.py --config-value credly.username)
+          echo "credly_user=$CREDLY_USER" >> "$GITHUB_OUTPUT"
 
       - name: Update Credly badges
         id: credly
         uses: Sagargupta16/credly-badge-readme-action@558f61895d960b06c29c856d34c22cd47fb2e1be # v1.2.0
         with:
           credly-username: ${{ steps.config.outputs.credly_user }}
-          # the block lives in a data file; scripts/render-svgs.py draws it as assets/svg/certs.svg
+          # The action owns the badge data and original certification card.
           readme-path: assets/credly-badges.md
           # also draw every badge as the certifications card the README shows
           output: both
           svg-path: assets/svg/certs.svg
 
+      - name: Refresh responsive and static variants
+        run: python scripts/render-svgs.py --offline
+
+      - name: Validate generated profile
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/validate-readme.py
+
       - name: Show diff
         run: |
-          if git diff --quiet assets/credly-badges.md; then
-            echo "No badge changes detected."
+          if git diff --quiet assets/credly-badges.md assets/svg README.md COMMUNITY.md; then
+            echo "No generated profile changes detected."
           else
             echo "Changes detected:"
-            git diff assets/credly-badges.md
+            git diff --stat assets/credly-badges.md assets/svg README.md COMMUNITY.md
           fi
 
       - name: Commit changes
@@ -65,9 +69,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/credly-badges.md assets/svg/certs.svg
+          git add assets/credly-badges.md assets/svg README.md COMMUNITY.md
           if ! git diff --cached --quiet; then
             git commit -m "chore: update Credly badges"
+            git pull --rebase --autostash origin main
             git push
           fi
 

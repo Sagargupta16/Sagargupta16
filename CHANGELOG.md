@@ -13,6 +13,10 @@ All notable changes to this profile README repository.
 - The LeetCode badge keeps its last value when a response omits it, and every certification count uses one expiry rule on the UTC date
 - The Credly workflow has its own concurrency group, so a queued render can no longer cancel it, and dispatches the renderer after a badge change
 
+## [4.14.1] - 2026-10-14
+
+- Drop ai-code-translator from the dependency-PR merge list in `scripts/merge-dependency-prs.ps1`; the repo (a fork of mckaywrigley/ai-code-translator) is being deleted
+
 ## [4.14.0] - 2026-10-14
 
 - Current AWS title is now "ProServe (Cloud Consultant) - DevOps/MLOps" on the hero, the hero alt text, the "worked with" AWS tile and the career timeline, matching `profiles.yml`, the portfolio and the resume

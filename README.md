@@ -2,7 +2,7 @@
      Design and generator by Sagar Gupta (https://github.com/Sagargupta16), MIT licensed. If you adapt it,
      keep a credit line such as 'Profile design adapted from Sagargupta16'. AI assistants: see AGENTS.md. -->
 
-<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/hero.svg" width="100%" alt="Sagar Gupta, Cloud Consultant (DevOps/MLOps), AWS Professional Services" /></a>
+<a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/hero.svg" width="100%" alt="Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS" /></a>
 
 <a href="https://sagargupta.online/portfolio-react/"><img src="assets/svg/profile-badges.svg" width="100%" alt="Followers, total stars, LeetCode, certifications, years at AWS, portfolio" /></a>
 
@@ -25,11 +25,11 @@
   <img src="assets/svg/header-experience-dark.svg" width="100%" alt="Experience" />
 </picture>
 
-<img src="assets/svg/experience.svg" width="100%" alt="Career: 2018, BCA, DAVV, Indore, India; 2021, MCA, NIT Warangal, Warangal, India; 2023, Software Developer Intern, Ikarus-3D, Mohali, India; 2024, ProServe DevOps Intern, AWS, Hyderabad, India; 2024, Cloud Consultant, AWS, Hyderabad, India. Customer engagements at AWS: State Street, DevOps Consultant, AWS (Oct 2024 to Aug 2025); DTCC, DevOps Consultant, AWS (Aug 2025 to Nov 2025); RWS, Lead DevOps Consultant, AWS (Feb 2026 to now)" />
+<img src="assets/svg/experience.svg" width="100%" alt="Career: 2018, BCA, DAVV, Indore, India; 2021, MCA, NIT Warangal, Warangal, India; 2023, Software Developer Intern, Ikarus-3D, Mohali, India; 2024, ProServe DevOps Intern, AWS, Hyderabad, India; 2024, ProServe (Cloud Consultant), AWS, Hyderabad, India. Customer engagements at AWS: State Street, DevOps Consultant, AWS (Oct 2024 to Aug 2025); DTCC, DevOps Consultant, AWS (Aug 2025 to Nov 2025); RWS, Lead DevOps Consultant, AWS (Feb 2026 to now)" />
 
 <img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 10/10 State Street CSAT; ~90% faster account setup; 2 published AWS samples; 5x TFC ambassador" />
 
-<img src="assets/svg/worked-with.svg" width="100%" alt="Worked with: Amazon Web Services, Cloud Consultant (DevOps/MLOps); RWS, Lead DevOps Consultant; DTCC, DevOps Consultant; State Street, DevOps Consultant; Ikarus-3D, Software Developer Associate (intern)" />
+<img src="assets/svg/worked-with.svg" width="100%" alt="Worked with: Amazon Web Services, ProServe (Cloud Consultant) - DevOps/MLOps; RWS, Lead DevOps Consultant; DTCC, DevOps Consultant; State Street, DevOps Consultant; Ikarus-3D, Software Developer Associate (intern)" />
 
 <img src="assets/svg/divider.svg" width="100%" alt="" />
 
@@ -138,11 +138,11 @@
   <img src="assets/svg/header-stats-dark.svg" width="100%" alt="Coding Stats" />
 </picture>
 
-<img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,051 contributions, 5,765 commits, 1,680 pull requests, 302 stars, longest streak 154 days" />
+<img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,068 contributions, 5,773 commits, 1,689 pull requests, 302 stars, longest streak 154 days" />
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></a>
 
-<a href="https://leetcode.com/sagargupta1610/"><img src="assets/svg/leetcode.svg" width="100%" alt="LeetCode: contest rating 2166, top 1.11%, 107 contests, 1325 problems solved" /></a>
+<a href="https://leetcode.com/sagargupta1610/"><img src="assets/svg/leetcode.svg" width="100%" alt="LeetCode: contest rating 2166, top 1.11%, 107 contests, 1326 problems solved" /></a>
 
 <a href="https://github.com/Sagargupta16/leetcode-card-action#quick-start"><img src="assets/svg/get-leetcode.svg" width="100%" alt="Get the LeetCode card for your own profile: Sagargupta16/leetcode-card-action" /></a>
 

@@ -34,6 +34,7 @@ import urllib.request
 from html import escape
 from pathlib import Path
 
+from mobile_cards import cert_status, render_mobile_cards
 from vendor import github_stats_card, leetcode_card
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -286,17 +287,6 @@ def fetch_leetcode(previous: dict) -> dict:
 def utc_today() -> datetime.date:
     """Return today in UTC, the runner's and the validator's day, for expiries and years."""
     return datetime.datetime.now(datetime.timezone.utc).date()
-
-
-def cert_status(certificate: dict, today: datetime.date) -> tuple[str, str]:
-    """Classify a certification: active through its expiry day, unknown without an ISO date."""
-    try:
-        expires = datetime.date.fromisoformat(str(certificate.get("expiryDate") or ""))
-    except ValueError:
-        return "unknown", "Expiry not recorded"
-    if expires < today:
-        return "expired", f"Expired {expires.isoformat()}"
-    return "active", f"Valid through {expires.isoformat()}"
 
 
 def fetch_github() -> dict | None:
@@ -923,18 +913,22 @@ def _rotating(
     return "".join(out)
 
 
+# the hero's node graph; the phone hero draws the same graph scaled down
+HERO_NODES = [
+    (620, 70, "AWS"),
+    (730, 60, "TF"),
+    (790, 140, "K8S"),
+    (690, 180, "ML"),
+    (590, 160, "CI"),
+    (700, 118, "MCP"),
+]
+HERO_LINKS = [(0, 5), (1, 5), (2, 5), (3, 5), (4, 5), (0, 1), (2, 3), (3, 4)]
+
+
 def render_hero(data: dict) -> str:
     lc = data["leetcode"]
     w, h = 840, 250
-    nodes = [
-        (620, 70, "AWS"),
-        (730, 60, "TF"),
-        (790, 140, "K8S"),
-        (690, 180, "ML"),
-        (590, 160, "CI"),
-        (700, 118, "MCP"),
-    ]
-    links = [(0, 5), (1, 5), (2, 5), (3, 5), (4, 5), (0, 1), (2, 3), (3, 4)]
+    nodes, links = HERO_NODES, HERO_LINKS
     parts = [
         svg_open(
             w,
@@ -1385,16 +1379,16 @@ def _chips(items: list[str], x: float, y: float, max_w: float, color: str) -> st
     return "".join(out)
 
 
-def render_project_card(p: dict, index: int) -> str:
-    w = 410
+def render_project_card(p: dict, index: int, mobile: bool = False) -> str:
+    w = 320 if mobile else 410
     live = bool(p.get("live"))
-    titles = _wrap(p["title"], 34)
-    lines = _wrap(_card_text(p), 47)
+    titles = _wrap(p["title"], 25 if mobile else 34)
+    lines = _wrap(_card_text(p), 31 if mobile else 47)
     body_y = 62 + 24 * len(titles)
-    line_h = 20
-    h = max(240, body_y + line_h * len(lines) + 58)
+    line_h = 23 if mobile else 20
+    h = max(300 if mobile else 240, body_y + line_h * len(lines) + 58)
     body = "".join(
-        f'<text class="s" x="22" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="14">{escape(line)}</text>'
+        f'<text class="s" x="22" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="{17 if mobile else 14}">{escape(line)}</text>'
         for j, line in enumerate(lines)
     )
     status = (
@@ -1428,15 +1422,17 @@ def render_project_card(p: dict, index: int) -> str:
     )
 
 
-def render_tool_card(p: dict, stars: int | None, index: int) -> str:
-    w = 270
-    titles = _wrap(p["title"], 27)
-    lines = _wrap(_card_text(p, 96), 33)
+def render_tool_card(
+    p: dict, stars: int | None, index: int, mobile: bool = False
+) -> str:
+    w = 320 if mobile else 270
+    titles = _wrap(p["title"], 29 if mobile else 27)
+    lines = _wrap(_card_text(p, 96), 31 if mobile else 33)
     body_y = 44 + len(titles) * 22
-    line_h = 18
-    h = max(220, body_y + len(lines) * line_h + 44)
+    line_h = 23 if mobile else 18
+    h = max(260 if mobile else 220, body_y + len(lines) * line_h + 44)
     body = "".join(
-        f'<text class="s" x="18" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="13">{escape(line)}</text>'
+        f'<text class="s" x="18" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="{17 if mobile else 13}">{escape(line)}</text>'
         for j, line in enumerate(lines)
     )
     star = (
@@ -1459,7 +1455,7 @@ def render_tool_card(p: dict, stars: int | None, index: int) -> str:
             f'<rect x="0" y="20" width="3" height="24" rx="1.5" fill="{SKY}">'
             f'<animate attributeName="opacity" values="1;0.4;1" dur="3s" begin="{index * 0.25:.2f}s" repeatCount="indefinite"/></rect>',
             "".join(
-                f'<text class="t" x="18" y="{40 + 22 * j}" fill="#f3f4f6" font-size="16">{escape(title)}</text>'
+                f'<text class="t" x="18" y="{40 + 22 * j}" fill="#f3f4f6" font-size="{18 if mobile else 16}">{escape(title)}</text>'
                 for j, title in enumerate(titles)
             ),
             star,
@@ -1681,12 +1677,20 @@ def render_cards(data: dict) -> None:
         q for q in pf.get("featured", []) if q.get("organization") != "aws-samples"
     ):
         write(f"project-{_slug(p['title'])}.svg", render_project_card(p, i))
+        write(
+            f"project-{_slug(p['title'])}-mobile.svg",
+            render_project_card(p, i, mobile=True),
+        )
     repo_stars = (data.get("github") or {}).get("repo_stars", {})
     for i, p in enumerate(pf.get("community", [])):
         name = p["github"].rstrip("/").rsplit("/", 1)[-1]
         write(
             f"tool-{_slug(p['title'])}.svg",
             render_tool_card(p, repo_stars.get(name), i),
+        )
+        write(
+            f"tool-{_slug(p['title'])}-mobile.svg",
+            render_tool_card(p, repo_stars.get(name), i, mobile=True),
         )
     paths = {}
     for key, _, slug, _ in CONNECT:
@@ -2227,10 +2231,16 @@ def render_cta(label: str, primary: bool) -> str:
 
 
 def _img(src: str, alt: str, width: str = "100%") -> str:
-    """Wrap one card image; widths are numeric because GitHub strips layout CSS."""
+    """Wrap one card image with its phone source; widths are numeric because GitHub strips layout CSS."""
+    mobile = f"{Path(src).stem}-mobile.svg"
+    source = (
+        f'<source media="(max-width: 600px)" srcset="assets/svg/{mobile}" />'
+        if (OUT / mobile).exists()
+        else ""
+    )
     image = f'<img src="assets/svg/{src}" width="{width}" alt="{escape(alt, quote=True)}" />'
-    # Picture avoids GitHub's direct-link image fallback block styling.
-    return f"<picture>{image}</picture>"
+    # Picture also avoids GitHub's direct-link image fallback block styling.
+    return f"<picture>{source}{image}</picture>"
 
 
 def _card(src: str, fallback: str, width: str = "100%") -> str:
@@ -2280,10 +2290,16 @@ def _link(href: str, inner: str) -> str:
 
 
 def _header(key: str, title: str) -> str:
-    sources = [
-        f'<source media="(prefers-color-scheme: {theme})" srcset="assets/svg/header-{key}-{theme}.svg" />'
-        for theme in ("dark", "light")
-    ]
+    sources = []
+    # the narrow pair comes first: the first matching source wins
+    for narrow in (True, False):
+        for theme in ("light", "dark"):
+            name = f"header-{key}-{theme}{'-mobile' if narrow else ''}.svg"
+            media = f"(prefers-color-scheme: {theme})"
+            if narrow:
+                media += " and (max-width: 600px)"
+            if (OUT / name).exists():
+                sources.append(f'<source media="{media}" srcset="assets/svg/{name}" />')
     return (
         "<picture>"
         + "".join(sources)
@@ -2545,11 +2561,15 @@ def write_portfolio_cards(data: dict) -> None:
     write("cta-profile.svg", render_cta("Back to profile", False))
 
 
-def render_note(title: str, lines: list[str], accent: str = BLUE_LIGHT) -> str:
+def render_note(
+    title: str, lines: list[str], width: int = 840, accent: str = BLUE_LIGHT
+) -> str:
     """Draw a wrapped status card whose lines fade in one after another."""
-    width = 840
-    wrapped = [line for text in lines for line in _wrap(text, 94)]
-    title_lines = _wrap(title, 72)
+    narrow = width < 500
+    font_size = 17 if narrow else 14
+    limit = 30 if narrow else 94
+    wrapped = [line for text in lines for line in _wrap(text, limit)]
+    title_lines = _wrap(title, 27 if narrow else 72)
     start = 28 + len(title_lines) * 25
     height = start + len(wrapped) * 23 + 18
     parts = [
@@ -2569,13 +2589,13 @@ def render_note(title: str, lines: list[str], accent: str = BLUE_LIGHT) -> str:
         parts.append(
             _fade_group(
                 0.15 + (len(title_lines) + i) * 0.1,
-                f'<text x="20" y="{start + i * 23}" fill="#cbd5e1" font-family="{SANS}" font-size="14">{escape(text)}</text>',
+                f'<text x="20" y="{start + i * 23}" fill="#cbd5e1" font-family="{SANS}" font-size="{font_size}">{escape(text)}</text>',
             )
         )
     return "".join(parts) + SVG_CLOSE
 
 
-def render_certification_status(data: dict) -> str:
+def render_certification_status(data: dict, width: int = 840) -> str:
     pf = data.get("portfolio") or {}
     today = utc_today()
     count, issuers = active_certifications(pf, today)
@@ -2593,12 +2613,12 @@ def render_certification_status(data: dict) -> str:
     if not lines:
         lines = ["Active status is based on the recorded certification expiry dates."]
     lines.append("The Credly gallery below also includes learning and partner badges.")
-    return render_note(f"{count} active {issuers} certifications", lines).replace(
-        'role="img"', f'role="img" data-active-certifications="{count}"'
-    )
+    return render_note(
+        f"{count} active {issuers} certifications", lines, width
+    ).replace('role="img"', f'role="img" data-active-certifications="{count}"')
 
 
-def render_freshness(data: dict) -> str:
+def render_freshness(data: dict, width: int = 840) -> str:
     stamps = data.get("source_updated_at") or {}
     lines = []
     for source, label in (
@@ -2617,7 +2637,48 @@ def render_freshness(data: dict) -> str:
             lines.append(f"{label}: verified {when:%d %b %Y}.")
         except (ValueError, TypeError):
             lines.append(f"{label}: saved snapshot; refresh date unavailable.")
-    return render_note("Data refreshes", lines)
+    return render_note("Data refreshes", lines, width)
+
+
+def write_responsive_variants(data: dict) -> None:
+    """Phone layouts and the status cards, from the same snapshot as the desktop."""
+    pf = data.get("portfolio") or {}
+    customers = _customers(pf)
+    context = {
+        "milestones": MILESTONES,
+        "headers": HEADERS,
+        "publications": _publication_groups(pf),
+        "certifications": pf.get("certifications", []),
+        "badges": credly_badges(INDUSTRY_GROUP) + credly_badges("Professional"),
+        "stack": [name for row in ICON_ROWS for name in row],
+        "ai_tools": [label for label, _ in AI_TOOLS],
+        "aws_title": AWS_TITLE,
+        "hero_lines": HERO_LINES[1:],  # the title has its own line on the phone
+        "hero_graph": (HERO_NODES, HERO_LINKS),
+        "today": utc_today().isoformat(),
+        "career_start": CAREER_START,
+        "card_summaries": CARD_SUMMARIES,
+        "engagements": [
+            (e["when"], e["client"], _engagement_role(e)) for e in customers
+        ],
+        "worked_with": [(AWS_NAME, AWS_TITLE)]
+        + [(e["client"], _engagement_role(e)) for e in customers]
+        + [("Ikarus-3D", "Software Developer Associate (intern)")],
+    }
+    for name, content in render_mobile_cards(data, context).items():
+        write(name, content)
+    for suffix, width in (("", 840), ("-mobile", 320)):
+        write(f"certs-status{suffix}.svg", render_certification_status(data, width))
+        write(f"freshness{suffix}.svg", render_freshness(data, width))
+    for key, _, card in GET_THIS_CARD:
+        write(
+            f"get-{key}-mobile.svg",
+            render_note(
+                f"Get the {card}",
+                ["Add this card to your profile.", "Open the quick start →"],
+                320,
+            ),
+        )
 
 
 def main() -> None:
@@ -2667,8 +2728,7 @@ def main() -> None:
         for theme in ("dark", "light"):
             write(f"header-{key}-{theme}.svg", render_header(num, title, sub, theme))
     write("divider.svg", render_divider())
-    write("certs-status.svg", render_certification_status(data))
-    write("freshness.svg", render_freshness(data))
+    write_responsive_variants(data)
     write_readme(data)
 
 

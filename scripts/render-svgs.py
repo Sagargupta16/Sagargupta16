@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import base64
 import datetime
+import functools
 import html
 import json
 import os
@@ -34,6 +35,7 @@ import urllib.request
 from html import escape
 from pathlib import Path
 
+from mobile_cards import cert_status, render_mobile_cards
 from vendor import github_stats_card, leetcode_card
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -286,17 +288,6 @@ def fetch_leetcode(previous: dict) -> dict:
 def utc_today() -> datetime.date:
     """Return today in UTC, the runner's and the validator's day, for expiries and years."""
     return datetime.datetime.now(datetime.timezone.utc).date()
-
-
-def cert_status(certificate: dict, today: datetime.date) -> tuple[str, str]:
-    """Classify a certification: active through its expiry day, unknown without an ISO date."""
-    try:
-        expires = datetime.date.fromisoformat(str(certificate.get("expiryDate") or ""))
-    except ValueError:
-        return "unknown", "Expiry not recorded"
-    if expires < today:
-        return "expired", f"Expired {expires.isoformat()}"
-    return "active", f"Valid through {expires.isoformat()}"
 
 
 def fetch_github() -> dict | None:
@@ -623,6 +614,7 @@ def render_header(num: str, title: str, sub: str, theme: str) -> str:
 # ---------------------------------------------------------------- tech strip
 
 
+@functools.cache  # the desktop and phone strips draw the same icons
 def fetch_icon(name: str) -> str | None:
     try:
         raw = fetch(f"https://skillicons.dev/icons?i={name}").decode()
@@ -641,10 +633,10 @@ def fetch_icon(name: str) -> str | None:
     return f'<symbol id="i-{name}" viewBox="0 0 256 256">{inner_body}</symbol>'
 
 
-def render_stack() -> str | None:
+def render_stack(w: int = 840) -> str | None:
     size, gap = 44, 14
     step = size + gap
-    w, h = 840, 150
+    h = 150
     symbols = []
     for row in ICON_ROWS:
         for name in row:
@@ -923,18 +915,22 @@ def _rotating(
     return "".join(out)
 
 
+# the hero's node graph; the phone hero draws the same graph scaled down
+HERO_NODES = [
+    (620, 70, "AWS"),
+    (730, 60, "TF"),
+    (790, 140, "K8S"),
+    (690, 180, "ML"),
+    (590, 160, "CI"),
+    (700, 118, "MCP"),
+]
+HERO_LINKS = [(0, 5), (1, 5), (2, 5), (3, 5), (4, 5), (0, 1), (2, 3), (3, 4)]
+
+
 def render_hero(data: dict) -> str:
     lc = data["leetcode"]
     w, h = 840, 250
-    nodes = [
-        (620, 70, "AWS"),
-        (730, 60, "TF"),
-        (790, 140, "K8S"),
-        (690, 180, "ML"),
-        (590, 160, "CI"),
-        (700, 118, "MCP"),
-    ]
-    links = [(0, 5), (1, 5), (2, 5), (3, 5), (4, 5), (0, 1), (2, 3), (3, 4)]
+    nodes, links = HERO_NODES, HERO_LINKS
     parts = [
         svg_open(
             w,
@@ -1075,6 +1071,7 @@ def _wrap(text: str, width: int) -> list[str]:
 # ---------------------------------------------------------------- ai stack
 
 
+@functools.cache  # the desktop and phone cards draw the same icons
 def fetch_simple_icon(slug: str) -> str | None:
     try:
         raw = fetch(
@@ -1087,7 +1084,7 @@ def fetch_simple_icon(slug: str) -> str | None:
     return m.group(1) if m else None
 
 
-def render_ai_stack() -> str | None:
+def render_ai_stack(w: int = 840, cols: int = 5) -> str | None:
     paths: dict[str, str] = {}
     for _, slug in AI_TOOLS:
         if slug and slug not in paths:
@@ -1095,10 +1092,10 @@ def render_ai_stack() -> str | None:
             if d is None:
                 return None
             paths[slug] = d
-    w, h = 840, 150
-    cols, gap, pad = 5, 10, 16
+    gap, pad = (10, 16) if cols > 2 else (8, 12)
     cw = (w - 2 * pad - (cols - 1) * gap) / cols
     ch = 44
+    h = 42 + -(-len(AI_TOOLS) // cols) * (ch + 10)
     cycle = len(AI_TOOLS) * 0.6
     parts = [
         svg_open(w, h, "AI-assisted engineering: " + ", ".join(t for t, _ in AI_TOOLS)),
@@ -1385,16 +1382,16 @@ def _chips(items: list[str], x: float, y: float, max_w: float, color: str) -> st
     return "".join(out)
 
 
-def render_project_card(p: dict, index: int) -> str:
-    w = 410
+def render_project_card(p: dict, index: int, mobile: bool = False) -> str:
+    w = 320 if mobile else 410
     live = bool(p.get("live"))
-    titles = _wrap(p["title"], 34)
-    lines = _wrap(_card_text(p), 47)
+    titles = _wrap(p["title"], 25 if mobile else 34)
+    lines = _wrap(_card_text(p), 34 if mobile else 47)
     body_y = 62 + 24 * len(titles)
-    line_h = 20
-    h = max(240, body_y + line_h * len(lines) + 58)
+    line_h = 21 if mobile else 20
+    h = max(250 if mobile else 240, body_y + line_h * len(lines) + 58)
     body = "".join(
-        f'<text class="s" x="22" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="14">{escape(line)}</text>'
+        f'<text class="s" x="22" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="{15 if mobile else 14}">{escape(line)}</text>'
         for j, line in enumerate(lines)
     )
     status = (
@@ -1428,15 +1425,17 @@ def render_project_card(p: dict, index: int) -> str:
     )
 
 
-def render_tool_card(p: dict, stars: int | None, index: int) -> str:
-    w = 270
-    titles = _wrap(p["title"], 27)
-    lines = _wrap(_card_text(p, 96), 33)
+def render_tool_card(
+    p: dict, stars: int | None, index: int, mobile: bool = False
+) -> str:
+    w = 320 if mobile else 270
+    titles = _wrap(p["title"], 29 if mobile else 27)
+    lines = _wrap(_card_text(p, 96), 34 if mobile else 33)
     body_y = 44 + len(titles) * 22
-    line_h = 18
+    line_h = 21 if mobile else 18
     h = max(220, body_y + len(lines) * line_h + 44)
     body = "".join(
-        f'<text class="s" x="18" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="13">{escape(line)}</text>'
+        f'<text class="s" x="18" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="{15 if mobile else 13}">{escape(line)}</text>'
         for j, line in enumerate(lines)
     )
     star = (
@@ -1459,7 +1458,7 @@ def render_tool_card(p: dict, stars: int | None, index: int) -> str:
             f'<rect x="0" y="20" width="3" height="24" rx="1.5" fill="{SKY}">'
             f'<animate attributeName="opacity" values="1;0.4;1" dur="3s" begin="{index * 0.25:.2f}s" repeatCount="indefinite"/></rect>',
             "".join(
-                f'<text class="t" x="18" y="{40 + 22 * j}" fill="#f3f4f6" font-size="16">{escape(title)}</text>'
+                f'<text class="t" x="18" y="{40 + 22 * j}" fill="#f3f4f6" font-size="{18 if mobile else 16}">{escape(title)}</text>'
                 for j, title in enumerate(titles)
             ),
             star,
@@ -1681,12 +1680,20 @@ def render_cards(data: dict) -> None:
         q for q in pf.get("featured", []) if q.get("organization") != "aws-samples"
     ):
         write(f"project-{_slug(p['title'])}.svg", render_project_card(p, i))
+        write(
+            f"project-{_slug(p['title'])}-mobile.svg",
+            render_project_card(p, i, mobile=True),
+        )
     repo_stars = (data.get("github") or {}).get("repo_stars", {})
     for i, p in enumerate(pf.get("community", [])):
         name = p["github"].rstrip("/").rsplit("/", 1)[-1]
         write(
             f"tool-{_slug(p['title'])}.svg",
             render_tool_card(p, repo_stars.get(name), i),
+        )
+        write(
+            f"tool-{_slug(p['title'])}-mobile.svg",
+            render_tool_card(p, repo_stars.get(name), i, mobile=True),
         )
     paths = {}
     for key, _, slug, _ in CONNECT:
@@ -2227,10 +2234,16 @@ def render_cta(label: str, primary: bool) -> str:
 
 
 def _img(src: str, alt: str, width: str = "100%") -> str:
-    """Wrap one card image; widths are numeric because GitHub strips layout CSS."""
+    """Wrap one card image with its phone source; widths are numeric because GitHub strips layout CSS."""
+    mobile = f"{Path(src).stem}-mobile.svg"
+    source = (
+        f'<source media="(max-width: 600px)" srcset="assets/svg/{mobile}" />'
+        if (OUT / mobile).exists()
+        else ""
+    )
     image = f'<img src="assets/svg/{src}" width="{width}" alt="{escape(alt, quote=True)}" />'
-    # Picture avoids GitHub's direct-link image fallback block styling.
-    return f"<picture>{image}</picture>"
+    # Picture also avoids GitHub's direct-link image fallback block styling.
+    return f"<picture>{source}{image}</picture>"
 
 
 def _card(src: str, fallback: str, width: str = "100%") -> str:
@@ -2280,10 +2293,16 @@ def _link(href: str, inner: str) -> str:
 
 
 def _header(key: str, title: str) -> str:
-    sources = [
-        f'<source media="(prefers-color-scheme: {theme})" srcset="assets/svg/header-{key}-{theme}.svg" />'
-        for theme in ("dark", "light")
-    ]
+    sources = []
+    # the narrow pair comes first: the first matching source wins
+    for narrow in (True, False):
+        for theme in ("light", "dark"):
+            name = f"header-{key}-{theme}{'-mobile' if narrow else ''}.svg"
+            media = f"(prefers-color-scheme: {theme})"
+            if narrow:
+                media += " and (max-width: 600px)"
+            if (OUT / name).exists():
+                sources.append(f'<source media="{media}" srcset="assets/svg/{name}" />')
     return (
         "<picture>"
         + "".join(sources)
@@ -2593,31 +2612,89 @@ def render_certification_status(data: dict) -> str:
     if not lines:
         lines = ["Active status is based on the recorded certification expiry dates."]
     lines.append("The Credly gallery below also includes learning and partner badges.")
-    return render_note(f"{count} active {issuers} certifications", lines).replace(
-        'role="img"', f'role="img" data-active-certifications="{count}"'
-    )
+    return render_note(f"{count} active {issuers} certifications", lines).replace('role="img"', f'role="img" data-active-certifications="{count}"')
 
 
-def render_freshness(data: dict) -> str:
+def freshness_entries(data: dict) -> list[tuple[str, str]]:
+    """Name each source with the day it last refreshed successfully."""
     stamps = data.get("source_updated_at") or {}
-    lines = []
+    entries = []
     for source, label in (
         ("github", "GitHub"),
         ("leetcode", "LeetCode"),
         ("portfolio", "Portfolio"),
     ):
-        stamp = stamps.get(source)
-        if not stamp:
-            lines.append(f"{label}: saved snapshot; refresh date unavailable.")
-            continue
         # the date alone says how old a snapshot is, and keeps the card a pure
         # function of data.json, so CI can diff a re-render against the commit
         try:
-            when = datetime.datetime.fromisoformat(stamp.replace("Z", "+00:00"))
-            lines.append(f"{label}: verified {when:%d %b %Y}.")
-        except (ValueError, TypeError):
-            lines.append(f"{label}: saved snapshot; refresh date unavailable.")
+            when = datetime.datetime.fromisoformat(
+                str(stamps.get(source)).replace("Z", "+00:00")
+            )
+            entries.append((label, f"verified {when:%d %b %Y}"))
+        except ValueError:
+            entries.append((label, "saved snapshot; refresh date unavailable"))
+    return entries
+
+
+def render_freshness(data: dict) -> str:
+    lines = [f"{label}: {status}." for label, status in freshness_entries(data)]
     return render_note("Data refreshes", lines)
+
+
+def _credly_images() -> list[tuple[str, str]]:
+    """Pair each badge image the Credly card embeds with its name, for the phone grid."""
+    path = OUT / "certs.svg"
+    if not path.exists():
+        return []
+    text = path.read_text(encoding="utf-8")
+    images = re.findall(
+        r'<image href="(data:image/[a-z+]+;base64,[A-Za-z0-9+/=]+)"', text
+    )
+    label = re.search(r'aria-label="Credly badges: ([^"]*)"', text)
+    names = html.unescape(label.group(1)).split(", ") if label else []
+    if len(names) != len(images):
+        names = [""] * len(images)
+    return list(zip(names, images))
+
+
+def write_responsive_variants(data: dict) -> None:
+    """Write the phone layouts and the status cards from the same snapshot as the desktop."""
+    pf = data.get("portfolio") or {}
+    customers = _customers(pf)
+    worked_with = (
+        [(AWS_NAME, AWS_TITLE)]
+        + [(e["client"], _engagement_role(e)) for e in customers]
+        + [("Ikarus-3D", "Software Developer Associate (intern)")]
+    )
+    context = {
+        "milestones": MILESTONES,
+        "headers": HEADERS,
+        "publications": _publication_groups(pf),
+        "certifications": pf.get("certifications", []),
+        "badges": credly_badges(INDUSTRY_GROUP) + credly_badges("Professional"),
+        "badge_images": _credly_images(),
+        "aws_title": AWS_TITLE,
+        "hero_lines": HERO_LINES[1:],  # the title has its own line on the phone
+        "hero_graph": (HERO_NODES, HERO_LINKS),
+        "today": utc_today().isoformat(),
+        "career_start": CAREER_START,
+        "engagements": [
+            (e["when"], e["client"], _engagement_role(e)) for e in customers
+        ],
+        "worked_with": worked_with,
+        "logos": {
+            company: logo
+            for company, _ in worked_with
+            if (logo := _company_logo(company))
+        },
+        "white_filter": WHITE_FILTER,
+        "freshness": freshness_entries(data),
+        "get_cards": [(key, card) for key, _, card in GET_THIS_CARD],
+    }
+    for name, content in render_mobile_cards(data, context).items():
+        write(name, content)
+    write("certs-status.svg", render_certification_status(data))
+    write("freshness.svg", render_freshness(data))
 
 
 def main() -> None:
@@ -2657,8 +2734,10 @@ def main() -> None:
     write_portfolio_cards(data)
     for name, content in (
         ("ai-stack.svg", None if OFFLINE else render_ai_stack()),
+        ("ai-stack-mobile.svg", None if OFFLINE else render_ai_stack(320, 2)),
         ("oss.svg", render_oss(data)),
         ("stack.svg", None if OFFLINE else render_stack()),
+        ("stack-mobile.svg", None if OFFLINE else render_stack(320)),
     ):
         write_optional(name, content)
     write("sample-org-governance.svg", render_org_card())
@@ -2667,8 +2746,7 @@ def main() -> None:
         for theme in ("dark", "light"):
             write(f"header-{key}-{theme}.svg", render_header(num, title, sub, theme))
     write("divider.svg", render_divider())
-    write("certs-status.svg", render_certification_status(data))
-    write("freshness.svg", render_freshness(data))
+    write_responsive_variants(data)
     write_readme(data)
 
 

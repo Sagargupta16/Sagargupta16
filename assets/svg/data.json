@@ -130,9 +130,9 @@
     ]
   },
   "github": {
-    "contributions": 7966,
-    "commits": 5689,
-    "prs": 1670,
+    "contributions": 7993,
+    "commits": 5691,
+    "prs": 1672,
     "stars": 299,
     "repo_stars": {
       "PortFolio": 3,
@@ -201,9 +201,9 @@
       "stackdraw": 0
     },
     "followers": 112,
-    "streak": 0,
+    "streak": 1,
     "longest": 154,
-    "active_days": 311,
+    "active_days": 313,
     "calendar": [
       [
         3,
@@ -415,8 +415,8 @@
       [
         3,
         70,
-        22,
-        20,
+        23,
+        19,
         0,
         4,
         43
@@ -577,8 +577,8 @@
       [
         0,
         12,
-        4,
-        27,
+        6,
+        25,
         5,
         0,
         0
@@ -616,14 +616,14 @@
         0,
         0,
         0,
-        0,
-        2
+        1,
+        1
       ],
       [
         0,
         0,
-        20,
-        41,
+        21,
+        40,
         63,
         11,
         30
@@ -641,8 +641,8 @@
         53,
         37,
         11,
-        4,
-        11,
+        5,
+        10,
         10,
         6
       ],
@@ -651,8 +651,8 @@
         8,
         5,
         6,
-        17,
-        24,
+        18,
+        23,
         29
       ],
       [
@@ -679,18 +679,18 @@
         22,
         29,
         0,
-        0
+        27
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        55.9,
+        55.8,
         "#3178c6"
       ],
       [
         "Python",
-        26.0,
+        26.2,
         "#3572A5"
       ],
       [
@@ -1532,8 +1532,8 @@
         "url": "https://leetcode.com/u/Sagargupta1610/",
         "solved_by_difficulty": {
           "easy": 478,
-          "medium": 681,
-          "hard": 165
+          "medium": 683,
+          "hard": 166
         },
         "rating_history": [
           [
@@ -1980,36 +1980,36 @@
       "github": {
         "username": "Sagargupta16",
         "url": "https://github.com/Sagargupta16",
-        "contributions": 7987,
-        "pull_requests": 1620,
-        "longest_streak": 161,
+        "contributions": 7972,
+        "pull_requests": 1670,
+        "longest_streak": 154,
         "languages": [
           {
             "name": "TypeScript",
-            "percent": 59.3
+            "percent": 55.9
           },
           {
             "name": "Python",
-            "percent": 23.9
+            "percent": 26
           },
           {
             "name": "JavaScript",
-            "percent": 4.8
-          },
-          {
-            "name": "C++",
-            "percent": 3.5
+            "percent": 7
           },
           {
             "name": "CSS",
             "percent": 3.2
           },
           {
+            "name": "C++",
+            "percent": 3.1
+          },
+          {
             "name": "Shell",
-            "percent": 1.3
+            "percent": 1.2
           }
         ],
-        "fetched": "2026-10-10"
+        "fetched": "2026-10-16"
       }
     },
     "certifications": [
@@ -2125,11 +2125,11 @@
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23307,
+  "views": 23312,
   "source_updated_at": {
-    "github": "2026-10-16T00:17:41+00:00",
-    "leetcode": "2026-10-16T00:17:37+00:00",
-    "portfolio": "2026-10-16T00:17:43+00:00",
-    "views": "2026-10-16T00:17:37+00:00"
+    "github": "2026-10-16T00:37:43+00:00",
+    "leetcode": "2026-10-16T00:37:38+00:00",
+    "portfolio": "2026-10-16T00:37:44+00:00",
+    "views": "2026-10-16T00:37:38+00:00"
   }
 }

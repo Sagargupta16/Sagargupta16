@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import base64
 import datetime
+import functools
 import html
 import json
 import os
@@ -613,6 +614,7 @@ def render_header(num: str, title: str, sub: str, theme: str) -> str:
 # ---------------------------------------------------------------- tech strip
 
 
+@functools.cache  # the desktop and phone strips draw the same icons
 def fetch_icon(name: str) -> str | None:
     try:
         raw = fetch(f"https://skillicons.dev/icons?i={name}").decode()
@@ -631,10 +633,10 @@ def fetch_icon(name: str) -> str | None:
     return f'<symbol id="i-{name}" viewBox="0 0 256 256">{inner_body}</symbol>'
 
 
-def render_stack() -> str | None:
+def render_stack(w: int = 840) -> str | None:
     size, gap = 44, 14
     step = size + gap
-    w, h = 840, 150
+    h = 150
     symbols = []
     for row in ICON_ROWS:
         for name in row:
@@ -1069,6 +1071,7 @@ def _wrap(text: str, width: int) -> list[str]:
 # ---------------------------------------------------------------- ai stack
 
 
+@functools.cache  # the desktop and phone cards draw the same icons
 def fetch_simple_icon(slug: str) -> str | None:
     try:
         raw = fetch(
@@ -1081,7 +1084,7 @@ def fetch_simple_icon(slug: str) -> str | None:
     return m.group(1) if m else None
 
 
-def render_ai_stack() -> str | None:
+def render_ai_stack(w: int = 840, cols: int = 5) -> str | None:
     paths: dict[str, str] = {}
     for _, slug in AI_TOOLS:
         if slug and slug not in paths:
@@ -1089,10 +1092,10 @@ def render_ai_stack() -> str | None:
             if d is None:
                 return None
             paths[slug] = d
-    w, h = 840, 150
-    cols, gap, pad = 5, 10, 16
+    gap, pad = (10, 16) if cols > 2 else (8, 12)
     cw = (w - 2 * pad - (cols - 1) * gap) / cols
     ch = 44
+    h = 42 + -(-len(AI_TOOLS) // cols) * (ch + 10)
     cycle = len(AI_TOOLS) * 0.6
     parts = [
         svg_open(w, h, "AI-assisted engineering: " + ", ".join(t for t, _ in AI_TOOLS)),
@@ -1383,12 +1386,12 @@ def render_project_card(p: dict, index: int, mobile: bool = False) -> str:
     w = 320 if mobile else 410
     live = bool(p.get("live"))
     titles = _wrap(p["title"], 25 if mobile else 34)
-    lines = _wrap(_card_text(p), 31 if mobile else 47)
+    lines = _wrap(_card_text(p), 34 if mobile else 47)
     body_y = 62 + 24 * len(titles)
-    line_h = 23 if mobile else 20
-    h = max(300 if mobile else 240, body_y + line_h * len(lines) + 58)
+    line_h = 21 if mobile else 20
+    h = max(250 if mobile else 240, body_y + line_h * len(lines) + 58)
     body = "".join(
-        f'<text class="s" x="22" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="{17 if mobile else 14}">{escape(line)}</text>'
+        f'<text class="s" x="22" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="{15 if mobile else 14}">{escape(line)}</text>'
         for j, line in enumerate(lines)
     )
     status = (
@@ -1427,12 +1430,12 @@ def render_tool_card(
 ) -> str:
     w = 320 if mobile else 270
     titles = _wrap(p["title"], 29 if mobile else 27)
-    lines = _wrap(_card_text(p, 96), 31 if mobile else 33)
+    lines = _wrap(_card_text(p, 96), 34 if mobile else 33)
     body_y = 44 + len(titles) * 22
-    line_h = 23 if mobile else 18
-    h = max(260 if mobile else 220, body_y + len(lines) * line_h + 44)
+    line_h = 21 if mobile else 18
+    h = max(220, body_y + len(lines) * line_h + 44)
     body = "".join(
-        f'<text class="s" x="18" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="{17 if mobile else 13}">{escape(line)}</text>'
+        f'<text class="s" x="18" y="{body_y + j * line_h}" fill="#cbd5e1" font-size="{15 if mobile else 13}">{escape(line)}</text>'
         for j, line in enumerate(lines)
     )
     star = (
@@ -2566,8 +2569,8 @@ def render_note(
 ) -> str:
     """Draw a wrapped status card whose lines fade in one after another."""
     narrow = width < 500
-    font_size = 17 if narrow else 14
-    limit = 30 if narrow else 94
+    font_size = 15 if narrow else 14
+    limit = 34 if narrow else 94
     wrapped = [line for text in lines for line in _wrap(text, limit)]
     title_lines = _wrap(title, 27 if narrow else 72)
     start = 28 + len(title_lines) * 25
@@ -2640,30 +2643,53 @@ def render_freshness(data: dict, width: int = 840) -> str:
     return render_note("Data refreshes", lines, width)
 
 
+def _credly_images() -> list[tuple[str, str]]:
+    """Pair each badge image the Credly card embeds with its name, for the phone grid."""
+    path = OUT / "certs.svg"
+    if not path.exists():
+        return []
+    text = path.read_text(encoding="utf-8")
+    images = re.findall(
+        r'<image href="(data:image/[a-z+]+;base64,[A-Za-z0-9+/=]+)"', text
+    )
+    label = re.search(r'aria-label="Credly badges: ([^"]*)"', text)
+    names = html.unescape(label.group(1)).split(", ") if label else []
+    if len(names) != len(images):
+        names = [""] * len(images)
+    return list(zip(names, images))
+
+
 def write_responsive_variants(data: dict) -> None:
-    """Phone layouts and the status cards, from the same snapshot as the desktop."""
+    """Write the phone layouts and the status cards from the same snapshot as the desktop."""
     pf = data.get("portfolio") or {}
     customers = _customers(pf)
+    worked_with = (
+        [(AWS_NAME, AWS_TITLE)]
+        + [(e["client"], _engagement_role(e)) for e in customers]
+        + [("Ikarus-3D", "Software Developer Associate (intern)")]
+    )
     context = {
         "milestones": MILESTONES,
         "headers": HEADERS,
         "publications": _publication_groups(pf),
         "certifications": pf.get("certifications", []),
         "badges": credly_badges(INDUSTRY_GROUP) + credly_badges("Professional"),
-        "stack": [name for row in ICON_ROWS for name in row],
-        "ai_tools": [label for label, _ in AI_TOOLS],
+        "badge_images": _credly_images(),
         "aws_title": AWS_TITLE,
         "hero_lines": HERO_LINES[1:],  # the title has its own line on the phone
         "hero_graph": (HERO_NODES, HERO_LINKS),
         "today": utc_today().isoformat(),
         "career_start": CAREER_START,
-        "card_summaries": CARD_SUMMARIES,
         "engagements": [
             (e["when"], e["client"], _engagement_role(e)) for e in customers
         ],
-        "worked_with": [(AWS_NAME, AWS_TITLE)]
-        + [(e["client"], _engagement_role(e)) for e in customers]
-        + [("Ikarus-3D", "Software Developer Associate (intern)")],
+        "worked_with": worked_with,
+        "logos": {
+            company: logo
+            for company, _ in worked_with
+            if (logo := _company_logo(company))
+        },
+        "white_filter": WHITE_FILTER,
     }
     for name, content in render_mobile_cards(data, context).items():
         write(name, content)
@@ -2718,8 +2744,10 @@ def main() -> None:
     write_portfolio_cards(data)
     for name, content in (
         ("ai-stack.svg", None if OFFLINE else render_ai_stack()),
+        ("ai-stack-mobile.svg", None if OFFLINE else render_ai_stack(320, 2)),
         ("oss.svg", render_oss(data)),
         ("stack.svg", None if OFFLINE else render_stack()),
+        ("stack-mobile.svg", None if OFFLINE else render_stack(320)),
     ):
         write_optional(name, content)
     write("sample-org-governance.svg", render_org_card())

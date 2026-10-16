@@ -4,7 +4,7 @@
 
 <a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/hero-mobile.svg" /><img src="assets/svg/hero.svg" width="100%" alt="Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS" /></picture></a>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,287; Followers 111; Total Stars 299; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,307; Followers 112; Total Stars 299; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
 
 <picture><source media="(max-width: 600px)" srcset="assets/svg/intro-mobile.svg" /><img src="assets/svg/intro.svg" width="100%" alt="Cloud consultant at AWS Professional Services. Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines, plus the MCP servers and Claude Code skills I build to do that work faster." /></picture>
 
@@ -32,8 +32,8 @@
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-projects-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-projects-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-projects-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-projects-dark.svg" /><img src="assets/svg/header-projects-dark.svg" width="100%" alt="Featured Projects" /></picture>
 
 <p align="center">
-<a href="https://github.com/aws-samples/sample-aws-terraform-org-governance"><picture><source media="(max-width: 600px)" srcset="assets/svg/sample-org-governance-mobile.svg" /><img src="assets/svg/sample-org-governance.svg" width="400" alt="AWS Organizations Governance, published AWS sample" /></picture></a>
-<a href="https://github.com/aws-samples/sample-sagemaker-image-classification-mlops"><picture><source media="(max-width: 600px)" srcset="assets/svg/sample-sagemaker-mlops-mobile.svg" /><img src="assets/svg/sample-sagemaker-mlops.svg" width="400" alt="SageMaker Image Classification MLOps, published AWS sample" /></picture></a>
+<a href="https://github.com/aws-samples/sample-aws-terraform-org-governance"><picture><img src="assets/svg/sample-org-governance.svg" width="400" alt="AWS Organizations Governance, published AWS sample" /></picture></a>
+<a href="https://github.com/aws-samples/sample-sagemaker-image-classification-mlops"><picture><img src="assets/svg/sample-sagemaker-mlops.svg" width="400" alt="SageMaker Image Classification MLOps, published AWS sample" /></picture></a>
 </p>
 
 <p align="center">
@@ -112,7 +112,7 @@
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><picture><source media="(max-width: 600px)" srcset="assets/svg/get-github-mobile.svg" /><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></picture></a>
 
-<a href="https://leetcode.com/sagargupta1610/"><picture><source media="(max-width: 600px)" srcset="assets/svg/leetcode-mobile.svg" /><img src="assets/svg/leetcode.svg" width="100%" alt="LeetCode: contest rating 2166, top 1.11%, 107 contests, 1326 problems solved" /></picture></a>
+<a href="https://leetcode.com/sagargupta1610/"><picture><source media="(max-width: 600px)" srcset="assets/svg/leetcode-mobile.svg" /><img src="assets/svg/leetcode.svg" width="100%" alt="LeetCode: contest rating 2166, top 1.11%, 107 contests, 1327 problems solved" /></picture></a>
 
 <a href="https://github.com/Sagargupta16/leetcode-card-action#quick-start"><picture><source media="(max-width: 600px)" srcset="assets/svg/get-leetcode-mobile.svg" /><img src="assets/svg/get-leetcode.svg" width="100%" alt="Get the LeetCode card for your own profile: Sagargupta16/leetcode-card-action" /></picture></a>
 
@@ -140,4 +140,4 @@
 <a href="https://sagargupta.online/portfolio-react/"><picture><img src="assets/svg/connect-portfolio.svg" width="128" alt="Portfolio" /></picture></a>
 </p>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/freshness-mobile.svg" /><img src="assets/svg/freshness.svg" width="100%" alt="Data refreshes: GitHub: verified 15 Oct 2026.; LeetCode: verified 15 Oct 2026.; Portfolio: verified 15 Oct 2026." /></picture>
+<picture><source media="(max-width: 600px)" srcset="assets/svg/freshness-mobile.svg" /><img src="assets/svg/freshness.svg" width="100%" alt="Data refreshes: GitHub: verified 16 Oct 2026.; LeetCode: verified 16 Oct 2026.; Portfolio: verified 16 Oct 2026." /></picture>

@@ -19,27 +19,36 @@ request and fails when the committed files differ.
 ## GitHub-compatible presentation
 
 GitHub strips custom README CSS. Cards use numeric image widths and ordinary
-inline wrapping, so rows of cards wrap on narrow screens and each card scales
-down to the column. Every image sits in a `<picture>`, which keeps GitHub from
-styling linked images as blocks; header sources pick the viewer's color scheme.
-There are no phone-specific or reduced-motion variants: every viewer gets the
-same animated cards.
+inline wrapping, so rows of cards wrap on narrow screens. Every image sits in a
+`<picture>`, which keeps GitHub from styling linked images as blocks. Where a
+`-mobile.svg` exists, a `(max-width: 600px)` source picks that 320px phone
+layout; header sources also pick the viewer's color scheme, narrow pair first.
+Cards without a phone layout (the AWS sample diagrams, the snake, the divider)
+scale down to the column.
+
+Phone cards keep the desktop look and motion: mono micro-labels, flat bordered
+tiles, logos and badge images, blocks that fade and rise in order, pulsing
+accents and a shine. Long lists are capped with a "+N more" line. There are no
+reduced-motion variants.
 
 Links belong around the image, because links inside an SVG displayed through
 `<img>` are not interactive.
 
 ## Ownership
 
-- `render-svgs.py`: profile content, links, section order, every local card,
-  source refresh metadata and integration, and `cert_status()`, the one
-  expiry rule every certification count uses.
+- `render-svgs.py`: profile content, links, section order, desktop cards (and
+  the phone stack and AI-tools cards, which need the fetched icons), source
+  refresh metadata and integration.
+- `mobile_cards.py`: the phone layouts, from the same snapshot and context the
+  renderer passes in, and `cert_status()`, the one expiry rule every
+  certification count uses.
 - `scripts/vendor/`: the licensed GitHub Stats and LeetCode renderer versions
   already used by the profile. Those cards, the hero and the profile badges
   share one data snapshot, so a partial service failure cannot leave them
   disagreeing.
 - The pinned Credly Action: its gallery. After a badge change the Credly
   workflow commits the gallery and dispatches the renderer, which redraws the
-  README alt text from the new badges.
+  README alt text and the phone badge grid from the new badges.
 - `validate-readme.py`: image references, links, usernames, the configured role,
   years at AWS from `career.start_date` and the active certification count.
 

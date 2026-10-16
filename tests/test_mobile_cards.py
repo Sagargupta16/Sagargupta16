@@ -5,7 +5,7 @@ from __future__ import annotations
 import importlib.util
 import json
 import unittest
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ET  # nosec B405
 from pathlib import Path
 from unittest.mock import patch
 
@@ -13,16 +13,17 @@ ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
     "mobile_cards", ROOT / "scripts" / "mobile_cards.py"
 )
-assert SPEC and SPEC.loader
 mobile = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(mobile)
 SVG = "{http://www.w3.org/2000/svg}"
 
 
 def visible_text(svg: str) -> str:
+    """Return the drawn text, case-folded: labels and metadata are set in capitals."""
     return " ".join(
-        element.text or "" for element in ET.fromstring(svg).iter(f"{SVG}text")
-    )
+        element.text or ""
+        for element in ET.fromstring(svg).iter(f"{SVG}text")  # nosec B314
+    ).casefold()
 
 
 class MobileCardsTests(unittest.TestCase):
@@ -56,8 +57,6 @@ class MobileCardsTests(unittest.TestCase):
                     "AWS samples, patterns, talks and programs",
                 )
             ],
-            "stack": ["aws", "githubactions", "typescript", "sklearn"],
-            "ai_tools": ["Claude Code", "GitHub Copilot", "Amazon Bedrock"],
             "badges": [
                 (
                     "AWS Certified Developer \u2013 Associate",
@@ -69,18 +68,19 @@ class MobileCardsTests(unittest.TestCase):
         cls.cards = mobile.render_mobile_cards(cls.data, cls.context)
 
     def assert_bounds(self, svg: str) -> None:
-        root = ET.fromstring(svg)
+        root = ET.fromstring(svg)  # nosec B314
         _, _, width, height = map(float, root.attrib["viewBox"].split())
         self.assertEqual(width, 320)
         for element in root.iter(f"{SVG}text"):
             size = float(element.attrib["font-size"])
             x, y = float(element.attrib["x"]), float(element.attrib["y"])
-            self.assertGreaterEqual(x, 0)
+            mono = "font-family" in element.attrib
+            span = mobile.text_width(element.text or "", size, mono)
+            left = x - span / 2 if element.get("text-anchor") == "middle" else x
+            self.assertGreaterEqual(left, 0)
             self.assertGreaterEqual(y - size, 0)
             self.assertLessEqual(y + size * 0.25, height)
-            self.assertLessEqual(
-                x + mobile.text_width(element.text or "", size), width - 10
-            )
+            self.assertLessEqual(left + span, width - 10)
 
     def test_expected_cards_are_valid_animated_svg_with_bounded_text(self) -> None:
         expected = {
@@ -98,14 +98,12 @@ class MobileCardsTests(unittest.TestCase):
             "github",
             "leetcode",
             "certs",
-            "stack",
-            "ai-stack",
+            "certs-status",
+            "freshness",
             "competitive",
             "footer",
             "header-publications-dark",
             "header-publications-light",
-            "sample-org-governance",
-            "sample-sagemaker-mlops",
         }
         self.assertEqual(set(self.cards), {f"{name}-mobile.svg" for name in expected})
         for name, svg in self.cards.items():
@@ -113,16 +111,20 @@ class MobileCardsTests(unittest.TestCase):
                 self.assert_bounds(svg)
                 self.assertIn("<animate", svg)
                 self.assertNotIn("<script", svg)
-                self.assertNotIn("<image", svg)
+                # images are embedded as data URIs; nothing loads from elsewhere
+                self.assertNotIn('href="http', svg)
 
     def test_expired_terraform_is_separated_and_duplicate_badge_removed(self) -> None:
         text = visible_text(self.cards["certs-mobile.svg"])
-        self.assertIn("Active certifications", text)
-        self.assertIn("Previously earned", text)
-        self.assertIn("Expired 2026-09-10", text)
-        self.assertLess(text.index("Previously earned"), text.index("Terraform"))
-        self.assertEqual(text.count("AWS Certified Developer"), 1)
-        self.assertIn("Migration Foundations", text)
+        self.assertIn("active certifications", text)
+        self.assertIn("previously earned", text)
+        self.assertIn("expired 2026-09-10", text)
+        self.assertLess(text.index("previously earned"), text.index("terraform"))
+        self.assertEqual(text.count("aws certified developer"), 1)
+        self.assertIn("migration foundations", text)
+        status = visible_text(self.cards["certs-status-mobile.svg"])
+        self.assertIn("terraform", status)
+        self.assertIn("expired 2026-09-10", status)
 
     def test_expiry_boundary_and_missing_dates(self) -> None:
         context = dict(
@@ -133,9 +135,9 @@ class MobileCardsTests(unittest.TestCase):
             ],
         )
         text = visible_text(mobile.render_mobile_cards({}, context)["certs-mobile.svg"])
-        self.assertIn("Valid through 2026-10-14", text)
-        self.assertLess(text.index("Expires today"), text.index("Expiry not recorded"))
-        self.assertLess(text.index("Expiry not recorded"), text.index("Unknown expiry"))
+        self.assertIn("valid through 2026-10-14", text)
+        self.assertLess(text.index("expires today"), text.index("expiry not recorded"))
+        self.assertLess(text.index("expiry not recorded"), text.index("unknown expiry"))
 
     def test_profile_badges_metadata_matches_active_count(self) -> None:
         context = dict(
@@ -150,20 +152,31 @@ class MobileCardsTests(unittest.TestCase):
         svg = mobile.render_mobile_cards(self.data, context)[
             "profile-badges-mobile.svg"
         ]
-        self.assertEqual(ET.fromstring(svg).get("data-active-certifications"), "2")
-        self.assertIn("2 active certifications", visible_text(svg))
+        root = ET.fromstring(svg)  # nosec B314
+        self.assertEqual(root.get("data-active-certifications"), "2")
+        self.assertIn("2x certified", visible_text(svg))
 
-    def test_open_pr_wording_and_every_pr_title_preserved(self) -> None:
+    def test_pr_lists_show_the_newest_and_count_the_rest(self) -> None:
         summary = visible_text(self.cards["oss-mobile.svg"])
-        self.assertIn("Open PRs", summary)
-        self.assertIn("Repos with merges", summary)
-        for entry in self.data["portfolio"]["oss"]:
-            if entry["status"] not in {"merged", "open"}:
-                continue
-            name = "oss-merged" if entry["status"] == "merged" else "oss-review"
-            text = visible_text(self.cards[f"{name}-mobile.svg"])
-            self.assertIn("".join(entry["title"].split()), "".join(text.split()))
-            self.assertIn("".join(entry["repo"].split()), "".join(text.split()))
+        self.assertIn("open prs", summary)
+        self.assertIn("repos with merges", summary)
+        oss = self.data["portfolio"]["oss"]
+        merged = sorted(
+            (e for e in oss if e["status"] == "merged"),
+            key=lambda e: e.get("merged_at") or "",
+            reverse=True,
+        )
+        opened = [e for e in oss if e["status"] == "open"]
+        for name, entries, shown in (
+            ("oss-merged", merged, mobile.MERGED_SHOWN),
+            ("oss-review", opened, mobile.OPEN_SHOWN),
+        ):
+            text = "".join(visible_text(self.cards[f"{name}-mobile.svg"]).split())
+            for entry in entries[:shown]:
+                self.assertIn("".join(entry["title"].split()).casefold(), text)
+                self.assertIn("".join(entry["repo"].split()).casefold(), text)
+            if len(entries) > shown:
+                self.assertIn(f"+{len(entries) - shown}moreongithub", text)
 
     def test_long_content_grows_instead_of_truncating(self) -> None:
         long_title = "WWW " * 30 + "unbroken-" * 24 + " & <complete>"
@@ -172,21 +185,31 @@ class MobileCardsTests(unittest.TestCase):
         )
         svg = mobile.render_mobile_cards(self.data, context)["publications-mobile.svg"]
         self.assert_bounds(svg)
-        self.assertIn("".join(long_title.split()), "".join(visible_text(svg).split()))
-        self.assertGreater(float(ET.fromstring(svg).attrib["height"]), 500)
+        self.assertIn(
+            "".join(long_title.split()).casefold(), "".join(visible_text(svg).split())
+        )
+        short = dict(self.context, publications=[("PUBLICATIONS", [("Short", "2026")])])
+        heights = [
+            float(ET.fromstring(card).attrib["height"])  # nosec B314
+            for card in (
+                svg,
+                mobile.render_mobile_cards(self.data, short)["publications-mobile.svg"],
+            )
+        ]
+        self.assertGreater(heights[0], heights[1] + 150)
 
     def test_source_dates_are_only_shown_when_provided(self) -> None:
         missing = dict(self.data, source_updated_at={})
         without_date = mobile.render_mobile_cards(missing, self.context)[
             "github-mobile.svg"
         ]
-        self.assertNotIn("Updated", visible_text(without_date))
+        self.assertNotIn("updated", visible_text(without_date))
         data = dict(self.data, source_updated_at={"github": "2026-10-12T09:15:00Z"})
         text = visible_text(
             mobile.render_mobile_cards(data, self.context)["github-mobile.svg"]
         )
-        self.assertIn("Updated 2026-10-12", text)
-        self.assertNotIn("Updated 2026-10-14", text)
+        self.assertIn("updated 2026-10-12", text)
+        self.assertNotIn("updated 2026-10-14", text)
 
     def test_github_uses_supported_participation_fields(self) -> None:
         data = {"github": {"active_days": 311}}
@@ -213,7 +236,7 @@ class MobileCardsTests(unittest.TestCase):
         )
         self.assertNotIn("None", text)
         self.assertNotIn("%", text)
-        self.assertIn("- Top worldwide", text)
+        self.assertIn("- top worldwide", text)
 
     def test_render_has_no_io_or_input_mutation(self) -> None:
         before = json.dumps((self.data, self.context), sort_keys=True)

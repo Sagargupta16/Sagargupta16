@@ -50,7 +50,7 @@ def _advance(character: str) -> float:
         return 0.34
     if character in " fjrt()[]":
         return 0.44
-    return 0.76 if character.isupper() else 0.64
+    return 0.7 if character.isupper() else 0.58
 
 
 def text_width(text: str, size: float = BODY_SIZE, mono: bool = False) -> float:
@@ -73,11 +73,17 @@ def wrap_text(
         if current:
             lines.append(current)
             current = ""
-        for character in word:
-            if current and text_width(current + character, size, mono) > width:
+        # a token too long for a line breaks after "/", "-", "_" or "." first,
+        # and only splits between letters where no separator fits
+        for piece in re.findall(r"[^/\-_.]+[/\-_.]*|[/\-_.]+", word):
+            if current and text_width(current + piece, size, mono) > width:
                 lines.append(current)
                 current = ""
-            current += character
+            for character in piece:
+                if current and text_width(current + character, size, mono) > width:
+                    lines.append(current)
+                    current = ""
+                current += character
     if current:
         lines.append(current)
     return lines
@@ -200,14 +206,29 @@ class Card:
         self.y += 14
 
     def row(
-        self, title: str, detail: str = "", metadata: str = "", size: float = BODY_SIZE
+        self,
+        title: str,
+        detail: str = "",
+        metadata: str = "",
+        size: float = BODY_SIZE,
+        *,
+        bullet: bool = False,
+        weight: int = 650,
     ) -> None:
+        x = PAD + 14 if bullet else PAD
+        width = WIDTH - PAD - x
         with self.block():
-            self.lines(title, size=size, weight=650)
+            if bullet:
+                self.parts.append(
+                    f'<circle cx="{PAD + 3}" cy="{self.y + size * 0.65:g}" r="2.5" fill="{self.accent}"/>'
+                )
+            self.lines(title, x=x, width=width, size=size, weight=weight)
             if metadata:
                 self.y += 3
                 self.lines(
                     metadata.upper(),
+                    x=x,
+                    width=width,
                     size=10.5,
                     color=self.accent,
                     weight=700,
@@ -215,20 +236,21 @@ class Card:
                 )
             if detail:
                 self.y += 3
-                self.lines(detail, size=13.5, color=MUTED)
+                self.lines(detail, x=x, width=width, size=13.5, color=MUTED)
         self.y += 12
 
     def metrics(self, items: list[tuple[str, str]], columns: int = 2) -> None:
         gap = 10
         tile = (CONTENT_WIDTH - gap * (columns - 1)) / columns
-        inner = tile - 20
-        value_size = 22 if columns == 2 else 18
+        inset = 10 if columns == 2 else 8
+        inner = tile - 2 * inset
+        value_size, label_size = (22, 12) if columns == 2 else (18, 11)
         for index in range(0, len(items), columns):
             group = items[index : index + columns]
             height = max(
                 22
                 + len(wrap_text(value, inner, value_size)) * value_size * (1 + LEADING)
-                + len(wrap_text(label, inner, 12)) * 12 * (1 + LEADING)
+                + len(wrap_text(label, inner, label_size)) * label_size * (1 + LEADING)
                 for value, label in group
             )
             for column, (value, label) in enumerate(group):
@@ -240,7 +262,7 @@ class Card:
                     )
                     bottom = self.lines(
                         value,
-                        x=x + 10,
+                        x=x + inset,
                         y=self.y + 8,
                         width=inner,
                         size=value_size,
@@ -248,15 +270,21 @@ class Card:
                         weight=750,
                     )
                     self.lines(
-                        label, x=x + 10, y=bottom + 2, width=inner, size=12, color=MUTED
+                        label,
+                        x=x + inset,
+                        y=bottom + 2,
+                        width=inner,
+                        size=label_size,
+                        color=MUTED,
                     )
             self.y += height + gap
 
-    def chips(self, labels: list[str], size: float = 13) -> None:
+    def chips(self, labels: list[str], size: float = 13, mono: bool = False) -> None:
         x, line_bottom = float(PAD), self.y
         for label in labels:
-            chip_width = min(CONTENT_WIDTH, text_width(label, size) + 18)
-            rows = len(wrap_text(label, chip_width - 18, size))
+            chip_width = min(CONTENT_WIDTH, text_width(label, size, mono) + 18)
+            # 2px of slack so a label measured to fit never wraps inside its own chip
+            rows = len(wrap_text(label, chip_width - 16, size, mono))
             chip_height = rows * size * (1 + LEADING) + 10
             if x + chip_width > WIDTH - PAD:
                 x, self.y = float(PAD), line_bottom + 6
@@ -266,27 +294,33 @@ class Card:
                     f'height="{chip_height:g}" rx="8" fill="{CARD}" stroke="{BORDER}"/>'
                 )
                 self.lines(
-                    label, x=x + 9, y=self.y + 4, width=chip_width - 18, size=size
+                    label,
+                    x=x + 9,
+                    y=self.y + 4,
+                    width=chip_width - 16,
+                    size=size,
+                    mono=mono,
                 )
             line_bottom = max(line_bottom, self.y + chip_height)
             x += chip_width + 6
         self.y = line_bottom + 12
 
     def pills(self, items: list[tuple[str, str]]) -> None:
-        """Lay out mono status pills, the desktop profile strip's look, wrapping rows."""
-        x, top = float(PAD), self.y
-        for text, color in items:
-            width = min(CONTENT_WIDTH, text_width(text, 10.5, mono=True) + 22)
-            if x + width > WIDTH - PAD:
-                x, top = float(PAD), top + 34
+        """Lay out mono status pills, the desktop profile strip's look, two to a row."""
+        gap = 8
+        width = (CONTENT_WIDTH - gap) / 2
+        for index, (text, color) in enumerate(items):
+            x = PAD + (index % 2) * (width + gap)
+            top = self.y + (index // 2) * 34
             with self.block(step=0.06):
                 self.parts.append(
                     f'<rect x="{x:g}" y="{top:g}" width="{width:g}" height="26" rx="13" '
                     f'fill="{color}14" stroke="{color}55"/>'
-                    + _text(x + 11, top + 17, 10.5, 700, color, text, mono=True)
+                    + _text(
+                        x + width / 2, top + 17, 10, 700, color, text, True, "middle"
+                    )
                 )
-            x += width + 8
-        self.y = top + 38
+        self.y += math.ceil(len(items) / 2) * 34 + 4
 
     def finish(self, defs: str = "", backdrop: str = "") -> str:
         height = int(self.y + PAD + 0.999)
@@ -490,7 +524,7 @@ def _profile_badges(data: dict, context: dict) -> str:
     active = [c for c in certificates if cert_status(c, today)[0] == "active"]
     start_year, start_month = context.get("career_start", (2024, 8))
     years = today.year - start_year - (today.month < start_month)
-    pills = [(f"{len(active)} active certifications", SKY)] if certificates else []
+    pills = [(f"{len(active)}x certified", SKY)] if certificates else []
     pills.append((f"{max(years, 0)}+ years at AWS", GREEN))
     if leetcode.get("badge"):
         pills.append((f"LeetCode {leetcode['badge']}", AMBER))
@@ -637,13 +671,12 @@ def _publications(data: dict, context: dict) -> str:
         card.label(label)
         for text, year in entries:
             text = text.replace("APG pattern:", "AWS Prescriptive Guidance pattern:")
-            card.row(text, metadata=str(year), size=14)
+            card.row(text, metadata=str(year), size=14, bullet=True, weight=500)
     return card.finish()
 
 
 def _education(data: dict, context: dict) -> str:
     card = Card("Education")
-    card.label("Education")
     for entry in (data.get("portfolio") or {}).get("education", [])[:2]:
         details = [entry.get("institution", ""), entry.get("location", "")]
         if entry.get("cgpa"):
@@ -665,7 +698,6 @@ def _oss(data: dict, context: dict) -> str:
         data.get("oss_stars", {}).get(repository, 0) for repository in repositories
     )
     card = Card("Open source contributions", GREEN)
-    card.label("Open source")
     card.metrics(
         [
             (str(len(merged)), "Merged upstream"),
@@ -678,7 +710,7 @@ def _oss(data: dict, context: dict) -> str:
         ]
     )
     card.label("Merged into", GREEN)
-    card.chips(repositories, size=12.5)
+    card.chips(repositories, size=10.5, mono=True)
     _updated(card, data, "portfolio")
     return card.finish()
 
@@ -799,11 +831,15 @@ def _github(data: dict, context: dict) -> str:
     )
     calendar = github.get("calendar") or []
     if calendar:
-        days = github.get("active_days")
-        card.label(
-            f"Last 20 weeks · {days} active days a year" if days else "Last 20 weeks"
-        )
+        card.label("Last 20 weeks")
         _heatmap(card, calendar[-20:])
+    if github.get("active_days"):
+        card.lines(
+            f"{github['active_days']} active days in the last year",
+            size=13,
+            color=MUTED,
+        )
+        card.y += 14
     languages = github.get("languages") or []
     if languages:
         card.label("Top languages")
@@ -993,10 +1029,59 @@ def _competitive(data: dict, context: dict) -> str:
         for entry in podium:
             card.row(
                 entry["title"],
-                entry.get("organizer", ""),
-                entry.get("date", ""),
+                metadata=" · ".join(
+                    part for part in (entry.get("date"), entry.get("organizer")) if part
+                ),
                 size=14,
             )
+    return card.finish()
+
+
+def _certification_status(data: dict, context: dict) -> str:
+    certificates = context.get("certifications", [])
+    today = datetime.date.fromisoformat(context["today"])
+    statuses = [(c, *cert_status(c, today)) for c in certificates]
+    active = sum(1 for _, status, _ in statuses if status == "active")
+    unknown = any(status == "unknown" for _, status, _ in statuses)
+    card = Card(f"{active} active certifications", SKY)
+    card.label("Certification status")
+    card.metrics(
+        [
+            (str(active), "Active certifications"),
+            (
+                str(len(statuses) - active),
+                "Expired or unrecorded" if unknown else "Previously earned",
+            ),
+        ]
+    )
+    for certificate, status, detail in statuses:
+        if status != "active":
+            card.row(certificate["name"], metadata=detail, size=14)
+    card.lines(
+        "The Credly gallery below also includes learning and partner badges.",
+        size=12.5,
+        color=MUTED,
+    )
+    return card.finish().replace(
+        'role="img"', f'role="img" data-active-certifications="{active}"', 1
+    )
+
+
+def _freshness(data: dict, context: dict) -> str:
+    card = Card("Last successful data refreshes")
+    card.label("Data refreshes")
+    for source, status in context.get("freshness", []):
+        card.row(source, metadata=status, size=14)
+    return card.finish()
+
+
+def _get_card(name: str) -> str:
+    card = Card(f"Get the {name} for your own profile")
+    card.label("Get this card")
+    card.lines(f"The {name}", size=16, weight=700)
+    card.lines("Add it to your own profile README.", size=13.5, color=MUTED)
+    card.y += 6
+    card.lines("Open the quick start →", size=14, color=BLUE, weight=650)
     return card.finish()
 
 
@@ -1064,6 +1149,10 @@ def render_mobile_cards(data: dict, context: dict) -> dict[str, str]:
         f"{name}-mobile.svg": renderer(data, context)
         for name, renderer in renderers.items()
     }
+    cards["certs-status-mobile.svg"] = _certification_status(data, context)
+    cards["freshness-mobile.svg"] = _freshness(data, context)
+    for key, name in context.get("get_cards", []):
+        cards[f"get-{key}-mobile.svg"] = _get_card(name)
     cards["oss-merged-mobile.svg"] = _oss_list(data, "merged")
     cards["oss-review-mobile.svg"] = _oss_list(data, "open")
     for key, number, title, subtitle in context.get("headers", []):

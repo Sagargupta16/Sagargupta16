@@ -2,6 +2,13 @@
 
 All notable changes to this profile README repository.
 
+## [4.16.0] - 2026-10-16
+
+- Phone layouts are back, redesigned around the desktop look: `<picture>` picks a 320px card below 600px for 49 images, with mono micro-labels, flat bordered tiles and the same motion (blocks fade and rise in order, accents pulse, a shine sweeps each card, the career rail and rating chart draw in)
+- The hero keeps its node graph and rotating lines; the profile card shows 2x2 tiles and status pills; worked-with shows the company logos; certifications show the 22 Credly badge images in a grid; the tech stack and AI tools keep their icon marquee and logo tiles; GitHub gets a 20-week heatmap and a language bar
+- The phone page is about 14,700px tall instead of 25,700px: merged and open PR lists show the newest 6 and 5 with a "+N more on GitHub" line, labels and metadata are compact, and the AWS sample cards use their desktop diagrams, which read well at phone width
+- Long repository names wrap after `/`, `-`, `_` or `.` instead of between letters
+
 ## [4.15.0] - 2026-10-14
 
 - Project and tool cards wrap naturally at numeric widths, contact buttons are larger and small text is bigger

@@ -2564,15 +2564,11 @@ def write_portfolio_cards(data: dict) -> None:
     write("cta-profile.svg", render_cta("Back to profile", False))
 
 
-def render_note(
-    title: str, lines: list[str], width: int = 840, accent: str = BLUE_LIGHT
-) -> str:
+def render_note(title: str, lines: list[str], accent: str = BLUE_LIGHT) -> str:
     """Draw a wrapped status card whose lines fade in one after another."""
-    narrow = width < 500
-    font_size = 15 if narrow else 14
-    limit = 34 if narrow else 94
-    wrapped = [line for text in lines for line in _wrap(text, limit)]
-    title_lines = _wrap(title, 27 if narrow else 72)
+    width = 840
+    wrapped = [line for text in lines for line in _wrap(text, 94)]
+    title_lines = _wrap(title, 72)
     start = 28 + len(title_lines) * 25
     height = start + len(wrapped) * 23 + 18
     parts = [
@@ -2592,13 +2588,13 @@ def render_note(
         parts.append(
             _fade_group(
                 0.15 + (len(title_lines) + i) * 0.1,
-                f'<text x="20" y="{start + i * 23}" fill="#cbd5e1" font-family="{SANS}" font-size="{font_size}">{escape(text)}</text>',
+                f'<text x="20" y="{start + i * 23}" fill="#cbd5e1" font-family="{SANS}" font-size="14">{escape(text)}</text>',
             )
         )
     return "".join(parts) + SVG_CLOSE
 
 
-def render_certification_status(data: dict, width: int = 840) -> str:
+def render_certification_status(data: dict) -> str:
     pf = data.get("portfolio") or {}
     today = utc_today()
     count, issuers = active_certifications(pf, today)
@@ -2616,31 +2612,33 @@ def render_certification_status(data: dict, width: int = 840) -> str:
     if not lines:
         lines = ["Active status is based on the recorded certification expiry dates."]
     lines.append("The Credly gallery below also includes learning and partner badges.")
-    return render_note(
-        f"{count} active {issuers} certifications", lines, width
-    ).replace('role="img"', f'role="img" data-active-certifications="{count}"')
+    return render_note(f"{count} active {issuers} certifications", lines).replace('role="img"', f'role="img" data-active-certifications="{count}"')
 
 
-def render_freshness(data: dict, width: int = 840) -> str:
+def freshness_entries(data: dict) -> list[tuple[str, str]]:
+    """Name each source with the day it last refreshed successfully."""
     stamps = data.get("source_updated_at") or {}
-    lines = []
+    entries = []
     for source, label in (
         ("github", "GitHub"),
         ("leetcode", "LeetCode"),
         ("portfolio", "Portfolio"),
     ):
-        stamp = stamps.get(source)
-        if not stamp:
-            lines.append(f"{label}: saved snapshot; refresh date unavailable.")
-            continue
         # the date alone says how old a snapshot is, and keeps the card a pure
         # function of data.json, so CI can diff a re-render against the commit
         try:
-            when = datetime.datetime.fromisoformat(stamp.replace("Z", "+00:00"))
-            lines.append(f"{label}: verified {when:%d %b %Y}.")
-        except (ValueError, TypeError):
-            lines.append(f"{label}: saved snapshot; refresh date unavailable.")
-    return render_note("Data refreshes", lines, width)
+            when = datetime.datetime.fromisoformat(
+                str(stamps.get(source)).replace("Z", "+00:00")
+            )
+            entries.append((label, f"verified {when:%d %b %Y}"))
+        except ValueError:
+            entries.append((label, "saved snapshot; refresh date unavailable"))
+    return entries
+
+
+def render_freshness(data: dict) -> str:
+    lines = [f"{label}: {status}." for label, status in freshness_entries(data)]
+    return render_note("Data refreshes", lines)
 
 
 def _credly_images() -> list[tuple[str, str]]:
@@ -2690,21 +2688,13 @@ def write_responsive_variants(data: dict) -> None:
             if (logo := _company_logo(company))
         },
         "white_filter": WHITE_FILTER,
+        "freshness": freshness_entries(data),
+        "get_cards": [(key, card) for key, _, card in GET_THIS_CARD],
     }
     for name, content in render_mobile_cards(data, context).items():
         write(name, content)
-    for suffix, width in (("", 840), ("-mobile", 320)):
-        write(f"certs-status{suffix}.svg", render_certification_status(data, width))
-        write(f"freshness{suffix}.svg", render_freshness(data, width))
-    for key, _, card in GET_THIS_CARD:
-        write(
-            f"get-{key}-mobile.svg",
-            render_note(
-                f"Get the {card}",
-                ["Add this card to your profile.", "Open the quick start →"],
-                320,
-            ),
-        )
+    write("certs-status.svg", render_certification_status(data))
+    write("freshness.svg", render_freshness(data))
 
 
 def main() -> None:

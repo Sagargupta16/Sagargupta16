@@ -8,15 +8,15 @@
     "by_difficulty": {
       "Easy": [
         478,
-        971
+        972
       ],
       "Medium": [
         684,
-        2128
+        2130
       ],
       "Hard": [
         166,
-        983
+        984
       ]
     },
     "history": [
@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8000,
-    "commits": 5695,
-    "prs": 1675,
-    "stars": 299,
+    "contributions": 8097,
+    "commits": 5738,
+    "prs": 1724,
+    "stars": 300,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -198,22 +198,13 @@
       "readme-kit-action": 4,
       "agent-brain": 0,
       "svg-forge": 1,
-      "stackdraw": 0
+      "orrery": 1
     },
     "followers": 111,
     "streak": 1,
-    "longest": 154,
-    "active_days": 313,
+    "longest": 147,
+    "active_days": 306,
     "calendar": [
-      [
-        3,
-        16,
-        5,
-        7,
-        7,
-        10,
-        44
-      ],
       [
         11,
         15,
@@ -415,8 +406,8 @@
       [
         3,
         70,
-        23,
-        19,
+        22,
+        20,
         0,
         4,
         43
@@ -577,8 +568,8 @@
       [
         0,
         12,
-        6,
-        25,
+        4,
+        27,
         5,
         0,
         0
@@ -616,14 +607,14 @@
         0,
         0,
         0,
-        1,
-        1
+        0,
+        2
       ],
       [
         0,
         0,
-        21,
-        40,
+        20,
+        41,
         63,
         11,
         30
@@ -641,8 +632,8 @@
         53,
         37,
         11,
-        5,
-        10,
+        4,
+        11,
         10,
         6
       ],
@@ -651,8 +642,8 @@
         8,
         5,
         6,
-        18,
-        23,
+        17,
+        24,
         29
       ],
       [
@@ -679,34 +670,37 @@
         22,
         29,
         0,
-        34,
+        28,
         0
+      ],
+      [
+        103
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        55.7,
+        56.1,
         "#3178c6"
       ],
       [
         "Python",
-        26.2,
+        25.5,
         "#3572A5"
       ],
       [
         "JavaScript",
-        7.0,
+        7.6,
         "#f1e05a"
       ],
       [
         "CSS",
-        3.2,
+        3.1,
         "#663399"
       ],
       [
         "C++",
-        3.1,
+        3.0,
         "#f34b7d"
       ],
       [
@@ -1149,12 +1143,13 @@
       },
       {
         "title": "Ledger Sync",
-        "description": "A self-hosted personal finance dashboard (v2.28.0) with an AI chatbot that uses 15 read-only tool calls to answer questions about your spending, trends, tax, and goals. Upload Excel/CSV bank statements, get SHA-256 deduplication, 50/30/20 budgeting, bill calendar, GST analysis, subscription tracking, year-in-review, FIRE planning (Lean/Barista/Standard/Fat), India FY tax estimation, Sankey cash flow, and a Financial Health Score across 8 metrics.",
+        "description": "A self-hosted personal finance dashboard with an AI chatbot that uses 15 read-only tool calls to answer questions about your spending, trends, tax, and goals. Upload Excel/CSV bank statements, get SHA-256 deduplication, 50/30/20 budgeting, bill calendar, GST analysis, subscription tracking, year-in-review, FIRE planning (Lean/Barista/Standard/Fat), India FY tax estimation, Sankey cash flow, and a Financial Health Score across 8 metrics.",
         "date": "July 2026",
         "tools_tech": [
           "TypeScript",
           "React 19",
           "FastAPI",
+          "Neon PostgreSQL",
           "SQLite",
           "Tailwind CSS",
           "AWS Bedrock",
@@ -1176,6 +1171,7 @@
           "FastAPI",
           "TensorFlow",
           "Keras",
+          "NumPy",
           "GraphQL"
         ],
         "github": "https://github.com/Sagargupta16/LeetCode_Rating_Predictor",
@@ -1218,7 +1214,7 @@
       },
       {
         "title": "Personal Portfolio",
-        "description": "This site - a minimal dark developer portfolio with an ambient aurora background, project cards with live screenshots and animated SVG covers, and a fully data-driven JSON architecture. Built with React 19, Vite 8, Tailwind CSS v4, Motion, and Lenis smooth scroll.",
+        "description": "This site - a minimal dark developer portfolio with an ambient aurora background, project cards with an animated SVG cover scene for every project, and a fully data-driven JSON architecture. Built with React 19, Vite 8, Tailwind CSS v4, Motion, and Lenis smooth scroll.",
         "date": "October 2022",
         "tools_tech": [
           "React 19",
@@ -1241,6 +1237,7 @@
           "TypeScript",
           "MCP",
           "Node.js",
+          "MongoDB",
           "pnpm"
         ],
         "github": "https://github.com/Sagargupta16/SelfHub",
@@ -1250,6 +1247,60 @@
       }
     ],
     "community": [
+      {
+        "title": "orrery",
+        "description": "Animated architecture and system design diagrams from one YAML spec, with 16,682 official icons from AWS, Azure, Google Cloud, Kubernetes, GitHub and IBM. The Eclipse Layout Kernel places nested boundaries and routes edges, packets travel every edge and numbered steps play in order, and one spec renders to SVG, PNG, editable draw.io, a React component and an HTML viewer. Ships as an Agent Skill and Claude Code plugin.",
+        "tools_tech": [
+          "TypeScript",
+          "ELK",
+          "SVG",
+          "draw.io",
+          "Claude Code",
+          "Agent Skills"
+        ],
+        "github": "https://github.com/Sagargupta16/orrery",
+        "card_summary": null
+      },
+      {
+        "title": "svg-forge",
+        "description": "A Claude Code plugin for designing animated SVGs that render everywhere they are shown: self-contained files for GitHub READMEs and img tags, and React plus Motion scenes for web apps. It packages the rules and gotchas from building animated README cards and project cover scenes into three skills, a designer agent, a generator, and a validator.",
+        "tools_tech": [
+          "Python",
+          "SVG",
+          "SMIL",
+          "Motion",
+          "Claude Code"
+        ],
+        "github": "https://github.com/Sagargupta16/svg-forge",
+        "card_summary": null
+      },
+      {
+        "title": "agent-brain",
+        "description": "An agent harness plus a shared markdown brain that Claude Code, Codex and Kiro all read and write. Each fact is one markdown file with its source; facts get corrected or withdrawn with history, never silently overwritten, and recall runs over BM25 through a stdio MCP server. Ships with 15 skills, 7 subagents, safety hooks, always-on rules, and 27 public lessons from real failures.",
+        "tools_tech": [
+          "Python",
+          "MCP",
+          "BM25",
+          "Claude Code",
+          "Codex",
+          "Kiro"
+        ],
+        "github": "https://github.com/Sagargupta16/agent-brain",
+        "card_summary": null
+      },
+      {
+        "title": "Shared Workflows",
+        "description": "Seven reusable GitHub Actions workflows that 11 of my repos call with a one-line uses: reference instead of copying CI. Node and Python CI, GitHub Pages deploys, Docker builds with a Trivy scan, dependency and filesystem security scans, Terraform checks with Checkov, and tag-triggered releases.",
+        "tools_tech": [
+          "GitHub Actions",
+          "Trivy",
+          "Checkov",
+          "Terraform",
+          "Docker"
+        ],
+        "github": "https://github.com/Sagargupta16/shared-workflows",
+        "card_summary": null
+      },
       {
         "title": "GitHub Stats Card Action",
         "description": "A GitHub Action that renders an animated GitHub stats card as an SVG in your own repo, so your profile README never depends on a hosted widget. Five stat tiles, a contribution calendar, current and longest streak, and top languages in one self-hosted card, published on the GitHub Marketplace.",
@@ -1300,7 +1351,7 @@
       },
       {
         "title": "skillcheck",
-        "description": "Conformance suite for Agent Skills (SKILL.md), published on npm. Linters check syntax; skillcheck checks reality: 36 rules with exact skills-ref parity, a 19-field client-extension registry across 3 runtimes (Claude Code, Copilot, Cursor), structure and reference validation, SARIF output, and a drop-in GitHub Action.",
+        "description": "Conformance suite for Agent Skills (SKILL.md), published on npm. Linters check syntax; skillcheck checks reality: 36 rules with exact skills-ref parity, a 19-field client-extension registry across 3 runtimes (Claude Code, Copilot, Cursor), structure and reference validation, SARIF output, and a drop-in GitHub Action listed on the GitHub Marketplace.",
         "tools_tech": [
           "TypeScript",
           "Node.js",
@@ -1325,7 +1376,7 @@
       },
       {
         "title": "Claude Skills",
-        "description": "Custom Claude Code plugin marketplace (v5.2.0) with 16 curated plugins covering dev workflow, Docker, dependency audits, refactoring, git workflows, open source contributions, Python clean code, animation, and more. Installable via /plugin marketplace.",
+        "description": "Custom Claude Code plugin marketplace with 16 curated plugins covering dev workflow, Docker, dependency audits, refactoring, git workflows, open source contributions, Python clean code, animation, and more, plus svg-forge listed from its own repo. Installable via /plugin marketplace.",
         "tools_tech": [
           "Claude Code",
           "Plugin Marketplace",
@@ -1338,7 +1389,7 @@
       },
       {
         "title": "Claude Cost Optimizer",
-        "description": "Installable Claude Code plugin with cost-mode skill that saves 30-60% on costs through concise responses, model routing, budget hooks, and efficient workflow patterns. Includes web-based Repo Analyzer, Cost Calculator, and Badge Checker tools.",
+        "description": "Installable Claude Code plugin with a cost-mode skill for concise responses, model routing, budget hooks, and efficient workflow patterns, plus claude-rate, a local CLI that grades a project, your ~/.claude setup, and 30 days of real usage. Includes web-based Repo Analyzer, Cost Calculator, and Badge Checker tools.",
         "tools_tech": [
           "Claude Code",
           "Plugin Marketplace",
@@ -1366,12 +1417,12 @@
       },
       {
         "title": "MCP Toolkit",
-        "description": "Reusable utilities and middleware for building production-ready MCP servers. Drop-in packages for the TypeScript SDK covering auth, caching, rate limiting, logging, and CORS - so you stop reimplementing the same plumbing for every MCP server.",
+        "description": "Reusable utilities and middleware for building MCP servers, in beta. Drop-in packages for the TypeScript SDK covering auth, caching, rate limiting, logging, and CORS - so you stop reimplementing the same plumbing for every MCP server. Not on npm yet, so it builds from source.",
         "tools_tech": [
           "TypeScript",
           "MCP Protocol",
           "Node.js",
-          "npm"
+          "npm workspaces"
         ],
         "github": "https://github.com/Sagargupta16/mcp-toolkit",
         "card_summary": null
@@ -1440,12 +1491,13 @@
       },
       {
         "title": "Credly Badge README Action",
-        "description": "A GitHub Action that auto-syncs your Credly certifications and badges to your GitHub profile README - no more manual updates when you earn a new cert. Categorizes badges into Industry Certifications, Professional/Partner, and Knowledge/Learning with non-destructive HTML-marker updates. Since v1.1.0 an SVG card mode (output readme, svg, or both) draws every badge into one animated SVG card in two or three groups.",
+        "description": "A GitHub Action that auto-syncs your Credly certifications and badges to your GitHub profile README - no more manual updates when you earn a new cert. Categorizes badges into Industry Certifications, Professional/Partner, and Knowledge/Learning with non-destructive HTML-marker updates. Since v1.1.0 an SVG card mode (output readme, svg, or both) draws every badge into one animated SVG card in two or three groups, and since v1.2.0 the card inlines its badges as WebP at under a third of the old size.",
         "tools_tech": [
           "Python 3.13",
           "GitHub Actions",
           "Credly API",
-          "Markdown"
+          "Markdown",
+          "Pillow"
         ],
         "github": "https://github.com/Sagargupta16/credly-badge-readme-action",
         "card_summary": null
@@ -2104,33 +2156,33 @@
         "type": "Hackathon"
       }
     ],
-    "project_count": 47
+    "project_count": 48
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5861,
-    "PrefectHQ/prefect": 24028,
-    "anthropics/skills": 181676,
-    "apache/airflow": 47194,
+    "PrefectHQ/prefect": 24034,
+    "anthropics/skills": 181867,
+    "apache/airflow": 47203,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
-    "awslabs/agent-plugins": 923,
-    "awslabs/mcp": 9784,
-    "axios/axios": 109301,
+    "awslabs/agent-plugins": 924,
+    "awslabs/mcp": 9789,
+    "axios/axios": 109298,
     "cloudposse/terraform-aws-tfstate-backend": 442,
-    "expressjs/multer": 12087,
-    "feast-dev/feast": 7335,
-    "forem/selfhost": 1481,
+    "expressjs/multer": 12086,
+    "feast-dev/feast": 7336,
+    "forem/selfhost": 1480,
     "hashicorp/terraform-provider-aws": 11116,
-    "lucide-icons/lucide": 25094,
-    "modelcontextprotocol/servers": 91327,
+    "lucide-icons/lucide": 25118,
+    "modelcontextprotocol/servers": 91343,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
   "views": 23340,
   "source_updated_at": {
-    "github": "2026-10-17T11:01:32+00:00",
-    "leetcode": "2026-10-17T11:01:28+00:00",
-    "portfolio": "2026-10-17T11:01:33+00:00",
-    "views": "2026-10-17T11:01:28+00:00"
+    "github": "2026-10-18T10:32:07+00:00",
+    "leetcode": "2026-10-18T10:32:03+00:00",
+    "portfolio": "2026-10-18T10:32:08+00:00",
+    "views": "2026-10-18T10:32:03+00:00"
   }
 }

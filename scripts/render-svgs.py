@@ -144,6 +144,7 @@ HEADERS = [
 
 # The community cards shown on the profile, in this order; all of them are on COMMUNITY.md.
 COMMUNITY_TOP = [
+    "orrery",
     "github-stats-card-action",
     "leetcode-card-action",
     "oss-contributions-card-action",
@@ -163,6 +164,7 @@ CARD_SUMMARIES = {
     "instagram-likes-leaderboard": "Browser tool that scans your Instagram posts to show your biggest fans, ghost followers and non-mutuals. No downloads or sign-ups.",
     "personal-portfolio": "My portfolio: a dark, data-driven React 19 site with live project screenshots, animated SVG covers and an ambient aurora background.",
     "selfhub": "MCP server that works as a personal memory hub: save notes, preferences, snippets and tasks from any MCP-enabled AI assistant.",
+    "orrery": "Animated architecture diagrams from one YAML spec, with official AWS, Azure, Google Cloud and Kubernetes icons.",
     "github-stats-card-action": "GitHub Action that renders an animated GitHub stats card as an SVG in your own repo.",
     "leetcode-card-action": "GitHub Action that renders an animated LeetCode card with your contest rating history.",
     "oss-contributions-card-action": "GitHub Action that finds your upstream pull requests and renders them as SVG cards.",

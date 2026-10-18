@@ -2161,7 +2161,7 @@
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5861,
     "PrefectHQ/prefect": 24034,
-    "anthropics/skills": 181878,
+    "anthropics/skills": 181880,
     "apache/airflow": 47203,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
@@ -2180,9 +2180,9 @@
   },
   "views": 23340,
   "source_updated_at": {
-    "github": "2026-10-18T11:11:32+00:00",
-    "leetcode": "2026-10-18T11:11:29+00:00",
-    "portfolio": "2026-10-18T11:11:32+00:00",
-    "views": "2026-10-18T11:11:28+00:00"
+    "github": "2026-10-18T11:29:13+00:00",
+    "leetcode": "2026-10-18T11:29:10+00:00",
+    "portfolio": "2026-10-18T11:29:13+00:00",
+    "views": "2026-10-18T11:29:09+00:00"
   }
 }

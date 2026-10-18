@@ -2,6 +2,11 @@
 
 All notable changes to this profile README repository.
 
+## [4.17.0] - 2026-10-18
+
+- orrery leads the community cards on the profile, ahead of the six already there
+- Re-rendered from live data: the portfolio now lists 20 community tools (orrery, svg-forge, agent-brain and Shared Workflows are new), so COMMUNITY.md and the "See all" count follow
+
 ## [4.16.0] - 2026-10-16
 
 - Phone layouts are back, redesigned around the desktop look: `<picture>` picks a 320px card below 600px for 47 of the 72 images, with mono micro-labels, flat bordered tiles and the same motion (blocks fade and rise in order, accents pulse, a shine sweeps each card, the career rail and rating chart draw in)

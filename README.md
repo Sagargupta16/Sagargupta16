@@ -4,7 +4,7 @@
 
 <a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/hero-mobile.svg" /><img src="assets/svg/hero.svg" width="100%" alt="Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS" /></picture></a>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,340; Followers 111; Total Stars 299; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,340; Followers 111; Total Stars 300; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
 
 <picture><source media="(max-width: 600px)" srcset="assets/svg/intro-mobile.svg" /><img src="assets/svg/intro.svg" width="100%" alt="Cloud consultant at AWS Professional Services. Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines, plus the MCP servers and Claude Code skills I build to do that work faster." /></picture>
 
@@ -48,7 +48,7 @@
 </p>
 
 <p align="center">
-<a href="https://sagargupta.online/portfolio-react/"><picture><img src="assets/svg/cta-portfolio.svg" width="250" alt="View all 47 projects" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><img src="assets/svg/cta-portfolio.svg" width="250" alt="View all 48 projects" /></picture></a>
 </p>
 
 <picture><img src="assets/svg/divider.svg" width="100%" alt="" /></picture>
@@ -92,6 +92,7 @@
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-community-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-community-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-community-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-community-dark.svg" /><img src="assets/svg/header-community-dark.svg" width="100%" alt="Community and Developer Tools" /></picture>
 
 <p align="center">
+<a href="https://github.com/Sagargupta16/orrery"><picture><source media="(max-width: 600px)" srcset="assets/svg/tool-orrery-mobile.svg" /><img src="assets/svg/tool-orrery.svg" width="270" alt="orrery: Animated architecture diagrams from one YAML spec, with official AWS, Azure, Google Cloud and Kubernetes icons. Built with TypeScript, ELK, SVG." /></picture></a>
 <a href="https://github.com/Sagargupta16/github-stats-card-action"><picture><source media="(max-width: 600px)" srcset="assets/svg/tool-github-stats-card-action-mobile.svg" /><img src="assets/svg/tool-github-stats-card-action.svg" width="270" alt="GitHub Stats Card Action: GitHub Action that renders an animated GitHub stats card as an SVG in your own repo. Built with Python 3.13, GitHub Actions, GitHub GraphQL API." /></picture></a>
 <a href="https://github.com/Sagargupta16/leetcode-card-action"><picture><source media="(max-width: 600px)" srcset="assets/svg/tool-leetcode-card-action-mobile.svg" /><img src="assets/svg/tool-leetcode-card-action.svg" width="270" alt="LeetCode Card Action: GitHub Action that renders an animated LeetCode card with your contest rating history. Built with Python 3.13, GitHub Actions, LeetCode GraphQL." /></picture></a>
 <a href="https://github.com/Sagargupta16/oss-contributions-card-action"><picture><source media="(max-width: 600px)" srcset="assets/svg/tool-oss-contributions-card-action-mobile.svg" /><img src="assets/svg/tool-oss-contributions-card-action.svg" width="270" alt="OSS Contributions Card Action: GitHub Action that finds your upstream pull requests and renders them as SVG cards. Built with Python 3.13, GitHub Actions, GitHub GraphQL API." /></picture></a>
@@ -101,14 +102,14 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/Sagargupta16/Sagargupta16/blob/main/COMMUNITY.md"><picture><img src="assets/svg/cta-community.svg" width="250" alt="See all 16 community tools" /></picture></a>
+<a href="https://github.com/Sagargupta16/Sagargupta16/blob/main/COMMUNITY.md"><picture><img src="assets/svg/cta-community.svg" width="250" alt="See all 20 community tools" /></picture></a>
 </p>
 
 <picture><img src="assets/svg/divider.svg" width="100%" alt="" /></picture>
 
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-stats-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-stats-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stats-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stats-dark.svg" /><img src="assets/svg/header-stats-dark.svg" width="100%" alt="Coding Stats" /></picture>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/github-mobile.svg" /><img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,000 contributions, 5,695 commits, 1,675 pull requests, 299 stars, longest streak 154 days" /></picture>
+<picture><source media="(max-width: 600px)" srcset="assets/svg/github-mobile.svg" /><img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,097 contributions, 5,738 commits, 1,724 pull requests, 300 stars, longest streak 147 days" /></picture>
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><picture><source media="(max-width: 600px)" srcset="assets/svg/get-github-mobile.svg" /><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></picture></a>
 
@@ -140,4 +141,4 @@
 <a href="https://sagargupta.online/portfolio-react/"><picture><img src="assets/svg/connect-portfolio.svg" width="128" alt="Portfolio" /></picture></a>
 </p>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/freshness-mobile.svg" /><img src="assets/svg/freshness.svg" width="100%" alt="Data refreshes: GitHub: verified 17 Oct 2026.; LeetCode: verified 17 Oct 2026.; Portfolio: verified 17 Oct 2026." /></picture>
+<picture><source media="(max-width: 600px)" srcset="assets/svg/freshness-mobile.svg" /><img src="assets/svg/freshness.svg" width="100%" alt="Data refreshes: GitHub: verified 18 Oct 2026.; LeetCode: verified 18 Oct 2026.; Portfolio: verified 18 Oct 2026." /></picture>

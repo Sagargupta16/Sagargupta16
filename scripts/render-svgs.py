@@ -665,14 +665,18 @@ def _ac_request_lane() -> list[str]:
             f'<text class="m" x="150" y="{y + 30}" text-anchor="middle" fill="{AMBER}" font-size="8" opacity="0">DENY{_ac_flash(0.12, 0.2)}</text>',
             _ac_lit(150, y, 76, 32, GREEN, 0.32, 0.42),
             f'<text class="m" x="150" y="{y + 30}" text-anchor="middle" fill="{GREEN}" font-size="8" opacity="0">ALLOW{_ac_flash(0.32, 0.42)}</text>',
-            f'<circle r="4" fill="#f3f4f6" opacity="0">'
-            f'<animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.04;0.12;1" '
-            f'calcMode="linear" path="M{edges[0]:g} {y} H{starts[1]:g}"/>{anim_opacity("0;0;1;1;0;0", "0;0.03;0.05;0.15;0.18;1")}</circle>',
-            f'<circle r="4" fill="#f3f4f6" opacity="0">'
-            f'<animateMotion dur="6s" repeatCount="indefinite" '
-            f'keyPoints="0;0;{at_gate:.4f};{at_gate:.4f};{at_tools:.4f};{at_tools:.4f};1;1" '
-            f'keyTimes="0;0.26;0.32;0.4;0.48;0.54;0.6;1" calcMode="linear" path="M{edges[0]:g} {y} H{starts[3]:g}"/>'
-            f"{anim_opacity('0;0;1;1;0;0', '0;0.25;0.27;0.6;0.62;1')}</circle>",
+            (
+                f'<circle r="4" fill="#f3f4f6" opacity="0">'
+                f'<animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.04;0.12;1" '
+                f'calcMode="linear" path="M{edges[0]:g} {y} H{starts[1]:g}"/>{anim_opacity("0;0;1;1;0;0", "0;0.03;0.05;0.15;0.18;1")}</circle>'
+            ),
+            (
+                f'<circle r="4" fill="#f3f4f6" opacity="0">'
+                f'<animateMotion dur="6s" repeatCount="indefinite" '
+                f'keyPoints="0;0;{at_gate:.4f};{at_gate:.4f};{at_tools:.4f};{at_tools:.4f};1;1" '
+                f'keyTimes="0;0.26;0.32;0.4;0.48;0.54;0.6;1" calcMode="linear" path="M{edges[0]:g} {y} H{starts[3]:g}"/>'
+                f"{anim_opacity('0;0;1;1;0;0', '0;0.25;0.27;0.6;0.62;1')}</circle>"
+            ),
         ]
     )
     return parts

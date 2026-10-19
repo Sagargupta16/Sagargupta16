@@ -53,6 +53,11 @@ BLUE_LIGHT = "#60a5fa"
 SKY = "#38bdf8"
 GREEN = "#22c55e"
 AMBER = "#f59e0b"
+HAIR_FILL = "rgba(255,255,255,0.03)"
+HAIR_STROKE = "rgba(255,255,255,0.14)"
+RECT_OPEN = "<rect "
+RECT_HIDDEN = '<rect opacity="0" '
+RECT_CLOSE = "</rect>"
 MONO = "'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace"
 SANS = "'Segoe UI',Inter,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif"
 
@@ -446,7 +451,7 @@ def render_org_card() -> str:
                     bw,
                     node_h,
                     "rgba(255,255,255,0.12)",
-                    "rgba(255,255,255,0.03)",
+                    HAIR_FILL,
                 )
             )
     lit = {
@@ -466,7 +471,7 @@ def render_org_card() -> str:
                 BLUE_LIGHT,
                 f"{BLUE}30",
                 f'<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="{times}" dur="6s" repeatCount="indefinite"/>',
-            ).replace("<rect ", '<rect opacity="0" ', 1)
+            ).replace(RECT_OPEN, RECT_HIDDEN, 1)
         )
     for key, delay in (("prod", 0), ("dev", 0.03)):
         x, y, bw = nodes[key]
@@ -547,9 +552,9 @@ def render_mlops_card() -> str:
     for name, x in stages:
         bw = 58 if name != "DEPLOY" else 62
         stroke = (
-            f"{BLUE}cc" if name in ("TRAIN", "DEPLOY") else "rgba(255,255,255,0.14)"
+            f"{BLUE}cc" if name in ("TRAIN", "DEPLOY") else HAIR_STROKE
         )
-        fill = f"{BLUE}1f" if name in ("TRAIN", "DEPLOY") else "rgba(255,255,255,0.03)"
+        fill = f"{BLUE}1f" if name in ("TRAIN", "DEPLOY") else HAIR_FILL
         parts.append(box(x - bw / 2, y - 16, bw, 32, stroke, fill))
         parts.append(
             f'<text class="m" x="{x}" y="{y + 3}" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8">{name}</text>'
@@ -557,9 +562,9 @@ def render_mlops_card() -> str:
     # quality gate flashes green when the model clears it
     parts.append(
         box(210 - 29, y - 16, 58, 32, GREEN, f"{GREEN}22", "")
-        .replace("<rect ", '<rect opacity="0" ', 1)
+        .replace(RECT_OPEN, RECT_HIDDEN, 1)
         .replace(
-            "</rect>", f"{anim_opacity('0;0;1;1;0', '0;0.3;0.34;0.46;0.52')}</rect>"
+            RECT_CLOSE, f"{anim_opacity('0;0;1;1;0', '0;0.3;0.34;0.46;0.52')}</rect>"
         )
     )
     # three architectures train in parallel under TRAIN
@@ -584,6 +589,186 @@ def render_mlops_card() -> str:
         f'<circle cx="366" cy="{y - 24}" r="3" fill="{GREEN}">'
         '<animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>'
     )
+    parts.append(SVG_CLOSE)
+    return "".join(parts)
+
+
+_AC_Y = 66  # request lane
+_AC_LY = 146  # release lane
+_AC_DIM = "rgba(255,255,255,0.45)"
+_AC_LABEL = "rgba(255,255,255,0.7)"
+_AC_WIRE = "rgba(255,255,255,0.16)"
+
+
+def _ac_flash(t_on: float, t_off: float, end: float = 1) -> str:
+    """Fade in at t_on, hold, fade out by t_off (fractions of the 6s loop)."""
+    return anim_opacity(
+        "0;0;1;1;0;0",
+        f"0;{t_on:.2f};{t_on + 0.02:.2f};{t_off:.2f};{t_off + 0.03:.2f};{end}",
+    )
+
+
+def _ac_lit(
+    x: float, y: float, bw: float, bh: float, color: str, t_on: float, t_off: float
+) -> str:
+    return (
+        box(x - bw / 2, y - bh / 2, bw, bh, color, f"{color}26")
+        .replace(RECT_OPEN, RECT_HIDDEN, 1)
+        .replace(RECT_CLOSE, f"{_ac_flash(t_on, t_off)}</rect>")
+    )
+
+
+def _ac_request_lane() -> list[str]:
+    """Client, Cedar gate on the gateway, tools runtime, harness; deny then allow."""
+    y = _AC_Y
+    lane = [
+        ("MCP CLIENT", 52, 70),
+        ("CEDAR GATE", 150, 76),
+        ("9 TOOLS", 255, 74),
+        ("HARNESS", 358, 72),
+    ]
+    edges = [x + bw / 2 for _, x, bw in lane]
+    starts = [x - bw / 2 for _, x, bw in lane]
+    parts = [
+        f'<path d="M{a:g} {y} H{b:g}" stroke="{_AC_WIRE}" stroke-width="1.2"/>'
+        for a, b in zip(edges, starts[1:])
+    ]
+    for name, x, bw in lane:
+        accent = name in ("CEDAR GATE", "HARNESS")
+        parts.extend(
+            [
+                box(
+                    x - bw / 2,
+                    y - 16,
+                    bw,
+                    32,
+                    f"{BLUE}cc" if accent else HAIR_STROKE,
+                    f"{BLUE}1f" if accent else HAIR_FILL,
+                ),
+                f'<text class="m" x="{x}" y="{y + 3}" text-anchor="middle" fill="{_AC_LABEL}" font-size="8">{name}</text>',
+            ]
+        )
+    parts.append(
+        f'<text class="m" x="150" y="{y - 26}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8">DEFAULT DENY</text>'
+    )
+    parts.extend(
+        f'<text class="m" x="52" y="{y + 30 + i * 11}" text-anchor="middle" fill="{_AC_DIM}" font-size="8">{client}</text>'
+        for i, client in enumerate(("CLAUDE CODE", "CODEX", "KIRO"))
+    )
+    # first call is not on the allow list and stops at the gate; the second passes
+    span = starts[3] - edges[0]
+    at_gate = (starts[1] - edges[0]) / span
+    at_tools = (starts[2] - edges[0]) / span
+    parts.extend(
+        [
+            _ac_lit(150, y, 76, 32, AMBER, 0.12, 0.2),
+            f'<text class="m" x="150" y="{y + 30}" text-anchor="middle" fill="{AMBER}" font-size="8" opacity="0">DENY{_ac_flash(0.12, 0.2)}</text>',
+            _ac_lit(150, y, 76, 32, GREEN, 0.32, 0.42),
+            f'<text class="m" x="150" y="{y + 30}" text-anchor="middle" fill="{GREEN}" font-size="8" opacity="0">ALLOW{_ac_flash(0.32, 0.42)}</text>',
+            (
+                f'<circle r="4" fill="#f3f4f6" opacity="0">'
+                f'<animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.04;0.12;1" '
+                f'calcMode="linear" path="M{edges[0]:g} {y} H{starts[1]:g}"/>{anim_opacity("0;0;1;1;0;0", "0;0.03;0.05;0.15;0.18;1")}</circle>'
+            ),
+            (
+                f'<circle r="4" fill="#f3f4f6" opacity="0">'
+                f'<animateMotion dur="6s" repeatCount="indefinite" '
+                f'keyPoints="0;0;{at_gate:.4f};{at_gate:.4f};{at_tools:.4f};{at_tools:.4f};1;1" '
+                f'keyTimes="0;0.26;0.32;0.4;0.48;0.54;0.6;1" calcMode="linear" path="M{edges[0]:g} {y} H{starts[3]:g}"/>'
+                f"{anim_opacity('0;0;1;1;0;0', '0;0.25;0.27;0.6;0.62;1')}</circle>"
+            ),
+        ]
+    )
+    return parts
+
+
+def _ac_tools_and_harness() -> list[str]:
+    """8 tools plus ask_architect, which hands the request to the hosted agent."""
+    y = _AC_Y
+    ask_pulse = anim_opacity("0.45;0.45;1;1;0.45;0.45", "0;0.48;0.5;0.62;0.66;1")
+    parts = []
+    for i in range(9):
+        col, row = i % 3, i // 3
+        cx, cy = 255 - 14 + col * 14, y + 24 + row * 8
+        ask = i == 8
+        fill = BLUE_LIGHT if ask else "rgba(255,255,255,0.18)"
+        parts.append(
+            f'<rect x="{cx - 5}" y="{cy}" width="10" height="5" rx="1.5" fill="{fill}"'
+            f' opacity="{0.45 if ask else 1}">'
+            + (ask_pulse if ask else "")
+            + RECT_CLOSE
+        )
+    parts.extend(
+        [
+            f'<text class="m" x="255" y="{y + 56}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8" opacity="0.45">ask_architect'
+            f"{ask_pulse}</text>",
+            _ac_lit(358, y, 72, 32, BLUE_LIGHT, 0.6, 0.7),
+        ]
+    )
+    parts.extend(
+        f'<text class="m" x="358" y="{y + 30 + i * 11}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8" opacity="0.45">{label}'
+        f"{anim_opacity('0.45;0.45;1;1;0.45;0.45', '0;0.6;0.62;0.7;0.73;1')}</text>"
+        for i, label in enumerate(("3 SKILLS", "MEMORY"))
+    )
+    return parts
+
+
+def _ac_release_lane() -> list[str]:
+    """A version reaches PROD only after AgentCore Evaluations passes it."""
+    ly = _AC_LY
+    stages = [
+        ("BUILD", 52, 0.66),
+        ("DEFAULT", 150, 0.72),
+        ("EVAL", 255, 0.78),
+        ("PROD", 358, 0.88),
+    ]
+    parts = []
+    for (_, a, _), (_, b, t) in zip(stages, stages[1:]):
+        parts.extend(
+            [
+                f'<path d="M{a + 32} {ly} H{b - 32}" stroke="{_AC_WIRE}" stroke-width="1.2"/>',
+                f'<path d="M{a + 32} {ly} H{b - 32}" stroke="{BLUE_LIGHT}" stroke-width="1.4" opacity="0">'
+                f"{_ac_flash(t - 0.03, 0.95)}</path>",
+            ]
+        )
+    for name, x, t in stages:
+        parts.extend(
+            [
+                box(x - 32, ly - 12, 64, 24, HAIR_STROKE, HAIR_FILL),
+                _ac_lit(
+                    x, ly, 64, 24, GREEN if name == "PROD" else BLUE_LIGHT, t, 0.95
+                ),
+            ]
+        )
+        if name == "EVAL":
+            parts.append(_ac_lit(x, ly, 64, 24, GREEN, 0.83, 0.95))
+        parts.append(
+            f'<text class="m" x="{x}" y="{ly + 3}" text-anchor="middle" fill="{_AC_LABEL}" font-size="8">{name}</text>'
+        )
+    parts.extend(
+        [
+            f'<text class="m" x="255" y="{ly + 26}" text-anchor="middle" fill="{GREEN}" font-size="8" opacity="0">PASS{_ac_flash(0.83, 0.95)}</text>',
+            f'<circle cx="{358 + 32 - 8}" cy="{ly}" r="3" fill="{GREEN}">'
+            '<animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>',
+        ]
+    )
+    return parts
+
+
+def render_agentcore_card() -> str:
+    """A call denied then allowed by the Cedar gate, ask_architect into the harness, eval-gated PROD."""
+    parts = card_frame(
+        410,
+        262,
+        "AgentCore Harness with Governed MCP Tools",
+        "AWS SAMPLES  |  TERRAFORM  |  AGENTCORE  |  MCP",
+        "Animated diagram: a default-deny Cedar gate on AgentCore Gateway blocks one MCP call "
+        "and allows the next to 9 tools, ask_architect runs the harness with 3 skills and memory, "
+        "and a version reaches PROD only after an evaluation passes",
+    )
+    parts.extend(_ac_request_lane())
+    parts.extend(_ac_tools_and_harness())
+    parts.extend(_ac_release_lane())
     parts.append(SVG_CLOSE)
     return "".join(parts)
 
@@ -837,7 +1022,7 @@ def render_experience(data: dict) -> str:
 
 def render_highlights(data: dict) -> str:
     pf = data.get("portfolio") or {}
-    samples = len(pf.get("samples", [])) or 2
+    samples = len(pf.get("samples", [])) or 3
     tfc = next(
         (
             m.group(1)
@@ -2373,6 +2558,13 @@ def render_readme(data: dict) -> str:
     )
     samples = [
         _link(
+            "https://github.com/aws-samples/sample-agentcore-harness-agent-terraform",
+            _img(
+                "sample-agentcore-harness.svg",
+                "AgentCore Harness Agent with Governed MCP Tools, published AWS sample",
+            ),
+        ),
+        _link(
             "https://github.com/aws-samples/sample-aws-terraform-org-governance",
             _img(
                 "sample-org-governance.svg",
@@ -2742,6 +2934,7 @@ def main() -> None:
         ("stack-mobile.svg", None if OFFLINE else render_stack(320)),
     ):
         write_optional(name, content)
+    write("sample-agentcore-harness.svg", render_agentcore_card())
     write("sample-org-governance.svg", render_org_card())
     write("sample-sagemaker-mlops.svg", render_mlops_card())
     for key, num, title, sub in HEADERS:

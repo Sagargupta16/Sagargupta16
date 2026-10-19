@@ -32,6 +32,7 @@
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-projects-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-projects-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-projects-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-projects-dark.svg" /><img src="assets/svg/header-projects-dark.svg" width="100%" alt="Featured Projects" /></picture>
 
 <p align="center">
+<a href="https://github.com/aws-samples/sample-agentcore-harness-agent-terraform"><picture><img src="assets/svg/sample-agentcore-harness.svg" width="400" alt="AgentCore Harness Agent with Governed MCP Tools, published AWS sample" /></picture></a>
 <a href="https://github.com/aws-samples/sample-aws-terraform-org-governance"><picture><img src="assets/svg/sample-org-governance.svg" width="400" alt="AWS Organizations Governance, published AWS sample" /></picture></a>
 <a href="https://github.com/aws-samples/sample-sagemaker-image-classification-mlops"><picture><img src="assets/svg/sample-sagemaker-mlops.svg" width="400" alt="SageMaker Image Classification MLOps, published AWS sample" /></picture></a>
 </p>

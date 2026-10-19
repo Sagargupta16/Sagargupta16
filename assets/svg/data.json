@@ -816,6 +816,11 @@
         "title": "AWS Sample Published: Terraform AWS Organizations Governance on Control Tower (aws-samples, MIT-0)",
         "type": "publication",
         "year": "2026"
+      },
+      {
+        "title": "AWS Sample Published: Skills-Based Agent with Governed MCP Tools on Amazon Bedrock AgentCore, Terraform (aws-samples, MIT-0)",
+        "type": "publication",
+        "year": "2026"
       }
     ],
     "achievements": [
@@ -853,6 +858,10 @@
       {
         "title": "AWS Organizations Governance on Control Tower",
         "url": "https://github.com/aws-samples/sample-aws-terraform-org-governance"
+      },
+      {
+        "title": "AgentCore Harness Agent with Governed MCP Tools",
+        "url": "https://github.com/aws-samples/sample-agentcore-harness-agent-terraform"
       }
     ],
     "oss": [
@@ -1101,6 +1110,25 @@
           "IAM Identity Center"
         ],
         "github": "https://github.com/aws-samples/sample-aws-terraform-org-governance",
+        "live": "",
+        "organization": "aws-samples",
+        "card_summary": null
+      },
+      {
+        "title": "AgentCore Harness Agent with Governed MCP Tools",
+        "description": "Published by AWS under the aws-samples organization (MIT-0), the third sample - a skills-based AI agent hosted on the Amazon Bedrock AgentCore harness and deployed entirely with Terraform. Its tools run as an MCP server on AgentCore Runtime behind AgentCore Gateway, where a default-deny Cedar policy allows only the listed tools and callers, so Claude Code, Codex and Kiro can call them directly or hand a whole request to the hosted agent.",
+        "date": "October 2026",
+        "tools_tech": [
+          "Terraform",
+          "Amazon Bedrock AgentCore",
+          "Model Context Protocol",
+          "Cedar",
+          "Amazon Bedrock",
+          "AWS CodeBuild",
+          "Amazon CloudWatch",
+          "Node.js"
+        ],
+        "github": "https://github.com/aws-samples/sample-agentcore-harness-agent-terraform",
         "live": "",
         "organization": "aws-samples",
         "card_summary": null
@@ -2157,18 +2185,18 @@
         "type": "Hackathon"
       }
     ],
-    "project_count": 48
+    "project_count": 49
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5863,
     "PrefectHQ/prefect": 24039,
-    "anthropics/skills": 182143,
-    "apache/airflow": 47217,
+    "anthropics/skills": 182158,
+    "apache/airflow": 47219,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 924,
     "awslabs/mcp": 9794,
-    "axios/axios": 109298,
+    "axios/axios": 109299,
     "cloudposse/terraform-aws-tfstate-backend": 442,
     "expressjs/multer": 12086,
     "feast-dev/feast": 7337,
@@ -2179,11 +2207,11 @@
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23396,
+  "views": 23398,
   "source_updated_at": {
-    "github": "2026-10-19T13:44:59+00:00",
-    "leetcode": "2026-10-19T13:44:55+00:00",
-    "portfolio": "2026-10-19T13:45:00+00:00",
-    "views": "2026-10-19T13:44:55+00:00"
+    "github": "2026-10-19T14:55:17+00:00",
+    "leetcode": "2026-10-19T14:55:14+00:00",
+    "portfolio": "2026-10-19T14:55:18+00:00",
+    "views": "2026-10-19T14:55:13+00:00"
   }
 }

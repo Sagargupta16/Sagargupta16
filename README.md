@@ -4,7 +4,7 @@
 
 <a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/hero-mobile.svg" /><img src="assets/svg/hero.svg" width="100%" alt="Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS" /></picture></a>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,396; Followers 111; Total Stars 304; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,398; Followers 111; Total Stars 304; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
 
 <picture><source media="(max-width: 600px)" srcset="assets/svg/intro-mobile.svg" /><img src="assets/svg/intro.svg" width="100%" alt="Cloud consultant at AWS Professional Services. Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines, plus the MCP servers and Claude Code skills I build to do that work faster." /></picture>
 
@@ -23,7 +23,7 @@
 
 <picture><source media="(max-width: 600px)" srcset="assets/svg/experience-mobile.svg" /><img src="assets/svg/experience.svg" width="100%" alt="Career: 2018, BCA, DAVV, Indore, India; 2021, MCA, NIT Warangal, Warangal, India; 2023, Software Developer Intern, Ikarus-3D, Mohali, India; 2024, ProServe DevOps Intern, AWS, Hyderabad, India; 2024, ProServe (Cloud Consultant), AWS, Hyderabad, India. Customer engagements at AWS: State Street, DevOps Consultant, AWS (Oct 2024 to Aug 2025); DTCC, DevOps Consultant, AWS (Aug 2025 to Nov 2025); RWS, Lead DevOps Consultant, AWS (Feb 2026 to now)" /></picture>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/highlights-mobile.svg" /><img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 10/10 State Street CSAT; ~90% faster account setup; 2 published AWS samples; 5x TFC ambassador" /></picture>
+<picture><source media="(max-width: 600px)" srcset="assets/svg/highlights-mobile.svg" /><img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 10/10 State Street CSAT; ~90% faster account setup; 3 published AWS samples; 5x TFC ambassador" /></picture>
 
 <picture><source media="(max-width: 600px)" srcset="assets/svg/worked-with-mobile.svg" /><img src="assets/svg/worked-with.svg" width="100%" alt="Worked with: Amazon Web Services, ProServe (Cloud Consultant) - DevOps/MLOps; RWS, Lead DevOps Consultant; DTCC, DevOps Consultant; State Street, DevOps Consultant; Ikarus-3D, Software Developer Associate (intern)" /></picture>
 
@@ -49,7 +49,7 @@
 </p>
 
 <p align="center">
-<a href="https://sagargupta.online/portfolio-react/"><picture><img src="assets/svg/cta-portfolio.svg" width="250" alt="View all 48 projects" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><img src="assets/svg/cta-portfolio.svg" width="250" alt="View all 49 projects" /></picture></a>
 </p>
 
 <picture><img src="assets/svg/divider.svg" width="100%" alt="" /></picture>
@@ -78,7 +78,7 @@
 
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-publications-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-publications-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-publications-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-publications-dark.svg" /><img src="assets/svg/header-publications-dark.svg" width="100%" alt="Publications, Talks and Recognition" /></picture>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/publications-mobile.svg" /><img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition: SageMaker Image Classification MLOps Pipeline; Terraform AWS Organizations Governance on Control Tower; Peer reviewer for AWS Prescriptive Guidance patterns; AWS Prescriptive Guidance Pattern (co-author, submitted, not yet published): Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub; GitOps Configuration Safety with Health Checks and Pipeline Gating; Automating Unit Testing for Terraform using Terraform Test and PyTest frameworks; ProServe MLOps SME Program Graduate; 5x TFC Ambassador: AI/ML, NGDE (Graduated), CloudOps (AWS DevOps Agent), Agentic AI, Serverless; Associate Speaker Certification; AWS T&amp;C Subject Matter Expert (SME) Program Contributor; ML Hackathon 2025, 26th/238 teams" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/publications-mobile.svg" /><img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition: SageMaker Image Classification MLOps Pipeline; Terraform AWS Organizations Governance on Control Tower; Skills-Based Agent with Governed MCP Tools on Amazon Bedrock AgentCore, Terraform; Peer reviewer for AWS Prescriptive Guidance patterns; AWS Prescriptive Guidance Pattern (co-author, submitted, not yet published): Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub; GitOps Configuration Safety with Health Checks and Pipeline Gating; Automating Unit Testing for Terraform using Terraform Test and PyTest frameworks; ProServe MLOps SME Program Graduate; 5x TFC Ambassador: AI/ML, NGDE (Graduated), CloudOps (AWS DevOps Agent), Agentic AI, Serverless; Associate Speaker Certification; AWS T&amp;C Subject Matter Expert (SME) Program Contributor; ML Hackathon 2025, 26th/238 teams" /></picture></a>
 
 <picture><img src="assets/svg/divider.svg" width="100%" alt="" /></picture>
 

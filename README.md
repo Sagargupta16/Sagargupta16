@@ -4,7 +4,7 @@
 
 <a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/hero-mobile.svg" /><img src="assets/svg/hero.svg" width="100%" alt="Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS" /></picture></a>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,340; Followers 111; Total Stars 300; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,396; Followers 111; Total Stars 304; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
 
 <picture><source media="(max-width: 600px)" srcset="assets/svg/intro-mobile.svg" /><img src="assets/svg/intro.svg" width="100%" alt="Cloud consultant at AWS Professional Services. Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines, plus the MCP servers and Claude Code skills I build to do that work faster." /></picture>
 
@@ -77,7 +77,7 @@
 
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-publications-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-publications-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-publications-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-publications-dark.svg" /><img src="assets/svg/header-publications-dark.svg" width="100%" alt="Publications, Talks and Recognition" /></picture>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/publications-mobile.svg" /><img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition: SageMaker Image Classification MLOps Pipeline; Terraform AWS Organizations Governance on Control Tower; 3 AWS Prescriptive Guidance Patterns peer reviewed; AWS Prescriptive Guidance Pattern (co-author): Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub Actions; GitOps Configuration Safety with Health Checks and Pipeline Gating; Automating Unit Testing for Terraform using Terraform Test and PyTest frameworks; ProServe MLOps SME Program Graduate; 5x TFC Ambassador: AI/ML, NGDE (Graduated), CloudOps (AWS DevOps Agent), Agentic AI, Serverless; Associate Speaker Certification; AWS T&amp;C Subject Matter Expert (SME) Program Contributor; ML Hackathon 2025, 26th/238 teams" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/publications-mobile.svg" /><img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition: SageMaker Image Classification MLOps Pipeline; Terraform AWS Organizations Governance on Control Tower; Peer reviewer for AWS Prescriptive Guidance patterns; AWS Prescriptive Guidance Pattern (co-author, submitted, not yet published): Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub; GitOps Configuration Safety with Health Checks and Pipeline Gating; Automating Unit Testing for Terraform using Terraform Test and PyTest frameworks; ProServe MLOps SME Program Graduate; 5x TFC Ambassador: AI/ML, NGDE (Graduated), CloudOps (AWS DevOps Agent), Agentic AI, Serverless; Associate Speaker Certification; AWS T&amp;C Subject Matter Expert (SME) Program Contributor; ML Hackathon 2025, 26th/238 teams" /></picture></a>
 
 <picture><img src="assets/svg/divider.svg" width="100%" alt="" /></picture>
 
@@ -109,7 +109,7 @@
 
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-stats-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-stats-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stats-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stats-dark.svg" /><img src="assets/svg/header-stats-dark.svg" width="100%" alt="Coding Stats" /></picture>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/github-mobile.svg" /><img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,014 contributions, 5,747 commits, 1,727 pull requests, 300 stars, longest streak 147 days" /></picture>
+<picture><source media="(max-width: 600px)" srcset="assets/svg/github-mobile.svg" /><img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,025 contributions, 5,703 commits, 1,781 pull requests, 304 stars, longest streak 147 days" /></picture>
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><picture><source media="(max-width: 600px)" srcset="assets/svg/get-github-mobile.svg" /><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></picture></a>
 
@@ -141,4 +141,4 @@
 <a href="https://sagargupta.online/portfolio-react/"><picture><img src="assets/svg/connect-portfolio.svg" width="128" alt="Portfolio" /></picture></a>
 </p>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/freshness-mobile.svg" /><img src="assets/svg/freshness.svg" width="100%" alt="Data refreshes: GitHub: verified 18 Oct 2026.; LeetCode: verified 18 Oct 2026.; Portfolio: verified 18 Oct 2026." /></picture>
+<picture><source media="(max-width: 600px)" srcset="assets/svg/freshness-mobile.svg" /><img src="assets/svg/freshness.svg" width="100%" alt="Data refreshes: GitHub: verified 19 Oct 2026.; LeetCode: verified 19 Oct 2026.; Portfolio: verified 19 Oct 2026." /></picture>

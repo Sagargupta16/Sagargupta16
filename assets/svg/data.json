@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8014,
-    "commits": 5747,
-    "prs": 1727,
-    "stars": 300,
+    "contributions": 8025,
+    "commits": 5703,
+    "prs": 1781,
+    "stars": 304,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,12 +170,12 @@
       "ledger-sync": 8,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 7,
+      "awesome-mcp-servers": 8,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
       "ai-git-hooks": 3,
-      "credly-badge-readme-action": 4,
+      "credly-badge-readme-action": 5,
       "claude-cost-optimizer": 38,
       "claude-code-recipes": 8,
       "claude-skills": 5,
@@ -198,12 +198,12 @@
       "readme-kit-action": 4,
       "agent-brain": 0,
       "svg-forge": 1,
-      "orrery": 1
+      "orrery": 3
     },
     "followers": 111,
-    "streak": 1,
+    "streak": 2,
     "longest": 147,
-    "active_days": 307,
+    "active_days": 308,
     "calendar": [
       [
         11,
@@ -674,38 +674,39 @@
         0
       ],
       [
-        113
+        205,
+        11
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        56.1,
+        54.7,
         "#3178c6"
       ],
       [
         "Python",
-        25.5,
+        25.0,
         "#3572A5"
       ],
       [
         "JavaScript",
-        7.6,
+        9.2,
         "#f1e05a"
       ],
       [
         "CSS",
-        3.1,
+        3.0,
         "#663399"
       ],
       [
         "C++",
-        3.0,
+        2.7,
         "#f34b7d"
       ],
       [
         "Shell",
-        1.2,
+        1.6,
         "#89e051"
       ]
     ]
@@ -797,13 +798,13 @@
         "year": "2026"
       },
       {
-        "title": "APG Pattern (co-author): Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub Actions",
+        "title": "APG Pattern (co-author, submitted, not yet published): Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub",
         "type": "publication",
         "year": "2025"
       },
       {
-        "title": "3 APG Patterns Peer Reviewed",
-        "type": "publication",
+        "title": "Peer reviewer for AWS Prescriptive Guidance patterns",
+        "type": "program",
         "year": "2025-2026"
       },
       {
@@ -857,7 +858,7 @@
     "oss": [
       {
         "repo": "axios/axios",
-        "stars": 109215,
+        "stars": 109300,
         "title": "Synthesize AxiosError message from AggregateError on dual-stack connection failures",
         "url": "https://github.com/axios/axios/pull/11059",
         "merged_at": "2026-07-13",
@@ -865,7 +866,7 @@
       },
       {
         "repo": "feast-dev/feast",
-        "stars": 7268,
+        "stars": 7337,
         "title": "Add Claude Code agent skills for Feast",
         "url": "https://github.com/feast-dev/feast/pull/6081",
         "merged_at": "2026-03-16",
@@ -873,7 +874,7 @@
       },
       {
         "repo": "PrefectHQ/prefect",
-        "stars": 23832,
+        "stars": 24036,
         "title": "Document that deployment steps are Python functions",
         "url": "https://github.com/PrefectHQ/prefect/pull/20956",
         "merged_at": "2026-03-04",
@@ -881,7 +882,7 @@
       },
       {
         "repo": "awslabs/mcp",
-        "stars": 9690,
+        "stars": 9791,
         "title": "Fix Kendra documentation menu to match source directory",
         "url": "https://github.com/awslabs/mcp/pull/2607",
         "merged_at": "2026-03-09",
@@ -889,7 +890,7 @@
       },
       {
         "repo": "apache/airflow",
-        "stars": 46843,
+        "stars": 47203,
         "title": "Add template_fields support to SalesforceBulkOperator",
         "url": "https://github.com/apache/airflow/pull/63109",
         "merged_at": "2026-03-23",
@@ -905,28 +906,28 @@
       },
       {
         "repo": "terraform-aws-modules/terraform-aws-dynamodb-table",
-        "stars": 119,
+        "stars": 117,
         "title": "Replace deprecated hash_key/range_key with key_schema",
         "url": "https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117",
         "status": "open"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
-        "stars": 11088,
+        "stars": 11116,
         "title": "Fix IoT cloudwatch_metric substitution template validation",
         "url": "https://github.com/hashicorp/terraform-provider-aws/pull/46867",
         "status": "open"
       },
       {
         "repo": "NirmalScaria/le-git-graph",
-        "stars": 5863,
+        "stars": 5861,
         "title": "Infinite scroll, configurable commit count, and performance improvements",
         "url": "https://github.com/NirmalScaria/le-git-graph/pull/109",
         "status": "open"
       },
       {
         "repo": "forem/selfhost",
-        "stars": 1483,
+        "stars": 1480,
         "title": "Fix AWS Ansible deploy + Elastic IP allocation",
         "url": "https://github.com/forem/selfhost/pull/91",
         "status": "closed",
@@ -934,21 +935,21 @@
       },
       {
         "repo": "anthropics/skills",
-        "stars": 176128,
+        "stars": 181918,
         "title": "Fix: extract procedures into references to fit truncation limit",
         "url": "https://github.com/anthropics/skills/pull/941",
         "status": "open"
       },
       {
         "repo": "anthropics/skills",
-        "stars": 176128,
+        "stars": 181918,
         "title": "Fix: merge duplicate plugins to prevent double skill loading",
         "url": "https://github.com/anthropics/skills/pull/942",
         "status": "open"
       },
       {
         "repo": "awslabs/agent-plugins",
-        "stars": 893,
+        "stars": 924,
         "title": "Fix: check file extension before defusedxml dependency",
         "url": "https://github.com/awslabs/agent-plugins/pull/132",
         "merged_at": "2026-04-30",
@@ -956,7 +957,7 @@
       },
       {
         "repo": "awslabs/agent-plugins",
-        "stars": 893,
+        "stars": 924,
         "title": "Quote CLAUDE_PLUGIN_ROOT in hook commands to support paths with spaces",
         "url": "https://github.com/awslabs/agent-plugins/pull/212",
         "merged_at": "2026-07-08",
@@ -964,7 +965,7 @@
       },
       {
         "repo": "lucide-icons/lucide",
-        "stars": 24490,
+        "stars": 25125,
         "title": "Support kebab-case icon-node prop on Vue Icon component",
         "url": "https://github.com/lucide-icons/lucide/pull/4512",
         "merged_at": "2026-07-09",
@@ -979,14 +980,14 @@
       },
       {
         "repo": "modelcontextprotocol/servers",
-        "stars": 90295,
+        "stars": 91348,
         "title": "Normalize git_log schema across filtered and unfiltered branches",
         "url": "https://github.com/modelcontextprotocol/servers/pull/4470",
         "status": "closed"
       },
       {
         "repo": "expressjs/multer",
-        "stars": 12084,
+        "stars": 12086,
         "title": "Do not consume maxCount for files skipped by fileFilter",
         "url": "https://github.com/expressjs/multer/pull/1426",
         "merged_at": "2026-08-29",
@@ -1001,42 +1002,42 @@
       },
       {
         "repo": "anthropics/skills",
-        "stars": 176128,
+        "stars": 181918,
         "title": "Correct path in package_skill.py docstring",
         "url": "https://github.com/anthropics/skills/pull/939",
         "status": "open"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
-        "stars": 11088,
+        "stars": 11116,
         "title": "r/aws_vpc_endpoint: fix policy removal not resetting to default policy",
         "url": "https://github.com/hashicorp/terraform-provider-aws/pull/47940",
         "status": "open"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
-        "stars": 11088,
+        "stars": 11116,
         "title": "r/aws_bedrockagentcore_harness: add additional_params to bedrock_model_config",
         "url": "https://github.com/hashicorp/terraform-provider-aws/pull/48389",
         "status": "closed"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
-        "stars": 11088,
+        "stars": 11116,
         "title": "r/aws_api_gateway_gateway_response: mark status_code Computed to fix persistent diff",
         "url": "https://github.com/hashicorp/terraform-provider-aws/pull/48390",
         "status": "open"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
-        "stars": 11088,
+        "stars": 11116,
         "title": "r/aws_api_gateway_rest_api: apply binary_media_types removal when argument is deleted",
         "url": "https://github.com/hashicorp/terraform-provider-aws/pull/48396",
         "status": "open"
       },
       {
         "repo": "awslabs/mcp",
-        "stars": 9690,
+        "stars": 9791,
         "title": "Accept skill-type results in search_documentation",
         "url": "https://github.com/awslabs/mcp/pull/4076",
         "status": "closed"
@@ -1051,14 +1052,14 @@
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
-        "stars": 11088,
+        "stars": 11116,
         "title": "Update integration_http_method and passthrough_behavior in place on aws_api_gateway_integration",
         "url": "https://github.com/hashicorp/terraform-provider-aws/pull/50225",
         "status": "open"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
-        "stars": 11088,
+        "stars": 11116,
         "title": "Replace aws_api_gateway_domain_name when endpoint types change to or from PRIVATE",
         "url": "https://github.com/hashicorp/terraform-provider-aws/pull/50226",
         "status": "open"
@@ -1087,7 +1088,7 @@
       },
       {
         "title": "AWS Organizations Governance on Control Tower",
-        "description": "Published by AWS under the aws-samples organization (MIT-0), the second after the SageMaker MLOps sample - a Terraform governance layer for AWS Organizations on top of an existing Control Tower landing zone. It declares the OU hierarchy, all six Organizations policy types, Control Tower baselines and controls, and delegated administrators for 15 AWS services, all from the management account.",
+        "description": "Published by AWS under the aws-samples organization (MIT-0), the second after the SageMaker MLOps sample - a Terraform governance layer for AWS Organizations on top of an existing Control Tower landing zone. It declares the OU hierarchy, six Organizations policy types, Control Tower baselines and controls, and delegated administrators for 15 AWS services, all from the management account.",
         "date": "September 2026",
         "tools_tech": [
           "Terraform",
@@ -1585,7 +1586,7 @@
         "url": "https://leetcode.com/u/Sagargupta1610/",
         "solved_by_difficulty": {
           "easy": 478,
-          "medium": 683,
+          "medium": 684,
           "hard": 166
         },
         "rating_history": [
@@ -2159,30 +2160,30 @@
     "project_count": 48
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5861,
-    "PrefectHQ/prefect": 24034,
-    "anthropics/skills": 181880,
-    "apache/airflow": 47203,
+    "NirmalScaria/le-git-graph": 5863,
+    "PrefectHQ/prefect": 24039,
+    "anthropics/skills": 182143,
+    "apache/airflow": 47217,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 924,
-    "awslabs/mcp": 9789,
-    "axios/axios": 109299,
+    "awslabs/mcp": 9794,
+    "axios/axios": 109298,
     "cloudposse/terraform-aws-tfstate-backend": 442,
     "expressjs/multer": 12086,
     "feast-dev/feast": 7337,
     "forem/selfhost": 1480,
-    "hashicorp/terraform-provider-aws": 11116,
-    "lucide-icons/lucide": 25121,
-    "modelcontextprotocol/servers": 91346,
+    "hashicorp/terraform-provider-aws": 11117,
+    "lucide-icons/lucide": 25144,
+    "modelcontextprotocol/servers": 91375,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23340,
+  "views": 23396,
   "source_updated_at": {
-    "github": "2026-10-18T11:29:13+00:00",
-    "leetcode": "2026-10-18T11:29:10+00:00",
-    "portfolio": "2026-10-18T11:29:13+00:00",
-    "views": "2026-10-18T11:29:09+00:00"
+    "github": "2026-10-19T13:44:59+00:00",
+    "leetcode": "2026-10-19T13:44:55+00:00",
+    "portfolio": "2026-10-19T13:45:00+00:00",
+    "views": "2026-10-19T13:44:55+00:00"
   }
 }

@@ -2,6 +2,11 @@
 
 All notable changes to this profile README repository.
 
+## [4.18.0] - 2026-10-19
+
+- A third AWS sample card leads the Featured Projects row: AgentCore Harness Agent with Governed MCP Tools (published 2026-10-19, MIT-0). Its diagram shows a default-deny Cedar gate on AgentCore Gateway blocking one MCP call and allowing the next to the 9 tools, `ask_architect` handing the request to the harness with its 3 skills and memory, and a release lane where a version reaches PROD only after an evaluation passes
+- The highlights card falls back to 3 published AWS samples when the portfolio data is unavailable; the live count still comes from the portfolio
+
 ## [4.17.0] - 2026-10-18
 
 - orrery leads the community cards on the profile, ahead of the six already there

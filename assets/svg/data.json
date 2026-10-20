@@ -12,7 +12,7 @@
       ],
       "Medium": [
         684,
-        2130
+        2131
       ],
       "Hard": [
         166,
@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8025,
-    "commits": 5703,
-    "prs": 1781,
-    "stars": 304,
+    "contributions": 8043,
+    "commits": 5713,
+    "prs": 1787,
+    "stars": 307,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,7 +170,7 @@
       "ledger-sync": 8,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 8,
+      "awesome-mcp-servers": 11,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -201,9 +201,9 @@
       "orrery": 3
     },
     "followers": 111,
-    "streak": 2,
+    "streak": 3,
     "longest": 147,
-    "active_days": 308,
+    "active_days": 309,
     "calendar": [
       [
         11,
@@ -675,23 +675,24 @@
       ],
       [
         205,
-        11
+        16,
+        13
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        54.7,
+        53.8,
         "#3178c6"
       ],
       [
         "Python",
-        25.0,
+        24.6,
         "#3572A5"
       ],
       [
         "JavaScript",
-        9.2,
+        10.6,
         "#f1e05a"
       ],
       [
@@ -706,7 +707,7 @@
       ],
       [
         "Shell",
-        1.6,
+        1.5,
         "#89e051"
       ]
     ]
@@ -2062,36 +2063,36 @@
       "github": {
         "username": "Sagargupta16",
         "url": "https://github.com/Sagargupta16",
-        "contributions": 7972,
-        "pull_requests": 1670,
-        "longest_streak": 154,
+        "contributions": 8025,
+        "pull_requests": 1781,
+        "longest_streak": 147,
         "languages": [
           {
             "name": "TypeScript",
-            "percent": 55.9
+            "percent": 54.7
           },
           {
             "name": "Python",
-            "percent": 26
+            "percent": 25
           },
           {
             "name": "JavaScript",
-            "percent": 7
+            "percent": 9.2
           },
           {
             "name": "CSS",
-            "percent": 3.2
+            "percent": 3
           },
           {
             "name": "C++",
-            "percent": 3.1
+            "percent": 2.7
           },
           {
             "name": "Shell",
-            "percent": 1.2
+            "percent": 1.6
           }
         ],
-        "fetched": "2026-10-16"
+        "fetched": "2026-10-19"
       }
     },
     "certifications": [
@@ -2189,29 +2190,29 @@
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5863,
-    "PrefectHQ/prefect": 24039,
-    "anthropics/skills": 182158,
-    "apache/airflow": 47219,
+    "PrefectHQ/prefect": 24043,
+    "anthropics/skills": 182379,
+    "apache/airflow": 47224,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 924,
-    "awslabs/mcp": 9794,
-    "axios/axios": 109299,
+    "awslabs/mcp": 9797,
+    "axios/axios": 109305,
     "cloudposse/terraform-aws-tfstate-backend": 442,
-    "expressjs/multer": 12086,
-    "feast-dev/feast": 7337,
+    "expressjs/multer": 12087,
+    "feast-dev/feast": 7338,
     "forem/selfhost": 1480,
-    "hashicorp/terraform-provider-aws": 11117,
-    "lucide-icons/lucide": 25144,
-    "modelcontextprotocol/servers": 91375,
+    "hashicorp/terraform-provider-aws": 11119,
+    "lucide-icons/lucide": 25163,
+    "modelcontextprotocol/servers": 91405,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23398,
+  "views": 23404,
   "source_updated_at": {
-    "github": "2026-10-19T14:55:17+00:00",
-    "leetcode": "2026-10-19T14:55:14+00:00",
-    "portfolio": "2026-10-19T14:55:18+00:00",
-    "views": "2026-10-19T14:55:13+00:00"
+    "github": "2026-10-20T11:54:45+00:00",
+    "leetcode": "2026-10-20T11:54:40+00:00",
+    "portfolio": "2026-10-20T11:54:45+00:00",
+    "views": "2026-10-20T11:54:40+00:00"
   }
 }

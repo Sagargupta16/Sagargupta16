@@ -19,9 +19,9 @@
                             <div class="category column">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="50" height="50" class="gauge all">
                                     <circle class="gauge-base" r="53" cx="60" cy="60"/>
-                                    <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="106.92902594224181 329"/>
-                                    <text x="60" y="50" dominant-baseline="central">1328</text>
-                                    <text x="60" y="80" dominant-baseline="central" class="secondary">/4086</text>
+                                    <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="106.98336187912894 329"/>
+                                    <text x="60" y="50" dominant-baseline="central">1329</text>
+                                    <text x="60" y="80" dominant-baseline="central" class="secondary">/4087</text>
                                 </svg>
                                 <span class="title">All</span>
                             </div>
@@ -37,9 +37,9 @@
                             <div class="category column">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="50" height="50" class="gauge medium">
                                     <circle class="gauge-base" r="53" cx="60" cy="60"/>
-                                    <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="105.65070422535211 329"/>
-                                    <text x="60" y="50" dominant-baseline="central">684</text>
-                                    <text x="60" y="80" dominant-baseline="central" class="secondary">/2130</text>
+                                    <circle class="gauge-arc" transform="rotate(-90 60 60)" r="53" cx="60" cy="60" stroke-dasharray="105.75551384326607 329"/>
+                                    <text x="60" y="50" dominant-baseline="central">685</text>
+                                    <text x="60" y="80" dominant-baseline="central" class="secondary">/2131</text>
                                 </svg>
                                 <span class="title">Medium</span>
                             </div>
@@ -64,7 +64,7 @@
                     </h2>
                     <div class="topics">
                         <div class="label fundamental"><span class="dot">⬤</span> Array <span class="count">x758</span></div>
-                        <div class="label fundamental"><span class="dot">⬤</span> String <span class="count">x310</span></div>
+                        <div class="label fundamental"><span class="dot">⬤</span> String <span class="count">x311</span></div>
                         <div class="label intermediate"><span class="dot">⬤</span> Hash Table <span class="count">x289</span></div>
                         <div class="label intermediate"><span class="dot">⬤</span> Math <span class="count">x225</span></div>
                         <div class="label fundamental"><span class="dot">⬤</span> Sorting <span class="count">x209</span></div>
@@ -87,8 +87,8 @@
                             <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4 8a4 4 0 118 0 4 4 0 01-8 0z"/>
                         </svg>
                         <div class="infos">
-                            <div class="title">Number of Ways to Reorder Array to Get Same BST</div>
-                            <div class="date">18 Oct 2026</div>
+                            <div class="title">Minimum Operations to Sort a String</div>
+                            <div class="date">21 Oct 2026</div>
                         </div>
                     </div>
                     <div class="field">
@@ -96,8 +96,8 @@
                             <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM4 8a4 4 0 118 0 4 4 0 01-8 0z"/>
                         </svg>
                         <div class="infos">
-                            <div class="title">Minimum Swaps to Sort by Digit Sum</div>
-                            <div class="date">17 Oct 2026</div>
+                            <div class="title">Number of Ways to Reorder Array to Get Same BST</div>
+                            <div class="date">18 Oct 2026</div>
                         </div>
                     </div>
                 </section>

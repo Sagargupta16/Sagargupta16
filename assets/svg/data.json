@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8071,
-    "commits": 5718,
-    "prs": 1810,
-    "stars": 313,
+    "contributions": 8101,
+    "commits": 5741,
+    "prs": 1817,
+    "stars": 315,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -155,14 +155,14 @@
       "sagargupta16.github.io": 3,
       "bms": 3,
       "brainstorm-verse": 5,
-      "DevOps-AWS-FARM": 3,
+      "farm-stack-aws-ecs": 3,
       "stock-market-prediction": 4,
       "LeetCode_Rating_Predictor": 7,
       "my-journey": 3,
       "mern-template": 3,
       "ldpc-codes": 5,
       "Lingua-Connect": 4,
-      "Blue_Green_AWS_Terraform": 4,
+      "terraform-aws-ecs-blue-green": 4,
       "ground-zero-nn": 1,
       "ai-project-template": 4,
       "Financial-Dashboard": 11,
@@ -170,13 +170,13 @@
       "ledger-sync": 8,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 11,
+      "awesome-mcp-servers": 12,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
       "ai-git-hooks": 3,
       "credly-badge-readme-action": 5,
-      "claude-cost-optimizer": 38,
+      "claude-cost-optimizer": 39,
       "claude-code-recipes": 8,
       "claude-skills": 5,
       "latex-resume": 3,
@@ -201,9 +201,9 @@
       "orrery": 5
     },
     "followers": 111,
-    "streak": 4,
+    "streak": 5,
     "longest": 147,
-    "active_days": 310,
+    "active_days": 311,
     "calendar": [
       [
         11,
@@ -677,23 +677,24 @@
         205,
         16,
         18,
-        23
+        50,
+        3
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        54.6,
+        55.0,
         "#3178c6"
       ],
       [
         "Python",
-        22.5,
+        21.7,
         "#3572A5"
       ],
       [
         "JavaScript",
-        12.7,
+        13.4,
         "#f1e05a"
       ],
       [
@@ -703,7 +704,7 @@
       ],
       [
         "C++",
-        2.5,
+        2.4,
         "#f34b7d"
       ],
       [
@@ -1222,7 +1223,7 @@
           "CodePipeline",
           "HCL"
         ],
-        "github": "https://github.com/Sagargupta16/Blue_Green_AWS_Terraform",
+        "github": "https://github.com/Sagargupta16/terraform-aws-ecs-blue-green",
         "live": "",
         "organization": null,
         "card_summary": null
@@ -2191,29 +2192,29 @@
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5862,
-    "PrefectHQ/prefect": 24052,
-    "anthropics/skills": 182630,
-    "apache/airflow": 47240,
+    "PrefectHQ/prefect": 24062,
+    "anthropics/skills": 182902,
+    "apache/airflow": 47255,
     "aws-ia/terraform-aws-bedrock": 87,
     "aws-ia/terraform-aws-vpc": 113,
-    "awslabs/agent-plugins": 924,
-    "awslabs/mcp": 9802,
-    "axios/axios": 109302,
+    "awslabs/agent-plugins": 925,
+    "awslabs/mcp": 9809,
+    "axios/axios": 109303,
     "cloudposse/terraform-aws-tfstate-backend": 442,
     "expressjs/multer": 12087,
-    "feast-dev/feast": 7340,
+    "feast-dev/feast": 7341,
     "forem/selfhost": 1480,
     "hashicorp/terraform-provider-aws": 11118,
-    "lucide-icons/lucide": 25185,
-    "modelcontextprotocol/servers": 91443,
+    "lucide-icons/lucide": 25205,
+    "modelcontextprotocol/servers": 91473,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23430,
+  "views": 23445,
   "source_updated_at": {
-    "github": "2026-10-21T12:07:58+00:00",
-    "leetcode": "2026-10-21T12:07:54+00:00",
-    "portfolio": "2026-10-21T12:07:59+00:00",
-    "views": "2026-10-21T12:07:54+00:00"
+    "github": "2026-10-22T12:11:44+00:00",
+    "leetcode": "2026-10-22T12:11:40+00:00",
+    "portfolio": "2026-10-22T12:11:45+00:00",
+    "views": "2026-10-22T12:11:40+00:00"
   }
 }

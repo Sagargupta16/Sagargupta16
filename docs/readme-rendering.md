@@ -50,10 +50,22 @@ Links belong around the image, because links inside an SVG displayed through
   workflow commits the gallery and dispatches the renderer, which redraws the
   README alt text and the phone badge grid from the new badges.
 - `validate-readme.py`: image references, links, usernames, the configured role,
-  years at AWS from `career.start_date` and the active certification count.
+  years at AWS from `career.start_date`, the active certification count, generic
+  customer labels and no internal TFC acronym.
 
 The certification status card uses portfolio expiry dates; the Credly gallery
 also contains previously earned certifications and learning badges.
+
+## Confidentiality
+
+Customers are never named on the profile, and their metrics never appear.
+`public_portfolio()` in `render-svgs.py` runs on every fresh portfolio snapshot
+and on the cached `data.json` before anything renders: each customer engagement
+(a `Role - Client` name) takes the generic label in `CUSTOMER_LABELS` for its
+start month, and an engagement with no label there shows "AWS customer". The
+table is keyed by month so no customer name lives in this public repo. For a new
+engagement, add its start month and a generic label; the validator fails until
+every customer label ends in "customer".
 
 Before changing a layout, check the GitHub-sanitized markup at desktop and phone
 widths. Keep images free of fixed heights unless their aspect ratio is

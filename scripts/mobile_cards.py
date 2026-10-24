@@ -588,22 +588,11 @@ def _experience(data: dict, context: dict) -> str:
 
 
 def _highlights(data: dict, context: dict) -> str:
-    portfolio = data.get("portfolio") or {}
-    ambassador = next(
-        (
-            match.group(1)
-            for achievement in portfolio.get("achievements", [])
-            if (match := re.match(r"(\d+)x TFC", achievement.get("title", "")))
-        ),
-        None,
-    )
+    # the same public figures as the desktop card; no customer metric or score
     items = [
-        ("10/10", "State Street client satisfaction"),
-        ("~90%", "Faster account setup"),
-        (str(len(portfolio.get("samples", []))), "Published AWS samples"),
+        (value, label[:1].upper() + label[1:])
+        for value, label in context.get("highlights", [])
     ]
-    if ambassador:
-        items.append((f"{ambassador}x", "TFC ambassador"))
     card = Card("Highlights from AWS work", GREEN)
     card.label("Highlights")
     card.metrics(items)
@@ -615,10 +604,12 @@ def _logo_tile(
     x: float,
     tile: float,
     height: float,
-    company: str,
+    company: list[str],
     lines: list[str],
     logo: str,
+    drop: float = 0,
 ) -> None:
+    """Draw one tile; a company without a logo is its name, wrapped, and its roles drop below."""
     cx = x + tile / 2
     with card.block():
         card.parts.append(
@@ -631,13 +622,28 @@ def _logo_tile(
                 'height="28" preserveAspectRatio="xMidYMid meet" filter="url(#white)"/>'
             )
         else:
-            card.parts.append(
-                _text(cx, card.y + 32, 14, 750, WHITE, company, anchor="middle")
-            )
+            for row, name in enumerate(company):
+                card.parts.append(
+                    _text(
+                        cx,
+                        card.y + 32 + row * 17,
+                        14,
+                        750,
+                        WHITE,
+                        name,
+                        anchor="middle",
+                    )
+                )
         for row, line in enumerate(lines):
             card.parts.append(
                 _text(
-                    cx, card.y + 62 + row * 16.5, 12, 500, MUTED, line, anchor="middle"
+                    cx,
+                    card.y + 62 + drop + row * 16.5,
+                    12,
+                    500,
+                    MUTED,
+                    line,
+                    anchor="middle",
                 )
             )
 
@@ -652,13 +658,19 @@ def _worked_with(data: dict, context: dict) -> str:
     for index in range(0, len(tiles), 2):
         pair = tiles[index : index + 2]
         wrapped = [wrap_text(role, tile - 20, 12) for _, role in pair]
-        height = 62 + max(len(lines) for lines in wrapped) * 16.5
-        for column, ((company, _), lines) in enumerate(zip(pair, wrapped)):
+        # a long generic customer label wraps; both tiles in the row drop by the same amount
+        names = [
+            [company] if logos.get(company) else wrap_text(company, tile - 20, 14)
+            for company, _ in pair
+        ]
+        drop = 17 * (max(len(n) for n in names) - 1)
+        height = 62 + drop + max(len(lines) for lines in wrapped) * 16.5
+        for column, ((company, _), name, lines) in enumerate(zip(pair, names, wrapped)):
             # a lone last tile sits in the middle of its row
             x = PAD + (
                 column * (tile + gap) if len(pair) == 2 else (CONTENT_WIDTH - tile) / 2
             )
-            _logo_tile(card, x, tile, height, company, lines, logos.get(company, ""))
+            _logo_tile(card, x, tile, height, name, lines, logos.get(company, ""), drop)
         card.y += height + gap
     return card.finish(defs=context.get("white_filter", ""))
 
@@ -1086,12 +1098,17 @@ def _get_card(name: str) -> str:
 
 
 def _footer(data: dict, context: dict) -> str:
-    card = Card("Thanks for visiting. Explore Sagar Gupta's portfolio.")
+    card = Card(
+        f"Thanks for visiting. Explore Sagar Gupta's portfolio. {context.get('disclaimer', '')}".strip()
+    )
     card.label("Thanks for visiting")
     card.lines("Explore the projects and the work behind them.", color=MUTED)
     card.y += 10
     card.lines("Visit my portfolio →", size=16, weight=700)
     card.lines("SAGARGUPTA.ONLINE", size=10.5, color=BLUE, weight=700, mono=True)
+    if context.get("disclaimer"):
+        card.y += 10
+        card.lines(context["disclaimer"], size=11, color=MUTED)
     return card.finish()
 
 

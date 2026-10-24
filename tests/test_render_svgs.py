@@ -144,6 +144,54 @@ class RendererTests(unittest.TestCase):
             with self.assertRaises(LookupError):
                 renderer.fetch_leetcode({"badge": "Guardian"})
 
+    def test_customer_names_never_reach_the_snapshot(self):
+        pf = {
+            "engagements": [
+                {
+                    "when": "Oct 2024 to Aug 2025",
+                    "client": "Acme Bank",
+                    "name": "DevOps Consultant - Acme Bank",
+                },
+                {
+                    "when": "Jan 2027 to now",
+                    "client": "Globex",
+                    "name": "Lead DevOps Consultant - Globex (Ongoing)",
+                },
+                {
+                    "when": "Jun 2025 to Aug 2025",
+                    "client": "MLOps SME Program",
+                    "name": "Pipeline (SME Program)",
+                },
+            ],
+            "achievements": [{"title": "5x TFC Ambassador: AI/ML, Serverless"}],
+        }
+        public = renderer.public_portfolio(pf)
+        text = json.dumps(public)
+        self.assertNotIn("Acme", text)
+        self.assertNotIn("Globex", text)
+        self.assertNotIn("TFC", text)
+        clients = [e["client"] for e in public["engagements"]]
+        self.assertEqual(
+            clients,
+            ["Global financial services customer", "AWS customer", "MLOps SME Program"],
+        )
+        self.assertEqual(
+            public["engagements"][1]["name"],
+            "Lead DevOps Consultant - AWS customer (Ongoing)",
+        )
+        self.assertEqual(
+            public["achievements"][0]["title"], "5x AWS community ambassador"
+        )
+
+    def test_highlights_leave_out_figures_without_data(self):
+        self.assertEqual(renderer.highlight_tiles({}), [])
+        pf = {
+            "samples": [{"title": "Sample"}],
+            "achievements": [{"title": "Associate Speaker Certification"}],
+            "certifications": [{"name": "Expired", "expiryDate": "2020-01-01"}],
+        }
+        self.assertEqual(renderer.highlight_tiles(pf), [("1", "published AWS samples")])
+
 
 if __name__ == "__main__":
     unittest.main()

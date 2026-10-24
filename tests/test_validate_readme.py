@@ -173,6 +173,34 @@ class ValidateReadmeTests(unittest.TestCase):
         path.write_text(json.dumps(data), encoding="utf-8")
         self.assertEqual([], self.issues())
 
+    def test_named_customer_engagement_fails(self):
+        path = self.root / "assets/svg/data.json"
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["portfolio"]["engagements"] = [
+            {
+                "when": "Jan 2027 to now",
+                "client": "Acme Bank",
+                "name": "Consultant - Acme Bank",
+            },
+            {
+                "when": "Jun 2025 to Aug 2025",
+                "client": "MLOps SME Program",
+                "name": "Pipeline (SME Program)",
+            },
+        ]
+        path.write_text(json.dumps(data), encoding="utf-8")
+        issues = self.issues()
+        self.assertEqual(1, sum("not a generic label" in issue for issue in issues))
+        self.assertTrue(any("Jan 2027" in issue for issue in issues))
+
+    def test_internal_tfc_acronym_fails(self):
+        self.write_svg(
+            "profile-badges.svg",
+            'data-active-certifications="1"',
+            "<text>5x TFC Ambassador</text>",
+        )
+        self.assertTrue(any("TFC acronym" in issue for issue in self.issues()))
+
     def test_expiry_day_is_still_active(self):
         self.assertEqual([], validator.validate(self.root, dt.date(2027, 1, 1)))
         self.assertTrue(

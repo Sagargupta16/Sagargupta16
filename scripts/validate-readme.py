@@ -248,6 +248,28 @@ def profile_link_issues(links: list[str], config: dict[str, str]) -> list[str]:
     return issues
 
 
+def confidentiality_issues(root: Path, text: str) -> list[str]:
+    """Customers show only generic labels, and the internal TFC acronym never appears."""
+    try:
+        data = json.loads((root / "assets/svg/data.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []  # certification_issues reports an unreadable data.json
+    portfolio = data.get("portfolio") if isinstance(data, dict) else None
+    engagements = (
+        portfolio.get("engagements", []) if isinstance(portfolio, dict) else []
+    )
+    issues = [
+        f"assets/svg/data.json: customer engagement {e.get('when', '?')} is not a generic "
+        "label; add its start month to CUSTOMER_LABELS in render-svgs.py"
+        for e in engagements
+        if " - " in e.get("name", "")
+        and not str(e.get("client", "")).lower().endswith("customer")
+    ]
+    if re.search(r"\bTFC\b", text):
+        issues.append("SVG text uses the internal TFC acronym")
+    return issues
+
+
 def certification_issues(
     root: Path, trees: dict[Path, ET.Element], today: dt.date
 ) -> list[str]:
@@ -348,6 +370,7 @@ def validate(root: Path, today: dt.date | None = None) -> list[str]:
             "career.current_role: configured role is missing from the SVG content"
         )
     issues.extend(experience_issues(config, text, today))
+    issues.extend(confidentiality_issues(root, text))
     issues.extend(certification_issues(root, trees, today))
     return list(dict.fromkeys(issues))
 

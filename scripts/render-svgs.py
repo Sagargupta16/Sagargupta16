@@ -189,13 +189,11 @@ CARD_SUMMARIES = {
 }
 MIN_STARS_SHOWN = 10  # a tool card shows its star count only from this many stars
 
-# Company logos for the Worked With card, stored in assets/logos and drawn white.
-# Sources: Wikimedia Commons (AWS, State Street, DTCC) and the company sites (RWS, Ikarus 3D).
+# Employer logos for the Worked With card, stored in assets/logos and drawn white.
+# Customers are never named or shown by logo; their tiles fall back to the generic label.
+# Sources: Wikimedia Commons (AWS) and the company site (Ikarus 3D).
 LOGOS = {
     "Amazon Web Services": "aws.svg",
-    "RWS": "rws.svg",
-    "DTCC": "dtcc.svg",
-    "State Street": "state-street.svg",
     "Ikarus-3D": "ikarus-3d.png",
 }
 
@@ -211,11 +209,22 @@ MILESTONES = [
     ("2024", "ProServe (Cloud Consultant)", "AWS", "Hyderabad, India"),
 ]
 ENGAGEMENTS = [
-    ("Oct 2024 to Aug 2025", "State Street", "Terraform module library"),
+    (
+        "Oct 2024 to Aug 2025",
+        "Global financial services customer",
+        "Terraform module library",
+    ),
     ("Jun 2025 to Aug 2025", "MLOps SME Program", "SageMaker pipeline"),
-    ("Aug 2025 to Nov 2025", "DTCC", "Terraform modernization"),
-    ("Feb 2026 to now", "RWS", "Lead DevOps, landing zone"),
+    (
+        "Aug 2025 to Nov 2025",
+        "Financial market infrastructure customer",
+        "Terraform modernization",
+    ),
+    ("Feb 2026 to now", "Enterprise customer", "Lead DevOps, landing zone"),
 ]
+DISCLAIMER = (
+    "Personal projects and opinions are my own and do not represent Amazon or AWS."
+)
 
 # AI tooling strip: (label, simple-icons slug or None for a monogram)
 AI_TOOLS = [
@@ -327,6 +336,9 @@ def load_data() -> dict:
     data = json.loads(json.dumps(DEFAULT_DATA))
     if DATA_FILE.exists():
         data.update(json.loads(DATA_FILE.read_text(encoding="utf-8")))
+    if data.get("portfolio"):
+        # an older cache may still carry names; scrub it before anything renders
+        data["portfolio"] = public_portfolio(data["portfolio"])
     if OFFLINE:
         return data
     try:
@@ -551,9 +563,7 @@ def render_mlops_card() -> str:
     )
     for name, x in stages:
         bw = 58 if name != "DEPLOY" else 62
-        stroke = (
-            f"{BLUE}cc" if name in ("TRAIN", "DEPLOY") else HAIR_STROKE
-        )
+        stroke = f"{BLUE}cc" if name in ("TRAIN", "DEPLOY") else HAIR_STROKE
         fill = f"{BLUE}1f" if name in ("TRAIN", "DEPLOY") else HAIR_FILL
         parts.append(box(x - bw / 2, y - 16, bw, 32, stroke, fill))
         parts.append(
@@ -920,7 +930,11 @@ def render_experience(data: dict) -> str:
     engagements = [
         (e["when"], e["client"], f"{_engagement_role(e)}, AWS") for e in _customers(pf)
     ] or ENGAGEMENTS
-    w, h = 840, 330
+    # generic customer labels ("Financial market infrastructure customer") wrap to two
+    # lines; every role line drops by the same amount, and the card grows past two
+    clients = [_wrap(client, 24) for _, client, _ in engagements]
+    sub_drop = 16 * (max((len(c) for c in clients), default=1) - 1)
+    w, h = 840, 330 + max(sub_drop - 16, 0)
     left, right, top_y = 70, 772, 84
     step = (right - left) / (len(MILESTONES) - 1)
     draw = 2.4
@@ -993,7 +1007,7 @@ def render_experience(data: dict) -> str:
     parts.append(_rail(sub_left, sub_right, sub_y, open_at + 0.3, sub_draw))
     sub_step = (sub_right - sub_left) / max(len(engagements) - 1, 1)
     sub_last = max(len(engagements) - 1, 1)
-    for i, (when, client, what) in enumerate(engagements):
+    for i, (when, _, what) in enumerate(engagements):
         x = sub_left + i * sub_step
         at = open_at + 0.3 + sub_draw * i / sub_last
         current = i == sub_last
@@ -1008,8 +1022,11 @@ def render_experience(data: dict) -> str:
                 at,
                 (
                     f'<text class="m" x="{x}" y="{sub_y - 16}" text-anchor="middle" fill="{color}" font-size="8.5">{escape(when_label)}</text>'
-                    f'<text class="t" x="{x}" y="{sub_y + 28}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(client)}</text>'
-                    f'<text class="m" x="{x}" y="{sub_y + 46}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8.5">{escape(what.upper())}</text>'
+                    + "".join(
+                        f'<text class="t" x="{x}" y="{sub_y + 28 + j * 16}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(line)}</text>'
+                        for j, line in enumerate(clients[i])
+                    )
+                    + f'<text class="m" x="{x}" y="{sub_y + 46 + sub_drop}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8.5">{escape(what.upper())}</text>'
                 ),
             )
         )
@@ -1020,26 +1037,47 @@ def render_experience(data: dict) -> str:
 # ---------------------------------------------------------------- highlights
 
 
+def ambassador_count(pf: dict) -> str | None:
+    """Return the community count from '5x ... ambassador' or '... community ambassador (A, B)'."""
+    for a in pf.get("achievements", []):
+        title = a.get("title", "")
+        if m := re.match(r"(\d+)x\b.*ambassador", title, re.IGNORECASE):
+            return m.group(1)
+        if "community ambassador" in title.lower() and (
+            m := re.search(r"\(([^)]+)\)", title)
+        ):
+            return str(len([s for s in m.group(1).split(",") if s.strip()]))
+    return None
+
+
+def highlight_tiles(pf: dict) -> list[tuple[str, str]]:
+    """Return the public highlight figures, each counted from the portfolio data."""
+    # no customer metric or score, no count another card already shows (certifications,
+    # merged PRs, LeetCode), and a figure with nothing behind it is left out, not guessed
+    groups = dict(_publication_groups(pf))
+    figures = [
+        (len(_customers(pf)), "AWS customer engagements"),
+        (len(pf.get("samples", [])), "published AWS samples"),
+        (
+            len(groups.get("TECH TALKS", []))
+            + len(groups.get("PUBLICATIONS & REVIEWS", [])),
+            "talks and publications",
+        ),
+    ]
+    tiles = [(str(count), label) for count, label in figures if count]
+    if communities := ambassador_count(pf):
+        tiles.append((f"{communities}x", "AWS community ambassador"))
+    return tiles
+
+
 def render_highlights(data: dict) -> str:
     pf = data.get("portfolio") or {}
-    samples = len(pf.get("samples", [])) or 3
-    tfc = next(
-        (
-            m.group(1)
-            for a in pf.get("achievements", [])
-            if (m := re.match(r"(\d+)x TFC", a["title"]))
-        ),
-        "5",
-    )
-    # certifications, open source and LeetCode each have their own card further down
     tiles = [
-        ("10/10", "State Street CSAT", GREEN),
-        ("~90%", "faster account setup", GREEN),
-        (str(samples), "published AWS samples", SKY),
-        (f"{tfc}x", "TFC ambassador", SKY),
+        (value, label, accent)
+        for (value, label), accent in zip(highlight_tiles(pf), (GREEN, GREEN, SKY, SKY))
     ]
     w, h = 840, 112
-    cols, gap, pad = 4, 12, 16
+    cols, gap, pad = max(len(tiles), 1), 12, 16
     tw = (w - 2 * pad - (cols - 1) * gap) / cols
     th = 80
     parts = [
@@ -1178,12 +1216,15 @@ FOOTER_LINES = [
 
 
 def render_footer() -> str:
-    w, h = 840, 150
+    w, h = 840, 172
     wave = "M0 110 C 140 80, 280 140, 420 110 S 700 80, 840 110"
     return "".join(
         [
-            svg_open(w, h, "Thanks for visiting. More at sagargupta.online."),
-            f"<style>.s{{font-family:{SANS};font-weight:800}}.m{{font-family:{MONO};font-weight:700;letter-spacing:2px}}</style>",
+            svg_open(
+                w, h, f"Thanks for visiting. More at sagargupta.online. {DISCLAIMER}"
+            ),
+            f"<style>.s{{font-family:{SANS};font-weight:800}}.m{{font-family:{MONO};font-weight:700;letter-spacing:2px}}"
+            f".d{{font-family:{SANS};font-weight:500}}</style>",
             f'<text class="m" x="{w / 2}" y="34" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">SAGAR GUPTA  |  AWS PROFESSIONAL SERVICES</text>',
             _rotating(FOOTER_LINES, w / 2, 78, "s", 30, "#f3f4f6").replace(
                 "<text ", '<text text-anchor="middle" '
@@ -1192,6 +1233,7 @@ def render_footer() -> str:
             f'<path d="{wave}" fill="none" stroke="{BLUE_LIGHT}" stroke-width="2" stroke-dasharray="120 900" stroke-linecap="round">'
             '<animate attributeName="stroke-dashoffset" values="1020;0" dur="4s" repeatCount="indefinite"/></path>',
             f'<circle r="3.5" fill="{SKY}"><animateMotion dur="4s" repeatCount="indefinite" path="{wave}"/></circle>',
+            f'<text class="d" x="{w / 2}" y="158" text-anchor="middle" fill="rgba(127,127,127,0.85)" font-size="11">{escape(DISCLAIMER)}</text>',
             SVG_CLOSE,
         ]
     )
@@ -1363,7 +1405,7 @@ def _range_label(date: str) -> str:
 
 
 def _client_label(name: str) -> str:
-    """Return the client, e.g. 'State Street' from 'DevOps Consultant - State Street'."""
+    """Return the client, e.g. 'Enterprise customer' from 'DevOps Consultant - Enterprise customer'."""
     name = name.strip().removesuffix("(Ongoing)").strip()
     if " - " in name:
         return name.rsplit(" - ", 1)[1].strip()
@@ -1372,6 +1414,43 @@ def _client_label(name: str) -> str:
         domain = next((k for k in ("MLOps", "DevOps", "AI") if k in name), "")
         return f"{domain} {paren.group(1)}".strip()
     return name
+
+
+# Customers are never named on the profile, whatever the portfolio data says. Each
+# customer engagement ('Role - Client') shows the generic label for its start month,
+# so no customer name sits in this public file; one with no label here shows
+# "AWS customer". AWS programs (no ' - ' in the name) keep their own title.
+CUSTOMER_LABELS = {
+    "Oct 2024": "Global financial services customer",
+    "Aug 2025": "Financial market infrastructure customer",
+    "Feb 2026": "Enterprise customer",
+}
+
+
+def _public_engagement(e: dict) -> dict:
+    """Swap a customer's name for its generic label; role, dates and stack stay."""
+    if " - " not in e.get("name", ""):
+        return e
+    label = CUSTOMER_LABELS.get(e.get("when", "").split(" to ")[0], "AWS customer")
+    role = e["name"].replace(" (Ongoing)", "").rsplit(" - ", 1)[0]
+    ongoing = " (Ongoing)" if "(Ongoing)" in e["name"] else ""
+    return {**e, "client": label, "name": f"{role} - {label}{ongoing}"}
+
+
+def _public_achievement(a: dict) -> dict:
+    """Show the internal TFC ambassador line as the public 'AWS community ambassador'."""
+    if m := re.match(r"(\d+)x\s+TFC\b", a.get("title", "")):
+        return {**a, "title": f"{m.group(1)}x AWS community ambassador"}
+    return a
+
+
+def public_portfolio(pf: dict) -> dict:
+    """Return the portfolio snapshot with every customer and internal program name removed."""
+    return {
+        **pf,
+        "engagements": [_public_engagement(e) for e in pf.get("engagements", [])],
+        "achievements": [_public_achievement(a) for a in pf.get("achievements", [])],
+    }
 
 
 def _tagline(name: str, skills: list[str], count: int = 2) -> str:
@@ -1391,7 +1470,7 @@ def portfolio_snapshot(experience: dict, projects: dict, extra: dict) -> dict:
         for p in projects.get("featured_projects", [])
         if p.get("organization") == "aws-samples" and p.get("github")
     ]
-    return {
+    snapshot = {
         "engagements": [
             {
                 "when": _range_label(p.get("date", "")),
@@ -1465,6 +1544,7 @@ def portfolio_snapshot(experience: dict, projects: dict, extra: dict) -> dict:
             )
         ),
     }
+    return public_portfolio(snapshot)
 
 
 def fetch_portfolio() -> dict:
@@ -1968,7 +2048,7 @@ def _customers(pf: dict) -> list[dict]:
 
 
 def _engagement_role(e: dict) -> str:
-    """Return the title held on an engagement: 'Lead DevOps Consultant - RWS' gives the role."""
+    """Return the title held on an engagement: 'Lead DevOps Consultant - Enterprise customer' gives the role."""
     return e["name"].replace(" (Ongoing)", "").rsplit(" - ", 1)[0]
 
 
@@ -1989,7 +2069,15 @@ def _logo_block(name: str, cx: float, y: float, width: float) -> str:
             f'<image href="{logo}" x="{cx - width / 2:.1f}" y="{y}" width="{width:.1f}" height="40" '
             'preserveAspectRatio="xMidYMid meet" filter="url(#white)"/>'
         )
-    return f'<text class="t" x="{cx:.1f}" y="{y + 27}" text-anchor="middle" fill="#f3f4f6" font-size="15">{escape(name)}</text>'
+    lines = _wrap(name, 17)
+    if len(lines) == 1:
+        return f'<text class="t" x="{cx:.1f}" y="{y + 27}" text-anchor="middle" fill="#f3f4f6" font-size="15">{escape(name)}</text>'
+    # a long generic customer label wraps, centred in the 40px logo box
+    first = y + 25 - (len(lines) - 1) * 7.5
+    return "".join(
+        f'<text class="t" x="{cx:.1f}" y="{first + j * 15:.1f}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(line)}</text>'
+        for j, line in enumerate(lines)
+    )
 
 
 def render_worked_with(pf: dict) -> str:
@@ -2071,6 +2159,9 @@ def _publication_groups(pf: dict) -> list[tuple[str, list[tuple[str, str]]]]:
             papers.append((title.replace(" Peer Reviewed", " peer reviewed"), year))
         elif title.startswith("Tech Talk: "):
             talks.append((title.split(": ", 1)[1], year))
+        elif c.get("type") == "talk":
+            # a talk listed under its own title, with no "Tech Talk:" prefix
+            talks.append((title, year))
         else:
             papers.append((title, year))
     recognition = [
@@ -2806,7 +2897,9 @@ def render_certification_status(data: dict) -> str:
     if not lines:
         lines = ["Active status is based on the recorded certification expiry dates."]
     lines.append("The Credly gallery below also includes learning and partner badges.")
-    return render_note(f"{count} active {issuers} certifications", lines).replace('role="img"', f'role="img" data-active-certifications="{count}"')
+    return render_note(f"{count} active {issuers} certifications", lines).replace(
+        'role="img"', f'role="img" data-active-certifications="{count}"'
+    )
 
 
 def freshness_entries(data: dict) -> list[tuple[str, str]]:
@@ -2863,6 +2956,8 @@ def write_responsive_variants(data: dict) -> None:
     context = {
         "milestones": MILESTONES,
         "headers": HEADERS,
+        "highlights": highlight_tiles(pf),
+        "disclaimer": DISCLAIMER,
         "publications": _publication_groups(pf),
         "certifications": pf.get("certifications", []),
         "badges": credly_badges(INDUSTRY_GROUP) + credly_badges("Professional"),

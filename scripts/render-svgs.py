@@ -1035,9 +1035,7 @@ def render_experience(data: dict) -> str:
 
 
 def ambassador_count(pf: dict) -> str:
-    """Return how many AWS field communities the ambassador line lists, '5' if none is found.
-
-    Reads '5x ... Ambassador' or a '... community ambassador (A, B, C)' list."""
+    """Return the community count from '5x ... Ambassador' or '... community ambassador (A, B)'."""
     for a in pf.get("achievements", []):
         title = a.get("title", "")
         if m := re.match(r"(\d+)x\b.*ambassador", title, re.IGNORECASE):

@@ -4,7 +4,7 @@
 
 <a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/hero-mobile.svg" /><img src="assets/svg/hero.svg" width="100%" alt="Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS" /></picture></a>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,532; Followers 112; Total Stars 318; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,541; Followers 112; Total Stars 318; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
 
 <picture><source media="(max-width: 600px)" srcset="assets/svg/intro-mobile.svg" /><img src="assets/svg/intro.svg" width="100%" alt="Cloud consultant at AWS Professional Services. Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines, plus the MCP servers and Claude Code skills I build to do that work faster." /></picture>
 
@@ -23,7 +23,7 @@
 
 <picture><source media="(max-width: 600px)" srcset="assets/svg/experience-mobile.svg" /><img src="assets/svg/experience.svg" width="100%" alt="Career: 2018, BCA, DAVV, Indore, India; 2021, MCA, NIT Warangal, Warangal, India; 2023, Software Developer Intern, Ikarus-3D, Mohali, India; 2024, ProServe DevOps Intern, AWS, Hyderabad, India; 2024, ProServe (Cloud Consultant), AWS, Hyderabad, India. Customer engagements at AWS: State Street, DevOps Consultant, AWS (Oct 2024 to Aug 2025); DTCC, DevOps Consultant, AWS (Aug 2025 to Nov 2025); RWS, Lead DevOps Consultant, AWS (Feb 2026 to now)" /></picture>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/highlights-mobile.svg" /><img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 10/10 State Street CSAT; ~90% faster account setup; 3 published AWS samples; 5x TFC ambassador" /></picture>
+<picture><source media="(max-width: 600px)" srcset="assets/svg/highlights-mobile.svg" /><img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 12 upstream PRs merged; 5 active certifications; 3 published AWS samples; 5x AWS community ambassador" /></picture>
 
 <picture><source media="(max-width: 600px)" srcset="assets/svg/worked-with-mobile.svg" /><img src="assets/svg/worked-with.svg" width="100%" alt="Worked with: Amazon Web Services, ProServe (Cloud Consultant) - DevOps/MLOps; RWS, Lead DevOps Consultant; DTCC, DevOps Consultant; State Street, DevOps Consultant; Ikarus-3D, Software Developer Associate (intern)" /></picture>
 
@@ -110,7 +110,7 @@
 
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-stats-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-stats-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stats-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stats-dark.svg" /><img src="assets/svg/header-stats-dark.svg" width="100%" alt="Coding Stats" /></picture>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/github-mobile.svg" /><img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,270 contributions, 5,829 commits, 1,851 pull requests, 318 stars, longest streak 147 days" /></picture>
+<picture><source media="(max-width: 600px)" srcset="assets/svg/github-mobile.svg" /><img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,322 contributions, 5,854 commits, 1,877 pull requests, 318 stars, longest streak 147 days" /></picture>
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><picture><source media="(max-width: 600px)" srcset="assets/svg/get-github-mobile.svg" /><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></picture></a>
 
@@ -134,7 +134,7 @@
 
 <picture><img src="assets/svg/divider.svg" width="100%" alt="" /></picture>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/footer-mobile.svg" /><img src="assets/svg/footer.svg" width="100%" alt="Thanks for visiting. More at sagargupta.online." /></picture></a> <img src="https://komarev.com/ghpvc/?username=sagargupta16" width="1" height="1" alt="" />
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/footer-mobile.svg" /><img src="assets/svg/footer.svg" width="100%" alt="Thanks for visiting. More at sagargupta.online. Personal projects and opinions are my own and do not represent Amazon or AWS." /></picture></a> <img src="https://komarev.com/ghpvc/?username=sagargupta16" width="1" height="1" alt="" />
 
 <p align="center">
 <a href="https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf"><picture><img src="assets/svg/connect-resume.svg" width="128" alt="Resume" /></picture></a>

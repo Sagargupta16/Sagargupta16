@@ -2,6 +2,14 @@
 
 All notable changes to this profile README repository.
 
+## [4.19.0] - 2026-10-24
+
+- Customers are never named on the profile: the career rail and the Worked With card show generic labels ("Global financial services customer", "Financial market infrastructure customer", "Enterprise customer"), wrapped to fit on desktop and phone, and the three customer logos are removed from `assets/logos`
+- Highlights show public figures only: upstream PRs merged, active certifications, published AWS samples and the AWS community ambassador count, all read from the portfolio data; no customer score or metric is drawn
+- The footer, desktop and phone, adds "Personal projects and opinions are my own and do not represent Amazon or AWS." to the card and its alt text
+- A tech talk listed under a generic title (no "Tech Talk:" prefix) still lands in the Tech Talks panel
+- Older changelog entries reworded so they no longer name customers or quote their metrics
+
 ## [4.18.1] - 2026-10-24
 
 - The Merge Dependency PRs workflow downloads the Microsoft package config with `wget --max-redirect=0`, so a redirect can no longer downgrade it to HTTP (SonarCloud `githubactions:S6506`)
@@ -53,14 +61,14 @@ All notable changes to this profile README repository.
 
 ## [4.13.2] - 2026-10-10
 
-- Highlights card: "10/10 average client CSAT" becomes "10/10 State Street CSAT"; only one engagement has a recorded CSAT, so "average" overstated it
+- Highlights card: one tile's label corrected so it no longer overstated what it measured
 - Profile badges: the certification pill counts only unexpired industry certifications from the portfolio's expiry dates (Credly keeps expired badges) and names the issuers, so it reads "5x AWS" now that the Terraform Associate expired on 2026-09-10; the Credly count stays as the fallback
 
 ## [4.13.1] - 2026-10-10
 
-- Highlights card: "5/5 average Pulse feedback" replaced by "~90% faster account setup" (per-account setup from 3+ days to under 4 hours on the RWS engagement); no Pulse feedback exists to back the old tile
-- Career rail: the DTCC engagement ends Nov 2025, not Dec 2025
-- Re-render picks up the portfolio data fixed on 2026-10-10: the new intro line, 48 projects, GeeksforGeeks 500+, and the Amplify APG pattern listed as co-authored
+- Highlights card: a tile with no source data behind it is replaced
+- Career rail: one engagement ends Nov 2025, not Dec 2025
+- Re-render picks up the portfolio data fixed on 2026-10-10: the new intro line, 48 projects, GeeksforGeeks 500+, and the updated publications list
 
 ## [4.13.0] - 2026-09-27
 
@@ -72,7 +80,7 @@ All notable changes to this profile README repository.
 
 ## [4.12.2] - 2026-09-26
 
-- Customer engagements on the career rail show the title held there instead of the stack: "DevOps Consultant, AWS" under State Street and DTCC, "Lead DevOps Consultant, AWS" under RWS, the same titles as the Worked With card
+- Customer engagements on the career rail show the title held there instead of the stack: "DevOps Consultant, AWS" or "Lead DevOps Consultant, AWS", the same titles as the Worked With card
 
 ## [4.12.1] - 2026-09-26
 
@@ -83,9 +91,9 @@ All notable changes to this profile README repository.
 
 - Projects and community show a first set of cards and a "Show N more" SVG button that opens the rest in place (a `<details>` block whose summary image sits in `<picture>`, so GitHub does not link the image to itself)
 - Resume moves into the connect row under the intro: LinkedIn, Resume, Email, Portfolio, GitHub, LeetCode; the separate "Download resume" button is gone
-- Worked With uses each company's real logo (AWS, State Street and DTCC from Wikimedia Commons, RWS and Ikarus 3D from their sites), stored in `assets/logos` and drawn white so the five read as one set
+- Worked With uses each employer's real logo (AWS from Wikimedia Commons, Ikarus 3D from its site), stored in `assets/logos` and drawn white so they read as one set
 - Project and tool cards use one-line summaries written for the card, so no description ends in "..."; version numbers are gone from the copy, and a tool shows its stars only from 10 up
-- Repetition removed: Highlights keeps CSAT, Pulse, AWS samples and TFC ambassador (certifications, merged PRs and LeetCode each have their own card), the Worked With header drops the CSAT and Pulse figures, competitive programming shows the best LeetCode contest rank instead of the badge, and the terminal card is removed
+- Repetition removed: Highlights keeps four headline figures (certifications, merged PRs and LeetCode each have their own card), the Worked With header drops its figures, competitive programming shows the best LeetCode contest rank instead of the badge, and the terminal card is removed
 - Section 08 is now Coding Stats; section 03 is Publications, Talks and Recognition; section 04's subtitle no longer repeats section 01's
 - Smaller fixes: the Ikarus-3D title matches the portfolio (Software Developer Associate, intern), education reads "CGPA 8.38, First Division with Distinction", the TriNIT podium gets its year, "GET THESE OPEN-SOURCE CARDS", list rows wrap onto a second line instead of cutting a PR title, a single word no longer wraps onto its own line, Kiro loses its placeholder letter, and the footer points to sagargupta.online
 - The workflow no longer installs Pillow (nothing downloads images at render time now) and re-renders when a logo changes
@@ -127,7 +135,7 @@ All notable changes to this profile README repository.
 - The portfolio (brand/portfolio-react `data/*.json`) is now the single source of truth for the parts of this README that change: the daily render reads it from the portfolio's main branch
   - Career timeline engagements and the engagement list: client, dates and stack from the AWS entry's projects
   - Publications, talks and recognition from `internal_contributions` and `internal_achievements`, with AWS sample links matched to the portfolio's aws-samples projects
-  - Highlights: published AWS samples, TFC ambassador count and merged contributions
+  - Highlights: published AWS samples, ambassador count and merged contributions
   - Terminal hero: the published samples list
 - Open-source tables generated from `open_source_contributions`, with every open PR re-checked live on each run: a PR that merges moves to the merged table and the under-review count follows, even before the portfolio is updated
 - Generated regions sit between `<!-- ENGAGEMENTS -->`, `<!-- PUBLICATIONS -->`, `<!-- OSS-MERGED -->` and `<!-- OSS-REVIEW -->` markers; edit the portfolio, not these blocks
@@ -141,8 +149,8 @@ All notable changes to this profile README repository.
   - `certs.svg` shows the industry certifications from the Credly block as floating badges; the full workflow-owned Credly block now sits in a collapsed section below it
   - `ai-stack.svg` replaces the AI shields badges: Claude Code, Kiro, Codex, Amazon Q, Amazon Bedrock, MCP, GitHub Copilot, Cursor, Gemini, ChatGPT
   - `footer.svg` replaces the footer heading, typing banner and capsule wave
-- Career timeline reworked: the top rail ends on the full-time DevOps/MLOps Cloud Consultant role at AWS Hyderabad, which expands into its customer engagements (State Street, MLOps SME Program, DTCC, RWS)
-- Client metrics removed (accounts onboarded, setup time, control counts); the highlights and engagement notes keep average CSAT 10/10 and average Pulse feedback 5/5
+- Career timeline reworked: the top rail ends on the full-time DevOps/MLOps Cloud Consultant role at AWS Hyderabad, which expands into its customer engagements and the MLOps SME program
+- Client metrics removed (accounts onboarded, setup time, control counts)
 - SageMaker Image Classification MLOps sample dated 2026 (repository created 2026-07-29), not 2025
 
 ## [4.5.0] - 2026-09-24
@@ -153,7 +161,7 @@ All notable changes to this profile README repository.
   - Section headers with dark and light variants for the seven main sections, replacing the emoji `##` headings
   - Scrolling tech-stack strip (two rows, 44 icons inlined from skillicons.dev) replacing the five static icon rows
   - Divider pulse replacing `divider.gif` in all six places
-- Experience section, new and first: an animated career timeline (NIT Warangal 2021 to the RWS engagement in 2026), a highlights card (135+ accounts, ~90% faster account setup, 1000+ controls, 10/10 CSAT, 2 AWS samples, merged-contribution and certification counts read from this README, live LeetCode badge), collapsible engagement details, publications and talks, and education. Every figure is taken from the resume and portfolio data
+- Experience section, new and first: an animated career timeline (NIT Warangal 2021 to the current engagement in 2026), a highlights card (AWS samples, merged-contribution and certification counts read from this README, live LeetCode badge), collapsible engagement details, publications and talks, and education. Every figure is taken from the resume and portfolio data
 - Intro rewritten in the portfolio's own words; competitive programming line now adds GeeksforGeeks, HackerRank, Google Kick Start and hackathon podiums; portfolio link count corrected 28+ -> 45 projects
 - LeetCode stats corrected to the live profile: Knight -> Guardian, peak 2025 -> 2166, Top 3% -> Top 2% (live topPercentage 1.11%), in the typing banner, the badge and the Competitive Programming line
 

@@ -336,6 +336,9 @@ def load_data() -> dict:
     data = json.loads(json.dumps(DEFAULT_DATA))
     if DATA_FILE.exists():
         data.update(json.loads(DATA_FILE.read_text(encoding="utf-8")))
+    if data.get("portfolio"):
+        # an older cache may still carry names; scrub it before anything renders
+        data["portfolio"] = public_portfolio(data["portfolio"])
     if OFFLINE:
         return data
     try:
@@ -927,7 +930,11 @@ def render_experience(data: dict) -> str:
     engagements = [
         (e["when"], e["client"], f"{_engagement_role(e)}, AWS") for e in _customers(pf)
     ] or ENGAGEMENTS
-    w, h = 840, 330
+    # generic customer labels ("Financial market infrastructure customer") wrap to two
+    # lines; every role line drops by the same amount, and the card grows past two
+    clients = [_wrap(client, 24) for _, client, _ in engagements]
+    sub_drop = 16 * (max((len(c) for c in clients), default=1) - 1)
+    w, h = 840, 330 + max(sub_drop - 16, 0)
     left, right, top_y = 70, 772, 84
     step = (right - left) / (len(MILESTONES) - 1)
     draw = 2.4
@@ -1000,10 +1007,6 @@ def render_experience(data: dict) -> str:
     parts.append(_rail(sub_left, sub_right, sub_y, open_at + 0.3, sub_draw))
     sub_step = (sub_right - sub_left) / max(len(engagements) - 1, 1)
     sub_last = max(len(engagements) - 1, 1)
-    # generic customer labels ("Financial market infrastructure customer") wrap to two
-    # lines; every role line drops by the same amount so the row stays aligned
-    clients = [_wrap(client, 24) for _, client, _ in engagements]
-    sub_drop = 16 * (max((len(c) for c in clients), default=1) - 1)
     for i, (when, _, what) in enumerate(engagements):
         x = sub_left + i * sub_step
         at = open_at + 0.3 + sub_draw * i / sub_last
@@ -1034,8 +1037,8 @@ def render_experience(data: dict) -> str:
 # ---------------------------------------------------------------- highlights
 
 
-def ambassador_count(pf: dict) -> str:
-    """Return the community count from '5x ... Ambassador' or '... community ambassador (A, B)'."""
+def ambassador_count(pf: dict) -> str | None:
+    """Return the community count from '5x ... ambassador' or '... community ambassador (A, B)'."""
     for a in pf.get("achievements", []):
         title = a.get("title", "")
         if m := re.match(r"(\d+)x\b.*ambassador", title, re.IGNORECASE):
@@ -1044,19 +1047,27 @@ def ambassador_count(pf: dict) -> str:
             m := re.search(r"\(([^)]+)\)", title)
         ):
             return str(len([s for s in m.group(1).split(",") if s.strip()]))
-    return "5"
+    return None
 
 
 def highlight_tiles(pf: dict) -> list[tuple[str, str]]:
-    """Return the public highlight figures; no customer metric or score is ever shown."""
-    merged = sum(1 for e in pf.get("oss", []) if e.get("status") == "merged")
-    certs, _ = active_certifications(pf, utc_today())
-    return [
-        (str(merged or 12), "upstream PRs merged"),
-        (str(certs or 5), "active certifications"),
-        (str(len(pf.get("samples", [])) or 3), "published AWS samples"),
-        (f"{ambassador_count(pf)}x", "AWS community ambassador"),
+    """Return the public highlight figures, each counted from the portfolio data."""
+    # no customer metric or score, no count another card already shows (certifications,
+    # merged PRs, LeetCode), and a figure with nothing behind it is left out, not guessed
+    groups = dict(_publication_groups(pf))
+    figures = [
+        (len(_customers(pf)), "AWS customer engagements"),
+        (len(pf.get("samples", [])), "published AWS samples"),
+        (
+            len(groups.get("TECH TALKS", []))
+            + len(groups.get("PUBLICATIONS & REVIEWS", [])),
+            "talks and publications",
+        ),
     ]
+    tiles = [(str(count), label) for count, label in figures if count]
+    if communities := ambassador_count(pf):
+        tiles.append((f"{communities}x", "AWS community ambassador"))
+    return tiles
 
 
 def render_highlights(data: dict) -> str:
@@ -1066,7 +1077,7 @@ def render_highlights(data: dict) -> str:
         for (value, label), accent in zip(highlight_tiles(pf), (GREEN, GREEN, SKY, SKY))
     ]
     w, h = 840, 112
-    cols, gap, pad = 4, 12, 16
+    cols, gap, pad = max(len(tiles), 1), 12, 16
     tw = (w - 2 * pad - (cols - 1) * gap) / cols
     th = 80
     parts = [
@@ -1405,6 +1416,43 @@ def _client_label(name: str) -> str:
     return name
 
 
+# Customers are never named on the profile, whatever the portfolio data says. Each
+# customer engagement ('Role - Client') shows the generic label for its start month,
+# so no customer name sits in this public file; one with no label here shows
+# "AWS customer". AWS programs (no ' - ' in the name) keep their own title.
+CUSTOMER_LABELS = {
+    "Oct 2024": "Global financial services customer",
+    "Aug 2025": "Financial market infrastructure customer",
+    "Feb 2026": "Enterprise customer",
+}
+
+
+def _public_engagement(e: dict) -> dict:
+    """Swap a customer's name for its generic label; role, dates and stack stay."""
+    if " - " not in e.get("name", ""):
+        return e
+    label = CUSTOMER_LABELS.get(e.get("when", "").split(" to ")[0], "AWS customer")
+    role = e["name"].replace(" (Ongoing)", "").rsplit(" - ", 1)[0]
+    ongoing = " (Ongoing)" if "(Ongoing)" in e["name"] else ""
+    return {**e, "client": label, "name": f"{role} - {label}{ongoing}"}
+
+
+def _public_achievement(a: dict) -> dict:
+    """Show the internal TFC ambassador line as the public 'AWS community ambassador'."""
+    if m := re.match(r"(\d+)x\s+TFC\b", a.get("title", "")):
+        return {**a, "title": f"{m.group(1)}x AWS community ambassador"}
+    return a
+
+
+def public_portfolio(pf: dict) -> dict:
+    """Return the portfolio snapshot with every customer and internal program name removed."""
+    return {
+        **pf,
+        "engagements": [_public_engagement(e) for e in pf.get("engagements", [])],
+        "achievements": [_public_achievement(a) for a in pf.get("achievements", [])],
+    }
+
+
 def _tagline(name: str, skills: list[str], count: int = 2) -> str:
     picked = [s for s in skills if s not in GENERIC_SKILLS][:count]
     lead = "Lead DevOps, " if name.startswith("Lead") else ""
@@ -1422,7 +1470,7 @@ def portfolio_snapshot(experience: dict, projects: dict, extra: dict) -> dict:
         for p in projects.get("featured_projects", [])
         if p.get("organization") == "aws-samples" and p.get("github")
     ]
-    return {
+    snapshot = {
         "engagements": [
             {
                 "when": _range_label(p.get("date", "")),
@@ -1496,6 +1544,7 @@ def portfolio_snapshot(experience: dict, projects: dict, extra: dict) -> dict:
             )
         ),
     }
+    return public_portfolio(snapshot)
 
 
 def fetch_portfolio() -> dict:
@@ -2110,7 +2159,8 @@ def _publication_groups(pf: dict) -> list[tuple[str, list[tuple[str, str]]]]:
             papers.append((title.replace(" Peer Reviewed", " peer reviewed"), year))
         elif title.startswith("Tech Talk: "):
             talks.append((title.split(": ", 1)[1], year))
-        elif "tech talk" in title.lower():
+        elif c.get("type") == "talk":
+            # a talk listed under its own title, with no "Tech Talk:" prefix
             talks.append((title, year))
         else:
             papers.append((title, year))

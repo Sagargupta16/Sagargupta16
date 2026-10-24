@@ -720,7 +720,7 @@
     "engagements": [
       {
         "when": "Oct 2024 to Aug 2025",
-        "client": "State Street",
+        "client": "Global financial services customer",
         "tagline": "Terraform, tftest",
         "stack": [
           "Terraform",
@@ -731,7 +731,7 @@
           "SNS"
         ],
         "link": null,
-        "name": "DevOps Consultant - State Street"
+        "name": "DevOps Consultant - Global financial services customer"
       },
       {
         "when": "Jun 2025 to Aug 2025",
@@ -750,7 +750,7 @@
       },
       {
         "when": "Aug 2025 to Nov 2025",
-        "client": "DTCC",
+        "client": "Financial market infrastructure customer",
         "tagline": "Terraform, Amazon Q",
         "stack": [
           "Terraform",
@@ -759,11 +759,11 @@
           "DevSecOps"
         ],
         "link": null,
-        "name": "DevOps Consultant - DTCC"
+        "name": "DevOps Consultant - Financial market infrastructure customer"
       },
       {
         "when": "Feb 2026 to now",
-        "client": "RWS",
+        "client": "Enterprise customer",
         "tagline": "Lead DevOps, AWS Organizations",
         "stack": [
           "AWS Organizations",
@@ -774,7 +774,7 @@
           "Transit Gateway"
         ],
         "link": null,
-        "name": "Lead DevOps Consultant - RWS (Ongoing)"
+        "name": "Lead DevOps Consultant - Enterprise customer (Ongoing)"
       }
     ],
     "earlier": [
@@ -835,7 +835,7 @@
         "year": "2025"
       },
       {
-        "title": "5x TFC Ambassador: AI/ML, NGDE (Graduated), CloudOps (AWS DevOps Agent), Agentic AI, Serverless",
+        "title": "5x AWS community ambassador",
         "type": "program",
         "year": "2025-2026"
       },

@@ -4,10 +4,12 @@ All notable changes to this profile README repository.
 
 ## [4.19.0] - 2026-10-24
 
-- Customers are never named on the profile: the career rail and the Worked With card show generic labels ("Global financial services customer", "Financial market infrastructure customer", "Enterprise customer"), wrapped to fit on desktop and phone, and the three customer logos are removed from `assets/logos`
-- Highlights show public figures only: upstream PRs merged, active certifications, published AWS samples and the AWS community ambassador count, all read from the portfolio data; no customer score or metric is drawn
+- Customers are never named on the profile, whatever the portfolio data says: the renderer swaps each customer engagement for a generic label picked by its start month ("Global financial services customer", "Financial market infrastructure customer", "Enterprise customer"; "AWS customer" for a month with no label), on every fresh snapshot and on the cached `data.json`, so no customer name is stored in this repo either. The career rail and the Worked With card wrap the labels to fit on desktop and phone, the rail card grows if a label ever needs a third line, and the three customer logos are removed from `assets/logos`
+- The internal "5x TFC Ambassador: ..." recognition line reads "5x AWS community ambassador"
+- `validate-readme.py` fails when a customer engagement carries anything but a generic "... customer" label, or when the TFC acronym appears in the SVG text
+- Highlights show public figures that no other card repeats, each counted from the portfolio data: AWS customer engagements, published AWS samples, talks and publications, and the AWS community ambassador count. A figure with no data behind it is left out instead of falling back to a fixed number, and no customer score or metric is drawn
 - The footer, desktop and phone, adds "Personal projects and opinions are my own and do not represent Amazon or AWS." to the card and its alt text
-- A tech talk listed under a generic title (no "Tech Talk:" prefix) still lands in the Tech Talks panel
+- A contribution typed as a talk lands in the Tech Talks panel even without a "Tech Talk:" prefix
 - Older changelog entries reworded so they no longer name customers or quote their metrics
 
 ## [4.18.1] - 2026-10-24

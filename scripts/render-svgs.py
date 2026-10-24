@@ -1388,6 +1388,7 @@ MONTHS = {
     )
 }
 GENERIC_SKILLS = {"AWS", "Cloud Migration", "Solution Architecture"}
+ONGOING = " (Ongoing)"  # suffix the portfolio puts on a current engagement's name
 
 
 def _start_key(date: str) -> tuple[int, int]:
@@ -1406,7 +1407,7 @@ def _range_label(date: str) -> str:
 
 def _client_label(name: str) -> str:
     """Return the client, e.g. 'Enterprise customer' from 'DevOps Consultant - Enterprise customer'."""
-    name = name.strip().removesuffix("(Ongoing)").strip()
+    name = name.strip().removesuffix(ONGOING.strip()).strip()
     if " - " in name:
         return name.rsplit(" - ", 1)[1].strip()
     paren = re.search(r"\(([^)]+)\)", name)
@@ -1432,8 +1433,8 @@ def _public_engagement(e: dict) -> dict:
     if " - " not in e.get("name", ""):
         return e
     label = CUSTOMER_LABELS.get(e.get("when", "").split(" to ")[0], "AWS customer")
-    role = e["name"].replace(" (Ongoing)", "").rsplit(" - ", 1)[0]
-    ongoing = " (Ongoing)" if "(Ongoing)" in e["name"] else ""
+    role = e["name"].replace(ONGOING, "").rsplit(" - ", 1)[0]
+    ongoing = ONGOING if ONGOING.strip() in e["name"] else ""
     return {**e, "client": label, "name": f"{role} - {label}{ongoing}"}
 
 
@@ -2049,7 +2050,7 @@ def _customers(pf: dict) -> list[dict]:
 
 def _engagement_role(e: dict) -> str:
     """Return the title held on an engagement: 'Lead DevOps Consultant - Enterprise customer' gives the role."""
-    return e["name"].replace(" (Ongoing)", "").rsplit(" - ", 1)[0]
+    return e["name"].replace(ONGOING, "").rsplit(" - ", 1)[0]
 
 
 def _company_logo(name: str) -> str | None:

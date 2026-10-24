@@ -2,6 +2,10 @@
 
 All notable changes to this profile README repository.
 
+## [4.18.1] - 2026-10-24
+
+- The Merge Dependency PRs workflow downloads the Microsoft package config with `wget --max-redirect=0`, so a redirect can no longer downgrade it to HTTP (SonarCloud `githubactions:S6506`)
+
 ## [4.18.0] - 2026-10-19
 
 - A third AWS sample card leads the Featured Projects row: AgentCore Harness Agent with Governed MCP Tools (published 2026-10-19, MIT-0). Its diagram shows a default-deny Cedar gate on AgentCore Gateway blocking one MCP call and allowing the next to the 9 tools, `ask_architect` handing the request to the harness with its 3 skills and memory, and a release lane where a version reaches PROD only after an evaluation passes

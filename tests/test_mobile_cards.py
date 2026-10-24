@@ -41,7 +41,14 @@ class MobileCardsTests(unittest.TestCase):
                 ("2018", "BCA", "DAVV", "Indore, India"),
                 ("2024", "Cloud Consultant", "AWS", "Hyderabad, India"),
             ],
-            "engagements": [("Feb 2026 to now", "RWS", "Lead DevOps Consultant")],
+            "engagements": [
+                ("Feb 2026 to now", "Enterprise customer", "Lead DevOps Consultant")
+            ],
+            "highlights": [
+                ("12", "upstream PRs merged"),
+                ("3", "published AWS samples"),
+            ],
+            "disclaimer": "Personal projects and opinions are my own and do not represent Amazon or AWS.",
             "worked_with": [("Amazon Web Services", "Cloud Consultant (DevOps/MLOps)")],
             "publications": [
                 (

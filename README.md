@@ -4,7 +4,7 @@
 
 <a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/hero-mobile.svg" /><img src="assets/svg/hero.svg" width="100%" alt="Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS" /></picture></a>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,477; Followers 111; Total Stars 317; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/profile-badges-mobile.svg" /><img src="assets/svg/profile-badges.svg" width="100%" alt="Profile Views 23,532; Followers 112; Total Stars 318; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
 
 <picture><source media="(max-width: 600px)" srcset="assets/svg/intro-mobile.svg" /><img src="assets/svg/intro.svg" width="100%" alt="Cloud consultant at AWS Professional Services. Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines, plus the MCP servers and Claude Code skills I build to do that work faster." /></picture>
 
@@ -110,7 +110,7 @@
 
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-stats-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-stats-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stats-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stats-dark.svg" /><img src="assets/svg/header-stats-dark.svg" width="100%" alt="Coding Stats" /></picture>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/github-mobile.svg" /><img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,104 contributions, 5,743 commits, 1,818 pull requests, 317 stars, longest streak 147 days" /></picture>
+<picture><source media="(max-width: 600px)" srcset="assets/svg/github-mobile.svg" /><img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,270 contributions, 5,829 commits, 1,851 pull requests, 318 stars, longest streak 147 days" /></picture>
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><picture><source media="(max-width: 600px)" srcset="assets/svg/get-github-mobile.svg" /><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></picture></a>
 
@@ -142,4 +142,4 @@
 <a href="https://sagargupta.online/portfolio-react/"><picture><img src="assets/svg/connect-portfolio.svg" width="128" alt="Portfolio" /></picture></a>
 </p>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/freshness-mobile.svg" /><img src="assets/svg/freshness.svg" width="100%" alt="Data refreshes: GitHub: verified 23 Oct 2026.; LeetCode: verified 23 Oct 2026.; Portfolio: verified 23 Oct 2026." /></picture>
+<picture><source media="(max-width: 600px)" srcset="assets/svg/freshness-mobile.svg" /><img src="assets/svg/freshness.svg" width="100%" alt="Data refreshes: GitHub: verified 24 Oct 2026.; LeetCode: verified 24 Oct 2026.; Portfolio: verified 24 Oct 2026." /></picture>

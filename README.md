@@ -110,7 +110,7 @@
 
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-stats-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-stats-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stats-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stats-dark.svg" /><img src="assets/svg/header-stats-dark.svg" width="100%" alt="Coding Stats" /></picture>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/github-mobile.svg" /><img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,342 contributions, 5,868 commits, 1,883 pull requests, 321 stars, longest streak 140 days" /></picture>
+<picture><source media="(max-width: 600px)" srcset="assets/svg/github-mobile.svg" /><img src="assets/svg/github.svg" width="100%" alt="GitHub stats: 8,338 contributions, 5,865 commits, 1,882 pull requests, 321 stars, longest streak 147 days" /></picture>
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><picture><source media="(max-width: 600px)" srcset="assets/svg/get-github-mobile.svg" /><img src="assets/svg/get-github.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></picture></a>
 

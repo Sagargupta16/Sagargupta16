@@ -8,15 +8,15 @@
     "by_difficulty": {
       "Easy": [
         478,
-        973
+        974
       ],
       "Medium": [
         686,
-        2133
+        2135
       ],
       "Hard": [
         166,
-        985
+        986
       ]
     },
     "history": [
@@ -130,9 +130,9 @@
     ]
   },
   "github": {
-    "contributions": 8373,
-    "commits": 5886,
-    "prs": 1900,
+    "contributions": 8388,
+    "commits": 5889,
+    "prs": 1903,
     "stars": 321,
     "repo_stars": {
       "PortFolio": 3,
@@ -674,7 +674,7 @@
         183
       ],
       [
-        39
+        54
       ]
     ],
     "languages": [
@@ -2187,30 +2187,30 @@
     "project_count": 49
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5861,
-    "PrefectHQ/prefect": 24070,
-    "anthropics/skills": 183526,
-    "apache/airflow": 47268,
+    "NirmalScaria/le-git-graph": 5862,
+    "PrefectHQ/prefect": 24073,
+    "anthropics/skills": 183636,
+    "apache/airflow": 47273,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 927,
-    "awslabs/mcp": 9828,
-    "axios/axios": 109312,
+    "awslabs/mcp": 9830,
+    "axios/axios": 109314,
     "cloudposse/terraform-aws-tfstate-backend": 442,
     "expressjs/multer": 12088,
-    "feast-dev/feast": 7347,
+    "feast-dev/feast": 7348,
     "forem/selfhost": 1480,
-    "hashicorp/terraform-provider-aws": 11125,
-    "lucide-icons/lucide": 25264,
-    "modelcontextprotocol/servers": 91547,
+    "hashicorp/terraform-provider-aws": 11126,
+    "lucide-icons/lucide": 25273,
+    "modelcontextprotocol/servers": 91549,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23626,
+  "views": 23725,
   "source_updated_at": {
-    "github": "2026-10-25T01:55:54+00:00",
-    "leetcode": "2026-10-25T01:55:50+00:00",
-    "portfolio": "2026-10-25T01:55:54+00:00",
-    "views": "2026-10-25T01:55:50+00:00"
+    "github": "2026-10-25T11:52:40+00:00",
+    "leetcode": "2026-10-25T11:52:35+00:00",
+    "portfolio": "2026-10-25T11:52:40+00:00",
+    "views": "2026-10-25T11:52:35+00:00"
   }
 }

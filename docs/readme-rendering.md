@@ -35,8 +35,10 @@ Text floor: 10.5px in every desktop and phone card, which holds about that size
 where each is shown (the README column is 831 to 846px from a 1280px window up,
 about 308px on a 390px phone); phone micro-labels sit at 11.5px and the AWS
 sample diagrams' node labels at 10px, the most their boxes hold. The vendored
-GitHub and LeetCode cards and the Credly action's `certs.svg` keep their
-upstream sizes.
+GitHub and LeetCode cards and the Credly action's `certs.svg` hold the same
+10.5px floor upstream since github-stats-card-action v1.3.0, leetcode-card-action
+v1.2.0 and credly-badge-readme-action v1.4.0; raise a size there and re-vendor
+rather than patch the copies here.
 
 Phone cards keep the desktop look and motion: mono micro-labels, flat bordered
 tiles, badge images and icons, blocks that fade and rise in order, pulsing

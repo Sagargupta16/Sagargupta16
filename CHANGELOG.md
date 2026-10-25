@@ -17,6 +17,11 @@ Ports the parts of the unpushed 2026-10-11 `feat/svg-pass` branch that still app
   - The divider dot uses `#4696f9`, which reads on both GitHub themes.
   - The hero's MCP ring is solid `#2563eb`.
   - The light section headers' sweep uses the same deeper blues as their kicker, desktop and phone.
+- The GitHub stats, LeetCode and Credly cards get the same text floor upstream. Their actions now draw every label at 10.5 px (github-stats-card-action v1.3.0, leetcode-card-action v1.2.0, credly-badge-readme-action v1.4.0; they were 7.5 to 10 px):
+  - `scripts/vendor/` carries the two new renderers, with the GitHub copy's one `repo_stars` line kept.
+  - The Credly workflow is pinned to v1.4.0.
+  - `certs.svg` is rendered with it: 840 x 507 instead of 450, since each badge label gets one more line.
+  - `github.svg` and `leetcode.svg` keep their 840 x 340 and 840 x 270 sizes.
 - Not ported:
   - the refreshed data snapshot, which was two weeks old
   - the dark and light footer pair (4.20.0 gave the footer its own card)

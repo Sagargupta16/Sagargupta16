@@ -43,6 +43,12 @@ tiles, badge images and icons, blocks that fade and rise in order, pulsing
 accents and a shine. Long lists are capped with a "+N more" line. There are no
 reduced-motion variants.
 
+Entrances are poster-safe on every card: the element's own attributes hold the
+finished frame, and its animation runs from 0 s holding the start value until its
+turn. A still render (link previews, print, viewers that skip SMIL) shows the
+whole card, and browsers still play the entrance. Use `_enter()` in either
+renderer rather than `opacity="0"` plus a `begin` delay.
+
 Links belong around the image, because links inside an SVG displayed through
 `<img>` are not interactive.
 

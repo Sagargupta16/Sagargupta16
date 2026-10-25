@@ -107,12 +107,19 @@ def _text(
     )
 
 
+def _held(begin: float, dur: float) -> str:
+    """Timing that runs from 0 s and holds the start value until begin, so the rest frame can be the finished one."""
+    total = begin + dur
+    return f'keyTimes="0;{begin / total:.3f};1" dur="{total:.2f}s" fill="freeze"'
+
+
 def _enter(begin: float, body: str) -> str:
-    """Fade in while rising 10px, once, then hold: the desktop cards' entrance."""
+    """Fade in while rising 10px, once, then hold: the desktop cards' entrance, poster-safe."""
+    times = _held(begin, FADE)
     return (
-        f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="{FADE}s" fill="freeze"/>'
-        f'<animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" '
-        f'begin="{begin:.2f}s" dur="{FADE}s" fill="freeze"/>{body}</g>'
+        f'<g><animate attributeName="opacity" values="0;0;1" {times}/>'
+        f'<animateTransform attributeName="transform" type="translate" values="0 10;0 10;0 0" {times}/>'
+        f"{body}</g>"
     )
 
 
@@ -124,12 +131,11 @@ def _draw(
     width: float = 1,
     extra: str = "",
 ) -> str:
-    """Draw a path in once; pathLength makes the dash its full length."""
+    """Draw a path in once; pathLength makes the dash its full length, drawn at rest."""
     return (
         f'<path d="{d}" stroke="{color}" stroke-width="{width:g}" fill="none" '
         f'pathLength="1" stroke-dasharray="1"{extra}>'
-        f'<animate attributeName="stroke-dashoffset" values="1;0" begin="{begin:.2f}s" '
-        f'dur="{dur:g}s" fill="freeze"/></path>'
+        f'<animate attributeName="stroke-dashoffset" values="1;1;0" {_held(begin, dur)}/></path>'
     )
 
 
@@ -395,8 +401,10 @@ def _rotating(
                 )
                 for row, line in enumerate(lines)
             )
+            # where SMIL does not run, the first phrase stands in for the set
+            rest = "" if index == 0 else ' opacity="0"'
             card.parts.append(
-                f'<g opacity="0"><animate attributeName="opacity" values="{";".join(values)}" '
+                f'<g{rest}><animate attributeName="opacity" values="{";".join(values)}" '
                 f'keyTimes="{";".join(f"{t:g}" for t in times)}" dur="{slot * count:g}s" '
                 f'repeatCount="indefinite"/>{texts}</g>'
             )
@@ -442,12 +450,13 @@ def _node_graph(
         for index, (a, b) in enumerate(spokes):
             (x1, y1), (x2, y2) = points[a], points[b]
             card.parts.append(
-                f'<circle r="2.4" fill="{SKY}"><animateMotion dur="2.4s" begin="{index * 0.45:.2f}s" '
-                f'repeatCount="indefinite" path="M{x1:.1f} {y1:.1f} L{x2:.1f} {y2:.1f}"/></circle>'
+                # parked on its start node (under it) until it begins, not in the top-left corner
+                f'<circle cx="{x1:.1f}" cy="{y1:.1f}" r="2.4" fill="{SKY}"><animateMotion dur="2.4s" begin="{index * 0.45:.2f}s" '
+                f'repeatCount="indefinite" path="M0 0 L{x2 - x1:.1f} {y2 - y1:.1f}"/></circle>'
             )
         for index, ((x, y), (_, _, label)) in enumerate(zip(points, nodes)):
             r = 17 if index == hub else 13
-            stroke = f"{BLUE}dd" if index == hub else "rgba(255,255,255,0.16)"
+            stroke = BLUE if index == hub else "rgba(255,255,255,0.16)"
             fill = f"{BLUE}26" if index == hub else CARD
             card.parts.append(
                 f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.3">'
@@ -698,8 +707,8 @@ def _heatmap(card: Card, weeks: list[list[int]]) -> None:
                 for row, count in enumerate(week)
             )
             card.parts.append(
-                f'<g opacity="0"><animate attributeName="opacity" to="1" '
-                f'begin="{card.begin + column * 0.05:.2f}s" dur="0.3s" fill="freeze"/>{cells}</g>'
+                f'<g><animate attributeName="opacity" values="0;0;1" '
+                f'{_held(card.begin + column * 0.05, 0.3)}/>{cells}</g>'
             )
     card.y = top + 7 * step + 10
 
@@ -1016,6 +1025,7 @@ def _footer(data: dict, context: dict) -> str:
 def _header(number: str, title: str, subtitle: str, theme: str) -> str:
     card = Card(title)
     color = "#1d4ed8" if theme == "light" else BLUE
+    edge = "#0284c7" if theme == "light" else SKY
     foreground = "#17212b" if theme == "light" else WHITE
     rule = "rgba(11,16,18,0.12)" if theme == "light" else "rgba(255,255,255,0.10)"
     card.y = 10
@@ -1034,8 +1044,8 @@ def _header(number: str, title: str, subtitle: str, theme: str) -> str:
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{height}" '
         f'viewBox="0 0 {WIDTH} {height}" role="img" aria-label="{escape(title, quote=True)}">'
         f"<style>text{{font-family:{SANS}}}</style>"
-        f'<defs><linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="{SKY}" stop-opacity="0"/>'
-        f'<stop offset="0.5" stop-color="{BLUE}"/><stop offset="1" stop-color="{SKY}" stop-opacity="0"/></linearGradient></defs>'
+        f'<defs><linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="{edge}" stop-opacity="0"/>'
+        f'<stop offset="0.5" stop-color="{color}"/><stop offset="1" stop-color="{edge}" stop-opacity="0"/></linearGradient></defs>'
         f'<rect x="0" y="12" width="4" height="{card.y - 14:g}" rx="2" fill="{color}"/>'
         + "".join(card.parts)
         + f'<line x1="0" y1="{height - 4}" x2="{WIDTH}" y2="{height - 4}" stroke="{rule}" stroke-width="1"/>'

@@ -130,9 +130,9 @@
     ]
   },
   "github": {
-    "contributions": 8347,
-    "commits": 5871,
-    "prs": 1885,
+    "contributions": 8348,
+    "commits": 5874,
+    "prs": 1887,
     "stars": 321,
     "repo_stars": {
       "PortFolio": 3,
@@ -203,7 +203,7 @@
     "followers": 112,
     "streak": 8,
     "longest": 140,
-    "active_days": 306,
+    "active_days": 307,
     "calendar": [
       [
         4,
@@ -397,8 +397,8 @@
       [
         3,
         68,
-        22,
-        20,
+        23,
+        19,
         0,
         4,
         43
@@ -559,8 +559,8 @@
       [
         0,
         12,
-        4,
-        27,
+        6,
+        25,
         5,
         0,
         0
@@ -598,14 +598,14 @@
         0,
         0,
         0,
-        0,
-        2
+        1,
+        1
       ],
       [
         0,
         0,
-        20,
-        41,
+        21,
+        40,
         63,
         11,
         30
@@ -623,8 +623,8 @@
         53,
         37,
         11,
-        4,
-        11,
+        5,
+        10,
         10,
         6
       ],
@@ -633,8 +633,8 @@
         8,
         5,
         6,
-        17,
-        24,
+        18,
+        23,
         73
       ],
       [
@@ -661,20 +661,20 @@
         22,
         29,
         0,
-        28,
+        25,
         0
       ],
       [
         204,
-        14,
-        20,
+        16,
+        18,
         51,
         3,
         6,
-        184
+        183
       ],
       [
-        9
+        14
       ]
     ],
     "languages": [
@@ -685,7 +685,7 @@
       ],
       [
         "Python",
-        21.6,
+        21.5,
         "#3572A5"
       ],
       [
@@ -1076,7 +1076,7 @@
     "featured": [
       {
         "title": "SageMaker Image Classification MLOps",
-        "description": "Published by AWS under the aws-samples organization (MIT-0) - an end-to-end, production-shaped MLOps pipeline for image classification on Amazon SageMaker, declared entirely in Terraform across 86 files and 13 reusable modules. Event-driven ingestion, multi-architecture training behind hard clinical quality gates, human-approved governed deployment, and a closed drift-to-retrain loop. The worked example classifies medical images, but the architecture is domain-agnostic.",
+        "description": "Published as a solution under aws-samples (MIT-0) - an end-to-end, production-shaped MLOps pipeline for image classification on Amazon SageMaker, declared entirely in Terraform across 86 files and 13 reusable modules. Event-driven ingestion, multi-architecture training behind hard clinical quality gates, human-approved governed deployment, and a closed drift-to-retrain loop. The worked example classifies medical images, but the architecture is domain-agnostic.",
         "date": "July 2026",
         "tools_tech": [
           "Terraform",
@@ -1096,7 +1096,7 @@
       },
       {
         "title": "AWS Organizations Governance on Control Tower",
-        "description": "Published by AWS under the aws-samples organization (MIT-0), the second after the SageMaker MLOps sample - a Terraform governance layer for AWS Organizations on top of an existing Control Tower landing zone. It declares the OU hierarchy, six Organizations policy types, Control Tower baselines and controls, and delegated administrators for 15 AWS services, all from the management account.",
+        "description": "Published as a solution under aws-samples (MIT-0), the second after the SageMaker MLOps sample - a Terraform governance layer for AWS Organizations on top of an existing Control Tower landing zone. It declares the OU hierarchy, six Organizations policy types, Control Tower baselines and controls, and delegated administrators for 15 AWS services, all from the management account.",
         "date": "September 2026",
         "tools_tech": [
           "Terraform",
@@ -1115,7 +1115,7 @@
       },
       {
         "title": "AgentCore Harness Agent with Governed MCP Tools",
-        "description": "Published by AWS under the aws-samples organization (MIT-0), the third sample - a skills-based AI agent hosted on the Amazon Bedrock AgentCore harness and deployed entirely with Terraform. Its tools run as an MCP server on AgentCore Runtime behind AgentCore Gateway, where a default-deny Cedar policy allows only the listed tools and callers, so Claude Code, Codex and Kiro can call them directly or hand a whole request to the hosted agent.",
+        "description": "Published as a solution under aws-samples (MIT-0), the third sample - a skills-based AI agent hosted on the Amazon Bedrock AgentCore harness and deployed entirely with Terraform. Its tools run as an MCP server on AgentCore Runtime behind AgentCore Gateway, where a default-deny Cedar policy allows only the listed tools and callers, so Claude Code, Codex and Kiro can call them directly or hand a whole request to the hosted agent.",
         "date": "October 2026",
         "tools_tech": [
           "Terraform",
@@ -2189,7 +2189,7 @@
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5861,
     "PrefectHQ/prefect": 24069,
-    "anthropics/skills": 183513,
+    "anthropics/skills": 183517,
     "apache/airflow": 47267,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 113,
@@ -2206,11 +2206,11 @@
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23589,
+  "views": 23622,
   "source_updated_at": {
-    "github": "2026-10-25T00:43:37+00:00",
-    "leetcode": "2026-10-25T00:43:34+00:00",
-    "portfolio": "2026-10-25T00:43:37+00:00",
-    "views": "2026-10-25T00:43:33+00:00"
+    "github": "2026-10-25T01:09:37+00:00",
+    "leetcode": "2026-10-25T01:09:34+00:00",
+    "portfolio": "2026-10-25T01:09:38+00:00",
+    "views": "2026-10-25T01:09:34+00:00"
   }
 }

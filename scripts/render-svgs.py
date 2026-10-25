@@ -53,7 +53,7 @@ BLUE_LIGHT = "#60a5fa"
 SKY = "#38bdf8"
 GREEN = "#22c55e"
 AMBER = "#f59e0b"
-# Outline of an accent box on its own blue tint (about #122644): BLUE is 2.9:1 there, this 4.1:1.
+# Outline of an accent box on its own blue tint: BLUE at 80% is 2.4-2.6:1 there, this 4.3-4.7:1.
 BLUE_EDGE = "#3b82f6"
 # For a file shown on both GitHub themes with no background: 6.3:1 on dark, 3.0:1 on white.
 BLUE_EITHER = "#4696f9"

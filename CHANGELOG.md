@@ -13,7 +13,7 @@ Ports the parts of the unpushed 2026-10-11 `feat/svg-pass` branch that still app
 - The career timeline reveals in about 1.4 s instead of 5.4 s. Each stop follows the last by 120 ms, so the engagements show before most visitors scroll past
 - The AWS Organizations card names its OUs as the sample writes them: Root, Security, Workloads with Production and Non-Production, and Sandbox. The labels are 10px on desktop and phone. The phone tree uses 88px OU boxes, and its SCP chip pins to the Workloads box's corner
 - Contrast:
-  - Accent box outlines in the three AWS sample diagrams use `#3b82f6` (4.1:1 on their blue tint; 2.9:1 before), so svg-forge's validator now reports nothing on them.
+  - Accent box outlines in the three AWS sample diagrams use `#3b82f6` (4.3 to 4.7:1 on their blue tint; 2.4 to 2.6:1 before), so svg-forge's validator now reports nothing on them.
   - The divider dot uses `#4696f9`, which reads on both GitHub themes.
   - The hero's MCP ring is solid `#2563eb`.
   - The light section headers' sweep uses the same deeper blues as their kicker, desktop and phone.

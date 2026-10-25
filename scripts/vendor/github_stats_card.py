@@ -17,6 +17,7 @@ import json
 import os
 import re
 import urllib.request
+from dataclasses import dataclass, replace
 from html import escape
 from pathlib import Path
 from typing import NoReturn
@@ -45,6 +46,110 @@ GRAPHIC_MIN = 3.0
 EMPTY_DAY = "rgba(255,255,255,0.05)"
 UNKNOWN_LANGUAGE_COLOR = "#8b949e"
 HEX_COLOR = re.compile(r"#[0-9a-fA-F]{6}")
+# On a light card the pale levels are the quiet ones, so the busiest calendar
+# level is held to 7:1 (WCAG AAA) to leave visible steps above the 3:1 floor.
+LIGHT_PEAK_MIN = 7.0
+# The compact layout shows the most recent half year of the calendar.
+COMPACT_WEEKS = 26
+LAYOUTS = ("wide", "compact")
+
+
+@dataclass(frozen=True)
+class Theme:
+    """Colors of one card theme. Hex text colors are held to TEXT_MIN on bg and
+    card when the card is drawn, so a preset can use its palette's own colors."""
+
+    bg: str
+    card: str
+    border: str
+    tile_border: str
+    text: str
+    muted: str
+    legend: str
+    streak: str
+    empty: str
+    accent: str
+
+
+# Borders and empty days are rgba tints of the text color: decorative texture,
+# exempt from the contrast floors. Every other color is held to them on render.
+THEMES = {
+    "dark": Theme(
+        bg=BG,
+        card=CARD,
+        border="rgba(255,255,255,0.08)",
+        tile_border="rgba(255,255,255,0.07)",
+        text="#f3f4f6",
+        muted="rgba(255,255,255,0.5)",
+        legend="rgba(255,255,255,0.75)",
+        streak=GREEN,
+        empty=EMPTY_DAY,
+        accent=BLUE_LIGHT,
+    ),
+    # GitHub's dark dimmed palette
+    "dim": Theme(
+        bg="#22272e",
+        card="#2d333b",
+        border="rgba(205,217,229,0.14)",
+        tile_border="rgba(205,217,229,0.1)",
+        text="#cdd9e5",
+        muted="#909dab",
+        legend="#adbac7",
+        streak="#57ab5a",
+        empty="rgba(205,217,229,0.07)",
+        accent="#539bf5",
+    ),
+    # GitHub's light palette
+    "light": Theme(
+        bg="#ffffff",
+        card="#f6f8fa",
+        border="rgba(31,35,40,0.15)",
+        tile_border="rgba(31,35,40,0.1)",
+        text="#1f2328",
+        muted="#59636e",
+        legend="#424a53",
+        streak="#1a7f37",
+        empty="rgba(31,35,40,0.07)",
+        accent="#0969da",
+    ),
+    "dracula": Theme(
+        bg="#282a36",
+        card="#2f3241",
+        border="rgba(248,248,242,0.12)",
+        tile_border="rgba(248,248,242,0.08)",
+        text="#f8f8f2",
+        muted="#6272a4",
+        legend="#e2e2dc",
+        streak="#50fa7b",
+        empty="rgba(248,248,242,0.06)",
+        accent="#bd93f9",
+    ),
+    "nord": Theme(
+        bg="#2e3440",
+        card="#3b4252",
+        border="rgba(236,239,244,0.12)",
+        tile_border="rgba(236,239,244,0.08)",
+        text="#eceff4",
+        muted="#4c566a",
+        legend="#d8dee9",
+        streak="#a3be8c",
+        empty="rgba(236,239,244,0.06)",
+        accent="#88c0d0",
+    ),
+    "solarized-light": Theme(
+        bg="#fdf6e3",
+        card="#eee8d5",
+        border="rgba(7,54,66,0.15)",
+        tile_border="rgba(7,54,66,0.1)",
+        text="#073642",
+        muted="#657b83",
+        legend="#586e75",
+        streak="#859900",
+        empty="rgba(7,54,66,0.07)",
+        accent="#268bd2",
+    ),
+}
+DARK = THEMES["dark"]
 
 GRAPHQL_URL = "https://api.github.com/graphql"
 ALLOWED_HOSTS = ("https://api.github.com/",)
@@ -184,23 +289,41 @@ def contrast(color: str, bg: str = BG) -> float:
 
 
 def hls_hex(hue: float, lightness: float, saturation: float) -> str:
-    rgb = colorsys.hls_to_rgb(hue, min(lightness, 1.0), saturation)
+    rgb = colorsys.hls_to_rgb(hue, min(max(lightness, 0.0), 1.0), saturation)
     return "#" + "".join(f"{round(c * 255):02x}" for c in rgb)
 
 
-def ensure_contrast(color: str, minimum: float) -> str:
-    """color when it reaches minimum:1 on the card, else the nearest lighter shade
-    of the same hue that does. The card is near-black, so only lighter shades can
-    pass, and white (19:1) always does."""
-    if contrast(color) >= minimum:
+def is_dark(bg: str) -> bool:
+    """True when white contrasts more with bg than black does."""
+    return contrast("#ffffff", bg) >= contrast("#000000", bg)
+
+
+def ensure_contrast(color: str, minimum: float, bg: str = BG) -> str:
+    """color when it reaches minimum:1 on bg, else the nearest shade of the same
+    hue that does: lighter on a dark card, darker on a light one. Every preset
+    background is close enough to black or white that the far end (white or
+    black) always passes."""
+    if contrast(color, bg) >= minimum:
         return color
     hue, lightness, saturation = colorsys.rgb_to_hls(
         *(v / 255 for v in channels(color))
     )
+    sign = 1 if is_dark(bg) else -1
     shades = (
-        hls_hex(hue, lightness + step / 1000, saturation) for step in range(1, 1001)
+        hls_hex(hue, lightness + sign * step / 1000, saturation)
+        for step in range(1, 1001)
     )
-    return next(shade for shade in shades if contrast(shade) >= minimum)
+    return next(shade for shade in shades if contrast(shade, bg) >= minimum)
+
+
+def readable(color: str, theme: Theme) -> str:
+    """A text color held to TEXT_MIN on both the card background and the tiles it
+    sits on; the dark theme's rgba tints pass as given."""
+    if not HEX_COLOR.fullmatch(color):
+        return color
+    return ensure_contrast(
+        ensure_contrast(color, TEXT_MIN, theme.bg), TEXT_MIN, theme.card
+    )
 
 
 def mix(a: str, b: str, t: float) -> str:
@@ -219,16 +342,25 @@ def deep_shade(accent: str) -> str:
     return "#" + "".join(f"{round(c * 255):02x}" for c in rgb)
 
 
-def calendar_shades(accent: str) -> list[str]:
-    """Fills for calendar levels 0 to 4: the empty-day tint, then four solid shades
-    from quiet to busy that each reach 3:1 on the card. The quietest starts from
-    the deep shade at 60% over the card (the old middle level) and the busiest is
-    the accent, held to 4.5:1 like the title so a dark accent still leaves room
-    above the 3:1 floor; the two between are spaced evenly from one to the other."""
-    peak = ensure_contrast(accent, TEXT_MIN)
-    low = ensure_contrast(mix(BG, deep_shade(peak), 0.6), GRAPHIC_MIN)
-    mids = [ensure_contrast(mix(low, peak, t), GRAPHIC_MIN) for t in (1 / 3, 2 / 3)]
-    return [EMPTY_DAY, low, *mids, peak]
+def calendar_shades(accent: str, theme: Theme = DARK) -> list[str]:
+    """Fills for calendar levels 0 to 4: the theme's empty-day tint, then four
+    solid shades from quiet to busy that each reach 3:1 on the card.
+
+    On a dark card the quietest starts from the deep shade at 60% over the card
+    (the old middle level) and the busiest is the accent, held to 4.5:1 like the
+    title so a dark accent still leaves room above the 3:1 floor. On a light card
+    the quietest is the accent half mixed into the card, darkened to 3:1, and the
+    busiest is the accent darkened to LIGHT_PEAK_MIN. The two between are spaced
+    evenly from one to the other."""
+    bg = theme.bg
+    if is_dark(bg):
+        peak = ensure_contrast(accent, TEXT_MIN, bg)
+        low = ensure_contrast(mix(bg, deep_shade(peak), 0.6), GRAPHIC_MIN, bg)
+    else:
+        peak = ensure_contrast(accent, LIGHT_PEAK_MIN, bg)
+        low = ensure_contrast(mix(bg, peak, 0.5), GRAPHIC_MIN, bg)
+    mids = [ensure_contrast(mix(low, peak, t), GRAPHIC_MIN, bg) for t in (1 / 3, 2 / 3)]
+    return [theme.empty, low, *mids, peak]
 
 
 def svg_open(w: int, h: int, label: str) -> str:
@@ -238,77 +370,84 @@ def svg_open(w: int, h: int, label: str) -> str:
     )
 
 
-def render_card(stats: dict, username: str, title: str, accent: str) -> str:
-    cal = stats["calendar"]
-    # linguist colors are data: one too dark for the card moves to the nearest
-    # lighter shade that reaches 3:1 rather than being dropped
-    languages = [
-        [name, pct, ensure_contrast(color, GRAPHIC_MIN)]
-        for name, pct, color in stats["languages"]
-    ]
-    # the accent is also the title, which is small text
-    accent = ensure_contrast(accent, TEXT_MIN)
-    legend_rows = (len(languages) + 2) // 3  # three languages per legend row
-    w, h = 840, 300 + 20 * max(2, legend_rows)
-    tiles = [
-        (f"{stats['contributions']:,}", "contributions, last year"),
-        (f"{stats['commits']:,}", "commits"),
-        (f"{stats['prs']:,}", "pull requests"),
-        (f"{stats['stars']:,}", "stars earned"),
-        (f"{stats['followers']:,}", "followers"),
-    ]
-    label = (
-        f"GitHub stats for @{username}: {stats['contributions']} contributions last year, "
-        f"{stats['streak']} day streak, {stats['stars']} stars"
-    )
-    parts = [
+def level_cuts(weeks: list[list[int]]) -> list[int]:
+    """Quartiles of the non-zero days shown, where calendar levels change."""
+    nonzero = sorted(c for week in weeks for c in week if c)
+    return [nonzero[len(nonzero) * q // 4] for q in (1, 2, 3)] if nonzero else [0, 0, 0]
+
+
+def card_head(
+    w: int, h: int, label: str, weeks: int, ink: Theme, title: str
+) -> list[str]:
+    """Opening tag, style, background and title, shared by both layouts."""
+    return [
         svg_open(w, h, label),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.v{{font-family:{SANS};font-weight:800}}"
         ".c{opacity:0;animation:in .5s ease forwards}@keyframes in{to{opacity:1}}"
         + "".join(
-            f".w{i}{{animation-delay:{0.4 + i * 0.03:.2f}s}}" for i in range(len(cal))
+            f".w{i}{{animation-delay:{0.4 + i * 0.03:.2f}s}}" for i in range(weeks)
         )
         + ".grow{transform:scaleX(0);transform-origin:left;transform-box:fill-box;animation:grow 1.2s .5s ease forwards}"
         "@keyframes grow{to{transform:scaleX(1)}}</style>",
-        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="30" fill="{accent}" font-size="10">{escape(title)}</text>',
-    ]
-    tw = (w - 32 - 4 * 10) / 5
-    for i, (value, name) in enumerate(tiles):
-        x = 16 + i * (tw + 10)
-        parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.1 + i * 0.1:.1f}s" dur="0.4s" fill="freeze"/>'
-            f'<rect x="{x}" y="44" width="{tw}" height="64" rx="10" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
-            f'<text class="v" x="{x + 14}" y="76" fill="#f3f4f6" font-size="22">{value}</text>'
-            f'<text class="m" x="{x + 14}" y="95" fill="rgba(255,255,255,0.5)" font-size="8">{name.upper()}</text></g>'
-        )
-
-    # contribution calendar, one column per week; shades are quartiles of the
-    # user's own non-zero days
-    nonzero = sorted(c for week in cal for c in week if c)
-    cuts = [nonzero[len(nonzero) * q // 4] for q in (1, 2, 3)] if nonzero else [0, 0, 0]
-    shades = calendar_shades(accent)
-    cell, gap, gx, gy = 9, 2.6, 24, 128
-    for wi, week in enumerate(cal):
-        for di, count in enumerate(week):
-            x = gx + wi * (cell + gap)
-            y = gy + di * (cell + gap)
-            parts.append(
-                f'<rect class="c w{wi}" x="{x:.1f}" y="{y:.1f}" width="{cell}" height="{cell}" rx="2" fill="{shades[level(count, cuts)]}"/>'
-            )
-    sx = gx + len(cal) * (cell + gap) + 18
-    parts += [
-        f'<rect x="{sx:.1f}" y="{gy}" width="{w - 16 - sx:.1f}" height="{7 * (cell + gap) - gap:.0f}" rx="10" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>',
-        f'<text class="m" x="{sx + 14:.1f}" y="{gy + 20}" fill="{GREEN}" font-size="8.5">CURRENT STREAK</text>',
-        f'<text class="v" x="{sx + 14:.1f}" y="{gy + 46}" fill="#f3f4f6" font-size="22">{stats["streak"]}<tspan class="m" font-size="9" fill="rgba(255,255,255,0.5)"> DAYS</tspan></text>',
-        f'<text class="m" x="{sx + 14:.1f}" y="{gy + 66}" fill="rgba(255,255,255,0.5)" font-size="8">LONGEST {stats["longest"]}  |  ACTIVE {stats["active_days"]}</text>',
+        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{ink.bg}" stroke="{ink.border}"/>',
+        f'<text class="m" x="24" y="30" fill="{ink.accent}" font-size="10.5">{escape(title)}</text>',
     ]
 
-    # languages, stacked bar plus legend
-    ly = 232
-    parts.append(
-        f'<text class="m" x="24" y="{ly}" fill="rgba(255,255,255,0.5)" font-size="8.5">TOP LANGUAGES BY CODE SIZE</text>'
+
+def tile(
+    i: int,
+    x: float,
+    y: int,
+    tw: float,
+    th: int,
+    value: str,
+    name: str,
+    ink: Theme,
+    sizes: tuple[int, int, float, int],
+    name_fill: str = "",
+) -> str:
+    """One stat tile that fades in; sizes are value font, value y, label font, label y."""
+    value_size, value_y, name_size, name_y = sizes
+    return (
+        f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.1 + i * 0.1:.1f}s" dur="0.4s" fill="freeze"/>'
+        f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="10" fill="{ink.card}" stroke="{ink.tile_border}"/>'
+        f'<text class="v" x="{x + 14}" y="{y + value_y}" fill="{ink.text}" font-size="{value_size}">{value}</text>'
+        f'<text class="m" x="{x + 14}" y="{y + name_y}" fill="{name_fill or ink.muted}" font-size="{name_size}">{name.upper()}</text></g>'
     )
+
+
+def calendar_cells(
+    weeks: list[list[int]],
+    shades: list[str],
+    gx: float,
+    gy: float,
+    cell: float,
+    gap: float,
+) -> list[str]:
+    """One column per week; shades are quartiles of the shown non-zero days."""
+    cuts = level_cuts(weeks)
+    return [
+        f'<rect class="c w{wi}" x="{gx + wi * (cell + gap):.1f}" y="{gy + di * (cell + gap):.1f}" '
+        f'width="{cell}" height="{cell}" rx="2" fill="{shades[level(count, cuts)]}"/>'
+        for wi, week in enumerate(weeks)
+        for di, count in enumerate(week)
+    ]
+
+
+def language_block(
+    languages: list[list],
+    ly: int,
+    w: int,
+    per_row: int,
+    column: int,
+    ink: Theme,
+    heading_size: float,
+    legend_size: float,
+) -> list[str]:
+    """Heading, stacked bar that grows in, and a legend of per_row columns."""
+    parts = [
+        f'<text class="m" x="24" y="{ly}" fill="{ink.muted}" font-size="{heading_size}">TOP LANGUAGES BY CODE SIZE</text>'
+    ]
     total = sum(pct for _, pct, _ in languages) or 1
     x = 24.0
     bar_w = w - 48
@@ -324,14 +463,125 @@ def render_card(stats: dict, username: str, title: str, accent: str) -> str:
         f'<g clip-path="url(#bar)">{"".join(segs)}</g></g>'
     )
     for i, (name, pct, color) in enumerate(languages):
-        lx = 24 + (i % 3) * 270
-        lyy = ly + 44 + (i // 3) * 20
+        lx = 24 + (i % per_row) * column
+        lyy = ly + 44 + (i // per_row) * 20
         parts.append(
             f'<circle cx="{lx + 5}" cy="{lyy - 3}" r="4.5" fill="{color}"/>'
-            f'<text class="m" x="{lx + 16}" y="{lyy}" fill="rgba(255,255,255,0.75)" font-size="9">{escape(name.upper())}  {pct}%</text>'
+            f'<text class="m" x="{lx + 16}" y="{lyy}" fill="{ink.legend}" font-size="{legend_size}">{escape(name.upper())}  {pct}%</text>'
         )
-    parts.append(SVG_CLOSE)
-    return "".join(parts)
+    return parts
+
+
+def wide_card(
+    stats: dict, title: str, label: str, ink: Theme, languages: list
+) -> list[str]:
+    """840 px: five tiles in a row, the full year, a streak panel, three-column legend.
+
+    No text under 10.5 px, which still reads at 10 px when the card fills a README column.
+    """
+    cal = stats["calendar"]
+    legend_rows = (len(languages) + 2) // 3  # three languages per legend row
+    w, h = 840, 300 + 20 * max(2, legend_rows)
+    tiles = [
+        # the calendar beside it is the year; "contributions, last year" no longer fits at 10.5 px
+        (f"{stats['contributions']:,}", "contributions"),
+        (f"{stats['commits']:,}", "commits"),
+        (f"{stats['prs']:,}", "pull requests"),
+        (f"{stats['stars']:,}", "stars earned"),
+        (f"{stats['followers']:,}", "followers"),
+    ]
+    parts = card_head(w, h, label, len(cal), ink, title)
+    tw = (w - 32 - 4 * 10) / 5
+    for i, (value, name) in enumerate(tiles):
+        parts.append(
+            tile(i, 16 + i * (tw + 10), 44, tw, 64, value, name, ink, (22, 32, 10.5, 52))
+        )
+
+    cell, gap, gx, gy = 9, 2.6, 24, 128
+    parts += calendar_cells(cal, calendar_shades(ink.accent, ink), gx, gy, cell, gap)
+    sx = gx + len(cal) * (cell + gap) + 18
+    parts += [
+        f'<rect x="{sx:.1f}" y="{gy}" width="{w - 16 - sx:.1f}" height="{7 * (cell + gap) - gap:.0f}" rx="10" fill="{ink.card}" stroke="{ink.tile_border}"/>',
+        f'<text class="m" x="{sx + 14:.1f}" y="{gy + 15}" fill="{ink.streak}" font-size="10.5">CURRENT STREAK</text>',
+        f'<text class="v" x="{sx + 14:.1f}" y="{gy + 42}" fill="{ink.text}" font-size="22">{stats["streak"]}<tspan class="m" font-size="10.5" fill="{ink.muted}"> DAYS</tspan></text>',
+        # one line at 10.5 px is wider than the panel, so longest and active stack
+        f'<text class="m" x="{sx + 14:.1f}" y="{gy + 58}" fill="{ink.muted}" font-size="10.5">LONGEST {stats["longest"]}</text>',
+        f'<text class="m" x="{sx + 14:.1f}" y="{gy + 71}" fill="{ink.muted}" font-size="10.5">ACTIVE {stats["active_days"]}</text>',
+    ]
+    return parts + language_block(languages, 232, w, 3, 270, ink, 10.5, 10.5)
+
+
+def compact_card(
+    stats: dict, title: str, label: str, ink: Theme, languages: list
+) -> list[str]:
+    """400 px for phones: six tiles in a 3 by 2 grid (the streak is the sixth), the
+    last COMPACT_WEEKS weeks, a two-column legend, and no text under 9 px."""
+    weeks = stats["calendar"][-COMPACT_WEEKS:]
+    legend_rows = max(1, (len(languages) + 1) // 2)  # two languages per legend row
+    w, h = 400, 376 + 20 * (legend_rows - 1)
+    tiles = [
+        (f"{stats['contributions']:,}", "contributions", ""),
+        (f"{stats['commits']:,}", "commits", ""),
+        (f"{stats['prs']:,}", "pull requests", ""),
+        (f"{stats['stars']:,}", "stars earned", ""),
+        (f"{stats['followers']:,}", "followers", ""),
+        (
+            f'{stats["streak"]}<tspan class="m" font-size="9" fill="{ink.muted}"> DAYS</tspan>',
+            "current streak",
+            ink.streak,
+        ),
+    ]
+    parts = card_head(w, h, label, len(weeks), ink, title)
+    gap = 8
+    tw = (w - 32 - 2 * gap) / 3
+    for i, (value, name, fill) in enumerate(tiles):
+        x = round(16 + (i % 3) * (tw + gap), 1)
+        y = 44 + (i // 3) * 64
+        parts.append(
+            tile(i, x, y, round(tw, 1), 56, value, name, ink, (20, 30, 9, 46), fill)
+        )
+
+    gy = 196
+    year = f"LONGEST {stats['longest']} | ACTIVE {stats['active_days']} / YEAR"
+    parts += [
+        f'<text class="m" x="24" y="{gy - 10}" fill="{ink.muted}" font-size="9">LAST {len(weeks)} WEEKS</text>',
+        f'<text class="m" x="{w - 24}" y="{gy - 10}" fill="{ink.muted}" font-size="9" text-anchor="end">{year}</text>',
+    ]
+    parts += calendar_cells(weeks, calendar_shades(ink.accent, ink), 24, gy, 10.6, 3)
+    return parts + language_block(languages, 316, w, 2, 176, ink, 9, 9)
+
+
+def render_card(
+    stats: dict,
+    username: str,
+    title: str,
+    accent: str,
+    theme: str = "dark",
+    layout: str = "wide",
+) -> str:
+    palette = THEMES[theme]
+    bg = palette.bg
+    # linguist colors are data: one too dark (or too light) for the card moves to
+    # the nearest shade that reaches 3:1 rather than being dropped
+    languages = [
+        [name, pct, ensure_contrast(color, GRAPHIC_MIN, bg)]
+        for name, pct, color in stats["languages"]
+    ]
+    # the accent is also the title, which is small text
+    ink = replace(
+        palette,
+        accent=ensure_contrast(accent, TEXT_MIN, bg),
+        text=readable(palette.text, palette),
+        muted=readable(palette.muted, palette),
+        legend=readable(palette.legend, palette),
+        streak=readable(palette.streak, palette),
+    )
+    label = (
+        f"GitHub stats for @{username}: {stats['contributions']} contributions last year, "
+        f"{stats['streak']} day streak, {stats['stars']} stars"
+    )
+    body = compact_card if layout == "compact" else wide_card
+    return "".join([*body(stats, title, label, ink, languages), SVG_CLOSE])
 
 
 def fail(message: str) -> NoReturn:
@@ -358,6 +608,13 @@ def parse_languages(value: str) -> int:
     return count
 
 
+def parse_choice(name: str, value: str, choices: tuple[str, ...]) -> str:
+    choice = value.lower()
+    if choice not in choices:
+        fail(f"{name} must be one of {', '.join(choices)}, got {value!r}")
+    return choice
+
+
 def parse_exclude(value: str) -> set[str]:
     # "name" or "owner/name"; GitHub repository names are case-insensitive
     return {
@@ -381,7 +638,9 @@ def main() -> None:
     token = os.environ.get("GITHUB_TOKEN", "").strip()
     if not token:
         fail("no token: set the token input (GITHUB_TOKEN when run locally)")
-    accent = parse_accent(read_input("ACCENT") or BLUE_LIGHT)
+    theme = parse_choice("theme", read_input("THEME") or "dark", tuple(THEMES))
+    layout = parse_choice("layout", read_input("LAYOUT") or LAYOUTS[0], LAYOUTS)
+    accent = parse_accent(read_input("ACCENT") or THEMES[theme].accent)
     top = parse_languages(read_input("LANGUAGES") or DEFAULT_LANGUAGES)
     exclude = parse_exclude(read_input("EXCLUDE_REPOS"))
     title = read_input("TITLE") or f"GITHUB | @{username.upper()}"
@@ -401,7 +660,7 @@ def main() -> None:
             f"so there is no card to keep: {exc}"
         )
 
-    svg = render_card(stats, username, title, accent) + "\n"
+    svg = render_card(stats, username, title, accent, theme, layout) + "\n"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(svg, encoding="utf-8", newline="\n")
     print(

@@ -53,6 +53,10 @@ BLUE_LIGHT = "#60a5fa"
 SKY = "#38bdf8"
 GREEN = "#22c55e"
 AMBER = "#f59e0b"
+# Outline of an accent box on its own blue tint: BLUE at 80% is 2.4-2.6:1 there, this 4.3-4.7:1.
+BLUE_EDGE = "#3b82f6"
+# For a file shown on both GitHub themes with no background: 6.3:1 on dark, 3.0:1 on white.
+BLUE_EITHER = "#4696f9"
 HAIR_FILL = "rgba(255,255,255,0.03)"
 HAIR_STROKE = "rgba(255,255,255,0.14)"
 RECT_OPEN = "<rect "
@@ -435,18 +439,29 @@ def render_org_card(mobile: bool = False) -> str:
         h,
         "AWS Organizations Governance",
         "AWS SAMPLES  |  TERRAFORM  |  CONTROL TOWER",
-        "Animated diagram: SCP and RCP policies attaching down an AWS Organizations OU tree",
+        "Animated diagram: SCP and RCP policies attaching down an AWS Organizations OU tree: "
+        "Root, Security, Workloads with Production and Non-Production, Sandbox",
     )
     node_h = 20
-    # (centre x, centre y, width); the phone tree is the same tree pulled in about its trunk
+    # (centre x, centre y, width); the phone tree is the same tree on 88px OU boxes
     nodes = {
-        "mgmt": (160, 30, 56) if mobile else (205, 30, 76),
-        "root": (160, 76, 32) if mobile else (205, 76, 44),
-        "sec": (70, 124, 48) if mobile else (80, 124, 66),
-        "wl": (160, 124, 48) if mobile else (205, 124, 66),
-        "sbx": (250, 124, 48) if mobile else (330, 124, 66),
-        "prod": (128, 170, 38) if mobile else (160, 170, 52),
-        "dev": (192, 170, 38) if mobile else (250, 170, 52),
+        "mgmt": (160, 30, 64) if mobile else (205, 30, 76),
+        "root": (160, 76, 52) if mobile else (205, 76, 44),
+        "sec": (60, 124, 88) if mobile else (80, 124, 66),
+        "wl": (160, 124, 88) if mobile else (205, 124, 66),
+        "sbx": (260, 124, 88) if mobile else (330, 124, 66),
+        "prod": (110, 170, 84) if mobile else (152, 170, 88),
+        "dev": (214, 170, 108) if mobile else (262, 170, 112),
+    }
+    # OU names as the sample writes them: Control Tower's Security and Sandbox (README),
+    # Workloads with Production and Non-Production (examples/standard/terraform.tfvars)
+    names = {
+        "root": "Root",
+        "sec": "Security",
+        "wl": "Workloads",
+        "sbx": "Sandbox",
+        "prod": "Production",
+        "dev": "Non-Production",
     }
     edges = [
         ("mgmt", "root"),
@@ -477,7 +492,7 @@ def render_org_card(mobile: bool = False) -> str:
     for key, (x, y, bw) in nodes.items():
         if key == "mgmt":
             parts.append(
-                box(x - bw / 2, y - node_h / 2, bw, node_h, f"{BLUE}cc", f"{BLUE}22")
+                box(x - bw / 2, y - node_h / 2, bw, node_h, BLUE_EDGE, f"{BLUE}22")
             )
             parts.append(
                 f'<text class="l" x="{x}" y="{y + 3}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">MGMT</text>'
@@ -512,6 +527,14 @@ def render_org_card(mobile: bool = False) -> str:
                 f'<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="{times}" dur="6s" repeatCount="indefinite"/>',
             ).replace(RECT_OPEN, RECT_HIDDEN, 1)
         )
+    # labels above the lit boxes; the two account OUs leave room on the right for their dot
+    for key, name in names.items():
+        x, y, _ = nodes[key]
+        cx = x - 6 if key in ("prod", "dev") else x
+        parts.append(
+            f'<text class="l" x="{cx}" y="{y + 3.5}" text-anchor="middle" fill="rgba(255,255,255,0.72)" '
+            f'font-size="10">{name.upper()}</text>'
+        )
     for key, delay in (("prod", 0), ("dev", 0.03)):
         x, y, bw = nodes[key]
         t0 = 0.55 + delay
@@ -535,7 +558,10 @@ def render_org_card(mobile: bool = False) -> str:
     # chips start beside the MGMT box, pass beside the root, then park beside their OU
     start = (mx + mw / 2 + 22, my)
     at_root = (rx + rw / 2 + 22, ry)
-    scp_hold = (wl[0] + wl[2] / 2 + 20, wl[1])
+    # beside Workloads on desktop; on the phone Sandbox sits there, so the chip pins to the box's corner
+    scp_hold = (
+        (wl[0] + wl[2] / 2 - 10, wl[1] - 14) if mobile else (wl[0] + wl[2] / 2 + 20, wl[1])
+    )
     rcp_hold = (sbx[0], sbx[1] + node_h / 2 + 14)
     parts.append(
         chip(
@@ -587,7 +613,7 @@ def render_mlops_card(mobile: bool = False) -> str:
     )
     for name, x in stages:
         bw = narrow if name != "DEPLOY" else narrow + 4
-        stroke = f"{BLUE}cc" if name in ("TRAIN", "DEPLOY") else HAIR_STROKE
+        stroke = BLUE_EDGE if name in ("TRAIN", "DEPLOY") else HAIR_STROKE
         fill = f"{BLUE}1f" if name in ("TRAIN", "DEPLOY") else HAIR_FILL
         parts.append(box(x - bw / 2, y - 16, bw, 32, stroke, fill))
         parts.append(
@@ -682,7 +708,7 @@ def _ac_request_lane(lane: list[tuple[str, int, int]]) -> list[str]:
                     y - 16,
                     bw,
                     32,
-                    f"{BLUE}cc" if accent else HAIR_STROKE,
+                    BLUE_EDGE if accent else HAIR_STROKE,
                     f"{BLUE}1f" if accent else HAIR_FILL,
                 ),
                 f'<text class="l" x="{x}" y="{y + 3}" text-anchor="middle" fill="{_AC_LABEL}" font-size="10">{name}</text>',
@@ -821,11 +847,12 @@ def render_header(num: str, title: str, sub: str, theme: str) -> str:
     rule = "rgba(255,255,255,0.10)" if theme == "dark" else "rgba(11,16,18,0.12)"
     # the light blue that reads on the dark page is 2.5:1 on white; light pages get a deeper blue
     kicker = BLUE_LIGHT if theme == "dark" else "#1d4ed8"
+    edge = SKY if theme == "dark" else "#0284c7"  # the sweep on white needs the deeper pair too
     return "".join(
         [
             svg_open(w, h, title),
-            f'<defs><linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="{SKY}" stop-opacity="0"/>'
-            f'<stop offset="0.5" stop-color="{BLUE_LIGHT}"/><stop offset="1" stop-color="{SKY}" stop-opacity="0"/></linearGradient></defs>',
+            f'<defs><linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="{edge}" stop-opacity="0"/>'
+            f'<stop offset="0.5" stop-color="{kicker}"/><stop offset="1" stop-color="{edge}" stop-opacity="0"/></linearGradient></defs>',
             f'<rect x="0" y="12" width="4" height="30" rx="2" fill="{BLUE}"/>',
             f'<text x="18" y="24" fill="{kicker}" font-family="{MONO}" font-size="11" font-weight="700" letter-spacing="2">{num}  /  {escape(sub.upper())}</text>',
             f'<text x="18" y="46" fill="{ink}" font-family="{SANS}" font-size="24" font-weight="700">{escape(title)}</text>',
@@ -935,7 +962,7 @@ def render_divider() -> str:
             f'<defs><linearGradient id="pulse" x1="0" x2="1"><stop offset="0" stop-color="{BLUE}" stop-opacity="0"/>'
             f'<stop offset="0.5" stop-color="{BLUE_LIGHT}"/><stop offset="1" stop-color="{BLUE}" stop-opacity="0"/></linearGradient></defs>',
             f'<line x1="0" y1="7" x2="{w}" y2="7" stroke="rgba(127,127,127,0.28)" stroke-width="1"/>',
-            f'<circle cx="{w / 2}" cy="7" r="2.5" fill="{BLUE_LIGHT}"/>',
+            f'<circle cx="{w / 2}" cy="7" r="2.5" fill="{BLUE_EITHER}"/>',
             '<rect x="-220" y="6" width="220" height="2" fill="url(#pulse)">'
             '<animateTransform attributeName="transform" type="translate" values="0 0;1060 0" dur="3.6s" repeatCount="indefinite"/></rect>',
             SVG_CLOSE,
@@ -946,42 +973,57 @@ def render_divider() -> str:
 # ---------------------------------------------------------------- career timeline
 
 
+def _enter(at: float, dur: float = 0.4, shift: str = "", start: str = "0") -> str:
+    """Return a poster-safe entrance for the element it sits in.
+
+    The element's own attributes hold the finished frame, so anything that ignores SMIL
+    (link previews, print, some viewers) shows the full card. The animation runs from 0 s
+    and holds its start value until `at`, so a browser never flashes the item first.
+    """
+    total = at + dur
+    times = f'keyTimes="0;{at / total:.3f};1" dur="{total:.2f}s" fill="freeze"'
+    out = f'<animate attributeName="opacity" values="{start};{start};1" {times}/>'
+    if shift:
+        out += f'<animateTransform attributeName="transform" type="translate" values="{shift};{shift};0 0" {times}/>'
+    return out
+
+
 def _rail(x1: float, x2: float, y: float, begin: float, dur: float) -> str:
     length = x2 - x1
+    total = begin + dur
+    # drawn at rest (offset 0); the draw holds the full offset from 0 s until begin
     return (
         f'<line x1="{x1}" y1="{y}" x2="{x2}" y2="{y}" stroke="rgba(255,255,255,0.10)" stroke-width="2"/>'
         f'<line x1="{x1}" y1="{y}" x2="{x2}" y2="{y}" stroke="{BLUE}" stroke-width="2" '
-        f'stroke-dasharray="{length}" stroke-dashoffset="{length}">'
-        f'<animate attributeName="stroke-dashoffset" from="{length}" to="0" dur="{dur}s" begin="{begin:.2f}s" fill="freeze"/></line>'
+        f'stroke-dasharray="{length}" stroke-dashoffset="0">'
+        f'<animate attributeName="stroke-dashoffset" values="{length};{length};0" keyTimes="0;{begin / total:.3f};1" '
+        f'dur="{total:.2f}s" fill="freeze"/></line>'
     )
 
 
 def _node(x: float, y: float, at: float, color: str, ring: bool = False) -> str:
     out = ""
     if ring:
+        # appears at `at` with no fade, like a <set>, but visible where SMIL does not run
         out += (
-            f'<circle class="now" cx="{x}" cy="{y}" r="7" fill="none" stroke="{color}" stroke-width="1.5" opacity="0">'
-            f'<set attributeName="opacity" to="1" begin="{at:.2f}s" fill="freeze"/></circle>'
+            f'<circle class="now" cx="{x}" cy="{y}" r="7" fill="none" stroke="{color}" stroke-width="1.5">'
+            f'<animate attributeName="opacity" values="0;1" keyTimes="0;1" calcMode="discrete" dur="{at:.2f}s" fill="freeze"/></circle>'
         )
     return out + (
-        f'<circle cx="{x}" cy="{y}" r="6" fill="{BG}" stroke="{color}" stroke-width="2" opacity="0.25">'
-        f'<animate attributeName="opacity" to="1" begin="{at:.2f}s" dur="0.3s" fill="freeze"/></circle>'
-        f'<circle cx="{x}" cy="{y}" r="2.6" fill="{color}" opacity="0">'
-        f'<animate attributeName="opacity" to="1" begin="{at:.2f}s" dur="0.3s" fill="freeze"/></circle>'
+        f'<circle cx="{x}" cy="{y}" r="6" fill="{BG}" stroke="{color}" stroke-width="2">'
+        f"{_enter(at, 0.3, start='0.25')}</circle>"
+        f'<circle cx="{x}" cy="{y}" r="2.6" fill="{color}">{_enter(at, 0.3)}</circle>'
     )
 
 
 def _fade_group(at: float, body: str) -> str:
-    return (
-        f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{at:.2f}s" dur="0.4s" fill="freeze"/>'
-        f"{body}</g>"
-    )
+    return f"<g>{_enter(at)}{body}</g>"
 
 
 def render_experience(data: dict) -> str:
     """Top rail to the current role, which then expands into its customer engagements."""
     pf = data.get("portfolio") or {}
-    # under each customer: the title held there, at AWS (same titles as the Worked With card)
+    # under each customer: the title held there, at AWS
     engagements = [
         (e["when"], e["client"], f"{_engagement_role(e)}, AWS") for e in _customers(pf)
     ] or ENGAGEMENTS
@@ -992,7 +1034,10 @@ def render_experience(data: dict) -> str:
     w, h = 840, 330 + max(sub_drop - 16, 0)
     left, right, top_y = 70, 772, 84
     step = (right - left) / (len(MILESTONES) - 1)
-    draw = 2.4
+    # svg-forge "short" timing: every stop 120 ms after the last, the whole card in about 1.4 s
+    # (it took 5.4 s, and most visitors had scrolled past before the engagements showed)
+    start, stagger = 0.1, 0.12
+    draw = stagger * (len(MILESTONES) - 1)
     parts = [
         svg_open(
             w,
@@ -1012,7 +1057,7 @@ def render_experience(data: dict) -> str:
         "@keyframes ring{0%{opacity:0.9;transform:scale(1)}100%{opacity:0;transform:scale(2.6)}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
         f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10.5">CAREER</text>',
-        _rail(left, right, top_y, 0.3, draw),
+        _rail(left, right, top_y, start, draw),
     ]
     last = len(MILESTONES) - 1
     # a title longer than one line ("ProServe (Cloud Consultant)" on the edge node) wraps,
@@ -1021,7 +1066,7 @@ def render_experience(data: dict) -> str:
     drop = 16 * (max(len(t) for t in titles) - 1)
     for i, (year, _, org, city) in enumerate(MILESTONES):
         x = left + i * step
-        at = 0.3 + draw * i / last
+        at = start + stagger * i
         current = i == last
         color = GREEN if current else BLUE_LIGHT
         label = f"{year}  FULL TIME" if current else year
@@ -1042,13 +1087,13 @@ def render_experience(data: dict) -> str:
             )
         )
     # the current role opens into its engagements: a drop, then a bracket over the second rail
-    open_at = 0.3 + draw + 0.2
+    open_at = start + draw + 0.08
     sub_y, sub_left, sub_right = 250, 120, 720
     bracket_y = 186
     drop = f"M{right} {top_y + 72} V{bracket_y} H{sub_left} M{right} {bracket_y} H{sub_right}"
     parts.append(
-        f'<path d="{drop}" fill="none" stroke="{GREEN}88" stroke-width="1.4" stroke-dasharray="3 4" opacity="0">'
-        f'<animate attributeName="opacity" to="1" begin="{open_at:.2f}s" dur="0.4s" fill="freeze"/></path>'
+        f'<path d="{drop}" fill="none" stroke="{GREEN}88" stroke-width="1.4" stroke-dasharray="3 4">'
+        f"{_enter(open_at)}</path>"
     )
     parts.append(
         _fade_group(
@@ -1058,13 +1103,13 @@ def render_experience(data: dict) -> str:
             ),
         )
     )
-    sub_draw = 1.8
-    parts.append(_rail(sub_left, sub_right, sub_y, open_at + 0.3, sub_draw))
-    sub_step = (sub_right - sub_left) / max(len(engagements) - 1, 1)
     sub_last = max(len(engagements) - 1, 1)
+    sub_start, sub_draw = open_at + 0.1, stagger * sub_last
+    parts.append(_rail(sub_left, sub_right, sub_y, sub_start, sub_draw))
+    sub_step = (sub_right - sub_left) / max(len(engagements) - 1, 1)
     for i, (when, _, what) in enumerate(engagements):
         x = sub_left + i * sub_step
-        at = open_at + 0.3 + sub_draw * i / sub_last
+        at = sub_start + stagger * i
         current = i == sub_last
         color = GREEN if current else SKY
         parts.append(
@@ -1113,6 +1158,8 @@ def _rotating(
     dur = slot * n
     out = []
     for i, text in enumerate(lines):
+        # where SMIL does not run, the first line stands in for the set; the loop starts every line at 0
+        rest = "" if i == 0 else ' opacity="0"'
         a = i / n
         b = a + 0.04
         c = a + 1 / n - 0.04
@@ -1120,7 +1167,7 @@ def _rotating(
         times = sorted({0.0, round(a, 3), round(b, 3), round(c, 3), round(d, 3), 1.0})
         values = ["1" if round(b, 3) <= t <= round(c, 3) else "0" for t in times]
         out.append(
-            f'<text class="{cls}" x="{x}" y="{y}" fill="{color}" font-size="{size}" opacity="0">{escape(text)}'
+            f'<text class="{cls}" x="{x}" y="{y}" fill="{color}" font-size="{size}"{rest}>{escape(text)}'
             f'<animate attributeName="opacity" values="{";".join(values)}" keyTimes="{";".join(f"{t:g}" for t in times)}" '
             f'dur="{dur}s" repeatCount="indefinite"/></text>'
         )
@@ -1179,12 +1226,13 @@ def render_hero(data: dict) -> str:
         x1, y1, _ = nodes[a]
         x2, y2, _ = nodes[b]
         parts.append(
-            f'<circle r="2.6" fill="{SKY}"><animateMotion dur="2.4s" begin="{i * 0.45:.2f}s" repeatCount="indefinite" path="M{x1} {y1} L{x2} {y2}"/></circle>'
+            # parked on its start node (under it) until it begins, not in the top-left corner
+            f'<circle cx="{x1}" cy="{y1}" r="2.6" fill="{SKY}"><animateMotion dur="2.4s" begin="{i * 0.45:.2f}s" repeatCount="indefinite" path="M0 0 L{x2 - x1} {y2 - y1}"/></circle>'
         )
     for i, (x, y, label) in enumerate(nodes):
         hub = label == "MCP"
         r = 22 if hub else 17
-        stroke = f"{BLUE}dd" if hub else "rgba(255,255,255,0.16)"
+        stroke = BLUE if hub else "rgba(255,255,255,0.16)"
         fill = f"{BLUE}26" if hub else CARD
         parts.append(
             f'<circle cx="{x}" cy="{y}" r="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.3">'
@@ -1222,7 +1270,9 @@ def render_footer() -> str:
             f'<path d="{wave}" fill="none" stroke="rgba(127,127,127,0.25)" stroke-width="1.2"/>',
             f'<path d="{wave}" fill="none" stroke="{BLUE_LIGHT}" stroke-width="2" stroke-dasharray="120 900" stroke-linecap="round">'
             '<animate attributeName="stroke-dashoffset" values="1020;0" dur="4s" repeatCount="indefinite"/></path>',
-            f'<circle r="3.5" fill="{SKY}"><animateMotion dur="4s" repeatCount="indefinite" path="{wave}"/></circle>',
+            # the dot sits at the wave's start, where it stays if SMIL does not run
+            f'<circle cx="0" cy="110" r="3.5" fill="{SKY}"><animateMotion dur="4s" repeatCount="indefinite" '
+            'path="M0 0 C 140 -30, 280 30, 420 0 S 700 -30, 840 0"/></circle>',
             f'<text class="d" x="{w / 2}" y="158" text-anchor="middle" fill="#a8b4c1" font-size="11">{escape(DISCLAIMER)}</text>',
             SVG_CLOSE,
         ]
@@ -1788,7 +1838,7 @@ def render_profile_badges(data: dict) -> str:
             kw = 16 + len(key) * MONO_CHAR
             begin = 0.1 + (lo + i) * 0.1
             parts.append(
-                f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.1f}s" dur="0.4s" fill="freeze"/>'
+                f'<g>{_enter(begin, 0.4)}'
                 f'<rect x="{x:.1f}" y="{y}" width="{bw:.1f}" height="36" rx="18" fill="{CARD}" stroke="{color}55"/>'
                 f'<rect x="{x:.1f}" y="{y}" width="{kw:.1f}" height="36" rx="18" fill="{color}1f"/>'
                 f'<text class="m" x="{x + kw / 2:.1f}" y="{y + 22}" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10.5">{key}</text>'
@@ -1903,14 +1953,14 @@ def render_oss(data: dict) -> str | None:
     for i, (value, label) in enumerate(tiles):
         x = 16 + i * (tw + 10)
         parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.1 + i * 0.1:.1f}s" dur="0.4s" fill="freeze"/>'
+            f'<g>{_enter(0.1 + i * 0.1, 0.4)}'
             f'<rect x="{x:.1f}" y="44" width="{tw:.1f}" height="62" rx="10" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
             f'<text class="v" x="{x + 14:.1f}" y="76" fill="#f3f4f6" font-size="22">{value}</text>'
             f'<text class="m" x="{x + 14:.1f}" y="95" fill="rgba(255,255,255,0.55)" font-size="10.5">{label.upper()}</text></g>'
         )
     for i, (x, y, cw, label) in enumerate(chips):
         parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.5 + i * 0.06:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<g>{_enter(0.5 + i * 0.06, 0.4)}'
             f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="24" rx="12" fill="{SKY}12" stroke="{SKY}44"/>'
             f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 16}" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10.5">{escape(label)}</text></g>'
         )
@@ -2022,8 +2072,7 @@ def render_list_card(
             for j, line in enumerate(lines)
         )
         parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="0.4s" fill="freeze"/>'
-            f'<animateTransform attributeName="transform" type="translate" from="-8 0" to="0 0" begin="{begin:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<g>{_enter(begin, 0.4, "-8 0")}'
             f'<line x1="24" y1="{y}" x2="{w - 24}" y2="{y}" stroke="rgba(255,255,255,0.06)"/>'
             f'<circle cx="30" cy="{y + 23}" r="3" fill="{accent}"/>'
             f'<text class="t" x="44" y="{y + 20}" fill="#f3f4f6" font-size="13.5">{escape(_clip(primary, 60))}</text>'
@@ -2107,7 +2156,7 @@ def _panel(
     wrap: int = 50,
 ) -> str:
     out = [
-        f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{delay:.2f}s" dur="0.45s" fill="freeze"/>'
+        f'<g>{_enter(delay, 0.45)}'
         f'<rect x="{x:.1f}" y="{y:.1f}" width="{pw:.1f}" height="{ph:.1f}" rx="12" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
         f'<rect x="{x:.1f}" y="{y + 16:.1f}" width="3" height="22" rx="1.5" fill="{accent}"/>'
         f'<text class="m" x="{x + 18:.1f}" y="{y + 31:.1f}" fill="{accent}" font-size="10.5">{escape(label)}</text>'
@@ -2291,7 +2340,7 @@ def render_competitive(pf: dict) -> str:
     for i, (key, value, label) in enumerate(tiles):
         x = 16 + i * (tw + 10)
         parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.1 + i * 0.1:.1f}s" dur="0.4s" fill="freeze"/>'
+            f'<g>{_enter(0.1 + i * 0.1, 0.4)}'
             f'<rect x="{x:.1f}" y="44" width="{tw:.1f}" height="72" rx="10" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
             f'<text class="m" x="{x + 14:.1f}" y="64" fill="{AMBER}" font-size="10.5">{escape(key)}</text>'
             f'<text class="v" x="{x + 14:.1f}" y="90" fill="#f3f4f6" font-size="20">{escape(str(value))}</text>'
@@ -2299,7 +2348,7 @@ def render_competitive(pf: dict) -> str:
         )
     for i, (x, y, cw, label) in enumerate(chips):
         parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.5 + i * 0.06:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<g>{_enter(0.5 + i * 0.06, 0.4)}'
             f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="24" rx="12" fill="{AMBER}12" stroke="{AMBER}44"/>'
             f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 16}" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-size="10.5">{escape(label)}</text></g>'
         )

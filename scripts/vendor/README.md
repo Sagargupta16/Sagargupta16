@@ -7,8 +7,8 @@ service separately through a composite Action.
 
 | Module | Upstream source | License |
 | --- | --- | --- |
-| `github_stats_card.py` | [github-stats-card-action at 4a7221c (v1.1.0)](https://github.com/Sagargupta16/github-stats-card-action/blob/4a7221cb12bbfb6e89d97c7a2623b60596bf105e/github_stats_card.py) | [MIT](LICENSE.github-stats-card-action) |
-| `leetcode_card.py` | [leetcode-card-action at ad7ddec (v1.0.1)](https://github.com/Sagargupta16/leetcode-card-action/blob/ad7ddec98a2a2e6dfa3feed553e629a6df1a52e4/leetcode_card.py) | [MIT](LICENSE.leetcode-card-action) |
+| `github_stats_card.py` | [github-stats-card-action at 6490d5b (v1.3.0)](https://github.com/Sagargupta16/github-stats-card-action/blob/6490d5bfb062551f8721ff5250d936cacf034775/github_stats_card.py) | [MIT](LICENSE.github-stats-card-action) |
+| `leetcode_card.py` | [leetcode-card-action at b379afe (v1.2.0)](https://github.com/Sagargupta16/leetcode-card-action/blob/b379afe1f1b74cada139a63bda48b8a4dfd5f07c/leetcode_card.py) | [MIT](LICENSE.leetcode-card-action) |
 
 LeetCode is copied without changes. GitHub has one local addition:
 `fetch_stats()` returns a `repo_stars` dictionary from the same paginated,

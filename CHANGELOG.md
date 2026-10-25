@@ -2,6 +2,32 @@
 
 All notable changes to this profile README repository.
 
+## [4.21.0] - 2026-10-25
+
+Ports the parts of the unpushed 2026-10-11 `feat/svg-pass` branch that still apply to the current cards.
+
+- Card entrances are poster-safe. Each element's own attributes now hold the finished frame, and its entrance runs from 0 s, holding the start value until its turn, so a still render shows the whole card. That covers link previews, print and any viewer that skips SMIL. Before, every entrance group, career rail and node rested hidden, so a still render showed an empty frame. In browsers the motion is unchanged, and seeking the timeline gives every group hidden at 0.05 s and shown by 3 s
+- The phone cards' line draws no longer flash: their resting value was the finished line, so each line showed drawn, vanished when its draw began, then drew in
+- The hero's spoke dots, desktop and phone, wait on their start node, and the footer's comet starts where its wave starts. Before, the spoke dots sat in the hero's top-left corner until they began, and the comet showed there in any still render
+- The rotating hero and footer lines show their first line in a still render, not an empty slot
+- The career timeline reveals in about 1.4 s instead of 5.4 s. Each stop follows the last by 120 ms, so the engagements show before most visitors scroll past
+- The AWS Organizations card names its OUs as the sample writes them: Root, Security, Workloads with Production and Non-Production, and Sandbox. The labels are 10px on desktop and phone. The phone tree uses 88px OU boxes, and its SCP chip pins to the Workloads box's corner
+- Contrast:
+  - Accent box outlines in the three AWS sample diagrams use `#3b82f6` (4.3 to 4.7:1 on their blue tint; 2.4 to 2.6:1 before), so svg-forge's validator now reports nothing on them.
+  - The divider dot uses `#4696f9`, which reads on both GitHub themes.
+  - The hero's MCP ring is solid `#2563eb`.
+  - The light section headers' sweep uses the same deeper blues as their kicker, desktop and phone.
+- The GitHub stats, LeetCode and Credly cards get the same text floor upstream. Their actions now draw every label at 10.5 px (github-stats-card-action v1.3.0, leetcode-card-action v1.2.0, credly-badge-readme-action v1.4.0; they were 7.5 to 10 px):
+  - `scripts/vendor/` carries the two new renderers, with the GitHub copy's one `repo_stars` line kept.
+  - The Credly workflow is pinned to v1.4.0.
+  - `certs.svg` is rendered with it: 840 x 507 instead of 450, since each badge label gets one more line.
+  - `github.svg` and `leetcode.svg` keep their 840 x 340 and 840 x 270 sizes.
+- Not ported:
+  - the refreshed data snapshot, which was two weeks old
+  - the dark and light footer pair (4.20.0 gave the footer its own card)
+  - the 3x2 connect grid (the buttons were redrawn at 128px in 4.15.0)
+  - one row of four "get this card" segments, which would show each segment at 74px on a phone
+
 ## [4.20.0] - 2026-10-25
 
 - Worked With is removed: with customers shown only by generic label, it repeated the career rail's engagements and roles. Its two employer logos (`assets/logos`) go with it, and the render workflow no longer watches that folder

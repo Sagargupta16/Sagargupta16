@@ -44,12 +44,7 @@ class MobileCardsTests(unittest.TestCase):
             "engagements": [
                 ("Feb 2026 to now", "Enterprise customer", "Lead DevOps Consultant")
             ],
-            "highlights": [
-                ("12", "upstream PRs merged"),
-                ("3", "published AWS samples"),
-            ],
             "disclaimer": "Personal projects and opinions are my own and do not represent Amazon or AWS.",
-            "worked_with": [("Amazon Web Services", "Cloud Consultant (DevOps/MLOps)")],
             "publications": [
                 (
                     "PUBLICATIONS & REVIEWS",
@@ -95,8 +90,6 @@ class MobileCardsTests(unittest.TestCase):
             "profile-badges",
             "intro",
             "experience",
-            "highlights",
-            "worked-with",
             "publications",
             "education",
             "oss",
@@ -106,7 +99,6 @@ class MobileCardsTests(unittest.TestCase):
             "leetcode",
             "certs",
             "certs-status",
-            "freshness",
             "competitive",
             "footer",
             "header-publications-dark",

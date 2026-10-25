@@ -60,6 +60,9 @@ RECT_HIDDEN = '<rect opacity="0" '
 RECT_CLOSE = "</rect>"
 MONO = "'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace"
 SANS = "'Segoe UI',Inter,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif"
+# width of one 10.5px mono character with the cards' 1.2px tracking; the smallest
+# label size, so it still reads at 10px once an 840px card fills the README column
+MONO_CHAR = 7.6
 
 LEETCODE_USER = "sagargupta1610"
 DEFAULT_DATA = {
@@ -188,14 +191,6 @@ CARD_SUMMARIES = {
     "credly-badge-readme-action": "GitHub Action that syncs your Credly certifications and badges into your profile README.",
 }
 MIN_STARS_SHOWN = 10  # a tool card shows its star count only from this many stars
-
-# Employer logos for the Worked With card, stored in assets/logos and drawn white.
-# Customers are never named or shown by logo; their tiles fall back to the generic label.
-# Sources: Wikimedia Commons (AWS) and the company site (Ikarus 3D).
-LOGOS = {
-    "Amazon Web Services": "aws.svg",
-    "Ikarus-3D": "ikarus-3d.png",
-}
 
 # Career: the top rail, oldest first, ending on the current full-time role,
 # which then expands into its customer engagements on a second rail.
@@ -378,10 +373,35 @@ def anim_opacity(values: str, key_times: str, dur: int = 6) -> str:
     )
 
 
+SAMPLE_PHONE = 320  # the phone layout's width; the README shows it at up to 400px
+
+
+def _frame_lines(w: int, title: str, sub: str) -> tuple[list[str], list[str]]:
+    """Title and tag lines for the card's foot; the phone card wraps both, tags at a separator."""
+    if w > SAMPLE_PHONE:
+        return [title], [sub]
+    tags, line = [], ""
+    for tag in sub.split("  |  "):
+        joined = f"{line}  |  {tag}" if line else tag
+        if line and len(joined) > 34:
+            tags.append(line)
+            joined = tag
+        line = joined
+    return _wrap(title, 28), tags + [line]
+
+
 def card_frame(w: int, h: int, title: str, sub: str, label: str) -> list[str]:
+    """The sample card around a diagram drawn above y = h - 62; a wrapped title or tag line grows the card."""
+    titles, tags = _frame_lines(w, title, sub)
+    foot = h - 62
+    tag_y = foot + 48 + 22 * (len(titles) - 1)
+    h = tag_y + 14 + 16 * (len(tags) - 1)
+    # the phone boxes are narrower, so their labels drop the tracking
+    tracking = 0 if w <= SAMPLE_PHONE else 0.5
     return [
         svg_open(w, h, label),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.4px}}"
+        f".l{{font-family:{MONO};font-weight:700;letter-spacing:{tracking}px}}"
         f".t{{font-family:{SANS};font-weight:700}}</style>",
         '<defs><linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">'
         f'<stop offset="0" stop-color="#0e1a24"/><stop offset="0.6" stop-color="{BG}"/></linearGradient>'
@@ -389,9 +409,15 @@ def card_frame(w: int, h: int, title: str, sub: str, label: str) -> list[str]:
         f'<stop offset="1" stop-color="{BLUE}" stop-opacity="0"/></radialGradient></defs>',
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="16" fill="url(#bg)" stroke="rgba(255,255,255,0.08)"/>',
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="16" fill="url(#glow)"/>',
-        f'<line x1="0" y1="{h - 62}" x2="{w}" y2="{h - 62}" stroke="rgba(255,255,255,0.07)"/>',
-        f'<text class="t" x="20" y="{h - 34}" fill="#f3f4f6" font-size="16">{escape(title)}</text>',
-        f'<text class="m" x="20" y="{h - 14}" fill="{BLUE_LIGHT}" font-size="9">{escape(sub)}</text>',
+        f'<line x1="0" y1="{foot}" x2="{w}" y2="{foot}" stroke="rgba(255,255,255,0.07)"/>',
+        *(
+            f'<text class="t" x="20" y="{foot + 28 + 22 * i}" fill="#f3f4f6" font-size="16">{escape(line)}</text>'
+            for i, line in enumerate(titles)
+        ),
+        *(
+            f'<text class="m" x="20" y="{tag_y + 16 * i}" fill="{BLUE_LIGHT}" font-size="10.5">{escape(line)}</text>'
+            for i, line in enumerate(tags)
+        ),
     ]
 
 
@@ -401,9 +427,9 @@ def box(
     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="5" fill="{fill}" stroke="{stroke}" stroke-width="1.2">{extra}</rect>'
 
 
-def render_org_card() -> str:
+def render_org_card(mobile: bool = False) -> str:
     """Policies flowing down an OU tree: the GovernanceScene cover, README-sized."""
-    w, h = 410, 262
+    w, h = (SAMPLE_PHONE if mobile else 410), 262
     parts = card_frame(
         w,
         h,
@@ -412,14 +438,15 @@ def render_org_card() -> str:
         "Animated diagram: SCP and RCP policies attaching down an AWS Organizations OU tree",
     )
     node_h = 20
+    # (centre x, centre y, width); the phone tree is the same tree pulled in about its trunk
     nodes = {
-        "mgmt": (205, 30, 76),
-        "root": (205, 76, 44),
-        "sec": (80, 124, 66),
-        "wl": (205, 124, 66),
-        "sbx": (330, 124, 66),
-        "prod": (160, 170, 52),
-        "dev": (250, 170, 52),
+        "mgmt": (160, 30, 56) if mobile else (205, 30, 76),
+        "root": (160, 76, 32) if mobile else (205, 76, 44),
+        "sec": (70, 124, 48) if mobile else (80, 124, 66),
+        "wl": (160, 124, 48) if mobile else (205, 124, 66),
+        "sbx": (250, 124, 48) if mobile else (330, 124, 66),
+        "prod": (128, 170, 38) if mobile else (160, 170, 52),
+        "dev": (192, 170, 38) if mobile else (250, 170, 52),
     }
     edges = [
         ("mgmt", "root"),
@@ -444,7 +471,7 @@ def render_org_card() -> str:
         f'stroke-width="1.2" stroke-dasharray="4 4" opacity="0">{anim_opacity("0;0;1;1;0", "0;0.68;0.76;0.92;1")}</path>'
     )
     parts.append(
-        f'<text class="m" x="{sx - sw / 2}" y="{my + 20}" fill="{BLUE_LIGHT}" font-size="8" opacity="0">DELEGATED'
+        f'<text class="l" x="{sx + 6}" y="{my + 20}" fill="{BLUE_LIGHT}" font-size="10" opacity="0">DELEGATED'
         f"{anim_opacity('0;0;1;1;0', '0;0.68;0.76;0.92;1')}</text>"
     )
     for key, (x, y, bw) in nodes.items():
@@ -453,7 +480,7 @@ def render_org_card() -> str:
                 box(x - bw / 2, y - node_h / 2, bw, node_h, f"{BLUE}cc", f"{BLUE}22")
             )
             parts.append(
-                f'<text class="m" x="{x}" y="{y + 3}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8">MGMT</text>'
+                f'<text class="l" x="{x}" y="{y + 3}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">MGMT</text>'
             )
         else:
             parts.append(
@@ -500,7 +527,7 @@ def render_org_card() -> str:
             f'keyTimes="{times}" dur="6s" repeatCount="indefinite"/>'
             f"{anim_opacity('0;1;1;1;1;0', times)}"
             f'<rect x="-17" y="-8" width="34" height="16" rx="4" fill="{BG}" stroke="{BLUE_LIGHT}" stroke-width="1.2"/>'
-            f'<text class="m" x="0" y="3" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8">{text}</text></g>'
+            f'<text class="l" x="0" y="3" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">{text}</text></g>'
         )
 
     wl, sbx = nodes["wl"], nodes["sbx"]
@@ -528,9 +555,9 @@ def render_org_card() -> str:
     return "".join(parts)
 
 
-def render_mlops_card() -> str:
+def render_mlops_card(mobile: bool = False) -> str:
     """Train, gate, approve, deploy, drift back to retrain: the MLOps sample's loop."""
-    w, h = 410, 262
+    w, h = (SAMPLE_PHONE if mobile else 410), 262
     parts = card_frame(
         w,
         h,
@@ -538,18 +565,15 @@ def render_mlops_card() -> str:
         "AWS SAMPLES  |  TERRAFORM  |  SAGEMAKER",
         "Animated diagram: SageMaker pipeline trains, passes a quality gate, deploys, and retrains on drift",
     )
-    stages = [
-        ("DATA", 46),
-        ("TRAIN", 128),
-        ("GATE", 210),
-        ("DEPLOY", 292),
-        ("SERVE", 366),
-    ]
+    xs = (40, 100, 160, 220, 280) if mobile else (46, 128, 210, 292, 366)
+    stages = list(zip(("DATA", "TRAIN", "GATE", "DEPLOY", "SERVE"), xs))
+    train, gate, serve = xs[1], xs[2], xs[4]
+    narrow = 44 if mobile else 58  # DEPLOY gets 4px more
     y = 92
     parts.append(
-        f'<path d="M46 {y} H366" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>'
+        f'<path d="M{xs[0]} {y} H{serve}" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>'
     )
-    drift = f"M366 {y + 22} C366 170, 128 170, 128 {y + 22}"
+    drift = f"M{serve} {y + 22} C{serve} 170, {train} 170, {train} {y + 22}"
     parts.append(
         f'<path d="{drift}" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1.2" stroke-dasharray="4 4"/>'
     )
@@ -558,33 +582,35 @@ def render_mlops_card() -> str:
         f"{anim_opacity('0;0;1;1;0', '0;0.66;0.72;0.9;1')}</path>"
     )
     parts.append(
-        f'<text class="m" x="247" y="176" text-anchor="middle" fill="{AMBER}" font-size="8" opacity="0">DRIFT'
+        f'<text class="l" x="{(train + serve) // 2}" y="176" text-anchor="middle" fill="{AMBER}" font-size="10" opacity="0">DRIFT'
         f"{anim_opacity('0;0;1;1;0', '0;0.66;0.72;0.9;1')}</text>"
     )
     for name, x in stages:
-        bw = 58 if name != "DEPLOY" else 62
+        bw = narrow if name != "DEPLOY" else narrow + 4
         stroke = f"{BLUE}cc" if name in ("TRAIN", "DEPLOY") else HAIR_STROKE
         fill = f"{BLUE}1f" if name in ("TRAIN", "DEPLOY") else HAIR_FILL
         parts.append(box(x - bw / 2, y - 16, bw, 32, stroke, fill))
         parts.append(
-            f'<text class="m" x="{x}" y="{y + 3}" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8">{name}</text>'
+            f'<text class="l" x="{x}" y="{y + 3}" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10">{name}</text>'
         )
     # quality gate flashes green when the model clears it
     parts.append(
-        box(210 - 29, y - 16, 58, 32, GREEN, f"{GREEN}22", "")
+        box(gate - narrow // 2, y - 16, narrow, 32, GREEN, f"{GREEN}22", "")
         .replace(RECT_OPEN, RECT_HIDDEN, 1)
         .replace(
-            RECT_CLOSE, f"{anim_opacity('0;0;1;1;0', '0;0.3;0.34;0.46;0.52')}</rect>"
+            RECT_CLOSE,
+            f"{anim_opacity('0;0;1;1;0;0', '0;0.3;0.34;0.46;0.52;1')}</rect>",
         )
     )
     # three architectures train in parallel under TRAIN
-    for i, dx in enumerate((-16, 0, 16)):
+    dot, step = (8, 12) if mobile else (10, 16)
+    for i, dx in enumerate((-step, 0, step)):
         parts.append(
-            f'<rect x="{128 + dx - 5}" y="{y + 26}" width="10" height="4" rx="2" fill="{BLUE_LIGHT}" opacity="0.25">'
+            f'<rect x="{train + dx - dot // 2}" y="{y + 26}" width="{dot}" height="4" rx="2" fill="{BLUE_LIGHT}" opacity="0.25">'
             f'<animate attributeName="opacity" values="0.25;0.9;0.25" dur="1.2s" begin="{i * 0.2}s" repeatCount="indefinite"/></rect>'
         )
     # the model artefact travelling the pipeline, then the drift arc back to TRAIN
-    path = f"M46 {y} H366"
+    path = f"M{xs[0]} {y} H{serve}"
     parts.append(
         f'<circle r="4" fill="#f3f4f6" opacity="0">'
         f'<animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.08;0.62;1" '
@@ -593,10 +619,10 @@ def render_mlops_card() -> str:
     parts.append(
         f'<circle r="3.5" fill="{AMBER}" opacity="0">'
         f'<animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.7;0.9;1" '
-        f'calcMode="linear" path="{drift}"/>{anim_opacity("0;0;1;1;0", "0;0.69;0.71;0.9;0.92")}</circle>'
+        f'calcMode="linear" path="{drift}"/>{anim_opacity("0;0;1;1;0;0", "0;0.69;0.71;0.9;0.92;1")}</circle>'
     )
     parts.append(
-        f'<circle cx="366" cy="{y - 24}" r="3" fill="{GREEN}">'
+        f'<circle cx="{serve}" cy="{y - 24}" r="3" fill="{GREEN}">'
         '<animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>'
     )
     parts.append(SVG_CLOSE)
@@ -605,9 +631,18 @@ def render_mlops_card() -> str:
 
 _AC_Y = 66  # request lane
 _AC_LY = 146  # release lane
-_AC_DIM = "rgba(255,255,255,0.45)"
+_AC_DIM = "rgba(255,255,255,0.62)"  # 4.5:1 on the card's navy panels
 _AC_LABEL = "rgba(255,255,255,0.7)"
 _AC_WIRE = "rgba(255,255,255,0.16)"
+# (label, centre x, box width) for the request lane; the release lane shares the centres
+_AC_LANE = [
+    ("MCP CLIENT", 52, 70),
+    ("CEDAR GATE", 150, 76),
+    ("9 TOOLS", 255, 74),
+    ("HARNESS", 358, 72),
+]
+# the phone lane: 68px boxes on a 74px pitch, room for a 10-letter label in each
+_AC_LANE_PHONE = [(name, 49 + 74 * i, 68) for i, (name, _, _) in enumerate(_AC_LANE)]
 
 
 def _ac_flash(t_on: float, t_off: float, end: float = 1) -> str:
@@ -628,15 +663,10 @@ def _ac_lit(
     )
 
 
-def _ac_request_lane() -> list[str]:
+def _ac_request_lane(lane: list[tuple[str, int, int]]) -> list[str]:
     """Client, Cedar gate on the gateway, tools runtime, harness; deny then allow."""
     y = _AC_Y
-    lane = [
-        ("MCP CLIENT", 52, 70),
-        ("CEDAR GATE", 150, 76),
-        ("9 TOOLS", 255, 74),
-        ("HARNESS", 358, 72),
-    ]
+    client_x, (_, gate_x, gate_w) = lane[0][1], lane[1]
     edges = [x + bw / 2 for _, x, bw in lane]
     starts = [x - bw / 2 for _, x, bw in lane]
     parts = [
@@ -655,14 +685,14 @@ def _ac_request_lane() -> list[str]:
                     f"{BLUE}cc" if accent else HAIR_STROKE,
                     f"{BLUE}1f" if accent else HAIR_FILL,
                 ),
-                f'<text class="m" x="{x}" y="{y + 3}" text-anchor="middle" fill="{_AC_LABEL}" font-size="8">{name}</text>',
+                f'<text class="l" x="{x}" y="{y + 3}" text-anchor="middle" fill="{_AC_LABEL}" font-size="10">{name}</text>',
             ]
         )
     parts.append(
-        f'<text class="m" x="150" y="{y - 26}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8">DEFAULT DENY</text>'
+        f'<text class="l" x="{gate_x}" y="{y - 26}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">DEFAULT DENY</text>'
     )
     parts.extend(
-        f'<text class="m" x="52" y="{y + 30 + i * 11}" text-anchor="middle" fill="{_AC_DIM}" font-size="8">{client}</text>'
+        f'<text class="l" x="{client_x}" y="{y + 30 + i * 12}" text-anchor="middle" fill="{_AC_DIM}" font-size="10">{client}</text>'
         for i, client in enumerate(("CLAUDE CODE", "CODEX", "KIRO"))
     )
     # first call is not on the allow list and stops at the gate; the second passes
@@ -671,10 +701,10 @@ def _ac_request_lane() -> list[str]:
     at_tools = (starts[2] - edges[0]) / span
     parts.extend(
         [
-            _ac_lit(150, y, 76, 32, AMBER, 0.12, 0.2),
-            f'<text class="m" x="150" y="{y + 30}" text-anchor="middle" fill="{AMBER}" font-size="8" opacity="0">DENY{_ac_flash(0.12, 0.2)}</text>',
-            _ac_lit(150, y, 76, 32, GREEN, 0.32, 0.42),
-            f'<text class="m" x="150" y="{y + 30}" text-anchor="middle" fill="{GREEN}" font-size="8" opacity="0">ALLOW{_ac_flash(0.32, 0.42)}</text>',
+            _ac_lit(gate_x, y, gate_w, 32, AMBER, 0.12, 0.2),
+            f'<text class="l" x="{gate_x}" y="{y + 30}" text-anchor="middle" fill="{AMBER}" font-size="10" opacity="0">DENY{_ac_flash(0.12, 0.2)}</text>',
+            _ac_lit(gate_x, y, gate_w, 32, GREEN, 0.32, 0.42),
+            f'<text class="l" x="{gate_x}" y="{y + 30}" text-anchor="middle" fill="{GREEN}" font-size="10" opacity="0">ALLOW{_ac_flash(0.32, 0.42)}</text>',
             (
                 f'<circle r="4" fill="#f3f4f6" opacity="0">'
                 f'<animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.04;0.12;1" '
@@ -692,46 +722,43 @@ def _ac_request_lane() -> list[str]:
     return parts
 
 
-def _ac_tools_and_harness() -> list[str]:
+def _ac_tools_and_harness(lane: list[tuple[str, int, int]]) -> list[str]:
     """8 tools plus ask_architect, which hands the request to the hosted agent."""
     y = _AC_Y
-    ask_pulse = anim_opacity("0.45;0.45;1;1;0.45;0.45", "0;0.48;0.5;0.62;0.66;1")
+    tools_x, (_, harness_x, harness_w) = lane[2][1], lane[3]
+    ask_pulse = anim_opacity("0.85;0.85;1;1;0.85;0.85", "0;0.48;0.5;0.62;0.66;1")
     parts = []
     for i in range(9):
         col, row = i % 3, i // 3
-        cx, cy = 255 - 14 + col * 14, y + 24 + row * 8
+        cx, cy = tools_x - 14 + col * 14, y + 24 + row * 8
         ask = i == 8
         fill = BLUE_LIGHT if ask else "rgba(255,255,255,0.18)"
         parts.append(
             f'<rect x="{cx - 5}" y="{cy}" width="10" height="5" rx="1.5" fill="{fill}"'
-            f' opacity="{0.45 if ask else 1}">'
+            f' opacity="{0.85 if ask else 1}">'
             + (ask_pulse if ask else "")
             + RECT_CLOSE
         )
     parts.extend(
         [
-            f'<text class="m" x="255" y="{y + 56}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8" opacity="0.45">ask_architect'
+            f'<text class="l" x="{tools_x}" y="{y + 56}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10" opacity="0.85">ask_architect'
             f"{ask_pulse}</text>",
-            _ac_lit(358, y, 72, 32, BLUE_LIGHT, 0.6, 0.7),
+            _ac_lit(harness_x, y, harness_w, 32, BLUE_LIGHT, 0.6, 0.7),
         ]
     )
     parts.extend(
-        f'<text class="m" x="358" y="{y + 30 + i * 11}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8" opacity="0.45">{label}'
-        f"{anim_opacity('0.45;0.45;1;1;0.45;0.45', '0;0.6;0.62;0.7;0.73;1')}</text>"
+        f'<text class="l" x="{harness_x}" y="{y + 30 + i * 12}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10" opacity="0.85">{label}'
+        f"{anim_opacity('0.85;0.85;1;1;0.85;0.85', '0;0.6;0.62;0.7;0.73;1')}</text>"
         for i, label in enumerate(("3 SKILLS", "MEMORY"))
     )
     return parts
 
 
-def _ac_release_lane() -> list[str]:
+def _ac_release_lane(lane: list[tuple[str, int, int]]) -> list[str]:
     """A version reaches PROD only after AgentCore Evaluations passes it."""
     ly = _AC_LY
-    stages = [
-        ("BUILD", 52, 0.66),
-        ("DEFAULT", 150, 0.72),
-        ("EVAL", 255, 0.78),
-        ("PROD", 358, 0.88),
-    ]
+    xs = [x for _, x, _ in lane]
+    stages = list(zip(("BUILD", "DEFAULT", "EVAL", "PROD"), xs, (0.66, 0.72, 0.78, 0.88)))
     parts = []
     for (_, a, _), (_, b, t) in zip(stages, stages[1:]):
         parts.extend(
@@ -753,22 +780,23 @@ def _ac_release_lane() -> list[str]:
         if name == "EVAL":
             parts.append(_ac_lit(x, ly, 64, 24, GREEN, 0.83, 0.95))
         parts.append(
-            f'<text class="m" x="{x}" y="{ly + 3}" text-anchor="middle" fill="{_AC_LABEL}" font-size="8">{name}</text>'
+            f'<text class="l" x="{x}" y="{ly + 3}" text-anchor="middle" fill="{_AC_LABEL}" font-size="10">{name}</text>'
         )
     parts.extend(
         [
-            f'<text class="m" x="255" y="{ly + 26}" text-anchor="middle" fill="{GREEN}" font-size="8" opacity="0">PASS{_ac_flash(0.83, 0.95)}</text>',
-            f'<circle cx="{358 + 32 - 8}" cy="{ly}" r="3" fill="{GREEN}">'
+            f'<text class="l" x="{xs[2]}" y="{ly + 26}" text-anchor="middle" fill="{GREEN}" font-size="10" opacity="0">PASS{_ac_flash(0.83, 0.95)}</text>',
+            f'<circle cx="{xs[3] + 32 - 8}" cy="{ly}" r="3" fill="{GREEN}">'
             '<animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>',
         ]
     )
     return parts
 
 
-def render_agentcore_card() -> str:
+def render_agentcore_card(mobile: bool = False) -> str:
     """A call denied then allowed by the Cedar gate, ask_architect into the harness, eval-gated PROD."""
+    lane = _AC_LANE_PHONE if mobile else _AC_LANE
     parts = card_frame(
-        410,
+        SAMPLE_PHONE if mobile else 410,
         262,
         "AgentCore Harness with Governed MCP Tools",
         "AWS SAMPLES  |  TERRAFORM  |  AGENTCORE  |  MCP",
@@ -776,9 +804,9 @@ def render_agentcore_card() -> str:
         "and allows the next to 9 tools, ask_architect runs the harness with 3 skills and memory, "
         "and a version reaches PROD only after an evaluation passes",
     )
-    parts.extend(_ac_request_lane())
-    parts.extend(_ac_tools_and_harness())
-    parts.extend(_ac_release_lane())
+    parts.extend(_ac_request_lane(lane))
+    parts.extend(_ac_tools_and_harness(lane))
+    parts.extend(_ac_release_lane(lane))
     parts.append(SVG_CLOSE)
     return "".join(parts)
 
@@ -791,13 +819,15 @@ def render_header(num: str, title: str, sub: str, theme: str) -> str:
     ink = "#f3f4f6" if theme == "dark" else "#0b1012"
     dim = "rgba(255,255,255,0.45)" if theme == "dark" else "rgba(11,16,18,0.55)"
     rule = "rgba(255,255,255,0.10)" if theme == "dark" else "rgba(11,16,18,0.12)"
+    # the light blue that reads on the dark page is 2.5:1 on white; light pages get a deeper blue
+    kicker = BLUE_LIGHT if theme == "dark" else "#1d4ed8"
     return "".join(
         [
             svg_open(w, h, title),
             f'<defs><linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="{SKY}" stop-opacity="0"/>'
             f'<stop offset="0.5" stop-color="{BLUE_LIGHT}"/><stop offset="1" stop-color="{SKY}" stop-opacity="0"/></linearGradient></defs>',
             f'<rect x="0" y="12" width="4" height="30" rx="2" fill="{BLUE}"/>',
-            f'<text x="18" y="24" fill="{BLUE_LIGHT}" font-family="{MONO}" font-size="11" font-weight="700" letter-spacing="2">{num}  /  {escape(sub.upper())}</text>',
+            f'<text x="18" y="24" fill="{kicker}" font-family="{MONO}" font-size="11" font-weight="700" letter-spacing="2">{num}  /  {escape(sub.upper())}</text>',
             f'<text x="18" y="46" fill="{ink}" font-family="{SANS}" font-size="24" font-weight="700">{escape(title)}</text>',
             f'<line x1="0" y1="{h - 4}" x2="{w}" y2="{h - 4}" stroke="{rule}" stroke-width="1"/>',
             f'<rect x="-160" y="{h - 5}" width="160" height="2" fill="url(#sweep)">'
@@ -809,6 +839,31 @@ def render_header(num: str, title: str, sub: str, theme: str) -> str:
 
 
 # ---------------------------------------------------------------- tech strip
+
+
+_PATH_NUMBER = re.compile(r"-?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?")
+
+
+def _short_number(match: re.Match) -> str:
+    value = f"{float(match.group()):.1f}".rstrip("0").rstrip(".")
+    value = "0" if value in ("-0", "") else value
+    before = match.string[match.start() - 1] if match.start() else " "
+    # "1.25.5" is two numbers; once the first is shortened they need a separator
+    return (" " if before.isdigit() or before == "." else "") + value
+
+
+def _round_paths(body: str) -> str:
+    """One decimal in a 256 viewBox drawn at 44px is 0.01px, and cuts stack.svg by a quarter."""
+
+    def one(match: re.Match) -> str:
+        d = match.group(1)
+        if re.search(r"[aA]", d):
+            return (
+                match.group()
+            )  # arc flags can be written run together, so leave arcs alone
+        return f' d="{_PATH_NUMBER.sub(_short_number, d)}"'
+
+    return re.sub(r' d="([^"]+)"', one, body)
 
 
 @functools.cache  # the desktop and phone strips draw the same icons
@@ -826,7 +881,7 @@ def fetch_icon(name: str) -> str | None:
     body = re.sub(r'\sid="([^"]+)"', lambda m: f' id="{name}-{m.group(1)}"', body)
     body = re.sub(r"url\(#([^)]+)\)", lambda m: f"url(#{name}-{m.group(1)})", body)
     body = re.sub(r'href="#([^"]+)"', lambda m: f'href="#{name}-{m.group(1)}"', body)
-    inner_body = body[body.find(">") + 1 : body.rfind(SVG_CLOSE)]
+    inner_body = _round_paths(body[body.find(">") + 1 : body.rfind(SVG_CLOSE)])
     return f'<symbol id="i-{name}" viewBox="0 0 256 256">{inner_body}</symbol>'
 
 
@@ -956,7 +1011,7 @@ def render_experience(data: dict) -> str:
         ".now{animation:ring 2.2s ease-out infinite;transform-origin:center;transform-box:fill-box}"
         "@keyframes ring{0%{opacity:0.9;transform:scale(1)}100%{opacity:0;transform:scale(2.6)}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10">CAREER</text>',
+        f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10.5">CAREER</text>',
         _rail(left, right, top_y, 0.3, draw),
     ]
     last = len(MILESTONES) - 1
@@ -979,10 +1034,10 @@ def render_experience(data: dict) -> str:
             _fade_group(
                 at,
                 (
-                    f'<text class="m" x="{x}" y="{top_y - 22}" text-anchor="middle" fill="{color}" font-size="10">{label}</text>'
+                    f'<text class="m" x="{x}" y="{top_y - 22}" text-anchor="middle" fill="{color}" font-size="10.5">{label}</text>'
                     + what_text
                     + f'<text class="t" x="{x}" y="{top_y + 47 + drop}" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="11.5">{escape(org)}</text>'
-                    f'<text class="m" x="{x}" y="{top_y + 63 + drop}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">{escape(city.upper())}</text>'
+                    f'<text class="m" x="{x}" y="{top_y + 63 + drop}" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">{escape(city.upper())}</text>'
                 ),
             )
         )
@@ -999,7 +1054,7 @@ def render_experience(data: dict) -> str:
         _fade_group(
             open_at,
             (
-                f'<text class="m" x="{sub_left}" y="{bracket_y - 8}" fill="{GREEN}" font-size="9">CUSTOMER ENGAGEMENTS</text>'
+                f'<text class="m" x="{sub_left}" y="{bracket_y - 8}" fill="{GREEN}" font-size="10.5">CUSTOMER ENGAGEMENTS</text>'
             ),
         )
     )
@@ -1021,82 +1076,14 @@ def render_experience(data: dict) -> str:
             _fade_group(
                 at,
                 (
-                    f'<text class="m" x="{x}" y="{sub_y - 16}" text-anchor="middle" fill="{color}" font-size="8.5">{escape(when_label)}</text>'
+                    f'<text class="m" x="{x}" y="{sub_y - 16}" text-anchor="middle" fill="{color}" font-size="10.5">{escape(when_label)}</text>'
                     + "".join(
                         f'<text class="t" x="{x}" y="{sub_y + 28 + j * 16}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(line)}</text>'
                         for j, line in enumerate(clients[i])
                     )
-                    + f'<text class="m" x="{x}" y="{sub_y + 46 + sub_drop}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8.5">{escape(what.upper())}</text>'
+                    + f'<text class="m" x="{x}" y="{sub_y + 46 + sub_drop}" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">{escape(what.upper())}</text>'
                 ),
             )
-        )
-    parts.append(SVG_CLOSE)
-    return "".join(parts)
-
-
-# ---------------------------------------------------------------- highlights
-
-
-def ambassador_count(pf: dict) -> str | None:
-    """Return the community count from '5x ... ambassador' or '... community ambassador (A, B)'."""
-    for a in pf.get("achievements", []):
-        title = a.get("title", "")
-        if m := re.match(r"(\d+)x\b.*ambassador", title, re.IGNORECASE):
-            return m.group(1)
-        if "community ambassador" in title.lower() and (
-            m := re.search(r"\(([^)]+)\)", title)
-        ):
-            return str(len([s for s in m.group(1).split(",") if s.strip()]))
-    return None
-
-
-def highlight_tiles(pf: dict) -> list[tuple[str, str]]:
-    """Return the public highlight figures, each counted from the portfolio data."""
-    # no customer metric or score, no count another card already shows (certifications,
-    # merged PRs, LeetCode), and a figure with nothing behind it is left out, not guessed
-    groups = dict(_publication_groups(pf))
-    figures = [
-        (len(_customers(pf)), "AWS customer engagements"),
-        (len(pf.get("samples", [])), "published AWS samples"),
-        (
-            len(groups.get("TECH TALKS", []))
-            + len(groups.get("PUBLICATIONS & REVIEWS", [])),
-            "talks and publications",
-        ),
-    ]
-    tiles = [(str(count), label) for count, label in figures if count]
-    if communities := ambassador_count(pf):
-        tiles.append((f"{communities}x", "AWS community ambassador"))
-    return tiles
-
-
-def render_highlights(data: dict) -> str:
-    pf = data.get("portfolio") or {}
-    tiles = [
-        (value, label, accent)
-        for (value, label), accent in zip(highlight_tiles(pf), (GREEN, GREEN, SKY, SKY))
-    ]
-    w, h = 840, 112
-    cols, gap, pad = max(len(tiles), 1), 12, 16
-    tw = (w - 2 * pad - (cols - 1) * gap) / cols
-    th = 80
-    parts = [
-        svg_open(w, h, "Highlights: " + "; ".join(f"{v} {k}" for v, k, _ in tiles)),
-        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}"
-        f".v{{font-family:{SANS};font-weight:800}}</style>",
-    ]
-    for i, (value, label, accent) in enumerate(tiles):
-        col, row = i % cols, i // cols
-        x = pad + col * (tw + gap)
-        y = pad + row * (th + gap)
-        begin = 0.2 + i * 0.12
-        parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
-            f'<animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
-            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="12" fill="{CARD}" stroke="rgba(255,255,255,0.08)"/>'
-            f'<rect x="{x}" y="{y + 18}" width="3" height="26" rx="1.5" fill="{accent}"/>'
-            f'<text class="v" x="{x + 18}" y="{y + 42}" fill="#f3f4f6" font-size="26">{escape(value)}</text>'
-            f'<text class="m" x="{x + 18}" y="{y + 64}" fill="rgba(255,255,255,0.5)" font-size="8.5">{escape(label.upper())}</text></g>'
         )
     parts.append(SVG_CLOSE)
     return "".join(parts)
@@ -1179,8 +1166,8 @@ def render_hero(data: dict) -> str:
         _rotating(HERO_LINES, 44, 152, "s", 18, "rgba(255,255,255,0.78)"),
         f'<rect x="44" y="176" width="236" height="28" rx="14" fill="{GREEN}14" stroke="{GREEN}55"/>',
         f'<circle cx="62" cy="190" r="4" fill="{GREEN}"><animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>',
-        f'<text class="m" x="74" y="194" fill="{GREEN}" font-size="10" style="letter-spacing:1px">BUILDING CLOUD AT AWS</text>',
-        '<text class="m" x="296" y="194" fill="rgba(255,255,255,0.45)" font-size="10" style="letter-spacing:1px">HYDERABAD, INDIA</text>',
+        f'<text class="m" x="74" y="194" fill="{GREEN}" font-size="10.5" style="letter-spacing:1px">BUILDING CLOUD AT AWS</text>',
+        '<text class="m" x="296" y="194" fill="rgba(255,255,255,0.6)" font-size="10.5" style="letter-spacing:1px">HYDERABAD, INDIA</text>',
     ]
     for a, b in links:
         x1, y1, _ = nodes[a]
@@ -1203,7 +1190,7 @@ def render_hero(data: dict) -> str:
             f'<circle cx="{x}" cy="{y}" r="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.3">'
             f'<animate attributeName="r" values="{r};{r + 1.5};{r}" dur="3s" begin="{i * 0.4:.1f}s" repeatCount="indefinite"/></circle>'
             f'<text class="m" x="{x}" y="{y + 3.5}" text-anchor="middle" fill="{BLUE_LIGHT if hub else "rgba(255,255,255,0.7)"}" '
-            f'font-size="9" style="letter-spacing:1px">{label}</text>'
+            f'font-size="10.5" style="letter-spacing:1px">{label}</text>'
         )
     parts.append(SVG_CLOSE)
     return "".join(parts)
@@ -1225,7 +1212,10 @@ def render_footer() -> str:
             ),
             f"<style>.s{{font-family:{SANS};font-weight:800}}.m{{font-family:{MONO};font-weight:700;letter-spacing:2px}}"
             f".d{{font-family:{SANS};font-weight:500}}</style>",
-            f'<text class="m" x="{w / 2}" y="34" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">SAGAR GUPTA  |  AWS PROFESSIONAL SERVICES</text>',
+            # an opaque card like every other one: on GitHub's light page a transparent
+            # footer drew its white lines on white
+            f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
+            f'<text class="m" x="{w / 2}" y="34" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10.5">SAGAR GUPTA  |  AWS PROFESSIONAL SERVICES</text>',
             _rotating(FOOTER_LINES, w / 2, 78, "s", 30, "#f3f4f6").replace(
                 "<text ", '<text text-anchor="middle" '
             ),
@@ -1233,7 +1223,7 @@ def render_footer() -> str:
             f'<path d="{wave}" fill="none" stroke="{BLUE_LIGHT}" stroke-width="2" stroke-dasharray="120 900" stroke-linecap="round">'
             '<animate attributeName="stroke-dashoffset" values="1020;0" dur="4s" repeatCount="indefinite"/></path>',
             f'<circle r="3.5" fill="{SKY}"><animateMotion dur="4s" repeatCount="indefinite" path="{wave}"/></circle>',
-            f'<text class="d" x="{w / 2}" y="158" text-anchor="middle" fill="rgba(127,127,127,0.85)" font-size="11">{escape(DISCLAIMER)}</text>',
+            f'<text class="d" x="{w / 2}" y="158" text-anchor="middle" fill="#a8b4c1" font-size="11">{escape(DISCLAIMER)}</text>',
             SVG_CLOSE,
         ]
     )
@@ -1326,11 +1316,13 @@ def render_ai_stack(w: int = 840, cols: int = 5) -> str | None:
     ch = 44
     h = 42 + -(-len(AI_TOOLS) // cols) * (ch + 10)
     cycle = len(AI_TOOLS) * 0.6
+    # two columns leave 102px for AMAZON BEDROCK, so the phone tiles track tighter
+    tight = ' style="letter-spacing:0.5px"' if cols <= 2 else ""
     parts = [
         svg_open(w, h, "AI-assisted engineering: " + ", ".join(t for t, _ in AI_TOOLS)),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1px}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="28" fill="{BLUE_LIGHT}" font-size="10" style="letter-spacing:1.6px">AI-ASSISTED ENGINEERING</text>',
+        f'<text class="m" x="24" y="28" fill="{BLUE_LIGHT}" font-size="10.5" style="letter-spacing:1.6px">AI-ASSISTED ENGINEERING</text>',
     ]
     for i, (label, slug) in enumerate(AI_TOOLS):
         col, row = i % cols, i // cols
@@ -1353,7 +1345,7 @@ def render_ai_stack(w: int = 840, cols: int = 5) -> str | None:
             f'<rect x="{x}" y="{y}" width="{cw}" height="{ch}" rx="10" fill="{BLUE}1c" stroke="{BLUE_LIGHT}" stroke-width="1.2" opacity="0">'
             f'<animate attributeName="opacity" values="0;0;1;0;0" keyTimes="{glow_times}" dur="{cycle:.1f}s" repeatCount="indefinite"/></rect>'
             f"{icon}"
-            f'<text class="m" x="{label_x}" y="{y + 26}" fill="rgba(255,255,255,0.85)" font-size="10">{escape(label.upper())}</text>'
+            f'<text class="m" x="{label_x}" y="{y + 26}" fill="rgba(255,255,255,0.85)" font-size="10.5"{tight}>{escape(label.upper())}</text>'
         )
     parts.append(SVG_CLOSE)
     return "".join(parts)
@@ -1664,7 +1656,7 @@ def render_project_card(p: dict, index: int, mobile: bool = False) -> str:
     )
     status = (
         f'<circle cx="{w - 72}" cy="30" r="3.5" fill="{GREEN}"><animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>'
-        f'<text class="m" x="{w - 62}" y="34" fill="{GREEN}" font-size="9">LIVE</text>'
+        f'<text class="m" x="{w - 62}" y="34" fill="{GREEN}" font-size="10.5">LIVE</text>'
         if live
         else f'<text class="m" x="{w - 22}" y="34" text-anchor="end" fill="#a8b4c1" font-size="10.5">SOURCE</text>'
     )
@@ -1678,7 +1670,7 @@ def render_project_card(p: dict, index: int, mobile: bool = False) -> str:
             f'<clipPath id="c"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="16"/></clipPath></defs>',
             f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="16" fill="{CARD}" stroke="rgba(255,255,255,0.09)"/>',
             f'<rect x="0" y="22" width="3" height="28" rx="1.5" fill="{BLUE_LIGHT}"/>',
-            f'<text class="m" x="22" y="34" fill="{BLUE_LIGHT}" font-size="9">{escape(p.get("date", "").upper())}</text>',
+            f'<text class="m" x="22" y="34" fill="{BLUE_LIGHT}" font-size="10.5">{escape(p.get("date", "").upper())}</text>',
             status,
             "".join(
                 f'<text class="t" x="22" y="{62 + 24 * j}" fill="#f3f4f6" font-size="20">{escape(title)}</text>'
@@ -1696,9 +1688,10 @@ def render_project_card(p: dict, index: int, mobile: bool = False) -> str:
 def render_tool_card(
     p: dict, stars: int | None, index: int, mobile: bool = False
 ) -> str:
-    w = 320 if mobile else 270
-    titles = _wrap(p["title"], 29 if mobile else 27)
-    lines = _wrap(_card_text(p, 96), 34 if mobile else 33)
+    # the README shows both at 270px, so the phone card trades width for larger text
+    w = 270
+    titles = _wrap(p["title"], 24 if mobile else 27)
+    lines = _wrap(_card_text(p, 96), 28 if mobile else 33)
     body_y = 44 + len(titles) * 22
     line_h = 21 if mobile else 18
     h = max(220, body_y + len(lines) * line_h + 44)
@@ -1787,18 +1780,18 @@ def render_profile_badges(data: dict) -> str:
     # two centered rows: four, then three
     for row, (lo, hi) in enumerate(((0, 4), (4, 7))):
         items = pills[lo:hi]
-        widths = [24 + (len(k) + len(v)) * 7.1 + 18 for k, v, _ in items]
+        widths = [24 + (len(k) + len(v)) * MONO_CHAR + 18 for k, v, _ in items]
         total = sum(widths) + 12 * (len(items) - 1)
         x = (w - total) / 2
         y = 8 + row * 50
         for i, ((key, value, color), bw) in enumerate(zip(items, widths)):
-            kw = 16 + len(key) * 7.1
+            kw = 16 + len(key) * MONO_CHAR
             begin = 0.1 + (lo + i) * 0.1
             parts.append(
                 f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.1f}s" dur="0.4s" fill="freeze"/>'
                 f'<rect x="{x:.1f}" y="{y}" width="{bw:.1f}" height="36" rx="18" fill="{CARD}" stroke="{color}55"/>'
                 f'<rect x="{x:.1f}" y="{y}" width="{kw:.1f}" height="36" rx="18" fill="{color}1f"/>'
-                f'<text class="m" x="{x + kw / 2:.1f}" y="{y + 22}" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9.5">{key}</text>'
+                f'<text class="m" x="{x + kw / 2:.1f}" y="{y + 22}" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10.5">{key}</text>'
                 f'<text class="m" x="{x + kw + (bw - kw) / 2:.1f}" y="{y + 22}" text-anchor="middle" fill="{color}" font-size="10.5">{escape(value)}</text></g>'
             )
             x += bw + 12
@@ -1881,7 +1874,12 @@ def render_oss(data: dict) -> str | None:
         repos[e["repo"]] = repos.get(e["repo"], 0) + 1
     ranked = sorted(repos, key=lambda r: -stars.get(r, 0))
     reach = sum(stars.get(r, 0) for r in repos)
-    w, h = 840, 250
+    w = 840
+    # merged-into chips, biggest projects first; the card grows to fit every row
+    chips = _chip_rows(
+        [_oss_chip_label(r, repos[r], stars.get(r, 0)) for r in ranked], 128, w
+    )
+    h = chips[-1][1] + 44 if chips else 128
     tiles = [
         (str(len(merged)), "merged upstream"),
         (str(len(review)), "open PRs"),
@@ -1899,7 +1897,7 @@ def render_oss(data: dict) -> str | None:
         ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.v{{font-family:{SANS};font-weight:800}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10">OPEN SOURCE  |  MERGED UPSTREAM</text>',
+        f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10.5">OPEN SOURCE  |  MERGED UPSTREAM</text>',
     ]
     tw = (w - 32 - 3 * 10) / 4
     for i, (value, label) in enumerate(tiles):
@@ -1908,25 +1906,31 @@ def render_oss(data: dict) -> str | None:
             f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.1 + i * 0.1:.1f}s" dur="0.4s" fill="freeze"/>'
             f'<rect x="{x:.1f}" y="44" width="{tw:.1f}" height="62" rx="10" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
             f'<text class="v" x="{x + 14:.1f}" y="76" fill="#f3f4f6" font-size="22">{value}</text>'
-            f'<text class="m" x="{x + 14:.1f}" y="95" fill="rgba(255,255,255,0.5)" font-size="8">{label.upper()}</text></g>'
+            f'<text class="m" x="{x + 14:.1f}" y="95" fill="rgba(255,255,255,0.55)" font-size="10.5">{label.upper()}</text></g>'
         )
-    # merged-into chips, biggest projects first
-    x, y = 24.0, 128
-    for i, repo in enumerate(ranked):
-        label = _oss_chip_label(repo, repos[repo], stars.get(repo, 0))
-        cw = 16 + len(label) * 6.3
-        if x + cw > w - 24:
-            x, y = 24.0, y + 30
-        if y > h - 30:
-            break
+    for i, (x, y, cw, label) in enumerate(chips):
         parts.append(
             f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.5 + i * 0.06:.2f}s" dur="0.4s" fill="freeze"/>'
-            f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="22" rx="11" fill="{SKY}12" stroke="{SKY}44"/>'
-            f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 15}" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="9">{escape(label)}</text></g>'
+            f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="24" rx="12" fill="{SKY}12" stroke="{SKY}44"/>'
+            f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 16}" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10.5">{escape(label)}</text></g>'
         )
-        x += cw + 8
     parts.append(SVG_CLOSE)
     return "".join(parts)
+
+
+def _chip_rows(
+    labels: list[str], top: float, w: float, upper: bool = False
+) -> list[tuple[float, float, float, str]]:
+    """Place 10.5px mono chips left to right, wrapping into as many rows as they need."""
+    chips, x, y = [], 24.0, top
+    for label in labels:
+        text = label.upper() if upper else label
+        cw = 20 + len(text) * MONO_CHAR
+        if x + cw > w - 24 and x > 24:
+            x, y = 24.0, y + 32
+        chips.append((x, y, cw, text))
+        x += cw + 8
+    return chips
 
 
 def fetch_oss_stars(oss: list[dict]) -> dict[str, int]:
@@ -2008,7 +2012,7 @@ def render_list_card(
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.t{{font-family:{SANS};font-weight:700}}"
         f".s{{font-family:{SANS};font-weight:500}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="31" fill="{accent}" font-size="10">{escape(kicker)}</text>',
+        f'<text class="m" x="24" y="31" fill="{accent}" font-size="10.5">{escape(kicker)}</text>',
     ]
     y = top
     for i, ((primary, _, meta), lines) in enumerate(zip(rows, seconds)):
@@ -2024,7 +2028,7 @@ def render_list_card(
             f'<circle cx="30" cy="{y + 23}" r="3" fill="{accent}"/>'
             f'<text class="t" x="44" y="{y + 20}" fill="#f3f4f6" font-size="13.5">{escape(_clip(primary, 60))}</text>'
             f"{second}"
-            f'<text class="m" x="{w - 24}" y="{y + 20}" text-anchor="end" fill="rgba(255,255,255,0.45)" font-size="9">{escape(meta.upper())}</text></g>'
+            f'<text class="m" x="{w - 24}" y="{y + 20}" text-anchor="end" fill="rgba(255,255,255,0.55)" font-size="10.5">{escape(meta.upper())}</text></g>'
         )
         y += row_h + line_h * (len(lines) - 1)
     if footer:
@@ -2033,14 +2037,6 @@ def render_list_card(
         )
     parts.append(SVG_CLOSE)
     return "".join(parts)
-
-
-LOGO_DIR = ROOT / "assets" / "logos"
-# turns any logo white while keeping its shape, so five brands read as one set
-WHITE_FILTER = (
-    '<filter id="white"><feColorMatrix type="matrix" '
-    'values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter>'
-)
 
 
 def _customers(pf: dict) -> list[dict]:
@@ -2053,102 +2049,15 @@ def _engagement_role(e: dict) -> str:
     return e["name"].replace(ONGOING, "").rsplit(" - ", 1)[0]
 
 
-def _company_logo(name: str) -> str | None:
-    """Return the company's stored logo as a data URI, or None if there is none."""
-    path = LOGO_DIR / LOGOS.get(name, "")
-    if not LOGOS.get(name) or not path.is_file():
-        return None
-    mime = "image/svg+xml" if path.suffix == ".svg" else "image/png"
-    return f"data:{mime};base64,{base64.b64encode(path.read_bytes()).decode()}"
-
-
-def _logo_block(name: str, cx: float, y: float, width: float) -> str:
-    """Return the logo drawn white and centred, or the company name where no logo is stored."""
-    logo = _company_logo(name)
-    if logo:
-        return (
-            f'<image href="{logo}" x="{cx - width / 2:.1f}" y="{y}" width="{width:.1f}" height="40" '
-            'preserveAspectRatio="xMidYMid meet" filter="url(#white)"/>'
-        )
-    lines = _wrap(name, 17)
-    if len(lines) == 1:
-        return f'<text class="t" x="{cx:.1f}" y="{y + 27}" text-anchor="middle" fill="#f3f4f6" font-size="15">{escape(name)}</text>'
-    # a long generic customer label wraps, centred in the 40px logo box
-    first = y + 25 - (len(lines) - 1) * 7.5
-    return "".join(
-        f'<text class="t" x="{cx:.1f}" y="{first + j * 15:.1f}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(line)}</text>'
-        for j, line in enumerate(lines)
-    )
-
-
-def render_worked_with(pf: dict) -> str:
-    """Return a row of company tiles: logo, company, and the title held there."""
-    tiles = [(AWS_NAME, AWS_TITLE)]
-    for e in reversed(_customers(pf)):
-        tiles.append((e["client"], _engagement_role(e)))
-    for e in pf.get("earlier", []):
-        if e["company"] != AWS_NAME:
-            tiles.append(
-                (
-                    e["company"],
-                    f"{e['title']} (intern)"
-                    if e.get("position") == "Internship"
-                    else e["title"],
-                )
-            )
-    w, h = 840, 196
-    gap, pad = 10, 16
-    tw = (w - 2 * pad - (len(tiles) - 1) * gap) / len(tiles)
-    parts = [
-        svg_open(w, h, "Worked with: " + "; ".join(f"{c}, {r}" for c, r in tiles)),
-        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.t{{font-family:{SANS};font-weight:800}}"
-        f".s{{font-family:{SANS};font-weight:500}}</style>",
-        f"<defs>{WHITE_FILTER}</defs>",
-        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="31" fill="{GREEN}" font-size="10">WORKED WITH</text>',
-    ]
-    for i, (company, role) in enumerate(tiles):
-        x = pad + i * (tw + gap)
-        cx = x + tw / 2
-        begin = 0.15 + i * 0.12
-        # 3 rows fit the tile ([:2] cut "- DevOps/MLOps" off the AWS title); keep " - " on the
-        # first half so no row starts with the hyphen
-        lines = [
-            line.replace("\x01", " ")
-            for line in _wrap(role.replace(" - ", "\x01- "), 22)[:3]
-        ]
-        role_text = "".join(
-            f'<text class="s" x="{cx:.1f}" y="{136 + j * 16}" text-anchor="middle" fill="rgba(255,255,255,0.62)" font-size="11.5">{escape(line)}</text>'
-            for j, line in enumerate(lines)
-        )
-        parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
-            f'<animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
-            f'<rect x="{x:.1f}" y="46" width="{tw:.1f}" height="{h - 62}" rx="12" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
-            + _logo_block(company, cx, 66, tw - 44)
-            + role_text
-            + "</g>"
-        )
-    parts.append(SVG_CLOSE)
-    return "".join(parts)
-
-
 def _publication_groups(pf: dict) -> list[tuple[str, list[tuple[str, str]]]]:
-    samples, papers, talks = [], [], []
+    papers, talks = [], []
     for c in sorted(
         pf.get("contributions", []), key=lambda c: str(c.get("year", "")), reverse=True
     ):
         title, year = c["title"], str(c.get("year", ""))
         if title.startswith("AWS Sample Published: "):
-            samples.append(
-                (
-                    title.split(": ", 1)[1]
-                    .removesuffix("(aws-samples, MIT-0)")
-                    .strip(),
-                    year,
-                )
-            )
-        elif title.startswith("APG Pattern: "):
+            continue  # the Featured Projects section shows every sample as a card
+        if title.startswith("APG Pattern: "):
             papers.append(
                 (
                     "APG pattern: "
@@ -2170,7 +2079,6 @@ def _publication_groups(pf: dict) -> list[tuple[str, list[tuple[str, str]]]]:
         for a in pf.get("achievements", [])
     ]
     groups = [
-        ("AWS SAMPLES", samples),
         ("PUBLICATIONS & REVIEWS", papers),
         ("TECH TALKS", talks),
         ("RECOGNITION", recognition),
@@ -2196,6 +2104,7 @@ def _panel(
     ph: float,
     accent: str,
     delay: float,
+    wrap: int = 50,
 ) -> str:
     out = [
         f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{delay:.2f}s" dur="0.45s" fill="freeze"/>'
@@ -2205,7 +2114,7 @@ def _panel(
     ]
     cy = y + 56
     for text, year in items:
-        lines = _wrap(text, 50)
+        lines = _wrap(text, wrap)
         out.append(
             f'<circle cx="{x + 21:.1f}" cy="{cy - 4:.1f}" r="2.5" fill="{accent}"/>'
             + "".join(
@@ -2222,19 +2131,24 @@ def _panel(
     return "".join(out)
 
 
-def _panel_height(items: list[tuple[str, str]]) -> float:
-    return 56 + sum(16 * len(_wrap(text, 50)) + 24 for text, _ in items) + 4
+def _panel_height(items: list[tuple[str, str]], wrap: int = 50) -> float:
+    return 56 + sum(16 * len(_wrap(text, wrap)) + 24 for text, _ in items) + 4
 
 
 def render_publications(pf: dict) -> str:
-    """Return AWS samples, publications, talks and recognition as a 2x2 grid of panels."""
+    """Return publications and talks side by side, then recognition across the card."""
     groups = _publication_groups(pf)
-    accents = [SKY, BLUE_LIGHT, GREEN, AMBER]
+    accents = [BLUE_LIGHT, GREEN, AMBER]
     w, pad, gap = 840, 16, 12
-    pw = (w - 2 * pad - gap) / 2
-    rows = [groups[0:2], groups[2:4]]
-    heights = [max(_panel_height(items) for _, items in row) for row in rows]
-    h = 44 + sum(heights) + gap + pad
+    rows = [row for row in (groups[0:2], groups[2:]) if row]
+    # a row with one panel spans the card, so its lines wrap twice as wide
+    widths = [(w - 2 * pad - gap * (len(row) - 1)) / len(row) for row in rows]
+    wraps = [50 if len(row) > 1 else 105 for row in rows]
+    heights = [
+        max(_panel_height(items, wrap) for _, items in row)
+        for row, wrap in zip(rows, wraps)
+    ]
+    h = 44 + sum(heights) + gap * (len(rows) - 1) + pad
     parts = [
         svg_open(
             w,
@@ -2244,7 +2158,7 @@ def render_publications(pf: dict) -> str:
         ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.s{{font-family:{SANS};font-weight:500}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="30" fill="{SKY}" font-size="10">PUBLICATIONS, TALKS AND RECOGNITION</text>',
+        f'<text class="m" x="24" y="30" fill="{SKY}" font-size="10.5">PUBLICATIONS, TALKS AND RECOGNITION</text>',
     ]
     y = 44.0
     for r, row in enumerate(rows):
@@ -2254,12 +2168,13 @@ def render_publications(pf: dict) -> str:
                 _panel(
                     label,
                     items,
-                    pad + c * (pw + gap),
+                    pad + c * (widths[r] + gap),
                     y,
-                    pw,
+                    widths[r],
                     heights[r],
                     accents[i],
                     0.15 + i * 0.12,
+                    wraps[r],
                 )
             )
         y += heights[r] + gap
@@ -2350,7 +2265,15 @@ def render_competitive(pf: dict) -> str:
         for a in pf.get("contests", [])
         if re.match(r"(1st|2nd|3rd|4th) Place", a["title"])
     ]
-    w, h = 840, 196
+    w = 840
+    # podium chips wrap into as many rows as they need; the card grows to fit
+    chips = _chip_rows(
+        [t.replace(" Place - ", "  ").replace(", ", " ") for t in podiums],
+        134,
+        w,
+        upper=True,
+    )
+    h = chips[-1][1] + 44 if chips else 134
     tw = (w - 32 - 3 * 10) / 4
     parts = [
         svg_open(
@@ -2363,29 +2286,23 @@ def render_competitive(pf: dict) -> str:
         ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.v{{font-family:{SANS};font-weight:800}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="30" fill="{AMBER}" font-size="10">COMPETITIVE PROGRAMMING</text>',
+        f'<text class="m" x="24" y="30" fill="{AMBER}" font-size="10.5">COMPETITIVE PROGRAMMING</text>',
     ]
     for i, (key, value, label) in enumerate(tiles):
         x = 16 + i * (tw + 10)
         parts.append(
             f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.1 + i * 0.1:.1f}s" dur="0.4s" fill="freeze"/>'
             f'<rect x="{x:.1f}" y="44" width="{tw:.1f}" height="72" rx="10" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
-            f'<text class="m" x="{x + 14:.1f}" y="64" fill="{AMBER}" font-size="8.5">{escape(key)}</text>'
+            f'<text class="m" x="{x + 14:.1f}" y="64" fill="{AMBER}" font-size="10.5">{escape(key)}</text>'
             f'<text class="v" x="{x + 14:.1f}" y="90" fill="#f3f4f6" font-size="20">{escape(str(value))}</text>'
-            f'<text class="m" x="{x + 14:.1f}" y="107" fill="rgba(255,255,255,0.5)" font-size="8">{escape(label.upper())}</text></g>'
+            f'<text class="m" x="{x + 14:.1f}" y="107" fill="rgba(255,255,255,0.55)" font-size="10.5">{escape(label.upper())}</text></g>'
         )
-    x, y = 24.0, 134
-    for i, title in enumerate(podiums):
-        label = title.replace(" Place - ", "  ").replace(", ", " ")
-        cw = 16 + len(label) * 6.2
-        if x + cw > w - 24:
-            x, y = 24.0, y + 28
+    for i, (x, y, cw, label) in enumerate(chips):
         parts.append(
             f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.5 + i * 0.06:.2f}s" dur="0.4s" fill="freeze"/>'
-            f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="22" rx="11" fill="{AMBER}12" stroke="{AMBER}44"/>'
-            f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 15}" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-size="9">{escape(label.upper())}</text></g>'
+            f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="24" rx="12" fill="{AMBER}12" stroke="{AMBER}44"/>'
+            f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 16}" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-size="10.5">{escape(label)}</text></g>'
         )
-        x += cw + 8
     parts.append(SVG_CLOSE)
     return "".join(parts)
 
@@ -2429,7 +2346,7 @@ def render_intro(pf: dict) -> str:
         f"<style>.s{{font-family:{SANS};font-weight:500}}.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{CARD}" stroke="rgba(255,255,255,0.08)"/>',
         f'<rect x="0" y="24" width="3" height="{len(lines) * 24 + 12}" rx="1.5" fill="{BLUE}"/>',
-        f'<text class="m" x="28" y="36" fill="{BLUE_LIGHT}" font-size="10">ABOUT</text>',
+        f'<text class="m" x="28" y="36" fill="{BLUE_LIGHT}" font-size="10.5">ABOUT</text>',
     ]
     for i, line in enumerate(lines):
         parts.append(
@@ -2472,7 +2389,7 @@ def render_get_this_card(repo: str, card: str) -> str:
             f'<clipPath id="c"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="12"/></clipPath></defs>',
             f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="{CARD}" stroke="{BLUE_LIGHT}40"/>',
             f'<circle cx="22" cy="20" r="3.5" fill="{GREEN}"><animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>',
-            f'<text class="m" x="36" y="24" fill="rgba(255,255,255,0.55)" font-size="9.5">GET {this} {escape(card.upper())} FOR YOUR PROFILE</text>',
+            f'<text class="m" x="36" y="24" fill="rgba(255,255,255,0.6)" font-size="10.5">GET {this} {escape(card.upper())} FOR YOUR PROFILE</text>',
             f'<text class="m" x="{w - 22}" y="24" text-anchor="end" fill="{BLUE_LIGHT}" font-size="10.5">SAGARGUPTA16/{escape(repo.upper())}  -&gt;</text>',
             f'<g clip-path="url(#c)"><rect x="-160" y="0" width="140" height="{h}" fill="url(#sweep)" transform="skewX(-20)">'
             '<animateTransform attributeName="transform" type="translate" values="0 0;1200 0" dur="5s" repeatCount="indefinite" additive="sum"/></rect></g>',
@@ -2512,14 +2429,19 @@ def render_cta(label: str, primary: bool) -> str:
 # ---------------------------------------------------------------- the README itself
 
 
+# From 768px to 1011px the profile sidebar leaves the README column 383-626px, where an
+# 840px card shrinks to 0.46-0.75x; the phone card reads there. GitHub's own sidebar switch is 1012px.
+DESKTOP_MEDIA = "(min-width: 1012px)"
+
+
 def _img(src: str, alt: str, width: str = "100%") -> str:
-    """Wrap one card image with its phone source; widths are numeric because GitHub strips layout CSS."""
+    """Wrap one card image with its desktop source; widths are numeric because GitHub strips layout CSS."""
     mobile = f"{Path(src).stem}-mobile.svg"
-    source = (
-        f'<source media="(max-width: 600px)" srcset="assets/svg/{mobile}" />'
-        if (OUT / mobile).exists()
-        else ""
-    )
+    source = ""
+    # the phone card is the fallback, so clients without <picture> (GitHub's app) get it
+    if (OUT / mobile).exists():
+        source = f'<source media="{DESKTOP_MEDIA}" srcset="assets/svg/{src}" />'
+        src = mobile
     image = f'<img src="assets/svg/{src}" width="{width}" alt="{escape(alt, quote=True)}" />'
     # Picture also avoids GitHub's direct-link image fallback block styling.
     return f"<picture>{source}{image}</picture>"
@@ -2573,19 +2495,22 @@ def _link(href: str, inner: str) -> str:
 
 def _header(key: str, title: str) -> str:
     sources = []
-    # the narrow pair comes first: the first matching source wins
-    for narrow in (True, False):
+    # the wide pair comes first: the first matching source wins
+    for wide in (True, False):
         for theme in ("light", "dark"):
-            name = f"header-{key}-{theme}{'-mobile' if narrow else ''}.svg"
+            name = f"header-{key}-{theme}{'' if wide else '-mobile'}.svg"
             media = f"(prefers-color-scheme: {theme})"
-            if narrow:
-                media += " and (max-width: 600px)"
+            if wide:
+                media += f" and {DESKTOP_MEDIA}"
             if (OUT / name).exists():
                 sources.append(f'<source media="{media}" srcset="assets/svg/{name}" />')
+    fallback = f"header-{key}-dark-mobile.svg"
+    if not (OUT / fallback).exists():
+        fallback = f"header-{key}-dark.svg"
     return (
         "<picture>"
         + "".join(sources)
-        + f'<img src="assets/svg/header-{key}-dark.svg" width="100%" alt="{escape(title)}" />'
+        + f'<img src="assets/svg/{fallback}" width="100%" alt="{escape(title)}" />'
         + "</picture>"
     )
 
@@ -2697,8 +2622,6 @@ def render_readme(data: dict) -> str:
         divider,
         _header("experience", "Experience"),
         _card("experience.svg", "Career timeline and customer engagements"),
-        _card("highlights.svg", "Highlights"),
-        _card("worked-with.svg", "Worked with: companies and customers"),
         divider,
         _header("projects", "Featured Projects"),
         _row(samples, "400"),
@@ -2751,7 +2674,6 @@ def render_readme(data: dict) -> str:
         _link(PORTFOLIO_URL, _card("footer.svg", "Visit my portfolio"))
         + f' <img src="{VIEWS_URL}" width="1" height="1" alt="" />',
         _row([connect[i] for i in (1, 2, 3)], "128"),
-        _card("freshness.svg", "Last successful data refreshes"),
     ]
     return "\n\n".join(blocks) + "\n"
 
@@ -2830,7 +2752,6 @@ def write_portfolio_cards(data: dict) -> None:
     pf = data.get("portfolio") or {}
     if pf:
         write("intro.svg", render_intro(pf))
-        write("worked-with.svg", render_worked_with(pf))
         write("publications.svg", render_publications(pf))
         write("education.svg", render_education(pf))
         write("oss-merged.svg", render_oss_merged(pf))
@@ -2903,32 +2824,6 @@ def render_certification_status(data: dict) -> str:
     )
 
 
-def freshness_entries(data: dict) -> list[tuple[str, str]]:
-    """Name each source with the day it last refreshed successfully."""
-    stamps = data.get("source_updated_at") or {}
-    entries = []
-    for source, label in (
-        ("github", "GitHub"),
-        ("leetcode", "LeetCode"),
-        ("portfolio", "Portfolio"),
-    ):
-        # the date alone says how old a snapshot is, and keeps the card a pure
-        # function of data.json, so CI can diff a re-render against the commit
-        try:
-            when = datetime.datetime.fromisoformat(
-                str(stamps.get(source)).replace("Z", "+00:00")
-            )
-            entries.append((label, f"verified {when:%d %b %Y}"))
-        except ValueError:
-            entries.append((label, "saved snapshot; refresh date unavailable"))
-    return entries
-
-
-def render_freshness(data: dict) -> str:
-    lines = [f"{label}: {status}." for label, status in freshness_entries(data)]
-    return render_note("Data refreshes", lines)
-
-
 def _credly_images() -> list[tuple[str, str]]:
     """Pair each badge image the Credly card embeds with its name, for the phone grid."""
     path = OUT / "certs.svg"
@@ -2949,15 +2844,9 @@ def write_responsive_variants(data: dict) -> None:
     """Write the phone layouts and the status cards from the same snapshot as the desktop."""
     pf = data.get("portfolio") or {}
     customers = _customers(pf)
-    worked_with = (
-        [(AWS_NAME, AWS_TITLE)]
-        + [(e["client"], _engagement_role(e)) for e in customers]
-        + [("Ikarus-3D", "Software Developer Associate (intern)")]
-    )
     context = {
         "milestones": MILESTONES,
         "headers": HEADERS,
-        "highlights": highlight_tiles(pf),
         "disclaimer": DISCLAIMER,
         "publications": _publication_groups(pf),
         "certifications": pf.get("certifications", []),
@@ -2971,20 +2860,11 @@ def write_responsive_variants(data: dict) -> None:
         "engagements": [
             (e["when"], e["client"], _engagement_role(e)) for e in customers
         ],
-        "worked_with": worked_with,
-        "logos": {
-            company: logo
-            for company, _ in worked_with
-            if (logo := _company_logo(company))
-        },
-        "white_filter": WHITE_FILTER,
-        "freshness": freshness_entries(data),
         "get_cards": [(key, card) for key, _, card in GET_THIS_CARD],
     }
     for name, content in render_mobile_cards(data, context).items():
         write(name, content)
     write("certs-status.svg", render_certification_status(data))
-    write("freshness.svg", render_freshness(data))
 
 
 def main() -> None:
@@ -3016,7 +2896,6 @@ def main() -> None:
         leetcode_card.render_card(data["leetcode"], LEETCODE_USER) + "\n",
     )
     write("experience.svg", render_experience(data))
-    write("highlights.svg", render_highlights(data))
     write("hero.svg", render_hero(data))
     write("footer.svg", render_footer())
     write("profile-badges.svg", render_profile_badges(data))
@@ -3030,9 +2909,13 @@ def main() -> None:
         ("stack-mobile.svg", None if OFFLINE else render_stack(320)),
     ):
         write_optional(name, content)
-    write("sample-agentcore-harness.svg", render_agentcore_card())
-    write("sample-org-governance.svg", render_org_card())
-    write("sample-sagemaker-mlops.svg", render_mlops_card())
+    for name, render in (
+        ("sample-agentcore-harness", render_agentcore_card),
+        ("sample-org-governance", render_org_card),
+        ("sample-sagemaker-mlops", render_mlops_card),
+    ):
+        write(f"{name}.svg", render())
+        write(f"{name}-mobile.svg", render(mobile=True))
     for key, num, title, sub in HEADERS:
         for theme in ("dark", "light"):
             write(f"header-{key}-{theme}.svg", render_header(num, title, sub, theme))

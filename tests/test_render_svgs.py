@@ -26,7 +26,7 @@ class RendererTests(unittest.TestCase):
                 (out / "divider-mobile.svg").touch()
                 self.assertIn("divider-mobile.svg", renderer.render_readme(data))
 
-    def test_picture_selects_the_phone_layout_on_small_screens(self):
+    def test_picture_falls_back_to_the_phone_layout_below_desktop_width(self):
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory)
             (out / "card-mobile.svg").touch()
@@ -34,8 +34,9 @@ class RendererTests(unittest.TestCase):
                 picture = ET.fromstring(renderer._img("card.svg", "A & B", "400"))  # nosec B314
         sources = picture.findall("source")
         self.assertEqual(len(sources), 1)
-        self.assertEqual(sources[0].get("media"), "(max-width: 600px)")
-        self.assertIn("card-mobile.svg", sources[0].get("srcset"))
+        self.assertEqual(sources[0].get("media"), "(min-width: 1012px)")
+        self.assertEqual(sources[0].get("srcset"), "assets/svg/card.svg")
+        self.assertEqual(picture.find("img").get("src"), "assets/svg/card-mobile.svg")
         self.assertEqual(picture.find("img").get("width"), "400")
         self.assertEqual(picture.find("img").get("alt"), "A & B")
         self.assertNotIn("style=", ET.tostring(picture, encoding="unicode"))
@@ -182,15 +183,6 @@ class RendererTests(unittest.TestCase):
         self.assertEqual(
             public["achievements"][0]["title"], "5x AWS community ambassador"
         )
-
-    def test_highlights_leave_out_figures_without_data(self):
-        self.assertEqual(renderer.highlight_tiles({}), [])
-        pf = {
-            "samples": [{"title": "Sample"}],
-            "achievements": [{"title": "Associate Speaker Certification"}],
-            "certifications": [{"name": "Expired", "expiryDate": "2020-01-01"}],
-        }
-        self.assertEqual(renderer.highlight_tiles(pf), [("1", "published AWS samples")])
 
 
 if __name__ == "__main__":

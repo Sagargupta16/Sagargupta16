@@ -15,7 +15,6 @@ on:
       - .github/config/profiles.yml
       - .github/workflows/render-svgs.yml
       - tests/**
-      - assets/logos/**
 
 permissions:
   contents: write

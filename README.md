@@ -28,9 +28,9 @@
 <picture><source media="(prefers-color-scheme: light) and (min-width: 1012px)" srcset="assets/svg/header-projects-light.svg" /><source media="(prefers-color-scheme: dark) and (min-width: 1012px)" srcset="assets/svg/header-projects-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-projects-light-mobile.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-projects-dark-mobile.svg" /><img src="assets/svg/header-projects-dark-mobile.svg" width="100%" alt="Featured Projects" /></picture>
 
 <p align="center">
-<a href="https://github.com/aws-samples/sample-agentcore-harness-agent-terraform"><picture><img src="assets/svg/sample-agentcore-harness.svg" width="400" alt="AgentCore Harness Agent with Governed MCP Tools, published AWS sample" /></picture></a>
-<a href="https://github.com/aws-samples/sample-aws-terraform-org-governance"><picture><img src="assets/svg/sample-org-governance.svg" width="400" alt="AWS Organizations Governance, published AWS sample" /></picture></a>
-<a href="https://github.com/aws-samples/sample-sagemaker-image-classification-mlops"><picture><img src="assets/svg/sample-sagemaker-mlops.svg" width="400" alt="SageMaker Image Classification MLOps, published AWS sample" /></picture></a>
+<a href="https://github.com/aws-samples/sample-agentcore-harness-agent-terraform"><picture><source media="(min-width: 1012px)" srcset="assets/svg/sample-agentcore-harness.svg" /><img src="assets/svg/sample-agentcore-harness-mobile.svg" width="400" alt="AgentCore Harness Agent with Governed MCP Tools, published AWS sample" /></picture></a>
+<a href="https://github.com/aws-samples/sample-aws-terraform-org-governance"><picture><source media="(min-width: 1012px)" srcset="assets/svg/sample-org-governance.svg" /><img src="assets/svg/sample-org-governance-mobile.svg" width="400" alt="AWS Organizations Governance, published AWS sample" /></picture></a>
+<a href="https://github.com/aws-samples/sample-sagemaker-image-classification-mlops"><picture><source media="(min-width: 1012px)" srcset="assets/svg/sample-sagemaker-mlops.svg" /><img src="assets/svg/sample-sagemaker-mlops-mobile.svg" width="400" alt="SageMaker Image Classification MLOps, published AWS sample" /></picture></a>
 </p>
 
 <p align="center">

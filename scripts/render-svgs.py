@@ -373,11 +373,35 @@ def anim_opacity(values: str, key_times: str, dur: int = 6) -> str:
     )
 
 
+SAMPLE_PHONE = 320  # the phone layout's width; the README shows it at up to 400px
+
+
+def _frame_lines(w: int, title: str, sub: str) -> tuple[list[str], list[str]]:
+    """Title and tag lines for the card's foot; the phone card wraps both, tags at a separator."""
+    if w > SAMPLE_PHONE:
+        return [title], [sub]
+    tags, line = [], ""
+    for tag in sub.split("  |  "):
+        joined = f"{line}  |  {tag}" if line else tag
+        if line and len(joined) > 34:
+            tags.append(line)
+            joined = tag
+        line = joined
+    return _wrap(title, 28), tags + [line]
+
+
 def card_frame(w: int, h: int, title: str, sub: str, label: str) -> list[str]:
+    """The sample card around a diagram drawn above y = h - 62; a wrapped title or tag line grows the card."""
+    titles, tags = _frame_lines(w, title, sub)
+    foot = h - 62
+    tag_y = foot + 48 + 22 * (len(titles) - 1)
+    h = tag_y + 14 + 16 * (len(tags) - 1)
+    # the phone boxes are narrower, so their labels drop the tracking
+    tracking = 0 if w <= SAMPLE_PHONE else 0.5
     return [
         svg_open(w, h, label),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.4px}}"
-        f".l{{font-family:{MONO};font-weight:700;letter-spacing:0.5px}}"
+        f".l{{font-family:{MONO};font-weight:700;letter-spacing:{tracking}px}}"
         f".t{{font-family:{SANS};font-weight:700}}</style>",
         '<defs><linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">'
         f'<stop offset="0" stop-color="#0e1a24"/><stop offset="0.6" stop-color="{BG}"/></linearGradient>'
@@ -385,9 +409,15 @@ def card_frame(w: int, h: int, title: str, sub: str, label: str) -> list[str]:
         f'<stop offset="1" stop-color="{BLUE}" stop-opacity="0"/></radialGradient></defs>',
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="16" fill="url(#bg)" stroke="rgba(255,255,255,0.08)"/>',
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="16" fill="url(#glow)"/>',
-        f'<line x1="0" y1="{h - 62}" x2="{w}" y2="{h - 62}" stroke="rgba(255,255,255,0.07)"/>',
-        f'<text class="t" x="20" y="{h - 34}" fill="#f3f4f6" font-size="16">{escape(title)}</text>',
-        f'<text class="m" x="20" y="{h - 14}" fill="{BLUE_LIGHT}" font-size="10.5">{escape(sub)}</text>',
+        f'<line x1="0" y1="{foot}" x2="{w}" y2="{foot}" stroke="rgba(255,255,255,0.07)"/>',
+        *(
+            f'<text class="t" x="20" y="{foot + 28 + 22 * i}" fill="#f3f4f6" font-size="16">{escape(line)}</text>'
+            for i, line in enumerate(titles)
+        ),
+        *(
+            f'<text class="m" x="20" y="{tag_y + 16 * i}" fill="{BLUE_LIGHT}" font-size="10.5">{escape(line)}</text>'
+            for i, line in enumerate(tags)
+        ),
     ]
 
 
@@ -397,9 +427,9 @@ def box(
     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="5" fill="{fill}" stroke="{stroke}" stroke-width="1.2">{extra}</rect>'
 
 
-def render_org_card() -> str:
+def render_org_card(mobile: bool = False) -> str:
     """Policies flowing down an OU tree: the GovernanceScene cover, README-sized."""
-    w, h = 410, 262
+    w, h = (SAMPLE_PHONE if mobile else 410), 262
     parts = card_frame(
         w,
         h,
@@ -408,14 +438,15 @@ def render_org_card() -> str:
         "Animated diagram: SCP and RCP policies attaching down an AWS Organizations OU tree",
     )
     node_h = 20
+    # (centre x, centre y, width); the phone tree is the same tree pulled in about its trunk
     nodes = {
-        "mgmt": (205, 30, 76),
-        "root": (205, 76, 44),
-        "sec": (80, 124, 66),
-        "wl": (205, 124, 66),
-        "sbx": (330, 124, 66),
-        "prod": (160, 170, 52),
-        "dev": (250, 170, 52),
+        "mgmt": (160, 30, 56) if mobile else (205, 30, 76),
+        "root": (160, 76, 32) if mobile else (205, 76, 44),
+        "sec": (70, 124, 48) if mobile else (80, 124, 66),
+        "wl": (160, 124, 48) if mobile else (205, 124, 66),
+        "sbx": (250, 124, 48) if mobile else (330, 124, 66),
+        "prod": (128, 170, 38) if mobile else (160, 170, 52),
+        "dev": (192, 170, 38) if mobile else (250, 170, 52),
     }
     edges = [
         ("mgmt", "root"),
@@ -524,9 +555,9 @@ def render_org_card() -> str:
     return "".join(parts)
 
 
-def render_mlops_card() -> str:
+def render_mlops_card(mobile: bool = False) -> str:
     """Train, gate, approve, deploy, drift back to retrain: the MLOps sample's loop."""
-    w, h = 410, 262
+    w, h = (SAMPLE_PHONE if mobile else 410), 262
     parts = card_frame(
         w,
         h,
@@ -534,18 +565,15 @@ def render_mlops_card() -> str:
         "AWS SAMPLES  |  TERRAFORM  |  SAGEMAKER",
         "Animated diagram: SageMaker pipeline trains, passes a quality gate, deploys, and retrains on drift",
     )
-    stages = [
-        ("DATA", 46),
-        ("TRAIN", 128),
-        ("GATE", 210),
-        ("DEPLOY", 292),
-        ("SERVE", 366),
-    ]
+    xs = (40, 100, 160, 220, 280) if mobile else (46, 128, 210, 292, 366)
+    stages = list(zip(("DATA", "TRAIN", "GATE", "DEPLOY", "SERVE"), xs))
+    train, gate, serve = xs[1], xs[2], xs[4]
+    narrow = 44 if mobile else 58  # DEPLOY gets 4px more
     y = 92
     parts.append(
-        f'<path d="M46 {y} H366" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>'
+        f'<path d="M{xs[0]} {y} H{serve}" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>'
     )
-    drift = f"M366 {y + 22} C366 170, 128 170, 128 {y + 22}"
+    drift = f"M{serve} {y + 22} C{serve} 170, {train} 170, {train} {y + 22}"
     parts.append(
         f'<path d="{drift}" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1.2" stroke-dasharray="4 4"/>'
     )
@@ -554,11 +582,11 @@ def render_mlops_card() -> str:
         f"{anim_opacity('0;0;1;1;0', '0;0.66;0.72;0.9;1')}</path>"
     )
     parts.append(
-        f'<text class="l" x="247" y="176" text-anchor="middle" fill="{AMBER}" font-size="10" opacity="0">DRIFT'
+        f'<text class="l" x="{(train + serve) // 2}" y="176" text-anchor="middle" fill="{AMBER}" font-size="10" opacity="0">DRIFT'
         f"{anim_opacity('0;0;1;1;0', '0;0.66;0.72;0.9;1')}</text>"
     )
     for name, x in stages:
-        bw = 58 if name != "DEPLOY" else 62
+        bw = narrow if name != "DEPLOY" else narrow + 4
         stroke = f"{BLUE}cc" if name in ("TRAIN", "DEPLOY") else HAIR_STROKE
         fill = f"{BLUE}1f" if name in ("TRAIN", "DEPLOY") else HAIR_FILL
         parts.append(box(x - bw / 2, y - 16, bw, 32, stroke, fill))
@@ -567,7 +595,7 @@ def render_mlops_card() -> str:
         )
     # quality gate flashes green when the model clears it
     parts.append(
-        box(210 - 29, y - 16, 58, 32, GREEN, f"{GREEN}22", "")
+        box(gate - narrow // 2, y - 16, narrow, 32, GREEN, f"{GREEN}22", "")
         .replace(RECT_OPEN, RECT_HIDDEN, 1)
         .replace(
             RECT_CLOSE,
@@ -575,13 +603,14 @@ def render_mlops_card() -> str:
         )
     )
     # three architectures train in parallel under TRAIN
-    for i, dx in enumerate((-16, 0, 16)):
+    dot, step = (8, 12) if mobile else (10, 16)
+    for i, dx in enumerate((-step, 0, step)):
         parts.append(
-            f'<rect x="{128 + dx - 5}" y="{y + 26}" width="10" height="4" rx="2" fill="{BLUE_LIGHT}" opacity="0.25">'
+            f'<rect x="{train + dx - dot // 2}" y="{y + 26}" width="{dot}" height="4" rx="2" fill="{BLUE_LIGHT}" opacity="0.25">'
             f'<animate attributeName="opacity" values="0.25;0.9;0.25" dur="1.2s" begin="{i * 0.2}s" repeatCount="indefinite"/></rect>'
         )
     # the model artefact travelling the pipeline, then the drift arc back to TRAIN
-    path = f"M46 {y} H366"
+    path = f"M{xs[0]} {y} H{serve}"
     parts.append(
         f'<circle r="4" fill="#f3f4f6" opacity="0">'
         f'<animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.08;0.62;1" '
@@ -593,7 +622,7 @@ def render_mlops_card() -> str:
         f'calcMode="linear" path="{drift}"/>{anim_opacity("0;0;1;1;0;0", "0;0.69;0.71;0.9;0.92;1")}</circle>'
     )
     parts.append(
-        f'<circle cx="366" cy="{y - 24}" r="3" fill="{GREEN}">'
+        f'<circle cx="{serve}" cy="{y - 24}" r="3" fill="{GREEN}">'
         '<animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>'
     )
     parts.append(SVG_CLOSE)
@@ -605,6 +634,15 @@ _AC_LY = 146  # release lane
 _AC_DIM = "rgba(255,255,255,0.62)"  # 4.5:1 on the card's navy panels
 _AC_LABEL = "rgba(255,255,255,0.7)"
 _AC_WIRE = "rgba(255,255,255,0.16)"
+# (label, centre x, box width) for the request lane; the release lane shares the centres
+_AC_LANE = [
+    ("MCP CLIENT", 52, 70),
+    ("CEDAR GATE", 150, 76),
+    ("9 TOOLS", 255, 74),
+    ("HARNESS", 358, 72),
+]
+# the phone lane: 68px boxes on a 74px pitch, room for a 10-letter label in each
+_AC_LANE_PHONE = [(name, 49 + 74 * i, 68) for i, (name, _, _) in enumerate(_AC_LANE)]
 
 
 def _ac_flash(t_on: float, t_off: float, end: float = 1) -> str:
@@ -625,15 +663,10 @@ def _ac_lit(
     )
 
 
-def _ac_request_lane() -> list[str]:
+def _ac_request_lane(lane: list[tuple[str, int, int]]) -> list[str]:
     """Client, Cedar gate on the gateway, tools runtime, harness; deny then allow."""
     y = _AC_Y
-    lane = [
-        ("MCP CLIENT", 52, 70),
-        ("CEDAR GATE", 150, 76),
-        ("9 TOOLS", 255, 74),
-        ("HARNESS", 358, 72),
-    ]
+    client_x, (_, gate_x, gate_w) = lane[0][1], lane[1]
     edges = [x + bw / 2 for _, x, bw in lane]
     starts = [x - bw / 2 for _, x, bw in lane]
     parts = [
@@ -656,10 +689,10 @@ def _ac_request_lane() -> list[str]:
             ]
         )
     parts.append(
-        f'<text class="l" x="150" y="{y - 26}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">DEFAULT DENY</text>'
+        f'<text class="l" x="{gate_x}" y="{y - 26}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">DEFAULT DENY</text>'
     )
     parts.extend(
-        f'<text class="l" x="52" y="{y + 30 + i * 12}" text-anchor="middle" fill="{_AC_DIM}" font-size="10">{client}</text>'
+        f'<text class="l" x="{client_x}" y="{y + 30 + i * 12}" text-anchor="middle" fill="{_AC_DIM}" font-size="10">{client}</text>'
         for i, client in enumerate(("CLAUDE CODE", "CODEX", "KIRO"))
     )
     # first call is not on the allow list and stops at the gate; the second passes
@@ -668,10 +701,10 @@ def _ac_request_lane() -> list[str]:
     at_tools = (starts[2] - edges[0]) / span
     parts.extend(
         [
-            _ac_lit(150, y, 76, 32, AMBER, 0.12, 0.2),
-            f'<text class="l" x="150" y="{y + 30}" text-anchor="middle" fill="{AMBER}" font-size="10" opacity="0">DENY{_ac_flash(0.12, 0.2)}</text>',
-            _ac_lit(150, y, 76, 32, GREEN, 0.32, 0.42),
-            f'<text class="l" x="150" y="{y + 30}" text-anchor="middle" fill="{GREEN}" font-size="10" opacity="0">ALLOW{_ac_flash(0.32, 0.42)}</text>',
+            _ac_lit(gate_x, y, gate_w, 32, AMBER, 0.12, 0.2),
+            f'<text class="l" x="{gate_x}" y="{y + 30}" text-anchor="middle" fill="{AMBER}" font-size="10" opacity="0">DENY{_ac_flash(0.12, 0.2)}</text>',
+            _ac_lit(gate_x, y, gate_w, 32, GREEN, 0.32, 0.42),
+            f'<text class="l" x="{gate_x}" y="{y + 30}" text-anchor="middle" fill="{GREEN}" font-size="10" opacity="0">ALLOW{_ac_flash(0.32, 0.42)}</text>',
             (
                 f'<circle r="4" fill="#f3f4f6" opacity="0">'
                 f'<animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.04;0.12;1" '
@@ -689,14 +722,15 @@ def _ac_request_lane() -> list[str]:
     return parts
 
 
-def _ac_tools_and_harness() -> list[str]:
+def _ac_tools_and_harness(lane: list[tuple[str, int, int]]) -> list[str]:
     """8 tools plus ask_architect, which hands the request to the hosted agent."""
     y = _AC_Y
+    tools_x, (_, harness_x, harness_w) = lane[2][1], lane[3]
     ask_pulse = anim_opacity("0.85;0.85;1;1;0.85;0.85", "0;0.48;0.5;0.62;0.66;1")
     parts = []
     for i in range(9):
         col, row = i % 3, i // 3
-        cx, cy = 255 - 14 + col * 14, y + 24 + row * 8
+        cx, cy = tools_x - 14 + col * 14, y + 24 + row * 8
         ask = i == 8
         fill = BLUE_LIGHT if ask else "rgba(255,255,255,0.18)"
         parts.append(
@@ -707,28 +741,24 @@ def _ac_tools_and_harness() -> list[str]:
         )
     parts.extend(
         [
-            f'<text class="l" x="255" y="{y + 56}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10" opacity="0.85">ask_architect'
+            f'<text class="l" x="{tools_x}" y="{y + 56}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10" opacity="0.85">ask_architect'
             f"{ask_pulse}</text>",
-            _ac_lit(358, y, 72, 32, BLUE_LIGHT, 0.6, 0.7),
+            _ac_lit(harness_x, y, harness_w, 32, BLUE_LIGHT, 0.6, 0.7),
         ]
     )
     parts.extend(
-        f'<text class="l" x="358" y="{y + 30 + i * 12}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10" opacity="0.85">{label}'
+        f'<text class="l" x="{harness_x}" y="{y + 30 + i * 12}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10" opacity="0.85">{label}'
         f"{anim_opacity('0.85;0.85;1;1;0.85;0.85', '0;0.6;0.62;0.7;0.73;1')}</text>"
         for i, label in enumerate(("3 SKILLS", "MEMORY"))
     )
     return parts
 
 
-def _ac_release_lane() -> list[str]:
+def _ac_release_lane(lane: list[tuple[str, int, int]]) -> list[str]:
     """A version reaches PROD only after AgentCore Evaluations passes it."""
     ly = _AC_LY
-    stages = [
-        ("BUILD", 52, 0.66),
-        ("DEFAULT", 150, 0.72),
-        ("EVAL", 255, 0.78),
-        ("PROD", 358, 0.88),
-    ]
+    xs = [x for _, x, _ in lane]
+    stages = list(zip(("BUILD", "DEFAULT", "EVAL", "PROD"), xs, (0.66, 0.72, 0.78, 0.88)))
     parts = []
     for (_, a, _), (_, b, t) in zip(stages, stages[1:]):
         parts.extend(
@@ -754,18 +784,19 @@ def _ac_release_lane() -> list[str]:
         )
     parts.extend(
         [
-            f'<text class="l" x="255" y="{ly + 26}" text-anchor="middle" fill="{GREEN}" font-size="10" opacity="0">PASS{_ac_flash(0.83, 0.95)}</text>',
-            f'<circle cx="{358 + 32 - 8}" cy="{ly}" r="3" fill="{GREEN}">'
+            f'<text class="l" x="{xs[2]}" y="{ly + 26}" text-anchor="middle" fill="{GREEN}" font-size="10" opacity="0">PASS{_ac_flash(0.83, 0.95)}</text>',
+            f'<circle cx="{xs[3] + 32 - 8}" cy="{ly}" r="3" fill="{GREEN}">'
             '<animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>',
         ]
     )
     return parts
 
 
-def render_agentcore_card() -> str:
+def render_agentcore_card(mobile: bool = False) -> str:
     """A call denied then allowed by the Cedar gate, ask_architect into the harness, eval-gated PROD."""
+    lane = _AC_LANE_PHONE if mobile else _AC_LANE
     parts = card_frame(
-        410,
+        SAMPLE_PHONE if mobile else 410,
         262,
         "AgentCore Harness with Governed MCP Tools",
         "AWS SAMPLES  |  TERRAFORM  |  AGENTCORE  |  MCP",
@@ -773,9 +804,9 @@ def render_agentcore_card() -> str:
         "and allows the next to 9 tools, ask_architect runs the harness with 3 skills and memory, "
         "and a version reaches PROD only after an evaluation passes",
     )
-    parts.extend(_ac_request_lane())
-    parts.extend(_ac_tools_and_harness())
-    parts.extend(_ac_release_lane())
+    parts.extend(_ac_request_lane(lane))
+    parts.extend(_ac_tools_and_harness(lane))
+    parts.extend(_ac_release_lane(lane))
     parts.append(SVG_CLOSE)
     return "".join(parts)
 
@@ -2878,9 +2909,13 @@ def main() -> None:
         ("stack-mobile.svg", None if OFFLINE else render_stack(320)),
     ):
         write_optional(name, content)
-    write("sample-agentcore-harness.svg", render_agentcore_card())
-    write("sample-org-governance.svg", render_org_card())
-    write("sample-sagemaker-mlops.svg", render_mlops_card())
+    for name, render in (
+        ("sample-agentcore-harness", render_agentcore_card),
+        ("sample-org-governance", render_org_card),
+        ("sample-sagemaker-mlops", render_mlops_card),
+    ):
+        write(f"{name}.svg", render())
+        write(f"{name}-mobile.svg", render(mobile=True))
     for key, num, title, sub in HEADERS:
         for theme in ("dark", "light"):
             write(f"header-{key}-{theme}.svg", render_header(num, title, sub, theme))

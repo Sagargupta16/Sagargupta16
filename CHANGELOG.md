@@ -9,12 +9,13 @@ All notable changes to this profile README repository.
 - The "Data refreshes" card is removed from the end of the page; the refresh dates stay in `data.json` and on the phone cards' "Updated" lines
 - The Publications card drops its AWS samples panel, since Featured Projects shows every sample as a card; publications and talks sit side by side and recognition runs across the card
 - The phone "Get this card" strips shrink from a full card (126px tall in the 320px card) to a link line and a hint (72px)
-- The phone layout now applies below 1012px, not 600px. From 768px to 1011px GitHub's profile sidebar leaves the README 383 to 626px wide, so an 840px card was shown at 0.46 to 0.75x and its 10px labels at 4.6 to 7.5px. Tablets get the phone cards scaled up instead. The page is taller there (18,105px at an 820px iPad window, from 8,809px), but its smallest labels read at about 15px instead of 5px
+- The phone layout now applies below 1012px, not 600px. From 768px to 1011px GitHub's profile sidebar leaves the README 383 to 626px wide, so an 840px card was shown at 0.46 to 0.75x and its 10px labels at 4.6 to 7.5px. Tablets get the phone cards scaled up instead. The page is taller there (18,435px at an 820px iPad window, from 8,809px), but its smallest labels read at about 15px instead of 5px
 - The phone card is now the `<img>`, and a `(min-width: 1012px)` source swaps in the desktop card. Clients that ignore `<picture>`, such as GitHub's mobile app, now get the phone layout instead of an 840px card
 - Larger text:
   - Desktop micro-labels go from 10px to 10.5px.
   - The AWS sample diagrams' node labels go from 8px to 10px, with tighter tracking so "MCP CLIENT" still fits its box, and their subtitles from 9px to 10.5px.
   - On the phone cards, micro-labels go from 10.5px to 11.5px, section labels from 11px to 12px, pills from 10px to 11px, and the hero graph labels from 8.5px to 10.5px.
+- The three AWS sample diagrams get 320px phone layouts. Each is the same diagram on a tighter grid (AgentCore's lanes use four 68px boxes), with the title and tags wrapped. On a 390px phone their 10px labels show at 9.6px instead of 7.5px
 - The community tool phone cards are drawn at 270px, the width the README shows them at. Before, a 320px card was shrunk to 0.84x, so its 10.5px chips showed at 8.9px
 - Contrast fixes:
   - Light-theme header kickers use `#1d4ed8` (2.54:1 before).
@@ -26,7 +27,7 @@ All notable changes to this profile README repository.
 - Tech stack icon paths are rounded to one decimal: 0.1 units of the 256 viewBox is 0.02px at the drawn 44px. stack.svg goes from 139 KB to 106 KB, and from 50 KB to 34 KB gzipped. A 3x raster of each version differs by a mean of 0.03/255 per channel
 - Page height, measured on GitHub's markdown API output laid out at GitHub's column widths (74 images to 71):
   - desktop at a 1280px window: 9,485px to 8,989px
-  - phone at a 390px window: 15,331px to 13,994px
+  - phone at a 390px window: 15,331px to 14,249px
 
 ## [4.19.0] - 2026-10-24
 

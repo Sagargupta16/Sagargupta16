@@ -27,8 +27,9 @@ the viewer's color scheme, wide pair first. The breakpoint follows GitHub's
 column, not the screen: from 768px to 1011px the profile sidebar leaves the
 README 383 to 626px, where a desktop card would shrink to 0.46-0.75x. Putting
 the phone card in the `<img>` also serves clients without `<picture>`, such as
-GitHub's mobile app. Cards without a phone layout (the AWS sample diagrams, the
-snake, the divider) scale down to the column.
+GitHub's mobile app. The AWS sample diagrams' phone layouts redraw the same
+diagram on a 320px grid and wrap the title and tags. Cards without a phone
+layout (the snake, the divider) scale down to the column.
 
 Text floor: 10.5px in every desktop and phone card, which holds about that size
 where each is shown (the README column is 831 to 846px from a 1280px window up,

@@ -2,6 +2,15 @@
 
 All notable changes to this profile README repository.
 
+## [4.20.0] - 2026-10-25
+
+- Worked With is removed: with customers shown only by generic label, it repeated the career rail's engagements and roles. Its two employer logos (`assets/logos`) go with it, and the render workflow no longer watches that folder
+- Highlights is removed: each of its four counts (customer engagements, AWS samples, talks and publications, ambassador) is already listed in full on the career rail, the Featured Projects cards or the Publications card
+- The "Data refreshes" card is removed from the end of the page; the refresh dates stay in `data.json` and on the phone cards' "Updated" lines
+- The Publications card drops its AWS samples panel, since Featured Projects shows every sample as a card; publications and talks sit side by side and recognition runs across the card
+- The phone "Get this card" strips shrink from a full card (141px tall on a phone) to a link line and a hint (81px)
+- At the README's width the page is about 470px shorter on desktop and 1,560px shorter on a phone (72 images to 69)
+
 ## [4.19.0] - 2026-10-24
 
 - Customers are never named on the profile, whatever the portfolio data says: the renderer swaps each customer engagement for a generic label picked by its start month ("Global financial services customer", "Financial market infrastructure customer", "Enterprise customer"; "AWS customer" for a month with no label), on every fresh snapshot and on the cached `data.json`, so no customer name is stored in this repo either. The career rail and the Worked With card wrap the labels to fit on desktop and phone, the rail card grows if a label ever needs a third line, and the three customer logos are removed from `assets/logos`

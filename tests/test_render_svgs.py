@@ -183,15 +183,6 @@ class RendererTests(unittest.TestCase):
             public["achievements"][0]["title"], "5x AWS community ambassador"
         )
 
-    def test_highlights_leave_out_figures_without_data(self):
-        self.assertEqual(renderer.highlight_tiles({}), [])
-        pf = {
-            "samples": [{"title": "Sample"}],
-            "achievements": [{"title": "Associate Speaker Certification"}],
-            "certifications": [{"name": "Expired", "expiryDate": "2020-01-01"}],
-        }
-        self.assertEqual(renderer.highlight_tiles(pf), [("1", "published AWS samples")])
-
 
 if __name__ == "__main__":
     unittest.main()

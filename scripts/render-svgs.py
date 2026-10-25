@@ -189,14 +189,6 @@ CARD_SUMMARIES = {
 }
 MIN_STARS_SHOWN = 10  # a tool card shows its star count only from this many stars
 
-# Employer logos for the Worked With card, stored in assets/logos and drawn white.
-# Customers are never named or shown by logo; their tiles fall back to the generic label.
-# Sources: Wikimedia Commons (AWS) and the company site (Ikarus 3D).
-LOGOS = {
-    "Amazon Web Services": "aws.svg",
-    "Ikarus-3D": "ikarus-3d.png",
-}
-
 # Career: the top rail, oldest first, ending on the current full-time role,
 # which then expands into its customer engagements on a second rail.
 # Every stop reads the same way: what (degree or role), then where (school or
@@ -1029,74 +1021,6 @@ def render_experience(data: dict) -> str:
                     + f'<text class="m" x="{x}" y="{sub_y + 46 + sub_drop}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8.5">{escape(what.upper())}</text>'
                 ),
             )
-        )
-    parts.append(SVG_CLOSE)
-    return "".join(parts)
-
-
-# ---------------------------------------------------------------- highlights
-
-
-def ambassador_count(pf: dict) -> str | None:
-    """Return the community count from '5x ... ambassador' or '... community ambassador (A, B)'."""
-    for a in pf.get("achievements", []):
-        title = a.get("title", "")
-        if m := re.match(r"(\d+)x\b.*ambassador", title, re.IGNORECASE):
-            return m.group(1)
-        if "community ambassador" in title.lower() and (
-            m := re.search(r"\(([^)]+)\)", title)
-        ):
-            return str(len([s for s in m.group(1).split(",") if s.strip()]))
-    return None
-
-
-def highlight_tiles(pf: dict) -> list[tuple[str, str]]:
-    """Return the public highlight figures, each counted from the portfolio data."""
-    # no customer metric or score, no count another card already shows (certifications,
-    # merged PRs, LeetCode), and a figure with nothing behind it is left out, not guessed
-    groups = dict(_publication_groups(pf))
-    figures = [
-        (len(_customers(pf)), "AWS customer engagements"),
-        (len(pf.get("samples", [])), "published AWS samples"),
-        (
-            len(groups.get("TECH TALKS", []))
-            + len(groups.get("PUBLICATIONS & REVIEWS", [])),
-            "talks and publications",
-        ),
-    ]
-    tiles = [(str(count), label) for count, label in figures if count]
-    if communities := ambassador_count(pf):
-        tiles.append((f"{communities}x", "AWS community ambassador"))
-    return tiles
-
-
-def render_highlights(data: dict) -> str:
-    pf = data.get("portfolio") or {}
-    tiles = [
-        (value, label, accent)
-        for (value, label), accent in zip(highlight_tiles(pf), (GREEN, GREEN, SKY, SKY))
-    ]
-    w, h = 840, 112
-    cols, gap, pad = max(len(tiles), 1), 12, 16
-    tw = (w - 2 * pad - (cols - 1) * gap) / cols
-    th = 80
-    parts = [
-        svg_open(w, h, "Highlights: " + "; ".join(f"{v} {k}" for v, k, _ in tiles)),
-        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}"
-        f".v{{font-family:{SANS};font-weight:800}}</style>",
-    ]
-    for i, (value, label, accent) in enumerate(tiles):
-        col, row = i % cols, i // cols
-        x = pad + col * (tw + gap)
-        y = pad + row * (th + gap)
-        begin = 0.2 + i * 0.12
-        parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
-            f'<animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
-            f'<rect x="{x}" y="{y}" width="{tw}" height="{th}" rx="12" fill="{CARD}" stroke="rgba(255,255,255,0.08)"/>'
-            f'<rect x="{x}" y="{y + 18}" width="3" height="26" rx="1.5" fill="{accent}"/>'
-            f'<text class="v" x="{x + 18}" y="{y + 42}" fill="#f3f4f6" font-size="26">{escape(value)}</text>'
-            f'<text class="m" x="{x + 18}" y="{y + 64}" fill="rgba(255,255,255,0.5)" font-size="8.5">{escape(label.upper())}</text></g>'
         )
     parts.append(SVG_CLOSE)
     return "".join(parts)
@@ -2035,14 +1959,6 @@ def render_list_card(
     return "".join(parts)
 
 
-LOGO_DIR = ROOT / "assets" / "logos"
-# turns any logo white while keeping its shape, so five brands read as one set
-WHITE_FILTER = (
-    '<filter id="white"><feColorMatrix type="matrix" '
-    'values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter>'
-)
-
-
 def _customers(pf: dict) -> list[dict]:
     """Return the engagements that were customer work ('Role - Client'), newest last."""
     return [e for e in pf.get("engagements", []) if " - " in e["name"]]
@@ -2053,102 +1969,15 @@ def _engagement_role(e: dict) -> str:
     return e["name"].replace(ONGOING, "").rsplit(" - ", 1)[0]
 
 
-def _company_logo(name: str) -> str | None:
-    """Return the company's stored logo as a data URI, or None if there is none."""
-    path = LOGO_DIR / LOGOS.get(name, "")
-    if not LOGOS.get(name) or not path.is_file():
-        return None
-    mime = "image/svg+xml" if path.suffix == ".svg" else "image/png"
-    return f"data:{mime};base64,{base64.b64encode(path.read_bytes()).decode()}"
-
-
-def _logo_block(name: str, cx: float, y: float, width: float) -> str:
-    """Return the logo drawn white and centred, or the company name where no logo is stored."""
-    logo = _company_logo(name)
-    if logo:
-        return (
-            f'<image href="{logo}" x="{cx - width / 2:.1f}" y="{y}" width="{width:.1f}" height="40" '
-            'preserveAspectRatio="xMidYMid meet" filter="url(#white)"/>'
-        )
-    lines = _wrap(name, 17)
-    if len(lines) == 1:
-        return f'<text class="t" x="{cx:.1f}" y="{y + 27}" text-anchor="middle" fill="#f3f4f6" font-size="15">{escape(name)}</text>'
-    # a long generic customer label wraps, centred in the 40px logo box
-    first = y + 25 - (len(lines) - 1) * 7.5
-    return "".join(
-        f'<text class="t" x="{cx:.1f}" y="{first + j * 15:.1f}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(line)}</text>'
-        for j, line in enumerate(lines)
-    )
-
-
-def render_worked_with(pf: dict) -> str:
-    """Return a row of company tiles: logo, company, and the title held there."""
-    tiles = [(AWS_NAME, AWS_TITLE)]
-    for e in reversed(_customers(pf)):
-        tiles.append((e["client"], _engagement_role(e)))
-    for e in pf.get("earlier", []):
-        if e["company"] != AWS_NAME:
-            tiles.append(
-                (
-                    e["company"],
-                    f"{e['title']} (intern)"
-                    if e.get("position") == "Internship"
-                    else e["title"],
-                )
-            )
-    w, h = 840, 196
-    gap, pad = 10, 16
-    tw = (w - 2 * pad - (len(tiles) - 1) * gap) / len(tiles)
-    parts = [
-        svg_open(w, h, "Worked with: " + "; ".join(f"{c}, {r}" for c, r in tiles)),
-        f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.t{{font-family:{SANS};font-weight:800}}"
-        f".s{{font-family:{SANS};font-weight:500}}</style>",
-        f"<defs>{WHITE_FILTER}</defs>",
-        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="31" fill="{GREEN}" font-size="10">WORKED WITH</text>',
-    ]
-    for i, (company, role) in enumerate(tiles):
-        x = pad + i * (tw + gap)
-        cx = x + tw / 2
-        begin = 0.15 + i * 0.12
-        # 3 rows fit the tile ([:2] cut "- DevOps/MLOps" off the AWS title); keep " - " on the
-        # first half so no row starts with the hyphen
-        lines = [
-            line.replace("\x01", " ")
-            for line in _wrap(role.replace(" - ", "\x01- "), 22)[:3]
-        ]
-        role_text = "".join(
-            f'<text class="s" x="{cx:.1f}" y="{136 + j * 16}" text-anchor="middle" fill="rgba(255,255,255,0.62)" font-size="11.5">{escape(line)}</text>'
-            for j, line in enumerate(lines)
-        )
-        parts.append(
-            f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
-            f'<animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="{begin:.2f}s" dur="0.45s" fill="freeze"/>'
-            f'<rect x="{x:.1f}" y="46" width="{tw:.1f}" height="{h - 62}" rx="12" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
-            + _logo_block(company, cx, 66, tw - 44)
-            + role_text
-            + "</g>"
-        )
-    parts.append(SVG_CLOSE)
-    return "".join(parts)
-
-
 def _publication_groups(pf: dict) -> list[tuple[str, list[tuple[str, str]]]]:
-    samples, papers, talks = [], [], []
+    papers, talks = [], []
     for c in sorted(
         pf.get("contributions", []), key=lambda c: str(c.get("year", "")), reverse=True
     ):
         title, year = c["title"], str(c.get("year", ""))
         if title.startswith("AWS Sample Published: "):
-            samples.append(
-                (
-                    title.split(": ", 1)[1]
-                    .removesuffix("(aws-samples, MIT-0)")
-                    .strip(),
-                    year,
-                )
-            )
-        elif title.startswith("APG Pattern: "):
+            continue  # the Featured Projects section shows every sample as a card
+        if title.startswith("APG Pattern: "):
             papers.append(
                 (
                     "APG pattern: "
@@ -2170,7 +1999,6 @@ def _publication_groups(pf: dict) -> list[tuple[str, list[tuple[str, str]]]]:
         for a in pf.get("achievements", [])
     ]
     groups = [
-        ("AWS SAMPLES", samples),
         ("PUBLICATIONS & REVIEWS", papers),
         ("TECH TALKS", talks),
         ("RECOGNITION", recognition),
@@ -2196,6 +2024,7 @@ def _panel(
     ph: float,
     accent: str,
     delay: float,
+    wrap: int = 50,
 ) -> str:
     out = [
         f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{delay:.2f}s" dur="0.45s" fill="freeze"/>'
@@ -2205,7 +2034,7 @@ def _panel(
     ]
     cy = y + 56
     for text, year in items:
-        lines = _wrap(text, 50)
+        lines = _wrap(text, wrap)
         out.append(
             f'<circle cx="{x + 21:.1f}" cy="{cy - 4:.1f}" r="2.5" fill="{accent}"/>'
             + "".join(
@@ -2222,19 +2051,24 @@ def _panel(
     return "".join(out)
 
 
-def _panel_height(items: list[tuple[str, str]]) -> float:
-    return 56 + sum(16 * len(_wrap(text, 50)) + 24 for text, _ in items) + 4
+def _panel_height(items: list[tuple[str, str]], wrap: int = 50) -> float:
+    return 56 + sum(16 * len(_wrap(text, wrap)) + 24 for text, _ in items) + 4
 
 
 def render_publications(pf: dict) -> str:
-    """Return AWS samples, publications, talks and recognition as a 2x2 grid of panels."""
+    """Return publications and talks side by side, then recognition across the card."""
     groups = _publication_groups(pf)
-    accents = [SKY, BLUE_LIGHT, GREEN, AMBER]
+    accents = [BLUE_LIGHT, GREEN, AMBER]
     w, pad, gap = 840, 16, 12
-    pw = (w - 2 * pad - gap) / 2
-    rows = [groups[0:2], groups[2:4]]
-    heights = [max(_panel_height(items) for _, items in row) for row in rows]
-    h = 44 + sum(heights) + gap + pad
+    rows = [row for row in (groups[0:2], groups[2:]) if row]
+    # a row with one panel spans the card, so its lines wrap twice as wide
+    widths = [(w - 2 * pad - gap * (len(row) - 1)) / len(row) for row in rows]
+    wraps = [50 if len(row) > 1 else 105 for row in rows]
+    heights = [
+        max(_panel_height(items, wrap) for _, items in row)
+        for row, wrap in zip(rows, wraps)
+    ]
+    h = 44 + sum(heights) + gap * (len(rows) - 1) + pad
     parts = [
         svg_open(
             w,
@@ -2254,12 +2088,13 @@ def render_publications(pf: dict) -> str:
                 _panel(
                     label,
                     items,
-                    pad + c * (pw + gap),
+                    pad + c * (widths[r] + gap),
                     y,
-                    pw,
+                    widths[r],
                     heights[r],
                     accents[i],
                     0.15 + i * 0.12,
+                    wraps[r],
                 )
             )
         y += heights[r] + gap
@@ -2697,8 +2532,6 @@ def render_readme(data: dict) -> str:
         divider,
         _header("experience", "Experience"),
         _card("experience.svg", "Career timeline and customer engagements"),
-        _card("highlights.svg", "Highlights"),
-        _card("worked-with.svg", "Worked with: companies and customers"),
         divider,
         _header("projects", "Featured Projects"),
         _row(samples, "400"),
@@ -2751,7 +2584,6 @@ def render_readme(data: dict) -> str:
         _link(PORTFOLIO_URL, _card("footer.svg", "Visit my portfolio"))
         + f' <img src="{VIEWS_URL}" width="1" height="1" alt="" />',
         _row([connect[i] for i in (1, 2, 3)], "128"),
-        _card("freshness.svg", "Last successful data refreshes"),
     ]
     return "\n\n".join(blocks) + "\n"
 
@@ -2830,7 +2662,6 @@ def write_portfolio_cards(data: dict) -> None:
     pf = data.get("portfolio") or {}
     if pf:
         write("intro.svg", render_intro(pf))
-        write("worked-with.svg", render_worked_with(pf))
         write("publications.svg", render_publications(pf))
         write("education.svg", render_education(pf))
         write("oss-merged.svg", render_oss_merged(pf))
@@ -2903,32 +2734,6 @@ def render_certification_status(data: dict) -> str:
     )
 
 
-def freshness_entries(data: dict) -> list[tuple[str, str]]:
-    """Name each source with the day it last refreshed successfully."""
-    stamps = data.get("source_updated_at") or {}
-    entries = []
-    for source, label in (
-        ("github", "GitHub"),
-        ("leetcode", "LeetCode"),
-        ("portfolio", "Portfolio"),
-    ):
-        # the date alone says how old a snapshot is, and keeps the card a pure
-        # function of data.json, so CI can diff a re-render against the commit
-        try:
-            when = datetime.datetime.fromisoformat(
-                str(stamps.get(source)).replace("Z", "+00:00")
-            )
-            entries.append((label, f"verified {when:%d %b %Y}"))
-        except ValueError:
-            entries.append((label, "saved snapshot; refresh date unavailable"))
-    return entries
-
-
-def render_freshness(data: dict) -> str:
-    lines = [f"{label}: {status}." for label, status in freshness_entries(data)]
-    return render_note("Data refreshes", lines)
-
-
 def _credly_images() -> list[tuple[str, str]]:
     """Pair each badge image the Credly card embeds with its name, for the phone grid."""
     path = OUT / "certs.svg"
@@ -2949,15 +2754,9 @@ def write_responsive_variants(data: dict) -> None:
     """Write the phone layouts and the status cards from the same snapshot as the desktop."""
     pf = data.get("portfolio") or {}
     customers = _customers(pf)
-    worked_with = (
-        [(AWS_NAME, AWS_TITLE)]
-        + [(e["client"], _engagement_role(e)) for e in customers]
-        + [("Ikarus-3D", "Software Developer Associate (intern)")]
-    )
     context = {
         "milestones": MILESTONES,
         "headers": HEADERS,
-        "highlights": highlight_tiles(pf),
         "disclaimer": DISCLAIMER,
         "publications": _publication_groups(pf),
         "certifications": pf.get("certifications", []),
@@ -2971,20 +2770,11 @@ def write_responsive_variants(data: dict) -> None:
         "engagements": [
             (e["when"], e["client"], _engagement_role(e)) for e in customers
         ],
-        "worked_with": worked_with,
-        "logos": {
-            company: logo
-            for company, _ in worked_with
-            if (logo := _company_logo(company))
-        },
-        "white_filter": WHITE_FILTER,
-        "freshness": freshness_entries(data),
         "get_cards": [(key, card) for key, _, card in GET_THIS_CARD],
     }
     for name, content in render_mobile_cards(data, context).items():
         write(name, content)
     write("certs-status.svg", render_certification_status(data))
-    write("freshness.svg", render_freshness(data))
 
 
 def main() -> None:
@@ -3016,7 +2806,6 @@ def main() -> None:
         leetcode_card.render_card(data["leetcode"], LEETCODE_USER) + "\n",
     )
     write("experience.svg", render_experience(data))
-    write("highlights.svg", render_highlights(data))
     write("hero.svg", render_hero(data))
     write("footer.svg", render_footer())
     write("profile-badges.svg", render_profile_badges(data))

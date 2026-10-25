@@ -23,10 +23,6 @@
 
 <picture><source media="(max-width: 600px)" srcset="assets/svg/experience-mobile.svg" /><img src="assets/svg/experience.svg" width="100%" alt="Career: 2018, BCA, DAVV, Indore, India; 2021, MCA, NIT Warangal, Warangal, India; 2023, Software Developer Intern, Ikarus-3D, Mohali, India; 2024, ProServe DevOps Intern, AWS, Hyderabad, India; 2024, ProServe (Cloud Consultant), AWS, Hyderabad, India. Customer engagements at AWS: Global financial services customer, DevOps Consultant, AWS (Oct 2024 to Aug 2025); Financial market infrastructure customer, DevOps Consultant, AWS (Aug 2025 to Nov 2025); Enterprise customer, Lead DevOps Consultant, AWS (Feb 2026 to now)" /></picture>
 
-<picture><source media="(max-width: 600px)" srcset="assets/svg/highlights-mobile.svg" /><img src="assets/svg/highlights.svg" width="100%" alt="Highlights: 3 AWS customer engagements; 3 published AWS samples; 4 talks and publications; 5x AWS community ambassador" /></picture>
-
-<picture><source media="(max-width: 600px)" srcset="assets/svg/worked-with-mobile.svg" /><img src="assets/svg/worked-with.svg" width="100%" alt="Worked with: Amazon Web Services, ProServe (Cloud Consultant) - DevOps/MLOps; Enterprise customer, Lead DevOps Consultant; Financial market infrastructure customer, DevOps Consultant; Global financial services customer, DevOps Consultant; Ikarus-3D, Software Developer Associate (intern)" /></picture>
-
 <picture><img src="assets/svg/divider.svg" width="100%" alt="" /></picture>
 
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-projects-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-projects-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-projects-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-projects-dark.svg" /><img src="assets/svg/header-projects-dark.svg" width="100%" alt="Featured Projects" /></picture>
@@ -78,7 +74,7 @@
 
 <picture><source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/svg/header-publications-light-mobile.svg" /><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/svg/header-publications-dark-mobile.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-publications-light.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-publications-dark.svg" /><img src="assets/svg/header-publications-dark.svg" width="100%" alt="Publications, Talks and Recognition" /></picture>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/publications-mobile.svg" /><img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition: SageMaker Image Classification MLOps Pipeline; Terraform AWS Organizations Governance on Control Tower; Skills-Based Agent with Governed MCP Tools on Amazon Bedrock AgentCore, Terraform; Peer reviewer for AWS Prescriptive Guidance patterns; AWS Prescriptive Guidance Pattern (co-author, submitted, not yet published): Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub; GitOps Configuration Safety with Health Checks and Pipeline Gating; Automating Unit Testing for Terraform using Terraform Test and PyTest frameworks; ProServe MLOps SME Program Graduate; 5x AWS community ambassador; Associate Speaker Certification; AWS T&amp;C Subject Matter Expert (SME) Program Contributor; ML Hackathon 2025, 26th/238 teams" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(max-width: 600px)" srcset="assets/svg/publications-mobile.svg" /><img src="assets/svg/publications.svg" width="100%" alt="Publications, talks and recognition: Peer reviewer for AWS Prescriptive Guidance patterns; AWS Prescriptive Guidance Pattern (co-author, submitted, not yet published): Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub; GitOps Configuration Safety with Health Checks and Pipeline Gating; Automating Unit Testing for Terraform using Terraform Test and PyTest frameworks; ProServe MLOps SME Program Graduate; 5x AWS community ambassador; Associate Speaker Certification; AWS T&amp;C Subject Matter Expert (SME) Program Contributor; ML Hackathon 2025, 26th/238 teams" /></picture></a>
 
 <picture><img src="assets/svg/divider.svg" width="100%" alt="" /></picture>
 
@@ -141,5 +137,3 @@
 <a href="mailto:sg85207@gmail.com"><picture><img src="assets/svg/connect-email.svg" width="128" alt="Email" /></picture></a>
 <a href="https://sagargupta.online/portfolio-react/"><picture><img src="assets/svg/connect-portfolio.svg" width="128" alt="Portfolio" /></picture></a>
 </p>
-
-<picture><source media="(max-width: 600px)" srcset="assets/svg/freshness-mobile.svg" /><img src="assets/svg/freshness.svg" width="100%" alt="Data refreshes: GitHub: verified 24 Oct 2026.; LeetCode: verified 24 Oct 2026.; Portfolio: verified 24 Oct 2026." /></picture>

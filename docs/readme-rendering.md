@@ -27,7 +27,7 @@ Cards without a phone layout (the AWS sample diagrams, the snake, the divider)
 scale down to the column.
 
 Phone cards keep the desktop look and motion: mono micro-labels, flat bordered
-tiles, logos and badge images, blocks that fade and rise in order, pulsing
+tiles, badge images and icons, blocks that fade and rise in order, pulsing
 accents and a shine. Long lists are capped with a "+N more" line. There are no
 reduced-motion variants.
 

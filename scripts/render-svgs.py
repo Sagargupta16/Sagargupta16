@@ -2398,8 +2398,8 @@ def render_cta(label: str, primary: bool) -> str:
 # ---------------------------------------------------------------- the README itself
 
 
-# Below 1012px GitHub's README column is at most 563px (the profile sidebar takes the
-# rest from 768px up), where an 840px card shrinks to 0.46-0.67x; the phone card reads there.
+# From 768px to 1011px the profile sidebar leaves the README column 383-626px, where an
+# 840px card shrinks to 0.46-0.75x; the phone card reads there. GitHub's own sidebar switch is 1012px.
 DESKTOP_MEDIA = "(min-width: 1012px)"
 
 

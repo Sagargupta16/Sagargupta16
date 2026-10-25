@@ -25,7 +25,7 @@ inline wrapping, so rows of cards wrap on narrow screens. Every image sits in a
 `(min-width: 1012px)` source swaps in the 840px card; header sources also pick
 the viewer's color scheme, wide pair first. The breakpoint follows GitHub's
 column, not the screen: from 768px to 1011px the profile sidebar leaves the
-README 383 to 563px, where a desktop card would shrink to under 0.7x. Putting
+README 383 to 626px, where a desktop card would shrink to 0.46-0.75x. Putting
 the phone card in the `<img>` also serves clients without `<picture>`, such as
 GitHub's mobile app. Cards without a phone layout (the AWS sample diagrams, the
 snake, the divider) scale down to the column.

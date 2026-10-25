@@ -54,9 +54,9 @@ class ValidateReadmeTests(unittest.TestCase):
         self.write_svg("profile-badges-mobile.svg", 'data-active-certifications="1"')
         self.readme = (
             '<a href="https://example.com/">'
-            '<picture><source media="(max-width: 600px)" '
-            'srcset="assets/svg/profile-badges-mobile.svg">'
-            '<img src="assets/svg/profile-badges.svg" alt="Cloud profile"></picture></a>\n'
+            '<picture><source media="(min-width: 1012px)" '
+            'srcset="assets/svg/profile-badges.svg">'
+            '<img src="assets/svg/profile-badges-mobile.svg" alt="Cloud profile"></picture></a>\n'
             '<a href="https://example.com/resume.pdf">Resume</a>\n'
             '<a href="https://leetcode.com/coder123/">LeetCode</a>\n'
             '<a href="https://github.com/search?q=is%3Apr&amp;type=pullrequests">PRs</a>\n'
@@ -97,8 +97,8 @@ class ValidateReadmeTests(unittest.TestCase):
 
     def test_every_srcset_candidate_is_checked(self):
         self.readme = self.readme.replace(
-            'srcset="assets/svg/profile-badges-mobile.svg"',
-            'srcset="assets/svg/profile-badges-mobile.svg 1x, assets/svg/missing.svg 2x"',
+            'srcset="assets/svg/profile-badges.svg"',
+            'srcset="assets/svg/profile-badges.svg 1x, assets/svg/missing.svg 2x"',
         )
         self.save_readme()
         self.assertTrue(any("missing.svg" in issue for issue in self.issues()))

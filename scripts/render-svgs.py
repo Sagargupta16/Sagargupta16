@@ -60,6 +60,9 @@ RECT_HIDDEN = '<rect opacity="0" '
 RECT_CLOSE = "</rect>"
 MONO = "'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace"
 SANS = "'Segoe UI',Inter,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif"
+# width of one 10.5px mono character with the cards' 1.2px tracking; the smallest
+# label size, so it still reads at 10px once an 840px card fills the README column
+MONO_CHAR = 7.6
 
 LEETCODE_USER = "sagargupta1610"
 DEFAULT_DATA = {
@@ -374,6 +377,7 @@ def card_frame(w: int, h: int, title: str, sub: str, label: str) -> list[str]:
     return [
         svg_open(w, h, label),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.4px}}"
+        f".l{{font-family:{MONO};font-weight:700;letter-spacing:0.5px}}"
         f".t{{font-family:{SANS};font-weight:700}}</style>",
         '<defs><linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">'
         f'<stop offset="0" stop-color="#0e1a24"/><stop offset="0.6" stop-color="{BG}"/></linearGradient>'
@@ -383,7 +387,7 @@ def card_frame(w: int, h: int, title: str, sub: str, label: str) -> list[str]:
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="16" fill="url(#glow)"/>',
         f'<line x1="0" y1="{h - 62}" x2="{w}" y2="{h - 62}" stroke="rgba(255,255,255,0.07)"/>',
         f'<text class="t" x="20" y="{h - 34}" fill="#f3f4f6" font-size="16">{escape(title)}</text>',
-        f'<text class="m" x="20" y="{h - 14}" fill="{BLUE_LIGHT}" font-size="9">{escape(sub)}</text>',
+        f'<text class="m" x="20" y="{h - 14}" fill="{BLUE_LIGHT}" font-size="10.5">{escape(sub)}</text>',
     ]
 
 
@@ -436,7 +440,7 @@ def render_org_card() -> str:
         f'stroke-width="1.2" stroke-dasharray="4 4" opacity="0">{anim_opacity("0;0;1;1;0", "0;0.68;0.76;0.92;1")}</path>'
     )
     parts.append(
-        f'<text class="m" x="{sx - sw / 2}" y="{my + 20}" fill="{BLUE_LIGHT}" font-size="8" opacity="0">DELEGATED'
+        f'<text class="l" x="{sx + 6}" y="{my + 20}" fill="{BLUE_LIGHT}" font-size="10" opacity="0">DELEGATED'
         f"{anim_opacity('0;0;1;1;0', '0;0.68;0.76;0.92;1')}</text>"
     )
     for key, (x, y, bw) in nodes.items():
@@ -445,7 +449,7 @@ def render_org_card() -> str:
                 box(x - bw / 2, y - node_h / 2, bw, node_h, f"{BLUE}cc", f"{BLUE}22")
             )
             parts.append(
-                f'<text class="m" x="{x}" y="{y + 3}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8">MGMT</text>'
+                f'<text class="l" x="{x}" y="{y + 3}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">MGMT</text>'
             )
         else:
             parts.append(
@@ -492,7 +496,7 @@ def render_org_card() -> str:
             f'keyTimes="{times}" dur="6s" repeatCount="indefinite"/>'
             f"{anim_opacity('0;1;1;1;1;0', times)}"
             f'<rect x="-17" y="-8" width="34" height="16" rx="4" fill="{BG}" stroke="{BLUE_LIGHT}" stroke-width="1.2"/>'
-            f'<text class="m" x="0" y="3" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8">{text}</text></g>'
+            f'<text class="l" x="0" y="3" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">{text}</text></g>'
         )
 
     wl, sbx = nodes["wl"], nodes["sbx"]
@@ -550,7 +554,7 @@ def render_mlops_card() -> str:
         f"{anim_opacity('0;0;1;1;0', '0;0.66;0.72;0.9;1')}</path>"
     )
     parts.append(
-        f'<text class="m" x="247" y="176" text-anchor="middle" fill="{AMBER}" font-size="8" opacity="0">DRIFT'
+        f'<text class="l" x="247" y="176" text-anchor="middle" fill="{AMBER}" font-size="10" opacity="0">DRIFT'
         f"{anim_opacity('0;0;1;1;0', '0;0.66;0.72;0.9;1')}</text>"
     )
     for name, x in stages:
@@ -559,14 +563,15 @@ def render_mlops_card() -> str:
         fill = f"{BLUE}1f" if name in ("TRAIN", "DEPLOY") else HAIR_FILL
         parts.append(box(x - bw / 2, y - 16, bw, 32, stroke, fill))
         parts.append(
-            f'<text class="m" x="{x}" y="{y + 3}" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8">{name}</text>'
+            f'<text class="l" x="{x}" y="{y + 3}" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10">{name}</text>'
         )
     # quality gate flashes green when the model clears it
     parts.append(
         box(210 - 29, y - 16, 58, 32, GREEN, f"{GREEN}22", "")
         .replace(RECT_OPEN, RECT_HIDDEN, 1)
         .replace(
-            RECT_CLOSE, f"{anim_opacity('0;0;1;1;0', '0;0.3;0.34;0.46;0.52')}</rect>"
+            RECT_CLOSE,
+            f"{anim_opacity('0;0;1;1;0;0', '0;0.3;0.34;0.46;0.52;1')}</rect>",
         )
     )
     # three architectures train in parallel under TRAIN
@@ -585,7 +590,7 @@ def render_mlops_card() -> str:
     parts.append(
         f'<circle r="3.5" fill="{AMBER}" opacity="0">'
         f'<animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.7;0.9;1" '
-        f'calcMode="linear" path="{drift}"/>{anim_opacity("0;0;1;1;0", "0;0.69;0.71;0.9;0.92")}</circle>'
+        f'calcMode="linear" path="{drift}"/>{anim_opacity("0;0;1;1;0;0", "0;0.69;0.71;0.9;0.92;1")}</circle>'
     )
     parts.append(
         f'<circle cx="366" cy="{y - 24}" r="3" fill="{GREEN}">'
@@ -597,7 +602,7 @@ def render_mlops_card() -> str:
 
 _AC_Y = 66  # request lane
 _AC_LY = 146  # release lane
-_AC_DIM = "rgba(255,255,255,0.45)"
+_AC_DIM = "rgba(255,255,255,0.62)"  # 4.5:1 on the card's navy panels
 _AC_LABEL = "rgba(255,255,255,0.7)"
 _AC_WIRE = "rgba(255,255,255,0.16)"
 
@@ -647,14 +652,14 @@ def _ac_request_lane() -> list[str]:
                     f"{BLUE}cc" if accent else HAIR_STROKE,
                     f"{BLUE}1f" if accent else HAIR_FILL,
                 ),
-                f'<text class="m" x="{x}" y="{y + 3}" text-anchor="middle" fill="{_AC_LABEL}" font-size="8">{name}</text>',
+                f'<text class="l" x="{x}" y="{y + 3}" text-anchor="middle" fill="{_AC_LABEL}" font-size="10">{name}</text>',
             ]
         )
     parts.append(
-        f'<text class="m" x="150" y="{y - 26}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8">DEFAULT DENY</text>'
+        f'<text class="l" x="150" y="{y - 26}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">DEFAULT DENY</text>'
     )
     parts.extend(
-        f'<text class="m" x="52" y="{y + 30 + i * 11}" text-anchor="middle" fill="{_AC_DIM}" font-size="8">{client}</text>'
+        f'<text class="l" x="52" y="{y + 30 + i * 12}" text-anchor="middle" fill="{_AC_DIM}" font-size="10">{client}</text>'
         for i, client in enumerate(("CLAUDE CODE", "CODEX", "KIRO"))
     )
     # first call is not on the allow list and stops at the gate; the second passes
@@ -664,9 +669,9 @@ def _ac_request_lane() -> list[str]:
     parts.extend(
         [
             _ac_lit(150, y, 76, 32, AMBER, 0.12, 0.2),
-            f'<text class="m" x="150" y="{y + 30}" text-anchor="middle" fill="{AMBER}" font-size="8" opacity="0">DENY{_ac_flash(0.12, 0.2)}</text>',
+            f'<text class="l" x="150" y="{y + 30}" text-anchor="middle" fill="{AMBER}" font-size="10" opacity="0">DENY{_ac_flash(0.12, 0.2)}</text>',
             _ac_lit(150, y, 76, 32, GREEN, 0.32, 0.42),
-            f'<text class="m" x="150" y="{y + 30}" text-anchor="middle" fill="{GREEN}" font-size="8" opacity="0">ALLOW{_ac_flash(0.32, 0.42)}</text>',
+            f'<text class="l" x="150" y="{y + 30}" text-anchor="middle" fill="{GREEN}" font-size="10" opacity="0">ALLOW{_ac_flash(0.32, 0.42)}</text>',
             (
                 f'<circle r="4" fill="#f3f4f6" opacity="0">'
                 f'<animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.04;0.12;1" '
@@ -687,7 +692,7 @@ def _ac_request_lane() -> list[str]:
 def _ac_tools_and_harness() -> list[str]:
     """8 tools plus ask_architect, which hands the request to the hosted agent."""
     y = _AC_Y
-    ask_pulse = anim_opacity("0.45;0.45;1;1;0.45;0.45", "0;0.48;0.5;0.62;0.66;1")
+    ask_pulse = anim_opacity("0.85;0.85;1;1;0.85;0.85", "0;0.48;0.5;0.62;0.66;1")
     parts = []
     for i in range(9):
         col, row = i % 3, i // 3
@@ -696,20 +701,20 @@ def _ac_tools_and_harness() -> list[str]:
         fill = BLUE_LIGHT if ask else "rgba(255,255,255,0.18)"
         parts.append(
             f'<rect x="{cx - 5}" y="{cy}" width="10" height="5" rx="1.5" fill="{fill}"'
-            f' opacity="{0.45 if ask else 1}">'
+            f' opacity="{0.85 if ask else 1}">'
             + (ask_pulse if ask else "")
             + RECT_CLOSE
         )
     parts.extend(
         [
-            f'<text class="m" x="255" y="{y + 56}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8" opacity="0.45">ask_architect'
+            f'<text class="l" x="255" y="{y + 56}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10" opacity="0.85">ask_architect'
             f"{ask_pulse}</text>",
             _ac_lit(358, y, 72, 32, BLUE_LIGHT, 0.6, 0.7),
         ]
     )
     parts.extend(
-        f'<text class="m" x="358" y="{y + 30 + i * 11}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="8" opacity="0.45">{label}'
-        f"{anim_opacity('0.45;0.45;1;1;0.45;0.45', '0;0.6;0.62;0.7;0.73;1')}</text>"
+        f'<text class="l" x="358" y="{y + 30 + i * 12}" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10" opacity="0.85">{label}'
+        f"{anim_opacity('0.85;0.85;1;1;0.85;0.85', '0;0.6;0.62;0.7;0.73;1')}</text>"
         for i, label in enumerate(("3 SKILLS", "MEMORY"))
     )
     return parts
@@ -745,11 +750,11 @@ def _ac_release_lane() -> list[str]:
         if name == "EVAL":
             parts.append(_ac_lit(x, ly, 64, 24, GREEN, 0.83, 0.95))
         parts.append(
-            f'<text class="m" x="{x}" y="{ly + 3}" text-anchor="middle" fill="{_AC_LABEL}" font-size="8">{name}</text>'
+            f'<text class="l" x="{x}" y="{ly + 3}" text-anchor="middle" fill="{_AC_LABEL}" font-size="10">{name}</text>'
         )
     parts.extend(
         [
-            f'<text class="m" x="255" y="{ly + 26}" text-anchor="middle" fill="{GREEN}" font-size="8" opacity="0">PASS{_ac_flash(0.83, 0.95)}</text>',
+            f'<text class="l" x="255" y="{ly + 26}" text-anchor="middle" fill="{GREEN}" font-size="10" opacity="0">PASS{_ac_flash(0.83, 0.95)}</text>',
             f'<circle cx="{358 + 32 - 8}" cy="{ly}" r="3" fill="{GREEN}">'
             '<animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle>',
         ]
@@ -783,13 +788,15 @@ def render_header(num: str, title: str, sub: str, theme: str) -> str:
     ink = "#f3f4f6" if theme == "dark" else "#0b1012"
     dim = "rgba(255,255,255,0.45)" if theme == "dark" else "rgba(11,16,18,0.55)"
     rule = "rgba(255,255,255,0.10)" if theme == "dark" else "rgba(11,16,18,0.12)"
+    # the light blue that reads on the dark page is 2.5:1 on white; light pages get a deeper blue
+    kicker = BLUE_LIGHT if theme == "dark" else "#1d4ed8"
     return "".join(
         [
             svg_open(w, h, title),
             f'<defs><linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="{SKY}" stop-opacity="0"/>'
             f'<stop offset="0.5" stop-color="{BLUE_LIGHT}"/><stop offset="1" stop-color="{SKY}" stop-opacity="0"/></linearGradient></defs>',
             f'<rect x="0" y="12" width="4" height="30" rx="2" fill="{BLUE}"/>',
-            f'<text x="18" y="24" fill="{BLUE_LIGHT}" font-family="{MONO}" font-size="11" font-weight="700" letter-spacing="2">{num}  /  {escape(sub.upper())}</text>',
+            f'<text x="18" y="24" fill="{kicker}" font-family="{MONO}" font-size="11" font-weight="700" letter-spacing="2">{num}  /  {escape(sub.upper())}</text>',
             f'<text x="18" y="46" fill="{ink}" font-family="{SANS}" font-size="24" font-weight="700">{escape(title)}</text>',
             f'<line x1="0" y1="{h - 4}" x2="{w}" y2="{h - 4}" stroke="{rule}" stroke-width="1"/>',
             f'<rect x="-160" y="{h - 5}" width="160" height="2" fill="url(#sweep)">'
@@ -801,6 +808,31 @@ def render_header(num: str, title: str, sub: str, theme: str) -> str:
 
 
 # ---------------------------------------------------------------- tech strip
+
+
+_PATH_NUMBER = re.compile(r"-?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?")
+
+
+def _short_number(match: re.Match) -> str:
+    value = f"{float(match.group()):.1f}".rstrip("0").rstrip(".")
+    value = "0" if value in ("-0", "") else value
+    before = match.string[match.start() - 1] if match.start() else " "
+    # "1.25.5" is two numbers; once the first is shortened they need a separator
+    return (" " if before.isdigit() or before == "." else "") + value
+
+
+def _round_paths(body: str) -> str:
+    """One decimal in a 256 viewBox drawn at 44px is 0.01px, and cuts stack.svg by a quarter."""
+
+    def one(match: re.Match) -> str:
+        d = match.group(1)
+        if re.search(r"[aA]", d):
+            return (
+                match.group()
+            )  # arc flags can be written run together, so leave arcs alone
+        return f' d="{_PATH_NUMBER.sub(_short_number, d)}"'
+
+    return re.sub(r' d="([^"]+)"', one, body)
 
 
 @functools.cache  # the desktop and phone strips draw the same icons
@@ -818,7 +850,7 @@ def fetch_icon(name: str) -> str | None:
     body = re.sub(r'\sid="([^"]+)"', lambda m: f' id="{name}-{m.group(1)}"', body)
     body = re.sub(r"url\(#([^)]+)\)", lambda m: f"url(#{name}-{m.group(1)})", body)
     body = re.sub(r'href="#([^"]+)"', lambda m: f'href="#{name}-{m.group(1)}"', body)
-    inner_body = body[body.find(">") + 1 : body.rfind(SVG_CLOSE)]
+    inner_body = _round_paths(body[body.find(">") + 1 : body.rfind(SVG_CLOSE)])
     return f'<symbol id="i-{name}" viewBox="0 0 256 256">{inner_body}</symbol>'
 
 
@@ -948,7 +980,7 @@ def render_experience(data: dict) -> str:
         ".now{animation:ring 2.2s ease-out infinite;transform-origin:center;transform-box:fill-box}"
         "@keyframes ring{0%{opacity:0.9;transform:scale(1)}100%{opacity:0;transform:scale(2.6)}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10">CAREER</text>',
+        f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10.5">CAREER</text>',
         _rail(left, right, top_y, 0.3, draw),
     ]
     last = len(MILESTONES) - 1
@@ -971,10 +1003,10 @@ def render_experience(data: dict) -> str:
             _fade_group(
                 at,
                 (
-                    f'<text class="m" x="{x}" y="{top_y - 22}" text-anchor="middle" fill="{color}" font-size="10">{label}</text>'
+                    f'<text class="m" x="{x}" y="{top_y - 22}" text-anchor="middle" fill="{color}" font-size="10.5">{label}</text>'
                     + what_text
                     + f'<text class="t" x="{x}" y="{top_y + 47 + drop}" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="11.5">{escape(org)}</text>'
-                    f'<text class="m" x="{x}" y="{top_y + 63 + drop}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9">{escape(city.upper())}</text>'
+                    f'<text class="m" x="{x}" y="{top_y + 63 + drop}" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">{escape(city.upper())}</text>'
                 ),
             )
         )
@@ -991,7 +1023,7 @@ def render_experience(data: dict) -> str:
         _fade_group(
             open_at,
             (
-                f'<text class="m" x="{sub_left}" y="{bracket_y - 8}" fill="{GREEN}" font-size="9">CUSTOMER ENGAGEMENTS</text>'
+                f'<text class="m" x="{sub_left}" y="{bracket_y - 8}" fill="{GREEN}" font-size="10.5">CUSTOMER ENGAGEMENTS</text>'
             ),
         )
     )
@@ -1013,12 +1045,12 @@ def render_experience(data: dict) -> str:
             _fade_group(
                 at,
                 (
-                    f'<text class="m" x="{x}" y="{sub_y - 16}" text-anchor="middle" fill="{color}" font-size="8.5">{escape(when_label)}</text>'
+                    f'<text class="m" x="{x}" y="{sub_y - 16}" text-anchor="middle" fill="{color}" font-size="10.5">{escape(when_label)}</text>'
                     + "".join(
                         f'<text class="t" x="{x}" y="{sub_y + 28 + j * 16}" text-anchor="middle" fill="#f3f4f6" font-size="13">{escape(line)}</text>'
                         for j, line in enumerate(clients[i])
                     )
-                    + f'<text class="m" x="{x}" y="{sub_y + 46 + sub_drop}" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="8.5">{escape(what.upper())}</text>'
+                    + f'<text class="m" x="{x}" y="{sub_y + 46 + sub_drop}" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10.5">{escape(what.upper())}</text>'
                 ),
             )
         )
@@ -1103,8 +1135,8 @@ def render_hero(data: dict) -> str:
         _rotating(HERO_LINES, 44, 152, "s", 18, "rgba(255,255,255,0.78)"),
         f'<rect x="44" y="176" width="236" height="28" rx="14" fill="{GREEN}14" stroke="{GREEN}55"/>',
         f'<circle cx="62" cy="190" r="4" fill="{GREEN}"><animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>',
-        f'<text class="m" x="74" y="194" fill="{GREEN}" font-size="10" style="letter-spacing:1px">BUILDING CLOUD AT AWS</text>',
-        '<text class="m" x="296" y="194" fill="rgba(255,255,255,0.45)" font-size="10" style="letter-spacing:1px">HYDERABAD, INDIA</text>',
+        f'<text class="m" x="74" y="194" fill="{GREEN}" font-size="10.5" style="letter-spacing:1px">BUILDING CLOUD AT AWS</text>',
+        '<text class="m" x="296" y="194" fill="rgba(255,255,255,0.6)" font-size="10.5" style="letter-spacing:1px">HYDERABAD, INDIA</text>',
     ]
     for a, b in links:
         x1, y1, _ = nodes[a]
@@ -1127,7 +1159,7 @@ def render_hero(data: dict) -> str:
             f'<circle cx="{x}" cy="{y}" r="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.3">'
             f'<animate attributeName="r" values="{r};{r + 1.5};{r}" dur="3s" begin="{i * 0.4:.1f}s" repeatCount="indefinite"/></circle>'
             f'<text class="m" x="{x}" y="{y + 3.5}" text-anchor="middle" fill="{BLUE_LIGHT if hub else "rgba(255,255,255,0.7)"}" '
-            f'font-size="9" style="letter-spacing:1px">{label}</text>'
+            f'font-size="10.5" style="letter-spacing:1px">{label}</text>'
         )
     parts.append(SVG_CLOSE)
     return "".join(parts)
@@ -1149,7 +1181,10 @@ def render_footer() -> str:
             ),
             f"<style>.s{{font-family:{SANS};font-weight:800}}.m{{font-family:{MONO};font-weight:700;letter-spacing:2px}}"
             f".d{{font-family:{SANS};font-weight:500}}</style>",
-            f'<text class="m" x="{w / 2}" y="34" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10">SAGAR GUPTA  |  AWS PROFESSIONAL SERVICES</text>',
+            # an opaque card like every other one: on GitHub's light page a transparent
+            # footer drew its white lines on white
+            f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
+            f'<text class="m" x="{w / 2}" y="34" text-anchor="middle" fill="{BLUE_LIGHT}" font-size="10.5">SAGAR GUPTA  |  AWS PROFESSIONAL SERVICES</text>',
             _rotating(FOOTER_LINES, w / 2, 78, "s", 30, "#f3f4f6").replace(
                 "<text ", '<text text-anchor="middle" '
             ),
@@ -1157,7 +1192,7 @@ def render_footer() -> str:
             f'<path d="{wave}" fill="none" stroke="{BLUE_LIGHT}" stroke-width="2" stroke-dasharray="120 900" stroke-linecap="round">'
             '<animate attributeName="stroke-dashoffset" values="1020;0" dur="4s" repeatCount="indefinite"/></path>',
             f'<circle r="3.5" fill="{SKY}"><animateMotion dur="4s" repeatCount="indefinite" path="{wave}"/></circle>',
-            f'<text class="d" x="{w / 2}" y="158" text-anchor="middle" fill="rgba(127,127,127,0.85)" font-size="11">{escape(DISCLAIMER)}</text>',
+            f'<text class="d" x="{w / 2}" y="158" text-anchor="middle" fill="#a8b4c1" font-size="11">{escape(DISCLAIMER)}</text>',
             SVG_CLOSE,
         ]
     )
@@ -1250,11 +1285,13 @@ def render_ai_stack(w: int = 840, cols: int = 5) -> str | None:
     ch = 44
     h = 42 + -(-len(AI_TOOLS) // cols) * (ch + 10)
     cycle = len(AI_TOOLS) * 0.6
+    # two columns leave 102px for AMAZON BEDROCK, so the phone tiles track tighter
+    tight = ' style="letter-spacing:0.5px"' if cols <= 2 else ""
     parts = [
         svg_open(w, h, "AI-assisted engineering: " + ", ".join(t for t, _ in AI_TOOLS)),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1px}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="28" fill="{BLUE_LIGHT}" font-size="10" style="letter-spacing:1.6px">AI-ASSISTED ENGINEERING</text>',
+        f'<text class="m" x="24" y="28" fill="{BLUE_LIGHT}" font-size="10.5" style="letter-spacing:1.6px">AI-ASSISTED ENGINEERING</text>',
     ]
     for i, (label, slug) in enumerate(AI_TOOLS):
         col, row = i % cols, i // cols
@@ -1277,7 +1314,7 @@ def render_ai_stack(w: int = 840, cols: int = 5) -> str | None:
             f'<rect x="{x}" y="{y}" width="{cw}" height="{ch}" rx="10" fill="{BLUE}1c" stroke="{BLUE_LIGHT}" stroke-width="1.2" opacity="0">'
             f'<animate attributeName="opacity" values="0;0;1;0;0" keyTimes="{glow_times}" dur="{cycle:.1f}s" repeatCount="indefinite"/></rect>'
             f"{icon}"
-            f'<text class="m" x="{label_x}" y="{y + 26}" fill="rgba(255,255,255,0.85)" font-size="10">{escape(label.upper())}</text>'
+            f'<text class="m" x="{label_x}" y="{y + 26}" fill="rgba(255,255,255,0.85)" font-size="10.5"{tight}>{escape(label.upper())}</text>'
         )
     parts.append(SVG_CLOSE)
     return "".join(parts)
@@ -1588,7 +1625,7 @@ def render_project_card(p: dict, index: int, mobile: bool = False) -> str:
     )
     status = (
         f'<circle cx="{w - 72}" cy="30" r="3.5" fill="{GREEN}"><animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>'
-        f'<text class="m" x="{w - 62}" y="34" fill="{GREEN}" font-size="9">LIVE</text>'
+        f'<text class="m" x="{w - 62}" y="34" fill="{GREEN}" font-size="10.5">LIVE</text>'
         if live
         else f'<text class="m" x="{w - 22}" y="34" text-anchor="end" fill="#a8b4c1" font-size="10.5">SOURCE</text>'
     )
@@ -1602,7 +1639,7 @@ def render_project_card(p: dict, index: int, mobile: bool = False) -> str:
             f'<clipPath id="c"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="16"/></clipPath></defs>',
             f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="16" fill="{CARD}" stroke="rgba(255,255,255,0.09)"/>',
             f'<rect x="0" y="22" width="3" height="28" rx="1.5" fill="{BLUE_LIGHT}"/>',
-            f'<text class="m" x="22" y="34" fill="{BLUE_LIGHT}" font-size="9">{escape(p.get("date", "").upper())}</text>',
+            f'<text class="m" x="22" y="34" fill="{BLUE_LIGHT}" font-size="10.5">{escape(p.get("date", "").upper())}</text>',
             status,
             "".join(
                 f'<text class="t" x="22" y="{62 + 24 * j}" fill="#f3f4f6" font-size="20">{escape(title)}</text>'
@@ -1620,9 +1657,10 @@ def render_project_card(p: dict, index: int, mobile: bool = False) -> str:
 def render_tool_card(
     p: dict, stars: int | None, index: int, mobile: bool = False
 ) -> str:
-    w = 320 if mobile else 270
-    titles = _wrap(p["title"], 29 if mobile else 27)
-    lines = _wrap(_card_text(p, 96), 34 if mobile else 33)
+    # the README shows both at 270px, so the phone card trades width for larger text
+    w = 270
+    titles = _wrap(p["title"], 24 if mobile else 27)
+    lines = _wrap(_card_text(p, 96), 28 if mobile else 33)
     body_y = 44 + len(titles) * 22
     line_h = 21 if mobile else 18
     h = max(220, body_y + len(lines) * line_h + 44)
@@ -1711,18 +1749,18 @@ def render_profile_badges(data: dict) -> str:
     # two centered rows: four, then three
     for row, (lo, hi) in enumerate(((0, 4), (4, 7))):
         items = pills[lo:hi]
-        widths = [24 + (len(k) + len(v)) * 7.1 + 18 for k, v, _ in items]
+        widths = [24 + (len(k) + len(v)) * MONO_CHAR + 18 for k, v, _ in items]
         total = sum(widths) + 12 * (len(items) - 1)
         x = (w - total) / 2
         y = 8 + row * 50
         for i, ((key, value, color), bw) in enumerate(zip(items, widths)):
-            kw = 16 + len(key) * 7.1
+            kw = 16 + len(key) * MONO_CHAR
             begin = 0.1 + (lo + i) * 0.1
             parts.append(
                 f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{begin:.1f}s" dur="0.4s" fill="freeze"/>'
                 f'<rect x="{x:.1f}" y="{y}" width="{bw:.1f}" height="36" rx="18" fill="{CARD}" stroke="{color}55"/>'
                 f'<rect x="{x:.1f}" y="{y}" width="{kw:.1f}" height="36" rx="18" fill="{color}1f"/>'
-                f'<text class="m" x="{x + kw / 2:.1f}" y="{y + 22}" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9.5">{key}</text>'
+                f'<text class="m" x="{x + kw / 2:.1f}" y="{y + 22}" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10.5">{key}</text>'
                 f'<text class="m" x="{x + kw + (bw - kw) / 2:.1f}" y="{y + 22}" text-anchor="middle" fill="{color}" font-size="10.5">{escape(value)}</text></g>'
             )
             x += bw + 12
@@ -1805,7 +1843,12 @@ def render_oss(data: dict) -> str | None:
         repos[e["repo"]] = repos.get(e["repo"], 0) + 1
     ranked = sorted(repos, key=lambda r: -stars.get(r, 0))
     reach = sum(stars.get(r, 0) for r in repos)
-    w, h = 840, 250
+    w = 840
+    # merged-into chips, biggest projects first; the card grows to fit every row
+    chips = _chip_rows(
+        [_oss_chip_label(r, repos[r], stars.get(r, 0)) for r in ranked], 128, w
+    )
+    h = chips[-1][1] + 44 if chips else 128
     tiles = [
         (str(len(merged)), "merged upstream"),
         (str(len(review)), "open PRs"),
@@ -1823,7 +1866,7 @@ def render_oss(data: dict) -> str | None:
         ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.v{{font-family:{SANS};font-weight:800}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10">OPEN SOURCE  |  MERGED UPSTREAM</text>',
+        f'<text class="m" x="24" y="30" fill="{BLUE_LIGHT}" font-size="10.5">OPEN SOURCE  |  MERGED UPSTREAM</text>',
     ]
     tw = (w - 32 - 3 * 10) / 4
     for i, (value, label) in enumerate(tiles):
@@ -1832,25 +1875,31 @@ def render_oss(data: dict) -> str | None:
             f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.1 + i * 0.1:.1f}s" dur="0.4s" fill="freeze"/>'
             f'<rect x="{x:.1f}" y="44" width="{tw:.1f}" height="62" rx="10" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
             f'<text class="v" x="{x + 14:.1f}" y="76" fill="#f3f4f6" font-size="22">{value}</text>'
-            f'<text class="m" x="{x + 14:.1f}" y="95" fill="rgba(255,255,255,0.5)" font-size="8">{label.upper()}</text></g>'
+            f'<text class="m" x="{x + 14:.1f}" y="95" fill="rgba(255,255,255,0.55)" font-size="10.5">{label.upper()}</text></g>'
         )
-    # merged-into chips, biggest projects first
-    x, y = 24.0, 128
-    for i, repo in enumerate(ranked):
-        label = _oss_chip_label(repo, repos[repo], stars.get(repo, 0))
-        cw = 16 + len(label) * 6.3
-        if x + cw > w - 24:
-            x, y = 24.0, y + 30
-        if y > h - 30:
-            break
+    for i, (x, y, cw, label) in enumerate(chips):
         parts.append(
             f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.5 + i * 0.06:.2f}s" dur="0.4s" fill="freeze"/>'
-            f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="22" rx="11" fill="{SKY}12" stroke="{SKY}44"/>'
-            f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 15}" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="9">{escape(label)}</text></g>'
+            f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="24" rx="12" fill="{SKY}12" stroke="{SKY}44"/>'
+            f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 16}" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10.5">{escape(label)}</text></g>'
         )
-        x += cw + 8
     parts.append(SVG_CLOSE)
     return "".join(parts)
+
+
+def _chip_rows(
+    labels: list[str], top: float, w: float, upper: bool = False
+) -> list[tuple[float, float, float, str]]:
+    """Place 10.5px mono chips left to right, wrapping into as many rows as they need."""
+    chips, x, y = [], 24.0, top
+    for label in labels:
+        text = label.upper() if upper else label
+        cw = 20 + len(text) * MONO_CHAR
+        if x + cw > w - 24 and x > 24:
+            x, y = 24.0, y + 32
+        chips.append((x, y, cw, text))
+        x += cw + 8
+    return chips
 
 
 def fetch_oss_stars(oss: list[dict]) -> dict[str, int]:
@@ -1932,7 +1981,7 @@ def render_list_card(
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.t{{font-family:{SANS};font-weight:700}}"
         f".s{{font-family:{SANS};font-weight:500}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="31" fill="{accent}" font-size="10">{escape(kicker)}</text>',
+        f'<text class="m" x="24" y="31" fill="{accent}" font-size="10.5">{escape(kicker)}</text>',
     ]
     y = top
     for i, ((primary, _, meta), lines) in enumerate(zip(rows, seconds)):
@@ -1948,7 +1997,7 @@ def render_list_card(
             f'<circle cx="30" cy="{y + 23}" r="3" fill="{accent}"/>'
             f'<text class="t" x="44" y="{y + 20}" fill="#f3f4f6" font-size="13.5">{escape(_clip(primary, 60))}</text>'
             f"{second}"
-            f'<text class="m" x="{w - 24}" y="{y + 20}" text-anchor="end" fill="rgba(255,255,255,0.45)" font-size="9">{escape(meta.upper())}</text></g>'
+            f'<text class="m" x="{w - 24}" y="{y + 20}" text-anchor="end" fill="rgba(255,255,255,0.55)" font-size="10.5">{escape(meta.upper())}</text></g>'
         )
         y += row_h + line_h * (len(lines) - 1)
     if footer:
@@ -2078,7 +2127,7 @@ def render_publications(pf: dict) -> str:
         ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.s{{font-family:{SANS};font-weight:500}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="30" fill="{SKY}" font-size="10">PUBLICATIONS, TALKS AND RECOGNITION</text>',
+        f'<text class="m" x="24" y="30" fill="{SKY}" font-size="10.5">PUBLICATIONS, TALKS AND RECOGNITION</text>',
     ]
     y = 44.0
     for r, row in enumerate(rows):
@@ -2185,7 +2234,15 @@ def render_competitive(pf: dict) -> str:
         for a in pf.get("contests", [])
         if re.match(r"(1st|2nd|3rd|4th) Place", a["title"])
     ]
-    w, h = 840, 196
+    w = 840
+    # podium chips wrap into as many rows as they need; the card grows to fit
+    chips = _chip_rows(
+        [t.replace(" Place - ", "  ").replace(", ", " ") for t in podiums],
+        134,
+        w,
+        upper=True,
+    )
+    h = chips[-1][1] + 44 if chips else 134
     tw = (w - 32 - 3 * 10) / 4
     parts = [
         svg_open(
@@ -2198,29 +2255,23 @@ def render_competitive(pf: dict) -> str:
         ),
         f"<style>.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}.v{{font-family:{SANS};font-weight:800}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{BG}" stroke="rgba(255,255,255,0.08)"/>',
-        f'<text class="m" x="24" y="30" fill="{AMBER}" font-size="10">COMPETITIVE PROGRAMMING</text>',
+        f'<text class="m" x="24" y="30" fill="{AMBER}" font-size="10.5">COMPETITIVE PROGRAMMING</text>',
     ]
     for i, (key, value, label) in enumerate(tiles):
         x = 16 + i * (tw + 10)
         parts.append(
             f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.1 + i * 0.1:.1f}s" dur="0.4s" fill="freeze"/>'
             f'<rect x="{x:.1f}" y="44" width="{tw:.1f}" height="72" rx="10" fill="{CARD}" stroke="rgba(255,255,255,0.07)"/>'
-            f'<text class="m" x="{x + 14:.1f}" y="64" fill="{AMBER}" font-size="8.5">{escape(key)}</text>'
+            f'<text class="m" x="{x + 14:.1f}" y="64" fill="{AMBER}" font-size="10.5">{escape(key)}</text>'
             f'<text class="v" x="{x + 14:.1f}" y="90" fill="#f3f4f6" font-size="20">{escape(str(value))}</text>'
-            f'<text class="m" x="{x + 14:.1f}" y="107" fill="rgba(255,255,255,0.5)" font-size="8">{escape(label.upper())}</text></g>'
+            f'<text class="m" x="{x + 14:.1f}" y="107" fill="rgba(255,255,255,0.55)" font-size="10.5">{escape(label.upper())}</text></g>'
         )
-    x, y = 24.0, 134
-    for i, title in enumerate(podiums):
-        label = title.replace(" Place - ", "  ").replace(", ", " ")
-        cw = 16 + len(label) * 6.2
-        if x + cw > w - 24:
-            x, y = 24.0, y + 28
+    for i, (x, y, cw, label) in enumerate(chips):
         parts.append(
             f'<g opacity="0"><animate attributeName="opacity" to="1" begin="{0.5 + i * 0.06:.2f}s" dur="0.4s" fill="freeze"/>'
-            f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="22" rx="11" fill="{AMBER}12" stroke="{AMBER}44"/>'
-            f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 15}" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-size="9">{escape(label.upper())}</text></g>'
+            f'<rect x="{x:.1f}" y="{y}" width="{cw:.1f}" height="24" rx="12" fill="{AMBER}12" stroke="{AMBER}44"/>'
+            f'<text class="m" x="{x + cw / 2:.1f}" y="{y + 16}" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-size="10.5">{escape(label)}</text></g>'
         )
-        x += cw + 8
     parts.append(SVG_CLOSE)
     return "".join(parts)
 
@@ -2264,7 +2315,7 @@ def render_intro(pf: dict) -> str:
         f"<style>.s{{font-family:{SANS};font-weight:500}}.m{{font-family:{MONO};font-weight:700;letter-spacing:1.2px}}</style>",
         f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14" fill="{CARD}" stroke="rgba(255,255,255,0.08)"/>',
         f'<rect x="0" y="24" width="3" height="{len(lines) * 24 + 12}" rx="1.5" fill="{BLUE}"/>',
-        f'<text class="m" x="28" y="36" fill="{BLUE_LIGHT}" font-size="10">ABOUT</text>',
+        f'<text class="m" x="28" y="36" fill="{BLUE_LIGHT}" font-size="10.5">ABOUT</text>',
     ]
     for i, line in enumerate(lines):
         parts.append(
@@ -2307,7 +2358,7 @@ def render_get_this_card(repo: str, card: str) -> str:
             f'<clipPath id="c"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="12"/></clipPath></defs>',
             f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="12" fill="{CARD}" stroke="{BLUE_LIGHT}40"/>',
             f'<circle cx="22" cy="20" r="3.5" fill="{GREEN}"><animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>',
-            f'<text class="m" x="36" y="24" fill="rgba(255,255,255,0.55)" font-size="9.5">GET {this} {escape(card.upper())} FOR YOUR PROFILE</text>',
+            f'<text class="m" x="36" y="24" fill="rgba(255,255,255,0.6)" font-size="10.5">GET {this} {escape(card.upper())} FOR YOUR PROFILE</text>',
             f'<text class="m" x="{w - 22}" y="24" text-anchor="end" fill="{BLUE_LIGHT}" font-size="10.5">SAGARGUPTA16/{escape(repo.upper())}  -&gt;</text>',
             f'<g clip-path="url(#c)"><rect x="-160" y="0" width="140" height="{h}" fill="url(#sweep)" transform="skewX(-20)">'
             '<animateTransform attributeName="transform" type="translate" values="0 0;1200 0" dur="5s" repeatCount="indefinite" additive="sum"/></rect></g>',
@@ -2347,14 +2398,19 @@ def render_cta(label: str, primary: bool) -> str:
 # ---------------------------------------------------------------- the README itself
 
 
+# Below 1012px GitHub's README column is at most 563px (the profile sidebar takes the
+# rest from 768px up), where an 840px card shrinks to 0.46-0.67x; the phone card reads there.
+DESKTOP_MEDIA = "(min-width: 1012px)"
+
+
 def _img(src: str, alt: str, width: str = "100%") -> str:
-    """Wrap one card image with its phone source; widths are numeric because GitHub strips layout CSS."""
+    """Wrap one card image with its desktop source; widths are numeric because GitHub strips layout CSS."""
     mobile = f"{Path(src).stem}-mobile.svg"
-    source = (
-        f'<source media="(max-width: 600px)" srcset="assets/svg/{mobile}" />'
-        if (OUT / mobile).exists()
-        else ""
-    )
+    source = ""
+    # the phone card is the fallback, so clients without <picture> (GitHub's app) get it
+    if (OUT / mobile).exists():
+        source = f'<source media="{DESKTOP_MEDIA}" srcset="assets/svg/{src}" />'
+        src = mobile
     image = f'<img src="assets/svg/{src}" width="{width}" alt="{escape(alt, quote=True)}" />'
     # Picture also avoids GitHub's direct-link image fallback block styling.
     return f"<picture>{source}{image}</picture>"
@@ -2408,19 +2464,22 @@ def _link(href: str, inner: str) -> str:
 
 def _header(key: str, title: str) -> str:
     sources = []
-    # the narrow pair comes first: the first matching source wins
-    for narrow in (True, False):
+    # the wide pair comes first: the first matching source wins
+    for wide in (True, False):
         for theme in ("light", "dark"):
-            name = f"header-{key}-{theme}{'-mobile' if narrow else ''}.svg"
+            name = f"header-{key}-{theme}{'' if wide else '-mobile'}.svg"
             media = f"(prefers-color-scheme: {theme})"
-            if narrow:
-                media += " and (max-width: 600px)"
+            if wide:
+                media += f" and {DESKTOP_MEDIA}"
             if (OUT / name).exists():
                 sources.append(f'<source media="{media}" srcset="assets/svg/{name}" />')
+    fallback = f"header-{key}-dark-mobile.svg"
+    if not (OUT / fallback).exists():
+        fallback = f"header-{key}-dark.svg"
     return (
         "<picture>"
         + "".join(sources)
-        + f'<img src="assets/svg/header-{key}-dark.svg" width="100%" alt="{escape(title)}" />'
+        + f'<img src="assets/svg/{fallback}" width="100%" alt="{escape(title)}" />'
         + "</picture>"
     )
 

@@ -8,8 +8,25 @@ All notable changes to this profile README repository.
 - Highlights is removed: each of its four counts (customer engagements, AWS samples, talks and publications, ambassador) is already listed in full on the career rail, the Featured Projects cards or the Publications card
 - The "Data refreshes" card is removed from the end of the page; the refresh dates stay in `data.json` and on the phone cards' "Updated" lines
 - The Publications card drops its AWS samples panel, since Featured Projects shows every sample as a card; publications and talks sit side by side and recognition runs across the card
-- The phone "Get this card" strips shrink from a full card (141px tall on a phone) to a link line and a hint (81px)
-- At the README's width the page is about 470px shorter on desktop and 1,560px shorter on a phone (72 images to 69)
+- The phone "Get this card" strips shrink from a full card (126px tall in the 320px card) to a link line and a hint (72px)
+- The phone layout now applies below 1012px, not 600px. From 768px to 1011px GitHub's profile sidebar leaves the README 383 to 563px wide, so an 840px card was shown at 0.46 to 0.67x and its 10px labels at 4.6 to 6.7px. Tablets get the phone cards scaled up instead. The page is taller there (19,336px at a 900px window, from 9,134px), but no label is smaller than it is on a phone
+- The phone card is now the `<img>`, and a `(min-width: 1012px)` source swaps in the desktop card. Clients that ignore `<picture>`, such as GitHub's mobile app, now get the phone layout instead of an 840px card
+- Larger text:
+  - Desktop micro-labels go from 10px to 10.5px.
+  - The AWS sample diagrams' node labels go from 8px to 10px, with tighter tracking so "MCP CLIENT" still fits its box, and their subtitles from 9px to 10.5px.
+  - On the phone cards, micro-labels go from 10.5px to 11.5px, section labels from 11px to 12px, pills from 10px to 11px, and the hero graph labels from 8.5px to 10.5px.
+- The community tool phone cards are drawn at 270px, the width the README shows them at. Before, a 320px card was shrunk to 0.84x, so its 10.5px chips showed at 8.9px
+- Contrast fixes:
+  - Light-theme header kickers use `#1d4ed8` (2.54:1 before).
+  - The hero's location line and the AgentCore diagram's dim labels reach 4.5:1.
+  - The footer sits on its own card, since its white text was 1.10:1 on GitHub's light page.
+  - svg-forge's validator now reports no text contrast failures (SV021, SV022) on any README image.
+- The SageMaker card's quality-gate flash and drift dot play again. Their keyTimes ended at 0.52 and 0.92 instead of 1, so browsers dropped both animations
+- The OSS and competitive chips use 10.5px text and wrap onto as many rows as they need. Before, a chip that did not fit was dropped without notice
+- Tech stack icon paths are rounded to one decimal: 0.1 units of the 256 viewBox is 0.02px at the drawn 44px. stack.svg goes from 139 KB to 106 KB, and from 50 KB to 34 KB gzipped. A 3x raster of each version differs by a mean of 0.03/255 per channel
+- Page height, measured on GitHub's markdown API output laid out at GitHub's column widths (74 images to 71):
+  - desktop at a 1280px window: 9,485px to 8,989px
+  - phone at a 390px window: 15,331px to 13,994px
 
 ## [4.19.0] - 2026-10-24
 

@@ -130,9 +130,9 @@
     ]
   },
   "github": {
-    "contributions": 8338,
-    "commits": 5865,
-    "prs": 1882,
+    "contributions": 8347,
+    "commits": 5871,
+    "prs": 1885,
     "stars": 321,
     "repo_stars": {
       "PortFolio": 3,
@@ -201,19 +201,10 @@
       "orrery": 5
     },
     "followers": 112,
-    "streak": 7,
-    "longest": 147,
-    "active_days": 313,
+    "streak": 8,
+    "longest": 140,
+    "active_days": 306,
     "calendar": [
-      [
-        11,
-        15,
-        44,
-        10,
-        21,
-        4,
-        20
-      ],
       [
         4,
         8,
@@ -406,8 +397,8 @@
       [
         3,
         68,
-        23,
-        19,
+        22,
+        20,
         0,
         4,
         43
@@ -568,8 +559,8 @@
       [
         0,
         12,
-        6,
-        25,
+        4,
+        27,
         5,
         0,
         0
@@ -607,14 +598,14 @@
         0,
         0,
         0,
-        1,
-        1
+        0,
+        2
       ],
       [
         0,
         0,
-        21,
-        40,
+        20,
+        41,
         63,
         11,
         30
@@ -632,8 +623,8 @@
         53,
         37,
         11,
-        5,
-        10,
+        4,
+        11,
         10,
         6
       ],
@@ -642,8 +633,8 @@
         8,
         5,
         6,
-        18,
-        23,
+        17,
+        24,
         73
       ],
       [
@@ -675,12 +666,15 @@
       ],
       [
         204,
-        16,
-        18,
+        14,
+        20,
         51,
         3,
         6,
         184
+      ],
+      [
+        9
       ]
     ],
     "languages": [
@@ -720,7 +714,7 @@
     "engagements": [
       {
         "when": "Oct 2024 to Aug 2025",
-        "client": "Global financial services customer",
+        "client": "DevOps Consultant, Global financial services customer",
         "tagline": "Terraform, tftest",
         "stack": [
           "Terraform",
@@ -731,7 +725,7 @@
           "SNS"
         ],
         "link": null,
-        "name": "DevOps Consultant - Global financial services customer"
+        "name": "DevOps Consultant, Global financial services customer"
       },
       {
         "when": "Jun 2025 to Aug 2025",
@@ -750,20 +744,19 @@
       },
       {
         "when": "Aug 2025 to Nov 2025",
-        "client": "Financial market infrastructure customer",
-        "tagline": "Terraform, Amazon Q",
+        "client": "DevOps Consultant, Financial market infrastructure customer",
+        "tagline": "Terraform, CloudFormation",
         "stack": [
           "Terraform",
-          "Amazon Q",
           "CloudFormation",
           "DevSecOps"
         ],
         "link": null,
-        "name": "DevOps Consultant - Financial market infrastructure customer"
+        "name": "DevOps Consultant, Financial market infrastructure customer"
       },
       {
         "when": "Feb 2026 to now",
-        "client": "Enterprise customer",
+        "client": "Lead DevOps Consultant, Enterprise customer",
         "tagline": "Lead DevOps, AWS Organizations",
         "stack": [
           "AWS Organizations",
@@ -774,7 +767,7 @@
           "Transit Gateway"
         ],
         "link": null,
-        "name": "Lead DevOps Consultant - Enterprise customer (Ongoing)"
+        "name": "Lead DevOps Consultant, Enterprise customer (Ongoing)"
       }
     ],
     "earlier": [
@@ -793,19 +786,10 @@
     ],
     "contributions": [
       {
-        "title": "Tech Talk: Automating Unit Testing for Terraform using Terraform Test and PyTest frameworks",
+        "title": "Internal tech talks on Terraform testing and GitOps",
         "type": "talk",
-        "year": "2025"
-      },
-      {
-        "title": "Tech Talk: GitOps Configuration Safety with Health Checks and Pipeline Gating",
-        "type": "talk",
-        "year": "2026"
-      },
-      {
-        "title": "APG Pattern (co-author, submitted, not yet published): Secure PR Previews and Approval-Gated Releases for Amplify Gen 2 with GitHub",
-        "type": "publication",
-        "year": "2025"
+        "year": "2025-2026",
+        "count": 2
       },
       {
         "title": "Peer reviewer for AWS Prescriptive Guidance patterns",
@@ -830,14 +814,19 @@
     ],
     "achievements": [
       {
-        "title": "ProServe MLOps SME Program Graduate",
+        "title": "AWS Professional Services MLOps SME program graduate",
         "type": "program",
         "year": "2025"
       },
       {
-        "title": "5x AWS community ambassador",
+        "title": "8x AWS community ambassador",
         "type": "program",
         "year": "2025-2026"
+      },
+      {
+        "title": "Senior Speaker Certification",
+        "type": "program",
+        "year": "2026"
       },
       {
         "title": "Associate Speaker Certification",
@@ -845,12 +834,17 @@
         "year": "2026"
       },
       {
-        "title": "AWS T&C Subject Matter Expert (SME) Program Contributor",
+        "title": "Security content review qualification",
         "type": "program",
-        "year": "2025"
+        "year": "2026"
       },
       {
-        "title": "ML Hackathon 2025 - 26th/238 teams",
+        "title": "AWS Jam content tester for re:Invent 2026, DevOps and GenAI",
+        "type": "program",
+        "year": "2026"
+      },
+      {
+        "title": "AWS Training and Certification SME",
         "type": "program",
         "year": "2025"
       }
@@ -1537,7 +1531,7 @@
         "card_summary": null
       }
     ],
-    "intro": "Cloud consultant at AWS Professional Services. Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines, plus the MCP servers and Claude Code skills I build to do that work faster.",
+    "intro": "Cloud consultant at AWS Professional Services: Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines. In my own time I build MCP servers and Claude Code skills.",
     "education": [
       {
         "id": 1,
@@ -2195,28 +2189,28 @@
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5861,
     "PrefectHQ/prefect": 24069,
-    "anthropics/skills": 183509,
+    "anthropics/skills": 183513,
     "apache/airflow": 47267,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 113,
     "awslabs/agent-plugins": 927,
     "awslabs/mcp": 9828,
-    "axios/axios": 109310,
+    "axios/axios": 109311,
     "cloudposse/terraform-aws-tfstate-backend": 442,
     "expressjs/multer": 12088,
     "feast-dev/feast": 7347,
     "forem/selfhost": 1480,
     "hashicorp/terraform-provider-aws": 11124,
-    "lucide-icons/lucide": 25262,
-    "modelcontextprotocol/servers": 91543,
+    "lucide-icons/lucide": 25263,
+    "modelcontextprotocol/servers": 91545,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557
   },
-  "views": 23568,
+  "views": 23589,
   "source_updated_at": {
-    "github": "2026-10-24T23:44:31+00:00",
-    "leetcode": "2026-10-24T23:44:27+00:00",
-    "portfolio": "2026-10-24T23:44:32+00:00",
-    "views": "2026-10-24T23:44:27+00:00"
+    "github": "2026-10-25T00:43:37+00:00",
+    "leetcode": "2026-10-25T00:43:34+00:00",
+    "portfolio": "2026-10-25T00:43:37+00:00",
+    "views": "2026-10-25T00:43:33+00:00"
   }
 }

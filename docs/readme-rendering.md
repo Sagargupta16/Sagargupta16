@@ -21,10 +21,21 @@ request and fails when the committed files differ.
 GitHub strips custom README CSS. Cards use numeric image widths and ordinary
 inline wrapping, so rows of cards wrap on narrow screens. Every image sits in a
 `<picture>`, which keeps GitHub from styling linked images as blocks. Where a
-`-mobile.svg` exists, a `(max-width: 600px)` source picks that 320px phone
-layout; header sources also pick the viewer's color scheme, narrow pair first.
-Cards without a phone layout (the AWS sample diagrams, the snake, the divider)
-scale down to the column.
+`-mobile.svg` exists, the `<img>` shows that 320px phone layout and a
+`(min-width: 1012px)` source swaps in the 840px card; header sources also pick
+the viewer's color scheme, wide pair first. The breakpoint follows GitHub's
+column, not the screen: from 768px to 1011px the profile sidebar leaves the
+README 383 to 563px, where a desktop card would shrink to under 0.7x. Putting
+the phone card in the `<img>` also serves clients without `<picture>`, such as
+GitHub's mobile app. Cards without a phone layout (the AWS sample diagrams, the
+snake, the divider) scale down to the column.
+
+Text floor: 10.5px in every desktop and phone card, which holds about that size
+where each is shown (the README column is 831 to 846px from a 1280px window up,
+about 308px on a 390px phone); phone micro-labels sit at 11.5px and the AWS
+sample diagrams' node labels at 10px, the most their boxes hold. The vendored
+GitHub and LeetCode cards and the Credly action's `certs.svg` keep their
+upstream sizes.
 
 Phone cards keep the desktop look and motion: mono micro-labels, flat bordered
 tiles, badge images and icons, blocks that fade and rise in order, pulsing

@@ -1,4 +1,4 @@
-"""Phone layouts (320px wide) that the README's picture sources pick below 600px."""
+"""Phone layouts (320px wide), the README images below 1012px and wherever <picture> is unsupported."""
 
 # Copyright (c) Sagar Gupta. Distributed under the repository's MIT license.
 #
@@ -193,7 +193,7 @@ class Card:
     def label(self, text: str, color: str | None = None) -> None:
         """Write a mono micro-label, the desktop cards' section marker."""
         self.lines(
-            text.upper(), size=11, color=color or self.accent, weight=700, mono=True
+            text.upper(), size=12, color=color or self.accent, weight=700, mono=True
         )
         self.y += 8
 
@@ -229,7 +229,7 @@ class Card:
                     metadata.upper(),
                     x=x,
                     width=width,
-                    size=10.5,
+                    size=11.5,
                     color=self.accent,
                     weight=700,
                     mono=True,
@@ -317,7 +317,7 @@ class Card:
                     f'<rect x="{x:g}" y="{top:g}" width="{width:g}" height="26" rx="13" '
                     f'fill="{color}14" stroke="{color}55"/>'
                     + _text(
-                        x + width / 2, top + 17, 10, 700, color, text, True, "middle"
+                        x + width / 2, top + 17, 11, 700, color, text, True, "middle"
                     )
                 )
         self.y += math.ceil(len(items) / 2) * 34 + 4
@@ -360,7 +360,7 @@ def _updated(card: Card, data: dict, source: str) -> None:
     if value:
         card.y += 4
         card.lines(
-            f"UPDATED {str(value)[:10]}", size=10, color=MUTED, weight=700, mono=True
+            f"UPDATED {str(value)[:10]}", size=11, color=MUTED, weight=700, mono=True
         )
 
 
@@ -404,14 +404,14 @@ def _rotating(
 
 
 def _live_pill(card: Card, label: str) -> None:
-    width = text_width(label, 10.5, mono=True) + 40
+    width = text_width(label, 11.5, mono=True) + 40
     with card.block():
         card.parts.append(
             f'<rect x="{PAD}" y="{card.y:g}" width="{width:g}" height="26" rx="13" '
             f'fill="{GREEN}14" stroke="{GREEN}55"/>'
             f'<circle cx="{PAD + 15}" cy="{card.y + 13:g}" r="4" fill="{GREEN}">'
             '<animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/></circle>'
-            + _text(PAD + 26, card.y + 17, 10.5, 700, GREEN, label, mono=True)
+            + _text(PAD + 26, card.y + 17, 11.5, 700, GREEN, label, mono=True)
         )
     card.y += 26
 
@@ -455,8 +455,8 @@ def _node_graph(
                 'repeatCount="indefinite"/></circle>'
                 + _text(
                     x,
-                    y + 3,
-                    8.5,
+                    y + 3.5,
+                    10.5,
                     700,
                     BLUE if index == hub else "rgba(255,255,255,0.7)",
                     label,
@@ -484,7 +484,7 @@ HERO_BACKDROP = (
 def _hero(data: dict, context: dict) -> str:
     title = context.get("aws_title", "Cloud Consultant")
     card = Card(f"Sagar Gupta, {title} at AWS", SKY)
-    card.lines("HI, I AM", size=11, color=BLUE, weight=700, mono=True)
+    card.lines("HI, I AM", size=12, color=BLUE, weight=700, mono=True)
     card.y += 4
     card.lines("Sagar Gupta", size=32, weight=800)
     card.y += 8
@@ -498,7 +498,7 @@ def _hero(data: dict, context: dict) -> str:
     card.y += 14
     _live_pill(card, "BUILDING CLOUD AT AWS")
     card.y += 10
-    card.lines("HYDERABAD, INDIA", size=10.5, color=MUTED, weight=700, mono=True)
+    card.lines("HYDERABAD, INDIA", size=11.5, color=MUTED, weight=700, mono=True)
     graph = context.get("hero_graph")
     if graph:
         _node_graph(card, *graph)
@@ -634,7 +634,7 @@ def _oss(data: dict, context: dict) -> str:
         ]
     )
     card.label("Merged into", GREEN)
-    card.chips(repositories, size=10.5, mono=True)
+    card.chips(repositories, size=11.5, mono=True)
     _updated(card, data, "portfolio")
     return card.finish()
 
@@ -782,7 +782,7 @@ def _rating_chart(card: Card, history: list[float]) -> None:
     with card.block():
         for value, y in [(high, top), (low, bottom)]:
             card.parts.append(
-                _text(PAD, y + 4, 10.5, 700, MUTED, str(round(value)), mono=True)
+                _text(PAD, y + 4, 11.5, 700, MUTED, str(round(value)), mono=True)
                 + f'<path d="M{left} {y:g}H{right}" stroke="{BORDER}"/>'
             )
         points = [
@@ -1006,10 +1006,10 @@ def _footer(data: dict, context: dict) -> str:
     card.lines("Explore the projects and the work behind them.", color=MUTED)
     card.y += 10
     card.lines("Visit my portfolio →", size=16, weight=700)
-    card.lines("SAGARGUPTA.ONLINE", size=10.5, color=BLUE, weight=700, mono=True)
+    card.lines("SAGARGUPTA.ONLINE", size=11.5, color=BLUE, weight=700, mono=True)
     if context.get("disclaimer"):
         card.y += 10
-        card.lines(context["disclaimer"], size=11, color=MUTED)
+        card.lines(context["disclaimer"], size=12, color=MUTED)
     return card.finish()
 
 
@@ -1021,7 +1021,7 @@ def _header(number: str, title: str, subtitle: str, theme: str) -> str:
     card.y = 10
     card.lines(
         f"{number}  /  {subtitle.upper()}",
-        size=10.5,
+        size=11.5,
         color=color,
         weight=700,
         mono=True,

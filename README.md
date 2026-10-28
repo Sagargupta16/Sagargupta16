@@ -4,7 +4,7 @@
 
 <a href="https://sagargupta.online/portfolio-react/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/hero.svg" /><img src="assets/svg/hero-mobile.svg" width="100%" alt="Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS" /></picture></a>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/profile-badges.svg" /><img src="assets/svg/profile-badges-mobile.svg" width="100%" alt="Profile Views 23,813; Followers 114; Total Stars 325; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/profile-badges.svg" /><img src="assets/svg/profile-badges-mobile.svg" width="100%" alt="Profile Views 23,873; Followers 114; Total Stars 328; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
 
 <picture><source media="(min-width: 1012px)" srcset="assets/svg/intro.svg" /><img src="assets/svg/intro-mobile.svg" width="100%" alt="Cloud consultant at AWS Professional Services: Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines. In my own time I build MCP servers and Claude Code skills." /></picture>
 
@@ -52,11 +52,11 @@
 
 <picture><source media="(prefers-color-scheme: light) and (min-width: 1012px)" srcset="assets/svg/header-opensource-light.svg" /><source media="(prefers-color-scheme: dark) and (min-width: 1012px)" srcset="assets/svg/header-opensource-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-opensource-light-mobile.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-opensource-dark-mobile.svg" /><img src="assets/svg/header-opensource-dark-mobile.svg" width="100%" alt="Open Source" /></picture>
 
-<a href="https://github.com/search?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16&amp;type=pullrequests"><picture><source media="(min-width: 1012px)" srcset="assets/svg/oss.svg" /><img src="assets/svg/oss-mobile.svg" width="100%" alt="Open source: 12 merged upstream, 12 open PRs, 11 repositories with merges" /></picture></a>
+<a href="https://github.com/search?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16&amp;type=pullrequests"><picture><source media="(min-width: 1012px)" srcset="assets/svg/oss.svg" /><img src="assets/svg/oss-mobile.svg" width="100%" alt="Open source: 13 merged upstream, 13 open PRs, 11 repositories with merges" /></picture></a>
 
-<a href="https://github.com/search?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16&amp;type=pullrequests"><picture><source media="(min-width: 1012px)" srcset="assets/svg/oss-merged.svg" /><img src="assets/svg/oss-merged-mobile.svg" width="100%" alt="12 pull requests merged upstream, in axios/axios, feast-dev/feast, PrefectHQ/prefect, awslabs/mcp, apache/airflow, cloudposse/terraform-aws-tfstate-backend, awslabs/agent-plugins, lucide-icons/lucide, aws-ia/terraform-aws-vpc, expressjs/multer, terraform-aws-modules/terraform-aws-atlantis" /></picture></a>
+<a href="https://github.com/search?q=is%3Apr+author%3ASagargupta16+is%3Amerged+-user%3ASagargupta16&amp;type=pullrequests"><picture><source media="(min-width: 1012px)" srcset="assets/svg/oss-merged.svg" /><img src="assets/svg/oss-merged-mobile.svg" width="100%" alt="13 pull requests merged upstream, in axios/axios, feast-dev/feast, PrefectHQ/prefect, awslabs/mcp, apache/airflow, cloudposse/terraform-aws-tfstate-backend, awslabs/agent-plugins, lucide-icons/lucide, aws-ia/terraform-aws-vpc, expressjs/multer, terraform-aws-modules/terraform-aws-atlantis" /></picture></a>
 
-<a href="https://github.com/search?q=is%3Apr+author%3ASagargupta16+is%3Aopen+-user%3ASagargupta16&amp;type=pullrequests"><picture><source media="(min-width: 1012px)" srcset="assets/svg/oss-review.svg" /><img src="assets/svg/oss-review-mobile.svg" width="100%" alt="12 pull requests open upstream, in terraform-aws-modules/terraform-aws-dynamodb-table, hashicorp/terraform-provider-aws, NirmalScaria/le-git-graph, anthropics/skills, aws-ia/terraform-aws-bedrock" /></picture></a>
+<a href="https://github.com/search?q=is%3Apr+author%3ASagargupta16+is%3Aopen+-user%3ASagargupta16&amp;type=pullrequests"><picture><source media="(min-width: 1012px)" srcset="assets/svg/oss-review.svg" /><img src="assets/svg/oss-review-mobile.svg" width="100%" alt="13 pull requests open upstream, in terraform-aws-modules/terraform-aws-dynamodb-table, hashicorp/terraform-provider-aws, NirmalScaria/le-git-graph, anthropics/skills, aws-ia/terraform-aws-bedrock, terraform-aws-modules/terraform-aws-s3-bucket" /></picture></a>
 
 <a href="https://github.com/Sagargupta16/oss-contributions-card-action#quick-start"><picture><source media="(min-width: 1012px)" srcset="assets/svg/get-oss.svg" /><img src="assets/svg/get-oss-mobile.svg" width="100%" alt="Get the open-source cards for your own profile: Sagargupta16/oss-contributions-card-action" /></picture></a>
 
@@ -106,11 +106,11 @@
 
 <picture><source media="(prefers-color-scheme: light) and (min-width: 1012px)" srcset="assets/svg/header-stats-light.svg" /><source media="(prefers-color-scheme: dark) and (min-width: 1012px)" srcset="assets/svg/header-stats-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stats-light-mobile.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stats-dark-mobile.svg" /><img src="assets/svg/header-stats-dark-mobile.svg" width="100%" alt="Coding Stats" /></picture>
 
-<picture><source media="(min-width: 1012px)" srcset="assets/svg/github.svg" /><img src="assets/svg/github-mobile.svg" width="100%" alt="GitHub stats: 8,268 contributions, 5,767 commits, 1,905 pull requests, 325 stars, longest streak 140 days" /></picture>
+<picture><source media="(min-width: 1012px)" srcset="assets/svg/github.svg" /><img src="assets/svg/github-mobile.svg" width="100%" alt="GitHub stats: 8,299 contributions, 5,781 commits, 1,919 pull requests, 328 stars, longest streak 140 days" /></picture>
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><picture><source media="(min-width: 1012px)" srcset="assets/svg/get-github.svg" /><img src="assets/svg/get-github-mobile.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></picture></a>
 
-<a href="https://leetcode.com/sagargupta1610/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/leetcode.svg" /><img src="assets/svg/leetcode-mobile.svg" width="100%" alt="LeetCode: contest rating 2166, top 1.11%, 107 contests, 1332 problems solved" /></picture></a>
+<a href="https://leetcode.com/sagargupta1610/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/leetcode.svg" /><img src="assets/svg/leetcode-mobile.svg" width="100%" alt="LeetCode: contest rating 2166, top 1.11%, 107 contests, 1333 problems solved" /></picture></a>
 
 <a href="https://github.com/Sagargupta16/leetcode-card-action#quick-start"><picture><source media="(min-width: 1012px)" srcset="assets/svg/get-leetcode.svg" /><img src="assets/svg/get-leetcode-mobile.svg" width="100%" alt="Get the LeetCode card for your own profile: Sagargupta16/leetcode-card-action" /></picture></a>
 

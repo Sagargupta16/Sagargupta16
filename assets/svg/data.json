@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8299,
-    "commits": 5781,
-    "prs": 1919,
-    "stars": 328,
+    "contributions": 8308,
+    "commits": 5782,
+    "prs": 1920,
+    "stars": 333,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,7 +170,7 @@
       "ledger-sync": 9,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 21,
+      "awesome-mcp-servers": 26,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -200,10 +200,10 @@
       "svg-forge": 3,
       "orrery": 6
     },
-    "followers": 114,
-    "streak": 11,
+    "followers": 115,
+    "streak": 12,
     "longest": 140,
-    "active_days": 310,
+    "active_days": 311,
     "calendar": [
       [
         4,
@@ -677,7 +677,8 @@
         55,
         2,
         15,
-        20
+        23,
+        6
       ]
     ],
     "languages": [
@@ -2205,31 +2206,31 @@
     "project_count": 49
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5863,
-    "PrefectHQ/prefect": 24090,
-    "anthropics/skills": 184402,
-    "apache/airflow": 47296,
+    "NirmalScaria/le-git-graph": 5861,
+    "PrefectHQ/prefect": 24100,
+    "anthropics/skills": 184658,
+    "apache/airflow": 47309,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
     "awslabs/agent-plugins": 932,
-    "awslabs/mcp": 9841,
+    "awslabs/mcp": 9846,
     "axios/axios": 109311,
     "cloudposse/terraform-aws-tfstate-backend": 442,
-    "expressjs/multer": 12090,
+    "expressjs/multer": 12088,
     "feast-dev/feast": 7350,
-    "forem/selfhost": 1480,
+    "forem/selfhost": 1479,
     "hashicorp/terraform-provider-aws": 11127,
-    "lucide-icons/lucide": 25354,
-    "modelcontextprotocol/servers": 91632,
+    "lucide-icons/lucide": 25373,
+    "modelcontextprotocol/servers": 91667,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
     "terraform-aws-modules/terraform-aws-s3-bucket": 588
   },
-  "views": 23873,
+  "views": 23926,
   "source_updated_at": {
-    "github": "2026-10-28T13:18:17+00:00",
-    "leetcode": "2026-10-28T13:18:13+00:00",
-    "portfolio": "2026-10-28T13:18:18+00:00",
-    "views": "2026-10-28T13:18:12+00:00"
+    "github": "2026-10-29T13:26:42+00:00",
+    "leetcode": "2026-10-29T13:26:38+00:00",
+    "portfolio": "2026-10-29T13:26:43+00:00",
+    "views": "2026-10-29T13:26:38+00:00"
   }
 }

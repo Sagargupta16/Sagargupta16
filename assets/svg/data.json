@@ -4,19 +4,19 @@
     "rating": 2166,
     "top": 1.12,
     "contests": 107,
-    "solved": 1335,
+    "solved": 1336,
     "by_difficulty": {
       "Easy": [
         479,
-        974
+        975
       ],
       "Medium": [
-        690,
-        2136
+        691,
+        2138
       ],
       "Hard": [
         166,
-        986
+        987
       ]
     },
     "history": [
@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8315,
-    "commits": 5783,
-    "prs": 1924,
-    "stars": 344,
+    "contributions": 8424,
+    "commits": 5839,
+    "prs": 1962,
+    "stars": 345,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,7 +170,7 @@
       "ledger-sync": 9,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 35,
+      "awesome-mcp-servers": 36,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -198,22 +198,15 @@
       "readme-kit-action": 4,
       "agent-brain": 2,
       "svg-forge": 3,
-      "orrery": 6
+      "orrery": 6,
+      "praxinoscope": 0,
+      "awesome-skills": 0
     },
-    "followers": 115,
-    "streak": 14,
-    "longest": 140,
-    "active_days": 313,
+    "followers": 114,
+    "streak": 15,
+    "longest": 133,
+    "active_days": 307,
     "calendar": [
-      [
-        4,
-        8,
-        36,
-        18,
-        2,
-        13,
-        42
-      ],
       [
         12,
         1,
@@ -677,26 +670,29 @@
         55,
         2,
         15,
-        23,
+        26,
         6,
         4,
         3
+      ],
+      [
+        106
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        55.9,
+        53.8,
         "#3178c6"
       ],
       [
         "Python",
-        22.9,
+        25.7,
         "#3572A5"
       ],
       [
         "JavaScript",
-        12.2,
+        11.7,
         "#f1e05a"
       ],
       [
@@ -1634,7 +1630,7 @@
         "url": "https://leetcode.com/u/Sagargupta1610/",
         "solved_by_difficulty": {
           "easy": 479,
-          "medium": 688,
+          "medium": 691,
           "hard": 166
         },
         "rating_history": [
@@ -2084,34 +2080,34 @@
         "url": "https://github.com/Sagargupta16",
         "contributions": 8025,
         "pull_requests": 1903,
-        "longest_streak": 147,
+        "longest_streak": 133,
         "languages": [
           {
             "name": "TypeScript",
-            "percent": 55.6
+            "percent": 53.8
           },
           {
             "name": "Python",
-            "percent": 21.6
+            "percent": 25.7
           },
           {
             "name": "JavaScript",
-            "percent": 13
+            "percent": 11.7
           },
           {
             "name": "CSS",
-            "percent": 2.7
+            "percent": 2.5
           },
           {
             "name": "C++",
-            "percent": 2.3
+            "percent": 2.1
           },
           {
             "name": "Shell",
-            "percent": 1.4
+            "percent": 1.2
           }
         ],
-        "fetched": "2026-10-26"
+        "fetched": "2026-11-01"
       }
     },
     "certifications": [
@@ -2208,31 +2204,31 @@
     "project_count": 49
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5862,
-    "PrefectHQ/prefect": 24101,
-    "anthropics/skills": 185701,
-    "apache/airflow": 47330,
+    "NirmalScaria/le-git-graph": 5863,
+    "PrefectHQ/prefect": 24103,
+    "anthropics/skills": 186133,
+    "apache/airflow": 47337,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
-    "awslabs/agent-plugins": 932,
-    "awslabs/mcp": 9854,
+    "awslabs/agent-plugins": 933,
+    "awslabs/mcp": 9858,
     "axios/axios": 109308,
-    "cloudposse/terraform-aws-tfstate-backend": 442,
+    "cloudposse/terraform-aws-tfstate-backend": 443,
     "expressjs/multer": 12087,
-    "feast-dev/feast": 7351,
+    "feast-dev/feast": 7352,
     "forem/selfhost": 1479,
     "hashicorp/terraform-provider-aws": 11127,
-    "lucide-icons/lucide": 25419,
-    "modelcontextprotocol/servers": 91712,
+    "lucide-icons/lucide": 25440,
+    "modelcontextprotocol/servers": 91732,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
     "terraform-aws-modules/terraform-aws-s3-bucket": 589
   },
-  "views": 24125,
+  "views": 24208,
   "source_updated_at": {
-    "github": "2026-10-31T12:53:26+00:00",
-    "leetcode": "2026-10-31T12:53:23+00:00",
-    "portfolio": "2026-10-31T12:53:27+00:00",
-    "views": "2026-10-31T12:53:22+00:00"
+    "github": "2026-11-01T13:39:57+00:00",
+    "leetcode": "2026-11-01T13:39:53+00:00",
+    "portfolio": "2026-11-01T13:39:58+00:00",
+    "views": "2026-11-01T13:39:53+00:00"
   }
 }

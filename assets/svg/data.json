@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8424,
-    "commits": 5839,
-    "prs": 1962,
-    "stars": 345,
+    "contributions": 8340,
+    "commits": 5733,
+    "prs": 1977,
+    "stars": 358,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,12 +170,12 @@
       "ledger-sync": 9,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 36,
+      "awesome-mcp-servers": 40,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
       "ai-git-hooks": 3,
-      "credly-badge-readme-action": 5,
+      "credly-badge-readme-action": 6,
       "claude-cost-optimizer": 42,
       "claude-code-recipes": 8,
       "claude-skills": 5,
@@ -184,13 +184,13 @@
       "GitScope": 4,
       "code-arena": 3,
       "bedrock-multi-model-mcp": 3,
-      "craftsmanship": 1,
+      "craftsmanship": 2,
       "kalchar": 4,
       "shared-workflows": 3,
       "skillcheck": 5,
       "itr-agent": 10,
       "sagas": 3,
-      "orbit": 2,
+      "orbit": 3,
       "kinfolk": 3,
       "github-stats-card-action": 3,
       "leetcode-card-action": 3,
@@ -199,13 +199,13 @@
       "agent-brain": 2,
       "svg-forge": 3,
       "orrery": 6,
-      "praxinoscope": 0,
-      "awesome-skills": 0
+      "kinograph": 3,
+      "awesome-skills": 3
     },
-    "followers": 114,
-    "streak": 15,
+    "followers": 115,
+    "streak": 16,
     "longest": 133,
-    "active_days": 307,
+    "active_days": 308,
     "calendar": [
       [
         12,
@@ -670,13 +670,14 @@
         55,
         2,
         15,
-        26,
+        23,
         6,
         4,
         3
       ],
       [
-        106
+        119,
+        29
       ]
     ],
     "languages": [
@@ -702,7 +703,7 @@
       ],
       [
         "C++",
-        2.1,
+        2.0,
         "#f34b7d"
       ],
       [
@@ -821,7 +822,7 @@
         "year": "2025"
       },
       {
-        "title": "8x AWS community ambassador",
+        "title": "7x AWS community ambassador",
         "type": "program",
         "year": "2025-2026"
       },
@@ -2204,31 +2205,31 @@
     "project_count": 49
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5863,
-    "PrefectHQ/prefect": 24103,
-    "anthropics/skills": 186133,
-    "apache/airflow": 47337,
+    "NirmalScaria/le-git-graph": 5864,
+    "PrefectHQ/prefect": 24108,
+    "anthropics/skills": 186665,
+    "apache/airflow": 47347,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
     "awslabs/agent-plugins": 933,
-    "awslabs/mcp": 9858,
-    "axios/axios": 109308,
+    "awslabs/mcp": 9863,
+    "axios/axios": 109315,
     "cloudposse/terraform-aws-tfstate-backend": 443,
-    "expressjs/multer": 12087,
-    "feast-dev/feast": 7352,
-    "forem/selfhost": 1479,
-    "hashicorp/terraform-provider-aws": 11127,
-    "lucide-icons/lucide": 25440,
-    "modelcontextprotocol/servers": 91732,
+    "expressjs/multer": 12086,
+    "feast-dev/feast": 7353,
+    "forem/selfhost": 1478,
+    "hashicorp/terraform-provider-aws": 11130,
+    "lucide-icons/lucide": 25468,
+    "modelcontextprotocol/servers": 91744,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
     "terraform-aws-modules/terraform-aws-s3-bucket": 589
   },
-  "views": 24208,
+  "views": 24335,
   "source_updated_at": {
-    "github": "2026-11-01T13:39:57+00:00",
-    "leetcode": "2026-11-01T13:39:53+00:00",
-    "portfolio": "2026-11-01T13:39:58+00:00",
-    "views": "2026-11-01T13:39:53+00:00"
+    "github": "2026-11-02T16:23:21+00:00",
+    "leetcode": "2026-11-02T16:23:15+00:00",
+    "portfolio": "2026-11-02T16:23:22+00:00",
+    "views": "2026-11-02T16:23:14+00:00"
   }
 }

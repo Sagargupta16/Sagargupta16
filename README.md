@@ -4,7 +4,7 @@
 
 <a href="https://sagargupta.online/portfolio-react/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/hero.svg" /><img src="assets/svg/hero-mobile.svg" width="100%" alt="Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS" /></picture></a>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/profile-badges.svg" /><img src="assets/svg/profile-badges-mobile.svg" width="100%" alt="Profile Views 24,208; Followers 114; Total Stars 345; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/profile-badges.svg" /><img src="assets/svg/profile-badges-mobile.svg" width="100%" alt="Profile Views 24,335; Followers 115; Total Stars 358; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
 
 <picture><source media="(min-width: 1012px)" srcset="assets/svg/intro.svg" /><img src="assets/svg/intro-mobile.svg" width="100%" alt="Cloud consultant at AWS Professional Services: Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines. In my own time I build MCP servers and Claude Code skills." /></picture>
 
@@ -74,7 +74,7 @@
 
 <picture><source media="(prefers-color-scheme: light) and (min-width: 1012px)" srcset="assets/svg/header-publications-light.svg" /><source media="(prefers-color-scheme: dark) and (min-width: 1012px)" srcset="assets/svg/header-publications-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-publications-light-mobile.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-publications-dark-mobile.svg" /><img src="assets/svg/header-publications-dark-mobile.svg" width="100%" alt="Publications, Talks and Recognition" /></picture>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/publications.svg" /><img src="assets/svg/publications-mobile.svg" width="100%" alt="Publications, talks and recognition: Peer reviewer for AWS Prescriptive Guidance patterns; Internal tech talks on Terraform testing and GitOps; AWS Professional Services MLOps SME program graduate; 8x AWS community ambassador; Senior Speaker Certification; Associate Speaker Certification; Security content review qualification; AWS Jam content tester for re:Invent 2026, DevOps and GenAI; AWS Training and Certification SME" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/publications.svg" /><img src="assets/svg/publications-mobile.svg" width="100%" alt="Publications, talks and recognition: Peer reviewer for AWS Prescriptive Guidance patterns; Internal tech talks on Terraform testing and GitOps; AWS Professional Services MLOps SME program graduate; 7x AWS community ambassador; Senior Speaker Certification; Associate Speaker Certification; Security content review qualification; AWS Jam content tester for re:Invent 2026, DevOps and GenAI; AWS Training and Certification SME" /></picture></a>
 
 <picture><img src="assets/svg/divider.svg" width="100%" alt="" /></picture>
 
@@ -106,7 +106,7 @@
 
 <picture><source media="(prefers-color-scheme: light) and (min-width: 1012px)" srcset="assets/svg/header-stats-light.svg" /><source media="(prefers-color-scheme: dark) and (min-width: 1012px)" srcset="assets/svg/header-stats-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stats-light-mobile.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stats-dark-mobile.svg" /><img src="assets/svg/header-stats-dark-mobile.svg" width="100%" alt="Coding Stats" /></picture>
 
-<picture><source media="(min-width: 1012px)" srcset="assets/svg/github.svg" /><img src="assets/svg/github-mobile.svg" width="100%" alt="GitHub stats: 8,424 contributions, 5,839 commits, 1,962 pull requests, 345 stars, longest streak 133 days" /></picture>
+<picture><source media="(min-width: 1012px)" srcset="assets/svg/github.svg" /><img src="assets/svg/github-mobile.svg" width="100%" alt="GitHub stats: 8,340 contributions, 5,733 commits, 1,977 pull requests, 358 stars, longest streak 133 days" /></picture>
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><picture><source media="(min-width: 1012px)" srcset="assets/svg/get-github.svg" /><img src="assets/svg/get-github-mobile.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></picture></a>
 

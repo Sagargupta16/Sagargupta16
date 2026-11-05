@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8354,
-    "commits": 5735,
+    "contributions": 8358,
+    "commits": 5736,
     "prs": 1979,
-    "stars": 369,
+    "stars": 374,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -167,10 +167,10 @@
       "ai-project-template": 4,
       "Financial-Dashboard": 11,
       "SelfHub": 5,
-      "ledger-sync": 9,
+      "ledger-sync": 10,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 51,
+      "awesome-mcp-servers": 55,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -203,9 +203,9 @@
       "awesome-skills": 3
     },
     "followers": 116,
-    "streak": 18,
+    "streak": 19,
     "longest": 133,
-    "active_days": 310,
+    "active_days": 311,
     "calendar": [
       [
         12,
@@ -679,7 +679,8 @@
         119,
         29,
         7,
-        7
+        7,
+        4
       ]
     ],
     "languages": [
@@ -1604,9 +1605,11 @@
         "location": "Shivpuri, Madhya Pradesh, India",
         "cgpa": "",
         "skills": [
-          "Mathematics",
           "Physics",
-          "Chemistry"
+          "Chemistry",
+          "Mathematics",
+          "Physical Education",
+          "English Core"
         ]
       },
       {
@@ -1617,7 +1620,16 @@
         "board": "Central Board of Secondary Education (CBSE)",
         "location": "Shivpuri, Madhya Pradesh, India",
         "cgpa": "",
-        "skills": []
+        "skills": [
+          "Mathematics",
+          "Science",
+          "History",
+          "Geography",
+          "Political Science",
+          "Economics",
+          "English",
+          "Sanskrit"
+        ]
       }
     ],
     "coding_stats": {
@@ -2207,31 +2219,31 @@
     "project_count": 49
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5863,
-    "PrefectHQ/prefect": 24114,
-    "anthropics/skills": 187304,
-    "apache/airflow": 47358,
+    "NirmalScaria/le-git-graph": 5861,
+    "PrefectHQ/prefect": 24117,
+    "anthropics/skills": 187639,
+    "apache/airflow": 47373,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
-    "awslabs/agent-plugins": 935,
-    "awslabs/mcp": 9877,
-    "axios/axios": 109316,
+    "awslabs/agent-plugins": 936,
+    "awslabs/mcp": 9881,
+    "axios/axios": 109315,
     "cloudposse/terraform-aws-tfstate-backend": 443,
-    "expressjs/multer": 12082,
-    "feast-dev/feast": 7353,
+    "expressjs/multer": 12084,
+    "feast-dev/feast": 7355,
     "forem/selfhost": 1478,
-    "hashicorp/terraform-provider-aws": 11130,
-    "lucide-icons/lucide": 25560,
-    "modelcontextprotocol/servers": 91787,
+    "hashicorp/terraform-provider-aws": 11135,
+    "lucide-icons/lucide": 25588,
+    "modelcontextprotocol/servers": 91809,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
     "terraform-aws-modules/terraform-aws-s3-bucket": 589
   },
-  "views": 24601,
+  "views": 24729,
   "source_updated_at": {
-    "github": "2026-11-04T14:44:49+00:00",
-    "leetcode": "2026-11-04T14:44:45+00:00",
-    "portfolio": "2026-11-04T14:44:50+00:00",
-    "views": "2026-11-04T14:44:45+00:00"
+    "github": "2026-11-05T14:50:00+00:00",
+    "leetcode": "2026-11-05T14:49:55+00:00",
+    "portfolio": "2026-11-05T14:50:01+00:00",
+    "views": "2026-11-05T14:49:55+00:00"
   }
 }

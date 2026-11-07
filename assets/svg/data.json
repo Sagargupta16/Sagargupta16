@@ -133,7 +133,7 @@
     "contributions": 8358,
     "commits": 5736,
     "prs": 1979,
-    "stars": 380,
+    "stars": 384,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,7 +170,7 @@
       "ledger-sync": 10,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 59,
+      "awesome-mcp-servers": 63,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -202,8 +202,8 @@
       "kinograph": 3,
       "awesome-skills": 3
     },
-    "followers": 117,
-    "streak": 19,
+    "followers": 118,
+    "streak": 0,
     "longest": 133,
     "active_days": 311,
     "calendar": [
@@ -681,6 +681,7 @@
         7,
         7,
         4,
+        0,
         0
       ]
     ],
@@ -2220,31 +2221,31 @@
     "project_count": 49
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5862,
-    "PrefectHQ/prefect": 24122,
-    "anthropics/skills": 188032,
-    "apache/airflow": 47394,
+    "NirmalScaria/le-git-graph": 5861,
+    "PrefectHQ/prefect": 24128,
+    "anthropics/skills": 188385,
+    "apache/airflow": 47409,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
     "awslabs/agent-plugins": 937,
-    "awslabs/mcp": 9886,
-    "axios/axios": 109309,
+    "awslabs/mcp": 9891,
+    "axios/axios": 109310,
     "cloudposse/terraform-aws-tfstate-backend": 443,
     "expressjs/multer": 12084,
-    "feast-dev/feast": 7355,
+    "feast-dev/feast": 7356,
     "forem/selfhost": 1477,
-    "hashicorp/terraform-provider-aws": 11135,
-    "lucide-icons/lucide": 25607,
-    "modelcontextprotocol/servers": 91826,
+    "hashicorp/terraform-provider-aws": 11134,
+    "lucide-icons/lucide": 25623,
+    "modelcontextprotocol/servers": 91848,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
-    "terraform-aws-modules/terraform-aws-s3-bucket": 589
+    "terraform-aws-modules/terraform-aws-s3-bucket": 590
   },
-  "views": 24821,
+  "views": 24901,
   "source_updated_at": {
-    "github": "2026-11-06T14:28:37+00:00",
-    "leetcode": "2026-11-06T14:28:33+00:00",
-    "portfolio": "2026-11-06T14:28:38+00:00",
-    "views": "2026-11-06T14:28:33+00:00"
+    "github": "2026-11-07T13:22:34+00:00",
+    "leetcode": "2026-11-07T13:22:30+00:00",
+    "portfolio": "2026-11-07T13:22:34+00:00",
+    "views": "2026-11-07T13:22:30+00:00"
   }
 }

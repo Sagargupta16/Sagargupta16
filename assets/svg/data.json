@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8264,
-    "commits": 5608,
-    "prs": 2011,
-    "stars": 407,
+    "contributions": 8274,
+    "commits": 5611,
+    "prs": 2014,
+    "stars": 409,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,7 +170,7 @@
       "ledger-sync": 10,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 83,
+      "awesome-mcp-servers": 85,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -203,7 +203,7 @@
       "awesome-skills": 5,
       "foreman": 1
     },
-    "followers": 119,
+    "followers": 120,
     "streak": 4,
     "longest": 126,
     "active_days": 308,
@@ -681,23 +681,23 @@
         6,
         58,
         16,
-        12
+        22
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        51.3,
+        51.2,
         "#3178c6"
       ],
       [
         "Python",
-        29.3,
+        29.4,
         "#3572A5"
       ],
       [
         "JavaScript",
-        11.1,
+        11.0,
         "#f1e05a"
       ],
       [
@@ -2222,29 +2222,29 @@
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5862,
     "PrefectHQ/prefect": 24151,
-    "anthropics/skills": 193279,
-    "apache/airflow": 47456,
+    "anthropics/skills": 193535,
+    "apache/airflow": 47460,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
-    "awslabs/agent-plugins": 940,
-    "awslabs/mcp": 9908,
+    "awslabs/agent-plugins": 941,
+    "awslabs/mcp": 9911,
     "axios/axios": 109394,
     "cloudposse/terraform-aws-tfstate-backend": 443,
     "expressjs/multer": 12085,
     "feast-dev/feast": 7358,
-    "forem/selfhost": 1478,
-    "hashicorp/terraform-provider-aws": 11141,
-    "lucide-icons/lucide": 25716,
-    "modelcontextprotocol/servers": 91939,
+    "forem/selfhost": 1479,
+    "hashicorp/terraform-provider-aws": 11143,
+    "lucide-icons/lucide": 25723,
+    "modelcontextprotocol/servers": 91949,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
     "terraform-aws-modules/terraform-aws-s3-bucket": 590
   },
-  "views": 25509,
+  "views": 25563,
   "source_updated_at": {
-    "github": "2026-11-12T06:07:22+00:00",
-    "leetcode": "2026-11-12T06:07:18+00:00",
-    "portfolio": "2026-11-12T06:07:24+00:00",
-    "views": "2026-11-12T06:07:18+00:00"
+    "github": "2026-11-12T15:28:43+00:00",
+    "leetcode": "2026-11-12T15:28:39+00:00",
+    "portfolio": "2026-11-12T15:28:44+00:00",
+    "views": "2026-11-12T15:28:39+00:00"
   }
 }

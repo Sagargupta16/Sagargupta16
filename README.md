@@ -4,7 +4,7 @@
 
 <a href="https://sagargupta.online/portfolio-react/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/hero.svg" /><img src="assets/svg/hero-mobile.svg" width="100%" alt="Sagar Gupta, ProServe (Cloud Consultant) - DevOps/MLOps at AWS" /></picture></a>
 
-<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/profile-badges.svg" /><img src="assets/svg/profile-badges-mobile.svg" width="100%" alt="Profile Views 25,509; Followers 119; Total Stars 407; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
+<a href="https://sagargupta.online/portfolio-react/"><picture><source media="(min-width: 1012px)" srcset="assets/svg/profile-badges.svg" /><img src="assets/svg/profile-badges-mobile.svg" width="100%" alt="Profile Views 25,563; Followers 120; Total Stars 409; Leetcode GUARDIAN  |  PEAK 2166; Certified 5x AWS; Experience 2+ YEARS AT AWS; Portfolio SAGARGUPTA.ONLINE" /></picture></a>
 
 <picture><source media="(min-width: 1012px)" srcset="assets/svg/intro.svg" /><img src="assets/svg/intro-mobile.svg" width="100%" alt="Cloud consultant at AWS Professional Services: Terraform, CI/CD, security guardrails and SageMaker MLOps pipelines. In my own time I build MCP servers and Claude Code skills." /></picture>
 
@@ -106,7 +106,7 @@
 
 <picture><source media="(prefers-color-scheme: light) and (min-width: 1012px)" srcset="assets/svg/header-stats-light.svg" /><source media="(prefers-color-scheme: dark) and (min-width: 1012px)" srcset="assets/svg/header-stats-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-stats-light-mobile.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-stats-dark-mobile.svg" /><img src="assets/svg/header-stats-dark-mobile.svg" width="100%" alt="Coding Stats" /></picture>
 
-<picture><source media="(min-width: 1012px)" srcset="assets/svg/github.svg" /><img src="assets/svg/github-mobile.svg" width="100%" alt="GitHub stats: 8,264 contributions, 5,608 commits, 2,011 pull requests, 407 stars, longest streak 126 days" /></picture>
+<picture><source media="(min-width: 1012px)" srcset="assets/svg/github.svg" /><img src="assets/svg/github-mobile.svg" width="100%" alt="GitHub stats: 8,274 contributions, 5,611 commits, 2,014 pull requests, 409 stars, longest streak 126 days" /></picture>
 
 <a href="https://github.com/Sagargupta16/github-stats-card-action#quick-start"><picture><source media="(min-width: 1012px)" srcset="assets/svg/get-github.svg" /><img src="assets/svg/get-github-mobile.svg" width="100%" alt="Get the GitHub stats card for your own profile: Sagargupta16/github-stats-card-action" /></picture></a>
 

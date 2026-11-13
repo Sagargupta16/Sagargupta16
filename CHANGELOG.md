@@ -17,6 +17,7 @@ Removed from the page:
 - The GitHub and LeetCode connect buttons: the page is already on GitHub and LeetCode has its own card. LinkedIn, Resume, Email and Portfolio stay
 - The contribution snake image. `snake.yml` and the `output` branch are untouched
 - CGPA and the division line on the education card: it shows the degree, the dates, the school and the city
+- The program row on the Experience card's engagement rail. The rail shows customer engagements only, each titled "Customer 1", "Customer 2", "Customer 3" by start date, with its generic sector in brackets below ("(Global financial services)"); the portfolio data and `data.json` keep the program
 - `scripts/update-credly-badges.py` (the pinned Credly action does that job and nothing called the script) and `assets/portfolio-screenshot.png` (nothing referenced it)
 
 Added:
@@ -27,7 +28,7 @@ Added:
 
 Fixed:
 
-- The phone Experience card showed a "Customer engagements" heading with no rows, and the desktop card read hard-coded rows. Both draw the engagements from the portfolio data, newest four, under "Engagements at AWS" when a row is a program and not a customer
+- The phone Experience card showed a "Customer engagements" heading with no rows, and the desktop card read hard-coded rows. Both draw the customer engagements from the portfolio data, newest four
 - The customer scrub and the validator guard only matched `Role - Client`; the portfolio writes `Role, Client`, so both were no-ops for the current data. Every engagement is now rebuilt from a fixed set of public fields whatever the separator. A customer's label always comes from the month table, never from the portfolio's wording; a month with no entry shows "AWS customer" and the render prints a warning. The validator passes only the table's labels, "AWS customer" and the public program names
 - The line that names the AWS community ambassador count is rewritten to its public wording whatever shape the portfolio gives it, and the validator fails on the word "ambassador" anywhere outside that wording or a Credly badge title
 - Every phone mono micro-label rendered in the sans font (a CSS `text{}` rule beat the attribute). The phone engine now sets the sans default on the root and the mono class on the label
@@ -55,7 +56,7 @@ Generator:
 - `scripts/mobile_cards.py` is the phone layout engine (1,088 lines to 505); the phone cards live beside their desktop twins in the modules. It also holds the rules the renderer and the validator share: `cert_status()`, `cert_issuer()`, the customer label table and the public program names
 - `scripts/preview.py <module>` renders one module into `.scratch/preview/`
 - Simple Icons are pinned to 16.37.0 and cached in `assets/svg/icons.json`, so an offline render needs no network
-- `validate-readme.py` also checks every SVG for external references, scripts and bad animation timing, relative link targets, long dashes and emojis (escaped as entities too), Markdown-syntax links in the generated pages, and the counts a visitor reads (active certifications, AWS certifications, years at AWS) in card text and alt text; it warns when the data snapshot is stale
+- `validate-readme.py` fails when a "Customer N (...)" line names anything but a sector from the label table, and also checks every SVG for external references, scripts and bad animation timing, relative link targets, long dashes and emojis (escaped as entities too), Markdown-syntax links in the generated pages, and the counts a visitor reads (active certifications, AWS certifications, years at AWS) in card text and alt text; it warns when the data snapshot is stale
 - A hero tagline longer than 40 characters prints a warning at render time; the card steps its size down and never cuts a word in half
 - Counts shortened with K or M round down, so a chip never shows more than the source has
 - The test suite grows to 422 tests, one file per module

@@ -59,7 +59,7 @@ one to `.scratch/preview/ctx.json`.
 | `years_at_aws` | int |
 | `proof` | the hero's four cells, each `{value, label}`: aws-samples, AWS certifications, LeetCode peak, years at AWS |
 | `milestones` | list of `{year, what, where, city, kind, current}`, oldest first |
-| `engagements` | list of `{when, client, role, stack, kind, ongoing, start, end}`, oldest first; `kind` is `customer` or `program`, and `client` is already the public label |
+| `engagements` | the customer engagements only, oldest first, as `{number, title, sector, when, client, role, stack, kind, ongoing, start, end}`: `title` is "Customer <number>", numbered over every customer, `sector` is the public label without " customer" (empty for "AWS customer"), and `client` is the public label. Programs stay in `data.json` and are not drawn |
 | `education` | list of `{degree, school, city, when}` |
 | `recognition` | list of `(group title, [(text, year), ...])` |
 | `samples` | list of `{key, title, url, date, tags}` for the aws-samples, newest first |
@@ -162,7 +162,7 @@ Links belong around the image, because links inside an SVG displayed through
 - `validate-readme.py`: image references, links, usernames, the configured role,
   the counts a visitor reads (years at AWS from `career.start_date`, active
   certifications, AWS certifications) in card text and alt text, customer and
-  program labels against the fixed tables, the ambassador wording, no long
+  program labels against the fixed tables, the bracketed sector under each "Customer N", the ambassador wording, no long
   dashes or emojis (raw or as entities), no Markdown-syntax links in the
   generated pages, and every SVG free of scripts, external references and
   broken animation timing.

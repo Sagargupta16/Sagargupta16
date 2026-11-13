@@ -47,6 +47,9 @@ jobs:
           # also draw every badge as the certifications card the README shows
           output: both
           svg-path: assets/svg/certs.svg
+          # an expired certification is not counted or drawn as current;
+          # the status card above the badges names it as previously earned
+          hide-expired: "true"
 
       - name: Show diff
         run: |

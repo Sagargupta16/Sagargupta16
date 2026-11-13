@@ -24,8 +24,10 @@ Thumbs.db
 
 # Resume lives in latex-resume releases; not stored in this repo
 
-# Backup files (from validate script)
-*.backup-*
+# Scratch work, review evidence and local render output
+.scratch/
+output/
+tmp/
 
 # Environment files
 .env

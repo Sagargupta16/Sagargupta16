@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8295,
-    "commits": 5617,
-    "prs": 2020,
-    "stars": 413,
+    "contributions": 8298,
+    "commits": 5618,
+    "prs": 2021,
+    "stars": 415,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,14 +170,14 @@
       "ledger-sync": 10,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 88,
+      "awesome-mcp-servers": 89,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
       "ai-git-hooks": 3,
       "credly-badge-readme-action": 6,
       "claude-cost-optimizer": 44,
-      "claude-code-recipes": 8,
+      "claude-code-recipes": 9,
       "claude-skills": 5,
       "latex-resume": 3,
       "instagram-autopilot": 4,
@@ -206,7 +206,7 @@
     "followers": 120,
     "streak": 5,
     "longest": 126,
-    "active_days": 308,
+    "active_days": 309,
     "calendar": [
       [
         9,
@@ -382,8 +382,8 @@
       [
         3,
         68,
-        22,
-        20,
+        23,
+        19,
         0,
         4,
         43
@@ -544,8 +544,8 @@
       [
         0,
         12,
-        4,
-        27,
+        6,
+        25,
         5,
         0,
         0
@@ -583,14 +583,14 @@
         0,
         0,
         0,
-        0,
-        2
+        1,
+        1
       ],
       [
         0,
         0,
-        20,
-        41,
+        21,
+        40,
         63,
         11,
         30
@@ -608,8 +608,8 @@
         53,
         37,
         11,
-        4,
-        11,
+        5,
+        10,
         10,
         6
       ],
@@ -618,8 +618,8 @@
         8,
         5,
         6,
-        17,
-        24,
+        18,
+        23,
         73
       ],
       [
@@ -651,8 +651,8 @@
       ],
       [
         204,
-        13,
-        20,
+        15,
+        18,
         51,
         3,
         6,
@@ -662,10 +662,10 @@
         55,
         2,
         15,
-        22,
-        7,
-        3,
-        4
+        23,
+        6,
+        4,
+        3
       ],
       [
         113,
@@ -682,7 +682,7 @@
         58,
         16,
         22,
-        21
+        24
       ]
     ],
     "languages": [
@@ -2191,35 +2191,35 @@
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5860,
-    "PrefectHQ/prefect": 24152,
-    "anthropics/skills": 193842,
-    "apache/airflow": 47467,
+    "PrefectHQ/prefect": 24153,
+    "anthropics/skills": 193967,
+    "apache/airflow": 47466,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
     "awslabs/agent-plugins": 941,
-    "awslabs/mcp": 9913,
-    "axios/axios": 109397,
-    "cloudposse/terraform-aws-tfstate-backend": 443,
+    "awslabs/mcp": 9914,
+    "axios/axios": 109395,
+    "cloudposse/terraform-aws-tfstate-backend": 444,
     "expressjs/multer": 12085,
-    "feast-dev/feast": 7359,
+    "feast-dev/feast": 7360,
     "forem/selfhost": 1478,
     "hashicorp/terraform-provider-aws": 11144,
-    "lucide-icons/lucide": 25733,
-    "modelcontextprotocol/servers": 91961,
+    "lucide-icons/lucide": 25740,
+    "modelcontextprotocol/servers": 91971,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
     "terraform-aws-modules/terraform-aws-s3-bucket": 590
   },
   "source_updated_at": {
-    "github": "2026-11-13T07:52:32+00:00",
-    "leetcode": "2026-11-13T07:52:27+00:00",
-    "portfolio": "2026-11-13T07:52:34+00:00",
-    "npm": "2026-11-13T07:53:05+00:00"
+    "github": "2026-11-13T13:45:22+00:00",
+    "leetcode": "2026-11-13T13:45:18+00:00",
+    "portfolio": "2026-11-13T13:45:23+00:00",
+    "npm": "2026-11-13T13:45:45+00:00"
   },
   "npm": {
-    "@sagargupta1610/orrery": 1793,
-    "@sagargupta1610/skillcheck": 2070,
-    "bedrock-multi-model-mcp": 1015,
-    "itr-agent": 32
+    "@sagargupta1610/orrery": 1805,
+    "@sagargupta1610/skillcheck": 2158,
+    "bedrock-multi-model-mcp": 1061,
+    "itr-agent": 31
   }
 }

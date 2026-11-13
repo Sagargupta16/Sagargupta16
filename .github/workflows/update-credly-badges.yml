@@ -39,7 +39,7 @@ jobs:
 
       - name: Update Credly badges
         id: credly
-        uses: Sagargupta16/credly-badge-readme-action@4026ed5438d30856fa7e65b8aa0bd6702777ed48 # v1.4.0
+        uses: Sagargupta16/credly-badge-readme-action@db25a633f92eccb1767692c8c3abdf035f7259b9 # v1.5.0
         with:
           credly-username: ${{ steps.config.outputs.credly_user }}
           # The action owns the badge data and original certification card.

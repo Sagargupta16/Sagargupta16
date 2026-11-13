@@ -2,6 +2,81 @@
 
 All notable changes to this profile README repository.
 
+## [4.22.0] - 2026-11-13
+
+A review of the whole page and repo. The generator is split into a shared design kit and one module per card group, the bugs the review confirmed are fixed, and a new look is piloted on two surfaces only: the hero and the featured project cards. Every other card keeps its current look until the pilot is approved.
+
+New look (pilot):
+
+- The hero is one card where there were three (`hero`, `intro`, `profile-badges`): the greeting, the name, the exact AWS title, a line that rotates through the portfolio's taglines, the "Now:" line, the intro sentence and four proof cells (aws-samples, AWS certifications, LeetCode peak rating, years at AWS), each read from the data. Its scene is a Terraform run: one change passes plan, guardrails and apply and rolls out to the accounts, and one that is not compliant is denied at the guardrails. 840 x 336 on desktop and 320 x 513 on a phone, where the three old cards stacked to 927
+- Each featured project card opens with an animated cover that shows what the project does, redrawn flat from the scene its portfolio page already uses (gallery, extension, ledger, predictor, blue-green, leaderboard, portfolio, MCP). Cards are 400 x 288 and 320 x 317, carry a LIVE marker or a SOURCE marker, and show a star chip from 10 stars. A project with no scene gets a generic cover built from its tech list, so a new portfolio entry cannot break the render
+
+Removed from the page:
+
+- The `intro` and `profile-badges` cards: their facts are in the hero. The profile view count is no longer drawn; a 1px copy of the counter stays after the footer, in a `<picture>` so GitHub does not link it. Followers and stars stay on the GitHub card at both widths
+- The GitHub and LeetCode connect buttons: the page is already on GitHub and LeetCode has its own card. LinkedIn, Resume, Email and Portfolio stay
+- The contribution snake image. `snake.yml` and the `output` branch are untouched
+- CGPA and the division line on the education card: it shows the degree, the dates, the school and the city
+- `scripts/update-credly-badges.py` (the pinned Credly action does that job and nothing called the script) and `assets/portfolio-screenshot.png` (nothing referenced it)
+
+Added:
+
+- Community tools show nine cards in three full rows (seven before): orrery, awesome-mcp-servers, claude-cost-optimizer, skillcheck, svg-forge, bedrock-multi-model-mcp, readme-kit, itr-agent and claude-skills. The two most-starred repos were missing from the page. The three card actions leave this row; each is still linked from the "get this card" strip under its card and listed on `COMMUNITY.md`
+- A tool card shows a star chip from 10 stars and an `N/MO NPM` chip from 100 monthly downloads (api.npmjs.org, cached in `data.json`)
+- Tool summaries no longer quote counts that go stale (plugins, recipes, tools), and the cost optimizer card drops its withdrawn savings range
+
+Fixed:
+
+- The phone Experience card showed a "Customer engagements" heading with no rows, and the desktop card read hard-coded rows. Both draw the engagements from the portfolio data, newest four, under "Engagements at AWS" when a row is a program and not a customer
+- The customer scrub and the validator guard only matched `Role - Client`; the portfolio writes `Role, Client`, so both were no-ops for the current data. Every engagement is now rebuilt from a fixed set of public fields whatever the separator. A customer's label always comes from the month table, never from the portfolio's wording; a month with no entry shows "AWS customer" and the render prints a warning. The validator passes only the table's labels, "AWS customer" and the public program names
+- The line that names the AWS community ambassador count is rewritten to its public wording whatever shape the portfolio gives it, and the validator fails on the word "ambassador" anywhere outside that wording or a Credly badge title
+- Every phone mono micro-label rendered in the sans font (a CSS `text{}` rule beat the attribute). The phone engine now sets the sans default on the root and the mono class on the label
+- The open-source community line said 3 accepted answers on GitHub Community Q&A; it reads the count from the data (6 today) and leaves the clause out when there is nothing to count
+- The "merged" and "open" open-source cards linked to a search that also matched unrelated pull requests; the links are now limited to the repositories on the card
+- Certification counts disagreed (5 on the status card, 6 in the gallery heading). The Credly workflow sets `hide-expired`, so the gallery heading reads 5; the phone badge grid also leaves out badges named Retired
+- The desktop merged list grew without bound (660px tall); it shows the newest six and a "+N more on GitHub" row, sharing one constant with the phone
+- The open list caps each row's pull request numbers at three plus "+N" and sorts them as numbers
+- The footer comet and its dot drifted apart during the loop; both ride one path
+- The current role's ring pulsed before its stop appeared
+- The Kick Start tile is derived from the contest list on both layouts, and the podium label reads "Top finishes" (the list includes a 4th place)
+- The phone GitHub tiles are two columns of whole words, all counted over the past 12 months, with total stars and followers on a line of their own
+- `certs-status.svg` carries `data-active-certifications` on its root for the validator
+- The Publications card's panels read Reviews, Talks, and Programs and recognition, with recognition newest first (they were Publications & Reviews, Tech Talks and Recognition), and the section header's subtitle follows them: "reviews, talks and programs"
+- The timeline's ticks no longer run through the engagement dates, and the SageMaker sample's packet no longer crosses its box labels (both were on the page before this release)
+- Star and npm chips sit at one height across a row of tool cards, and a tool title with one long token wraps inside the card
+- The certification status alt text is sentences, so the lapsed certification no longer reads as one of the active ones
+- On the phone, a pull request title no longer leaves one word alone on its first line, and the education card never starts or ends a line on a separator dot
+
+Generator:
+
+- `scripts/kit.py` is the shared design system: palette, type scale, one 12 s page clock, poster-safe entrance helpers, chips, tiles and text measuring
+- `scripts/cards/` holds one module per card group (`hero`, `chrome`, `career`, `samples`, `projects`, `oss`, `tools`, `stats`). Each exposes `render(data, ctx)` and returns `{file name: svg}`; it reads no files and makes no requests. `stack.svg` and `ai-stack.svg` have no module yet and are kept as committed
+- `scripts/render-svgs.py` loads the data, builds one context, runs the modules and writes the pages: 2,977 lines to 1,639. It stops when a listed module is missing or two modules return the same file. `--data-only` refreshes `data.json` and `icons.json` and stops
+- `scripts/mobile_cards.py` is the phone layout engine (1,088 lines to 505); the phone cards live beside their desktop twins in the modules. It also holds the rules the renderer and the validator share: `cert_status()`, `cert_issuer()`, the customer label table and the public program names
+- `scripts/preview.py <module>` renders one module into `.scratch/preview/`
+- Simple Icons are pinned to 16.37.0 and cached in `assets/svg/icons.json`, so an offline render needs no network
+- `validate-readme.py` also checks every SVG for external references, scripts and bad animation timing, relative link targets, long dashes and emojis (escaped as entities too), Markdown-syntax links in the generated pages, and the counts a visitor reads (active certifications, AWS certifications, years at AWS) in card text and alt text; it warns when the data snapshot is stale
+- A hero tagline longer than 40 characters prints a warning at render time; the card steps its size down and never cuts a word in half
+- Counts shortened with K or M round down, so a chip never shows more than the source has
+- The test suite grows to 422 tests, one file per module
+
+Repo:
+
+- `AGENTS.md` lists the regenerate, test and confidentiality rules for AI assistants
+- `.gitignore` covers `.scratch/`, `output/` and `tmp/`; the unused `*.backup-*` pattern is gone
+- Imgbot skips `assets/svg/`, which is generated
+- The Credly gallery (`assets/credly-badges.md` and `certs.svg`) no longer lists the expired Terraform Associate badge, which follows from `hide-expired`
+- `data.json` no longer stores the profile view count
+- The 4.19.0 entry below no longer spells out the internal community acronym
+
+Known and unchanged:
+
+- The page is about 6% taller on a phone. Summing every README image at the 309px column a 390px phone shows gives 13,207px on 4.21.1 and 13,983px now: the hero saves about 400px, and the two extra tool cards, the project covers and the engagement rows that were missing add more
+- The career rail's last stop reads "ProServe (Cloud Consultant)", as before; the hero carries the full title
+- The merged card counts 13 contributions and its link lists 12 pull requests: the 13th is a co-authored commit, which a pull request search cannot show
+- The AWS sample diagrams keep 10px node labels on a phone
+- `certs.svg`, `certs-mobile.svg` and `stack.svg` are over svg-forge's 100 KB budget because they embed badge and icon images; `github.svg` animates each heatmap cell
+
 ## [4.21.1] - 2026-11-13
 
 - The Credly workflow pins credly-badge-readme-action v1.5.0 (was v1.4.0). That release adds the opt-in `include-other` input for badges on a profile's Other tab; this profile has none and leaves it off, so the badge section and the certifications card are unchanged
@@ -62,8 +137,8 @@ Ports the parts of the unpushed 2026-10-11 `feat/svg-pass` branch that still app
 ## [4.19.0] - 2026-10-24
 
 - Customers are never named on the profile, whatever the portfolio data says: the renderer swaps each customer engagement for a generic label picked by its start month ("Global financial services customer", "Financial market infrastructure customer", "Enterprise customer"; "AWS customer" for a month with no label), on every fresh snapshot and on the cached `data.json`, so no customer name is stored in this repo either. The career rail and the Worked With card wrap the labels to fit on desktop and phone, the rail card grows if a label ever needs a third line, and the three customer logos are removed from `assets/logos`
-- The internal "5x TFC Ambassador: ..." recognition line reads "5x AWS community ambassador"
-- `validate-readme.py` fails when a customer engagement carries anything but a generic "... customer" label, or when the TFC acronym appears in the SVG text
+- The recognition line that used the internal community acronym reads "5x AWS community ambassador"
+- `validate-readme.py` fails when a customer engagement carries anything but a generic "... customer" label, or when the internal community acronym appears in the SVG text
 - Highlights show public figures that no other card repeats, each counted from the portfolio data: AWS customer engagements, published AWS samples, talks and publications, and the AWS community ambassador count. A figure with no data behind it is left out instead of falling back to a fixed number, and no customer score or metric is drawn
 - The footer, desktop and phone, adds "Personal projects and opinions are my own and do not represent Amazon or AWS." to the card and its alt text
 - A contribution typed as a talk lands in the Tech Talks panel even without a "Tech Talk:" prefix

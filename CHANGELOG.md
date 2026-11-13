@@ -2,6 +2,10 @@
 
 All notable changes to this profile README repository.
 
+## [4.21.1] - 2026-11-13
+
+- The Credly workflow pins credly-badge-readme-action v1.5.0 (was v1.4.0). That release adds the opt-in `include-other` input for badges on a profile's Other tab; this profile has none and leaves it off, so the badge section and the certifications card are unchanged
+
 ## [4.21.0] - 2026-10-25
 
 Ports the parts of the unpushed 2026-10-11 `feat/svg-pass` branch that still apply to the current cards.

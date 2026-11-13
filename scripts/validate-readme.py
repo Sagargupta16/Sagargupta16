@@ -72,6 +72,11 @@ GAP = r"(?:\s|<(?:(?!ambassador)[^<>])*>)+"
 # The only labels the renderer's public snapshot gives an engagement, by kind.
 CUSTOMER_CLIENTS = frozenset({*CUSTOMER_LABELS.values(), GENERIC_CUSTOMER})
 PROGRAM_CLIENTS = frozenset(PROGRAMS.values())
+# what the cards print in brackets under "Customer N": a table label without " customer"
+CUSTOMER_SECTORS = frozenset(
+    label.removesuffix(" customer") for label in CUSTOMER_LABELS.values()
+)
+SHOWN_CUSTOMER = re.compile(r"\bCustomer \d+\s*\(([^)]*)\)")
 # The counts a visitor reads, in card text and in README alt text.
 ACTIVE_SHOWN = re.compile(
     r"(\d+)\s+active\s+(?:AWS\s+)?certifications?\b", re.IGNORECASE
@@ -487,6 +492,14 @@ def confidentiality_issues(
                 "the renderer's public snapshot must relabel it"
             )
     for name, forms in texts.items():
+        shown = {
+            m.group(1).strip() for form in forms for m in SHOWN_CUSTOMER.finditer(form)
+        }
+        if shown - CUSTOMER_SECTORS:
+            issues.append(
+                f'{name}: a "Customer N (...)" line names something other than a sector '
+                "from CUSTOMER_LABELS; the cards print only the table's generic sectors"
+            )
         if any(stray_ambassador(form, badges) for form in forms):
             issues.append(
                 f'{name}: "ambassador" appears outside the public wording '

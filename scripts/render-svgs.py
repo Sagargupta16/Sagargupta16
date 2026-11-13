@@ -1174,6 +1174,29 @@ def _proof(samples: list[dict], certs: dict, leetcode: dict, years: int) -> list
     ]
 
 
+def _customers(engagements: list[dict]) -> list[dict]:
+    """Return the customer engagements, oldest first, as "Customer <n>" with the sector to show under it.
+
+    Programs are left out. The number counts every customer engagement, so a row
+    keeps its number when the cards hide older ones. The sector is the public
+    label without " customer"; the generic label has none.
+    """
+    rows = sorted(
+        (e for e in engagements if e["kind"] == "customer"), key=lambda e: e["start"]
+    )
+    return [
+        {
+            **e,
+            "number": number,
+            "title": f"Customer {number}",
+            "sector": ""
+            if e["client"] == GENERIC_CUSTOMER
+            else e["client"].removesuffix(" customer"),
+        }
+        for number, e in enumerate(rows, start=1)
+    ]
+
+
 def build_context(data: dict) -> dict:
     """Return the facts every card module draws from; see docs/readme-rendering.md, section "The context"."""
     pf = data.get("portfolio") or {}
@@ -1223,7 +1246,7 @@ def build_context(data: dict) -> dict:
             }
             for index, (year, what, where, city, kind) in enumerate(MILESTONES)
         ],
-        "engagements": engagements,
+        "engagements": _customers(engagements),
         "education": _education(pf),
         "recognition": _recognition(pf),
         "samples": samples,

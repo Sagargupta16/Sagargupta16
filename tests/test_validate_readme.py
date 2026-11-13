@@ -500,6 +500,37 @@ class ValidateReadmeTests(unittest.TestCase):
                     )
                     self.assertNotIn("qzx", issues[0].lower())
 
+    def test_a_shown_customer_line_carries_only_a_table_sector(self):
+        sector = sorted(validator.CUSTOMER_SECTORS)[0]
+        self.write_svg(
+            "certs-status.svg",
+            body=f"<text>Customer 1</text><text>({sector})</text>",
+        )
+        self.assertEqual([], self.issues())
+        # Acme Bank stands in for a customer name; it may never reach a card or alt text
+        plants = {
+            CARD: lambda: self.write_svg(
+                "certs-status.svg",
+                body="<text>Customer 1</text><text>(Acme Bank)</text>",
+            ),
+            "README.md": lambda: (
+                setattr(
+                    self,
+                    "readme",
+                    self.readme.replace("Resume", "Customer 2 (Acme Bank), Consultant"),
+                ),
+                self.save_readme(),
+            ),
+        }
+        for name, plant in plants.items():
+            with self.subTest(file=name):
+                self.setUp()
+                plant()
+                issues = self.issues()
+                self.assertEqual(1, len(issues), issues)
+                self.assertTrue(issues[0].startswith(f'{name}: a "Customer N'), issues)
+                self.assertNotIn("Acme", issues[0])
+
     def test_ambassador_split_across_card_text_still_fails(self):
         for body in (
             "<text>5x QZX</text><text>Ambassador</text>",

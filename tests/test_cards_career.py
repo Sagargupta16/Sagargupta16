@@ -7,7 +7,9 @@ context of its own.
 
 from __future__ import annotations
 
+import contextlib
 import importlib.util
+import io
 import re
 import sys
 import unittest
@@ -72,22 +74,27 @@ def spans(svg: str) -> list[tuple[str, float, float, float, float]]:
     return out
 
 
-def engagement(
-    client: str, role: str, when: str, kind: str = "customer", ongoing: bool = False
-) -> dict:
+def engagement(client: str, role: str, when: str, ongoing: bool = False) -> dict:
+    """One customer engagement in the public snapshot's shape; see customers()."""
+    start, _, end = when.partition(" to ")
     return {
         "when": when,
         "client": client,
         "role": role,
         "stack": [],
-        "kind": kind,
+        "kind": "customer",
         "ongoing": ongoing,
-        "start": [2025, 1],
-        "end": None if ongoing else [2025, 6],
+        "start": list(renderer._start_key(start)),
+        "end": None if ongoing else list(renderer._start_key(end)),
     }
 
 
-CUSTOMERS = [
+def customers(*rows: dict) -> list[dict]:
+    """The rows as build_context hands them to the cards: numbered oldest first, each with its sector."""
+    return renderer._customers(list(rows))
+
+
+ROWS = [
     engagement("Retail customer", "Cloud Engineer", "Jan 2023 to Jun 2023"),
     engagement("Public sector customer", "DevOps Engineer", "Jul 2023 to Dec 2023"),
     engagement(
@@ -107,12 +114,20 @@ CUSTOMERS = [
     ),
     engagement("Enterprise customer", "Platform Lead", "Jul 2025 to now", ongoing=True),
 ]
-PROGRAM = engagement(
-    "MLOps SME Program",
-    "Medical Image Classification MLOps Pipeline",
-    "Jun 2025 to Aug 2025",
-    kind="program",
+CUSTOMERS = customers(*ROWS)
+# the label a customer engagement gets when its start month has no CUSTOMER_LABELS entry
+GENERIC = engagement(renderer.GENERIC_CUSTOMER, "DevOps Consultant", "Mar 2026 to now")
+LONG_SECTOR = engagement(
+    "Healthcare, life sciences and public sector research customer",
+    "Lead DevOps Consultant and Platform Architect",
+    "Sep 2030 to Dec 2030",
 )
+
+
+def shown(row: dict) -> list[str]:
+    """What a row must show on both layouts: its number, its bracketed sector if any, role and dates."""
+    sector = [f"({row['sector']})"] if row["sector"] else []
+    return [row["title"], *sector, row["role"], row["when"]]
 
 
 class CareerCardTests(unittest.TestCase):
@@ -225,44 +240,110 @@ class CareerCardTests(unittest.TestCase):
 
     # ------------------------------------------------------------ the snapshot's rules
     def test_both_layouts_show_the_snapshots_newest_engagements(self) -> None:
-        shown = self.ctx["engagements"][-career.ENGAGEMENTS_SHOWN :]
-        self.assertTrue(shown)
+        rows = self.ctx["engagements"][-career.ENGAGEMENTS_SHOWN :]
+        self.assertTrue(rows)
         for name in ("experience.svg", "experience-mobile.svg"):
             text = reading(self.files[name])
-            for row in shown:
+            for row in rows:
                 with self.subTest(file=name, when=row["when"]):
-                    self.assertIn(row["client"].upper(), text)
-                    self.assertIn(row["role"].upper(), text)
-                    self.assertIn(row["when"].upper(), text)
+                    for fact in shown(row):
+                        self.assertIn(fact.upper(), text)
+                    # the table label is only ever shown as the bracketed sector
+                    if row["sector"]:
+                        self.assertNotIn(row["client"].upper(), text)
+
+    def test_a_program_in_the_data_never_reaches_the_cards(self) -> None:
+        pf = self.data["portfolio"]
+        program = {
+            "name": "Example Pipeline (SME Program)",
+            "date": "Jun 2031 - Aug 2031",
+        }
+        data = {
+            **self.data,
+            "portfolio": {**pf, "engagements": [*pf["engagements"], program]},
+        }
+        with contextlib.redirect_stdout(io.StringIO()):
+            ctx = renderer.build_context(data)
+        self.assertEqual({row["kind"] for row in ctx["engagements"]}, {"customer"})
+        files = career.render(data, ctx)
+        for name in ("experience.svg", "experience-mobile.svg"):
+            text = reading(files[name])
+            label = parse(files[name]).get("aria-label").upper()
+            for gone in ("EXAMPLE PIPELINE", "SME", *renderer.PROGRAMS.values()):
+                with self.subTest(file=name, text=gone):
+                    self.assertNotIn(gone.upper(), text)
+                    self.assertNotIn(gone.upper(), label)
 
     # ------------------------------------------------------------ fix: render-a-01
     def test_engagements_come_from_the_context_on_both_layouts(self) -> None:
-        rows = [
+        rows = customers(
             engagement("Telecom customer", "Release Manager", "Mar 2031 to Sep 2031"),
             engagement(
                 "Energy customer", "Platform Lead", "Oct 2031 to now", ongoing=True
             ),
-        ]
+        )
         files = self.render(engagements=rows)
         for name in ("experience.svg", "experience-mobile.svg"):
             text = reading(files[name])
             with self.subTest(file=name):
                 for row in rows:
-                    self.assertIn(row["client"].upper(), text)
-                    self.assertIn(row["role"].upper(), text)
-                    self.assertIn(row["when"].upper(), text)
+                    for fact in shown(row):
+                        self.assertIn(fact.upper(), text)
                 # nothing typed into the module may stand in for a row
                 self.assertNotIn("TERRAFORM MODULE LIBRARY", text)
-                self.assertNotIn("ENTERPRISE CUSTOMER", text)
+                self.assertNotIn("ENTERPRISE", text)
                 self.assertIn(
-                    "Telecom customer, Release Manager",
+                    "Customer 1 (Telecom), Release Manager (Mar 2031 to Sep 2031)",
                     parse(files[name]).get("aria-label"),
                 )
 
+    def test_the_alt_text_names_each_row_by_number_and_sector(self) -> None:
+        rows = customers(*ROWS[:2], GENERIC)
+        label = parse(self.render(engagements=rows)["experience.svg"]).get("aria-label")
+        self.assertTrue(
+            label.endswith(
+                ". Customer engagements at AWS: "
+                "Customer 1 (Retail), Cloud Engineer (Jan 2023 to Jun 2023); "
+                "Customer 2 (Public sector), DevOps Engineer (Jul 2023 to Dec 2023); "
+                "Customer 3, DevOps Consultant (Mar 2026 to now)"
+            ),
+            label,
+        )
+
     def test_the_phone_lists_engagements_newest_first(self) -> None:
         text = reading(self.render(engagements=CUSTOMERS[:3])["experience-mobile.svg"])
-        order = [text.index(row["client"].upper()) for row in CUSTOMERS[:3]]
+        order = [text.index(row["title"].upper()) for row in CUSTOMERS[:3]]
         self.assertEqual(order, sorted(order, reverse=True))
+
+    def test_the_phone_puts_the_sector_between_the_title_and_the_dates(self) -> None:
+        texts = contents(
+            self.render(engagements=CUSTOMERS[:3])["experience-mobile.svg"]
+        )
+        for row in CUSTOMERS[:3]:
+            with self.subTest(title=row["title"]):
+                at = texts.index(row["title"])
+                self.assertEqual(
+                    texts[at + 1 : at + 4],
+                    [f"({row['sector']})", row["when"].upper(), row["role"]],
+                )
+
+    def test_a_row_with_the_generic_label_draws_no_bracket_line(self) -> None:
+        def brackets(svg: str) -> list[str]:
+            return [t for t in contents(svg) if t.startswith("(") and t.endswith(")")]
+
+        rows = customers(ROWS[0], GENERIC)
+        files = self.render(engagements=rows)
+        career_only = self.render(engagements=[])  # a milestone may wrap a bracket too
+        for name in ("experience.svg", "experience-mobile.svg"):
+            texts = contents(files[name])
+            with self.subTest(file=name):
+                rest = brackets(career_only[name])
+                self.assertEqual(
+                    [b for b in brackets(files[name]) if b not in rest], ["(Retail)"]
+                )
+                self.assertIn("Customer 2", texts)
+                self.assertNotIn("(AWS)", reading(files[name]))
+                self.assertNotIn("AWS CUSTOMER", reading(files[name]))
 
     def test_no_engagements_leaves_no_empty_heading(self) -> None:
         files = self.render(engagements=[])
@@ -272,106 +353,116 @@ class CareerCardTests(unittest.TestCase):
                 self.assert_inside(name, files[name])
 
     # ------------------------------------------------------------ fix: the heading
-    def test_heading_says_customer_only_when_every_row_is_a_customer(self) -> None:
-        customers = self.render(engagements=CUSTOMERS[:3])
-        mixed = self.render(engagements=[*CUSTOMERS[:2], PROGRAM])
+    def test_the_heading_names_customer_engagements(self) -> None:
+        files = self.render(engagements=CUSTOMERS[:3])
         for name in ("experience.svg", "experience-mobile.svg"):
             with self.subTest(file=name):
-                self.assertIn("CUSTOMER ENGAGEMENTS", contents(customers[name]))
-                self.assertIn("ENGAGEMENTS AT AWS", contents(mixed[name]))
-                self.assertNotIn("CUSTOMER ENGAGEMENTS", contents(mixed[name]))
+                self.assertIn("CUSTOMER ENGAGEMENTS", contents(files[name]))
+                self.assertNotIn("ENGAGEMENTS AT AWS", reading(files[name]))
         self.assertIn(
-            "Customer engagements at AWS:",
-            parse(customers["experience.svg"]).get("aria-label"),
-        )
-        self.assertIn(
-            ". Engagements at AWS:", parse(mixed["experience.svg"]).get("aria-label")
+            ". Customer engagements at AWS: Customer 1 (Retail), Cloud Engineer",
+            parse(files["experience.svg"]).get("aria-label"),
         )
 
-    def test_the_heading_counts_hidden_engagements_too(self) -> None:
-        # six engagements with the program second oldest: it is one of the two hidden rows
-        rows = [CUSTOMERS[0], PROGRAM, *CUSTOMERS[1:5]]
-        files = self.render(engagements=rows)
-        for name in ("experience.svg", "experience-mobile.svg"):
-            with self.subTest(file=name):
-                self.assertNotIn("MLOPS SME PROGRAM", reading(files[name]))
-                self.assertNotIn("CUSTOMER ENGAGEMENTS", contents(files[name]))
-        self.assertIn(
-            "ENGAGEMENTS AT AWS, NEWEST 4 OF 6", contents(files["experience.svg"])
-        )
-        self.assertIn("ENGAGEMENTS AT AWS", contents(files["experience-mobile.svg"]))
-        self.assertIn(
-            ". Engagements at AWS:", parse(files["experience.svg"]).get("aria-label")
-        )
-        self.assertNotIn(", AWS", reading(files["experience.svg"]))
-
-    def test_a_role_names_aws_only_where_the_heading_does_not(self) -> None:
-        customers = reading(self.render(engagements=CUSTOMERS[:3])["experience.svg"])
-        mixed = reading(
-            self.render(engagements=[*CUSTOMERS[:2], PROGRAM])["experience.svg"]
-        )
-        self.assertIn("DEVOPS ENGINEER, AWS", customers)
-        self.assertNotIn(", AWS", mixed)
+    def test_every_role_says_it_was_held_at_aws(self) -> None:
+        text = reading(self.render(engagements=CUSTOMERS[:3])["experience.svg"])
+        for row in CUSTOMERS[:3]:
+            with self.subTest(role=row["role"]):
+                self.assertIn(f"{row['role']}, AWS".upper(), text)
 
     # ------------------------------------------------------------ fix: render-a-07
-    def test_both_layouts_keep_the_newest_four_and_say_so(self) -> None:
-        files = self.render(engagements=CUSTOMERS)
-        for name in ("experience.svg", "experience-mobile.svg"):
-            text = reading(files[name])
-            with self.subTest(file=name):
-                for row in CUSTOMERS[-4:]:
-                    self.assertIn(row["client"].upper(), text)
-                for row in CUSTOMERS[:-4]:
-                    self.assertNotIn(row["client"].upper(), text)
-        self.assertIn(
-            "CUSTOMER ENGAGEMENTS, NEWEST 4 OF 6", contents(files["experience.svg"])
-        )
-        self.assertIn("+2 EARLIER", contents(files["experience-mobile.svg"]))
-        stops = [
-            circle
-            for circle in parse(files["experience.svg"]).iter(f"{SVG}circle")
-            if circle.get("r") == "6"
-        ]
-        self.assertEqual(len(stops), len(self.ctx["milestones"]) + 4)
+    def test_both_layouts_keep_the_newest_four_and_never_renumber_them(self) -> None:
+        for count in (5, 6):
+            files = self.render(engagements=customers(*ROWS[:count]))
+            for name in ("experience.svg", "experience-mobile.svg"):
+                titles = {
+                    t for t in contents(files[name]) if re.fullmatch(r"Customer \d+", t)
+                }
+                with self.subTest(file=name, rows=count):
+                    # the newest four keep the numbers counted over every row
+                    self.assertEqual(
+                        titles, {f"Customer {n}" for n in range(count - 3, count + 1)}
+                    )
+            self.assertIn(
+                f"CUSTOMER ENGAGEMENTS, NEWEST 4 OF {count}",
+                contents(files["experience.svg"]),
+            )
+            self.assertIn(
+                f"+{count - 4} EARLIER", contents(files["experience-mobile.svg"])
+            )
+            stops = [
+                circle
+                for circle in parse(files["experience.svg"]).iter(f"{SVG}circle")
+                if circle.get("r") == "6"
+            ]
+            self.assertEqual(len(stops), len(self.ctx["milestones"]) + 4)
 
     def test_a_full_rail_of_long_labels_never_collides_or_leaves_the_card(self) -> None:
-        rows = [
-            engagement(
-                "Financial market infrastructure customer",
-                "Lead DevOps Consultant and Platform Architect",
-                "Sep 2030 to Dec 2030",
-            )
-            for _ in range(5)
-        ]
         for count in (1, 2, 3, 4, 5):
-            for extra in ([], [PROGRAM]):
-                svg = self.render(engagements=[*extra, *rows[:count]])["experience.svg"]
-                name = f"{count} long rows, {len(extra)} program"
+            for extra in ([], [GENERIC]):
+                rows = customers(*extra, *[LONG_SECTOR] * count)
+                svg = self.render(engagements=rows)["experience.svg"]
+                name = f"{count} long rows, {len(extra)} generic"
                 self.assert_no_collisions(name, svg)
                 self.assert_inside(name, svg)
 
-    def test_engagement_labels_wrap_to_the_step_between_stops(self) -> None:
-        long = CUSTOMERS[3]  # "Financial market infrastructure customer"
+    def test_a_sector_wraps_to_the_step_between_stops(self) -> None:
+        sector = "(Financial market infrastructure)"
         three = contents(
-            self.render(engagements=[CUSTOMERS[0], long, CUSTOMERS[5]])[
+            self.render(engagements=customers(ROWS[0], ROWS[3], ROWS[5]))[
                 "experience.svg"
             ]
         )
         four = contents(
-            self.render(engagements=[CUSTOMERS[0], long, CUSTOMERS[1], CUSTOMERS[5]])[
+            self.render(engagements=customers(ROWS[0], ROWS[1], ROWS[3], ROWS[5]))[
                 "experience.svg"
             ]
         )
-        # 300px between three stops holds the label on one line; 200px between four does not
-        self.assertIn(long["client"], three)
-        self.assertNotIn(long["client"], four)
-        self.assertIn("infrastructure customer", four)
+        # 300px between three stops holds the sector on one line; 200px between four does not
+        self.assertIn(sector, three)
+        self.assertNotIn(sector, four)
+        self.assertIn("infrastructure)", four)
+
+    def test_every_role_starts_at_one_y_whatever_its_sector(self) -> None:
+        # oldest first: a short sector, one that wraps, a short one, and none at all
+        rows = customers(ROWS[0], ROWS[3], ROWS[5], GENERIC)
+        root = parse(self.render(engagements=rows)["experience.svg"])
+        sub_y = max(
+            float(c.get("cy")) for c in root.iter(f"{SVG}circle") if c.get("r") == "6"
+        )
+
+        def lines(cls: str) -> dict[float, list[float]]:
+            """The baselines under the engagement rail in one class, by stop."""
+            out: dict[float, list[float]] = {}
+            for element in root.iter(f"{SVG}text"):
+                y = float(element.get("y"))
+                if y > sub_y and element.get("class") == cls:
+                    if element.get("fill") == kit.META:
+                        out.setdefault(float(element.get("x")), []).append(y)
+            return out
+
+        roles, sectors = lines("m"), lines("b")
+        self.assertEqual(len(roles), len(rows))
+        self.assertEqual(len({min(ys) for ys in roles.values()}), 1)
+        # the generic row draws no sector, and the others take different line counts
+        self.assertEqual(len(sectors), len(rows) - 1)
+        self.assertGreater(len({len(ys) for ys in sectors.values()}), 1)
+        role_top = min(min(ys) for ys in roles.values()) - kit.MICRO * 0.75
+        for x, ys in sectors.items():
+            with self.subTest(x=x):
+                self.assertLess(max(ys) + career.SECTOR * 0.25, role_top)
 
     def test_a_long_role_wraps_and_the_card_grows_for_it(self) -> None:
+        long = engagement(
+            "Retail customer",
+            "Lead DevOps Consultant and Platform Architect",
+            "Sep 2030 to Dec 2030",
+        )
         short = self.render(engagements=CUSTOMERS[-4:])["experience.svg"]
-        tall = self.render(engagements=[*CUSTOMERS[-3:], PROGRAM])["experience.svg"]
-        self.assertNotIn(PROGRAM["role"].upper(), contents(tall))
-        self.assertIn(PROGRAM["role"].upper(), reading(tall))
+        tall = self.render(engagements=customers(*ROWS[-3:], long))["experience.svg"]
+        role = f"{long['role']}, AWS".upper()
+        self.assertNotIn(role, contents(tall))
+        self.assertIn(role, reading(tall))
         self.assertGreater(
             float(parse(tall).get("height")), float(parse(short).get("height"))
         )
@@ -438,7 +529,7 @@ class CareerCardTests(unittest.TestCase):
         self.assertNotIn("2030  FULL TIME", contents(files["experience.svg"]))
 
     def test_no_bracket_tick_runs_through_a_label(self) -> None:
-        for rows in (CUSTOMERS[:2], CUSTOMERS[:4], [*CUSTOMERS[:3], PROGRAM]):
+        for rows in (CUSTOMERS[:2], CUSTOMERS[:4], customers(*ROWS[:3], GENERIC)):
             svg = self.render(engagements=rows)["experience.svg"]
             ticks = [
                 path

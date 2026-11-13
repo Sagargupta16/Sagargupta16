@@ -19,7 +19,8 @@ RAIL_LEFT, RAIL_RIGHT, RAIL_Y = 70, 772, 84  # the milestone rail
 SUB_LEFT, SUB_RIGHT = 120, 720  # the engagement rail under the current role
 START, STEP = 0.1, 0.12  # the first stop's entrance, then the delay from stop to stop
 EDGE = 4  # a centred label stays this far inside the card
-ROLE_GAP = 12  # kept between the mono role lines of two neighbouring stops
+ROLE_GAP = 12  # kept between the sector and role lines of two neighbouring stops
+SECTOR = 11.5  # the bracketed sector under an engagement's title
 ROW, LINE, TOP = 46, 15, 50  # a list row, an extra wrapped line, the first row's rule
 TICK_END = 30  # a bracket tick ends this far above its stop: the date label's baseline is 16 up
 SECOND_WRAP = 104  # characters on a list row's second line
@@ -67,6 +68,11 @@ def _engagements(ctx: dict) -> tuple[list[dict], int]:
     return rows[-ENGAGEMENTS_SHOWN:], max(len(rows) - ENGAGEMENTS_SHOWN, 0)
 
 
+def _sector(row: dict) -> str:
+    """The line under an engagement's "Customer <n>": its sector in brackets, or "" when it has none."""
+    return f"({row['sector']})" if row["sector"] else ""
+
+
 def _customers_only(rows: list[dict]) -> bool:
     return all(row["kind"] == "customer" for row in rows)
 
@@ -83,7 +89,7 @@ def _experience_label(ctx: dict, rows: list[dict]) -> str:
     )
     if not rows:
         return f"Career: {career}"
-    # named from every engagement, not just the rows shown: a hidden program counts
+    # named from every engagement, not just the rows shown
     everyone = ctx["engagements"]
     prefix = (
         "Customer engagements at AWS"
@@ -91,7 +97,10 @@ def _experience_label(ctx: dict, rows: list[dict]) -> str:
         else _heading(everyone)
     )
     work = "; ".join(
-        ", ".join(part for part in (e["client"], e["role"]) if part) + f" ({e['when']})"
+        ", ".join(
+            part for part in (f"{e['title']} {_sector(e)}".strip(), e["role"]) if part
+        )
+        + f" ({e['when']})"
         for e in rows
     )
     return f"Career: {career}. {prefix}: {work}"
@@ -186,12 +195,16 @@ def _experience(ctx: dict, rows: list[dict], hidden: int, label: str) -> str:
     city_y = RAIL_Y + 63 + drop
     bracket_y, sub_y = city_y + 23, city_y + 87
 
-    # the engagement labels wrap to the step between their stops, so the rail
-    # reads the same with two rows or four and neighbours never touch
+    # each stop reads "Customer <n>" on one line, its sector in brackets under it;
+    # the sector wraps to the step between stops, so the rail reads the same
+    # with two rows or four and neighbours never touch
     sub_step = (SUB_RIGHT - SUB_LEFT) / max(len(rows) - 1, 1)
     sub_xs = [SUB_LEFT + index * sub_step for index in range(len(rows))]
-    clients = [
-        wrap_text(e["client"], _room(x, sub_step), 13) for e, x in zip(rows, sub_xs)
+    sectors = [
+        wrap_text(_sector(e), _room(x, sub_step) - ROLE_GAP, SECTOR)
+        if e["sector"]
+        else []
+        for e, x in zip(rows, sub_xs)
     ]
     # under CUSTOMER ENGAGEMENTS each role says it was held at AWS; the other heading already does
     suffix = ", AWS" if _customers_only(ctx["engagements"]) else ""
@@ -206,7 +219,9 @@ def _experience(ctx: dict, rows: list[dict], hidden: int, label: str) -> str:
         else []
         for e, x in zip(rows, sub_xs)
     ]
-    sub_drop = 16 * (max((len(client) for client in clients), default=1) - 1)
+    # every role starts at one y, under the tallest sector, so the roles never zig-zag
+    sector_lines = max((len(sector) for sector in sectors), default=0)
+    sub_drop = 15 + 14 * (sector_lines - 1) if sector_lines else 0
     role_y = sub_y + 46 + sub_drop
     role_lines = max((len(role) for role in roles), default=0)
     height = role_y + 14 * max(role_lines - 1, 0) + 18 if rows else city_y + 20
@@ -253,7 +268,8 @@ def _experience(ctx: dict, rows: list[dict], hidden: int, label: str) -> str:
                 kit.text(
                     x, sub_y - 16, e["when"].upper(), kit.MICRO, color, "m", "middle"
                 )
-                + _centred(clients[index], x, sub_y + 28, 16, 13, kit.INK, "h")
+                + kit.text(x, sub_y + 28, e["title"], 13, kit.INK, "h", "middle")
+                + _centred(sectors[index], x, sub_y + 45, 14, SECTOR, kit.META, "b")
                 + _centred(roles[index], x, role_y, 14, kit.MICRO, kit.META, "m")
             )
             stops.append(
@@ -313,7 +329,24 @@ def _experience_phone(ctx: dict, rows: list[dict], hidden: int, label: str) -> s
         card.divider()
         card.label(_heading(ctx["engagements"]))
         for e in reversed(rows):
-            card.row(e["client"], e["role"], e["when"])
+            # card.row's title, dates and role, with the bracketed sector under the title
+            with card.block():
+                card.lines(e["title"], weight=600)
+                if e["sector"]:
+                    card.y += 1
+                    card.lines(_sector(e), size=13.5, color=kit.META)
+                card.y += 3
+                card.lines(
+                    e["when"].upper(),
+                    size=MICRO,
+                    color=card.accent,
+                    weight=700,
+                    mono=True,
+                )
+                if e["role"]:
+                    card.y += 3
+                    card.lines(e["role"], size=13.5, color=kit.BODY)
+            card.y += 12
         if hidden:
             card.lines(
                 f"+{hidden} EARLIER", size=MICRO, color=kit.META, weight=700, mono=True

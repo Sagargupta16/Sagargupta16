@@ -738,9 +738,14 @@ class ContextTests(unittest.TestCase):
         self.assertEqual(
             [m["current"] for m in ctx["milestones"]], [False] * 4 + [True]
         )
+        # the fixture's program is left out: three customers, numbered oldest first
         self.assertEqual(
-            [e["kind"] for e in ctx["engagements"]],
-            ["customer", "program", "customer", "customer"],
+            [(e["kind"], e["title"], e["sector"]) for e in ctx["engagements"]],
+            [
+                ("customer", "Customer 1", "Global financial services"),
+                ("customer", "Customer 2", "Financial market infrastructure"),
+                ("customer", "Customer 3", "Enterprise"),
+            ],
         )
         self.assertEqual(
             ctx["education"],
@@ -774,6 +779,72 @@ class ContextTests(unittest.TestCase):
         self.assertEqual(ctx["samples"][0]["tags"], ["TERRAFORM", "AGENTCORE", "MCP"])
         self.assertEqual(ctx["project_count"], 19)
         self.assertEqual(ctx["updated"], {"leetcode": "2026-11-13T00:00:00+00:00"})
+
+    def test_engagements_are_customers_only_numbered_oldest_first(self):
+        data = data_fixture()
+        rows = data["portfolio"]["engagements"]
+        self.assertIn("program", {e["kind"] for e in rows})
+        data["portfolio"]["engagements"] = rows[::-1]  # handed newest first
+        ctx = context(data)
+        customers = sorted(
+            (e for e in rows if e["kind"] == "customer"), key=lambda e: e["start"]
+        )
+        self.assertEqual(
+            [e["when"] for e in ctx["engagements"]], [e["when"] for e in customers]
+        )
+        for number, e in enumerate(ctx["engagements"], start=1):
+            with self.subTest(when=e["when"]):
+                self.assertEqual(e["kind"], "customer")
+                self.assertEqual(e["number"], number)
+                self.assertEqual(e["title"], f"Customer {number}")
+                # the sector is the table label without " customer"
+                self.assertEqual(f"{e['sector']} customer", e["client"])
+                self.assertLessEqual(
+                    {"when", "client", "role", "stack", "kind", "ongoing", "start"},
+                    set(e),
+                )
+        text = json.dumps(ctx["engagements"])
+        for program in (*renderer.PROGRAMS.values(), "SME", "Medical Image"):
+            self.assertNotIn(program, text)
+
+    def test_a_number_counts_every_customer_however_many_the_cards_show(self):
+        data = data_fixture()
+        years = range(2020, 2025)  # five: one more than the cards show
+        data["portfolio"]["engagements"] = [
+            {"name": "DevOps Consultant, Acme Bank", "date": f"Mar {year} - Jun {year}"}
+            for year in years
+        ]
+        ctx = context(data)
+        self.assertEqual(
+            [e["title"] for e in ctx["engagements"]],
+            [f"Customer {n}" for n in range(1, len(years) + 1)],
+        )
+        self.assertNotIn("Acme", json.dumps(ctx["engagements"]))
+
+    def test_the_generic_label_has_no_sector(self):
+        data = data_fixture()
+        data["portfolio"]["engagements"] = [
+            {"name": "DevOps Consultant, Acme Bank", "date": "Mar 2027 - Present"},
+            {"name": "DevOps Consultant, Initech", "date": "Oct 2024 - Aug 2025"},
+        ]
+        ctx = context(data)
+        known = renderer.CUSTOMER_LABELS["Oct 2024"]
+        self.assertEqual(
+            [(e["title"], e["client"], e["sector"]) for e in ctx["engagements"]],
+            [
+                ("Customer 1", known, known.removesuffix(" customer")),
+                ("Customer 2", renderer.GENERIC_CUSTOMER, ""),
+            ],
+        )
+
+    def test_the_public_snapshot_keeps_its_shape_and_its_program(self):
+        data = data_fixture()
+        before = json.loads(json.dumps(data["portfolio"]["engagements"]))
+        context(data)
+        self.assertEqual(data["portfolio"]["engagements"], before)
+        self.assertIn("program", {e["kind"] for e in before})
+        for row in before:
+            self.assertFalse({"number", "title", "sector"} & set(row))
 
     def test_fallbacks_when_the_cache_is_older_than_the_hero_fields(self):
         data = data_fixture()

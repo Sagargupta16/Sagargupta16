@@ -7,7 +7,6 @@ render-svgs.py writes what they return; preview.py renders one of them into
 """
 
 # The order render-svgs.py runs them in; a file may be drawn by one module only.
-# stack.svg and ai-stack.svg have no module yet: they are kept as committed.
 MODULES = (
     "hero",
     "chrome",
@@ -15,6 +14,7 @@ MODULES = (
     "samples",
     "projects",
     "oss",
+    "stack",
     "tools",
     "stats",
 )

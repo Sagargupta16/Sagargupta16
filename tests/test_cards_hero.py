@@ -7,11 +7,12 @@ data refresh cannot fail them. Each data rule has its own test on a changed cont
 from __future__ import annotations
 
 import importlib.util
+import math
 import re
 import sys
 import unittest
 import xml.etree.ElementTree as ET  # nosec B405
-from itertools import pairwise
+from itertools import combinations, pairwise
 from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
@@ -33,7 +34,7 @@ DASHES = (chr(0x2013), chr(0x2014))
 CLOCK = {2, 3, 4, 6, 12, 24}
 MOTION = {f"{SVG}animate", f"{SVG}animateTransform", f"{SVG}animateMotion"}
 MONO = {"k": 2.0, "m": kit.TRACK, "c": 0.0}  # the mono classes and their tracking
-REELS = {"tag", "run"}  # the clip windows a reel turns in
+REELS = {"tag"}  # the clip windows a reel turns in
 SIDE = {"hero.svg": 24, "hero-mobile.svg": 18}  # each layout's side padding
 TAG = {"hero.svg": 14.5, "hero-mobile.svg": 13}  # each layout's tagline size
 # where a long tagline stops shrinking
@@ -48,6 +49,26 @@ LONG_NOW = (
 )
 TRACKING = re.compile(r"letter-spacing:\s*(-?[\d.]+)px")
 TRANSLATE = re.compile(r"translate\(\s*(-?[\d.]+)[ ,]+(-?[\d.]+)\s*\)")
+NUM = r"(-?[\d.]+)"
+# the scene says what he does in plain words: no product or tool is named in it
+PRODUCTS = ("TERRAFORM", "AWS", "SAGEMAKER", "KUBERNETES", "DOCKER")
+# kit's flat palette, the only paints the scene may use: one blue family, ink, grey, one green
+PALETTE = {
+    kit.CARD,
+    kit.HAIR_STRONG,
+    kit.BLUE,
+    kit.BLUE_EDGE,
+    kit.BLUE_LIGHT,
+    kit.SKY,
+    kit.BLUE_TINT,
+    kit.INK,
+    kit.META,
+    kit.GREEN,
+    kit.BG,
+    "none",
+    "url(#dots)",
+}
+STRIP = 106  # the phone strip the scene had when the card was 513 tall; it never grows
 
 
 def render(**changes: object) -> dict[str, ET.Element]:
@@ -223,25 +244,123 @@ def panel(root: ET.Element) -> tuple[float, float, float, float]:
     return left - 1, top - 1, right + 1, bottom + 1
 
 
-def stage_labels(root: ET.Element) -> list[dict]:
-    """The three stage labels and the accounts label, left to right, without their trailing tracking."""
-    names = (*hero.STAGES, hero.TARGET)
-    found = {line["text"]: line for line in lines(root) if line["text"] in names}
+def in_scene(element: ET.Element, up: dict[ET.Element, ET.Element]) -> bool:
+    """Whether the element is drawn inside the scene panel's clip."""
+    return any(clip_of(node) == "scene" for node in chain(element, up))
+
+
+def scene_lines(root: ET.Element) -> list[dict]:
+    """Every line of text the scene draws, each with its absolute box (left, top, right, bottom).
+
+    The box leaves out the trailing tracking and runs from the cap height to under the baseline.
+    """
+    up = parents(root)
+    out = []
+    for line in lines(root):
+        if in_scene(line["node"], up):
+            font = line["size"]
+            box = (
+                line["left"],
+                line["y"] - 0.75 * font,
+                line["right"] - line["track"],
+                line["y"] + 0.2 * font,
+            )
+            out.append({**line, "box": box})
+    return out
+
+
+def scene_parts(root: ET.Element, tag: str, **paint: str) -> list[ET.Element]:
+    """The scene's elements of one tag whose attributes match `paint`."""
+    up = parents(root)
     return [
-        {**found[name], "right": found[name]["right"] - found[name]["track"]}
-        for name in names
+        e
+        for e in root.iter(f"{SVG}{tag}")
+        if in_scene(e, up) and all(e.get(k) == v for k, v in paint.items())
     ]
 
 
-def cells(root: ET.Element) -> list[tuple[float, float]]:
-    """The account cells' absolute (left, right) spans."""
+def cloud(root: ET.Element) -> tuple[list[tuple[float, float, float]], tuple]:
+    """The core read back from its path: absolute lobes (cx, cy, r) and base (left, top, right, bottom)."""
+    up = parents(root)
+    path = scene_parts(root, "path", fill=kit.BLUE)[0]  # the one blue fill in the scene
+    dx, dy = shift(path, up)
+    d = path.attrib["d"]
+    lobes = [
+        (float(x) + float(r) + dx, float(y) + dy, float(r))
+        for x, y, r in re.findall(f"M{NUM} {NUM}A{NUM}", d)
+    ]
+    left, top, right, bottom = map(
+        float, re.search(f"M{NUM} {NUM}H{NUM}V{NUM}", d).groups()
+    )
+    return lobes, (left + dx, top + dy, right + dx, bottom + dy)
+
+
+def in_cloud(x: float, y: float, shape: tuple) -> bool:
+    lobes, (left, top, right, bottom) = shape
+    if left <= x <= right and top <= y <= bottom:
+        return True
+    return any(math.hypot(x - cx, y - cy) <= r for cx, cy, r in lobes)
+
+
+def apart(box: tuple, other: tuple) -> float:
+    """The clear space between two boxes (left, top, right, bottom); 0 when they touch or overlap."""
+    dx = max(other[0] - box[2], box[0] - other[2], 0)
+    dy = max(other[1] - box[3], box[1] - other[3], 0)
+    return math.hypot(dx, dy)
+
+
+def cloud_gap(box: tuple, shape: tuple) -> float:
+    """The clear space between a box and the cloud, at least 0."""
+    lobes, base = shape
+    near = apart(box, base)
+    for cx, cy, r in lobes:
+        near = min(near, max(0.0, apart(box, (cx, cy, cx, cy)) - r))
+    return near
+
+
+def spokes(root: ET.Element) -> list[tuple[float, float, float, float]]:
+    """The spokes at rest, as absolute segments from the core out to each tile's port."""
     up = parents(root)
     out = []
-    for rect in root.iter(f"{SVG}rect"):
-        if rect.get("rx") == "3":
-            x = float(rect.attrib["x"]) + shift(rect, up)[0]
-            out.append((x, x + float(rect.attrib["width"])))
+    for path in scene_parts(root, "path", stroke=kit.HAIR_STRONG):
+        found = re.fullmatch(f"M{NUM} {NUM}L{NUM} {NUM}", path.attrib["d"])
+        if found:
+            dx, dy = shift(path, up)
+            x0, y0, x1, y1 = map(float, found.groups())
+            out.append((x0 + dx, y0 + dy, x1 + dx, y1 + dy))
     return out
+
+
+def segment_gap(segment: tuple, box: tuple, shape: tuple) -> float:
+    """The clear space between a box and the part of a spoke the cloud does not cover."""
+    x0, y0, x1, y1 = segment
+    points = [(x0 + (x1 - x0) * k / 400, y0 + (y1 - y0) * k / 400) for k in range(401)]
+    return min(apart(box, (x, y, x, y)) for x, y in points if not in_cloud(x, y, shape))
+
+
+def boxes(root: ET.Element, tag: str, **paint: str) -> list[tuple]:
+    """Absolute boxes of the scene's rects or circles that match `paint`."""
+    up = parents(root)
+    out = []
+    for e in scene_parts(root, tag, **paint):
+        dx, dy = shift(e, up)
+        if tag == "circle":
+            cx, cy, r = (float(e.attrib[k]) for k in ("cx", "cy", "r"))
+            out.append((cx - r + dx, cy - r + dy, cx + r + dx, cy + r + dy))
+        else:
+            x, y, w, h = (float(e.attrib[k]) for k in ("x", "y", "width", "height"))
+            out.append((x + dx, y + dy, x + w + dx, y + h + dy))
+    return out
+
+
+def dash_seen(path: ET.Element, offset: float) -> float:
+    """How much of a dashed path's 100 units its dashes cover at a dash offset."""
+    dash, space = map(float, path.attrib["stroke-dasharray"].split())
+    period, seen = dash + space, 0.0
+    for k in range(-3, 4):
+        start = k * period - offset
+        seen += max(0.0, min(100.0, start + dash) - max(0.0, start))
+    return seen
 
 
 def loops(root: ET.Element) -> list[ET.Element]:
@@ -358,7 +477,7 @@ class SnapshotTests(unittest.TestCase):
             width, height = size(root)
             pad = SIDE[name]
             for line in lines(root):
-                if line["hidden"]:  # a change waiting outside the panel for its turn
+                if line["hidden"]:  # the core's status waiting for its turn
                     continue
                 self.assertGreaterEqual(line["left"], pad - 2.01, line["text"])
                 self.assertLessEqual(line["right"], width - pad + 0.01, line["text"])
@@ -402,7 +521,7 @@ class SnapshotTests(unittest.TestCase):
                 self.assertLessEqual(float(entrance.attrib["dur"].rstrip("s")), 1.6)
 
     def test_only_the_loop_s_actors_rest_hidden(self):
-        # a travelling change, the gate's flash and the proof cells waiting their turn
+        # the core's BUILDING status and the proof cells waiting their turn
         for _, svg, root in self.each():
             self.assertNotIn("visibility", svg)
             self.assertNotIn("display:none", svg)
@@ -416,16 +535,15 @@ class SnapshotTests(unittest.TestCase):
                     element.tag,
                 )
                 words = {"".join(t.itertext()) for t in element.iter(f"{SVG}text")}
-                self.assertLessEqual(words, {hero.PASSED, hero.HELD})
+                self.assertLessEqual(words, {hero.BUILDING})
 
-    def test_the_still_frame_holds_the_finished_run(self):
+    def test_the_still_frame_holds_the_finished_hub(self):
         for _, _, root in self.each():
             still = {line["text"] for line in lines(root) if not line["moves"]}
-            resting = [line["text"] for line in lines(root) if line["reel"] == "run"]
-            self.assertEqual(resting[0], hero.APPLIED)
-            shown = {line["text"] for line in lines(root)}
-            for word in (*hero.STAGES, hero.TARGET, hero.DENIED, hero.HELD):
+            shown = {line["text"] for line in lines(root) if not line["hidden"]}
+            for word in (*(node[0] for node in hero.NODES), hero.CORE, hero.LIVE):
                 self.assertIn(word, shown)
+            self.assertNotIn(hero.BUILDING, shown)
             self.assertIn(self.ctx["aws_title_long"].split(" - ")[0], " ".join(still))
 
     def test_every_loop_is_on_the_page_clock(self):
@@ -451,20 +569,6 @@ class SnapshotTests(unittest.TestCase):
                 len(moving), 30
             )  # the contest winner had 38; the cap is 40
 
-    def test_the_scene_beats_sit_on_one_grid(self):
-        beats = [
-            hero.DOCK[0],
-            hero.DOCK[1],
-            hero.DOCK[2],
-            hero.DENY,
-            hero.ROLLOUT,
-            hero.DONE,
-        ]
-        for beat in beats:
-            self.assertEqual(beat % hero.BEAT, 0, beat)
-        self.assertGreaterEqual(hero.REWIND, 2.5)  # the finished frame holds this long
-        self.assertLess(hero.REWIND + hero.WIPE, hero.DOCK[0])
-
     def test_text_keeps_the_size_floor(self):
         for name, _, root in self.each():
             floor = kit.MICRO_PHONE if name.endswith("-mobile.svg") else kit.MICRO
@@ -483,7 +587,7 @@ class SnapshotTests(unittest.TestCase):
             green = [
                 e for e in root.iter() if kit.GREEN in (e.get("fill"), e.get("stroke"))
             ]
-            # the pill's dot and its pulse when there is a line, then the check that closes the run
+            # the pill's dot and its pulse when there is a line, then the ok that marks the hub live
             dots = 2 if self.ctx["availability"] else 0
             self.assertEqual([e.tag for e in green], [f"{SVG}circle"] * (dots + 1))
             self.assertEqual([e.get("r") for e in green[:dots]], ["3.5"] * dots)
@@ -549,143 +653,275 @@ class NoLineTests(SnapshotTests):
 
 
 class SceneTests(unittest.TestCase):
-    """The scene's layout rules: whole account columns, evenly spaced labels, and the fork."""
+    """The hub's rules: it keeps its panel, nothing in it collides at any moment of the loop,
+    it says his work in plain words and kit's flat palette, and it rests on the finished, live hub.
 
-    def test_the_account_columns_are_whole_and_inside_the_panel(self):
-        for name, root in render().items():
-            _, _, right, _ = panel(root)
-            spans = cells(root)
-            measures = hero.PHONE if name.endswith("-mobile.svg") else hero.DESKTOP
-            # every cell is drawn at rest and again in its ready state
-            self.assertEqual(len(spans), 2 * measures["columns"] * measures["rows"])
-            self.assertEqual(len({left for left, _ in spans}), measures["columns"])
-            self.assertLessEqual(max(r for _, r in spans), right - 12, name)
+    The subclass runs every one of them again in the taller desktop panel a longer intro makes.
+    """
 
-    def test_the_label_and_the_check_sit_on_the_middle_of_the_whole_block(self):
-        for root in render().values():
-            spans = cells(root)
-            middle = (min(left for left, _ in spans) + max(r for _, r in spans)) / 2
-            label = stage_labels(root)[-1]
-            self.assertAlmostEqual(
-                (label["left"] + label["right"]) / 2, middle, delta=1
-            )
-            up = parents(root)
-            check = next(
-                e
-                for e in root.iter(f"{SVG}circle")
-                if e.get("fill") == kit.GREEN and e.get("r") != "3.5"
-            )
-            self.assertAlmostEqual(
-                float(check.attrib["cx"]) + shift(check, up)[0], middle, delta=0.5
-            )
+    ctx = CTX
 
-    def test_the_stage_labels_are_evenly_spaced_and_clear_of_the_edge(self):
-        for name, root in render().items():
-            left, _, right, _ = panel(root)
-            labels = stage_labels(root)
-            gaps = [b["left"] - a["right"] for a, b in pairwise(labels)]
-            self.assertGreaterEqual(min(gaps), 16, (name, gaps))
-            self.assertLess(max(gaps) - min(gaps), 0.5, (name, gaps))
-            self.assertGreaterEqual(labels[0]["left"], left + 8, name)
-            self.assertLessEqual(labels[-1]["right"], right - 12, name)
-            self.assertEqual(len({label["y"] for label in labels}), 1)
+    @classmethod
+    def setUpClass(cls):
+        files = hero.render(DATA, cls.ctx)
+        cls.roots = {name: ET.fromstring(svg) for name, svg in files.items()}  # nosec B314
 
-    def test_the_denied_change_rests_off_the_rail_under_the_fork(self):
-        for name, root in render().items():
-            labels = stage_labels(root)
-            held = next(
-                line
-                for line in lines(root)
-                if line["text"] == hero.HELD and not line["hidden"]
-            )
-            middle = (held["left"] + held["right"]) / 2
-            # between the guardrails and the apply stage, below the label row
-            self.assertTrue(
-                labels[1]["right"] - 20 < middle < labels[2]["left"] + 20, name
-            )
-            self.assertGreater(held["y"], labels[0]["y"] + 10, name)
-            denied = next(line for line in lines(root) if line["text"] == hero.DENIED)
-            self.assertAlmostEqual(denied["y"], held["y"], delta=1)  # one result line
-            self.assertGreater(denied["left"], held["right"])
-            # the status rows never reach the slot
-            _, _, edge, _ = window(root, "run")
-            self.assertLess(edge, held["left"] - 4, name)
+    def each(self):
+        for name, root in self.roots.items():
+            with self.subTest(file=name):
+                yield name, root
 
-    def test_a_change_never_covers_a_stage_label(self):
-        """Walk the loop: wherever a change can be seen, its chip is clear of every stage label.
+    def moments(self) -> list[float]:
+        return [step / 20 for step in range(round(kit.T * 20))]
 
-        The gap between two labels is narrower than a chip, so the denied change has to be
-        out of sight while it drops from the rail to its slot.
+    def test_the_panel_keeps_its_box(self):
+        # desktop: right of the left column, filling the height above the proof row
+        root = self.roots["hero.svg"]
+        left, top, right, bottom = panel(root)
+        self.assertEqual((left, top, right), (464, 24, 816))
+        up = parents(root)
+        cells = [
+            e
+            for e in root.iter(f"{SVG}rect")
+            if e.get("rx") == "10" and e.get("fill") == kit.CARD and not in_scene(e, up)
+        ]
+        self.assertEqual(bottom, float(cells[0].attrib["y"]) - 16)
+        # phone: the strip between the pill and the intro, never taller than it was
+        _, top, _, bottom = panel(self.roots["hero-mobile.svg"])
+        self.assertEqual(bottom - top, STRIP)
+
+    def test_every_scene_label_sits_inside_the_panel(self):
+        for _, root in self.each():
+            left, top, right, bottom = panel(root)
+            found = scene_lines(root)
+            self.assertTrue(found)
+            for line in found:
+                x0, y0, x1, y1 = line["box"]
+                self.assertGreaterEqual(x0, left + 6, line["text"])
+                self.assertLessEqual(x1, right - 6, line["text"])
+                self.assertGreaterEqual(y0, top + 6, line["text"])
+                self.assertLessEqual(y1, bottom - 6, line["text"])
+
+    def test_no_two_scene_labels_overlap_at_any_moment(self):
+        """Walk the loop: wherever two different labels can both be seen, their boxes are apart.
+
+        A tile's word is drawn twice, grey and then lit in ink over it, so a word on its own
+        copy is one label. BUILDING and LIVE share a place, so they must never show together.
         """
-        for name, root in render().items():
+        for name, root in self.each():
             up = parents(root)
-            boxes = [
-                (
-                    label["left"],
-                    label["y"] - label["size"] * 0.75,
-                    label["right"],
-                    label["y"] + label["size"] * 0.25,
+            found = scene_lines(root)
+            for second in self.moments():
+                seen = {
+                    (line["text"], line["box"])
+                    for line in found
+                    if state(line["node"], up, second)[0] > 0.001
+                }
+                for (a, box_a), (b, box_b) in combinations(sorted(seen), 2):
+                    self.assertGreater(apart(box_a, box_b), 2, (name, second, a, b))
+
+    def test_labels_and_marks_keep_clear_of_the_spokes_and_the_cloud(self):
+        for name, root in self.each():
+            shape, found = cloud(root), spokes(root)
+            marks = [(line["text"], line["box"]) for line in scene_lines(root)]
+            marks += [("ok", box) for box in boxes(root, "circle", fill=kit.GREEN)]
+            for text, box in marks:
+                for segment in found:
+                    self.assertGreaterEqual(
+                        segment_gap(segment, box, shape), 6, (name, text)
+                    )
+                if text != hero.CORE:
+                    self.assertGreaterEqual(cloud_gap(box, shape), 6, (name, text))
+            tiles = boxes(root, "rect", rx="7", fill=kit.CARD)
+            self.assertEqual(len(tiles), len(hero.NODES))
+            for tile, other in combinations(tiles, 2):
+                self.assertGreater(apart(tile, other), 8, name)
+            for tile in tiles:
+                self.assertGreaterEqual(cloud_gap(tile, shape), 12, name)
+
+    def test_every_spoke_shows_a_readable_run(self):
+        # the length of line between the cloud and the port's dot, where the signal is seen
+        for name, root in self.each():
+            shape, found = cloud(root), spokes(root)
+            ports = boxes(root, "circle", fill=kit.BLUE_LIGHT)
+            self.assertEqual(len(found), len(hero.NODES))
+            for x0, y0, x1, y1 in found:
+                port = next(
+                    (b[2] - b[0]) / 2
+                    for b in ports
+                    if abs((b[0] + b[2]) / 2 - x1) < 0.01
+                    and abs((b[1] + b[3]) / 2 - y1) < 0.01
                 )
-                for label in stage_labels(root)
+                length, run = math.hypot(x1 - x0, y1 - y0), 0.0
+                for k in range(400):
+                    x = x0 + (x1 - x0) * (k + 0.5) / 400
+                    y = y0 + (y1 - y0) * (k + 0.5) / 400
+                    if not in_cloud(x, y, shape) and math.hypot(x1 - x, y1 - y) > port:
+                        run += length / 400
+                self.assertGreaterEqual(run, 24, (name, x1, y1))
+
+    def test_the_core_word_has_room_in_its_cloud(self):
+        for name, root in self.each():
+            shape = cloud(root)
+            word = next(line for line in scene_lines(root) if line["text"] == hero.CORE)
+            x0, y0, x1, y1 = word["box"]
+            row = (y0 + y1) / 2
+            span = [
+                x / 10
+                for x in range(round(x0 - 60) * 10, round(x1 + 60) * 10)
+                if in_cloud(x / 10, row, shape)
             ]
-            faces = {}
-            for text in root.iter(f"{SVG}text"):
-                if "".join(text.itertext()) in (hero.PASSED, hero.HELD):
-                    chip = next(e for e in up[text] if e.tag == f"{SVG}rect")
-                    faces.setdefault("".join(text.itertext()), []).append(chip)
-            # the first change, and the second's travelling and held faces
+            self.assertGreaterEqual(x0 - min(span), 10, name)
+            self.assertGreaterEqual(max(span) - x1, 10, name)
+
+    def test_the_status_sits_midway_between_the_lower_spokes(self):
+        for name, root in self.each():
+            lower = sorted(spokes(root), key=lambda s: s[3])[-2:]  # to the bottom row
+            words = {line["text"]: line["box"] for line in scene_lines(root)}
+            (ok,) = boxes(root, "circle", fill=kit.GREEN)
+            y = (ok[1] + ok[3]) / 2
+            across = [x0 + (x1 - x0) * (y - y0) / (y1 - y0) for x0, y0, x1, y1 in lower]
+            middle = sum(across) / 2
+            # the ok and LIVE as one group; a centred word also sets its trailing
+            # tracking, so BUILDING sits half of that to the left
+            live = (ok[0] + words[hero.LIVE][2]) / 2
+            building = (words[hero.BUILDING][0] + words[hero.BUILDING][2]) / 2
+            self.assertAlmostEqual(live, middle, delta=0.5, msg=name)
+            self.assertAlmostEqual(building, middle, delta=1, msg=name)
+
+    def test_the_still_frame_is_the_finished_live_hub(self):
+        for name, root in self.each():
+            found = scene_lines(root)
+            shown = {line["text"] for line in found if not line["hidden"]}
+            lit = {line["text"] for line in found if line["fill"] == kit.INK}
+            for word, *_ in hero.NODES:
+                self.assertIn(word, shown & lit, name)
+            self.assertIn(hero.LIVE, shown, name)
             self.assertEqual(
-                {k: len(v) for k, v in faces.items()}, {hero.PASSED: 1, hero.HELD: 2}
+                {line["text"] for line in found if line["hidden"]}, {hero.BUILDING}
             )
+            # every lit spoke is drawn whole, and every signal is off the end of its spoke
+            for path in scene_parts(root, "path", stroke=kit.BLUE_EDGE):
+                self.assertEqual(path.get("stroke-dashoffset"), "0", name)
+            heads = scene_parts(root, "path", stroke=kit.SKY)
+            self.assertEqual(len(heads), len(hero.NODES))
+            for head in heads:
+                offset = float(head.attrib["stroke-dashoffset"])
+                self.assertEqual(dash_seen(head, offset), 0, name)
 
-            def seen(chip: ET.Element, second: float) -> tuple[float, tuple]:
-                opacity, dx, dy = state(chip, up, second)
-                x, y = float(chip.attrib["x"]) + dx, float(chip.attrib["y"]) + dy
-                w, h = float(chip.attrib["width"]), float(chip.attrib["height"])
-                return opacity, (x, y, x + w, y + h)
+    def test_the_loop_ends_on_the_still_frame(self):
+        # at its first and its last moment every loop in the scene draws what its attributes do
+        for name, root in self.each():
+            up = parents(root)
+            found = [e for e in loops(root) if in_scene(e, up)]
+            self.assertTrue(found)
+            for loop in found:
+                target, dur = up[loop], float(loop.attrib["dur"].rstrip("s"))
+                edges = (sample(loop, 0)[0], sample(loop, dur - 0.001)[0])
+                if loop.attrib["attributeName"] == "opacity":
+                    rest = float(target.get("opacity", 1))
+                    for value in edges:
+                        self.assertAlmostEqual(value, rest, delta=0.01, msg=name)
+                else:
+                    self.assertEqual(loop.attrib["attributeName"], "stroke-dashoffset")
+                    rest = dash_seen(target, float(target.attrib["stroke-dashoffset"]))
+                    for value in edges:
+                        self.assertAlmostEqual(
+                            dash_seen(target, value), rest, delta=0.01, msg=name
+                        )
 
-            for label, chips in faces.items():
-                for chip in chips:
-                    for step in range(round(kit.T * 100)):
-                        opacity, (x0, y0, x1, y1) = seen(chip, step / 100)
-                        if opacity <= 0.001:
-                            continue
-                        for left, top, right, bottom in boxes:
-                            covers = (
-                                x0 < right and left < x1 and y0 < bottom and top < y1
-                            )
-                            self.assertFalse(covers, (name, label, step / 100))
-            # the story still reads: the change is seen knocking at the gate, then held in its slot
-            travelling, held = faces[hero.HELD][1], faces[hero.HELD][0]
-            gate = stage_labels(root)[1]
-            opacity, (x0, _, x1, _) = seen(travelling, hero.DENY)
-            self.assertGreater(opacity, 0.9, name)
-            self.assertAlmostEqual(
-                (x0 + x1) / 2, (gate["left"] + gate["right"]) / 2, delta=1
+    def test_the_capabilities_light_in_order_and_only_then_the_core_goes_live(self):
+        """Walk the loop: the hub powers down, reads BUILDING, lights down the left side and
+        then down the right, and LIVE never shows brighter than the dimmest capability."""
+        for name, root in self.each():
+            up = parents(root)
+            found = scene_lines(root)
+            words = [node[0] for node in hero.NODES]
+            lit = {
+                line["text"]: line["node"]
+                for line in found
+                if line["fill"] == kit.INK and line["text"] in words
+            }
+            live = next(line["node"] for line in found if line["text"] == hero.LIVE)
+            building = next(
+                line["node"] for line in found if line["text"] == hero.BUILDING
             )
-            for second in (hero.LAND + 0.3, 0.0):
-                opacity, (_, y0, _, _) = seen(held, second)
-                self.assertGreater(opacity, 0.9, (name, second))
-                self.assertGreater(
-                    y0, max(bottom for *_, bottom in boxes), (name, second)
+            first, dark, reads, finished = {}, None, False, 0
+            for second in self.moments():
+                level = {word: state(node, up, second)[0] for word, node in lit.items()}
+                shows = state(live, up, second)[0]
+                self.assertLessEqual(shows, min(level.values()) + 0.01, (name, second))
+                if max(level.values()) < 0.01:
+                    dark = second if dark is None else dark
+                    reads |= state(building, up, second)[0] > 0.99
+                if dark is not None:
+                    for word, value in level.items():
+                        if value > 0.5:
+                            first.setdefault(word, second)
+                finished += shows > 0.99
+            self.assertIsNotNone(dark, name)
+            self.assertTrue(reads, name)  # the dark hub reads BUILDING
+            order = sorted(first, key=first.get)
+            self.assertEqual(order, words, name)
+            sides = [side for _, _, side, _ in hero.NODES]
+            self.assertEqual(sides, sorted(sides))  # the left side lights first
+            # the finished, live hub holds for a third of the loop or more
+            self.assertGreaterEqual(finished / 20, kit.T / 3, name)
+
+    def test_the_scene_is_flat_and_in_kit_s_palette(self):
+        for name, root in self.each():
+            up = parents(root)
+            inside = [e for e in root.iter() if in_scene(e, up) and e.tag not in MOTION]
+            paints = {e.get(k) for e in inside for k in ("fill", "stroke")} - {None}
+            self.assertLessEqual(paints, PALETTE, name)
+            # the one ok; the pill's dot is the card's other green
+            green = [e for e in inside if kit.GREEN in (e.get("fill"), e.get("stroke"))]
+            self.assertEqual(len(green), 1, name)
+            for e in inside:
+                self.assertNotIn(
+                    e.tag.split("}")[1], {"linearGradient", "radialGradient", "filter"}
                 )
+                self.assertNotIn("filter", e.attrib)
 
-    def test_the_gate_takes_no_done_mark_and_the_denied_mark_is_an_outline(self):
-        for name, root in render().items():
-            ticks = [
-                e for e in root.iter(f"{SVG}circle") if e.get("fill") == kit.BLUE_EDGE
-            ]
-            self.assertEqual(len(ticks), 2, name)  # plan and apply
-            discs = [e for e in root.iter(f"{SVG}circle") if e.get("fill") == kit.INK]
-            self.assertEqual(discs, [], name)
+    def test_the_scene_names_no_product_and_shows_no_figure(self):
+        for name, root in self.each():
+            said = " ".join(line["text"] for line in scene_lines(root)).upper()
+            for product in PRODUCTS:
+                self.assertNotIn(product, said, name)
+            self.assertIsNone(re.search(r"\d", said), said)
 
-    def test_the_title_names_the_run_and_the_panel_says_landing_zone_nowhere(self):
-        desktop, phone = render()["hero.svg"], render()["hero-mobile.svg"]
-        shown = [line["text"] for line in lines(desktop)]
-        self.assertIn(hero.TITLE, shown)
-        for root in (desktop, phone):
-            mono = [line["text"] for line in lines(root) if line["class"] in MONO]
-            self.assertFalse([text for text in mono if "LANDING" in text])
+    def test_the_scene_moves_one_part_for_each_thing_that_happens(self):
+        # each capability: its lit spoke, its signal and its tile; the core: its two states;
+        # and the panel's entrance. About 12 to 20 moving parts.
+        for name, root in self.each():
+            up = parents(root)
+            moving = [e for e in root.iter() if in_scene(e, up) and animated(e)]
+            self.assertEqual(len(moving), 3 * len(hero.NODES) + 3, name)
+
+    def test_the_desktop_panel_has_its_title_and_the_phone_strip_none(self):
+        desktop, phone = (
+            [line["text"] for line in scene_lines(self.roots[n])] for n in SIDE
+        )
+        self.assertIn(hero.TITLE, desktop)
+        self.assertNotIn(hero.TITLE, phone)
+
+    def test_the_alt_text_ends_on_one_sentence_about_the_scene(self):
+        for name, root in self.each():
+            label = root.attrib["aria-label"]
+            sentence = label[label.rfind("The diagram is ") :]
+            self.assertTrue(sentence.startswith("The diagram is "), name)
+            self.assertTrue(sentence.endswith("live."), sentence)
+            self.assertNotIn(". ", sentence)  # one sentence
+            for _, said, _, _ in hero.NODES:
+                self.assertIn(said, sentence)
+            for product in PRODUCTS:
+                self.assertNotIn(product.lower(), sentence.lower())
+
+
+class TallerPanelSceneTests(SceneTests):
+    """The scene rules again, in the taller desktop panel a longer intro makes."""
+
+    ctx = {**CTX, "intro": CTX["intro"] + " " + CTX["intro"]}
 
 
 class RoleTests(unittest.TestCase):
@@ -1001,14 +1237,20 @@ class TaglineTests(unittest.TestCase):
 
         self.assertEqual(turns(reel), {3.0, 6.0, 9.0, 12.0})
         self.assertEqual(float(slide.attrib["dur"].rstrip("s")), 24)  # 6 s a cell
-        # the light only changes in two quiet stretches of the scene's loop: while a change
-        # waits in the guardrails, and just after the run has closed
+        # the light only changes in two quiet stretches of the scene's loop: in the pause
+        # between the hub's two sides, and while the finished hub holds
         start = hero.PROOF_AT - 0.35
         quiet = [(start, hero.PROOF_AT), (start + kit.T / 2, hero.PROOF_AT + kit.T / 2)]
         for turn in turns(slide):
             at = turn % kit.T
             self.assertTrue(any(a <= at <= b + 0.01 for a, b in quiet), turn)
-        beats = {*hero.DOCK, hero.DENY, hero.ROLLOUT, hero.DONE}
+        # the hub powering down, each signal leaving and landing, and the core going live
+        beats = {
+            hero.REST,
+            *hero.LEAVES,
+            *(leave + hero.RUN for leave in hero.LEAVES),
+            hero.DONE,
+        }
         busy = {*beats, *(turn % kit.T for turn in turns(reel))}
         for a, b in quiet:
             self.assertFalse([at for at in busy if a - 0.1 <= at <= b + 0.1])

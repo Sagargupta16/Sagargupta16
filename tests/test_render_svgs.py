@@ -10,6 +10,7 @@ import datetime
 import importlib.util
 import io
 import json
+import re
 import sys
 import tempfile
 import types
@@ -780,6 +781,37 @@ class ContextTests(unittest.TestCase):
         self.assertEqual(ctx["project_count"], 19)
         self.assertEqual(ctx["updated"], {"leetcode": "2026-11-13T00:00:00+00:00"})
 
+    def test_recognition_leaves_out_the_sme_program_line(self):
+        data = data_fixture()
+        data["portfolio"]["achievements"] = [
+            {"title": "Example MLOps SME program graduate", "year": "2025"},
+            {"title": "Example SME Program - mentor", "year": "2026"},
+            {"title": "graduate of the example sme programme", "year": "2024"},
+            # an SME role is recognition, not the program, and stays
+            {"title": "AWS Training and Certification SME", "year": "2025"},
+            {"title": "Senior Speaker Certification", "year": "2026"},
+        ]
+        groups = dict(context(data)["recognition"])
+        self.assertEqual(
+            groups["PROGRAMS AND RECOGNITION"],
+            [
+                ("Senior Speaker Certification", "2026"),
+                ("AWS Training and Certification SME", "2025"),
+            ],
+        )
+        # the group goes when the program line was all it held
+        data["portfolio"]["achievements"] = data["portfolio"]["achievements"][:1]
+        groups = dict(context(data)["recognition"])
+        self.assertNotIn("PROGRAMS AND RECOGNITION", groups)
+        self.assertEqual(list(groups), ["REVIEWS", "TALKS"])
+        # and the checked-in snapshot, whatever a refresh put there
+        real = json.loads(renderer.DATA_FILE.read_text(encoding="utf-8"))
+        with contextlib.redirect_stdout(io.StringIO()):
+            shown = renderer.build_context(real)["recognition"]
+        for _, items in shown:
+            for text, _ in items:
+                self.assertNotRegex(text, r"(?i)\bSME program")
+
     def test_engagements_are_customers_only_numbered_oldest_first(self):
         data = data_fixture()
         rows = data["portfolio"]["engagements"]
@@ -897,11 +929,14 @@ class ContextTests(unittest.TestCase):
         self.assertEqual(ctx["headers"][4][0], "publications")
         self.assertEqual(ctx["headers"][4][3], "reviews, talks and programs")
         self.assertEqual(set(ctx["header_counts"]), {h[0] for h in ctx["headers"]})
-        self.assertEqual(ctx["header_counts"]["projects"], "3 AWS SAMPLES + 2 PROJECTS")
-        self.assertEqual(ctx["header_counts"]["opensource"], "4 MERGED UPSTREAM")
-        self.assertEqual(ctx["header_counts"]["certs"], "2 ACTIVE")
-        self.assertEqual(ctx["header_counts"]["community"], "11 TOOLS")
-        self.assertEqual(ctx["header_counts"]["stack"], "")
+        # every card in the section; COMMUNITY.md shows its header above every tool
+        self.assertEqual(ctx["header_counts"]["projects"], "5 featured")
+        self.assertEqual(ctx["header_counts"]["community"], "11 tools")
+        # a fact another card already shows is left out (hard rule 17): years at
+        # AWS, samples and active certifications are hero proof cells, and the
+        # merged count is the first open-source tile
+        for key in ("experience", "opensource", "certs", "stack"):
+            self.assertEqual(ctx["header_counts"][key], "", key)
 
     def test_tools_carry_kind_stars_and_npm_downloads(self):
         tools = context()["tools"]
@@ -1221,6 +1256,12 @@ class ReadmeTests(unittest.TestCase):
             ):
                 (out / name).touch()
             picture = ET.fromstring(renderer._header("stack"))  # nosec B314
+            # the header's own label, datum included, wins over the bare title
+            renderer.LABELS["header-stack-dark.svg"] = "Tech Stack and Tools: 4 lanes"
+            labelled = ET.fromstring(renderer._header("stack"))  # nosec B314
+        self.assertEqual(
+            labelled.find("img").get("alt"), "Tech Stack and Tools: 4 lanes"
+        )
         self.assertEqual(
             [s.get("srcset") for s in picture.findall("source")],
             [
@@ -1239,6 +1280,8 @@ class ReadmeTests(unittest.TestCase):
         with scratch_repo(), contextlib.redirect_stdout(io.StringIO()):
             ctx = renderer.build_context(data)
             renderer.LABELS["hero.svg"] = "The hero card's own label"
+            renderer.LABELS["sample-org-governance.svg"] = "The org card's own label"
+            renderer.LABELS["oss-review.svg"] = "The review card's own label"
             return renderer.render_readme(data, ctx), renderer.render_community_page(
                 ctx
             )
@@ -1262,7 +1305,6 @@ class ReadmeTests(unittest.TestCase):
             "cta-portfolio.svg",
             "header-opensource-dark.svg",
             "oss.svg",
-            "oss-merged.svg",
             "oss-review.svg",
             "get-oss.svg",
             "header-certs-dark.svg",
@@ -1273,7 +1315,6 @@ class ReadmeTests(unittest.TestCase):
             "publications.svg",
             "header-stack-dark.svg",
             "stack.svg",
-            "ai-stack.svg",
             "header-community-dark.svg",
             *(f"tool-{slug}.svg" for slug in renderer.COMMUNITY_TOP),
             "cta-community.svg",
@@ -1297,42 +1338,61 @@ class ReadmeTests(unittest.TestCase):
             "connect-github",
             "connect-leetcode",
             "tool-deploy-guide",  # not one of the top nine: only on COMMUNITY.md
+            "divider",  # each section header owns the break
+            "oss-merged",  # its ledger is on oss.svg
+            "ai-stack",  # a lane of stack.svg
             "http://",
         ):
             self.assertNotIn(gone, readme)
-        # the closing row repeats three of the four buttons after the footer
-        tail = readme[readme.index("assets/svg/footer.svg") :]
-        self.assertEqual(
-            [
-                key
-                for key in ("linkedin", "resume", "email", "portfolio")
-                if f"connect-{key}.svg" in tail
-            ],
-            ["resume", "email", "portfolio"],
-        )
         blocks = readme.split("\n\n")
-        # a divider opens each of the nine sections, and one more sits above the footer
-        opened = [
-            blocks[index + 1]
-            for index, block in enumerate(blocks)
-            if "assets/svg/divider.svg" in block
-        ]
-        self.assertEqual(len(opened), len(renderer.HEADERS) + 1)
-        for (key, _, _), block in zip(renderer.HEADERS, opened):
-            self.assertIn(f"assets/svg/header-{key}-dark.svg", block)
-        self.assertIn("assets/svg/footer.svg", opened[-1])
+        # each header is a block of its own, once, in HEADERS order; the first
+        # one follows the connect row with nothing in between
+        heads = []
+        for key, _, _ in renderer.HEADERS:
+            with self.subTest(header=key):
+                found = [i for i, b in enumerate(blocks) if f"header-{key}-" in b]
+                self.assertEqual(len(found), 1)
+                names = re.findall(r"assets/svg/([a-z0-9-]+)\.svg", blocks[found[0]])
+                self.assertTrue(names)
+                for name in names:
+                    self.assertTrue(name.startswith(f"header-{key}-"), name)
+                heads += found
+        self.assertEqual(heads, sorted(heads))
+        self.assertIn("connect-linkedin.svg", blocks[heads[0] - 1])
+        # the footer, then the closing row of three of the four buttons, last
+        self.assertIn("assets/svg/footer.svg", blocks[-2])
+        self.assertEqual(
+            re.findall(r"assets/svg/([a-z0-9-]+)\.svg", blocks[-1]),
+            ["connect-resume", "connect-email", "connect-portfolio"],
+        )
         # a 1px copy of the visit counter follows the footer, and sits nowhere else
         self.assertTrue(
-            opened[-1].endswith(
+            blocks[-2].endswith(
                 f' <picture><img src="{renderer.VIEWS_PIXEL}" width="1" height="1" alt="" /></picture>'
             )
         )
         self.assertEqual(readme.count("komarev"), 1)
-        samples = next(b for b in blocks if "sample-agentcore-harness.svg" in b)
-        self.assertTrue(samples.startswith('<p align="center">'))
-        for key in ("org-governance", "sagemaker-mlops"):
-            self.assertIn(f"sample-{key}.svg", samples)
-        self.assertEqual(samples.count('width="400"'), 3)  # the three share one row
+        # the lead sample is full width on a row of its own, the other two share one
+        lead = next(b for b in blocks if "sample-agentcore-harness.svg" in b)
+        self.assertTrue(
+            lead.startswith(
+                '<a href="https://github.com/aws-samples/sample-agentcore-harness-agent-terraform">'
+            )
+        )
+        self.assertEqual(lead.count("assets/svg/sample-"), 1)
+        self.assertEqual(lead.count('width="100%"'), 1)
+        pair = blocks[blocks.index(lead) + 1]
+        self.assertTrue(pair.startswith('<p align="center">'))
+        self.assertEqual(
+            re.findall(r"assets/svg/(sample-[a-z0-9-]+)\.svg", pair),
+            ["sample-org-governance", "sample-sagemaker-mlops"],
+        )
+        self.assertEqual(pair.count('width="400"'), 2)
+        # the open-source summary carries the merged ledger and its search link
+        oss = next(b for b in blocks if "assets/svg/oss.svg" in b)
+        self.assertIn("is%3Amerged", oss)
+        self.assertEqual(readme.count("is%3Amerged"), 1)
+        self.assertEqual(sum("assets/svg/stack.svg" in b for b in blocks), 1)
         projects = next(b for b in blocks if "project-ledger-sync.svg" in b)
         self.assertEqual(projects.count('width="400"'), 2)
         tools = next(b for b in blocks if "tool-orrery.svg" in b)
@@ -1343,32 +1403,34 @@ class ReadmeTests(unittest.TestCase):
 
     def test_alt_text(self):
         readme, _ = self.readme()
-        self.assertEqual(readme.count("published as a solution under aws-samples"), 3)
+        # a sample card's own label wins; the others fall back to the sample line
+        self.assertEqual(readme.count("published as a solution under aws-samples"), 2)
         self.assertIn(
             'alt="AgentCore Harness Agent with Governed MCP Tools, published as a solution under aws-samples"',
             readme,
         )
+        self.assertIn('alt="The org card&#x27;s own label"', readme)
         self.assertNotIn("published AWS sample", readme)
         self.assertIn(
             'alt="The hero card&#x27;s own label"', readme
         )  # the rendered aria-label
         self.assertIn('alt="4 contributions merged upstream, in axios/axios,', readme)
-        self.assertIn(
-            'alt="2 pull requests open upstream, in hashicorp/terraform-provider-aws"',
-            readme,
-        )
+        # the review card's label wins over the renderer's open-PR sentence
+        self.assertIn('alt="The review card&#x27;s own label"', readme)
+        self.assertNotIn("pull requests open upstream", readme)
         self.assertIn('alt="View all 19 projects"', readme)
         self.assertIn('alt="See all 11 community tools"', readme)
         self.assertIn("is%3Amerged+repo%3Aaxios%2Faxios", readme)
 
-    def test_a_card_kept_as_committed_takes_its_alt_text_from_the_file(self):
+    def test_a_card_this_run_did_not_write_takes_its_alt_text_from_the_file(self):
         data = data_fixture()
         with scratch_repo() as out, contextlib.redirect_stdout(io.StringIO()):
-            # no module draws stack.svg in this run, so its label comes from the file
+            # no module drew stack.svg in this run, so its label comes from the file
             (out / "stack.svg").write_text(
                 SVG.format(label="Stack: AWS &amp; Terraform"), encoding="utf-8"
             )
-            (out / "ai-stack.svg").write_text("<svg/>", encoding="utf-8")  # unlabelled
+            # an unlabelled file falls back to the renderer's own alt text
+            (out / "competitive.svg").write_text("<svg/>", encoding="utf-8")
             # a label from this run wins over the file it is about to replace
             (out / "education.svg").write_text(
                 SVG.format(label="Last run"), encoding="utf-8"
@@ -1379,7 +1441,7 @@ class ReadmeTests(unittest.TestCase):
             absent = renderer._file_label("no-such-card.svg")
         self.assertEqual([kept, absent], ["Stack: AWS & Terraform", ""])
         self.assertIn('alt="Stack: AWS &amp; Terraform"', readme)
-        self.assertIn('alt="AI-assisted engineering"', readme)  # the fallback
+        self.assertIn('alt="Competitive programming"', readme)  # the fallback
         self.assertIn('alt="Drawn in this run"', readme)
         self.assertNotIn("Last run", readme)
 
@@ -1410,6 +1472,7 @@ class WritingTests(unittest.TestCase):
         with contextlib.redirect_stdout(log):
             self.assertIsNone(renderer.render_module("not-written-yet", {}, {}))
         self.assertEqual(log.getvalue().strip(), "missing module not-written-yet")
+        # every card on the page comes from a module, the stack card included
         self.assertEqual(
             renderer.cards.MODULES,
             (
@@ -1419,6 +1482,7 @@ class WritingTests(unittest.TestCase):
                 "samples",
                 "projects",
                 "oss",
+                "stack",
                 "tools",
                 "stats",
             ),
@@ -1506,6 +1570,20 @@ class WritingTests(unittest.TestCase):
         self.assertIn('srcset="assets/svg/hero.svg"', self.readme_text)
         self.assertIn('src="assets/svg/hero-mobile.svg"', self.readme_text)
         self.assertIn('alt="Hero says hello"', self.readme_text)
+
+    def test_the_stack_card_comes_from_its_module(self):
+        stack = self.fake(
+            {
+                "stack.svg": SVG.format(label="Stack: AWS, Terraform and Claude Code"),
+                "stack-mobile.svg": SVG.format(label="Stack"),
+            }
+        )
+        written, _ = self.run_main(modules={"stack": stack})
+        self.assertLessEqual({"stack.svg", "stack-mobile.svg"}, written)
+        self.assertIn('srcset="assets/svg/stack.svg"', self.readme_text)
+        self.assertIn('src="assets/svg/stack-mobile.svg"', self.readme_text)
+        self.assertIn('alt="Stack: AWS, Terraform and Claude Code"', self.readme_text)
+        self.assertEqual(self.readme_text.count("assets/svg/stack"), 2)  # one picture
 
     def test_a_listed_module_that_is_missing_stops_the_run(self):
         hero = self.fake({"hero.svg": SVG.format(label="Hero")})

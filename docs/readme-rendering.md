@@ -31,7 +31,7 @@ that module alone into `.scratch/preview/<module>/` (gitignored), and
    certifications and so on. Every card at both widths reads the same `ctx`, so
    two cards cannot disagree about a count.
 3. Each module named in `scripts/cards/__init__.py` (`hero`, `chrome`,
-   `career`, `samples`, `projects`, `oss`, `tools`, `stats`) is called as
+   `career`, `samples`, `projects`, `oss`, `stack`, `tools`, `stats`) is called as
    `render(data, ctx)` and returns `{file name: svg}`. A module reads no files
    and makes no requests. The run stops when a listed module is missing, when
    two modules return the same file, or when a module returns `github.svg`,
@@ -40,9 +40,8 @@ that module alone into `.scratch/preview/<module>/` (gitignored), and
 4. The vendored GitHub and LeetCode cards are drawn, then `README.md` and
    `COMMUNITY.md` are assembled from the same `ctx`.
 
-`stack.svg` and `ai-stack.svg` have no module yet. Nothing writes them: the
-README shows the committed files and takes their alt text from each file's
-`aria-label`.
+The README takes each card's alt text from that file's own `aria-label`, so the
+words a screen reader hears are the words the card was drawn from.
 
 ## The context
 
@@ -61,7 +60,7 @@ one to `.scratch/preview/ctx.json`.
 | `milestones` | list of `{year, what, where, city, kind, current}`, oldest first |
 | `engagements` | the customer engagements only, oldest first, as `{number, title, sector, when, client, role, stack, kind, ongoing, start, end}`: `title` is "Customer <number>", numbered over every customer, `sector` is the public label without " customer" (empty for "AWS customer"), and `client` is the public label. Programs stay in `data.json` and are not drawn |
 | `education` | list of `{degree, school, city, when}` |
-| `recognition` | list of `(group title, [(text, year), ...])` |
+| `recognition` | list of `(group title, [(text, year), ...])`; a line naming an SME program is left out |
 | `samples` | list of `{key, title, url, date, tags}` for the aws-samples, newest first |
 | `projects` | list of `{slug, title, summary, date, tech, url, live, stars}` |
 | `project_count` | int |
@@ -70,7 +69,7 @@ one to `.scratch/preview/ctx.json`.
 | `certs` | `{active, lapsed, active_count, issuer}` |
 | `leetcode`, `github`, `contests`, `coding_stats` | the snapshot's objects |
 | `headers` | list of `(key, number, title, subtitle)` in page order |
-| `header_counts` | `{key: short datum for the right side of that header, or ""}` |
+| `header_counts` | `{key: short datum for the right side of that header, or ""}`, in sentence case; empty when a card in that section already shows the number |
 | `get_cards` | list of `(key, repo, card name)` |
 | `connect` | list of `{key, label, icon, url, primary}` |
 | `icon` | callable: `icon(slug)` returns 24 x 24 Simple Icons path data or `None`, from the checked-in cache |
@@ -79,10 +78,9 @@ one to `.scratch/preview/ctx.json`.
 
 ## The design kit
 
-`scripts/kit.py` is the one place for colour, type and motion. The hero and
-project modules take every colour and duration from it; the ported modules
-still hold a few constants of their own (`chrome`, `samples`, `stats`) until
-they move to the kit's look.
+`scripts/kit.py` is the one place for colour, type and motion. Every module
+draws in its look; a helper only one module needs stays in that module, and
+one that two modules would define the same way moves to the kit.
 
 - Palette: canvas `#0b1012`, one blue family, green only for live or ok, amber
   only for LeetCode and work waiting on review. Cards are flat: one fill and
@@ -94,11 +92,11 @@ they move to the kit's look.
 - Helpers: `enter`, `group` and `draw` for poster-safe entrances, `loop` and
   `beam` for repeating motion, `rotating` for lines that take turns, `chip`,
   `chips`, `tile`, `ring` and `sparkline` for data marks, `text_width` and
-  `wrap_text` for layout.
+  `wrap_text` for layout, and `num`, `rect`, `keys`, `STAR`, `TICK` and `WELL`
+  shared by several modules.
 
-The new look is on the hero and the featured project cards. The other modules
-were ported with their current look, gradients included, and move to the kit's
-look in a later pass.
+Section headers own the break between sections: there are no divider images.
+A header's chip shows a datum only when no card below it shows the same number.
 
 ## GitHub-compatible presentation
 
@@ -112,13 +110,13 @@ column, not the screen: from 768px to 1011px the profile sidebar leaves the
 README 383 to 626px, where a desktop card would shrink to 0.46-0.75x. Putting
 the phone card in the `<img>` also serves clients without `<picture>`, such as
 GitHub's mobile app. The AWS sample diagrams' phone layouts redraw the same
-diagram on a 320px grid and wrap the title and tags. The divider has no phone
-layout and scales down to the column.
+diagram on a 320px grid and wrap the title and tags. The AgentCore sample is
+840 wide on its own row; the other two sit two-up at 400.
 
 Text floor: 10.5px in every desktop and phone card, which holds about that size
 where each is shown (the README column is 831 to 846px from a 1280px window up,
-about 308px on a 390px phone); phone micro-labels sit at 11.5px and the AWS
-sample diagrams' node labels at 10px, the most their boxes hold. The vendored
+about 308px on a 390px phone); phone micro-labels sit at 11.5px, and so do
+the AWS sample diagrams' phone node labels (10.5px on desktop). The vendored
 GitHub and LeetCode cards and the Credly action's `certs.svg` hold the same
 10.5px floor upstream since github-stats-card-action v1.3.0, leetcode-card-action
 v1.2.0 and credly-badge-readme-action v1.4.0, except one 8.2px label the Credly

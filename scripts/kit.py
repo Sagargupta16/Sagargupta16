@@ -32,6 +32,9 @@ META = "rgba(255,255,255,0.62)"  # captions; 4.5:1 and up on BG and CARD
 HAIR = "rgba(255,255,255,0.09)"  # a card's border
 HAIR_STRONG = "rgba(255,255,255,0.14)"  # a tile's border, tracks, rails at rest
 HAIR_FILL = "rgba(255,255,255,0.03)"
+# A panel inside a CARD tile: over CARD it lands on BG. It is a tint, not a
+# solid, because the panel's edge is its hairline, not its fill.
+WELL = "rgba(5,8,10,0.49)"
 
 # ---------------------------------------------------------------- type
 MONO = "'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace"
@@ -224,7 +227,42 @@ def dot_pattern(pattern_id: str = "dots", size: int = 16, alpha: float = 0.08) -
     )
 
 
+# ---------------------------------------------------------------- marks
+STAR = "M5 0.6 6.4 3.5 9.6 3.9 7.3 6.1 7.9 9.3 5 7.8 2.1 9.3 2.7 6.1 0.4 3.9 3.6 3.5Z"  # 10 x 10, from its top left
+TICK = "M-3.4 0.2l2.3 2.3 4.5-4.8"  # an ok tick centred on 0 0, 8 wide
+
+
+def num(value: float) -> str:
+    """A coordinate to two places at most, with no trailing zeros and never "-0"."""
+    text = f"{value:.2f}".rstrip("0").rstrip(".")
+    return "0" if text in ("-0", "") else text
+
+
+def rect(
+    x: float,
+    y: float,
+    w: float,
+    h: float,
+    r: float = 0,
+    fill: str = BG,
+    stroke: str = "",
+    extra: str = "",
+) -> str:
+    edge = f' stroke="{stroke}"' if stroke else ""
+    return (
+        f'<rect x="{num(x)}" y="{num(y)}" width="{num(w)}" height="{num(h)}" rx="{num(r)}" '
+        f'fill="{fill}"{edge}{extra}/>'
+    )
+
+
 # ---------------------------------------------------------------- motion
+def keys(points: list[tuple[float, str]], dur: float = T) -> tuple[str, str]:
+    """(values, keyTimes) for (seconds, value) points that run from 0 to dur."""
+    values = ";".join(value for _, value in points)
+    times = ";".join(f"{round(second / dur, 4):g}" for second, _ in points)
+    return values, times
+
+
 def held(begin: float, dur: float, ease: bool = True) -> str:
     """Timing that runs from 0 s and holds the start value until begin.
 

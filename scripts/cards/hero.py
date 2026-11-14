@@ -1,11 +1,11 @@
-"""The hero: the first screen of the profile, with a Terraform run as its scene.
+"""The hero: the first screen of the profile, with a platform hub as its scene.
 
 Left: the greeting, the name, the role, one tagline at a time, the availability pill and the
-intro sentence. Right: two changes run PLAN, GUARDRAILS and APPLY. The compliant one passes
-every stage and rolls out to the accounts; the one that is not is turned off the rail at the
-guardrails and drops into the result line, marked. Below both: the proof row. The scene keeps
-one 12 s clock on a 1.5 s beat, and every element rests on the finished, checked state, so a
-still render shows the whole card.
+intro sentence. Right: a cloud platform at the centre and six capabilities round it, each on
+its own spoke. While the core reads BUILDING, a signal runs out along each spoke in turn, down
+the left side and then down the right, and the capability it reaches lights; once all six are
+up the core is marked live. Below both: the proof row. The scene keeps one 12 s clock, and
+every element rests on the finished, live state, so a still render shows the whole card.
 """
 
 # Copyright (c) Sagar Gupta. Distributed under the repository's MIT license.
@@ -20,82 +20,70 @@ T = kit.T
 NAME = "Sagar Gupta"
 
 # ---------------------------------------------------------------- the clock
-# Seconds on the 12 s loop. The scene's beats sit on a 1.5 s grid and the tagline
-# turns on 0, 3, 6 and 9. The proof row's light keeps off both: it moves at 5 and 11,
-# while a change waits in the guardrails and once the run has closed.
-BEAT = 1.5
-REWIND = 2.5  # the finished frame holds until here, then clears right to left
-WIPE = 0.4  # how long the clearing takes
-DOCK = (3.0, 4.5, 6.0)  # the first change docks at PLAN, GUARDRAILS, APPLY
-STAY = 0.9  # a change stays docked this long; the stage ticks as it leaves
-FOLLOW = 2 * BEAT  # the second change runs this far behind the first
-DENY = DOCK[1] + FOLLOW  # it reaches the guardrails here and is turned away
-TURN = DENY + 0.5  # it leaves the gate for the fork
-LAND = DENY + 1.2  # and comes to rest in the result line
-# The label row is narrower than a change, so the denied one is out of sight while it drops
-# through it: it has faded out by GONE, just off the rail, and fades back in its slot from BACK.
-GONE, BACK = TURN + 0.35, LAND - 0.1
-ROLLOUT = 7.5  # the first change reaches the accounts
-DONE = 10.5  # the closing check and the result line
+# Seconds on the 12 s loop. The hub comes up a side at a time: the left side's signals leave
+# the core PITCH apart from FIRST, the right side's SIDE later, and each capability is up RUN
+# after its signal leaves. The tagline turns on 0, 3, 6 and 9. The proof row's light moves at
+# 5 and 11, in the pause between the two sides and while the finished hub holds.
+REST = 2.0  # the finished frame holds until here, then the hub powers down
+CLEAR = 0.3  # how long powering down takes
+FIRST = 2.5  # the first signal leaves the core
+PITCH = 0.75  # the next one on the same side this much later
+SIDE = 3.0  # the right side starts this long after the left
+RUN = 0.5  # a signal's time along its spoke
+LEAVES = tuple(
+    FIRST + side * SIDE + step * PITCH for side in (0, 1) for step in (0, 1, 2)
+)
+DONE = 8.25  # every capability is up: the core is marked live
 ROLL = 0.3  # how long a reel takes to turn to its next row
 PROOF_AT = 5.0  # the proof light's first move; the rest follow a whole slot apart
 PROOF_SLOT = 6.0  # how long the light rests on a cell when there are four
 
-# The two changes, in Terraform plan notation. They are a diagram's examples,
-# not claims: + adds, ~ updates in place, and the second is not compliant.
-PASSED, HELD = "+ vpc", "~ s3"
-TITLE = "TERRAFORM RUN"
-STAGES = ("PLAN", "GUARDRAILS", "APPLY")
-TARGET = "ACCOUNTS"
-STATUS = (  # what the result line says while the run is going, and from when
-    ("PLANNING", DOCK[0]),
-    ("CHECKING", DOCK[1]),
-    ("APPLYING", DOCK[2]),
-    ("ROLLING OUT", ROLLOUT),
+TITLE = "WHAT I BUILD AND RUN"
+CORE, BUILDING, LIVE = "PLATFORM", "BUILDING", "LIVE"
+# The capabilities round the core, in the order the signals reach them: down the left side,
+# then down the right. Each is (label, as the alt text says it, side, row): side -1 is the
+# left, row -1 the top row. The two widest sit on the top row, where the cloud is narrowest.
+NODES = (
+    ("AUTOMATION", "automation", -1, -1),
+    ("CI/CD", "CI/CD", -1, 0),
+    ("SECURITY", "security", -1, 1),
+    ("MONITORING", "monitoring", 1, -1),
+    ("MLOPS", "MLOps", 1, 0),
+    ("AI AGENTS", "AI agents", 1, 1),
 )
-APPLIED, DENIED = "1 APPLIED", "1 DENIED"
+# A flat cloud in a 90 by 52 box: four lobes (cx, cy, r) on a flat base (x, y, w, h), filled
+# as one shape, and the ellipse inside it (cx, cy, rx, ry) that the spokes start from.
+LOBES = ((18, 34, 18), (40, 22, 22), (66, 28, 18), (74, 36, 16))
+BASE = (18, 34, 56, 18)
+HUB = (45, 32, 38, 18)
 
-ICONS = (
-    "M3 6h4M5 4v4M10 6h11M3 12h4M10 12h8M3 18h4M5 16v4M10 18h11",  # plan: a diff
-    "M12 2.8l7.5 2.8v5.6c0 4.8-3.2 8.3-7.5 10-4.3-1.7-7.5-5.2-7.5-10V5.6z",  # guardrails: a shield
-    "M3.5 12h11.5M10.5 7l5 5-5 5M20 5v14",  # apply: an arrow landing on its target
-)
-TICK = "M-3.4 0.2l2.3 2.3 4.5-4.8"
-CROSS = "M-2.4 -2.4l4.8 4.8M2.4 -2.4l-4.8 4.8"
 PIN = "M0 -5.5a3.6 3.6 0 0 1 3.6 3.6c0 2.7-3.6 6.4-3.6 6.4s-3.6-3.7-3.6-6.4a3.6 3.6 0 0 1 3.6-3.6z"
-TILE = (
-    "rgba(255,255,255,0.04)"  # a stage tile; translucent, so the rail shows through it
-)
-SMOOTH = "0.4 0 0.2 1"  # ease in and out, for a change that travels and stops
+SMOOTH = "0.4 0 0.2 1"  # ease in and out, for a move that travels and stops
 JOIN = chr(0x2060)  # holds a keyword phrase together while the intro wraps
 FILL = (
     0.6  # a keyword phrase may break across lines sooner than leave a line this short
 )
 SANS_FIT = 0.9  # kit measures sans text wide on purpose; a 600-weight line sets at about this share
 
-# The scene's measures at each width. plain and gate are tile widths, lift is how far the
-# gate stands past its neighbours, icon and rail are offsets from the tiles' top edge,
-# track is the labels' letter-spacing and high is the panel height the stages are placed for.
+# The scene's measures at each width. margin is where the tiles' outer edges sit; tile and
+# pitch are a tile's height and the row spacing, hub the middle row's y; cloud is the core's
+# width and cloud_y its top; port is the radius of the dot where a spoke meets its tile, head
+# the signal's length and ring the radius of the core's live mark; status is how far below
+# the cloud's foot the core's status sits, and high is the panel height the hub is placed for.
 DESKTOP = {
-    "left": 18, "right": 18, "plain": 52, "gate": 76, "top": 52, "tall": 84, "lift": 6,
-    "icon": 25, "rail": 59, "scale": 1.1, "cell": 14, "space": 6, "rows": 3, "columns": 4,
-    "size": kit.MICRO, "track": kit.TRACK, "label": 22, "ring": 10, "chip": 18, "pad": 6,
-    "title": 31, "foot": 44, "pitch": 28, "high": 216,
+    "margin": 18, "pad": 10, "tile": 28, "pitch": 54, "hub": 130,
+    "cloud": 100, "cloud_y": 88, "port": 3.5, "head": 10, "ring": 7, "status": 18,
+    "title": 31, "size": kit.MICRO, "track": kit.TRACK, "high": 216,
 }  # fmt: skip
 PHONE = {
-    "left": 10, "right": 12, "plain": 44, "gate": 72, "top": 13, "tall": 42, "lift": 3,
-    "icon": 12, "rail": 30, "scale": 0.72, "cell": 11, "space": 5, "rows": 2, "columns": 3,
-    "size": kit.MICRO_PHONE, "track": 0.8, "label": 18, "ring": 7, "chip": 16, "pad": 3,
-    "title": 0, "foot": 26, "pitch": 24, "high": 106,
+    "margin": 8, "pad": 5, "tile": 20, "pitch": 36, "hub": 53,
+    "cloud": 84, "cloud_y": 25, "port": 3, "head": 8, "ring": 6, "status": 15,
+    "title": 0, "size": kit.MICRO_PHONE, "track": 0.8, "high": 106,
 }  # fmt: skip
 
 
 # ---------------------------------------------------------------- timing helpers
-def _keys(points: list[tuple[float, str]], dur: float = T) -> tuple[str, str]:
-    """(values, keyTimes) for (seconds, value) points that run from 0 to dur."""
-    values = ";".join(value for _, value in points)
-    times = ";".join(f"{round(second / dur, 4):g}" for second, _ in points)
-    return values, times
+_keys = kit.keys
 
 
 def _anim(attribute: str, points: list[tuple[float, str]], dur: float = T) -> str:
@@ -169,18 +157,13 @@ def _proof_clock(count: int) -> tuple[float, float]:
 
 
 # ---------------------------------------------------------------- scene parts
-def _stroke(d: str, color: str, width: float, at: str = "") -> str:
-    move = f' transform="translate({at})"' if at else ""
-    return (
-        f'<path{move} d="{d}" fill="none" stroke="{color}" stroke-width="{width:g}" '
-        'stroke-linecap="round" stroke-linejoin="round"/>'
-    )
-
-
 def _badge(cx: float, cy: float, r: float, fill: str, ink: str = kit.INK) -> str:
-    """A done mark: a filled disc with a tick, on a stage's corner or in the result line."""
-    return f'<circle cx="{cx:g}" cy="{cy:g}" r="{r:g}" fill="{fill}"/>' + _stroke(
-        TICK, ink, 1.7, f"{cx:g} {cy:g}"
+    """A done mark: a filled disc with a tick drawn to its size."""
+    scale = r / 8
+    return (
+        f'<circle cx="{cx:g}" cy="{cy:g}" r="{r:g}" fill="{fill}"/>'
+        f'<path transform="translate({cx:g} {cy:g}) scale({scale:g})" d="{kit.TICK}" fill="none" '
+        f'stroke="{ink}" stroke-width="{1.7 / scale:.2f}" stroke-linecap="round" stroke-linejoin="round"/>'
     )
 
 
@@ -196,263 +179,154 @@ def _micro_width(label: str, g: dict) -> float:
     return kit.text_width(label, g["size"], True, g["track"]) - g["track"]
 
 
-def _chip_width(label: str, size: float, pad: float) -> float:
-    return round(kit.text_width(label, size, True, 0) + pad * 2)
+def _cloud(x: float, y: float, scale: float) -> str:
+    """The core: the flat cloud, its top left corner at x, y.
 
-
-def _chip(label: str, size: float, tall: float, pad: float, solid: bool) -> str:
-    """A change, centred on 0,0: solid while it travels, an outline once it is held."""
-    wide = _chip_width(label, size, pad)
-    paint, ink = (
-        (f'fill="{kit.SKY}"', kit.BG)
-        if solid
-        else (f'fill="{kit.CARD}" stroke="{kit.META}"', kit.BODY)
-    )
-    # textLength pins the label to its measured width, so it sits inside the chip in any mono font
-    return (
-        f'<rect x="{-wide / 2:g}" y="{-tall / 2:g}" width="{wide:g}" height="{tall:g}" rx="5" {paint}/>'
-        + kit.text(
-            0,
-            size * 0.36,
-            label,
-            size,
-            ink,
-            "c",
-            "middle",
-            f' textLength="{wide - pad * 2:g}" style="font-weight:700"',
-        )
-    )
-
-
-def _stops(w: float, g: dict) -> tuple[list[float], list[float], float]:
-    """Where the three stages and the accounts sit in a panel w wide.
-
-    Returns (centres, widths, fork). The four labels are set with the same clear space
-    between every two of them, and each tile is centred over its own label, so a label
-    that is wider than its tile never crowds the next one. The fork is where a denied
-    change leaves the rail: midway between the guardrails and the apply stage.
+    One path of clockwise lobes and base, so the nonzero fill paints their union as one shape.
     """
-    block = g["columns"] * g["cell"] + (g["columns"] - 1) * g["space"]
-    widths = [g["plain"], g["gate"], g["plain"], block]
-    labels = [_micro_width(name, g) for name in (*STAGES, TARGET)]
-    first = g["left"] + max(widths[0], labels[0]) / 2
-    last = w - g["right"] - max(widths[-1], labels[-1]) / 2
-    gap = (last - first - sum(labels) + (labels[0] + labels[-1]) / 2) / 3
-    centers = [first]
-    for before, after in pairwise(labels):
-        centers.append(centers[-1] + before / 2 + gap + after / 2)
-    tiles = (centers[1] + widths[1] / 2 + centers[2] - widths[2] / 2) / 2
-    words = (centers[1] + labels[1] / 2 + centers[2] - labels[2] / 2) / 2
-    return centers, widths, round((tiles + words) / 2, 1)
+
+    def at(value: float) -> str:
+        return f"{round(value * scale, 2):g}"
+
+    parts = [
+        f"M{at(cx - r)} {at(cy)}A{at(r)} {at(r)} 0 1 1 {at(cx + r)} {at(cy)}"
+        f"A{at(r)} {at(r)} 0 1 1 {at(cx - r)} {at(cy)}Z"
+        for cx, cy, r in LOBES
+    ]
+    bx, by, bw, bh = BASE
+    parts.append(f"M{at(bx)} {at(by)}H{at(bx + bw)}V{at(by + bh)}H{at(bx)}Z")
+    return f'<path transform="translate({x:g} {y:g})" d="{"".join(parts)}" fill="{kit.BLUE}"/>'
+
+
+def _tiles(
+    w: float, drop: float, g: dict
+) -> list[tuple[tuple[float, ...], tuple[float, float]]]:
+    """Each capability's tile (x, y, width, height) and the point on its inner edge its spoke meets.
+
+    A tile is wider by its port's radius, which sits on its inner edge, so the word keeps
+    its padding clear of the port.
+    """
+    out = []
+    for word, _, side, row in NODES:
+        wide = round(_micro_width(word, g) + 2 * g["pad"] + g["port"])
+        tall = g["tile"]
+        y = drop + g["hub"] + row * g["pitch"] - tall / 2
+        x = g["margin"] if side < 0 else w - g["margin"] - wide
+        out.append(((x, y, wide, tall), (x + wide if side < 0 else x, y + tall / 2)))
+    return out
+
+
+def _spoke(hub: tuple[float, ...], port: tuple[float, float]) -> tuple[float, float]:
+    """Where the spoke to a port leaves the hub ellipse (cx, cy, rx, ry), towards the port."""
+    hx, hy, rx, ry = hub
+    dx, dy = port[0] - hx, port[1] - hy
+    reach = 1 / math.hypot(dx / rx, dy / ry)
+    return round(hx + dx * reach, 1), round(hy + dy * reach, 1)
+
+
+def _between(lower: list[tuple[float, ...]], y: float) -> float:
+    """The middle, at height y, of the two spokes (x0, y0, x1, y1) to the bottom row."""
+    across = [x0 + (x1 - x0) * (y - y0) / (y1 - y0) for x0, y0, x1, y1 in lower]
+    return (min(across) + max(across)) / 2
 
 
 def _scene(w: float, h: float, phone: bool) -> str:
-    """The Terraform run, drawn from 0,0 in a w by h panel."""
+    """The platform hub, drawn from 0,0 in a w by h panel."""
     g = PHONE if phone else DESKTOP
-    left, tall, size = g["left"], g["tall"], g["size"]
-    top = g["top"] + max(0.0, h - g["high"]) / 2  # a taller panel centres the stages
-    all_centers, all_widths, fork = _stops(w, g)
-    centers, widths = all_centers[:3], all_widths[:3]
-    xs = [center - width / 2 for center, width in zip(centers, widths)]
-    block_center = all_centers[3]
-    block_x = block_center - all_widths[3] / 2
-    rail = top + g["rail"]
-    label_y = top + tall + g["label"]
-    start = -g["plain"]  # where a change waits, outside the panel
-    foot, pitch, chip, pad = g["foot"], g["pitch"], g["chip"], g["pad"]
-    mid = (
-        h - foot / 2
-    )  # the result line's centre; the denied change comes to rest on it
-    held_w = _chip_width(HELD, size, pad)
+    size, port, ring = g["size"], g["port"], g["ring"]
+    drop = max(0.0, h - g["high"]) / 2  # a taller panel centres the hub
+    scale = g["cloud"] / 90
+    ox, oy = w / 2 - 45 * scale, drop + g["cloud_y"]
+    hub = (ox + HUB[0] * scale, oy + HUB[1] * scale, HUB[2] * scale, HUB[3] * scale)
 
     out = [
         f'<rect x="0.5" y="0.5" width="{w - 1:g}" height="{h - 1:g}" rx="10" fill="{kit.CARD}" stroke="{kit.HAIR_STRONG}"/>',
         f'<rect x="1" y="1" width="{w - 2:g}" height="{h - 2:g}" rx="9" fill="url(#dots)"/>',
     ]
     if g["title"]:
-        out.append(_micro(left, g["title"], TITLE, kit.BLUE_LIGHT, g))
+        out.append(_micro(g["margin"], g["title"], TITLE, kit.BLUE_LIGHT, g))
 
-    # the result line's rule, then the branch a denied change takes: off the rail after the
-    # guardrails and down into the result line, where a slot waits for it
-    out.append(
-        f'<path d="M0 {h - foot:g}H{w:g}" stroke="{kit.HAIR_STRONG}"/>'
-        f'<path d="M{fork:g} {rail:g}V{mid - chip / 2:g}" fill="none" stroke="{kit.META}" stroke-width="1.5" stroke-dasharray="2 4"/>'
-        f'<rect x="{fork - held_w / 2:g}" y="{mid - chip / 2:g}" width="{held_w:g}" height="{chip:g}" rx="5" fill="none" stroke="{kit.HAIR_STRONG}" stroke-dasharray="2 3"/>'
-    )
-
-    # the rail at rest, then the lit length that follows the first change and stays lit once it lands
-    lit = [(0.0, "0"), (REWIND, "0"), (REWIND + WIPE, f"{block_x:g}")]
-    for center, dock in zip(centers, DOCK):
-        lit += [(dock, f"{block_x - center:g}"), (dock + STAY, f"{block_x - center:g}")]
-    lit += [(ROLLOUT, "0"), (T, "0")]
-    out.append(
-        f'<path d="M0 {rail:g}H{block_x:g}" fill="none" stroke="{kit.HAIR_STRONG}" stroke-width="1.5"/>'
-        f'<path d="M0 {rail:g}H{block_x:g}" fill="none" stroke="{kit.BLUE_EDGE}" stroke-width="1.5" '
-        f'pathLength="{block_x:g}" stroke-dasharray="{block_x:g} {block_x:g}" stroke-dashoffset="0">'
-        + _anim("stroke-dashoffset", lit)
-        + "</path>"
-        f'<circle cx="{fork:g}" cy="{rail:g}" r="2.5" fill="{kit.BLUE_LIGHT}"/>'
-    )
-
-    # the stages: a tile with its glyph, the rail running through it. The guardrails
-    # tile is the gate, so it is wider and stands past the other two.
-    scale = g["scale"]
-    boxes = []
-    for index, (x, width, name) in enumerate(zip(xs, widths, STAGES)):
-        lift = g["lift"] if index == 1 else 0
-        box = (x, top - lift, width, tall + 2 * lift)
-        boxes.append(box)
-        out.append(
-            f'<rect x="{box[0]:g}" y="{box[1]:g}" width="{box[2]:g}" height="{box[3]:g}" rx="8" fill="{TILE}" stroke="{kit.HAIR_STRONG}"/>'
-            f'<path transform="translate({centers[index] - 12 * scale:g} {top + g["icon"] - 12 * scale:g}) scale({scale:g})" d="{ICONS[index]}" '
-            f'fill="none" stroke="{kit.BLUE_LIGHT}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>'
-            + _micro(centers[index], label_y, name, kit.INK, g, "middle")
+    # each spoke runs from inside the cloud to its tile's port. At rest it is a hairline; a
+    # signal lights it from the core outwards, and it stays lit until the hub powers down.
+    spokes, nodes, lower = [], [], []
+    for index, ((x, y, wide, tall), (px, py)) in enumerate(_tiles(w, drop, g)):
+        word, _, side, row = NODES[index]
+        sx, sy = _spoke(hub, (px, py))
+        if row > 0:
+            lower.append((sx, sy, px, py))
+        d = f"M{sx:g} {sy:g}L{px:g} {py:g}"
+        # the signal's length as a share of its spoke, so it is as long on a short spoke
+        head = round(100 * g["head"] / math.hypot(px - sx, py - sy), 1)
+        leave = LEAVES[index]
+        up = leave + RUN
+        lit = [
+            (0.0, "0"),
+            (REST, "0"),
+            (REST + CLEAR, "100"),
+            (leave, "100"),
+            (up, "0"),
+            (T, "0"),
+        ]
+        # the signal: a short bright head on the lit length's front, out of sight off either
+        # end of the spoke (it starts inside the cloud) except while it runs
+        run = [
+            (0.0, f"{head + 8:g}"),
+            (leave, f"{head:g}"),
+            (up, f"{head - 100:g}"),
+            (up + RUN * head / 100, "-100"),
+            (T, "-100"),
+        ]
+        spokes.append(
+            f'<path d="{d}" fill="none" stroke="{kit.HAIR_STRONG}" stroke-width="1.5"/>'
+            f'<path d="{d}" fill="none" stroke="{kit.BLUE_EDGE}" stroke-width="1.5" '
+            'pathLength="100" stroke-dasharray="100 100" stroke-dashoffset="0">'
+            + _anim("stroke-dashoffset", lit)
+            + "</path>"
+            f'<path d="{d}" fill="none" stroke="{kit.SKY}" stroke-width="3" stroke-linecap="round" '
+            f'pathLength="100" stroke-dasharray="{head:g} 300" stroke-dashoffset="{head + 8:g}">'
+            + _anim("stroke-dashoffset", run)
+            + "</path>"
         )
-    # an arrow in the gap before the gate and before the accounts; the fork marks the third
-    for x in ((xs[0] + widths[0] + xs[1]) / 2, (xs[2] + widths[2] + block_x) / 2):
-        out.append(
-            _stroke("M-1.75 -3.5l3.5 3.5-3.5 3.5", kit.META, 1.3, f"{x:g} {rail:g}")
-        )
-
-    # the gate answers the second change: a ring closes round it once as it shuts
-    x, y, width, height = boxes[1]
-    out.append(
-        f'<rect x="{x - 2.5:g}" y="{y - 2.5:g}" width="{width + 5:g}" height="{height + 5:g}" rx="10" fill="none" stroke="{kit.INK}" stroke-width="1.5" opacity="0">'
-        + _on(DENY, DENY + 0.45, 0.15)
-        + "</rect>"
-    )
-
-    # a stage lights as the first change leaves it, and plan and apply take a done mark on
-    # the corner. The gate takes none: its two answers are marked where each change ends up.
-    for index, (x, y, width, height) in enumerate(boxes):
-        mark = "" if index == 1 else _badge(x + width - 4, y + 4, 8, kit.BLUE_EDGE)
-        out.append(
-            "<g>"
-            + _on(DOCK[index] + STAY - 0.2, REWIND + 0.08 * (2 - index))
-            + f'<rect x="{x:g}" y="{y:g}" width="{width:g}" height="{height:g}" rx="8" fill="{kit.BLUE_TINT}" stroke="{kit.BLUE_LIGHT}" stroke-width="1.5"/>'
-            + mark
+        # the tile waits dark, its word in grey; it lights as the signal lands, and a dot
+        # marks the port where its spoke plugs in
+        mid, base = x + wide / 2 + side * port / 2, y + tall / 2 + size * 0.36
+        nodes.append(
+            f'<rect x="{x:g}" y="{y:g}" width="{wide:g}" height="{tall:g}" rx="7" fill="{kit.CARD}" stroke="{kit.HAIR_STRONG}"/>'
+            + _micro(mid, base, word, kit.META, g, "middle")
+            + "<g>"
+            + _on(up - 0.1, REST)
+            + f'<rect x="{x:g}" y="{y:g}" width="{wide:g}" height="{tall:g}" rx="7" fill="{kit.BLUE_TINT}" stroke="{kit.BLUE_EDGE}" stroke-width="1.2"/>'
+            + _micro(mid, base, word, kit.INK, g, "middle")
+            + f'<circle cx="{px:g}" cy="{py:g}" r="{port:g}" fill="{kit.BLUE_LIGHT}"/>'
             + "</g>"
         )
+    out += spokes
+    out.append(_cloud(ox, oy, scale))
+    out.append(_micro(w / 2, oy + 33 * scale + size * 0.36, CORE, kit.INK, g, "middle"))
+    out += nodes
 
-    # the accounts: whole columns of cells that turn ready one after another
-    cell, space, rows, columns = g["cell"], g["space"], g["rows"], g["columns"]
-    block_h = rows * cell + (rows - 1) * space
-    block_y = min(rail - block_h / 2, top + tall - block_h)
-    step = (DONE - ROLLOUT) / columns
-    for column in range(columns):
-        cx = block_x + column * (cell + space)
-        idle = "".join(
-            f'<rect x="{cx:g}" y="{block_y + row * (cell + space):g}" width="{cell:g}" height="{cell:g}" rx="3" fill="none" stroke="{kit.HAIR_STRONG}"/>'
-            for row in range(rows)
-        )
-        ready = "".join(
-            f'<rect x="{cx:g}" y="{block_y + row * (cell + space):g}" width="{cell:g}" height="{cell:g}" rx="3" fill="{kit.BLUE}" stroke="{kit.BLUE_LIGHT}"/>'
-            for row in range(rows)
-        )
-        out.append(f"{idle}<g>{_on(ROLLOUT + column * step, REWIND)}{ready}</g>")
-    out.append(_micro(block_center, label_y, TARGET, kit.INK, g, "middle"))
-
-    # the close: a ring over the accounts that fills with a green check once every column is ready
-    ring = g["ring"]
-    ring_y = block_y - ring - 5
+    # the core's status under the cloud, centred between the two lower spokes: BUILDING while
+    # the capabilities come up, then the green ok and LIVE once all six are
+    cy = oy + 52 * scale + g["status"]
+    cx, base = _between(lower, cy), cy + size * 0.36
+    gap = ring - 1
+    start = cx - (2 * ring + gap + _micro_width(LIVE, g)) / 2
     out.append(
-        f'<circle cx="{block_center:g}" cy="{ring_y:g}" r="{ring:g}" fill="none" stroke="{kit.HAIR_STRONG}" stroke-width="1.5"/>'
-        f"<g>{_on(DONE - 0.2, REWIND)}{_badge(block_center, ring_y, ring, kit.GREEN, kit.BG)}</g>"
-    )
-
-    # the first change: in from the left, a stop in each stage, then into the accounts
-    run = [(0.0, start), (DOCK[0] - 0.3, start)]
-    for center, dock in zip(centers, DOCK):
-        run += [(dock, center), (dock + STAY, center)]
-    run += [(ROLLOUT, block_x + 4), (T, block_x + 4)]
-    out.append(
-        f'<g opacity="0" transform="translate({start:g} 0)">'
-        + _on(DOCK[0] - 0.3, ROLLOUT - 0.3)
-        + _travel(run)
-        + f'<g transform="translate(0 {rail:g})">{_chip(PASSED, size, chip, pad, True)}</g></g>'
-    )
-
-    # the second change follows it, knocks at the guardrails, is turned off the rail at the
-    # fork and drops into the result line, where it rests in its slot. The dotted branch
-    # shows the way down, so it fades out as it leaves the rail and back in once it is
-    # under the labels.
-    gate, clear = centers[1], REWIND + WIPE + 0.1
-    across = [
-        (0.0, fork),
-        (clear, fork),
-        (clear + 0.1, start),
-        (DOCK[0] + FOLLOW - 0.3, start),
-        (DOCK[0] + FOLLOW, centers[0]),
-        (DOCK[0] + FOLLOW + STAY, centers[0]),
-        (DENY, gate),
-        (DENY + 0.08, gate - 3),
-        (DENY + 0.16, gate + 3),
-        (DENY + 0.24, gate - 2),
-        (DENY + 0.32, gate),
-        (TURN, gate),
-        (TURN + 0.3, fork),
-        (T, fork),
-    ]
-    down = [
-        (0.0, mid),
-        (clear, mid),
-        (clear + 0.1, rail),
-        (TURN + 0.3, rail),
-        (LAND, mid),
-        (T, mid),
-    ]
-    out.append(
-        f'<g transform="translate({fork:g} 0)">'
-        + _on(DOCK[0] + FOLLOW - 0.3, REWIND + 0.1)
-        + _travel(across)
-        + f'<g transform="translate(0 {mid:g})">'
-        + _travel(down, "y")
-        + _on(BACK, GONE - 0.15, 0.15)
-        + _chip(HELD, size, chip, pad, False)
-        # the travelling face covers the held one until the change is out of sight, so the
-        # change comes back in its slot as the held face alone
-        + f'<g opacity="0">{_on(clear, GONE, BACK - GONE)}{_chip(HELD, size, chip, pad, True)}</g>'
-        + "</g></g>"
-    )
-
-    # the result line: where the run is while it goes, then how it ended. The applied
-    # count sits on the left; the denied one is written beside the change it stopped.
-    base = mid + size * 0.36
-    rows_svg = []
-    for index, label in enumerate((APPLIED, *(name for name, _ in STATUS), APPLIED)):
-        y = index * pitch
-        if label == APPLIED:
-            rows_svg.append(
-                _badge(left + 8, mid + y, 8, kit.BLUE)
-                + _micro(left + 22, base + y, label, kit.INK, g)
-            )
-        else:
-            rows_svg.append(
-                f'<rect x="{left + 2:g}" y="{mid + y - 4:g}" width="12" height="8" rx="2.5" fill="{kit.SKY}"/>'
-                + _micro(left + 22, base + y, label, kit.BLUE_LIGHT, g)
-            )
-    turns = [at for _, at in STATUS] + [DONE]
-    # the denied mark: an outlined disc, quieter than the checks
-    mark = fork + held_w / 2 + 13
-    out.append(
-        _reel("".join(rows_svg), pitch, turns, "run")
-        + f"<g>{_on(LAND, REWIND)}"
-        + f'<circle cx="{mark:g}" cy="{mid:g}" r="7" fill="none" stroke="{kit.META}" stroke-width="1.3"/>'
-        + _stroke(CROSS, kit.INK, 1.6, f"{mark:g} {mid:g}")
-        + _micro(mark + 15, base, DENIED, kit.META, g)
+        '<g opacity="0">'
+        + _on(REST + CLEAR, DONE - 0.45)
+        + _micro(cx, base, BUILDING, kit.BLUE_LIGHT, g, "middle")
+        + "</g><g>"
+        + _on(DONE - 0.2, REST)
+        + _badge(start + ring, cy, ring, kit.GREEN, kit.BG)
+        + _micro(start + 2 * ring + gap, base, LIVE, kit.INK, g)
         + "</g>"
     )
     return "".join(out)
 
 
 def _scene_defs(w: float, h: float, phone: bool) -> str:
-    g = PHONE if phone else DESKTOP
-    fork = _stops(w, g)[2]
-    slot = fork - _chip_width(HELD, g["size"], g["pad"]) / 2
     return (
         f'<clipPath id="scene"><rect x="1" y="1" width="{w - 2:g}" height="{h - 2:g}" rx="9"/></clipPath>'
-        # the status rows turn in a window that stops short of the denied change's slot
-        + _window("run", 1, h - g["foot"] / 2 - g["pitch"] / 2, slot - 9, g["pitch"])
         + kit.dot_pattern("dots", 16, 0.06)
     )
 
@@ -704,9 +578,10 @@ def _label(ctx: dict) -> str:
     parts.append(ctx["intro"])
     if proof:
         parts.append(proof + ".")
+    spoken = [said for _, said, _, _ in NODES]
     parts.append(
-        "The diagram is a Terraform run: one change passes plan, guardrails and apply "
-        "and rolls out to the accounts, and one that is not compliant is denied at the guardrails."
+        f"The diagram is a cloud platform at the centre of {', '.join(spoken[:-1])} and "
+        f"{spoken[-1]}, which come up one at a time until the platform is live."
     )
     return " ".join(parts)
 

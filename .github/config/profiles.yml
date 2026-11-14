@@ -68,10 +68,3 @@ preferences:
 # Resume (source of truth: latex-resume releases)
 resume:
   path: "https://github.com/Sagargupta16/latex-resume/releases/latest/download/resume.pdf"
-
-# Metrics
-metrics:
-  update_schedule: "0 8 */2 * *"  # Every 2 days at 8 AM UTC
-  delay_seconds: 15
-  branch: "main"
-  output_folder: "metrics"

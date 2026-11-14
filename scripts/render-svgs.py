@@ -185,7 +185,7 @@ MILESTONES = [
     ("2018", "BCA", "DAVV", "Indore, India", "study"),
     ("2021", "MCA", "NIT Warangal", "Warangal, India", "study"),
     ("2023", "Software Developer Intern", "Ikarus-3D", "Mohali, India", "work"),
-    ("2024", "ProServe DevOps Intern", "AWS", "Hyderabad, India", "work"),
+    ("2024", "ProServe Intern", "AWS", "Hyderabad, India", "work"),
     ("2024", "ProServe (Cloud Consultant)", "AWS", "Hyderabad, India", "work"),
 ]
 DISCLAIMER = (
@@ -267,6 +267,8 @@ SAMPLES = {
         ["TERRAFORM", "SAGEMAKER"],
     ),
 }
+# The sample cards/samples.py draws 840 wide: it gets a row of its own, the rest go two-up.
+LEAD_SAMPLE = "agentcore-harness"
 
 # Icons: 24x24 simple-icons path data, cached in assets/svg/icons.json so an
 # offline run draws them. An online run fetches only the slugs the cache lacks,
@@ -1008,6 +1010,11 @@ def _oss(data: dict) -> dict:
     }
 
 
+# The Publications card no longer lists the SME program line, however it is worded;
+# an SME role ("AWS Training and Certification SME") stays.
+SME_PROGRAM = re.compile(r"\bSME program", re.IGNORECASE)
+
+
 def _repos(rows: list[dict]) -> list[str]:
     """Return each repository once, in the order the rows name them."""
     return list(dict.fromkeys(row["repo"] for row in rows))
@@ -1028,6 +1035,7 @@ def _recognition(pf: dict) -> list[tuple[str, list[tuple[str, str]]]]:
     programs = [
         (a["title"].replace(" - ", ", "), str(a.get("year", "")))
         for a in sorted(pf.get("achievements", []), key=newest, reverse=True)
+        if not SME_PROGRAM.search(a["title"])
     ]
     groups = [
         ("REVIEWS", reviews),
@@ -1263,18 +1271,22 @@ def build_context(data: dict) -> dict:
             (key, f"{number:02d}", title, subtitle)
             for number, (key, title, subtitle) in enumerate(HEADERS, start=1)
         ],
+        # A datum shows only what no card on the page already says (years at AWS,
+        # the sample count and the active count are hero proof cells; the merged
+        # count is the first open-source tile). Sentence case: the header shows it
+        # upper case in its chip and keeps it as written in its alt text.
         "header_counts": {
-            "experience": f"{years}+ YEARS AT AWS" if years > 0 else "",
-            "projects": f"{len(samples)} AWS SAMPLES + {len(projects)} PROJECTS"
-            if samples and projects
+            "experience": "",
+            # every card in the section, so it never reads against "View all N projects"
+            "projects": f"{len(samples) + len(projects)} featured"
+            if samples or projects
             else "",
-            "opensource": f"{oss['merged_count']} MERGED UPSTREAM"
-            if oss["merged_count"]
-            else "",
-            "certs": f"{certs['active_count']} ACTIVE" if certs["active_count"] else "",
+            "opensource": "",
+            "certs": "",
             "publications": "",
             "stack": "",
-            "community": f"{len(tools)} TOOLS" if tools else "",
+            # COMMUNITY.md shows this header above every tool, so it counts them all
+            "community": f"{len(tools)} tools" if tools else "",
             "stats": "",
             "education": "",
         },
@@ -1392,10 +1404,13 @@ def _header(key: str) -> str:
     fallback = f"header-{key}-dark-mobile.svg"
     if not (OUT / fallback).exists():
         fallback = f"header-{key}-dark.svg"
+    # the header's own label carries its datum ("Featured Projects: 11 featured")
+    wide = f"header-{key}-dark.svg"
+    alt = LABELS.get(wide) or _file_label(wide) or title
     return (
         "<picture>"
         + "".join(sources)
-        + f'<img src="assets/svg/{fallback}" width="100%" alt="{escape(title)}" />'
+        + f'<img src="assets/svg/{fallback}" width="100%" alt="{escape(alt)}" />'
         + "</picture>"
     )
 
@@ -1428,7 +1443,7 @@ def _get_this_card(key: str) -> str:
 def _sample_cell(sample: dict) -> str:
     return _link(
         sample["url"],
-        _img(
+        _card(
             f"sample-{sample['key']}.svg",
             f"{sample['title']}, published as a solution under aws-samples",
         ),
@@ -1458,7 +1473,10 @@ def _button(href: str, src: str, label: str) -> str:
 
 
 def render_readme(data: dict, ctx: dict) -> str:
-    """Return README.md: the hero, the connect row, then the sections in his order. Cards only."""
+    """Return README.md: the hero, the connect row, then the sections in his order. Cards only.
+
+    No divider image between sections: each section header owns the break.
+    """
     oss = ctx["oss"]
     merged_url = search_url(_repos(oss["merged"]), "merged")
     open_url = search_url(_repos(oss["open"]), "open")
@@ -1466,30 +1484,29 @@ def render_readme(data: dict, ctx: dict) -> str:
         c["key"]: _link(c["url"], _img(f"connect-{c['key']}.svg", c["label"]))
         for c in ctx["connect"]
     }
-    divider = _img("divider.svg", "")
+    lead = [s for s in ctx["samples"] if s["key"] == LEAD_SAMPLE]
+    others = [s for s in ctx["samples"] if s["key"] != LEAD_SAMPLE]
     count = ctx["project_count"]
     blocks = [
         GENERATED_NOTE,
         _link(PORTFOLIO_URL, _card("hero.svg", f"Sagar Gupta, {AWS_TITLE_LONG}")),
         _row(list(connect.values()), "128"),
-        divider,
         _header("experience"),
         _card("experience.svg", "Career timeline and customer engagements"),
-        divider,
         _header("projects"),
-        _row([_sample_cell(s) for s in ctx["samples"]], "400"),
+        # the lead sample is a full-width card on a row of its own
+        *(_sample_cell(s) for s in lead),
+        _row([_sample_cell(s) for s in others], "400") if others else "",
         _row([_project_cell(p) for p in ctx["projects"]], "400"),
         # no count, no button: a made-up number is worse than a missing link
         _button(PORTFOLIO_URL, "cta-portfolio.svg", f"View all {count} projects")
         if count
         else "",
-        divider,
         _header("opensource"),
-        _link(merged_url, _card("oss.svg", "Open source summary")),
-        _link(merged_url, _img("oss-merged.svg", _oss_alt(oss, merged=True))),
-        _link(open_url, _img("oss-review.svg", _oss_alt(oss, merged=False))),
+        # the summary carries the merged ledger, so it links to the merged search
+        _link(merged_url, _card("oss.svg", _oss_alt(oss, merged=True))),
+        _link(open_url, _card("oss-review.svg", _oss_alt(oss, merged=False))),
         _get_this_card("oss"),
-        divider,
         _header("certs"),
         _link(
             CREDLY_URL,
@@ -1497,18 +1514,13 @@ def render_readme(data: dict, ctx: dict) -> str:
         ),
         _link(CREDLY_URL, _img("certs.svg", _certs_alt())),
         _get_this_card("certs"),
-        divider,
         _header("publications"),
         _link(
             PORTFOLIO_URL,
             _card("publications.svg", "Reviews, talks and recognition at AWS"),
         ),
-        divider,
         _header("stack"),
-        # kept as committed until the stack card is redrawn: nothing here writes them
         _card("stack.svg", "Tech stack"),
-        _card("ai-stack.svg", "AI-assisted engineering"),
-        divider,
         _header("community"),
         _row([_tool_cell(t) for t in ctx["tools"] if t["top"]], "270"),
         _button(
@@ -1516,17 +1528,14 @@ def render_readme(data: dict, ctx: dict) -> str:
             "cta-community.svg",
             f"See all {len(ctx['tools'])} community tools",
         ),
-        divider,
         _header("stats"),
         _img("github.svg", _github_alt(data)),
         _get_this_card("github"),
         _link(LEETCODE_URL, _img("leetcode.svg", _leetcode_alt(data))),
         _get_this_card("leetcode"),
         _card("competitive.svg", "Competitive programming"),
-        divider,
         _header("education"),
         _card("education.svg", "Education"),
-        divider,
         _link(PORTFOLIO_URL, _card("footer.svg", "Visit my portfolio"))
         # in a <picture> so GitHub does not link it or give it the block fallback class
         + f' <picture><img src="{VIEWS_PIXEL}" width="1" height="1" alt="" /></picture>',

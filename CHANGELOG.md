@@ -2,6 +2,36 @@
 
 All notable changes to this profile README repository.
 
+## [4.23.0] - 2026-11-14
+
+The new look from the 4.22.0 pilot reaches every section of the page, and the hero's scene stands for the work as a whole instead of one tool.
+
+New look on every section:
+
+- Section headers carry a blue section number, the title and a mono subtitle; the header now marks the break between sections, so the ten divider images are gone. A header chip shows a datum only when no card below already shows it ("11 featured", "20 tools")
+- Experience: a milestone rail ending on the current role opens into the customer rail. Each engagement is a flat panel with its dates, "Customer N", the sector in brackets, the role and two or three stack chips; green marks only the current role and the ongoing engagement. The phone card opens on a NOW panel, then runs one rail newest first
+- Featured Projects: the AgentCore sample leads at full width (840) on its own row, with a request lane (a call for a tool the policy does not list is denied, then an allowed call goes through) and a release lane that ends with prod going live. The org governance card adds the management account the policies start from, and the SageMaker card waits on approval before deploy and retrains on drift
+- Open Source: one summary card with four tiles and the merged ledger (newest six, "+N more" and the repos it also merged into) replaces the summary and merged cards; the review card lists repositories with their open PR counts and the community line
+- Certifications: five validity rings with the months left and the expiry month, soonest first, plus the one previously earned certification. The phone badge card counts every Credly badge, the same as the gallery (21, 5 and 16), and draws the five certifications and five learning badges
+- Publications: reviews, talks and recognition in two columns, 297px tall where it was 528
+- Stack: one card with four lanes (cloud and IaC, CI/CD and platform, AI and agents, apps and data) of 31 monochrome tiles, one lane lit at a time; it replaces the stack and AI stack cards, drops ChatGPT and Gemini, and is 39.5 KB where the old one was over 100 KB
+- Community tools: each cover carries its tool's name, so no two of the nine look the same, and every desktop card is the same height
+- Coding stats: the GitHub and LeetCode phone cards and the competitive card are redrawn; competitive shows a TOP FINISHES ledger with place pills, and amber stays on LeetCode only
+- Education, footer and buttons: degrees side by side; the footer's wave stops at the nine section numbers; only Resume is filled, the call-to-action buttons are outlined, and the "get this card" strips are slim link lines
+
+Changed:
+
+- The hero's scene is a platform hub where it was a Terraform run: a flat cloud labelled PLATFORM under the title "What I build and run", with six capabilities round it (automation, CI/CD, security, monitoring, MLOps, AI agents). While the core reads BUILDING, a signal runs out along each spoke, down the left side and then down the right, and each capability lights as its signal lands; once all six are up the core shows a green ok and LIVE. The still frame is the finished hub. The scene names no product or tool and shows no figure, and the alt text ends on one sentence that describes it. Both cards keep their sizes (840 x 336 and 320 x 513)
+- The 2024 internship on the career rail reads "ProServe Intern" (was "ProServe DevOps Intern") at both widths and in the README alt text
+- The README alt text of every header, sample card and the review card comes from that card's own label
+- Helpers that two or more modules defined the same way moved to `scripts/kit.py` (`num`, `rect`, `keys`, `STAR`, `TICK`, `WELL`)
+
+Removed:
+
+- "MLOps SME program graduate" from the Publications card: any recognition line naming an SME program is left out. Other recognition lines stay
+- `assets/svg/oss-merged*.svg`, `ai-stack*.svg` and `divider.svg`; the new `stack` module draws `stack*.svg`
+- The `metrics.yml`, `monkeytype-readme.yml` and `refresh-gists.yml` workflows and the `metrics/` folder: nothing on the page used their output, and refresh-gists had failed for five weeks. The `monkeytype-readme` and `output` branches are untouched
+
 ## [4.22.0] - 2026-11-13
 
 A review of the whole page and repo. The generator is split into a shared design kit and one module per card group, the bugs the review confirmed are fixed, and a new look is piloted on two surfaces only: the hero and the featured project cards. Every other card keeps its current look until the pilot is approved.

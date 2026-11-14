@@ -111,7 +111,7 @@ def spans(svg: str) -> list[tuple[str, float, float, float, float]]:
 
 
 def has_star(svg: str) -> bool:
-    return projects._STAR in svg
+    return kit.STAR in svg
 
 
 def chip_row(svg: str, entry: dict, phone: bool) -> tuple[list[str], int | None, float]:

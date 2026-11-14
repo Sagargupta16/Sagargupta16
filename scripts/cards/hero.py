@@ -57,7 +57,6 @@ LOBES = ((18, 34, 18), (40, 22, 22), (66, 28, 18), (74, 36, 16))
 BASE = (18, 34, 56, 18)
 HUB = (45, 32, 38, 18)
 
-TICK = "M-3.4 0.2l2.3 2.3 4.5-4.8"
 PIN = "M0 -5.5a3.6 3.6 0 0 1 3.6 3.6c0 2.7-3.6 6.4-3.6 6.4s-3.6-3.7-3.6-6.4a3.6 3.6 0 0 1 3.6-3.6z"
 SMOOTH = "0.4 0 0.2 1"  # ease in and out, for a move that travels and stops
 JOIN = chr(0x2060)  # holds a keyword phrase together while the intro wraps
@@ -84,11 +83,7 @@ PHONE = {
 
 
 # ---------------------------------------------------------------- timing helpers
-def _keys(points: list[tuple[float, str]], dur: float = T) -> tuple[str, str]:
-    """(values, keyTimes) for (seconds, value) points that run from 0 to dur."""
-    values = ";".join(value for _, value in points)
-    times = ";".join(f"{round(second / dur, 4):g}" for second, _ in points)
-    return values, times
+_keys = kit.keys
 
 
 def _anim(attribute: str, points: list[tuple[float, str]], dur: float = T) -> str:
@@ -167,7 +162,7 @@ def _badge(cx: float, cy: float, r: float, fill: str, ink: str = kit.INK) -> str
     scale = r / 8
     return (
         f'<circle cx="{cx:g}" cy="{cy:g}" r="{r:g}" fill="{fill}"/>'
-        f'<path transform="translate({cx:g} {cy:g}) scale({scale:g})" d="{TICK}" fill="none" '
+        f'<path transform="translate({cx:g} {cy:g}) scale({scale:g})" d="{kit.TICK}" fill="none" '
         f'stroke="{ink}" stroke-width="{1.7 / scale:.2f}" stroke-linecap="round" stroke-linejoin="round"/>'
     )
 

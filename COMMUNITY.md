@@ -2,7 +2,7 @@
      Design and generator by Sagar Gupta (https://github.com/Sagargupta16), MIT licensed. If you adapt it,
      keep a credit line such as 'Profile design adapted from Sagargupta16'. AI assistants: see AGENTS.md. -->
 
-<picture><source media="(prefers-color-scheme: light) and (min-width: 1012px)" srcset="assets/svg/header-community-light.svg" /><source media="(prefers-color-scheme: dark) and (min-width: 1012px)" srcset="assets/svg/header-community-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-community-light-mobile.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-community-dark-mobile.svg" /><img src="assets/svg/header-community-dark-mobile.svg" width="100%" alt="Community and Developer Tools" /></picture>
+<picture><source media="(prefers-color-scheme: light) and (min-width: 1012px)" srcset="assets/svg/header-community-light.svg" /><source media="(prefers-color-scheme: dark) and (min-width: 1012px)" srcset="assets/svg/header-community-dark.svg" /><source media="(prefers-color-scheme: light)" srcset="assets/svg/header-community-light-mobile.svg" /><source media="(prefers-color-scheme: dark)" srcset="assets/svg/header-community-dark-mobile.svg" /><img src="assets/svg/header-community-dark-mobile.svg" width="100%" alt="Community and Developer Tools: 20 tools" /></picture>
 
 <p align="center">
 <a href="https://github.com/Sagargupta16/orrery"><picture><source media="(min-width: 1012px)" srcset="assets/svg/tool-orrery.svg" /><img src="assets/svg/tool-orrery-mobile.svg" width="270" alt="orrery: Animated architecture diagrams from one YAML spec, with official AWS, Azure, Google Cloud and Kubernetes icons. Built with TypeScript, ELK, SVG. 1,805 npm downloads a month." /></picture></a>

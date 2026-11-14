@@ -34,9 +34,6 @@ W55 = "rgba(255,255,255,0.55)"
 W30 = "rgba(255,255,255,0.30)"
 W07 = "rgba(255,255,255,0.07)"
 TINT_STRONG = "rgba(37,99,235,0.28)"
-# A panel inside a cover: over the cover's CARD fill this lands on BG. It is a
-# tint, not a solid, because the panel's edge is its hairline, not its fill.
-WELL = "rgba(5,8,10,0.49)"
 DIM = 0.3  # a plate, row or label that is out of focus for a beat
 DESKTOP_LINES, PHONE_LINES = 3, 4  # the most summary lines a card shows
 STAR_FLOOR = 10  # a star chip is drawn from this many stars
@@ -91,9 +88,7 @@ class Stage:
 
 
 # ---------------------------------------------------------------- numbers and timing
-def _n(value: float) -> str:
-    text = f"{value:.2f}".rstrip("0").rstrip(".")
-    return "0" if text in ("-0", "") else text
+_n, _rect = kit.num, kit.rect
 
 
 def _anim(attribute: str, points: list, dur: float = T, kind: str = "") -> str:
@@ -147,25 +142,8 @@ def _back(clear: float, at: float, ramp: float = 0.4) -> list:
 
 
 # ---------------------------------------------------------------- shapes
-def _rect(
-    x: float,
-    y: float,
-    w: float,
-    h: float,
-    r: float = 0,
-    fill: str = kit.BG,
-    stroke: str = "",
-    extra: str = "",
-) -> str:
-    edge = f' stroke="{stroke}"' if stroke else ""
-    return (
-        f'<rect x="{_n(x)}" y="{_n(y)}" width="{_n(w)}" height="{_n(h)}" rx="{_n(r)}" '
-        f'fill="{fill}"{edge}{extra}/>'
-    )
-
-
 def _panel(x: float, y: float, w: float, h: float, r: float = 6) -> str:
-    return _rect(x, y, w, h, r, WELL, kit.HAIR_STRONG)
+    return _rect(x, y, w, h, r, kit.WELL, kit.HAIR_STRONG)
 
 
 def _bar(x: float, y: float, w: float, h: float, fill: str = W30) -> str:
@@ -372,7 +350,7 @@ def _plate(x: float, y: float, w: float, h: float, art: int) -> str:
     """A museum plate: hairline frame, inset line, its tradition inside."""
     k = (min(w, h) - 14) / 40
     return (
-        _rect(x, y, w, h, 4, WELL, kit.HAIR_STRONG)
+        _rect(x, y, w, h, 4, kit.WELL, kit.HAIR_STRONG)
         + _rect(x + 3, y + 3, w - 6, h - 6, 2.5, "none", "rgba(96,165,250,0.3)")
         + f'<g transform="translate({_n(x + w / 2)} {_n(y + h / 2)}) scale({_n(k)})" fill="none" '
         f'stroke-width="{_n(1.15 / k)}" stroke-linecap="round" stroke-linejoin="round">{_MOTIFS[art]()}</g>'
@@ -1230,7 +1208,7 @@ def _cover_leaderboard(stage: Stage, project: dict) -> str:
         for col in range(3):
             tx, ty = tile(col, row)
             out.append(
-                _rect(tx, ty, tw, th, 4, WELL, kit.HAIR_STRONG)
+                _rect(tx, ty, tw, th, 4, kit.WELL, kit.HAIR_STRONG)
                 + _wire(
                     f"M{_n(tx + 4)} {_n(ty + th - 5)}l{_n(tw * 0.28)} -9 {_n(tw * 0.2)} 5 {_n(tw * 0.14)} -4 {_n(tw * 0.2)} 8",
                     kit.HAIR_STRONG,
@@ -1427,7 +1405,7 @@ def _cover_portfolio(stage: Stage, project: dict) -> str:
         _beam(feeds[1], [_trip(1.1, 1.9)], px=6) + _beam(land, [_trip(2.4, 2.9)], px=5)
     )
     out.append(
-        f'<circle cx="{_n(gx)}" cy="{_n(gy)}" r="9" fill="{WELL}" stroke="{kit.HAIR_STRONG}"/>'
+        f'<circle cx="{_n(gx)}" cy="{_n(gy)}" r="9" fill="{kit.WELL}" stroke="{kit.HAIR_STRONG}"/>'
         + _pivot(
             gx,
             gy,
@@ -1682,8 +1660,6 @@ COVERS = {
     "selfhub": _cover_memory,
 }
 
-_STAR = "M5 0.6 6.4 3.5 9.6 3.9 7.3 6.1 7.9 9.3 5 7.8 2.1 9.3 2.7 6.1 0.4 3.9 3.6 3.5Z"
-
 
 def _summary(project: dict, phone: bool) -> list[str]:
     """The summary wrapped to the card's column; past the cap the last line ends in three dots."""
@@ -1708,7 +1684,7 @@ def _star_chip(
     x = right - width
     return (
         _rect(x, y, width, height, height / 2, kit.HAIR_FILL, kit.HAIR_STRONG)
-        + f'<path d="{_STAR}" fill="{kit.SKY}" transform="translate({_n(x + 10)} {_n(y + height / 2 - 5)})"/>'
+        + f'<path d="{kit.STAR}" fill="{kit.SKY}" transform="translate({_n(x + 10)} {_n(y + height / 2 - 5)})"/>'
         + kit.text(x + 25, y + height / 2 + size * 0.36, count, size, kit.INK, "m"),
         width,
     )

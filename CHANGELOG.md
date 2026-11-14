@@ -2,6 +2,15 @@
 
 All notable changes to this profile README repository.
 
+## [4.23.0] - 2026-11-14
+
+The hero's scene stands for the work as a whole instead of one tool.
+
+Changed:
+
+- The hero's scene is a platform hub where it was a Terraform run: a flat cloud labelled PLATFORM under the title "What I build and run", with six capabilities round it (automation, CI/CD, security, monitoring, MLOps, AI agents). While the core reads BUILDING, a signal runs out along each spoke, down the left side and then down the right, and each capability lights as its signal lands; once all six are up the core shows a green ok and LIVE. The still frame is the finished hub. The scene names no product or tool and shows no figure, and the alt text ends on one sentence that describes it. Both cards keep their sizes (840 x 336 and 320 x 513)
+- The 2024 internship on the career rail reads "ProServe Intern" (was "ProServe DevOps Intern") at both widths and in the README alt text
+
 ## [4.22.0] - 2026-11-13
 
 A review of the whole page and repo. The generator is split into a shared design kit and one module per card group, the bugs the review confirmed are fixed, and a new look is piloted on two surfaces only: the hero and the featured project cards. Every other card keeps its current look until the pilot is approved.

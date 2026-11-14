@@ -185,7 +185,7 @@ MILESTONES = [
     ("2018", "BCA", "DAVV", "Indore, India", "study"),
     ("2021", "MCA", "NIT Warangal", "Warangal, India", "study"),
     ("2023", "Software Developer Intern", "Ikarus-3D", "Mohali, India", "work"),
-    ("2024", "ProServe DevOps Intern", "AWS", "Hyderabad, India", "work"),
+    ("2024", "ProServe Intern", "AWS", "Hyderabad, India", "work"),
     ("2024", "ProServe (Cloud Consultant)", "AWS", "Hyderabad, India", "work"),
 ]
 DISCLAIMER = (

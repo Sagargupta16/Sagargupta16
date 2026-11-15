@@ -8,15 +8,15 @@
     "by_difficulty": {
       "Easy": [
         482,
-        975
+        976
       ],
       "Medium": [
         693,
-        2146
+        2148
       ],
       "Hard": [
         168,
-        989
+        990
       ]
     },
     "history": [
@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8332,
+    "contributions": 8199,
     "commits": 5632,
-    "prs": 2034,
-    "stars": 422,
+    "prs": 2035,
+    "stars": 430,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,7 +170,7 @@
       "ledger-sync": 10,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 96,
+      "awesome-mcp-servers": 104,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -204,19 +204,10 @@
       "foreman": 1
     },
     "followers": 120,
-    "streak": 6,
-    "longest": 126,
-    "active_days": 310,
+    "streak": 7,
+    "longest": 84,
+    "active_days": 301,
     "calendar": [
-      [
-        9,
-        27,
-        2,
-        26,
-        23,
-        7,
-        12
-      ],
       [
         10,
         59,
@@ -242,16 +233,16 @@
         14,
         15,
         8,
-        8
+        0
       ],
       [
-        64,
+        63,
         4,
         19,
         1,
         51,
         14,
-        2
+        0
       ],
       [
         26,
@@ -259,8 +250,8 @@
         14,
         51,
         26,
-        2,
-        1
+        1,
+        0
       ],
       [
         13,
@@ -332,7 +323,7 @@
         24,
         6,
         18,
-        5
+        3
       ],
       [
         3,
@@ -344,22 +335,22 @@
         15
       ],
       [
-        49,
+        43,
         4,
         4,
         4,
         49,
         10,
-        104
+        103
       ],
       [
         47,
         22,
         18,
         112,
-        1806,
+        1718,
         20,
-        31
+        29
       ],
       [
         43,
@@ -368,7 +359,7 @@
         10,
         19,
         17,
-        76
+        74
       ],
       [
         0,
@@ -381,12 +372,12 @@
       ],
       [
         3,
-        68,
-        23,
+        65,
+        22,
         19,
         0,
         4,
-        43
+        42
       ],
       [
         2,
@@ -398,9 +389,9 @@
         17
       ],
       [
-        28,
+        26,
         36,
-        12,
+        11,
         12,
         33,
         14,
@@ -411,9 +402,9 @@
         0,
         0,
         13,
-        31,
+        30,
         13,
-        66
+        65
       ],
       [
         5,
@@ -439,8 +430,8 @@
         28,
         0,
         0,
-        62,
-        23
+        61,
+        22
       ],
       [
         26,
@@ -455,9 +446,9 @@
         68,
         0,
         2,
-        20,
+        19,
         2,
-        148,
+        146,
         15
       ],
       [
@@ -509,7 +500,7 @@
         8,
         1,
         0,
-        147,
+        145,
         37,
         110,
         55
@@ -517,7 +508,7 @@
       [
         4,
         8,
-        80,
+        79,
         6,
         19,
         9,
@@ -656,7 +647,7 @@
         51,
         3,
         6,
-        182
+        180
       ],
       [
         55,
@@ -668,7 +659,7 @@
         3
       ],
       [
-        113,
+        108,
         27,
         7,
         7,
@@ -684,6 +675,9 @@
         22,
         32,
         27
+      ],
+      [
+        6
       ]
     ],
     "languages": [
@@ -941,7 +935,7 @@
         "stars": 5861,
         "title": "Infinite scroll, configurable commit count, and performance improvements",
         "url": "https://github.com/NirmalScaria/le-git-graph/pull/109",
-        "status": "open"
+        "status": "closed"
       },
       {
         "repo": "forem/selfhost",
@@ -1016,7 +1010,7 @@
         "stars": 87,
         "title": "name_prefix, tag propagation, external role support, MCP examples",
         "url": "https://github.com/aws-ia/terraform-aws-bedrock/pull/172",
-        "status": "open"
+        "status": "closed"
       },
       {
         "repo": "anthropics/skills",
@@ -2192,35 +2186,35 @@
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5861,
-    "PrefectHQ/prefect": 24157,
-    "anthropics/skills": 194394,
-    "apache/airflow": 47475,
+    "PrefectHQ/prefect": 24159,
+    "anthropics/skills": 195085,
+    "apache/airflow": 47484,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
-    "awslabs/agent-plugins": 941,
-    "awslabs/mcp": 9919,
-    "axios/axios": 109391,
+    "awslabs/agent-plugins": 943,
+    "awslabs/mcp": 9926,
+    "axios/axios": 109400,
     "cloudposse/terraform-aws-tfstate-backend": 444,
     "expressjs/multer": 12086,
-    "feast-dev/feast": 7362,
+    "feast-dev/feast": 7364,
     "forem/selfhost": 1478,
-    "hashicorp/terraform-provider-aws": 11146,
-    "lucide-icons/lucide": 25755,
-    "modelcontextprotocol/servers": 91986,
+    "hashicorp/terraform-provider-aws": 11147,
+    "lucide-icons/lucide": 25768,
+    "modelcontextprotocol/servers": 92008,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
     "terraform-aws-modules/terraform-aws-s3-bucket": 590
   },
   "source_updated_at": {
-    "github": "2026-11-14T13:42:06+00:00",
-    "leetcode": "2026-11-14T13:42:02+00:00",
-    "portfolio": "2026-11-14T13:42:07+00:00",
-    "npm": "2026-11-14T13:42:25+00:00"
+    "github": "2026-11-15T14:09:57+00:00",
+    "leetcode": "2026-11-15T14:09:53+00:00",
+    "portfolio": "2026-11-15T14:09:59+00:00",
+    "npm": "2026-11-15T14:10:20+00:00"
   },
   "npm": {
-    "@sagargupta1610/orrery": 1818,
-    "@sagargupta1610/skillcheck": 2361,
-    "bedrock-multi-model-mcp": 1090,
-    "itr-agent": 238
+    "@sagargupta1610/orrery": 1839,
+    "@sagargupta1610/skillcheck": 2661,
+    "bedrock-multi-model-mcp": 1127,
+    "itr-agent": 484
   }
 }

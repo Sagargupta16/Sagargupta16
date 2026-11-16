@@ -4,10 +4,10 @@
     "rating": 2166,
     "top": 1.12,
     "contests": 107,
-    "solved": 1343,
+    "solved": 1344,
     "by_difficulty": {
       "Easy": [
-        482,
+        483,
         976
       ],
       "Medium": [
@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8199,
-    "commits": 5632,
-    "prs": 2035,
-    "stars": 430,
+    "contributions": 8103,
+    "commits": 5530,
+    "prs": 2038,
+    "stars": 440,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,7 +170,7 @@
       "ledger-sync": 10,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 104,
+      "awesome-mcp-servers": 113,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -198,15 +198,15 @@
       "readme-kit-action": 4,
       "agent-brain": 2,
       "svg-forge": 3,
-      "orrery": 7,
+      "orrery": 8,
       "zoetrope": 1,
       "awesome-skills": 6,
       "foreman": 1
     },
     "followers": 120,
-    "streak": 7,
+    "streak": 8,
     "longest": 84,
-    "active_days": 301,
+    "active_days": 302,
     "calendar": [
       [
         10,
@@ -677,7 +677,8 @@
         27
       ],
       [
-        6
+        11,
+        5
       ]
     ],
     "languages": [
@@ -2185,36 +2186,36 @@
     "project_count": 49
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5861,
-    "PrefectHQ/prefect": 24159,
-    "anthropics/skills": 195085,
-    "apache/airflow": 47484,
+    "NirmalScaria/le-git-graph": 5859,
+    "PrefectHQ/prefect": 24163,
+    "anthropics/skills": 195789,
+    "apache/airflow": 47494,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
-    "awslabs/agent-plugins": 943,
-    "awslabs/mcp": 9926,
-    "axios/axios": 109400,
+    "awslabs/agent-plugins": 944,
+    "awslabs/mcp": 9928,
+    "axios/axios": 109343,
     "cloudposse/terraform-aws-tfstate-backend": 444,
     "expressjs/multer": 12086,
-    "feast-dev/feast": 7364,
+    "feast-dev/feast": 7365,
     "forem/selfhost": 1478,
-    "hashicorp/terraform-provider-aws": 11147,
-    "lucide-icons/lucide": 25768,
-    "modelcontextprotocol/servers": 92008,
+    "hashicorp/terraform-provider-aws": 11148,
+    "lucide-icons/lucide": 25795,
+    "modelcontextprotocol/servers": 92045,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
     "terraform-aws-modules/terraform-aws-s3-bucket": 590
   },
   "source_updated_at": {
-    "github": "2026-11-15T14:09:57+00:00",
-    "leetcode": "2026-11-15T14:09:53+00:00",
-    "portfolio": "2026-11-15T14:09:59+00:00",
-    "npm": "2026-11-15T14:10:20+00:00"
+    "github": "2026-11-16T16:12:41+00:00",
+    "leetcode": "2026-11-16T16:12:36+00:00",
+    "portfolio": "2026-11-16T16:12:42+00:00",
+    "npm": "2026-11-16T16:12:58+00:00"
   },
   "npm": {
-    "@sagargupta1610/orrery": 1839,
-    "@sagargupta1610/skillcheck": 2661,
-    "bedrock-multi-model-mcp": 1127,
-    "itr-agent": 484
+    "@sagargupta1610/orrery": 1851,
+    "@sagargupta1610/skillcheck": 2892,
+    "bedrock-multi-model-mcp": 1168,
+    "itr-agent": 501
   }
 }

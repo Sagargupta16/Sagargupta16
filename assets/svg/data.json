@@ -4,7 +4,7 @@
     "rating": 2166,
     "top": 1.12,
     "contests": 107,
-    "solved": 1344,
+    "solved": 1345,
     "by_difficulty": {
       "Easy": [
         483,
@@ -15,8 +15,8 @@
         2148
       ],
       "Hard": [
-        168,
-        990
+        169,
+        991
       ]
     },
     "history": [
@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8103,
-    "commits": 5530,
-    "prs": 2038,
-    "stars": 440,
+    "contributions": 8130,
+    "commits": 5544,
+    "prs": 2048,
+    "stars": 448,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,7 +170,7 @@
       "ledger-sync": 10,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 113,
+      "awesome-mcp-servers": 120,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -200,13 +200,13 @@
       "svg-forge": 3,
       "orrery": 8,
       "zoetrope": 1,
-      "awesome-skills": 6,
+      "awesome-skills": 7,
       "foreman": 1
     },
     "followers": 120,
-    "streak": 8,
+    "streak": 9,
     "longest": 84,
-    "active_days": 302,
+    "active_days": 303,
     "calendar": [
       [
         10,
@@ -647,7 +647,7 @@
         51,
         3,
         6,
-        180
+        179
       ],
       [
         55,
@@ -678,23 +678,24 @@
       ],
       [
         11,
-        5
+        5,
+        28
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        49.9,
+        49.6,
         "#3178c6"
       ],
       [
         "Python",
-        31.5,
+        31.8,
         "#3572A5"
       ],
       [
         "JavaScript",
-        10.6,
+        10.8,
         "#f1e05a"
       ],
       [
@@ -1090,7 +1091,8 @@
         "stars": 588,
         "title": "Avoid null filter attribute lookups on Terraform versions before 1.12",
         "url": "https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/pull/416",
-        "status": "open"
+        "status": "merged",
+        "merged_at": "2026-11-16T23:08:38Z"
       }
     ],
     "community_answers": 6,
@@ -1298,7 +1300,7 @@
     "community": [
       {
         "title": "orrery",
-        "description": "Animated architecture and system design diagrams from one YAML spec, with 16,682 official icons from AWS, Azure, Google Cloud, Kubernetes, GitHub and IBM. The Eclipse Layout Kernel places nested boundaries and routes edges, packets travel every edge and numbered steps play in order, and one spec renders to SVG, PNG, editable draw.io, a React component and an HTML viewer. Ships as an Agent Skill and Claude Code plugin.",
+        "description": "Animated architecture and system design diagrams from one YAML spec, with 18,300 icons, including the official AWS, Azure, Google Cloud, Kubernetes, GitHub and IBM sets. The Eclipse Layout Kernel places nested boundaries and routes edges, packets travel every edge and numbered steps play in order, and one spec renders to SVG, PNG, editable draw.io, a React component and an HTML viewer. Ships as an Agent Skill and Claude Code plugin.",
         "tools_tech": [
           "TypeScript",
           "ELK",
@@ -1611,7 +1613,7 @@
         "top_percentage": "1.1%",
         "url": "https://leetcode.com/u/Sagargupta1610/",
         "solved_by_difficulty": {
-          "easy": 480,
+          "easy": 483,
           "medium": 693,
           "hard": 168
         },
@@ -2062,34 +2064,34 @@
         "url": "https://github.com/Sagargupta16",
         "contributions": 8025,
         "pull_requests": 2001,
-        "longest_streak": 126,
+        "longest_streak": 84,
         "languages": [
           {
             "name": "TypeScript",
-            "percent": 53.8
+            "percent": 49.9
           },
           {
             "name": "Python",
-            "percent": 25.7
+            "percent": 31.5
           },
           {
             "name": "JavaScript",
-            "percent": 11.7
+            "percent": 10.6
           },
           {
             "name": "CSS",
-            "percent": 2.5
+            "percent": 2.2
           },
           {
             "name": "C++",
-            "percent": 2.1
+            "percent": 1.8
           },
           {
             "name": "Shell",
             "percent": 1.2
           }
         ],
-        "fetched": "2026-11-10"
+        "fetched": "2026-11-16"
       }
     },
     "certifications": [
@@ -2187,35 +2189,35 @@
   },
   "oss_stars": {
     "NirmalScaria/le-git-graph": 5859,
-    "PrefectHQ/prefect": 24163,
-    "anthropics/skills": 195789,
-    "apache/airflow": 47494,
+    "PrefectHQ/prefect": 24169,
+    "anthropics/skills": 196537,
+    "apache/airflow": 47510,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
-    "awslabs/agent-plugins": 944,
-    "awslabs/mcp": 9928,
-    "axios/axios": 109343,
-    "cloudposse/terraform-aws-tfstate-backend": 444,
-    "expressjs/multer": 12086,
-    "feast-dev/feast": 7365,
-    "forem/selfhost": 1478,
-    "hashicorp/terraform-provider-aws": 11148,
-    "lucide-icons/lucide": 25795,
-    "modelcontextprotocol/servers": 92045,
+    "awslabs/agent-plugins": 947,
+    "awslabs/mcp": 9930,
+    "axios/axios": 109521,
+    "cloudposse/terraform-aws-tfstate-backend": 445,
+    "expressjs/multer": 12085,
+    "feast-dev/feast": 7366,
+    "forem/selfhost": 1477,
+    "hashicorp/terraform-provider-aws": 11151,
+    "lucide-icons/lucide": 25813,
+    "modelcontextprotocol/servers": 92069,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
     "terraform-aws-modules/terraform-aws-s3-bucket": 590
   },
   "source_updated_at": {
-    "github": "2026-11-16T16:12:41+00:00",
-    "leetcode": "2026-11-16T16:12:36+00:00",
-    "portfolio": "2026-11-16T16:12:42+00:00",
-    "npm": "2026-11-16T16:12:58+00:00"
+    "github": "2026-11-17T16:19:07+00:00",
+    "leetcode": "2026-11-17T16:19:02+00:00",
+    "portfolio": "2026-11-17T16:19:08+00:00",
+    "npm": "2026-11-17T16:19:22+00:00"
   },
   "npm": {
-    "@sagargupta1610/orrery": 1851,
-    "@sagargupta1610/skillcheck": 2892,
-    "bedrock-multi-model-mcp": 1168,
-    "itr-agent": 501
+    "@sagargupta1610/orrery": 1864,
+    "@sagargupta1610/skillcheck": 3005,
+    "bedrock-multi-model-mcp": 1190,
+    "itr-agent": 513
   }
 }

@@ -16,7 +16,7 @@
       ],
       "Hard": [
         170,
-        993
+        994
       ]
     },
     "history": [
@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8080,
-    "commits": 5457,
-    "prs": 2061,
-    "stars": 509,
+    "contributions": 8092,
+    "commits": 5459,
+    "prs": 2062,
+    "stars": 524,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,7 +170,7 @@
       "ledger-sync": 10,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 171,
+      "awesome-mcp-servers": 183,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -200,14 +200,14 @@
       "svg-forge": 3,
       "orrery": 10,
       "zoetrope": 1,
-      "awesome-skills": 9,
+      "awesome-skills": 12,
       "foreman": 1,
       "confab": 0
     },
     "followers": 126,
-    "streak": 16,
+    "streak": 17,
     "longest": 84,
-    "active_days": 303,
+    "active_days": 304,
     "calendar": [
       [
         41,
@@ -680,7 +680,8 @@
       [
         1,
         2,
-        7
+        7,
+        12
       ]
     ],
     "languages": [
@@ -924,7 +925,8 @@
         "stars": 117,
         "title": "Replace deprecated hash_key/range_key with key_schema",
         "url": "https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117",
-        "status": "open"
+        "status": "merged",
+        "merged_at": "2026-11-25T14:03:15Z"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
@@ -2189,36 +2191,36 @@
     "project_count": 49
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5858,
-    "PrefectHQ/prefect": 24227,
-    "anthropics/skills": 199834,
-    "apache/airflow": 47651,
+    "NirmalScaria/le-git-graph": 5856,
+    "PrefectHQ/prefect": 24241,
+    "anthropics/skills": 200370,
+    "apache/airflow": 47668,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
-    "awslabs/agent-plugins": 949,
-    "awslabs/mcp": 9948,
-    "axios/axios": 109400,
+    "awslabs/agent-plugins": 950,
+    "awslabs/mcp": 9951,
+    "axios/axios": 109431,
     "cloudposse/terraform-aws-tfstate-backend": 445,
     "expressjs/multer": 12088,
-    "feast-dev/feast": 7365,
+    "feast-dev/feast": 7364,
     "forem/selfhost": 1478,
-    "hashicorp/terraform-provider-aws": 11158,
-    "lucide-icons/lucide": 25977,
-    "modelcontextprotocol/servers": 92216,
+    "hashicorp/terraform-provider-aws": 11159,
+    "lucide-icons/lucide": 25999,
+    "modelcontextprotocol/servers": 92242,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
     "terraform-aws-modules/terraform-aws-s3-bucket": 590
   },
   "source_updated_at": {
-    "github": "2026-11-24T18:01:30+00:00",
-    "leetcode": "2026-11-24T18:01:26+00:00",
-    "portfolio": "2026-11-24T18:01:32+00:00",
-    "npm": "2026-11-24T18:01:47+00:00"
+    "github": "2026-11-25T17:28:19+00:00",
+    "leetcode": "2026-11-25T17:28:14+00:00",
+    "portfolio": "2026-11-25T17:28:20+00:00",
+    "npm": "2026-11-25T17:28:35+00:00"
   },
   "npm": {
-    "@sagargupta1610/orrery": 712,
-    "@sagargupta1610/skillcheck": 3625,
-    "bedrock-multi-model-mcp": 1659,
-    "itr-agent": 609
+    "@sagargupta1610/orrery": 711,
+    "@sagargupta1610/skillcheck": 3744,
+    "bedrock-multi-model-mcp": 1705,
+    "itr-agent": 614
   }
 }

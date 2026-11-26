@@ -4,10 +4,10 @@
     "rating": 2166,
     "top": 1.12,
     "contests": 107,
-    "solved": 1348,
+    "solved": 1349,
     "by_difficulty": {
       "Easy": [
-        484,
+        485,
         978
       ],
       "Medium": [
@@ -130,10 +130,10 @@
     ]
   },
   "github": {
-    "contributions": 8092,
-    "commits": 5459,
-    "prs": 2062,
-    "stars": 524,
+    "contributions": 8124,
+    "commits": 5473,
+    "prs": 2077,
+    "stars": 536,
     "repo_stars": {
       "PortFolio": 3,
       "ds-implementations": 5,
@@ -170,7 +170,7 @@
       "ledger-sync": 10,
       "stocksage-ai": 5,
       "InstagramLikesLeaderboard": 12,
-      "awesome-mcp-servers": 183,
+      "awesome-mcp-servers": 192,
       "deploy-guide": 3,
       "mcp-toolkit": 4,
       "agent-recipes": 4,
@@ -200,14 +200,14 @@
       "svg-forge": 3,
       "orrery": 10,
       "zoetrope": 1,
-      "awesome-skills": 12,
+      "awesome-skills": 15,
       "foreman": 1,
       "confab": 0
     },
     "followers": 126,
-    "streak": 17,
+    "streak": 18,
     "longest": 84,
-    "active_days": 304,
+    "active_days": 305,
     "calendar": [
       [
         41,
@@ -365,7 +365,7 @@
       [
         3,
         65,
-        22,
+        21,
         19,
         0,
         4,
@@ -681,23 +681,24 @@
         1,
         2,
         7,
-        12
+        12,
+        33
       ]
     ],
     "languages": [
       [
         "TypeScript",
-        50.1,
+        49.0,
         "#3178c6"
       ],
       [
         "Python",
-        31.5,
+        32.5,
         "#3572A5"
       ],
       [
         "JavaScript",
-        10.6,
+        10.9,
         "#f1e05a"
       ],
       [
@@ -926,7 +927,7 @@
         "title": "Replace deprecated hash_key/range_key with key_schema",
         "url": "https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table/pull/117",
         "status": "merged",
-        "merged_at": "2026-11-25T14:03:15Z"
+        "merged_at": "2026-11-25"
       },
       {
         "repo": "hashicorp/terraform-provider-aws",
@@ -1095,7 +1096,7 @@
         "title": "Avoid null filter attribute lookups on Terraform versions before 1.12",
         "url": "https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/pull/416",
         "status": "merged",
-        "merged_at": "2026-11-16T23:08:38Z"
+        "merged_at": "2026-11-16"
       }
     ],
     "community_answers": 6,
@@ -1608,7 +1609,7 @@
       "leetcode": {
         "username": "Sagargupta1610",
         "problems_solved": "1300+",
-        "hard_solved": "160+",
+        "hard_solved": "170+",
         "contests": "107",
         "best_rating": "2166",
         "best_contest_rank": "63",
@@ -1616,9 +1617,9 @@
         "top_percentage": "1.1%",
         "url": "https://leetcode.com/u/Sagargupta1610/",
         "solved_by_difficulty": {
-          "easy": 483,
-          "medium": 693,
-          "hard": 168
+          "easy": 485,
+          "medium": 694,
+          "hard": 170
         },
         "rating_history": [
           [
@@ -2066,7 +2067,7 @@
         "username": "Sagargupta16",
         "url": "https://github.com/Sagargupta16",
         "contributions": 8025,
-        "pull_requests": 2001,
+        "pull_requests": 2105,
         "longest_streak": 84,
         "languages": [
           {
@@ -2094,7 +2095,7 @@
             "percent": 1.2
           }
         ],
-        "fetched": "2026-11-16"
+        "fetched": "2026-11-20"
       }
     },
     "certifications": [
@@ -2191,36 +2192,36 @@
     "project_count": 49
   },
   "oss_stars": {
-    "NirmalScaria/le-git-graph": 5856,
-    "PrefectHQ/prefect": 24241,
-    "anthropics/skills": 200370,
-    "apache/airflow": 47668,
+    "NirmalScaria/le-git-graph": 5857,
+    "PrefectHQ/prefect": 24249,
+    "anthropics/skills": 200913,
+    "apache/airflow": 47692,
     "aws-ia/terraform-aws-bedrock": 88,
     "aws-ia/terraform-aws-vpc": 114,
     "awslabs/agent-plugins": 950,
-    "awslabs/mcp": 9951,
-    "axios/axios": 109431,
+    "awslabs/mcp": 9960,
+    "axios/axios": 109463,
     "cloudposse/terraform-aws-tfstate-backend": 445,
     "expressjs/multer": 12088,
-    "feast-dev/feast": 7364,
-    "forem/selfhost": 1478,
-    "hashicorp/terraform-provider-aws": 11159,
-    "lucide-icons/lucide": 25999,
-    "modelcontextprotocol/servers": 92242,
+    "feast-dev/feast": 7363,
+    "forem/selfhost": 1479,
+    "hashicorp/terraform-provider-aws": 11161,
+    "lucide-icons/lucide": 26016,
+    "modelcontextprotocol/servers": 92275,
     "terraform-aws-modules/terraform-aws-dynamodb-table": 117,
     "terraform-aws-modules/terraform-aws-atlantis": 557,
     "terraform-aws-modules/terraform-aws-s3-bucket": 590
   },
   "source_updated_at": {
-    "github": "2026-11-25T17:28:19+00:00",
-    "leetcode": "2026-11-25T17:28:14+00:00",
-    "portfolio": "2026-11-25T17:28:20+00:00",
-    "npm": "2026-11-25T17:28:35+00:00"
+    "github": "2026-11-26T17:09:49+00:00",
+    "leetcode": "2026-11-26T17:09:44+00:00",
+    "portfolio": "2026-11-26T17:09:49+00:00",
+    "npm": "2026-11-26T17:10:06+00:00"
   },
   "npm": {
-    "@sagargupta1610/orrery": 711,
-    "@sagargupta1610/skillcheck": 3744,
-    "bedrock-multi-model-mcp": 1705,
-    "itr-agent": 614
+    "@sagargupta1610/orrery": 708,
+    "@sagargupta1610/skillcheck": 3893,
+    "bedrock-multi-model-mcp": 1733,
+    "itr-agent": 622
   }
 }
